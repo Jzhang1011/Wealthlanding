@@ -90,8 +90,8 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
         <div class="switch-row"><span>Contribute to HSA until retirement</span><input id="growHsaUntilRetire" type="checkbox" checked></div>
       </div>
       <div class="section">
-        <div class="field"><label>Current W-2 income</label><input id="currentW2Income" type="number" value="100000"></div>
-        <div class="field"><label>Annual 1099 income</label><input id="annual1099Income" type="number" value="10000"></div>
+        <div class="field"><label>Current W-2 income</label><input id="currentW2Income" type="number" value="1000000"></div>
+        <div class="field"><label>Annual 1099 income</label><input id="annual1099Income" type="number" value="50000"></div>
         <div class="field"><label>Ordinary passive income</label><input id="passiveIncome" type="number" value="50000"></div>
         <div class="field"><label>Annual qualified dividends</label><input id="qualifiedDividends" type="number" value="0"></div>
         <div class="field"><label>Cash interest yield %</label><input id="cashYieldPct" type="number" step="0.1" value="2.0"></div>
@@ -157,7 +157,27 @@ function country(age,i){let start=i.abStart||i.ret,end=i.abEnd;if(i.geo==='curre
 function stateOn(age,c,i){let end=i.abEnd;if(i.stateRate<=0||i.res==='none')return false;if(i.geo==='no_tax_state')return false;if(i.geo==='abroad_to_no_tax'&&end&&age>end)return false;if(i.geo==='abroad_window'&&end&&age>end)return false;let moved=c==='abroad';return !moved||i.res==='resident'||i.res==='part_year'||(i.res==='nonresident'&&i.vaSource>0)}
 function withdraw(need,brokerage,cash,basis){let rem=Math.max(0,need),gain=0,cashUsed=Math.min(cash,rem);cash-=cashUsed;rem-=cashUsed;if(rem>0){let sale=Math.min(brokerage,rem);gain=sale*Math.max(0,1-basis);brokerage-=sale;rem-=sale}return{brokerage,cash,gain,unfunded:rem}}
 function rowTax(base,conv,rmd,gain,i,stateApplies,vaDed){let ssTax=taxableSS(base.ss,base.nonSS+conv+rmd),ord=base.nonSS+ssTax+conv+rmd,gains=base.qdiv+gain,invest=base.cashInt+base.passive+base.qdiv+gain,ft=fedTax(ord,gains,invest),st=stateApplies?Math.max(0,ord+gains-vaDed)*i.stateRate:0;return{...ft,state:st,total:ft.federal+st,ord,gains,ssTax}}
-function targetBracketForPath(i,age,c,stateApplies){if(i.strategy==='bracket')return i.bracket;if(i.posture==='conservative')return i.objective==='roth_inheritance'?'22':'12';if(i.posture==='aggressive')return '32';if(i.posture==='opportunistic'&&(c==='abroad'||!stateApplies))return '32';return i.bracket}
+function targetBracketForPath(i,age,c,stateApplies){
+  // Always respect the user's explicit bracket ceiling first
+  if(i.bracket&&i.bracket!=='none'){
+    if(i.strategy==='bracket')return i.bracket;
+    // For optimized engine: posture can suggest a bracket, but never exceed the user's cap
+    let postureBracket='24';
+    if(i.posture==='conservative')postureBracket=i.objective==='roth_inheritance'?'22':'12';
+    else if(i.posture==='aggressive')postureBracket='32';
+    else if(i.posture==='opportunistic'&&(c==='abroad'||!stateApplies))postureBracket='32';
+    else postureBracket=i.bracket;
+    // Return whichever is lower: posture suggestion vs user cap
+    const order=['12','22','24','32','35','none'];
+    const pi=order.indexOf(postureBracket),bi=order.indexOf(i.bracket);
+    return order[Math.min(pi,bi)];
+  }
+  // bracket==='none': posture drives fully
+  if(i.posture==='conservative')return i.objective==='roth_inheritance'?'22':'12';
+  if(i.posture==='aggressive')return '32';
+  if(i.posture==='opportunistic'&&(c==='abroad'||!stateApplies))return '32';
+  return 'none';
+}
 function irmaa(magi){let annual=0,drug=0;for(const t of IRMAA){if(magi<=t.u){annual=t.b*12;drug=t.d*12;break}}return{annual:annual+drug,partB:annual,partD:drug}}
 function irmaaCeilingForPath(i,age){if(age<63)return Infinity;if(i.irmaaStrategy==='avoid_all'||i.objective==='healthcare_stability')return 218000;if(i.irmaaStrategy==='allow_first')return 274000;if(i.irmaaStrategy==='pre63_focus')return 218000;return Infinity}
 function pickConversion(base,i,pretaxAvail,rmd,stateApplies,vaDed,age,c){if(i.strategy==='manual_zero'||pretaxAvail<=0)return 0;let ssBase=taxableSS(base.ss,base.nonSS+rmd),ordBase=base.nonSS+ssBase+rmd,brRoom=Math.max(0,topBracket(targetBracketForPath(i,age,c,stateApplies))-Math.max(0,ordBase-STD)),acaRoom=base.aca?Math.max(0,base.acaCeil-(base.nonSS+base.qdiv+base.ss)):Infinity,irmaaRoom=Math.max(0,irmaaCeilingForPath(i,age)-(ordBase+base.qdiv));let limit=Math.min(pretaxAvail,brRoom,acaRoom,irmaaRoom);if(i.acaStrategy==='accept_loss')limit=Math.min(pretaxAvail,brRoom,irmaaRoom);if(i.irmaaStrategy==='allow_if_worth'&&i.objective==='roth_inheritance')limit=Math.min(pretaxAvail,brRoom);if(i.strategy==='bracket'){let remYears=Math.max(1,73-age);let smoothTarget=pretaxAvail/remYears;let minConv=Math.max(0,pretaxAvail>500000?Math.min(smoothTarget*0.8,limit):0);return Math.round(Math.min(limit,Math.max(minConv,smoothTarget))/1000)*1000;}let baseTax=rowTax(base,0,rmd,0,i,stateApplies,vaDed).total,best=0,bestScore=-1e18;let future=(pretaxAvail>3000000?.32:pretaxAvail>1500000?.24:.22)+(stateApplies?i.stateRate:0);if(i.objective==='roth_inheritance')future+=.10;if(i.objective==='lifetime_tax')future-=.08;if(i.objective==='healthcare_stability')future-=.05;if(i.estate==='min_pretax')future+=.04;if(i.estate==='preserve_stepup'&&c!=='abroad')future-=.02;let stateBonus=stateApplies?0:.04,acaBonus=base.aca?-.05:.03,pre63Bonus=age<63?.04:0;let step=Math.max(5000,Math.min(50000,limit/10||5000));for(let cc=0;cc<=limit+1;cc+=step){let tx=rowTax(base,cc,rmd,0,i,stateApplies,vaDed).total,cur=cc?((tx-baseTax)/cc):0,pressure=age<73?Math.min(.10,pretaxAvail/42000000):0,irmaaPenalty=0;if(age>=63&&i.irmaaStrategy!=='allow_if_worth')irmaaPenalty=Math.max(0,(ordBase+cc+base.qdiv)-irmaaCeilingForPath(i,age))*.02;let score=cc*(future+pressure+stateBonus+acaBonus+pre63Bonus-cur)-irmaaPenalty;if(i.objective==='liquidity')score-=Math.max(0,cc-100000)*.03;if(score>bestScore){bestScore=score;best=cc}}return Math.round(best/1000)*1000}
