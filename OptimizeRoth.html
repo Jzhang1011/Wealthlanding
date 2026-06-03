@@ -343,7 +343,19 @@ function updateLockedFields(mode){
 }
 populateStateSelector();
 document.querySelectorAll('#scenarioGroup .pill').forEach(btn=>btn.addEventListener('click',()=>{applyScenarioPreset(btn.dataset.scenario);updateLockedFields(btn.dataset.scenario);document.querySelectorAll('#scenarioGroup .pill').forEach(x=>x.classList.remove('active'));btn.classList.add('active');render()}));document.querySelectorAll('#ssGroup .pill').forEach(btn=>btn.addEventListener('click',()=>{ssAge=Number(btn.dataset.ss);document.querySelectorAll('#ssGroup .pill').forEach(x=>x.classList.remove('active'));btn.classList.add('active');render()}));document.querySelectorAll('#viewGroup .pill').forEach(btn=>btn.addEventListener('click',()=>{chartView=btn.dataset.view;document.querySelectorAll('#viewGroup .pill').forEach(x=>x.classList.remove('active'));btn.classList.add('active');render()}));document.querySelectorAll('input,select').forEach(el=>el.addEventListener('change',()=>{if(el.id==='residenceState')syncStateRate();render()}));document.getElementById('resetBtn').addEventListener('click',()=>window.location.reload());function showPage(name){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+name).classList.add('active');document.querySelectorAll('.topnav-link').forEach(l=>l.classList.remove('active'));const lnk=document.getElementById('nav-'+name);if(lnk)lnk.classList.add('active');if(name==='dashboard')render();window.scrollTo(0,0);}
+// REPLACE WITH:
 applyScenarioPreset('baseline');updateLockedFields('baseline');render();
+if(window.location.hash === '#intro') {
+  showPage('intro');
+} else {
+  showPage('dashboard');
+}
+// Check URL hash on load to show the right page
+if(window.location.hash === '#intro') {
+  showPage('intro');
+} else {
+  showPage('dashboard');
+}
 </script>
 </div><!-- /page-dashboard -->
 </body>
