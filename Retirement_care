@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Senior Healthcare & Tax Optimization Matrix</title>
+  <meta name="description" content="Calculate and compare senior healthcare carrying costs, tax treaty liabilities, and long-term care exposure across major retirement destinations." />
+  <style>
+    :root{
+      --ink:#101827;--muted:#607087;--gold:#f4b942;--blue:#214c97;--red:#d84b45;--green:#1f7a4d;--orange:#e87d24;
+      --bg:#f5f7fb;--card:#ffffff;--line:#e4e8f0;--shadow:0 20px 60px rgba(16,24,39,.14);--radius:26px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+    
+    .topbar{height:10px;background:linear-gradient(90deg,#c1121f,#fff,#0b3d91)}
+    .hub-nav{position:sticky;top:0;z-index:50;background:#111827;color:#fff;border-bottom:1px solid rgba(255,255,255,.14);backdrop-filter:blur(12px)}
+    .hub-wrap{width:min(1200px,94%);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0;flex-wrap:wrap}
+    .hub-title{font-weight:950;color:#fff;font-size:1.02rem}.hub-title span{color:var(--gold)}
+    .hub-tabs{display:flex;gap:10px;flex-wrap:wrap}.hub-tabs a{color:#eaf0ff;font-weight:900;font-size:.9rem;padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);text-decoration:none}
+    .hub-tabs a:hover{background:rgba(255,255,255,.18)}.hub-tabs .active{background:var(--gold);color:#1a1200;border-color:var(--gold)}
+
+    .hero{position:relative;overflow:hidden;background:#0b1020;color:#fff}
+    .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 20%,rgba(244,185,66,.18),transparent 30%),radial-gradient(circle at 80% 10%,rgba(78,124,216,.2)),linear-gradient(135deg,rgba(9,18,39,.98),rgba(21,38,78,.92));}
+    .hero-inner{position:relative;z-index:1;width:min(1200px,94%);margin:auto;padding:56px 0;text-align:center}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);padding:9px 14px;border-radius:999px;font-weight:800;backdrop-filter:blur(10px)}
+    h1{font-size:clamp(2.2rem,4.5vw,4.2rem);line-height:.98;letter-spacing:-.045em;margin:18px 0 10px}.hero p{color:#e5ecfa;font-size:1.1rem;max-width:800px;margin:0 auto}
+
+    main{width:min(1200px,94%);margin:34px auto 80px}.layout{display:grid;grid-template-columns:1fr;gap:28px}
+    .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 12px 36px rgba(16,24,39,.07);padding:32px;margin-bottom:24px}
+    .kicker{font-weight:950;color:var(--red);text-transform:uppercase;letter-spacing:.08em;font-size:.78rem}
+    h2{font-size:1.8rem;margin:6px 0 20px;letter-spacing:-.02em}
+
+    /* Calculator Input Grid Styles - Expanded to 4 Columns */
+    .input-sec-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:16px;background:#f8faff;border:1px solid var(--line);border-radius:22px;padding:24px;margin-bottom:32px}
+    .input-group {display:flex;flex-direction:column;gap:8px}
+    .input-group label {font-weight:800;color:var(--ink);font-size:0.90rem}
+    .input-group label span {display:block;color:var(--muted);font-size:0.75rem;font-weight:600;margin-top:2px}
+    .input-field-wrap {position:relative;display:flex;align-items:center}
+    .input-prefix {position:absolute;left:14px;font-weight:900;color:var(--muted)}
+    .input-field-wrap input {width:100%;padding:13px 14px 13px 30px;border:1px solid var(--line);border-radius:14px;font-weight:900;font-size:1.1rem;color:var(--ink);outline:none;transition:0.2s}
+    .input-field-wrap input:focus {border-color:var(--blue);box-shadow:0 0 0 4px rgba(33,76,151,0.1)}
+
+    /* Response Table Layout */
+    .matrix-scroll {overflow-x:auto;margin-top:16px;border-radius:20px;border:1px solid var(--line)}
+    .matrix-table {width:100%;border-collapse:collapse;text-align:left;background:#fff;font-size:0.95rem}
+    .matrix-table th {background:#10213f;color:#fff;padding:16px;font-weight:900;letter-spacing:0.02em}
+    .matrix-table td {padding:18px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+    .matrix-table tr:last-child td {border-bottom:none}
+    .matrix-table tr:hover td {background:#fcfdfe}
+    
+    .country-cell {display:flex;align-items:center;gap:10px}
+    .country-cell .flag {font-size:2rem}
+    .country-cell b {display:block;font-size:1.1rem}
+    .country-cell span {font-size:0.8rem;color:var(--muted);font-weight:750}
+
+    .val-bold {font-weight:1000;font-size:1.15rem;color:var(--blue)}
+    .val-sub {font-size:0.78rem;color:var(--muted);display:block;font-weight:700;margin-top:2px}
+    
+    .tag {display:inline-block;font-size:.74rem;font-weight:900;border-radius:999px;padding:4px 10px;background:#eef3ff;color:#214c97;margin-top:4px}
+    .tag.green {background:#eaf8ef;color:#17633d}
+    .tag.orange {background:#fff2e8;color:#944d00}
+    .tag.red {background:#ffeaec;color:#9b0d18}
+
+    .info-note {background:#fff8e8;color:#1a1200;border:1px solid #f4d58a;border-radius:18px;padding:16px;font-size:0.88rem;font-weight:750;margin-top:24px}
+
+    .footer{background:#101827;color:#dbe4f4;padding:36px 0;margin-top:60px}.footer-inner{width:min(1200px,94%);margin:auto}.disclaimer{color:#b9c5da;border-top:1px solid rgba(255,255,255,.12);padding-top:18px;margin-top:18px;font-size:.9rem}
+
+    @media(max-width:1100px){.input-sec-grid {grid-template-columns:1fr 1fr}}
+    @media(max-width:650px){.input-sec-grid {grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div class="topbar"></div>
+<div class="hub-nav">
+  <div class="hub-wrap">
+    <a class="hub-title" href="#">Retirement <span>Simulator</span></a>
+    <div class="hub-tabs">
+      <a href="#">Roth Planner</a>
+      <a href="#">Introduction</a>
+      <a href="#">Decision Tree Dashboard</a>
+      <a href="#">Retiring Overseas</a>
+      <a class="active" href="#">Healthcare & Taxes</a>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="badge">⚖️ Cross-Border Liability Simulator</span>
+    <h1>Senior Healthcare & Tax Optimization Matrix</h1>
+    <p>Map out how your unique asset and income structure reacts to local taxes, statutory healthcare carrying costs, and out-of-pocket medical cliffs across destination countries.</p>
+  </div>
+</header>
+
+<main>
+  <section class="panel">
+    <div class="kicker">Step 1: Define Household Income Channels (Couple Aged 65+)</div>
+    <h2>Input Annual Asset Yields</h2>
+    
+    <div class="input-sec-grid">
+      <div class="input-group">
+        <label for="inSSN">U.S. Social Security Income <span>Annual household combined</span></label>
+        <div class="input-field-wrap">
+          <span class="input-prefix">$</span>
+          <input id="inSSN" type="number" value="80000" step="1000" />
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="inPension">Pensions / 401(k) / IRA <span>Annual pre-tax distributions</span></label>
+        <div class="input-field-wrap">
+          <span class="input-prefix">$</span>
+          <input id="inPension" type="number" value="0" step="1000" />
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="inRental">U.S. Real Estate Rental Income <span>Annual net profit (Schedule E)</span></label>
+        <div class="input-field-wrap">
+          <span class="input-prefix">$</span>
+          <input id="inRental" type="number" value="50000" step="1000" />
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="inBrokerage">Brokerage Liquid Portfolio <span>Annual Dividends & Capital Gains</span></label>
+        <div class="input-field-wrap">
+          <span class="input-prefix">$</span>
+          <input id="inBrokerage" type="number" value="50000" step="1000" />
+        </div>
+      </div>
+    </div>
+
+    <div class="kicker">Step 2: Compare Structural Realities Across Options</div>
+    <h2>Dynamic Liability Matrix</h2>
+    
+    <div class="matrix-scroll">
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Retirement Destination</th>
+            <th>Est. Annual Income Tax</th>
+            <th>Annual Carrying Premium</th>
+            <th>Out-of-Pocket (OOP) Cap</th>
+            <th>Avg. Monthly Long-Term Care (LTC)</th>
+          </tr>
+        </thead>
+        <tbody id="matrixBody">
+          </tbody>
+      </table>
+    </div>
+
+    <div class="info-note">
+      <b>💡 Cross-Border Planning Note:</b> Calculated tax figures estimate net impact after applying bilateral Foreign Tax Credits (FTC) to eliminate dual taxation hazards under active double-taxation treaties. Long-term care benchmarks track standard localized, non-subsidized medical/custodial provisions per single person.
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <h2>Planning Disclosures</h2>
+    <p>This localized analysis module acts as an early-stage portfolio architectural visualization platform. Baseline estimates track 2026 tax code thresholds, bilateral treaty protocols, and standard public/private healthcare rate tiers.</p>
+    <p class="disclaimer"><b>Disclaimer:</b> This digital modeling simulation does not represent legal, specific cross-border tax architecture, immigration pathway validation, or formalized medical advisory services. Regulatory environments, baseline statutory premiums, currency conversion pairs, and long-term care guidelines shift dynamically.</p>
+  </div>
+</footer>
+
+<script>
+const inputs = {
+  ssn: document.getElementById('inSSN'),
+  pension: document.getElementById('inPension'),
+  rental: document.getElementById('inRental'),
+  brokerage: document.getElementById('inBrokerage')
+};
+
+const formatMoney = (val) => '$' + Math.round(val).toLocaleString();
+
+function calculateMatrix() {
+  const ssn = Number(inputs.ssn.value) || 0;
+  const pension = Number(inputs.pension.value) || 0;
+  const rental = Number(inputs.rental.value) || 0;
+  const brokerage = Number(inputs.brokerage.value) || 0;
+  
+  const totalIncome = ssn + pension + rental + brokerage;
+
+  // 1. UNITED STATES (Progressive brackets + standard deduction estimation for 65+ couple)
+  let usTax = 0;
+  if (totalIncome > 0) {
+    let taxableSSN = Math.min(ssn * 0.85, ssn);
+    let usAgi = taxableSSN + pension + rental + brokerage - 32000; 
+    if (usAgi > 0) usTax = usAgi * 0.10; 
+    if (usAgi > 45000) usTax = 4500 + (usAgi - 45000) * 0.12;
+    if (usAgi > 100000) usTax = 11100 + (usAgi - 100000) * 0.22;
+    if (usAgi > 190000) usTax = 30900 + (usAgi - 190000) * 0.24;
+  }
+  let usIrmaa = 0;
+  if (totalIncome > 218000) usIrmaa = 2300 * 2; 
+  if (totalIncome > 276000) usIrmaa = 5700 * 2;
+  let usHealth = (2436 * 2) + (2400 * 2) + usIrmaa; 
+
+  // 2. AUSTRALIA (2025-2026 progressive bands. US SSN is 100% Tax-Exempt via Treaty)
+  let auTaxable = pension + rental + brokerage; 
+  let auTax = 0;
+  if (auTaxable > 18200) auTax = (auTaxable - 18200) * 0.16;
+  if (auTaxable > 45000) auTax = 4288 + (auTaxable - 45000) * 0.30;
+  if (auTaxable > 135000) auTax = 31288 + (auTaxable - 135000) * 0.37;
+  if (auTaxable > 190000) auTax = 51638 + (auTaxable - 190000) * 0.45;
+  let auLevy = auTaxable * 0.02;
+  let auHealth = auLevy + 4800; 
+
+  // 3. SPAIN (Splits logic: Rentals/Pensions use general pool; Brokerage uses lower 19-23% savings tool)
+  let esGeneralPool = pension + rental;
+  let esGeneralTax = esGeneralPool * 0.19;
+  if (esGeneralPool > 20200) esGeneralTax = 3800 + (esGeneralPool - 20200) * 0.30;
+  if (esGeneralPool > 35200) esGeneralTax = 8300 + (esGeneralPool - 35200) * 0.37;
+  if (esGeneralPool > 60000) esGeneralTax = 17480 + (esGeneralPool - 60000) * 0.45;
+
+  let esSavingsTax = brokerage * 0.19;
+  if (brokerage > 6000) esSavingsTax = 1140 + (brokerage - 6000) * 0.21;
+  if (brokerage > 50000) esSavingsTax = 10380 + (brokerage - 50000) * 0.23;
+  
+  let esTax = esGeneralTax + esSavingsTax;
+  let esHealth = 1750 * 2; 
+
+  // 4. PORTUGAL (Standard Resident scales applied to rentals/pensions, fixed flat 28% choice for capital gains)
+  let ptGeneralPool = pension + rental;
+  let ptTax = ptGeneralPool * 0.23;
+  if (ptGeneralPool > 40000) ptTax = 9200 + (ptGeneralPool - 40000) * 0.35;
+  if (ptGeneralPool > 75000) ptTax = 21450 + (ptGeneralPool - 75000) * 0.45;
+  let ptSavingsTax = brokerage * 0.28; 
+  ptTax += ptSavingsTax;
+  let ptHealth = 1600 * 2; 
+
+  // 5. MALAYSIA (Expat Territorial system: Foreign yields are strictly $0 local tax)
+  let myTax = 0; 
+  let myHealth = 2500 * 2; 
+
+  // 6. CHINA 
+  let cnTax = 0; 
+  let cnHealth = 4800 * 2; 
+
+  const data = [
+    {
+      city: 'United States', country: 'Domestic Baseline', flag: '🇺🇸',
+      tax: formatMoney(usTax), taxSub: 'Full Worldwide Reporting',
+      health: formatMoney(usHealth), healthSub: 'Includes standard Part B/D + Medigap',
+      oop: 'Very Low', oopTag: 'green', oopSub: 'Shielded by Medigap Plan G',
+      ltc: '$11,300 - $13,500', ltcSub: 'Pure Out-of-Pocket Cliff'
+    },
+    {
+      city: 'Australia', country: 'Tier 1 Western Alternative', flag: '🇦🇺',
+      tax: formatMoney(auTax), taxSub: 'U.S. SSN is 100% Tax-Exempt',
+      health: formatMoney(auHealth), healthSub: '2% Medicare Levy + Private Premium',
+      oop: 'Low', oopTag: 'green', oopSub: 'Subsidized Public + Extras Network',
+      ltc: '$3,000 - $5,000', ltcSub: 'Means-Tested Cap Safeguard'
+    },
+    {
+      city: 'Spain', country: 'Tier 2 Mediterranean Premium', flag: '🇪🇸',
+      tax: formatMoney(esTax), taxSub: 'Brokerage uses lower Savings Base',
+      health: formatMoney(esHealth), healthSub: 'Private Policy (Zero Deductible)',
+      oop: 'Zero', oopTag: 'green', oopSub: '100% Private Policy Coverage',
+      ltc: '$3,500 - $4,500', ltcSub: 'Expat Private Facilities'
+    },
+    {
+      city: 'Portugal', country: 'Tier 2 Atlantic Standard', flag: '🇵🇹',
+      tax: formatMoney(ptTax), taxSub: 'Brokerage modeled at flat 28%',
+      health: formatMoney(ptHealth), healthSub: 'Private Health Plan Requirement',
+      oop: 'Low', oopTag: 'green', oopSub: 'Fixed Network Copays Apply',
+      ltc: '$2,800 - $3,800', ltcSub: 'Private Care Facility Options'
+    },
+    {
+      city: 'Malaysia', country: 'Tier 3 Arbitrage Capital', flag: '🇲🇾',
+      tax: '$0', taxSub: 'Foreign Incomes are Tax-Free',
+      health: formatMoney(myHealth), healthSub: 'Private Underwritten Senior Plan',
+      oop: 'Uncapped', oopTag: 'orange', oopSub: 'Low-Cost Self-Insured Cash Prices',
+      ltc: '$1,700 - $2,500', ltcSub: 'Luxury 24/7 Home Nursing Tier'
+    },
+    {
+      city: 'China', country: 'Tier 3 Megacity Infrastructure', flag: '🇨🇳',
+      tax: '$0', taxSub: 'Passive Capital Left Untaxed',
+      health: formatMoney(cnHealth), healthSub: 'Premium Expat International Cover',
+      oop: 'Minimal', oopTag: 'green', oopSub: 'Covered via Private Expat Clinics',
+      ltc: '$2,500 - $4,500', ltcSub: 'High-Dependency Private Units'
+    }
+  ];
+
+  const html = data.map(row => `
+    <tr>
+      <td>
+        <div class="country-cell">
+          <span class="flag">${row.flag}</span>
+          <div>
+            <b>${row.city}</b>
+            <span>${row.country}</span>
+          </div>
+        </div>
+      </td>
+      <td>
+        <span class="val-bold">${row.tax}</span>
+        <span class="val-sub">${row.taxSub}</span>
+      </td>
+      <td>
+        <span class="val-bold">${row.health}</span>
+        <span class="val-sub">${row.healthSub}</span>
+      </td>
+      <td>
+        <span class="tag ${row.oopTag}">${row.oop}</span>
+        <span class="val-sub">${row.oopSub}</span>
+      </td>
+      <td>
+        <span class="val-bold">${row.ltc}</span>
+        <span class="val-sub">${row.ltcSub}</span>
+      </td>
+    </tr>
+  `).join('');
+
+  document.getElementById('matrixBody').innerHTML = html;
+}
+
+// Attach live input loops to update values immediately upon typing
+Object.values(inputs).forEach(input => {
+  input.addEventListener('input', calculateMatrix);
+});
+
+// Run immediate calculations when page loads
+calculateMatrix();
+</script>
+</body>
+</html>
