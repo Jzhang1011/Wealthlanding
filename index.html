@@ -275,7 +275,97 @@
             color: #64748B;
             cursor: not-allowed;
         }
+  /* Masterclass Sequence Row */
+        .masterclass {
+            background-color: var(--bg-light);
+            padding: 4rem 2rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+        }
 
+        .step-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .step-item h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin: 0.5rem 0;
+        }
+
+        .step-badge {
+            display: inline-block;
+            background: #cbd5e1;
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+  /* Tool Dashboard Table */
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 1rem;
+        }
+
+        th, td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: var(--bg-light);
+        }
+
+        table a {
+            color: var(--highlight-border);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+         /* FAQ Block */
+        .faq-block {
+            max-width: 800px;
+            margin: 0 auto 6rem auto;
+        }
+
+        .faq-item {
+            margin-bottom: 2.5rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .faq-item p {
+            color: var(--text-main);
+        }
+
+        footer {
+            background-color: var(--primary);
+            color: #94a3b8;
+            padding: 3rem 0;
+            text-align: center;
+            font-size: 0.875rem;
+            border-top: 1px solid #334155;
         /* Responsive Setup Rules */
         @media (max-width: 1024px) {
             .left-sidebar { display: none; }
