@@ -101,6 +101,12 @@
     
     <div class="input-sec-grid">
       <div class="input-group">
+       <label for="inAge">Current Age <span>Applies age-band multipliers to private insurance</span></label>
+  <div class="input-field-wrap">
+    <span class="input-prefix">👤</span>
+    <input id="inAge" type="number" value="65" min="60" max="85" />
+  </div>
+</div>
         <label for="inSSN">U.S. Social Security Income <span>Annual household combined</span></label>
         <div class="input-field-wrap">
           <span class="input-prefix">$</span>
@@ -180,7 +186,17 @@ function calculateMatrix() {
   const brokerage = Number(inputs.brokerage.value) || 0;
   
   const totalIncome = ssn + pension + rental + brokerage;
+const age = Number(document.getElementById('inAge').value) || 65;
 
+// Create a scaling factor for private insurance companies based on age tiers
+let ageMultiplier = 1.0; 
+if (age >= 70) ageMultiplier = 1.4; // 40% premium jump for 70s
+if (age >= 75) ageMultiplier = 1.8; // 80% premium jump for late 70s
+
+// Apply the multiplier dynamically to private expat destinations
+let esHealth = (1750 * 2) * ageMultiplier; 
+let ptHealth = (1600 * 2) * ageMultiplier;
+let myHealth = (2500 * 2) * ageMultiplier;
   // 1. UNITED STATES (Progressive brackets + standard deduction estimation for 65+ couple)
   let usTax = 0;
   if (totalIncome > 0) {
