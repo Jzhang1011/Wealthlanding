@@ -387,11 +387,14 @@
                 <li><a href="#">Family Legacy Shelters</a></li>
             </ul>
         </nav>
-
-        <div class="search-container">
-            <span class="search-icon">🔍</span>
-            <input type="search" class="search-input" placeholder="Search systems, tools, or cities...">
-        </div>
+<div class="search-container">
+    <span class="search-icon">🔍</span>
+    <form action="https://www.google.com/search" method="get" target="_blank" style="width: 100%;">
+        <input type="hidden" name="as_sitesearch" value="wealthlanding.com">
+        <input type="search" name="q" class="search-input" placeholder="Search systems, tools, or cities...">
+    </form>
+</div>
+       
     </header>
 
     <div class="app-frame">
@@ -534,6 +537,7 @@
     </footer>
 
     </div>
-
+<!--Google search script-->
+    <script async src="https://cse.google.com/cse.js?cx=40edcbb80dea44bf1"></script>
 </body>
 </html>
