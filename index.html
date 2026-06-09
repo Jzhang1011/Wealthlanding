@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Independent Wealth Building Engine | WealthLanding</title>
+    <meta name="description" content="Access institutional-grade blueprints, retirement simulators, and city matcher tools to optimize your early exit strategies.">
+    <style>
+        :root {
+            --brand-navy: #0B132B;       /* Premium Base Color */
+            --brand-mint: #02B17D;       /* Growth High-Contrast Accent */
+            --brand-mint-hover: #019367;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --bg-canvas: #F8FAFC;        /* Clean Neutral Canvas */
+            --bg-card: #FFFFFF;
+            --border-light: #E2E8F0;
+            --sidebar-width: 260px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-canvas);
+            line-height: 1.5;
+        }
+
+        /* 1. Global Top Navigation (VanEck Style) */
+        .global-header {
+            background-color: var(--brand-navy);
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            border-bottom: 1px solid #1E293B;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            letter-spacing: -0.04em;
+        }
+
+        .logo span {
+            color: var(--brand-mint);
+        }
+
+        .top-nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .top-nav-links a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .top-nav-links a:hover, .top-nav-links a.active {
+            color: white;
+        }
+
+        /* Search Bar Placeholder Container */
+        .search-container {
+            position: relative;
+            max-width: 300px;
+            width: 100%;
+        }
+
+        .search-input {
+            width: 100%;
+            background-color: #1E293B;
+            border: 1px solid #334155;
+            color: white;
+            padding: 0.5rem 1rem 0.5rem 2.5rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+        }
+
+        .search-input::placeholder {
+            color: #64748b;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+            pointer-events: none;
+        }
+
+        /* 2. Platform App Frame Setup (Two-Column Layout) */
+        .app-frame {
+            display: flex;
+            margin-top: 70px; /* Accounts for global top bar */
+            min-height: calc(100vh - 70px);
+        }
+
+        /* 3. Left Vertical Navigation (Sticky Sidebar) */
+        .left-sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--bg-card);
+            border-right: 1px solid var(--border-light);
+            position: fixed;
+            top: 70px;
+            bottom: 0;
+            left: 0;
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+            z-index: 900;
+        }
+
+        .sidebar-group-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 0.35rem;
+        }
+
+        .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            padding: 0.6rem 0.75rem;
+            color: #475569;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .sidebar-menu a:hover {
+            background-color: var(--bg-canvas);
+            color: var(--brand-navy);
+        }
+
+        .sidebar-menu a.active {
+            background-color: #E6F7F2;
+            color: var(--brand-mint-hover);
+            font-weight: 600;
+        }
+
+        /* 4. Main Activity Workspace (Right Panel) */
+        .main-workspace {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            padding: 3rem 4rem;
+            max-width: 1300px;
+        }
+
+        /* Main Elements & Typography styling */
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--brand-navy);
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 750px;
+            margin-bottom: 3rem;
+        }
+
+        /* Infographic Framework Container */
+        .infographic-container {
+            width: 100%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+            margin-bottom: 4rem;
+        }
+
+        .infographic-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+        }
+
+        /* Unified Card Grid styling */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .data-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .data-card.featured {
+            border: 2px solid var(--brand-mint);
+        }
+
+        .data-card h3 {
+            font-size: 1.25rem;
+            color: var(--brand-navy);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .data-card p {
+            color: #475569;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        /* Buttons & Functional Form Inputs */
+        .action-btn {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            padding: 0.75rem 1.25rem;
+            font-weight: 600;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        .action-btn-primary {
+            background-color: var(--brand-mint);
+            color: white;
+        }
+
+        .action-btn-primary:hover {
+            background-color: var(--brand-mint-hover);
+        }
+
+        .action-btn-secondary {
+            background-color: #F1F5F9;
+            color: #64748B;
+            cursor: not-allowed;
+        }
+
+        /* Responsive Setup Rules */
+        @media (max-width: 1024px) {
+            .left-sidebar { display: none; }
+            .main-workspace { margin-left: 0; padding: 2rem; }
+            .top-nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="global-header">
+        <a href="#" class="logo">Wealth<span>Landing</span></a>
+        
+        <nav aria-label="Global Main Directory">
+            <ul class="top-nav-links">
+                <li><a href="#" class="active">Overview Hub</a></li>
+                <li><a href="#">Accumulation Blueprint</a></li>
+                <li><a href="#">Optimization Systems</a></li>
+                <li><a href="#">Family Legacy Shelters</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="search" class="search-input" placeholder="Search systems, tools, or cities...">
+        </div>
+    </header>
+
+    <div class="app-frame">
+
+        <aside class="left-sidebar" aria-label="Contextual Tool Directory">
+            <div class="sidebar-group-title">Wealth Simulators</div>
+            <ul class="sidebar-menu">
+                <li><a href="#" class="active">📊 Horizon Dashboard</a></li>
+                <li><a href="/Retirement-simulator/citymatcher.html">🎯 City Matcher Engine</a></li>
+            </ul>
+
+            <div class="sidebar-group-title">Active Case Environments</div>
+            <ul class="sidebar-menu">
+                <li><a href="/Retirement-simulator/cities/rome.html">🏛️ Retirement in Rome</a></li>
+                <li><a href="#">🗼 Retirement in Tokyo</a></li>
+                <li><a href="#">🏰 Retirement in Edinburgh</a></li>
+            </ul>
+
+            <div class="sidebar-group-title">External Tool Audits</div>
+            <ul class="sidebar-menu">
+                <li><a href="https://tools.finra.org/fund_analyzer/" target="_blank" rel="noopener">FINRA Expense Matrix</a></li>
+                <li><a href="https://www.investor.gov/free-financial-planning-tools" target="_blank" rel="noopener">Investor.gov Calculators</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-workspace">
+            <h1 class="hero-title">Navigate Your Lifelong Financial Milestones</h1>
+            <p class="hero-subtitle">Bypassing high advisor fee layers requires structural visibility. Use the strategic tracker mapping sequence below to align your core investment decisions.</p>
+
+            <div class="infographic-container">
+                <img src="https://raw.githubusercontent.com/Jzhang1011/Wealthlanding/main/Financial_Milestones.png" 
+                     alt="The Wealth Horizon Roadmap: From Accumulation to Early Exit Execution" 
+                     class="infographic-img">
+            </div>
+
+            <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--brand-navy); margin-bottom: 1.5rem;">Select Your Core Strategy Module</h2>
+            <section class="grid-layout" aria-label="Strategic Modules">
+                <div class="data-card">
+                    <div>
+                        <h3>1. Wealth Accumulation</h3>
+                        <p>Optimize cash flows, manage early debt loads, and establish foundational asset tracking models.</p>
+                    </div>
+                    <span class="action-btn action-btn-secondary">Silo Core Inactive</span>
+                </div>
+                <div class="data-card">
+                    <div>
+                        <h3>2. Growth Acceleration</h3>
+                        <p>Enhance workplace accounts, leverage tax structures, and maximize high-earning cycles.</p>
+                    </div>
+                    <span class="action-btn action-btn-secondary">Silo Core Inactive</span>
+                </div>
+                <div class="data-card featured">
+                    <div>
+                        <h3>3. Early Exit Optimization</h3>
+                        <p>Model sequence risk dynamics, structural safe withdrawals, and map pre-Medicare healthcare subsidies.</p>
+                    </div>
+                    <a href="/Retirement-simulator/citymatcher.html" class="action-btn action-btn-primary">Launch Active Simulator</a>
+                </div>
+            </section>
+        </main>
+
+    </div>
+
+</body>
+</html>
