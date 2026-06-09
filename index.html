@@ -85,47 +85,35 @@
         }
 
         /* Timeline / Milestones */
-        .timeline {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-            text-align: left;
-        }
+       /* Infographic Wrapper & Responsiveness */
+.infographic-wrapper {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto 3.5rem auto;
+    border-radius: 12px;
+    background: var(--white);
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.05);
+}
 
-        .timeline-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            position: relative;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
-        }
+.hero-infographic {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
 
-        .timeline-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 2rem;
-            right: 2rem;
-            height: 4px;
-            background-color: var(--accent);
-            border-radius: 0 0 4px 4px;
-        }
-
-        .milestone-meta {
-            font-size: 0.875rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-card h3 {
-            font-size: 1.15rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
+/* Mobile Swiping Optimization */
+@media (max-width: 768px) {
+    .infographic-wrapper {
+        overflow-x: auto; /* Allows users to naturally swipe side-to-side on small screens */
+        -webkit-overflow-scrolling: touch;
+    }
+    .hero-infographic {
+        min-width: 750px; /* Prevents the beautifully detailed text from shrinking into unreadable print on tiny phones */
+    }
+}
 
         /* CTA Form */
         .cta-form {
@@ -340,44 +328,23 @@
 
     <main>
         <!-- Section 1: Hero & Milestone Timeline -->
-        <section class="hero">
-            <div class="container">
-                <h1>Take Control of Your Wealth.<br>Skip the Advisor Fees.</h1>
-                <p>Discover the exact financial milestones that dictate your lifelong wealth trajectory—and access the free blueprints to conquer them.</p>
-                
-                <div class="timeline">
-                    <!-- Milestone 1 -->
-                    <div class="timeline-card">
-                        <div class="milestone-meta">Ages 22–30</div>
-                        <h3>1. Wealth Accumulation</h3>
-                        <p>Every single dollar invested early holds a massive compounding weight. Missing this window forces you to save triple the capital later.</p>
-                    </div>
-                    <!-- Milestone 2 -->
-                    <div class="timeline-card">
-                        <div class="milestone-meta">Ages 30–45</div>
-                        <h3>2. Lifestyle Creep Trap</h3>
-                        <p>As earnings peak, structural tax efficiency and automated saving rates dictate whether you stay locked in the loop or buy back your freedom early.</p>
-                    </div>
-                    <!-- Milestone 3 -->
-                    <div class="timeline-card">
-                        <div class="milestone-meta">Ages 40–55</div>
-                        <h3>3. Generational Launch</h3>
-                        <p>Introducing children alters the map. Strategic tax shelters protect your household engine without raiding your primary retirement nest egg.</p>
-                    </div>
-                    <!-- Milestone 4 -->
-                    <div class="timeline-card">
-                        <div class="milestone-meta">Ages 50+</div>
-                        <h3>4. Early Exit Horizon</h3>
-                        <p>Transitioning portfolios from raw growth to sequence risk protection while building clean healthcare bridges before traditional safety nets kick in.</p>
-                    </div>
-                </div>
+      <section class="hero">
+    <div class="container">
+        <h1>Take Control of Your Wealth.<br>Skip the Advisor Fees.</h1>
+        <p>Discover the exact financial milestones that dictate your lifelong wealth trajectory—and access the free blueprints to conquer them.</p>
+        
+        <div class="infographic-wrapper">
+            <img src="https://raw.githubusercontent.com/Jzhang1011/Wealthlanding/main/Financial_Milestones.png" 
+                 alt="The Wealth Horizon: Navigating Your Lifelong Financial Milestones Infographic" 
+                 class="hero-infographic">
+        </div>
 
-                <form class="cta-form" action="#" method="POST">
-                    <input type="email" placeholder="Enter your email address" required aria-label="Email address">
-                    <button type="submit">Get the Wealth Starter Checklist</button>
-                </form>
-            </div>
-        </section>
+        <form class="cta-form" action="#" method="POST">
+            <input type="email" placeholder="Enter your email address" required aria-label="Email address">
+            <button type="submit">Get the Wealth Starter Checklist</button>
+        </form>
+    </div>
+</section>
 
         <div class="container">
             <!-- Section 2: Choose Your Strategic Pillar -->
