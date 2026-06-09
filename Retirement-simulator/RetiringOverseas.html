@@ -58,12 +58,12 @@
 <div class="topbar"></div>
 <div class="hub-nav">
   <div class="hub-wrap">
-    <a class="hub-title" href="https://jzhang1011.github.io/Retirement-simulator/RetiringOverseas.html">Retirement <span>Simulator</span></a>
+    <a class="hub-title" href="www.wealthlanding/Retirement-simulator/RetiringOverseas.html">Retirement <span>Simulator</span></a>
     <div class="hub-tabs">
-       <a href="https://jzhang1011.github.io/Retirement-simulator/OptimizeRoth.html#intro">Introduction</a>
-      <a href="https://jzhang1011.github.io/Retirement-simulator/OptimizeRoth.html">Decision Tree Dashboard</a>
-      <a class="active" href="https://jzhang1011.github.io/Retirement-simulator/RetiringOverseas.html">Retiring Overseas</a>
-      <a href="https://jzhang1011.github.io/Retirement-simulator/UScitymatcher.html">US city matcher</a>
+       <a href="www.wealthlanding/Retirement-simulator/OptimizeRoth.html#intro">Introduction</a>
+      <a href="www.wealthlanding/Retirement-simulator/OptimizeRoth.html">Decision Tree Dashboard</a>
+      <a class="active" href="www.wealthlanding/Retirement-simulator/RetiringOverseas.html">Retiring Overseas</a>
+      <a href="www.wealthlanding/Retirement-simulator/UScitymatcher.html">US city matcher</a>
     </div>
   </div>
 </div>
@@ -245,7 +245,7 @@ function renderFlags(){
     cloud.innerHTML = displayedCities.map((c,i)=>{
       const lifestyleTier = state.lifestyle ? `${lifestyleLabels[state.lifestyle]}: ${money(c[state.lifestyle])}+` : `Comfort: ${money(c.comfortable)}`;
       const delay = `style="animation-delay:${Math.min(i*38,460)}ms"`;
-      return `<a class="city-card" ${delay} href="https://jzhang1011.github.io/Retirement-simulator/cities/${c.link}"><span class="flag">${c.flag}</span><h4>${c.city}</h4><p>${c.country} · ${c.profile}</p><div class="tag-row"><span class="tag">${lifestyleTier}</span><span class="tag green">Health ${c.health}/10</span></div></a>`;
+      return `<a class="city-card" ${delay} href="www.wealthlanding/Retirement-simulator/cities/${c.link}"><span class="flag">${c.flag}</span><h4>${c.city}</h4><p>${c.country} · ${c.profile}</p><div class="tag-row"><span class="tag">${lifestyleTier}</span><span class="tag green">Health ${c.health}/10</span></div></a>`;
     }).join('');
   }
 
@@ -274,7 +274,7 @@ function renderRecommendations(){
   grid.innerHTML = ranked.map(c=>{
     const tier = state.lifestyle || 'comfortable';
     const fit = Math.min(96, Math.round((c.health*8) + Math.max(0, 25 - Math.abs(state.budget-c[tier])/300)));
-    return `<a class="rec" href="https://jzhang1011.github.io/Retirement-simulator/cities/${c.link}"><span class="flag">${c.flag}</span><h3>${c.city}</h3><p class="muted">${c.country} · ${c.profile}</p><div class="scoreline"><span style="width:${fit}%"></span></div><p class="why"><b>${fit}% fit</b> based on ${money(state.budget)}, ${state.lifestyle?lifestyleLabels[state.lifestyle].toLowerCase():'comfort'}, and healthcare depth.</p></a>`;
+    return `<a class="rec" href="www.wealthlanding/Retirement-simulator/cities/${c.link}"><span class="flag">${c.flag}</span><h3>${c.city}</h3><p class="muted">${c.country} · ${c.profile}</p><div class="scoreline"><span style="width:${fit}%"></span></div><p class="why"><b>${fit}% fit</b> based on ${money(state.budget)}, ${state.lifestyle?lifestyleLabels[state.lifestyle].toLowerCase():'comfort'}, and healthcare depth.</p></a>`;
   }).join('');
   section.classList.add('show');
 }
