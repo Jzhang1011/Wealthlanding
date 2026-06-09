@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Early Retirement Blueprint | WealthLanding</title>
+    <meta name="description" content="Discover the exact financial milestones that dictate your lifelong wealth trajectory—and access the free blueprints to conquer them without expensive advisor fees.">
+    <style>
+        :root {
+            --primary: #0f172a; /* Deep Slate Navy */
+            --accent: #059669;  /* Growth Green */
+            --accent-hover: #047857;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --highlight: #eff6ff; /* Light blue for featured card */
+            --highlight-border: #3b82f6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1.5rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.05em;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 0 4rem 0;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+        }
+
+        /* Timeline / Milestones */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+            text-align: left;
+        }
+
+        .timeline-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+        }
+
+        .timeline-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 2rem;
+            right: 2rem;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 0 0 4px 4px;
+        }
+
+        .milestone-meta {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-card h3 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* CTA Form */
+        .cta-form {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .cta-form input[type="email"] {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .cta-form button {
+            background-color: var(--accent);
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+
+        .cta-form button:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Section Global Styling */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin: 5rem 0 3rem 0;
+            font-weight: 800;
+        }
+
+        /* Pillars Grid */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .pillar-card {
+            border: 1px solid #e2e8f0;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 1px 3px rgb(0 0 0 / 0.05);
+        }
+
+        .pillar-card.featured {
+            background-color: var(--highlight);
+            border: 2px solid var(--highlight-border);
+        }
+
+        .pillar-card h3 {
+            font-size: 1.35rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .pillar-card p {
+            color: var(--text-main);
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            padding: 0.65rem 1.25rem;
+            font-weight: 600;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        .btn-disabled {
+            background-color: #f1f5f9;
+            color: #94a3b8;
+            cursor: not-allowed;
+        }
+
+        .btn-primary {
+            background-color: var(--highlight-border);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #2563eb;
+        }
+
+        /* Masterclass Sequence Row */
+        .masterclass {
+            background-color: var(--bg-light);
+            padding: 4rem 2rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+        }
+
+        .step-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .step-item h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin: 0.5rem 0;
+        }
+
+        .step-badge {
+            display: inline-block;
+            background: #cbd5e1;
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Tool Dashboard Table */
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 1rem;
+        }
+
+        th, td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: var(--bg-light);
+        }
+
+        table a {
+            color: var(--highlight-border);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* FAQ Block */
+        .faq-block {
+            max-width: 800px;
+            margin: 0 auto 6rem auto;
+        }
+
+        .faq-item {
+            margin-bottom: 2.5rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .faq-item p {
+            color: var(--text-main);
+        }
+
+        footer {
+            background-color: var(--primary);
+            color: #94a3b8;
+            padding: 3rem 0;
+            text-align: center;
+            font-size: 0.875rem;
+            border-top: 1px solid #334155;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.25rem; }
+            .cta-form { flex-direction: column; }
+            th, td { padding: 0.75rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Wealth<span>Landing</span></a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Hero & Milestone Timeline -->
+        <section class="hero">
+            <div class="container">
+                <h1>Take Control of Your Wealth.<br>Skip the Advisor Fees.</h1>
+                <p>Discover the exact financial milestones that dictate your lifelong wealth trajectory—and access the free blueprints to conquer them.</p>
+                
+                <div class="timeline">
+                    <!-- Milestone 1 -->
+                    <div class="timeline-card">
+                        <div class="milestone-meta">Ages 22–30</div>
+                        <h3>1. Wealth Accumulation</h3>
+                        <p>Every single dollar invested early holds a massive compounding weight. Missing this window forces you to save triple the capital later.</p>
+                    </div>
+                    <!-- Milestone 2 -->
+                    <div class="timeline-card">
+                        <div class="milestone-meta">Ages 30–45</div>
+                        <h3>2. Lifestyle Creep Trap</h3>
+                        <p>As earnings peak, structural tax efficiency and automated saving rates dictate whether you stay locked in the loop or buy back your freedom early.</p>
+                    </div>
+                    <!-- Milestone 3 -->
+                    <div class="timeline-card">
+                        <div class="milestone-meta">Ages 40–55</div>
+                        <h3>3. Generational Launch</h3>
+                        <p>Introducing children alters the map. Strategic tax shelters protect your household engine without raiding your primary retirement nest egg.</p>
+                    </div>
+                    <!-- Milestone 4 -->
+                    <div class="timeline-card">
+                        <div class="milestone-meta">Ages 50+</div>
+                        <h3>4. Early Exit Horizon</h3>
+                        <p>Transitioning portfolios from raw growth to sequence risk protection while building clean healthcare bridges before traditional safety nets kick in.</p>
+                    </div>
+                </div>
+
+                <form class="cta-form" action="#" method="POST">
+                    <input type="email" placeholder="Enter your email address" required aria-label="Email address">
+                    <button type="submit">Get the Wealth Starter Checklist</button>
+                </form>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Section 2: Choose Your Strategic Pillar -->
+            <h2 class="section-title">Choose Your Strategic Focus</h2>
+            <section class="pillars-grid">
+                <div class="pillar-card">
+                    <div>
+                        <h3>I am just building my wealth</h3>
+                        <p>Master core cash flow allocation, eradicate high-interest debt obstacles, and initiate your foundational low-cost index tracking portfolios.</p>
+                    </div>
+                    <a href="#" class="btn btn-disabled" onclick="return false;">Coming Soon</a>
+                </div>
+
+                <div class="pillar-card">
+                    <div>
+                        <h3>I want to accelerate my growth</h3>
+                        <p>Optimize advanced tax-advantaged vehicles, maximize peak career compensation, and automate investing algorithms to fast-track your freedom.</p>
+                    </div>
+                    <a href="#" class="btn btn-disabled" onclick="return false;">Coming Soon</a>
+                </div>
+
+                <div class="pillar-card">
+                    <div>
+                        <h3>I have a family to build for</h3>
+                        <p>Fund educational trajectories efficiently, establish generational wealth frameworks, and secure structural protection for your household.</p>
+                    </div>
+                    <a href="#" class="btn btn-disabled" onclick="return false;">Coming Soon</a>
+                </div>
+
+                <!-- Featured Active Hub -->
+                <div class="pillar-card featured">
+                    <div>
+                        <h3>I want to retire early</h3>
+                        <p>Master safe withdrawal guardrails, resolve pre-Medicare healthcare bridge mechanics, and plan your definitive exit from the 9-to-5 loop.</p>
+                    </div>
+                    <a href="#retirement-hub" class="btn btn-primary">Explore the Retirement Hub →</a>
+                </div>
+            </section>
+
+            <!-- Section 3: Deep Dive — Early Retirement Masterclass -->
+            <h2 class="section-title" id="retirement-hub">Featured Hub: The Early Retirement Masterclass</h2>
+            <section class="masterclass">
+                <div class="step-row">
+                    <div class="step-item">
+                        <span class="step-badge">Step 1</span>
+                        <h3>Calculate Your Freedom Number</h3>
+                        <p>Determine your exact financial independence threshold by evaluating lifestyle spending against strict mathematical multipliers. Use vetted external calculation systems to define your target nest egg path perfectly.</p>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-badge">Step 2</span>
+                        <h3>Define Safe Withdrawal Boundaries</h3>
+                        <p>Shift your mindset from accumulation to smart preservation. Learn why fixed-rate withdrawal assumptions fail early retirees, and how dynamic capital guardrails shield your portfolio against volatile sequence risks.</p>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-badge">Step 3</span>
+                        <h3>Architect Your Healthcare Bridge</h3>
+                        <p>Don't let medical premium projections stop your exit timeline. Master the inner mechanics of the Affordable Care Act marketplace to systematically format your income brackets for maximum subsidy protection.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Curated Toolkit Dashboard -->
+            <h2 class="section-title">Vetted Vitals & Verification Tools</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Financial Utility</th>
+                            <th>Vetted Resource</th>
+                            <th>What You Will Learn</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Growth Projections</strong></td>
+                            <td><a href="https://www.investor.gov/free-financial-planning-tools" target="_blank" rel="noopener noreferrer">Investor.gov Compound Engine</a></td>
+                            <td>Visualize your long-term compounding growth curve without advisor fees.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fee Impact Analysis</strong></td>
+                            <td><a href="https://tools.finra.org/fund_analyzer/" target="_blank" rel="noopener noreferrer">FINRA Fund Analyzer</a></td>
+                            <td>Uncover how underlying mutual fund expense ratios quietly erode your long-term returns.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Target Projections</strong></td>
+                            <td><a href="https://www.investor.gov/free-financial-planning-tools" target="_blank" rel="noopener noreferrer">Investor.gov Savings Calculator</a></td>
+                            <td>Back-calculate the exact monthly savings allocation required to reach your goals.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Section 5: AI & SEO Optimization Block (FAQ) -->
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <section class="faq-block">
+                <div class="faq-item">
+                    <h3>Do I really need a financial advisor to retire early?</h3>
+                    <p>No. While wealth managers provide value for complex estate litigation or high-net-worth tax shelter structures, the vast majority of personal financial growth relies on a high personal savings rate, low-fee index tracking funds, and disciplined asset allocation—all of which you can manage independently using structured blueprints.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What is the single biggest threat to an early retirement plan?</h3>
+                    <p>Sequence of Returns Risk. Experiencing a severe stock market downturn during the initial 3 to 5 years of your retirement phase can permanently damage your portfolio's longevity. Managing this requires a multi-year cash or short-term bond runway to avoid being forced to sell your equities at a market bottom.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Segment -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 WealthLanding. Built for everyday wealth builders. Disclaimers: Content is for educational tracking signals only and does not constitute formal individualized tax or investment advice.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
