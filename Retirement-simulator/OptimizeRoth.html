@@ -669,15 +669,15 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
         <div class="helper">⚙ Customizable path: all inputs below are free. The other three buttons are presets — they lock the strategy dropdowns and show what each path controls.</div>
       </div>
       <div class="section">
-        <div class="field"><label>Current age</label><input id="currentAge" type="number" value="45"></div>
-        <div class="field"><label>Retirement age</label><input id="retireAge" type="number" value="51"></div>
+        /* <!--<div class="field"><label>Current age</label><input id="currentAge" type="number" value="45"></div>
+        <div class="field"><label>Retirement age</label><input id="retireAge" type="number" value="51"></div>--> Duplicate with wizard age input */
         <div class="field"><label>Employer coverage ends at age</label><input id="employerCoverageEndAge" type="number" value="51"></div>
         <div class="field"><label>Move abroad start age</label><input id="moveAbroadStartAge" type="number" value="0"></div>
         <div class="field"><label>Move abroad end / return-to-U.S. age</label><input id="moveAbroadEndAge" type="number" value="0"></div>
       </div>
       <div class="section">
-        <div class="field"><label>Brokerage ETF value</label><input id="brokerage" type="number" value="100000"></div>
-        <div class="field"><label>Cash reserve</label><input id="cash" type="number" value="10000"></div>
+        /* <!--  <div class="field"><label>Brokerage ETF value</label><input id="brokerage" type="number" value="100000"></div>
+        <div class="field"><label>Cash reserve</label><input id="cash" type="number" value="10000"></div>--> Duplicate with wizard input */
         <div class="field"><label>Average brokerage cost basis %</label><input id="brokerageBasisPct" type="number" value="70"></div>
         <div class="helper">Brokerage grows as ETF value; capital gains are realized only when sold.</div>
         <div class="field"><label>Pre-tax retirement</label><input id="pretax" type="number" value="100000"></div>
@@ -718,7 +718,7 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
         <div class="field"><label>Ordinary passive income</label><input id="passiveIncome" type="number" value="50000"></div>
         <div class="field"><label>Annual qualified dividends</label><input id="qualifiedDividends" type="number" value="0"></div>
         <div class="field"><label>Cash interest yield %</label><input id="cashYieldPct" type="number" step="0.1" value="2.0"></div>
-        <div class="field"><label>Residence state for income tax</label><select id="residenceState"></select></div>
+       /*<!-- <div class="field"><label>Residence state for income tax</label><select id="residenceState"></select></div>--> Duplicate with wizard input */
         <div class="field"><label>State income tax planning rate %</label><input id="stateTaxRate" type="number" step="0.01" value="5.75"></div>
         <div class="helper">The selector pre-fills a simplified 2026 top/planning rate. Edit the rate if you want to model your own effective state tax rate.</div>
         <div class="field"><label>Residency status after move</label><select id="residencyMode"><option value="resident" selected>Resident of selected state</option><option value="part_year">Part-year resident</option><option value="nonresident">Nonresident with state-source income</option><option value="none">No state income tax resident</option></select></div>
@@ -730,59 +730,7 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
         <div class="field"><label>Downside return haircut %</label><input id="downsideReturnPct" type="number" step="0.1" value="3"></div>
         <div class="field"><label>Monte Carlo runs</label><input id="monteCarloRuns" type="number" value="300"></div>
       </div>
-    </div></div>
-    <div>
-        /* Add new KPI*/
-        <div class="card">
-  <div class="card-body">
-    <div class="metric">
-      Lifetime Tax Saved
-    </div>
-
-    <div
-      class="metric-value"
-      id="cardTaxSaved">
-    </div>
-
-    <div class="metric-sub">
-      vs No Conversion Strategy
-    </div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-body">
-    <div class="metric">
-      Estate Value Gain
-    </div>
-
-    <div
-      class="metric-value"
-      id="cardEstateGain">
-    </div>
-
-    <div class="metric-sub">
-      Additional After-Tax Wealth
-    </div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-body">
-    <div class="metric">
-      Pretax IRA Reduced
-    </div>
-
-    <div
-      class="metric-value"
-      id="cardPretaxReduction">
-    </div>
-
-    <div class="metric-sub">
-      Future RMD Risk Removed
-    </div>
-  </div>
-</div>
+    </div>  
       <div class="cards">
         <div class="card"><div class="card-body"><div class="metric">Roth at 65</div><div class="metric-value" id="cardRoth65"></div></div></div>
         <div class="card"><div class="card-body"><div class="metric">Pre-tax at 65</div><div class="metric-value" id="cardPretax65"></div></div></div>
@@ -791,7 +739,10 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
         <div class="card"><div class="card-body"><div class="metric">Annual Roth added</div><div class="metric-value" id="cardRothAdded"></div></div></div>
         <div class="card"><div class="card-body"><div class="metric">Lifetime tax paid</div><div class="metric-value" id="cardLifetimeTax"></div><div class="metric-sub">Excludes IRMAA</div></div></div>
         <div class="card"><div class="card-body"><div class="metric">Age 85 today $</div><div class="metric-value" id="cardTerminalToday"></div><div class="metric-sub">Inflation-adjusted</div></div></div>
-      </div>
+          /* Add new KPI*/
+          <div class="card"><div class="card-body"><div class="metric">Estate Value Gain</div><div class="metric-value" id="cardEstateGain"></div><div class="metric-sub">Additional After-Tax Wealth</div></div></div>
+        <div class="card"><div class="card-body"><div class="metric">Pretax IRA Reduced</div><div class="metric-value" id="cardPretaxReduction"></div><div class="metric-sub">Future RMD Risk Removed</div></div></div>
+            
       <div class="card chart-card"><div class="card-head"><h3>Decision tree path</h3></div><div class="card-body"><div class="path-title" id="pathHeadline"></div><div class="path-sub" id="pathSummary"></div><div class="tree-grid" style="margin-top:14px"><div class="tree-node"><b>1. Priority</b><span id="treePriority"></span></div><div class="tree-node"><b>2. Conversion path</b><span id="treeConversion"></span></div><div class="tree-node"><b>3. Geography path</b><span id="treeGeography"></span></div><div class="tree-node"><b>4. Healthcare constraint</b><span id="treeHealthcare"></span></div><div class="tree-node"><b>5. IRMAA tolerance</b><span id="treeIrmaa"></span></div><div class="tree-node"><b>6. Estate outcome</b><span id="treeEstate"></span></div></div></div></div>
       <div class="card chart-card"><div class="card-head"><h3>Tradeoff center</h3></div><div class="card-body"><div class="table-wrap" style="max-height:360px"><table><thead><tr><th>Tradeoff</th><th>Status</th><th>Planning lever</th><th>Why it matters</th></tr></thead><tbody id="tradeoffBody"></tbody></table></div></div></div>
       <div class="card chart-card"><div class="card-head"><h3 id="mainChartTitle">Wealth composition by age</h3></div><div class="card-body"><div class="chart-wrap"><div id="mainChart" class="svg-chart"></div></div></div></div>
@@ -1001,14 +952,15 @@ function decision(rows,i){let t=rows[rows.length-1],conv=rows.reduce((s,r)=>s+r.
    Runs project(), updates all KPI cards, charts, tables, roadmap rows, sensitivity table, and Monte Carlo. */
 function render(){let i=inputs(),rows=project(),cur=rows[0],at65=rows.find(r=>r.age===65)||rows[rows.length-1],term=rows[rows.length-1];document.getElementById('summaryText').textContent=`V6 starts with the planning priority, then builds a path combination across conversion posture, geography, ACA, IRMAA, estate preferences, and tax mechanics. Social Security starts at ${ssAge}; objective is ${labelMap()[i.objective]}; selected state is ${STATE_NAMES[i.residenceState]||i.residenceState} at ${(i.stateRate*100).toFixed(2)}% planning rate.`;document.getElementById('cardRoth65').textContent=fmt.format(at65.roth);document.getElementById('cardPretax65').textContent=fmt.format(at65.pretax);document.getElementById('cardLiquid65').textContent=fmt.format(at65.liquid);document.getElementById('cardTaxYear').textContent=fmt.format(cur.totalTax);document.getElementById('cardTaxSub').textContent=`Ord ${fmt.format(cur.ordinaryTax)} · LTCG ${fmt.format(cur.ltcgTax)} · NIIT ${fmt.format(cur.niit)}`;document.getElementById('cardRothAdded').textContent=fmt.format(cur.rothAdd);document.getElementById('cardLifetimeTax').textContent=fmt.format(rows.reduce((s,r)=>s+r.totalTax,0));document.getElementById('cardTerminalToday').textContent=fmt.format(term.totalWealth/Math.pow(1+i.infl,term.age-i.cur));renderPath(rows,i);renderTradeoffs(rows,i);document.getElementById('decisionSummary').textContent=decision(rows,i);document.getElementById('note1').textContent='The model now starts from the user priority. For Maximize Roth inheritance, lower lifetime tax is not always the answer; the model may recommend paying tax earlier to reduce taxable assets left to heirs.';document.getElementById('note2').textContent='Scenarios are now path combinations: conversion posture, residency/geography, ACA strategy, IRMAA tolerance, and estate preference. The sensitivity table compares these paths side by side.';document.getElementById('note3').textContent='The tradeoff center separates hard costs from bypassable constraints: federal tax, state tax, ACA, IRMAA, RMDs, and inherited pre-tax exposure.';document.getElementById('note4').textContent='For the Roth inheritance objective, the most attractive conversion years are usually after W-2 income ends, before RMDs, before Medicare lookback years, and during no-state-tax or abroad windows.';renderSensitivity(i);monte(i);
 let tb=document.getElementById('roadmapBody');tb.innerHTML='';for(const r of rows){let tr=document.createElement('tr');tr.innerHTML=`<td>${r.age}</td><td><span class="constraint">${r.country==='abroad'?'Abroad':'U.S.'}</span></td><td>${fmt.format(r.taxW2)}</td><td>${fmt.format(r.i1099)}</td><td>${fmt.format(r.cashInt)}</td><td>${fmt.format(r.qdiv)}</td><td>${fmt.format(r.passive)}</td><td>${fmt.format(r.ss)}</td><td>${fmt.format(r.ssTax)}</td><td>${fmt.format(r.gain)}</td><td>${fmt.format(r.rmd)}</td><td>${fmt.format(r.conv)}</td><td>${fmt.format(r.fed)}</td><td>${fmt.format(r.ltcgTax)}</td><td>${fmt.format(r.niit)}</td><td>${fmt.format(r.state)}</td><td>${fmt.format(r.irmaa)}</td><td>${fmt.format(r.totalTax)}</td><td>${r.bracket}</td><td><span class="constraint">${constraint(r,i)}</span></td>`;tb.appendChild(tr)}
-destroy();let labels=rows.map(r=>r.age),milestones=[i.cur,i.ret,60,62,65,67,70,73,75,80,85],ms=rows.filter(r=>milestones.includes(r.age));document.getElementById('mainChartTitle').textContent=chartView==='balances'?'Wealth composition by age':chartView==='flows'?'Annual flows by age':'Advanced wealth and tax view';if(chartView==='balances'){mainChart=new Chart(document.getElementById('mainChart'),{type:'bar',data:{labels,datasets:[{label:'Brokerage',data:rows.map(r=>r.broker),backgroundColor:'#15803d',stack:'w'},{label:'Cash',data:rows.map(r=>r.cash),backgroundColor:'#86efac',stack:'w'},{label:'Pre-tax',data:rows.map(r=>r.pretax),backgroundColor:'#ea580c',stack:'w'},{label:'Roth',data:rows.map(r=>r.roth),backgroundColor:'#2563eb',stack:'w'},{label:'HSA',data:rows.map(r=>r.hsa),backgroundColor:'#0f766e',stack:'w'},{label:'529',data:rows.map(r=>r.p529),backgroundColor:'#7c3aed',stack:'w'}]},options:opts(true)})}else if(chartView==='flows'){mainChart=new Chart(document.getElementById('mainChart'),{type:'line',data:{labels,datasets:[{label:'Conversion',data:rows.map(r=>r.conv),borderColor:'#ca8a04',backgroundColor:'#ca8a04',tension:.25},{label:'RMD',data:rows.map(r=>r.rmd),borderColor:'#ea580c',backgroundColor:'#ea580c',tension:.25},{label:'Total tax',data:rows.map(r=>r.totalTax),borderColor:'#dc2626',backgroundColor:'#dc2626',tension:.25},{label:'IRMAA',data:rows.map(r=>r.irmaa),borderColor:'#991b1b',backgroundColor:'#991b1b',tension:.25},{label:'SSN',data:rows.map(r=>r.ss),borderColor:'#0891b2',backgroundColor:'#0891b2',tension:.25}]},options:opts(false)})}else{mainChart=new Chart(document.getElementById('mainChart'),{type:'line',data:{labels,datasets:[{label:'After-tax wealth',data:rows.map(r=>r.afterTax),borderColor:'#2563eb',backgroundColor:'#2563eb',tension:.25},{label:'MAGI',data:rows.map(r=>r.magi),borderColor:'#7c3aed',backgroundColor:'#7c3aed',tension:.25},{label:'RMD',data:rows.map(r=>r.rmd),borderColor:'#ea580c',backgroundColor:'#ea580c',tension:.25}]},options:opts(false)})}
+destroy();let labels=rows.map(r=>r.age),milestones=[i.cur,i.ret,60,62,65,67,70,73,75,80,85],ms=rows.filter(r=>milestones.includes(r.age));document.getElementById('mainChartTitle').textContent=chartView==='balances'?'Wealth composition by age':chartView==='flows'?'Annual flows by age':'Advanced wealth and tax view';if(chartView==='wealth'){mainChart=new Chart(document.getElementById('mainChart'),{type:'bar',data:{labels,datasets:[{label:'Brokerage',data:rows.map(r=>r.broker),backgroundColor:'#15803d',stack:'w'},{label:'Cash',data:rows.map(r=>r.cash),backgroundColor:'#86efac',stack:'w'},{label:'Pre-tax',data:rows.map(r=>r.pretax),backgroundColor:'#ea580c',stack:'w'},{label:'Roth',data:rows.map(r=>r.roth),backgroundColor:'#2563eb',stack:'w'},{label:'HSA',data:rows.map(r=>r.hsa),backgroundColor:'#0f766e',stack:'w'},{label:'529',data:rows.map(r=>r.p529),backgroundColor:'#7c3aed',stack:'w'}]},options:opts(true)})}else if(chartView==='tax'){mainChart=new Chart(document.getElementById('mainChart'),{type:'line',data:{labels,datasets:[{label:'Conversion',data:rows.map(r=>r.conv),borderColor:'#ca8a04',backgroundColor:'#ca8a04',tension:.25},{label:'RMD',data:rows.map(r=>r.rmd),borderColor:'#ea580c',backgroundColor:'#ea580c',tension:.25},{label:'Total tax',data:rows.map(r=>r.totalTax),borderColor:'#dc2626',backgroundColor:'#dc2626',tension:.25},{label:'IRMAA',data:rows.map(r=>r.irmaa),borderColor:'#991b1b',backgroundColor:'#991b1b',tension:.25},{label:'SSN',data:rows.map(r=>r.ss),borderColor:'#0891b2',backgroundColor:'#0891b2',tension:.25}]},options:opts(false)})}
+/*else{mainChart=new Chart(document.getElementById('mainChart'),{type:'line',data:{labels,datasets:[{label:'After-tax wealth',data:rows.map(r=>r.afterTax),borderColor:'#2563eb',backgroundColor:'#2563eb',tension:.25},{label:'MAGI',data:rows.map(r=>r.magi),borderColor:'#7c3aed',backgroundColor:'#7c3aed',tension:.25},{label:'RMD',data:rows.map(r=>r.rmd),borderColor:'#ea580c',backgroundColor:'#ea580c',tension:.25}]},options:opts(false)})}*/
 rothAdditionsChart=new Chart(document.getElementById('rothAdditionsChart'),{type:'bar',data:{labels,datasets:[{label:'Backdoor',data:rows.map(r=>r.bd),backgroundColor:'#0891b2',stack:'a'},{label:'Mega',data:rows.map(r=>r.mega),backgroundColor:'#16a34a',stack:'a'},{label:'Conversion',data:rows.map(r=>r.conv),backgroundColor:'#ca8a04',stack:'a'}]},options:opts(true)});wealthBlocksChart=new Chart(document.getElementById('wealthBlocksChart'),{type:'bar',data:{labels:ms.map(r=>r.age),datasets:[{label:'Pre-tax',data:ms.map(r=>r.pretax),backgroundColor:'#ea580c',stack:'pos'},{label:'Brokerage',data:ms.map(r=>r.broker),backgroundColor:'#15803d',stack:'pos'},{label:'Roth',data:ms.map(r=>r.roth),backgroundColor:'#2563eb',stack:'pos'},{label:'RMD',data:ms.map(r=>-r.rmd),backgroundColor:'#f97316',stack:'neg'},{label:'Tax',data:ms.map(r=>-r.totalTax),backgroundColor:'#dc2626',stack:'neg'},{label:'IRMAA',data:ms.map(r=>-r.irmaa),backgroundColor:'#991b1b',stack:'neg'}]},options:opts(true)})}
 function setInputValue(id,value){const el=document.getElementById(id);if(el)el.value=value}
 function setCheckedValue(id,value){const el=document.getElementById(id);if(el)el.checked=!!value}
-/* Scenario preset buttons. baseline does not override inputs; other modes set strategy fields. */
+/* Scenario preset buttons. custom does not override inputs; other modes set strategy fields. */
 function applyScenarioPreset(mode){
   scenarioMode=mode;
-  if(mode==='baseline'){
+  if(mode==='custom'){
     // Customizable path: do not override any inputs — user controls everything
   } else if(mode==='us'){
     setInputValue('planningObjective','healthcare_stability');
@@ -1051,10 +1003,10 @@ function applyScenarioPreset(mode){
 /* Adds preset-locked styling to fields controlled by selected scenario. */
 function updateLockedFields(mode){
   // Fields that presets always control
-  const alwaysLocked=mode==='baseline'?[]:['conversionPosture','geographyPath','acaStrategy','irmaaStrategy','estatePreference','planningObjective'];
+  const alwaysLocked=mode==='custom'?[]:['conversionPosture','geographyPath','acaStrategy','irmaaStrategy','estatePreference','planningObjective'];
   // Fields locked only for specific modes
   const modeLocked={
-    baseline:[],
+  custom:[],
     us:['conversionStrategy','residencyMode'],
     abroad:['conversionStrategy','bracketTarget','residencyMode','preserveAca'],
     custom:['conversionStrategy','bracketTarget','residencyMode','preserveAca']
@@ -1072,7 +1024,7 @@ function updateLockedFields(mode){
 }
 /* EVENT WIRING AND INITIALIZATION: attach listeners, initialize dropdowns, render initial dashboard. */
 populateStateSelector();
-document.querySelectorAll('#scenarioGroup .pill').forEach(btn=>btn.addEventListener('click',()=>{applyScenarioPreset(btn.dataset.scenario);updateLockedFields(btn.dataset.scenario);document.querySelectorAll('#scenarioGroup .pill').forEach(x=>x.classList.remove('active'));btn.classList.add('active');render()}));
+/*<!--document.querySelectorAll('#scenarioGroup .pill').forEach(btn=>btn.addEventListener('click',()=>{applyScenarioPreset(btn.dataset.scenario);updateLockedFields(btn.dataset.scenario);document.querySelectorAll('#scenarioGroup .pill').forEach(x=>x.classList.remove('active'));btn.classList.add('active');render()}));-->*/
 
     /*Replaced ssGroup with dropdown*/
     const ssDropdown =
