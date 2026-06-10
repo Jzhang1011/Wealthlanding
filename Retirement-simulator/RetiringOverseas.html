@@ -314,21 +314,21 @@
 </footer>
 <script>
 const cities = [
-  {city:'Bangkok', country:'Thailand', flag:'🇹🇭', lean:2200, comfortable:3500, luxury:5500, max:6500, health:8, link:'bangkok.html', profile:'Cost leverage + private hospitals'},
-  {city:'Kuala Lumpur', country:'Malaysia', flag:'🇲🇾', lean:2300, comfortable:3600, luxury:5800, max:6500, health:8.5, link:'kuala_lumpur.html', profile:'English-friendly + medical value'},
-  {city:'Da Nang', country:'Vietnam', flag:'🇻🇳', lean:1800, comfortable:3000, luxury:4800, max:5200, health:6, link:'da_nang.html', profile:'Beach lifestyle + low cost'},
-  {city:'Mérida', country:'Mexico', flag:'🇲🇽', lean:2200, comfortable:3800, luxury:6000, max:7000, health:6.8, link:'merida.html', profile:'U.S. proximity + warm climate'},
-  {city:'Lisbon', country:'Portugal', flag:'🇵🇹', lean:3200, comfortable:5200, luxury:8000, max:8500, health:7.4, link:'lisbon.html', profile:'Europe lifestyle + retiree community'},
-  {city:'Barcelona', country:'Spain', flag:'🇪🇸', lean:3300, comfortable:5500, luxury:8500, max:9000, health:8, link:'barcelona.html', profile:'Mediterranean city + healthcare'},
-  {city:'Rome', country:'Italy', flag:'🇮🇹', lean:3200, comfortable:5400, luxury:8200, max:9000, health:7.6, link:'rome.html', profile:'Culture + European base'},
-  {city:'Tokyo', country:'Japan', flag:'🇯🇵', lean:4200, comfortable:6800, luxury:10500, max:12000, health:9.2, link:'tokyo.html', profile:'Safety + elite infrastructure'},
-  {city:'Seoul', country:'South Korea', flag:'🇰🇷', lean:3900, comfortable:6200, luxury:9500, max:10500, health:9, link:'seoul.html', profile:'Healthcare + transit + safety'},
-  {city:'Shanghai', country:'China', flag:'🇨🇳', lean:3600, comfortable:6000, luxury:9500, max:10500, health:8, link:'shanghai.html', profile:'Megacity convenience + premium care'},
-  {city:'Sydney', country:'Australia', flag:'🇦🇺', lean:5200, comfortable:8200, luxury:12500, max:14000, health:8.6, link:'sydney.html', profile:'Quality of life + English'},
-  {city:'Auckland', country:'New Zealand', flag:'🇳🇿', lean:5000, comfortable:7800, luxury:11500, max:13000, health:8.2, link:'auckland.html', profile:'Calm lifestyle + nature'},
-  {city:'Zurich', country:'Switzerland', flag:'🇨🇭', lean:7000, comfortable:10500, luxury:16000, max:18000, health:9.5, link:'zurich.html', profile:'Elite safety + healthcare'},
-  {city:'Singapore', country:'Singapore', flag:'🇸🇬', lean:6500, comfortable:10000, luxury:15500, max:18000, health:9.4, link:'singapore.html', profile:'Elite infrastructure + safety'},
-  {city:'Hong Kong', country:'Hong Kong', flag:'🇭🇰', lean:6000, comfortable:9500, luxury:15000, max:17000, health:8.8, link:'hong_kong.html', profile:'Global city + family connectivity'},
+  {city:'Bangkok', country:'Thailand', flag:'🇹🇭', lean:2200, comfortable:3500, luxury:5500, max:6500, health:8, link:'cities/bangkok.html', profile:'Cost leverage + private hospitals'},
+  {city:'Kuala Lumpur', country:'Malaysia', flag:'🇲🇾', lean:2300, comfortable:3600, luxury:5800, max:6500, health:8.5, link:'cities/kuala_lumpur.html', profile:'English-friendly + medical value'},
+  {city:'Da Nang', country:'Vietnam', flag:'🇻🇳', lean:1800, comfortable:3000, luxury:4800, max:5200, health:6, link:'cities/da_nang.html', profile:'Beach lifestyle + low cost'},
+  {city:'Mérida', country:'Mexico', flag:'🇲🇽', lean:2200, comfortable:3800, luxury:6000, max:7000, health:6.8, link:'cities/merida.html', profile:'U.S. proximity + warm climate'},
+  {city:'Lisbon', country:'Portugal', flag:'🇵🇹', lean:3200, comfortable:5200, luxury:8000, max:8500, health:7.4, link:'cities/lisbon.html', profile:'Europe lifestyle + retiree community'},
+  {city:'Barcelona', country:'Spain', flag:'🇪🇸', lean:3300, comfortable:5500, luxury:8500, max:9000, health:8, link:'cities/barcelona.html', profile:'Mediterranean city + healthcare'},
+  {city:'Rome', country:'Italy', flag:'🇮🇹', lean:3200, comfortable:5400, luxury:8200, max:9000, health:7.6, link:'cities/rome.html', profile:'Culture + European base'},
+  {city:'Tokyo', country:'Japan', flag:'🇯🇵', lean:4200, comfortable:6800, luxury:10500, max:12000, health:9.2, link:'cities/tokyo.html', profile:'Safety + elite infrastructure'},
+  {city:'Seoul', country:'South Korea', flag:'🇰🇷', lean:3900, comfortable:6200, luxury:9500, max:10500, health:9, link:'cities/seoul.html', profile:'Healthcare + transit + safety'},
+  {city:'Shanghai', country:'China', flag:'🇨🇳', lean:3600, comfortable:6000, luxury:9500, max:10500, health:8, link:'cities/shanghai.html', profile:'Megacity convenience + premium care'},
+  {city:'Sydney', country:'Australia', flag:'🇦🇺', lean:5200, comfortable:8200, luxury:12500, max:14000, health:8.6, link:'cities/sydney.html', profile:'Quality of life + English'},
+  {city:'Auckland', country:'New Zealand', flag:'🇳🇿', lean:5000, comfortable:7800, luxury:11500, max:13000, health:8.2, link:'cities/auckland.html', profile:'Calm lifestyle + nature'},
+  {city:'Zurich', country:'Switzerland', flag:'🇨🇭', lean:7000, comfortable:10500, luxury:16000, max:18000, health:9.5, link:'cities/zurich.html', profile:'Elite safety + healthcare'},
+  {city:'Singapore', country:'Singapore', flag:'🇸🇬', lean:6500, comfortable:10000, luxury:15500, max:18000, health:9.4, link:'cities/singapore.html', profile:'Elite infrastructure + safety'},
+  {city:'Hong Kong', country:'Hong Kong', flag:'🇭🇰', lean:6000, comfortable:9500, luxury:15000, max:17000, health:8.8, link:'cities/hong_kong.html', profile:'Global city + family connectivity'},
   <!--{city:'Dubai', country:'UAE', flag:'🇦🇪', lean:5000, comfortable:8500, luxury:14000, max:16000, health:8.4, link:'#', profile:'Low tax feel + luxury services'}-->
 ];
 const state = {budget:4000,lifestyle:null,health:null,stage:1,matches:[...cities]};
