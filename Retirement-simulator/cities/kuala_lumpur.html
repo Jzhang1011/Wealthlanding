@@ -12,7 +12,26 @@
   <title>Retiring overseas : Kuala Lumpur | Wealth Landing</title>
   <meta name="description"
       content="Compare healthcare costs, taxes, and retirement outcomes across countries with Wealth Landing's retirement planning tools in Kuala Lumpur">
-  <meta charset="utf-8" />
+    <!-- Wealthlanding logo, header and search boxes-->
+    <header class="global-header">
+    <a href="/" class="logo">Wealth<span>Landing</span></a>
+    
+    <nav aria-label="Global Main Directory">
+        <ul class="top-nav-links">
+            <li><a href="/">Overview Hub</a></li> <!--Link back to home page-->
+            <li><a href="#">Accumulation Blueprint</a></li> <!--"..\"means move back to one layer of folder-->
+            <li><a href="#">Optimization Systems</a></li>
+            <li><a href="#">Family Legacy Shelters</a></li>
+        </ul>
+    </nav>
+
+    <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input type="search" class="search-input" placeholder="Search systems, tools, or cities...">
+    </div>
+</header> <!--End of the header-->
+    
+      <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kuala Lumpur Retirement Guide | Cost, Healthcare, Visas, Taxes & Lifestyle</title>
   <meta name="description" content="A practical Kuala Lumpur retirement guide for Americans and global retirees evaluating cost of living, healthcare, visas, taxes, neighborhoods, safety, and quality of life." />
@@ -21,7 +40,89 @@
       --ink:#14213d;--muted:#607087;--gold:#f4b942;--thai-red:#c1121f;--thai-blue:#0b3d91;--cream:#fff8ec;--bg:#f6f7fb;--card:#ffffff;--line:#e6e8ef;--green:#1f7a4d;--orange:#e87d24;
       --shadow:0 18px 50px rgba(18,33,61,.12);--radius:22px;
     }
-    *{box-sizing:border-box} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+    *{box-sizing:border-box} 
+          /* --- PREMIUM TOP NAVIGATION STYLES --- */
+.global-header {
+    background-color: #0B132B; /* Premium Dark Navy to match your simulator bar */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 2rem;
+    border-bottom: 1px solid #1E293B;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Remove default bullet points and stack horizontally */
+.top-nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav-links li {
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav-links a {
+    color: #94A3B8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.top-nav-links a:hover, .top-nav-links a.active {
+    color: white;
+}
+
+.logo {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+    letter-spacing: -0.04em;
+}
+
+.logo span {
+    color: #02B17D; /* Brand Mint Green */
+}
+
+/* Fix the Search Container & Input sizing */
+.search-container {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    color: #64748b;
+    pointer-events: none;
+}
+
+.search-input {
+    width: 100%;
+    background-color: #1E293B;
+    border: 1px solid #334155;
+    color: white;
+    padding: 0.5rem 1rem 0.5rem 2.2rem; /* Left padding keeps text clear of search icon */
+    border-radius: 6px;
+    font-size: 0.875rem;
+    box-sizing: border-box;
+}
+
+.search-input::placeholder {
+    color: #64748b;
+}
+        body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
     a{color:var(--thai-blue);text-decoration:none} a:hover{text-decoration:underline}
     .topbar{background:linear-gradient(90deg,var(--thai-red),#fff,var(--thai-blue));height:10px}
     .hero{position:relative;min-height:680px;display:flex;align-items:stretch;overflow:hidden;background:#111}
@@ -154,5 +255,7 @@
 <!--<section id="monetization" class="section"><div class="kicker">Publisher strategy</div><h2>How this page can monetize responsibly</h2><p>This page can become a traffic and lead-generation asset if the monetization supports the retiree decision process rather than interrupting it.</p><div class="cards"><div class="mini"><b>Lead magnet</b><p>Offer a downloadable “KL Retirement Trial Checklist” in exchange for email signup.</p></div><div class="mini"><b>Affiliate categories</b><p>International health insurance, relocation specialists, tax advisors, banking/mail forwarding, and travel medical coverage.</p></div><div class="mini"><b>High-intent CTAs</b><p>Place CTAs after healthcare, visa, and tax sections because readers are actively seeking help there.</p></div></div><div class="callout warning"><b>Trust rule:</b> Keep editorial content separate from paid placements. Clearly label sponsors, and avoid implying tax, visa, or medical guarantees.</div></section>-->
 </div><aside class="sidebar"><div class="leadbox"><h3>Get the KL retirement checklist</h3><p>Capture email leads with a printable 60–90 day test-stay plan.</p><input placeholder="Email address"><button>Send me the checklist</button></div><div class="ad"><div class="label">Sponsor placement</div><h3>International health insurance</h3><p>Compare plans for Malaysia, Southeast Asia, and optional U.S. coverage.</p></div><div class="partner"><h3>Advisor marketplace</h3><ul><li>Malaysia visa / MM2H agent</li><li>Cross-border tax CPA</li><li>Health insurance broker</li><li>Relocation consultant</li></ul></div><div class="ad"><div class="label">Affiliate idea</div><h3>Retirement travel stack</h3><p>Mail forwarding, VPN, global phone plan, travel medical, and emergency evacuation coverage.</p></div><div class="partner"><h3>Compare nearby bases</h3><p><a href="www.wealthlanding/Retirement-simulator/RetiringOverseas.html">Return to all overseas cities →</a></p><p class="muted">Compare Kuala Lumpur against Bangkok, Da Nang, Lisbon, Merida, and Singapore.</p></div></aside></main>
 <footer class="footer"><div class="footer-inner"><h2>Sources and notes</h2><ol class="sources"><li>Malaysia My Second Home official guidelines, Ministry of Tourism, Arts and Culture: https://www.mm2h.gov.my/apply/guidelines</li><li>Malaysian Immigration Department MM2H page: https://www.imi.gov.my/index.php/en/main-services/malaysia-my-second-home-mmh2-en/</li><li>Inland Revenue Board of Malaysia, foreign income guidance PDF, June 2024.</li><li>Numbeo cost comparison: Kuala Lumpur vs. New York City.</li><li>Prince Court Medical Centre, Kuala Lumpur hospital information.</li><li>Gleneagles Hospital Kuala Lumpur information.</li><li>Wikimedia Commons images used through Special:FilePath links.</li></ol><p class="disclaimer">This guide is educational planning content, not tax, legal, immigration, medical, or investment advice. Visa rules, tax treatment, insurance availability, and local costs change. Verify current requirements with official sources and qualified advisors before relocating, purchasing property, changing tax residency, or making Roth conversion decisions.</p></div></footer>
+<!--Google search script-->
+    <script async src="https://cse.google.com/cse.js?cx=40edcbb80dea44bf1"></script>
 </body>
 </html>
