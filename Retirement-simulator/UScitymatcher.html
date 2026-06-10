@@ -12,6 +12,25 @@
   <title>Retiring overseas : US city matcher | Wealth Landing</title>
   <meta name="description"
       content="Compare healthcare costs, taxes, and retirement outcomes across countries with Wealth Landing's retirement planning tools in US">
+   <!-- Wealthlanding logo, header and search boxes-->
+    <header class="global-header">
+    <a href="/" class="logo">Wealth<span>Landing</span></a>
+    
+    <nav aria-label="Global Main Directory">
+        <ul class="top-nav-links">
+            <li><a href="/">Overview Hub</a></li> <!--Link back to home page-->
+            <li><a href="#">Accumulation Blueprint</a></li> <!--"..\"means move back to one layer of folder-->
+            <li><a href="#">Optimization Systems</a></li>
+            <li><a href="#">Family Legacy Shelters</a></li>
+        </ul>
+    </nav>
+
+    <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input type="search" class="search-input" placeholder="Search systems, tools, or cities...">
+    </div>
+</header> <!--End of the header-->
+  
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>U.S. Retirement City Matcher | Roth Conversion, Tax, Healthcare & Senior Support</title>
@@ -20,7 +39,89 @@
 :root{
   --ink:#12213f;--muted:#65748a;--bg:#f6f8fc;--card:#fff;--line:#dfe5ef;--blue:#2563eb;--navy:#111827;--gold:#f4b942;--green:#15803d;--red:#dc2626;--orange:#ea580c;--violet:#7c3aed;--shadow:0 18px 50px rgba(18,33,61,.12);--radius:24px;
 }
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.topbar{height:8px;background:linear-gradient(90deg,#b91c1c,#fff,#1d4ed8)}
+*{box-sizing:border-box}
+   /* --- PREMIUM TOP NAVIGATION STYLES --- */
+.global-header {
+    background-color: #0B132B; /* Premium Dark Navy to match your simulator bar */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 2rem;
+    border-bottom: 1px solid #1E293B;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Remove default bullet points and stack horizontally */
+.top-nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav-links li {
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav-links a {
+    color: #94A3B8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.top-nav-links a:hover, .top-nav-links a.active {
+    color: white;
+}
+
+.logo {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+    letter-spacing: -0.04em;
+}
+
+.logo span {
+    color: #02B17D; /* Brand Mint Green */
+}
+
+/* Fix the Search Container & Input sizing */
+.search-container {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    color: #64748b;
+    pointer-events: none;
+}
+
+.search-input {
+    width: 100%;
+    background-color: #1E293B;
+    border: 1px solid #334155;
+    color: white;
+    padding: 0.5rem 1rem 0.5rem 2.2rem; /* Left padding keeps text clear of search icon */
+    border-radius: 6px;
+    font-size: 0.875rem;
+    box-sizing: border-box;
+}
+
+.search-input::placeholder {
+    color: #64748b;
+}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.topbar{height:8px;background:linear-gradient(90deg,#b91c1c,#fff,#1d4ed8)}
 .hub-nav{position:sticky;top:0;z-index:50;background:#111827;color:#fff;border-bottom:1px solid rgba(255,255,255,.14)}.hub-wrap{width:min(1180px,94%);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0;flex-wrap:wrap}.hub-title{font-weight:950;color:#fff;text-decoration:none;font-size:1.04rem}.hub-title span{color:var(--gold)}.hub-tabs{display:flex;gap:10px;flex-wrap:wrap}.hub-tabs a{color:#eaf0ff;text-decoration:none;font-weight:900;font-size:.9rem;padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}.hub-tabs a:hover{background:rgba(255,255,255,.18)}.hub-tabs .active{background:var(--gold);color:#1a1200;border-color:var(--gold)}
 .hero{position:relative;overflow:hidden;background:#0b1220}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,20,40,.92),rgba(10,20,40,.67),rgba(10,20,40,.25)),url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=80') center/cover no-repeat;filter:saturate(1.05)}.hero-inner{position:relative;z-index:1;width:min(1180px,94%);margin:auto;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;min-height:560px;padding:64px 0}.badge{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.27);color:#fff;padding:9px 14px;border-radius:999px;font-weight:800;backdrop-filter:blur(8px)}h1{font-size:clamp(2.4rem,5vw,4.8rem);line-height:.98;color:#fff;margin:18px 0;letter-spacing:-.055em}.hero p{color:#e8edf7;font-size:1.15rem;max-width:760px}.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 17px;border-radius:14px;font-weight:900;border:0;cursor:pointer;text-decoration:none}.btn.primary{background:var(--gold);color:#1a1200}.btn.secondary{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.35);color:#fff}.btn.dark{background:var(--ink);color:#fff}.snapshot{background:rgba(255,255,255,.93);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;backdrop-filter:blur(10px)}.snapshot h2{margin:0 0 14px;font-size:1.45rem}.score-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.metric{background:#f8faff;border:1px solid var(--line);border-radius:16px;padding:14px}.metric strong{display:block;font-size:1.35rem;color:var(--blue);line-height:1.05}.metric span{font-size:.82rem;color:var(--muted);font-weight:800}.verdict{margin-top:16px;background:#ecfdf3;border:1px solid #bbf7d0;color:#14532d;border-radius:16px;padding:14px;font-weight:800}
 .subnav{position:sticky;top:58px;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.subnav .inner{width:min(1180px,94%);margin:auto;display:flex;gap:16px;overflow:auto;padding:12px 0}.subnav a{white-space:nowrap;font-size:.88rem;font-weight:900;color:var(--ink)}
@@ -319,5 +420,7 @@ function restartMatcher(){state={phase:null,filingStatus:null,conversionBand:nul
 function renderStarterTable(){let tb=document.getElementById('starterTable');cities.forEach(c=>{let tr=document.createElement('tr');let best=c.best.map(x=>x.replace('_',' ')).join(', ');tr.innerHTML=`<td><b>${c.name}</b></td><td>${c.state}</td><td>${best}</td><td>${money(c.monthly[0])}–${money(c.monthly[1])}</td><td>${c.health}/4</td><td>${c.benefitSensitivity==='high'?'Many supports may be income-tested':c.benefitSensitivity==='medium'?'Verify county/state rules':'More structural than income-tested'}</td>`;tb.appendChild(tr);})}
 renderStarterTable();updatePath();
 </script>
+  <!--Google search script-->
+    <script async src="https://cse.google.com/cse.js?cx=40edcbb80dea44bf1"></script>
 </body>
 </html>
