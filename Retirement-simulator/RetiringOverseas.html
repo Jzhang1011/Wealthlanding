@@ -165,10 +165,9 @@
 }
 
 /* Mega Menu Panel full width */
-.mega-menu {
-    .mega-menu {
+   .mega-menu {
     position: absolute;
-    top: 100%;
+    top: calc(100% - 5px);
     left: -350px;
 
     width: 1200px;
@@ -184,7 +183,11 @@
 }
 
 /* Show on hover */
-.mega-menu-parent:hover .mega-menu {
+.mega-menu-parent {
+    position: relative;
+    padding-bottom: 10px;
+}
+.mega-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -247,6 +250,38 @@
     cursor: pointer;
 }
     /*<!--End of Mega menu CSS-->*/
+    .topnav {
+    position: relative;
+    background: #0f172a;
+    display: flex;
+    align-items: center;
+    padding: 0 28px;
+    height: 52px;
+    overflow: visible;
+    z-index: 1000;
+}
+
+.topnav-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.topnav-link {
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 10px 14px;
+}
+
+.topnav-link:hover {
+    color: white;
+}
+
+.topnav-divider {
+    width: 1px;
+    height: 20px;
+    background: rgba(255,255,255,.15);
+}
     @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
     @keyframes pop{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
     @media(max-width:930px){.hero-inner,.layout{grid-template-columns:1fr}.side{position:static}.options{grid-template-columns:1fr}.progress{grid-template-columns:1fr 1fr}.range-wrap{grid-template-columns:1fr}.hero-inner{min-height:auto;padding:56px 0}.stat-grid{grid-template-columns:1fr 1fr}}
@@ -256,7 +291,7 @@
 <body>
 <!-- TOP NAVIGATION: switches between intro, overseas page, and dashboard. -->
 <nav class="topnav">
-  <!--<a class="topnav-brand" href="#" onclick="showPage('intro');return false;">US<span>city matcher</span></a>-->
+  <!--<a class="topnav-brand" href="UScitymatcher.html" onclick="showPage('intro');return false;">US<span>city matcher</span></a>-->
   <div class="topnav-links">
     <a class="topnav-link active" href="#" onclick="showPage('intro');return false;" id="nav-intro">Introduction</a>
     <div class="topnav-divider"></div>
@@ -268,7 +303,7 @@
         <div class="column">
             <h4>Tools</h4>
             <a href="RetiringOverseas.html">Overseas City Matcher</a>
-            <a href="cost_for_65+.html">Healthcare Cost Tool</a>
+            <a href="cost_for_65+.html">Healthcare Cost Comparison</a>
             <a href="#">Tax Planning Tool</a>
         </div>
 
@@ -276,7 +311,7 @@
             <h4>Cities</h4>
             <a href="cities/auckland.html">Auckland</a>
             <a href="cities/bangkok.html">Bangkok</a>
-            <a href="#">Lisbon</a>
+            <a href="cities/lisbon.html">Lisbon</a>
             <a href="#">Chiang Mai</a>
         </div>
 
@@ -296,8 +331,7 @@
         <a class="active" href="UScitymatcher.html">U.S. City Matcher</a>
         <a class="active" href="cost_for_65+.html">Medical cost for retirees 65+</a>
     </div>
-  </div>
-</div>
+  </nav>
 <header class="hero">
   <div class="hero-inner">
     <div>
