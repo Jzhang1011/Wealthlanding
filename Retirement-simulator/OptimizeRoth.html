@@ -789,9 +789,8 @@ const IRMAA=[{u:218000,b:0,d:0},{u:274000,b:81.20,d:14.50},{u:342000,b:202.90,d:
 /* RMD PARAMETERS
    RMD = simplified divisor table. At age 73+, RMD = pre-tax balance / divisor. */
 const RMD={73:26.5,74:25.5,75:24.6,76:23.7,77:22.9,78:22.0,79:21.1,80:20.2,81:19.4,82:18.5,83:17.7,84:16.8,85:16.0};
-/* suggested let scenarioMode='us';let chartView='wealth';*/
-    let scenarioMode='us',
-let chartView='wealth',mainChart,rothAdditionsChart,wealthBlocksChart;
+
+  
     /* Added for UX change*/
     document
 .getElementById('ssStartAge')
@@ -800,6 +799,7 @@ let chartView='wealth',mainChart,rothAdditionsChart,wealthBlocksChart;
     let ssAge = 67;
     render();
 });
+    /* suggested let scenarioMode='us';let chartView='wealth';*/
     let scenarioMode='us';
 let chartView='wealth';
 let ssAge=67;
