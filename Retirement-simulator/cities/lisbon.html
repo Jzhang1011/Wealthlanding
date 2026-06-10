@@ -12,7 +12,25 @@
   <title>Retiring overseas : Lisbon | Wealth Landing</title>
   <meta name="description"
       content="Compare healthcare costs, taxes, and retirement outcomes across countries with Wealth Landing's retirement planning tools in Lisbon">
-  <meta charset="utf-8" />
+      <!-- Wealthlanding logo, header and search boxes-->
+    <header class="global-header">
+    <a href="/" class="logo">Wealth<span>Landing</span></a>
+    
+    <nav aria-label="Global Main Directory">
+        <ul class="top-nav-links">
+            <li><a href="/">Overview Hub</a></li> <!--Link back to home page-->
+            <li><a href="#">Accumulation Blueprint</a></li> <!--"..\"means move back to one layer of folder-->
+            <li><a href="#">Optimization Systems</a></li>
+            <li><a href="#">Family Legacy Shelters</a></li>
+        </ul>
+    </nav>
+
+    <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input type="search" class="search-input" placeholder="Search systems, tools, or cities...">
+    </div>
+</header> <!--End of the header-->
+      <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portugal Retirement Guide | Cost, Healthcare, Visas, Taxes & Lifestyle</title>
   <meta name="description" content="A practical Portugal retirement guide for Americans and global retirees evaluating cost of living, healthcare, visas, taxes, regions, safety, and quality of life." />
@@ -21,7 +39,89 @@
       --ink:#132033;--muted:#66758a;--gold:#f2bf4b;--green:#046a38;--red:#da291c;--blue:#155e75;--cream:#fff8e9;--bg:#f6f8fb;--card:#fff;--line:#e1e7ef;
       --shadow:0 18px 50px rgba(19,32,51,.13);--radius:24px;--orange:#dd7a27;
     }
-    *{box-sizing:border-box} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+    *{box-sizing:border-box}
+               /* --- PREMIUM TOP NAVIGATION STYLES --- */
+.global-header {
+    background-color: #0B132B; /* Premium Dark Navy to match your simulator bar */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 2rem;
+    border-bottom: 1px solid #1E293B;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Remove default bullet points and stack horizontally */
+.top-nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav-links li {
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav-links a {
+    color: #94A3B8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.top-nav-links a:hover, .top-nav-links a.active {
+    color: white;
+}
+
+.logo {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+    letter-spacing: -0.04em;
+}
+
+.logo span {
+    color: #02B17D; /* Brand Mint Green */
+}
+
+/* Fix the Search Container & Input sizing */
+.search-container {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    color: #64748b;
+    pointer-events: none;
+}
+
+.search-input {
+    width: 100%;
+    background-color: #1E293B;
+    border: 1px solid #334155;
+    color: white;
+    padding: 0.5rem 1rem 0.5rem 2.2rem; /* Left padding keeps text clear of search icon */
+    border-radius: 6px;
+    font-size: 0.875rem;
+    box-sizing: border-box;
+}
+
+.search-input::placeholder {
+    color: #64748b;
+}
+        body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
     a{color:var(--blue);text-decoration:none} a:hover{text-decoration:underline}
     .topbar{height:10px;background:linear-gradient(90deg,var(--green),#fff,var(--red))}.hub-nav{position:relative;z-index:25;background:#111827;color:#fff;border-bottom:1px solid rgba(255,255,255,.14)}.hub-nav .hub-wrap{width:min(1180px,94%);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0;flex-wrap:wrap}.hub-title{font-weight:950;color:#fff;text-decoration:none;font-size:1.02rem}.hub-title span{color:var(--gold)}.hub-tabs{display:flex;gap:10px;flex-wrap:wrap}.hub-tabs a{color:#eaf0ff;text-decoration:none;font-weight:900;font-size:.9rem;padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}.hub-tabs a:hover{background:rgba(255,255,255,.18)}.hub-tabs .active{background:var(--gold);color:#1a1200;border-color:var(--gold)}
     .hero{position:relative;min-height:680px;display:flex;align-items:stretch;overflow:hidden;background:#111}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,19,30,.9),rgba(8,19,30,.62),rgba(8,19,30,.18)),url('https://images.pexels.com/photos/27832054/pexels-photo-27832054.jpeg') center/cover no-repeat;filter:saturate(1.06)}.breadcrumb{width:min(1180px,94%);margin:18px auto -16px;color:#dfe8ff;font-weight:800;position:relative;z-index:2}.breadcrumb a{color:#fff;text-decoration:underline;text-underline-offset:3px}.hero-inner{position:relative;z-index:1;width:min(1180px,94%);margin:0 auto;padding:72px 0;display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}.badge{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;padding:9px 14px;border-radius:999px;font-weight:800;backdrop-filter:blur(8px)}h1{font-size:clamp(2.4rem,5vw,5rem);line-height:.98;color:#fff;margin:18px 0;letter-spacing:-.045em}.hero p{color:#e8edf7;font-size:1.17rem;max-width:720px}.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;padding:14px 18px;border-radius:14px;font-weight:900}.btn.primary{background:var(--gold);color:#1a1200}.btn.secondary{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.34);color:#fff}.score-card{background:rgba(255,255,255,.93);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;backdrop-filter:blur(10px)}.score-card h2{margin:0 0 14px;font-size:1.4rem}.score-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.metric{background:#f7f8fc;border:1px solid var(--line);border-radius:16px;padding:14px}.metric strong{display:block;font-size:1.5rem;color:var(--green)}.metric span{font-size:.86rem;color:var(--muted);font-weight:800}.verdict{margin-top:16px;background:#ecf8f1;border:1px solid #ccebd8;border-radius:16px;padding:15px;font-weight:800;color:#145c38}
@@ -143,5 +243,7 @@
   </div>
 </main>
 <footer class="footer"><div class="footer-inner"><h2>Sources and update notes</h2><ol class="sources"><li>Numbeo, Lisbon vs. New York cost of living comparison, accessed for visual dashboard index differences.</li><li>LivingCost, Lisbon vs. New York cost comparison, used as a secondary directional benchmark.</li><li>VFS Global Portugal visa documents and minimum wage update, used for D7 process and threshold warning.</li><li>Portal das Finanças, Non-Habitual Resident information, used for NHR repeal and replacement context.</li><li>PwC Worldwide Tax Summaries, Portugal tax residence and personal income taxation summary.</li><li>IRS, U.S.-Portugal income tax treaty documents.</li><li>Image sources: Wikimedia Commons via Special:FilePath for Belem Tower, Lisbon tram, Porto Ribeira, Algarve, and Coimbra images.</li></ol><div class="disclaimer">This page is educational planning content, not tax, legal, immigration, healthcare, or investment advice. Retirees should verify visa requirements, tax treatment, insurance eligibility, and healthcare access with qualified professionals before relocating.</div></div></footer>
+<!--Google search script-->
+    <script async src="https://cse.google.com/cse.js?cx=40edcbb80dea44bf1"></script>
 </body>
 </html>
