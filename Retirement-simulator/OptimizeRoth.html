@@ -389,6 +389,28 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
     background:#0f172a;
     color:white;
 }
+
+/*<!-- Add goal button-->*/
+    .goal-btn{
+    border:1px solid #e2e8f0;
+    border-radius:14px;
+    background:white;
+    padding:20px;
+    cursor:pointer;
+    text-align:left;
+    font-weight:700;
+}
+
+.goal-btn span{
+    display:block;
+    margin-top:8px;
+    color:#64748b;
+    font-size:13px;
+}
+.goal-btn.active{
+    border:2px solid #2563eb;
+    background:#eff6ff;
+}
     @media(max-width:1200px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.layout{grid-template-columns:1fr}.mini-grid{grid-template-columns:1fr}.tree-grid{grid-template-columns:1fr}}@media(max-width:700px){.cards{grid-template-columns:1fr}.header{flex-direction:column}.title{font-size:28px}.wrap{padding:16px}}
 </style>
 
@@ -501,134 +523,195 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
 <div class="page" id="page-dashboard">
 <div class="wrap">
   <div class="header"><div><h1 class="title">Roth Inheritance Decision Tree V6.4 State Tax.3</h1><div class="subtitle" id="summaryText"></div></div><div class="header-actions"><button class="small-btn" id="resetBtn">Reset</button></div></div>
-  <div class="planner-shell">
+ <div class="planner-shell">
 
-  <div class="planner-header">
-    <h2>Retirement Tax Blueprint</h2>
-    <p>
-      Build a retirement strategy that minimizes taxes,
-      maximizes Roth wealth, and identifies your best
-      conversion window.
-    </p>
-  </div>
-
-  <!-- STEP 1 -->
-
-  <div class="wizard-card">
-    <div class="step-title">
-      Step 1 · Retirement Profile
+    <div class="planner-header">
+        <h2>Retirement Tax Blueprint</h2>
+        <p>
+            Discover your optimal Roth conversion strategy,
+            retirement location, and lifetime tax savings.
+        </p>
     </div>
 
-    <div class="input-grid">
+    <!-- STEP 1 -->
 
-      <div class="field">
-        <label>Current Age</label>
-        <input id="currentAge" type="number" value="45">
-      </div>
+    <div class="wizard-card">
 
-      <div class="field">
-        <label>Retirement Age</label>
-        <input id="retireAge" type="number" value="51">
-      </div>
+        <div class="step-title">
+            Step 1 · Retirement Profile
+        </div>
 
-      <div class="field">
-        <label>Current State</label>
-        <select id="residenceState"></select>
-      </div>
+        <div class="input-grid">
 
-      <div class="field">
-        <label>Social Security Start Age</label>
+            <div class="field">
+                <label>Current Age</label>
+                <input id="currentAge"
+                       type="number"
+                       value="45">
+            </div>
 
-        <select id="ssStartAge">
-          <option value="62">62</option>
-          <option value="67" selected>67</option>
-          <option value="70">70</option>
-        </select>
-      </div>
+            <div class="field">
+                <label>Retirement Age</label>
+                <input id="retireAge"
+                       type="number"
+                       value="55">
+            </div>
 
-    </div>
-  </div>
+            <div class="field">
+                <label>Current State</label>
+                <select id="residenceState"></select>
+            </div>
 
-  <!-- STEP 2 -->
+            <div class="field">
+                <label>Social Security Start Age</label>
+                <select id="ssStartAge">
+                    <option value="62">62</option>
+                    <option value="67" selected>67</option>
+                    <option value="70">70</option>
+                </select>
+            </div>
 
-  <div class="wizard-card">
-    <div class="step-title">
-      Step 2 · Assets
-    </div>
-
-    <div class="input-grid">
-
-      <div class="field">
-        <label>Pre-Tax IRA / 401(k)</label>
-        <input id="pretax" type="number" value="100000">
-      </div>
-
-      <div class="field">
-        <label>Roth Assets</label>
-        <input id="roth" type="number" value="20000">
-      </div>
-
-      <div class="field">
-        <label>Brokerage Assets</label>
-        <input id="brokerage" type="number" value="100000">
-      </div>
-
-      <div class="field">
-        <label>Cash</label>
-        <input id="cash" type="number" value="10000">
-      </div>
+        </div>
 
     </div>
-  </div>
 
-  <!-- STEP 3 -->
+    <!-- STEP 2 -->
 
-  <div class="wizard-card">
-    <div class="step-title">
-      Step 3 · Strategy
-    </div>
+    <div class="wizard-card">
 
-    <div class="strategy-grid">
+        <div class="step-title">
+            Step 2 · Assets
+        </div>
 
-      <button
-        class="strategy-btn active"
-        data-scenario="us">
-          
-        Recommended for most retirees who want to stay US for the entire period
+        <div class="input-grid">
 
-        <span>
-          Preserve ACA and minimize disruption.
-        </span>
+            <div class="field">
+                <label>Pre-Tax IRA / 401(k)</label>
+                <input id="pretax"
+                       type="number"
+                       value="1000000">
+            </div>
 
-      </button>
+            <div class="field">
+                <label>Roth Assets</label>
+                <input id="roth"
+                       type="number"
+                       value="250000">
+            </div>
 
-      <button
-        class="strategy-btn"
-        data-scenario="abroad">
+            <div class="field">
+                <label>Brokerage Assets</label>
+                <input id="brokerage"
+                       type="number"
+                       value="500000">
+            </div>
 
-        🌎 Overseas Conversion Window
+            <div class="field">
+                <label>Cash</label>
+                <input id="cash"
+                       type="number"
+                       value="50000">
+            </div>
 
-        <span>
-          Use low-tax years before Medicare.
-        </span>
-
-      </button>
-
-      <button
-        class="strategy-btn"
-        data-scenario="custom">
-
-        ⚙ Advanced Custom
-
-        <span>
-          Full control over assumptions.
-        </span>
-
-      </button>
+        </div>
 
     </div>
-  </div>
 
+    <!-- STEP 3 -->
+
+    <div class="wizard-card">
+
+        <div class="step-title">
+            Step 3 · Primary Goal
+        </div>
+
+        <div class="strategy-grid">
+
+            <button class="goal-btn active"
+                    data-goal="roth_inheritance">
+
+                Maximize Roth Inheritance
+
+                <span>
+                    Create the largest tax-free legacy.
+                </span>
+
+            </button>
+
+            <button class="goal-btn"
+                    data-goal="lifetime_tax">
+
+                Minimize Lifetime Tax
+
+                <span>
+                    Reduce taxes paid during retirement.
+                </span>
+
+            </button>
+
+            <button class="goal-btn"
+                    data-goal="healthcare_stability">
+
+                Preserve ACA & Medicare
+
+                <span>
+                    Avoid subsidy cliffs and IRMAA.
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- STEP 4 -->
+
+    <div class="wizard-card">
+
+        <div class="step-title">
+            Step 4 · Strategy
+        </div>
+
+        <div class="strategy-grid">
+
+            <button class="strategy-btn active"
+                    data-scenario="us">
+
+                🇺🇸 Stay in U.S.
+
+                <span>
+                    Recommended for most retirees.
+                </span>
+
+            </button>
+
+            <button class="strategy-btn"
+                    data-scenario="abroad">
+
+                🌎 Overseas Conversion Window
+
+                <span>
+                    Use low-tax years before Medicare.
+                </span>
+
+            </button>
+
+            <button class="strategy-btn"
+                    data-scenario="custom">
+
+                ⚙ Advanced Custom
+
+                <span>
+                    Full control over assumptions.
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
   <!-- ADVANCED SETTINGS -->
 
   <details class="advanced-panel">
@@ -657,9 +740,99 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
 
 </div>
   <div class="layout">
-    <div class="sidebar card"><div class="card-head"><h3>Inputs</h3></div><div class="card-body">
+    <div class="sidebar card"><div class="card-head">
+        <h3>Advanced Assumptions</h3>
+    </div><div class="card-body">
+        
       <!-- INPUT SIDEBAR: inputs() reads each field by id and converts it into model parameters. -->
-      <div class="section">
+       <!-- Group 1-->
+        <details open>
+
+<summary>
+Income & Tax Planning
+</summary>
+<div class="section">
+W2 Income
+1099 Income
+Passive Income
+Dividends
+State Tax
+Bracket Target
+Conversion Strategy
+    </div>
+
+</details>
+<!-- Group 2-->
+<details>
+
+<summary>
+Healthcare Planning
+</summary>
+
+<div class="section">
+
+    ACA
+
+    IRMAA
+
+    Employer Coverage
+
+</div>
+
+</details>
+<!-- Group 3-->
+<details>
+
+<summary>
+Family & Education
+</summary>
+
+<div class="section">
+
+    529
+
+    College
+
+</div>
+
+</details>
+<!-- Group 4-->
+ <details>
+
+<summary>
+Advanced Roth Controls
+</summary>
+
+<div class="section">
+
+    Conversion Posture
+
+    Estate Preference
+
+    Geography Path
+
+    Residency
+
+</div>
+
+</details> 
+<!-- Group 5-->
+        <details>
+
+<summary>
+Simulation Settings
+</summary>
+
+<div class="section">
+
+    Monte Carlo
+
+    Downside Return
+
+</div>
+
+</details>
+            <div class="section">
         <div class="field"><label>Primary planning priority</label><select id="planningObjective"><option value="roth_inheritance" selected>Maximize Roth inheritance</option><option value="family_after_tax">Maximize total family after-tax wealth</option><option value="lifetime_tax">Minimize lifetime tax</option><option value="liquidity">Preserve lifestyle / liquidity</option><option value="healthcare_stability">Minimize ACA / IRMAA disruption</option></select></div>
         <div class="field"><label>Conversion posture</label><select id="conversionPosture"><option value="conservative">Conservative: low brackets only</option><option value="balanced" selected>Balanced: tax-aware 22% / 24%</option><option value="aggressive">Aggressive: reduce inherited pre-tax assets</option><option value="opportunistic">Opportunistic: heavier in no-state-tax / abroad windows</option></select></div>
         <div class="field"><label>Residency / geography path</label><select id="geographyPath"><option value="current_state">Stay in current state</option><option value="no_tax_state">Move / return to no-tax state</option><option value="abroad_window" selected>Move abroad conversion window</option><option value="abroad_to_no_tax">Abroad, then return to no-tax state</option></select></div>
@@ -729,7 +902,7 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
         <div class="field"><label>Roth conversion engine</label><select id="conversionStrategy"><option value="optimized" selected>Objective-driven optimizer</option><option value="bracket">Simple bracket fill</option><option value="manual_zero">No conversions</option></select></div>
         <div class="field"><label>Downside return haircut %</label><input id="downsideReturnPct" type="number" step="0.1" value="3"></div>
         <div class="field"><label>Monte Carlo runs</label><input id="monteCarloRuns" type="number" value="300"></div>
-      </div>
+      </div></details>
     </div>  
       <div class="cards">
         <div class="card"><div class="card-body"><div class="metric">Roth at 65</div><div class="metric-value" id="cardRoth65"></div></div></div>
@@ -828,6 +1001,30 @@ let mainChart,
     });
 
 });
+    /*Add goal button logic*/
+    document
+.querySelectorAll('.goal-btn')
+.forEach(btn=>{
+
+    btn.addEventListener('click',()=>{
+
+        document
+        .querySelectorAll('.goal-btn')
+        .forEach(x=>x.classList.remove('active'));
+
+        btn.classList.add('active');
+
+        setInputValue(
+            'planningObjective',
+            btn.dataset.goal
+        );
+
+        render();
+
+    });
+
+});
+     /*End goal button logic*/
        /* End of added for UX change*/
 const fmt=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}),compact=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',notation:'compact',maximumFractionDigits:1});
 /* INPUT HELPERS: n() reads numeric inputs, b() reads checkboxes, v() reads select/text values. */
