@@ -159,6 +159,94 @@
     .path{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.path span{border-radius:999px;background:#f0f4fb;border:1px solid var(--line);padding:7px 10px;font-weight:850;color:#42526a;font-size:.84rem}
 
     .footer{background:#101827;color:#dbe4f4;padding:36px 0}.footer-inner{width:min(1200px,94%);margin:auto}.disclaimer{color:#b9c5da;border-top:1px solid rgba(255,255,255,.12);padding-top:18px;margin-top:18px;font-size:.9rem}
+    /*<!--Mega menu CSS-->*/
+.nav-item {
+    position: relative;
+}
+
+/* Mega Menu Panel full width */
+.mega-menu {
+    .mega-menu {
+    position: absolute;
+    top: 100%;
+    left: -350px;
+
+    width: 1200px;
+    max-width: 90vw;
+
+    background: white;
+
+    display: grid;
+    grid-template-columns: 250px 250px 1fr;
+
+    padding: 40px;
+}
+}
+
+/* Show on hover */
+.mega-menu-parent:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column h4 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #64748b;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.column a {
+    text-decoration: none;
+    color: #0f172a;
+    padding: 8px 0;
+    font-weight: 500;
+}
+
+.column a:hover {
+    color: #2563eb;
+}
+
+/* Promo Card */
+.promo {
+    background: #1d2252;
+    color: white;
+
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.promo h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.promo p {
+    line-height: 1.6;
+}
+
+.promo button {
+    margin-top: 20px;
+
+    border: none;
+    background: white;
+    color: #1d2252;
+
+    padding: 12px 20px;
+    border-radius: 6px;
+
+    font-weight: 700;
+    cursor: pointer;
+}
+    /*<!--End of Mega menu CSS-->*/
     @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
     @keyframes pop{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
     @media(max-width:930px){.hero-inner,.layout{grid-template-columns:1fr}.side{position:static}.options{grid-template-columns:1fr}.progress{grid-template-columns:1fr 1fr}.range-wrap{grid-template-columns:1fr}.hero-inner{min-height:auto;padding:56px 0}.stat-grid{grid-template-columns:1fr 1fr}}
@@ -166,14 +254,45 @@
   </style>
 </head>
 <body>
-<div class="topbar"></div>
-<div class="hub-nav">
-  <div class="hub-wrap">
-    <a class="hub-title" href="OptimizeRoth.html#intro">Retirement <span>Simulator</span></a>
-    <div class="hub-tabs">
-       <a href="OptimizeRoth.html#intro">Introduction</a>
-      <a href="OptimizeRoth.html">Decision Tree Dashboard</a>
-      <a class="active" href="RetiringOverseas.html">Retiring Overseas</a>
+<!-- TOP NAVIGATION: switches between intro, overseas page, and dashboard. -->
+<nav class="topnav">
+  <!--<a class="topnav-brand" href="#" onclick="showPage('intro');return false;">US<span>city matcher</span></a>-->
+  <div class="topnav-links">
+    <a class="topnav-link active" href="#" onclick="showPage('intro');return false;" id="nav-intro">Introduction</a>
+    <div class="topnav-divider"></div>
+    <div class="nav-item mega-menu-parent">
+    <a class="topnav-link" href="#">Retiring Overseas</a>
+
+    <div class="mega-menu">
+
+        <div class="column">
+            <h4>Tools</h4>
+            <a href="RetiringOverseas.html">Overseas City Matcher</a>
+            <a href="cost_for_65+.html">Healthcare Cost Tool</a>
+            <a href="#">Tax Planning Tool</a>
+        </div>
+
+        <div class="column">
+            <h4>Cities</h4>
+            <a href="cities/auckland.html">Auckland</a>
+            <a href="cities/bangkok.html">Bangkok</a>
+            <a href="#">Lisbon</a>
+            <a href="#">Chiang Mai</a>
+        </div>
+
+        <div class="column promo">
+            <h2>How Roth Conversions Accelerate Wealth</h2>
+
+            <p>
+                Explore how moving overseas may create low-tax
+                Roth conversion opportunities before Medicare.
+            </p>
+
+            <button>Learn More</button>
+        </div>
+
+    </div>
+</div>
         <a class="active" href="UScitymatcher.html">U.S. City Matcher</a>
         <a class="active" href="cost_for_65+.html">Medical cost for retirees 65+</a>
     </div>
