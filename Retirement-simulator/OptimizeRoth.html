@@ -54,6 +54,7 @@
     padding:0 28px;
     height:52px;
     box-shadow:0 2px 8px rgba(0,0,0,.18)}
+     overflow: visible;
     .topnav-brand
     {color:#fff;
      font-weight:750;
@@ -184,7 +185,10 @@
 .search-input::placeholder {
     color: #64748b;
 }
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    body{
+         overflow-x: hidden;
+        margin:0;
+        font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
 .wrap{max-width:1560px;margin:0 auto;padding:24px}.header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:18px}
 .title{font-size:32px;font-weight:750;margin:0;letter-spacing:-.02em}.subtitle{color:var(--muted);margin-top:8px;max-width:1050px;line-height:1.45}
 .toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px;align-items:center}.pill-group{display:flex;gap:8px;flex-wrap:wrap}
@@ -203,27 +207,39 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
     position: relative;
 }
 
+/* Mega Menu Panel */
 .mega-menu {
-    display: none;
     position: absolute;
     top: 100%;
-     left: -200px;
- width: 800px;
-    display: none;
+    left: -200px;
+
+    width: 900px;
 
     background: white;
+
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
+
     padding: 30px;
 
-    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
     gap: 30px;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    transition: all .25s ease;
+
+    z-index: 9999;
 }
-.mega-menu-parent {
-    position: relative;
-}
+
+/* Show on hover */
 .mega-menu-parent:hover .mega-menu {
-    display:  grid;
-     opacity: 1;
+    opacity: 1;
     visibility: visible;
+    transform: translateY(0);
 }
 
 .column {
@@ -231,22 +247,55 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
     flex-direction: column;
 }
 
-.column a {
-    padding: 8px 0;
-    text-decoration: none;
-    color: #333;
+.column h4 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #64748b;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
 }
-    .promo {
+
+.column a {
+    text-decoration: none;
+    color: #0f172a;
+    padding: 8px 0;
+    font-weight: 500;
+}
+
+.column a:hover {
+    color: #2563eb;
+}
+
+/* Promo Card */
+.promo {
     background: #1d2252;
     color: white;
-    padding: 25px;
-    border-radius: 6px;
+
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.promo h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.promo p {
+    line-height: 1.6;
 }
 
 .promo button {
     margin-top: 20px;
-    padding: 12px 20px;
+
     border: none;
+    background: white;
+    color: #1d2252;
+
+    padding: 12px 20px;
+    border-radius: 6px;
+
+    font-weight: 700;
     cursor: pointer;
 }
     /*<!--End of Mega menu CSS-->*/
@@ -267,18 +316,33 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
     <a class="topnav-link" href="#">Retiring Overseas</a>
 
     <div class="mega-menu">
+
         <div class="column">
-            <a href="RetiringOverseas.html">Overseas city matcher tool</a>
-            <a href="cities/auckland.html">Auckland</a>
-          <a href="cities/bangkok.html">Bangkok</a>
-              <div class="promo">
-                    <h2>How Roth conversion destination change your wealth acceleration</h2>
-                    <p>
-                        Explore the options
-                    </p>
-                    <button>Learn More</button>
-                </div>
+            <h4>Tools</h4>
+            <a href="RetiringOverseas.html">Overseas City Matcher</a>
+            <a href="cost_for_65+.html">Healthcare Cost Tool</a>
+            <a href="#">Tax Planning Tool</a>
         </div>
+
+        <div class="column">
+            <h4>Cities</h4>
+            <a href="cities/auckland.html">Auckland</a>
+            <a href="cities/bangkok.html">Bangkok</a>
+            <a href="#">Lisbon</a>
+            <a href="#">Chiang Mai</a>
+        </div>
+
+        <div class="column promo">
+            <h2>How Roth Conversions Accelerate Wealth</h2>
+
+            <p>
+                Explore how moving overseas may create low-tax
+                Roth conversion opportunities before Medicare.
+            </p>
+
+            <button>Learn More</button>
+        </div>
+
     </div>
 </div>
 
