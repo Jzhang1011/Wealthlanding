@@ -43,7 +43,66 @@
    - .chart-card/.table-wrap: chart and roadmap containers
    ============================================================================ */
 :root{--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--text:#0f172a;--muted:#64748b}
-.topnav{position:sticky;top:0;z-index:100;background:#0f172a;display:flex;align-items:center;gap:0;padding:0 28px;height:52px;box-shadow:0 2px 8px rgba(0,0,0,.18)}.topnav-brand{color:#fff;font-weight:750;font-size:16px;letter-spacing:-.02em;text-decoration:none;margin-right:28px;white-space:nowrap}.topnav-brand span{color:#60a5fa}.topnav-links{display:flex;gap:2px;align-items:center}.topnav-link{color:#94a3b8;text-decoration:none;font-size:14px;font-weight:550;padding:6px 14px;border-radius:8px;transition:background .15s,color .15s;white-space:nowrap}.topnav-link:hover{background:rgba(255,255,255,.08);color:#fff}.topnav-link.active{background:rgba(96,165,250,.15);color:#60a5fa}.topnav-divider{width:1px;height:24px;background:rgba(255,255,255,.1);margin:0 8px}.page{display:none}.page.active{display:block}.intro-wrap{max-width:900px;margin:0 auto;padding:48px 24px}.intro-hero{text-align:center;padding:56px 0 40px}.intro-hero h1{font-size:42px;font-weight:800;letter-spacing:-.03em;margin:0 0 16px;line-height:1.1}.intro-hero p{font-size:18px;color:#475569;max-width:640px;margin:0 auto 32px;line-height:1.6}.intro-hero .cta{display:inline-block;background:#2563eb;color:#fff;padding:14px 32px;border-radius:14px;font-size:16px;font-weight:700;text-decoration:none;cursor:pointer;border:none;transition:background .15s}.intro-hero .cta:hover{background:#1d4ed8}.intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px}@media(max-width:700px){.intro-grid{grid-template-columns:1fr}}.intro-card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:24px}.intro-card-icon{font-size:28px;margin-bottom:12px}.intro-card h3{margin:0 0 8px;font-size:16px;font-weight:700}.intro-card p{margin:0;font-size:14px;color:#475569;line-height:1.55}.intro-section{margin-bottom:40px}.intro-section h2{font-size:22px;font-weight:750;margin:0 0 16px;letter-spacing:-.02em}.intro-steps{counter-reset:steps;display:flex;flex-direction:column;gap:14px}.intro-step{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px}.intro-step-num{counter-increment:steps;min-width:32px;height:32px;background:#2563eb;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:750;font-size:14px;flex-shrink:0}.intro-step-num::before{content:counter(steps)}.intro-step-body h4{margin:0 0 4px;font-size:15px;font-weight:700}.intro-step-body p{margin:0;font-size:14px;color:#475569;line-height:1.5}.intro-disclaimer{background:#fef9c3;border:1px solid #fde68a;border-radius:14px;padding:16px 20px;font-size:13px;color:#713f12;line-height:1.55}*{box-sizing:border-box}
+.topnav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:#0f172a;
+    display:flex;
+    align-items:center;
+    gap:0;
+    padding:0 28px;
+    height:52px;
+    box-shadow:0 2px 8px rgba(0,0,0,.18)}
+    .topnav-brand
+    {color:#fff;
+     font-weight:750;
+     font-size:16px;
+     letter-spacing:-.02em;
+     text-decoration:none;
+     margin-right:28px;
+     white-space:nowrap
+    }
+    .topnav-brand span{color:#60a5fa}
+    .topnav-links{
+        display:flex;
+        gap:2px;
+        align-items:center
+    }
+    .topnav-link
+    {color:#94a3b8;
+     text-decoration:none;
+     font-size:14px;
+     font-weight:550;
+     padding:6px 14px;
+     border-radius:8px;
+     transition:background .15s,color .15s;
+     white-space:nowrap}
+    .topnav-link:hover{
+        background:rgba(255,255,255,.08);
+        color:#fff;
+    }
+    .topnav-link.active
+    {background:rgba(96,165,250,.15);
+     color:#60a5fa;
+    }
+    .topnav-divider{
+        width:1px;
+        height:24px;
+        background:rgba(255,255,255,.1);
+        margin:0 8px}
+    .page{display:none}
+    .page.active{display:block}
+    .intro-wrap{max-width:900px;
+                margin:0 auto;
+                padding:48px 24px}
+    .intro-hero{text-align:center;
+                padding:56px 0 40px}
+    .intro-hero h1{font-size:42px;
+                   font-weight:800;
+                   letter-spacing:-.03em;
+                   margin:0 0 16px;line-height:1.1}
+    .intro-hero p{font-size:18px;color:#475569;max-width:640px;margin:0 auto 32px;line-height:1.6}.intro-hero .cta{display:inline-block;background:#2563eb;color:#fff;padding:14px 32px;border-radius:14px;font-size:16px;font-weight:700;text-decoration:none;cursor:pointer;border:none;transition:background .15s}.intro-hero .cta:hover{background:#1d4ed8}.intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px}@media(max-width:700px){.intro-grid{grid-template-columns:1fr}}.intro-card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:24px}.intro-card-icon{font-size:28px;margin-bottom:12px}.intro-card h3{margin:0 0 8px;font-size:16px;font-weight:700}.intro-card p{margin:0;font-size:14px;color:#475569;line-height:1.55}.intro-section{margin-bottom:40px}.intro-section h2{font-size:22px;font-weight:750;margin:0 0 16px;letter-spacing:-.02em}.intro-steps{counter-reset:steps;display:flex;flex-direction:column;gap:14px}.intro-step{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px}.intro-step-num{counter-increment:steps;min-width:32px;height:32px;background:#2563eb;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:750;font-size:14px;flex-shrink:0}.intro-step-num::before{content:counter(steps)}.intro-step-body h4{margin:0 0 4px;font-size:15px;font-weight:700}.intro-step-body p{margin:0;font-size:14px;color:#475569;line-height:1.5}.intro-disclaimer{background:#fef9c3;border:1px solid #fde68a;border-radius:14px;padding:16px 20px;font-size:13px;color:#713f12;line-height:1.55}*{box-sizing:border-box}
      /* --- PREMIUM TOP NAVIGATION STYLES --- */
 .global-header {
     background-color: #0B132B; /* Premium Dark Navy to match your simulator bar */
@@ -139,7 +198,59 @@ button.pill{border:1px solid var(--border);background:#fff;color:var(--text);pad
 table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--border);vertical-align:top;white-space:nowrap}th{color:var(--muted);font-weight:650;position:sticky;top:0;background:#fff;z-index:1}
 .table-wrap{max-height:620px;overflow:auto;border-radius:14px;border:1px solid var(--border)}.constraint{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:4px 8px;white-space:nowrap;font-size:12px}.note-list{margin:0;padding-left:18px;color:#334155;line-height:1.55}
 .header-actions{display:flex;gap:10px}.small-btn{border:1px solid var(--border);background:#fff;padding:10px 14px;border-radius:14px;cursor:pointer;font-weight:650}.summary-box{line-height:1.55;color:#334155}.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.callout{background:#f8fafc;border:1px solid var(--border);border-radius:14px;padding:14px;color:#334155;line-height:1.5}.tree-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.tree-node{border:1px solid var(--border);border-radius:14px;padding:12px;background:#fff}.tree-node b{display:block;margin-bottom:5px}.tree-node span{color:var(--muted);font-size:12px;line-height:1.35}.badge{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:4px 8px;margin:2px 4px 2px 0;font-size:12px;background:#f8fafc;color:#334155}.score{font-weight:750}.path-title{font-weight:750;font-size:18px;margin-bottom:8px}.path-sub{color:#475569;line-height:1.5}.field.preset-locked label{color:#94a3b8}.field.preset-locked input,.field.preset-locked select{opacity:.45;pointer-events:none;background:#f1f5f9;color:#94a3b8}.field.preset-locked::after{content:'Set by scenario';display:block;font-size:11px;color:#94a3b8;margin-top:3px}.switch-row.preset-locked{opacity:.45;pointer-events:none}.switch-row.preset-locked::after{content:' — set by scenario';font-size:11px;color:#94a3b8}
-@media(max-width:1200px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.layout{grid-template-columns:1fr}.mini-grid{grid-template-columns:1fr}.tree-grid{grid-template-columns:1fr}}@media(max-width:700px){.cards{grid-template-columns:1fr}.header{flex-direction:column}.title{font-size:28px}.wrap{padding:16px}}
+/*<!--Mega menu CSS-->*/
+.nav-item {
+    position: relative;
+}
+
+.mega-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+     left: -200px;
+ width: 800px;
+    display: none;
+
+    background: white;
+    padding: 30px;
+
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.mega-menu-parent {
+    position: relative;
+}
+.mega-menu-parent:hover .mega-menu {
+    display:  grid;
+     opacity: 1;
+    visibility: visible;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column a {
+    padding: 8px 0;
+    text-decoration: none;
+    color: #333;
+}
+    .promo {
+    background: #1d2252;
+    color: white;
+    padding: 25px;
+    border-radius: 6px;
+}
+
+.promo button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+    /*<!--End of Mega menu CSS-->*/
+    @media(max-width:1200px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.layout{grid-template-columns:1fr}.mini-grid{grid-template-columns:1fr}.tree-grid{grid-template-columns:1fr}}@media(max-width:700px){.cards{grid-template-columns:1fr}.header{flex-direction:column}.title{font-size:28px}.wrap{padding:16px}}
 </style>
 
 
@@ -152,8 +263,26 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
   <div class="topnav-links">
     <a class="topnav-link active" href="#" onclick="showPage('intro');return false;" id="nav-intro">Introduction</a>
     <div class="topnav-divider"></div>
-    <a class="topnav-link" href="RetiringOverseas.html">Reitring Overseas</a>
-    <div class="topnav-divider"></div>
+    <div class="nav-item mega-menu-parent">
+    <a class="topnav-link" href="#">Retiring Overseas</a>
+
+    <div class="mega-menu">
+        <div class="column">
+            <a href="RetiringOverseas.html">Overseas city matcher tool</a>
+            <a href="cities/auckland.html">Auckland</a>
+          <a href="cities/bangkok.html">Bangkok</a>
+              <div class="promo">
+                    <h2>How Roth conversion destination change your wealth acceleration</h2>
+                    <p>
+                        Explore the options
+                    </p>
+                    <button>Learn More</button>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="topnav-divider"></div>
     <a class="topnav-link" href="UScitymatcher.html">US city matcher</a>
           <div class="topnav-divider"></div>
     <a class="topnav-link" href="cost_for_65+.html">Medical cost for retirees 65+</a>
