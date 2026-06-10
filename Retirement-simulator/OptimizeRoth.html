@@ -680,8 +680,8 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
         <div class="field"><label>Cash reserve</label><input id="cash" type="number" value="10000"></div>--> Duplicate with wizard input */
         <div class="field"><label>Average brokerage cost basis %</label><input id="brokerageBasisPct" type="number" value="70"></div>
         <div class="helper">Brokerage grows as ETF value; capital gains are realized only when sold.</div>
-        <div class="field"><label>Pre-tax retirement</label><input id="pretax" type="number" value="100000"></div>
-        <div class="field"><label>Roth balance</label><input id="roth" type="number" value="20000"></div>
+       <!-- <div class="field"><label>Pre-tax retirement</label><input id="pretax" type="number" value="100000"></div>
+        <div class="field"><label>Roth balance</label><input id="roth" type="number" value="20000"></div>-->
         <div class="field"><label>HSA balance</label><input id="hsa" type="number" value="5000"></div>
         <div class="field"><label>529 balance</label><input id="plan529" type="number" value="1000"></div>
       </div>
@@ -718,7 +718,7 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
         <div class="field"><label>Ordinary passive income</label><input id="passiveIncome" type="number" value="50000"></div>
         <div class="field"><label>Annual qualified dividends</label><input id="qualifiedDividends" type="number" value="0"></div>
         <div class="field"><label>Cash interest yield %</label><input id="cashYieldPct" type="number" step="0.1" value="2.0"></div>
-       /*<!-- <div class="field"><label>Residence state for income tax</label><select id="residenceState"></select></div>--> Duplicate with wizard input */
+      <!-- <div class="field"><label>Residence state for income tax</label><select id="residenceState"></select></div> Duplicate with wizard input--> 
         <div class="field"><label>State income tax planning rate %</label><input id="stateTaxRate" type="number" step="0.01" value="5.75"></div>
         <div class="helper">The selector pre-fills a simplified 2026 top/planning rate. Edit the rate if you want to model your own effective state tax rate.</div>
         <div class="field"><label>Residency status after move</label><select id="residencyMode"><option value="resident" selected>Resident of selected state</option><option value="part_year">Part-year resident</option><option value="nonresident">Nonresident with state-source income</option><option value="none">No state income tax resident</option></select></div>
@@ -740,9 +740,10 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
         <div class="card"><div class="card-body"><div class="metric">Lifetime tax paid</div><div class="metric-value" id="cardLifetimeTax"></div><div class="metric-sub">Excludes IRMAA</div></div></div>
         <div class="card"><div class="card-body"><div class="metric">Age 85 today $</div><div class="metric-value" id="cardTerminalToday"></div><div class="metric-sub">Inflation-adjusted</div></div></div>
           /* Add new KPI*/
+        <div class="card"><div class="card-body"><div class="metric">Lifetime Tax Saved</div><div class="metric-value" id="cardTaxSaved"></div><div class="metric-sub">vs No Conversion Strategy</div></div></div>
           <div class="card"><div class="card-body"><div class="metric">Estate Value Gain</div><div class="metric-value" id="cardEstateGain"></div><div class="metric-sub">Additional After-Tax Wealth</div></div></div>
         <div class="card"><div class="card-body"><div class="metric">Pretax IRA Reduced</div><div class="metric-value" id="cardPretaxReduction"></div><div class="metric-sub">Future RMD Risk Removed</div></div></div>
-            
+          </div>    
       <div class="card chart-card"><div class="card-head"><h3>Decision tree path</h3></div><div class="card-body"><div class="path-title" id="pathHeadline"></div><div class="path-sub" id="pathSummary"></div><div class="tree-grid" style="margin-top:14px"><div class="tree-node"><b>1. Priority</b><span id="treePriority"></span></div><div class="tree-node"><b>2. Conversion path</b><span id="treeConversion"></span></div><div class="tree-node"><b>3. Geography path</b><span id="treeGeography"></span></div><div class="tree-node"><b>4. Healthcare constraint</b><span id="treeHealthcare"></span></div><div class="tree-node"><b>5. IRMAA tolerance</b><span id="treeIrmaa"></span></div><div class="tree-node"><b>6. Estate outcome</b><span id="treeEstate"></span></div></div></div></div>
       <div class="card chart-card"><div class="card-head"><h3>Tradeoff center</h3></div><div class="card-body"><div class="table-wrap" style="max-height:360px"><table><thead><tr><th>Tradeoff</th><th>Status</th><th>Planning lever</th><th>Why it matters</th></tr></thead><tbody id="tradeoffBody"></tbody></table></div></div></div>
       <div class="card chart-card"><div class="card-head"><h3 id="mainChartTitle">Wealth composition by age</h3></div><div class="card-body"><div class="chart-wrap"><div id="mainChart" class="svg-chart"></div></div></div></div>
@@ -796,8 +797,16 @@ let chartView='wealth',mainChart,rothAdditionsChart,wealthBlocksChart;
 .getElementById('ssStartAge')
 .addEventListener('change',e=>{
     ssAge = Number(e.target.value);
+    let ssAge = 67;
     render();
 });
+    let scenarioMode='us';
+let chartView='wealth';
+let ssAge=67;
+
+let mainChart,
+    rothAdditionsChart,
+    wealthBlocksChart;
     document
 .querySelectorAll('.strategy-btn')
 .forEach(btn => {
@@ -985,20 +994,7 @@ function applyScenarioPreset(mode){
     setCheckedValue('preserveAca',false);
     setInputValue('residenceState','VA'); syncStateRate();
     setInputValue('residencyMode','none');
-  } else if(mode==='custom'){
-    setInputValue('planningObjective','roth_inheritance');
-    setInputValue('conversionPosture','balanced');
-    setInputValue('geographyPath','current_state');
-    setInputValue('acaStrategy','accept_loss');
-    setInputValue('irmaaStrategy','allow_first');
-    setInputValue('estatePreference','max_roth');
-    setInputValue('conversionStrategy','bracket');
-    setInputValue('bracketTarget','24');
-    setCheckedValue('preserveAca',false);
-    setInputValue('residenceState','VA'); syncStateRate();
-    setInputValue('residencyMode','resident');
   }
-}
 
 /* Adds preset-locked styling to fields controlled by selected scenario. */
 function updateLockedFields(mode){
@@ -1009,8 +1005,7 @@ function updateLockedFields(mode){
   custom:[],
     us:['conversionStrategy','residencyMode'],
     abroad:['conversionStrategy','bracketTarget','residencyMode','preserveAca'],
-    custom:['conversionStrategy','bracketTarget','residencyMode','preserveAca']
-  };
+      };
   // Clear all locks first
   document.querySelectorAll('.field.preset-locked,.switch-row.preset-locked').forEach(el=>el.classList.remove('preset-locked'));
   // Apply locks
@@ -1024,7 +1019,7 @@ function updateLockedFields(mode){
 }
 /* EVENT WIRING AND INITIALIZATION: attach listeners, initialize dropdowns, render initial dashboard. */
 populateStateSelector();
-/*<!--document.querySelectorAll('#scenarioGroup .pill').forEach(btn=>btn.addEventListener('click',()=>{applyScenarioPreset(btn.dataset.scenario);updateLockedFields(btn.dataset.scenario);document.querySelectorAll('#scenarioGroup .pill').forEach(x=>x.classList.remove('active'));btn.classList.add('active');render()}));-->*/
+/*<!--document.querySelectorAll('#scenarioGroup .pill').forEach(btn=>btn.addEventListener('click',()=>{applyScenarioPreset(btn.dataset.scenario);updateLockedFields(btn.dataset.scenario);render(); document.querySelectorAll('#scenarioGroup .pill').forEach(x=>x.classList.remove('active'));btn.classList.add('active');render()}));-->*/
 
     /*Replaced ssGroup with dropdown*/
     const ssDropdown =
