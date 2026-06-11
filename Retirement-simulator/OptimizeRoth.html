@@ -915,11 +915,22 @@ function render(){
     {label:'Conversions',data:rows.map(r=>r.conv),backgroundColor:'#10b981'}
   ]}});
 
-  wealthBlocksChart=new Chart(document.getElementById('wealthBlocksChart'),{type:'bar',data:{labels:ms.map(r=>r.age),datasets:[
-    {label:'Pre-tax',data:ms.map(r=>r.pretax),backgroundColor:'#ea580c'},
-    {label:'Brokerage',data:ms.map(r=>r.broker),backgroundColor:'#15803d'},
-    {label:'Roth',data:ms.map(r=>r.roth),backgroundColor:'#2563eb'}
-  ]}});
+ // OLD: wealthBlocksChart = new Chart(document.getElementById('wealthBlocksChart'), ...
+  // REPLACE WITH THIS NEW EXPENSE-TRACKING FILTER:
+
+  wealthBlocksChart = new Chart(document.getElementById('wealthBlocksChart'), {
+    type: 'bar',
+    data: {
+      labels: ms.map(r => r.age), // Keeps the key milestone ages (like 45, 51, 67, 85)
+      datasets: [
+        {
+          label: 'Annual Spending (Includes College)',
+          data: ms.map(r => r.spend), // Maps the inflated living costs + college costs
+          backgroundColor: '#ef4444'  // A distinct crimson red for expenses
+        }
+      ]
+    }
+  });
 // Populate the dynamic observation notes section
   const note1El = document.getElementById('note1');
   const note2El = document.getElementById('note2');
