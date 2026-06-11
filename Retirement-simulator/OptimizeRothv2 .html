@@ -408,7 +408,7 @@
           <div class="field"><label>Retirement Age</label><input id="retireAge" type="number" value="51"></div>
           <div class="field"><label>Residence State for Income Tax</label><select id="residenceState"></select></div>
         </div>
-   <div class="sidebar">
+
         <div class="wizard-card">
           <div class="step-title">Step 2 · Assets</div>
           <div class="field"><label>Pre-Tax IRA / 401(k)</label><input id="pretax" type="number" value="100000"></div>
@@ -452,9 +452,12 @@
             </button>
           </div>
         </div>
-
       </div>
-
+<div class="layout">
+    <div class="sidebar card">
+      <div class="card-head">
+          <h3>Advanced Assumptions</h3>
+      </div>
       <div class="card card-body" style="border-radius: 14px; margin-top:10px;">
         <h4 style="margin:0 0 12px; font-size:12px; text-transform:uppercase; color:var(--muted); letter-spacing:0.04em;">Advanced Assumptions</h4>
         <div class="field"><label>Employer coverage ends at age</label><input id="employerCoverageEndAge" type="number" value="51"></div>
@@ -506,7 +509,7 @@
         <select id="estatePreference" style="display:none;"><option value="max_roth">max_roth</option><option value="balanced_mix">balanced_mix</option><option value="min_pretax">min_pretax</option></select>
       </div>
     </div>
-
+   </div>
     <div class="main-content">
       
       <div class="cards">
