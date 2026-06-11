@@ -453,54 +453,74 @@
           </div>
         </div>
       </div>
-<div class="layout">
+  <div class="layout">
     <div class="sidebar card">
       <div class="card-head">
           <h3>Advanced Assumptions</h3>
       </div>
-      <div class="card card-body" style="border-radius: 14px; margin-top:10px;">
-        <h4 style="margin:0 0 12px; font-size:12px; text-transform:uppercase; color:var(--muted); letter-spacing:0.04em;">Advanced Assumptions</h4>
-        <div class="field"><label>Employer coverage ends at age</label><input id="employerCoverageEndAge" type="number" value="51"></div>
-        <div class="field"><label>Move abroad start age</label><input id="moveAbroadStartAge" type="number" value="0"></div>
-        <div class="field"><label>Move abroad end / return-to-U.S. age</label><input id="moveAbroadEndAge" type="number" value="0"></div>
-        <div class="field"><label>Average brokerage cost basis %</label><input id="brokerageBasisPct" type="number" value="70"></div>
-        <div class="field"><label>HSA balance</label><input id="hsa" type="number" value="5000"></div>
-        <div class="field"><label>529 balance</label><input id="plan529" type="number" value="1000"></div>
-        <div class="field"><label>Pre-retirement spending</label><input id="preRetirementSpend" type="number" value="140000"></div>
-        <div class="field"><label>Post-retirement spending</label><input id="annualSpend" type="number" value="100000"></div>
-        <div class="field"><label>College cost per child</label><input id="collegeCostPerChild" type="number" value="0"></div>
-        <div class="field"><label>General inflation %</label><input id="inflation" type="number" step="0.1" value="3"></div>
-        <div class="field"><label>College inflation %</label><input id="collegeInflation" type="number" step="0.1" value="3"></div>
-        <div class="field"><label>Annual backdoor Roth per adult</label><input id="annualBackdoorPerAdult" type="number" value="7500"></div>
-        <div class="switch-row"><span>Mega backdoor enabled</span><input id="megaBackdoorEnabled" type="checkbox" checked></div>
-        <div class="field"><label>Annual mega backdoor amount</label><input id="annualMegaBackdoor" type="number" value="34000"></div>
-        <div class="field"><label>Mega backdoor start age</label><input id="megaBackdoorStartAge" type="number" value="45"></div>
-        <div class="field"><label>Mega backdoor end age</label><input id="megaBackdoorEndAge" type="number" value="51"></div>
-        <div class="switch-row"><span>Part-time work after retirement</span><input id="partTimeEnabled" type="checkbox" checked></div>
-        <div class="field"><label>Part-time income</label><input id="partTimeIncome" type="number" value="50000"></div>
-        <div class="field"><label>Part-time start age</label><input id="partTimeStartAge" type="number" value="52"></div>
-        <div class="field"><label>Part-time end age</label><input id="partTimeEndAge" type="number" value="60"></div>
-        <div class="switch-row"><span>Continue Roth contributions while part-time</span><input id="continueRothContrib" type="checkbox" checked></div>
-        <div class="field"><label>529 contribution start age</label><input id="plan529StartAge" type="number" value="45"></div>
-        <div class="field"><label>Annual 529 contribution</label><input id="annual529Contribution" type="number" value="0"></div>
-        <div class="field"><label>529 contribution end age</label><input id="plan529EndAge" type="number" value="55"></div>
-        <div class="field"><label>HSA contribution start age</label><input id="hsaStartAge" type="number" value="45"></div>
-        <div class="field"><label>Annual HSA contribution</label><input id="annualHsaContribution" type="number" value="8750"></div>
-        <div class="switch-row"><span>Contribute to HSA until retirement</span><input id="growHsaUntilRetire" type="checkbox" checked></div>
-        <div class="field"><label>Current W-2 income</label><input id="currentW2Income" type="number" value="1000000"></div>
-        <div class="field"><label>Annual 1099 income</label><input id="annual1099Income" type="number" value="50000"></div>
-        <div class="field"><label>Ordinary passive income</label><input id="passiveIncome" type="number" value="50000"></div>
-        <div class="field"><label>Annual qualified dividends</label><input id="qualifiedDividends" type="number" value="0"></div>
-        <div class="field"><label>Cash interest yield %</label><input id="cashYieldPct" type="number" step="0.1" value="2.0"></div>
-        <div class="field"><label>State income tax planning rate %</label><input id="stateTaxRate" type="number" step="0.01" value="5.75"></div>
-        <div class="field"><label>Residency status after move</label><select id="residencyMode"><option value="resident" selected>Resident of selected state</option><option value="part_year">Part-year resident</option><option value="nonresident">Nonresident with state-source income</option><option value="none">No state income tax resident</option></select></div>
-        <div class="field"><label>State-source income after move</label><input id="vaSourceIncome" type="number" value="0"></div>
-        <div class="field"><label>Virginia 529 accounts</label><input id="va529Accounts" type="number" value="3"></div>
-        <div class="switch-row"><span>Preserve ACA subsidies</span><input id="preserveAca" type="checkbox" checked></div>
-        <div class="field"><label>Top federal bracket target</label><select id="bracketTarget"><option value="12">12%</option><option value="22">22%</option><option value="24" selected>24%</option><option value="32">32%</option><option value="35">35%</option><option value="none">No bracket cap</option></select></div>
-        <div class="field"><label>Roth conversion engine</label><select id="conversionStrategy"><option value="optimized" selected>Objective-driven optimizer</option><option value="bracket">Simple bracket fill</option><option value="manual_zero">No conversions</option></select></div>
-        <div class="field"><label>Downside return haircut %</label><input id="downsideReturnPct" type="number" step="0.1" value="3"></div>
-        <div class="field"><label>Monte Carlo runs</label><input id="monteCarloRuns" type="number" value="300"></div>
+      <div class="card-body">
+        <div class="helper">⚙ Customizable path: all inputs below are free. The other three buttons are presets — they lock the strategy dropdowns and show what each path controls.</div>
+        
+        <div class="section">
+          <div class="field"><label>Employer coverage ends at age</label><input id="employerCoverageEndAge" type="number" value="51"></div>
+          <div class="field"><label>Move abroad start age</label><input id="moveAbroadStartAge" type="number" value="0"></div>
+          <div class="field"><label>Move abroad end / return-to-U.S. age</label><input id="moveAbroadEndAge" type="number" value="0"></div>
+        </div>
+        
+        <div class="section">
+          <div class="field"><label>Average brokerage cost basis %</label><input id="brokerageBasisPct" type="number" value="70"></div>
+          <div class="helper">Brokerage grows as ETF value; capital gains are realized only when sold.</div>
+          <div class="field"><label>HSA balance</label><input id="hsa" type="number" value="5000"></div>
+          <div class="field"><label>529 balance</label><input id="plan529" type="number" value="1000"></div>
+        </div>
+        
+        <div class="section">
+          <div class="field"><label>Pre-retirement spending</label><input id="preRetirementSpend" type="number" value="140000"></div>
+          <div class="field"><label>Post-retirement spending</label><input id="annualSpend" type="number" value="100000"></div>
+          <div class="field"><label>College cost per child</label><input id="collegeCostPerChild" type="number" value="150000"></div>
+          <div class="field"><label>General inflation %</label><input id="inflation" type="number" step="0.1" value="3"></div>
+          <div class="field"><label>College inflation %</label><input id="collegeInflation" type="number" step="0.1" value="3"></div>
+        </div>
+        
+        <div class="section">
+          <div class="field"><label>Annual backdoor Roth per adult</label><input id="annualBackdoorPerAdult" type="number" value="7500"></div>
+          <div class="switch-row"><span>Mega backdoor enabled</span><input id="megaBackdoorEnabled" type="checkbox" checked></div>
+          <div class="field"><label>Annual mega backdoor amount</label><input id="annualMegaBackdoor" type="number" value="34000"></div>
+          <div class="field"><label>Mega backdoor start age</label><input id="megaBackdoorStartAge" type="number" value="45"></div>
+          <div class="field"><label>Mega backdoor end age</label><input id="megaBackdoorEndAge" type="number" value="51"></div>
+          <div class="switch-row"><span>Part-time work after retirement</span><input id="partTimeEnabled" type="checkbox" checked></div>
+          <div class="field"><label>Part-time income</label><input id="partTimeIncome" type="number" value="50000"></div>
+          <div class="field"><label>Part-time start age</label><input id="partTimeStartAge" type="number" value="52"></div>
+          <div class="field"><label>Part-time end age</label><input id="partTimeEndAge" type="number" value="60"></div>
+          <div class="switch-row"><span>Continue Roth contributions while part-time</span><input id="continueRothContrib" type="checkbox" checked></div>
+        </div>
+        
+        <div class="section">
+          <div class="field"><label>529 contribution start age</label><input id="plan529StartAge" type="number" value="45"></div>
+          <div class="field"><label>Annual 529 contribution</label><input id="annual529Contribution" type="number" value="0"></div>
+          <div class="field"><label>529 contribution end age</label><input id="plan529EndAge" type="number" value="55"></div>
+          <div class="field"><label>HSA contribution start age</label><input id="hsaStartAge" type="number" value="45"></div>
+          <div class="field"><label>Annual HSA contribution</label><input id="annualHsaContribution" type="number" value="8750"></div>
+          <div class="switch-row"><span>Contribute to HSA until retirement</span><input id="growHsaUntilRetire" type="checkbox" checked></div>
+        </div>
+        
+        <div class="section">
+          <div class="field"><label>Current W-2 income</label><input id="currentW2Income" type="number" value="1000000"></div>
+          <div class="field"><label>Annual 1099 income</label><input id="annual1099Income" type="number" value="50000"></div>
+          <div class="field"><label>Ordinary passive income</label><input id="passiveIncome" type="number" value="50000"></div>
+          <div class="field"><label>Annual qualified dividends</label><input id="qualifiedDividends" type="number" value="0"></div>
+          <div class="field"><label>Cash interest yield %</label><input id="cashYieldPct" type="number" step="0.1" value="2.0"></div>
+          <div class="field"><label>State income tax planning rate %</label><input id="stateTaxRate" type="number" step="0.01" value="5.75"></div>
+          <div class="helper">The selector pre-fills a simplified 2026 top/planning rate. Edit the rate if you want to model your own effective state tax rate.</div>
+          <div class="field"><label>Residency status after move</label><select id="residencyMode"><option value="resident" selected>Resident of selected state</option><option value="part_year">Part-year resident</option><option value="nonresident">Nonresident with state-source income</option><option value="none">No state income tax resident</option></select></div>
+          <div class="field"><label>State-source income after move</label><input id="vaSourceIncome" type="number" value="0"></div>
+          <div class="field"><label>Virginia 529 accounts</label><input id="va529Accounts" type="number" value="3"></div>
+          <div class="switch-row"><span>Preserve ACA subsidies</span><input id="preserveAca" type="checkbox" checked></div>
+          <div class="field"><label>Top federal bracket target</label><select id="bracketTarget"><option value="12">12%</option><option value="22">22%</option><option value="24" selected>24%</option><option value="32">32%</option><option value="35">35%</option><option value="none">No bracket cap</option></select></div>
+          <div class="field"><label>Roth conversion engine</label><select id="conversionStrategy"><option value="optimized" selected>Objective-driven optimizer</option><option value="bracket">Simple bracket fill</option><option value="manual_zero">No conversions</option></select></div>
+          <div class="field"><label>Downside return haircut %</label><input id="downsideReturnPct" type="number" step="0.1" value="3"></div>
+          <div class="field"><label>Monte Carlo runs</label><input id="monteCarloRuns" type="number" value="300"></div>
+        
         <select id="planningObjective" style="display:none;"><option value="roth_inheritance">roth_inheritance</option><option value="lifetime_tax">lifetime_tax</option><option value="healthcare_stability">healthcare_stability</option></select>
         <select id="conversionPosture" style="display:none;"><option value="balanced">balanced</option><option value="conservative">conservative</option><option value="opportunistic">opportunistic</option></select>
         <select id="geographyPath" style="display:none;"><option value="abroad_window">abroad_window</option><option value="current_state">current_state</option><option value="abroad_to_no_tax">abroad_to_no_tax</option></select>
