@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case Studies | Jessie Zhang</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="case">
+  <header class="topbar">
+    <nav class="nav">
+      <div class="brand">
+        <div class="name">Jessie Zhang</div>
+        <div class="tag">Case Studies</div>
+      </div>
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="impact.html">Impact</a>
+        <a class="active" href="case-studies.html">Case Studies</a>
+        <a href="playbooks.html">Frameworks</a>
+        <a href="ai.html">Decision Systems</a>
+        <a href="about.html">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Header -->
+    <section class="card">
+      <h1 style="margin-top:0">Case Studies</h1>
+      <p class="small">
+        Selected work focused on building revenue operating systems: segment strategy, KPI architecture,
+        operating cadence, and scalable analytics (including AI-enabled workflows).
+      </p>
+
+      <div class="caseTabs" id="caseTabs" aria-label="Case selector">
+        <button class="chip" type="button" aria-pressed="true" data-case="rev-os">Revenue Operating System</button>
+        <button class="chip" type="button" aria-pressed="false" data-case="copilot">AI Copilot & Adoption</button>
+        <button class="chip" type="button" aria-pressed="false" data-case="mmm">Investment Allocation (MMM)</button>
+        <button class="chip" type="button" aria-pressed="false" data-case="conversion">Conversion Lift Play</button>
+      </div>
+    </section>
+
+    <!-- Two-column viewer -->
+    <section class="card" style="margin-top:14px">
+      <div class="caseViewerGrid">
+        <!-- LEFT -->
+        <div class="caseLeft">
+          <div class="caseLeftHead">
+            <div>
+              <div class="kicker">Strategy case</div>
+              <h2 id="caseTitle" style="margin:8px 0 0">—</h2>
+              <p class="small" id="caseAngle" style="margin:8px 0 0">—</p>
+            </div>
+
+            <div class="impact-rotator__btns">
+              <button class="btn secondary" id="casePrev" type="button">Prev</button>
+              <button class="btn secondary" id="caseNext" type="button">Next</button>
+              <button class="btn secondary" id="casePause" type="button">Pause</button>
+            </div>
+          </div>
+
+          <div class="ipad-vert" aria-label="Case summary in iPad frame">
+            <div class="ipad-vert__bezel">
+              <div class="ipad-vert__screen">
+                <div class="caseScreen" id="caseScreen"></div>
+              </div>
+            </div>
+            <div class="ipad-vert__camera"></div>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="caseRight">
+          <a class="dashShot" href="assets/Dashboard.png" target="_blank" rel="noopener">
+            <img src="assets/Dashboard.png" alt="Illustrative strategic framework artifact" loading="lazy">
+          </a>
+          <p class="small" style="margin-top:10px">
+            Sample artifact illustrating structured analysis, KPI framing, and decision support.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="card" style="margin-top:14px">
+      <h2>More frameworks</h2>
+      <p class="small">
+        If you want to see the templates behind the work—KPI trees, operating rhythms, and decision memos—visit the Frameworks page.
+      </p>
+      <div class="btnrow">
+        <a class="btn" href="playbooks.html">Frameworks →</a>
+        <a class="btn" href="ai.html">Decision Systems →</a>
+      </div>
+    </section>
+
+    <script>
+      (function(){
+        const CASES = {
+          "rev-os": {
+            title: "Revenue Segment Operating System",
+            angle: "Segment strategy • KPI architecture • Operating rhythm • Executive narrative",
+            blocks: [
+              { k:"Context", t:"Leadership needed a consistent way to run the business: clear goals, trusted metrics, and an operating cadence that made risks and growth levers visible early." },
+              { k:"Strategic question", t:"How do we connect GTM activity to pipeline, bookings, and revenue outcomes—and drive accountability without drowning the org in dashboards?" },
+              { k:"Approach", t:"Defined a KPI tree (outcomes → leading indicators → inputs), built standardized definitions, and created an exec-ready performance narrative for monthly/quarterly business reviews." },
+              { k:"Operating rhythm", t:"Designed review cadence, escalation paths, and decision forums; aligned cross-functional owners (Sales, Marketing, Product, Finance) on targets, responsibilities, and follow-ups." },
+              { k:"Key insights", t:"The biggest bottlenecks were inconsistent definitions and unclear owners—fixing governance increased decision speed more than adding new reports." },
+              { k:"Recommendation", t:"Institutionalize a repeatable segment rhythm: leading indicators, weekly risk scan, and QBR narrative anchored to actions and owners." },
+              { k:"Strategic value", t:"Improved executive confidence, reduced noise, and increased the organization’s ability to act on signals before the quarter was lost." }
+            ]
+          },
+
+          "copilot": {
+            title: "AI-Enabled Analytics Copilot (Pilot → Learn → Scale)",
+            angle: "AI + automation • Self-serve insights • Change management • Adoption system",
+            blocks: [
+              { k:"Context", t:"Teams were bottlenecked by repeated questions: where to find information, who the decision maker is, and what process to follow—slowing execution and increasing ad hoc load." },
+              { k:"Strategic question", t:"How do we scale analytical support and process guidance without growing headcount or creating a fragile, low-trust tool?" },
+              { k:"Approach", t:"Launched a Gemini-powered copilot grounded in internal SME knowledge; defined evaluation criteria (accuracy + relevance) and instrumented feedback loops for iteration." },
+              { k:"Pilot", t:"Tested across 4 teams and achieved an 80% pass rate on accuracy/relevance; used results to improve prompts, sources, and knowledge base structure." },
+              { k:"Adoption", t:"Built an ambassador program, office hours, a resource hub, and a playbook—treating change management as part of the product, not an afterthought." },
+              { k:"Key insights", t:"User education was as important as model quality. Usage increased when teams understood when to trust, when to verify, and how to ask better questions." },
+              { k:"Strategic value", t:"Reduced manual, repetitive work and created a scalable model for self-serve decision support." }
+            ]
+          },
+
+          "mmm": {
+            title: "Investment Allocation Optimization (MMM + Performance Diagnostics)",
+            angle: "Marketing mix modeling • ROI optimization • Budget tradeoffs • Executive decisioning",
+            blocks: [
+              { k:"Context", t:"Leadership needed to improve the ROI of a large marketing investment while maintaining pipeline coverage and balancing short- vs long-term growth." },
+              { k:"Strategic question", t:"Where are we over- and under-invested, and what reallocation improves outcomes without increasing risk?" },
+              { k:"Approach", t:"Led MMM and advanced diagnostics to estimate channel/program impact, identify diminishing returns, and quantify tradeoffs across scenarios." },
+              { k:"Decision framework", t:"Translated model outputs into an exec-ready set of options: reallocation moves, risk flags, and expected impact ranges (base/upside/downside)." },
+              { k:"Operating plan", t:"Paired recommendations with measurement guardrails and leading indicators to monitor performance after shifts were made." },
+              { k:"Outcome", t:"Managed a $42M annual marketing investment and drove a 12% performance lift through targeted optimization and reallocation." },
+              { k:"Strategic value", t:"Made investment decisions faster and more defensible by combining analytical rigor with clear narrative and governance." }
+            ]
+          },
+
+          "conversion": {
+            title: "Conversion Lift Through Demand + Sales Enablement",
+            angle: "Funnel diagnostics • Growth play design • Cross-functional execution • Enablement",
+            blocks: [
+              { k:"Context", t:"A major media push increased demand, but conversion results varied—some teams captured lift while others didn’t, creating inconsistent ROI." },
+              { k:"Strategic question", t:"What explains conversion variance, and what interventions improve conversion without increasing spend?" },
+              { k:"Approach", t:"Clustered performance, diagnosed operational drivers of conversion (lead follow-up, prioritization, process adherence), and identified best-practice behaviors." },
+              { k:"Interventions", t:"Optimized campaign targeting and created field enablement: clear follow-up workflows, performance reporting, and playbooks to standardize conversion behaviors." },
+              { k:"Change management", t:"Embedded the changes into cadence and tooling so improvements sustained beyond a single campaign cycle." },
+              { k:"Outcome", t:"Drove a 14% improvement in acquisition through an 88-branch rollout by pairing marketing optimization with sales operations enablement." },
+              { k:"Strategic value", t:"Improved CAC efficiency by aligning demand generation with execution capability and accountability." }
+            ]
+          }
+        };
+
+        const CASE_KEYS = ["rev-os","copilot","mmm","conversion"];
+
+        const caseTitle = document.getElementById("caseTitle");
+        const caseAngle = document.getElementById("caseAngle");
+        const caseScreen = document.getElementById("caseScreen");
+        const tabs = Array.from(document.querySelectorAll("#caseTabs button[data-case]"));
+
+        const prevBtn = document.getElementById("casePrev");
+        const nextBtn = document.getElementById("caseNext");
+        const pauseBtn = document.getElementById("casePause");
+
+        let active = "rev-os";
+        let paused = false;
+        let timer = null;
+
+        const CASE_MS = 12000;
+
+        function render(){
+          const c = CASES[active];
+          caseTitle.textContent = c.title;
+          caseAngle.textContent = c.angle;
+
+          caseScreen.innerHTML = `
+            <div class="caseGrid">
+              ${c.blocks.map(b => `
+                <div class="caseBlock">
+                  <div class="caseBlock__kicker">${b.k}</div>
+                  <div class="caseBlock__text">${b.t}</div>
+                </div>
+              `).join("")}
+            </div>
+          `;
+
+          caseScreen.classList.remove("csFadeIn");
+          void caseScreen.offsetWidth;
+          caseScreen.classList.add("csFadeIn");
+
+          tabs.forEach(b => b.setAttribute("aria-pressed", (b.dataset.case === active).toString()));
+        }
+
+        function nextCase(){
+          const i = CASE_KEYS.indexOf(active);
+          active = CASE_KEYS[(i + 1) % CASE_KEYS.length];
+          render();
+        }
+
+        function prevCase(){
+          const i = CASE_KEYS.indexOf(active);
+          active = CASE_KEYS[(i - 1 + CASE_KEYS.length) % CASE_KEYS.length];
+          render();
+        }
+
+        function start(){
+          stop();
+          timer = setInterval(() => {
+            if (!paused) nextCase();
+          }, CASE_MS);
+        }
+
+        function stop(){
+          if (timer) clearInterval(timer);
+          timer = null;
+        }
+
+        nextBtn.addEventListener("click", () => {
+          paused = true;
+          pauseBtn.textContent = "Resume";
+          nextCase();
+        });
+
+        prevBtn.addEventListener("click", () => {
+          paused = true;
+          pauseBtn.textContent = "Resume";
+          prevCase();
+        });
+
+        pauseBtn.addEventListener("click", () => {
+          paused = !paused;
+          pauseBtn.textContent = paused ? "Resume" : "Pause";
+        });
+
+        tabs.forEach(btn => {
+          btn.addEventListener("click", () => {
+            active = btn.dataset.case;
+            paused = true;
+            pauseBtn.textContent = "Resume";
+            render();
+          });
+        });
+
+        caseScreen.addEventListener("mouseenter", () => {
+          paused = true;
+          pauseBtn.textContent = "Resume";
+        });
+
+        render();
+        start();
+      })();
+    </script>
+  </main>
+
+  <footer class="footer">© Jessie Zhang</footer>
+</body>
+</html>
