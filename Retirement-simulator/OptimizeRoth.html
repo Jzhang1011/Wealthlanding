@@ -449,9 +449,14 @@
           <div class="section">
             <div class="field"><label>Pre-retirement spending</label><input id="preRetirementSpend" type="number" value="140000"></div>
             <div class="field"><label>Post-retirement spending</label><input id="annualSpend" type="number" value="100000"></div>
-            <div class="field"><label>College cost per child</label><input id="collegeCostPerChild" type="number" value="150000"></div>
+           <div class="field"><label>Total College Cost per Child</label><input id="collegeCostPerChild" type="number" value="150000"></div>
+           <div class="field"><label>Number of Children in College</label><input id="childCount" type="number" value="2"></div>
+           <div class="field"><label>Your Age Child 1 Enters College</label><input id="collegeStartAge1" type="number" value="53"></div>
+          <div class="field"><label>Your Age Child 2 Enters College</label><input id="collegeStartAge2" type="number" value="56"></div>
+            <div class="field"><label>Age Child 3 Enters College</label><input id="collegeStartAge3" type="number" value="59"></div>
+          <div class="field"><label>College Inflation %</label><input id="collegeInflation" type="number" step="0.1" value="3"></div>
             <div class="field"><label>General inflation %</label><input id="inflation" type="number" step="0.1" value="3"></div>
-            <div class="field"><label>College inflation %</label><input id="collegeInflation" type="number" step="0.1" value="3"></div>
+         
           </div>
           
           <div class="section">
@@ -705,7 +710,9 @@ function hh(age,cur){return Math.max(2,2+kids.filter(k=>(age-cur)<Math.max(0,26-
 function ssFactor(start,fra=67){start=Math.max(62,Math.min(70,start||fra));let m=Math.round((start-fra)*12);if(m<0){let e=-m;return 1-Math.min(36,e)*(5/9/100)-Math.max(0,e-36)*(5/12/100)}return 1+Math.min(36,m)*(2/3/100)}
 function ssAnnual(age,start,monthly,infl,cur){return age<start?0:monthly*ssFactor(start)*12*Math.pow(1+infl,age-cur)}
 
-function inputs(){return{objective:v('planningObjective','roth_inheritance'),posture:v('conversionPosture','balanced'),geo:v('geographyPath','abroad_window'),acaStrategy:v('acaStrategy','preserve'),irmaaStrategy:v('irmaaStrategy','allow_first'),estate:v('estatePreference','max_roth'),cur:n('currentAge'),ret:n('retireAge'),empEnd:n('employerCoverageEndAge'),abStart:n('moveAbroadStartAge'),abEnd:n('moveAbroadEndAge'),brokerage:n('brokerage'),cash:n('cash'),basis:n('brokerageBasisPct')/100,pretax:n('pretax'),roth:n('roth'),hsa:n('hsa'),p529:n('plan529'),preSpend:n('preRetirementSpend'),spend:n('annualSpend'),college:n('collegeCostPerChild'),infl:n('inflation')/100,colInfl:n('collegeInflation')/100,bd:n('annualBackdoorPerAdult'),megaOn:b('megaBackdoorEnabled'),mega:n('annualMegaBackdoor'),megaS:n('megaBackdoorStartAge'),megaE:n('megaBackdoorEndAge'),ptOn:b('partTimeEnabled'),pt:n('partTimeIncome'),ptS:n('partTimeStartAge'),ptE:n('partTimeEndAge'),contRoth:b('continueRothContrib'),p529S:n('plan529StartAge'),p529C:n('annual529Contribution'),p529E:n('plan529EndAge'),hsaS:n('hsaStartAge'),hsaC:Math.min(n('annualHsaContribution'),HSA_MAX),hsaUntil:b('growHsaUntilRetire'),w2:n('currentW2Income'),i1099:n('annual1099Income'),passive:n('passiveIncome'),qdiv:n('qualifiedDividends'),cashYield:n('cashYieldPct')/100,residenceState:v('residenceState','VA'),stateRate:n('stateTaxRate')/100,res:v('residencyMode','resident'),vaSource:n('vaSourceIncome'),va529:n('va529Accounts'),aca:b('preserveAca'),bracket:v('bracketTarget','24'),strategy:v('conversionStrategy','optimized'),down:n('downsideReturnPct')/100,runs:Math.max(50,n('monteCarloRuns')||300),ssStart:ssAge,ssMonthly:7000}}
+function inputs(){return{objective:v('planningObjective','roth_inheritance'),posture:v('conversionPosture','balanced'),geo:v('geographyPath','abroad_window'),acaStrategy:v('acaStrategy','preserve'),irmaaStrategy:v('irmaaStrategy','allow_first'),estate:v('estatePreference','max_roth'),cur:n('currentAge'),ret:n('retireAge'),empEnd:n('employerCoverageEndAge'),abStart:n('moveAbroadStartAge'),abEnd:n('moveAbroadEndAge'),brokerage:n('brokerage'),cash:n('cash'),basis:n('brokerageBasisPct')/100,pretax:n('pretax'),roth:n('roth'),hsa:n('hsa'),p529:n('plan529'),preSpend:n('preRetirementSpend'),spend:n('annualSpend'),college:n('collegeCostPerChild'),childCount: n('childCount'),
+collegeStart1: n('collegeStartAge1'),
+collegeStart2: n('collegeStartAge2'),collegeStart3: n('collegeStartAge3'),infl:n('inflation')/100,colInfl:n('collegeInflation')/100,bd:n('annualBackdoorPerAdult'),megaOn:b('megaBackdoorEnabled'),mega:n('annualMegaBackdoor'),megaS:n('megaBackdoorStartAge'),megaE:n('megaBackdoorEndAge'),ptOn:b('partTimeEnabled'),pt:n('partTimeIncome'),ptS:n('partTimeStartAge'),ptE:n('partTimeEndAge'),contRoth:b('continueRothContrib'),p529S:n('plan529StartAge'),p529C:n('annual529Contribution'),p529E:n('plan529EndAge'),hsaS:n('hsaStartAge'),hsaC:Math.min(n('annualHsaContribution'),HSA_MAX),hsaUntil:b('growHsaUntilRetire'),w2:n('currentW2Income'),i1099:n('annual1099Income'),passive:n('passiveIncome'),qdiv:n('qualifiedDividends'),cashYield:n('cashYieldPct')/100,residenceState:v('residenceState','VA'),stateRate:n('stateTaxRate')/100,res:v('residencyMode','resident'),vaSource:n('vaSourceIncome'),va529:n('va529Accounts'),aca:b('preserveAca'),bracket:v('bracketTarget','24'),strategy:v('conversionStrategy','optimized'),down:n('downsideReturnPct')/100,runs:Math.max(50,n('monteCarloRuns')||300),ssStart:ssAge,ssMonthly:7000}}
 
 function country(age,i){let start=i.abStart||i.ret,end=i.abEnd;if(i.geo!=='abroad_window'&&i.geo!=='abroad_to_no_tax'&&scenarioMode!=='abroad')return 'us';return age>=start&&(!end||age<=end)?'abroad':'us'}
 function stateOn(age,c,i){let end=i.abEnd;if(i.stateRate<=0||i.res==='none'||i.geo==='no_tax_state')return false;if((i.geo==='abroad_to_no_tax'||i.geo==='abroad_window')&&end&&age>end)return false;return c!=='abroad'||i.res==='resident'||i.res==='part_year'||(i.res==='nonresident'&&i.vaSource>0)}
@@ -751,7 +758,21 @@ function project(opt={}){
   let i={...inputs(),...(opt.input||{})};if(opt.strategy)i.strategy=opt.strategy;
   let pretax=i.pretax,broker=i.brokerage,cash=i.cash,roth=i.roth,hsa=i.hsa,p529=i.p529,rows=[],magi={};
   for(let age=i.cur;age<=85;age++){
-    let y=age-i.cur,c=country(age,i),ret=age>=i.ret,emp=age<i.empEnd,aca=ret&&!emp&&age<65&&c==='us'&&i.aca&&i.acaStrategy==='preserve',acaCeil=ACA[Math.min(5,hh(age,i.cur))]||ACA[5],rate=opt.returns&&opt.returns[age]!==undefined?opt.returns[age]:gr(age,opt.retOverride),w2=ret?0:i.w2*Math.pow(1.02,y),taxW2=Math.max(0,w2-(ret?0:24500*2)),i1099=i.ptOn&&age>=i.ptS&&age<=i.ptE?i.pt:(!ret?i.i1099:0),cashInt=cash*i.cashYield,passive=i.passive*Math.pow(1+i.infl,y),qdiv=i.qdiv*Math.pow(1+i.infl,y),ss=ssAnnual(age,i.ssStart,i.ssMonthly,i.infl,i.cur),nonSS=taxW2+i1099+cashInt+passive,p529c=age>=i.p529S&&age<=i.p529E?i.p529C:0,hsaC=age>=i.hsaS&&((i.hsaUntil&&age<i.ret)||(!i.hsaUntil&&age<=i.ret))?i.hsaC:0,vaDed=i.residenceState==='VA'?Math.min(p529c,Math.max(0,i.va529)*4000):0,stOn=stateOn(age,c,i),spend=(ret?i.spend:i.preSpend)*Math.pow(1+i.infl,y),college=0;
+    let y=age-i.cur,c=country(age,i),ret=age>=i.ret,emp=age<i.empEnd,aca=ret&&!emp&&age<65&&c==='us'&&i.aca&&i.acaStrategy==='preserve',acaCeil=ACA[Math.min(5,hh(age,i.cur))]||ACA[5],rate=opt.returns&&opt.returns[age]!==undefined?opt.returns[age]:gr(age,opt.retOverride),w2=ret?0:i.w2*Math.pow(1.02,y),taxW2=Math.max(0,w2-(ret?0:24500*2)),i1099=i.ptOn&&age>=i.ptS&&age<=i.ptE?i.pt:(!ret?i.i1099:0),cashInt=cash*i.cashYield,passive=i.passive*Math.pow(1+i.infl,y),qdiv=i.qdiv*Math.pow(1+i.infl,y),ss=ssAnnual(age,i.ssStart,i.ssMonthly,i.infl,i.cur),nonSS=taxW2+i1099+cashInt+passive,p529c=age>=i.p529S&&age<=i.p529E?i.p529C:0,hsaC=age>=i.hsaS&&((i.hsaUntil&&age<i.ret)||(!i.hsaUntil&&age<=i.ret))?i.hsaC:0,vaDed=i.residenceState==='VA'?Math.min(p529c,Math.max(0,i.va529)*4000):0,stOn=stateOn(age,c,i),college = 0;
+// Check if Child 1 is in college (assuming a standard 4-year degree window)
+if (i.childCount >= 1 && age >= i.collegeStart1 && age < (i.collegeStart1 + 4)) {
+  college += (i.college / 4) * Math.pow(1 + i.colInfl, y);
+}
+// Check if Child 2 is in college
+if (i.childCount >= 2 && age >= i.collegeStart2 && age < (i.collegeStart2 + 4)) {
+  college += (i.college / 4) * Math.pow(1 + i.colInfl, y);
+}
+// New Check: Child 3
+if (i.childCount >= 3 && age >= i.collegeStart3 && age < (i.collegeStart3 + 4)) {
+  college += (i.college / 4) * Math.pow(1 + i.colInfl, y);
+}
+// Combine your regular living expenses with the active inflated college costs
+let spend = ((ret ? i.spend : i.preSpend) * Math.pow(1 + i.infl, y)) + college;;
     let pretaxG=pretax*(1+rate),rmd=age>=73?Math.min(pretaxG,pretaxG/(RMD[Math.min(85,age)]||16)):0;pretaxG-=rmd;
     let base={nonSS,cashInt,passive,qdiv,ss,aca,acaCeil},conv=ret?Math.min(pretaxG,pickConversion(base,i,pretaxG,rmd,stOn,vaDed,age,c)):0;pretaxG-=conv;
     let p529G=p529*(1+rate)+p529c,brokerG=broker*(1+rate),cashG=cash,hsaG=hsa*(1+rate)+hsaC,rothG=roth*(1+rate)+conv,gain=0;
