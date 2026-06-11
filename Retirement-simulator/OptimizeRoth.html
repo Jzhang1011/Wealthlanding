@@ -719,10 +719,16 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
     <summary>
       Advanced Assumptions
     </summary>
+<div class="section">
 
-    <div class="advanced-body">
+    ALL INPUTS
 
-      <!-- Move ALL your existing
+</div>
+
+</details>
+   <!-- <div class="advanced-body">
+
+       Move ALL your existing
            advanced fields here -->
 
       <!-- HSA -->
@@ -926,7 +932,8 @@ Simulation Settings
         <div class="card"><div class="card-body"><div class="metric">Lifetime Tax Saved</div><div class="metric-value" id="cardTaxSaved"></div><div class="metric-sub">vs No Conversion Strategy</div></div></div>
           <div class="card"><div class="card-body"><div class="metric">Estate Value Gain</div><div class="metric-value" id="cardEstateGain"></div><div class="metric-sub">Additional After-Tax Wealth</div></div></div>
         <div class="card"><div class="card-body"><div class="metric">Pretax IRA Reduced</div><div class="metric-value" id="cardPretaxReduction"></div><div class="metric-sub">Future RMD Risk Removed</div></div></div>
-          </div>    
+          </div><
+        div class="card chart-card">div class="card-head"><h3>Your Retirement Blueprint</h3></div><div class="card-body"><div id="retirementBlueprint"></div></div>/div>
       <div class="card chart-card"><div class="card-head"><h3>Decision tree path</h3></div><div class="card-body"><div class="path-title" id="pathHeadline"></div><div class="path-sub" id="pathSummary"></div><div class="tree-grid" style="margin-top:14px"><div class="tree-node"><b>1. Priority</b><span id="treePriority"></span></div><div class="tree-node"><b>2. Conversion path</b><span id="treeConversion"></span></div><div class="tree-node"><b>3. Geography path</b><span id="treeGeography"></span></div><div class="tree-node"><b>4. Healthcare constraint</b><span id="treeHealthcare"></span></div><div class="tree-node"><b>5. IRMAA tolerance</b><span id="treeIrmaa"></span></div><div class="tree-node"><b>6. Estate outcome</b><span id="treeEstate"></span></div></div></div></div>
       <div class="card chart-card"><div class="card-head"><h3>Tradeoff center</h3></div><div class="card-body"><div class="table-wrap" style="max-height:360px"><table><thead><tr><th>Tradeoff</th><th>Status</th><th>Planning lever</th><th>Why it matters</th></tr></thead><tbody id="tradeoffBody"></tbody></table></div></div></div>
       <div class="card chart-card"><div class="card-head"><h3 id="mainChartTitle">Wealth composition by age</h3></div><div class="card-body"><div class="chart-wrap"><div id="mainChart" class="svg-chart"></div></div></div></div>
@@ -975,16 +982,16 @@ const RMD={73:26.5,74:25.5,75:24.6,76:23.7,77:22.9,78:22.0,79:21.1,80:20.2,81:19
 
   
     /* Added for UX change*/
-document
+/*document
 .getElementById('ssStartAge')
 .addEventListener('change',e=>{
     ssAge = Number(e.target.value);
     render();
-});
+});*/
     /* suggested let scenarioMode='us';let chartView='wealth';*/
     let scenarioMode='us';
 let chartView='wealth';
-/*let ssAge=67;-*/
+let ssAge=67;
 
 let mainChart,
     rothAdditionsChart,
