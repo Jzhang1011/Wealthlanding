@@ -745,8 +745,17 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
     </div><div class="card-body">
         
       <!-- INPUT SIDEBAR: inputs() reads each field by id and converts it into model parameters. -->
-       <!-- Group 1-->
         <details open>
+
+<summary>
+Advanced Assumptions
+</summary>
+
+<!-- ALL existing sidebar inputs -->
+
+</details>
+       <!-- Group 1-->
+   <!--     <details open>
 
 <summary>
 Income & Tax Planning
@@ -761,8 +770,8 @@ Bracket Target
 Conversion Strategy
     </div>
 
-</details>
-<!-- Group 2-->
+</details>-->
+<!-- Group 2
 <details>
 
 <summary>
@@ -779,8 +788,8 @@ Healthcare Planning
 
 </div>
 
-</details>
-<!-- Group 3-->
+</details>-->
+<!-- Group 3
 <details>
 
 <summary>
@@ -795,8 +804,8 @@ Family & Education
 
 </div>
 
-</details>
-<!-- Group 4-->
+</details>-->
+<!-- Group 4
  <details>
 
 <summary>
@@ -815,8 +824,8 @@ Advanced Roth Controls
 
 </div>
 
-</details> 
-<!-- Group 5-->
+</details> -->
+<!-- Group 5
         <details>
 
 <summary>
@@ -831,7 +840,7 @@ Simulation Settings
 
 </div>
 
-</details>
+</details> -->
             <div class="section">
        <!-- <div class="field"><label>Primary planning priority</label><select id="planningObjective"><option value="roth_inheritance" selected>Maximize Roth inheritance</option><option value="family_after_tax">Maximize total family after-tax wealth</option><option value="lifetime_tax">Minimize lifetime tax</option><option value="liquidity">Preserve lifestyle / liquidity</option><option value="healthcare_stability">Minimize ACA / IRMAA disruption</option></select></div>
         <div class="field"><label>Conversion posture</label><select id="conversionPosture"><option value="conservative">Conservative: low brackets only</option><option value="balanced" selected>Balanced: tax-aware 22% / 24%</option><option value="aggressive">Aggressive: reduce inherited pre-tax assets</option><option value="opportunistic">Opportunistic: heavier in no-state-tax / abroad windows</option></select></div>
@@ -966,17 +975,16 @@ const RMD={73:26.5,74:25.5,75:24.6,76:23.7,77:22.9,78:22.0,79:21.1,80:20.2,81:19
 
   
     /* Added for UX change*/
-    document
+document
 .getElementById('ssStartAge')
 .addEventListener('change',e=>{
     ssAge = Number(e.target.value);
-    let ssAge = 67;
     render();
 });
     /* suggested let scenarioMode='us';let chartView='wealth';*/
     let scenarioMode='us';
 let chartView='wealth';
-let ssAge=67;
+/*let ssAge=67;-*/
 
 let mainChart,
     rothAdditionsChart,
@@ -1193,6 +1201,7 @@ function applyScenarioPreset(mode){
     setInputValue('residenceState','VA'); syncStateRate();
     setInputValue('residencyMode','none');
   }
+}
 
 /* Adds preset-locked styling to fields controlled by selected scenario. */
 function updateLockedFields(mode){
