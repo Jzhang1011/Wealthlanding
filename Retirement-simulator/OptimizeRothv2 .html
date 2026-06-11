@@ -807,8 +807,6 @@ function labelMap(){return{roth_inheritance:'Grow My Family Legacy',lifetime_tax
 
 function renderPath(rows,i){
   let L=labelMap();
-  const summaryBox = document.getElementById('decisionSummary');
-
   document.getElementById('pathHeadline').textContent=L[i.objective] || i.objective;
   document.getElementById('pathSummary').innerHTML=`Path configured dynamically. Current terminal simulation structure reflects explicit custom parameters setup.`;
   document.getElementById('treePriority').textContent=L[i.objective]||i.objective;
