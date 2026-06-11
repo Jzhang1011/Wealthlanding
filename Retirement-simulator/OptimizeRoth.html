@@ -637,9 +637,8 @@
         <div class="card-body"><div class="chart-wrap"><div id="rothAdditionsChart" class="svg-chart"></div></div></div>
       </div>
       
-<div class="card chart-card"><div class="card-head"><h3>Wealth blocks and annual uses</h3></div>
-
-<div class="card chart-card"><div class="card-head"><h3>Annual Retirement Cash Outflows</h3></div>
+<div class="card chart-card">
+  <div class="card-head"><h3>Wealth Breakdown & Annual Cash Outflows</h3></div>
         <div class="card-body"><div class="chart-wrap"><div id="wealthBlocksChart" class="svg-chart"></div></div></div>
       </div>
 
@@ -925,9 +924,24 @@ function render(){
       labels: ms.map(r => r.age),
       datasets: [
         {
-          label: 'Annual Cash Outflow (Living Costs + Tuition)',
+          label: 'Pre-tax Assets',
+          data: ms.map(r => r.pretax),
+          backgroundColor: '#ea580c'
+        },
+        {
+          label: 'Brokerage Assets',
+          data: ms.map(r => r.broker),
+          backgroundColor: '#15803d'
+        },
+        {
+          label: 'Roth Assets',
+          data: ms.map(r => r.roth),
+          backgroundColor: '#2563eb'
+        },
+        {
+          label: 'Annual Cash Outflow (Expenses + Tuition)',
           data: ms.map(r => r.spend),
-          backgroundColor: '#ef4444'
+          backgroundColor: '#ef4444' // Crimson bars alongside asset clusters
         }
       ]
     }
