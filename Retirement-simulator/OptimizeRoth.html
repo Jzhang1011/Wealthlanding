@@ -637,8 +637,8 @@
         <div class="card-body"><div class="chart-wrap"><div id="rothAdditionsChart" class="svg-chart"></div></div></div>
       </div>
       
-      <div class="card chart-card">
-        <div class="card-head"><h3>Wealth blocks and annual uses</h3></div>
+<div class="card chart-card">
+  <div class="card-head"><h3>Annual Retirement Cash Outflows</h3></div>
         <div class="card-body"><div class="chart-wrap"><div id="wealthBlocksChart" class="svg-chart"></div></div></div>
       </div>
 
@@ -918,15 +918,15 @@ function render(){
  // OLD: wealthBlocksChart = new Chart(document.getElementById('wealthBlocksChart'), ...
   // REPLACE WITH THIS NEW EXPENSE-TRACKING FILTER:
 
-  wealthBlocksChart = new Chart(document.getElementById('wealthBlocksChart'), {
+ wealthBlocksChart = new Chart(document.getElementById('wealthBlocksChart'), {
     type: 'bar',
     data: {
-      labels: ms.map(r => r.age), // Keeps the key milestone ages (like 45, 51, 67, 85)
+      labels: ms.map(r => r.age),
       datasets: [
         {
-          label: 'Annual Spending (Includes College)',
-          data: ms.map(r => r.spend), // Maps the inflated living costs + college costs
-          backgroundColor: '#ef4444'  // A distinct crimson red for expenses
+          label: 'Annual Cash Outflow (Living Costs + Tuition)',
+          data: ms.map(r => r.spend),
+          backgroundColor: '#ef4444'
         }
       ]
     }
