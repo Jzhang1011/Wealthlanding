@@ -808,15 +808,7 @@ function labelMap(){return{roth_inheritance:'Grow My Family Legacy',lifetime_tax
 function renderPath(rows,i){
   let L=labelMap();
   const summaryBox = document.getElementById('decisionSummary');
-if (summaryBox) {
-  const finalPretax = term.pretax > 0 ? fmt.format(term.pretax) : "$0";
-  summaryBox.innerHTML = `
-    <p>Based on your primary goal to <b>${document.getElementById('btn-goal-legacy').classList.contains('active') ? 'Maximize Roth Inheritance' : 'Optimize Retirement Taxes'}</b>, 
-    the engine recommends executing dynamic Roth conversions immediately upon retirement at age <b>${i.ret}</b>.</p>
-    <p>By shifting assets systematically out of your pre-tax accounts before age 73, you reduce your projected terminal Pre-Tax IRA balance to <b>${finalPretax}</b>. 
-    This protects your estate from aggressive Required Minimum Distribution (RMD) tax brackets, yielding a projected <b>${document.getElementById('cardTaxSaved').textContent} in lifetime tax savings</b>.</p>
-  `;
-}
+
   document.getElementById('pathHeadline').textContent=L[i.objective] || i.objective;
   document.getElementById('pathSummary').innerHTML=`Path configured dynamically. Current terminal simulation structure reflects explicit custom parameters setup.`;
   document.getElementById('treePriority').textContent=L[i.objective]||i.objective;
