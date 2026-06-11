@@ -193,7 +193,7 @@
 .title{font-size:32px;font-weight:750;margin:0;letter-spacing:-.02em}.subtitle{color:var(--muted);margin-top:8px;max-width:1050px;line-height:1.45}
 .toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px;align-items:center}.pill-group{display:flex;gap:8px;flex-wrap:wrap}
 button.pill{border:1px solid var(--border);background:#fff;color:var(--text);padding:9px 14px;border-radius:999px;cursor:pointer;font-weight:650}button.pill.active{background:var(--text);color:#fff;border-color:var(--text)}
-.layout{display:grid;grid-template-columns:390px minmax(0,1fr);gap:20px}.card{background:var(--card);border:1px solid var(--border);border-radius:20px;box-shadow:0 1px 3px rgba(15,23,42,.04)}
+.layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:20px}.card{background:var(--card);border:1px solid var(--border);border-radius:20px;box-shadow:0 1px 3px rgba(15,23,42,.04)}
 .card h3{margin:0;font-size:18px}.card-head{padding:18px 20px 0}.card-body{padding:18px 20px 20px}.sidebar .section{border-top:1px solid var(--border);padding-top:14px;margin-top:14px}.sidebar .section:first-child{border-top:0;padding-top:0;margin-top:0}
 .field{margin-bottom:12px}.field label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}.field input,.field select{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:12px;font-size:14px;background:#fff}
 .switch-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 12px;border:1px solid var(--border);border-radius:12px;margin-bottom:12px}.helper{font-size:12px;color:var(--muted);margin-top:-4px;margin-bottom:10px}
@@ -201,7 +201,7 @@ button.pill{border:1px solid var(--border);background:#fff;color:var(--text);pad
 .chart-card{margin-bottom:20px}.chart-wrap{height:400px;padding:8px 4px 0}.svg-chart{width:100%;height:100%;min-height:300px}.two-col{display:block;margin-bottom:0}.two-col>.card{margin-bottom:20px}
 table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--border);vertical-align:top;white-space:nowrap}th{color:var(--muted);font-weight:650;position:sticky;top:0;background:#fff;z-index:1}
 .table-wrap{max-height:620px;overflow:auto;border-radius:14px;border:1px solid var(--border)}.constraint{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:4px 8px;white-space:nowrap;font-size:12px}.note-list{margin:0;padding-left:18px;color:#334155;line-height:1.55}
-.header-actions{display:flex;gap:10px}.small-btn{border:1px solid var(--border);background:#fff;padding:10px 14px;border-radius:14px;cursor:pointer;font-weight:650}.summary-box{line-height:1.55;color:#334155}.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.callout{background:#f8fafc;border:1px solid var(--border);border-radius:14px;padding:14px;color:#334155;line-height:1.5}.tree-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.tree-node{border:1px solid var(--border);border-radius:14px;padding:12px;background:#fff}.tree-node b{display:block;margin-bottom:5px}.tree-node span{color:var(--muted);font-size:12px;line-height:1.35}.badge{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:4px 8px;margin:2px 4px 2px 0;font-size:12px;background:#f8fafc;color:#334155}.score{font-weight:750}.path-title{font-weight:750;font-size:18px;margin-bottom:8px}.path-sub{color:#475569;line-height:1.5}.field.preset-locked label{color:#94a3b8}.field.preset-locked input,.field.preset-locked select{opacity:.45;pointer-events:none;background:#f1f5f9;color:#94a3b8}.field.preset-locked::after{content:'Set by scenario';display:block;font-size:11px;color:#94a3b8;margin-top:3px}.switch-row.preset-locked{opacity:.45;pointer-events:none}.switch-row.preset-locked::after{content:' — set by scenario';font-size:11px;color:#94a3b8}
+.header-actions{display:flex;gap:10px}.small-btn{border:1px solid var(--border);background:#fff;padding:10px 14px;border-radius:14px;cursor:pointer;font-weight:650}.summary-box{line-height:1.55;color:#334155}.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.callout{background:#f8fafc;border:1px solid var(--border);border-radius:14px;padding:14px;color:#334155;line-height:1.5}.tree-grid{display:grid;grid-template-columns:repeat(2,1fr));gap:12px}.tree-node{border:1px solid var(--border);border-radius:14px;padding:12px;background:#fff}.tree-node b{display:block;margin-bottom:5px}.tree-node span{color:var(--muted);font-size:12px;line-height:1.35}.badge{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:4px 8px;margin:2px 4px 2px 0;font-size:12px;background:#f8fafc;color:#334155}.score{font-weight:750}.path-title{font-weight:750;font-size:18px;margin-bottom:8px}.path-sub{color:#475569;line-height:1.5}.field.preset-locked label{color:#94a3b8}.field.preset-locked input,.field.preset-locked select{opacity:.45;pointer-events:none;background:#f1f5f9;color:#94a3b8}.field.preset-locked::after{content:'Set by scenario';display:block;font-size:11px;color:#94a3b8;margin-top:3px}.switch-row.preset-locked{opacity:.45;pointer-events:none}.switch-row.preset-locked::after{content:' — set by scenario';font-size:11px;color:#94a3b8}
 /*<!--Mega menu CSS-->*/
 .nav-item {
     position: relative;
@@ -410,6 +410,28 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
 .goal-btn.active{
     border:2px solid #2563eb;
     background:#eff6ff;
+}
+    #retirementBlueprint{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:16px;
+}
+
+.blueprint-item{
+    padding:16px;
+    border:1px solid #e2e8f0;
+    border-radius:14px;
+}
+
+.blueprint-label{
+    font-size:12px;
+    color:#64748b;
+    margin-bottom:6px;
+}
+
+.blueprint-value{
+    font-size:22px;
+    font-weight:700;
 }
     @media(max-width:1200px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.layout{grid-template-columns:1fr}.mini-grid{grid-template-columns:1fr}.tree-grid{grid-template-columns:1fr}}@media(max-width:700px){.cards{grid-template-columns:1fr}.header{flex-direction:column}.title{font-size:28px}.wrap{padding:16px}}
 </style>
@@ -714,18 +736,7 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
 </div>
   <!-- ADVANCED SETTINGS -->
 
-  <details class="advanced-panel">
-
-    <summary>
-      Advanced Assumptions
-    </summary>
-<div class="section">
-
-    ALL INPUTS
-
-</div>
-
-</details>
+ 
    <!-- <div class="advanced-body">
 
        Move ALL your existing
@@ -751,7 +762,7 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{text-align:left
     </div><div class="card-body">
         
       <!-- INPUT SIDEBAR: inputs() reads each field by id and converts it into model parameters. -->
-        <details open>
+        <details>
 
 <summary>
 Advanced Assumptions
@@ -932,8 +943,7 @@ Simulation Settings
         <div class="card"><div class="card-body"><div class="metric">Lifetime Tax Saved</div><div class="metric-value" id="cardTaxSaved"></div><div class="metric-sub">vs No Conversion Strategy</div></div></div>
           <div class="card"><div class="card-body"><div class="metric">Estate Value Gain</div><div class="metric-value" id="cardEstateGain"></div><div class="metric-sub">Additional After-Tax Wealth</div></div></div>
         <div class="card"><div class="card-body"><div class="metric">Pretax IRA Reduced</div><div class="metric-value" id="cardPretaxReduction"></div><div class="metric-sub">Future RMD Risk Removed</div></div></div>
-          </div><
-        div class="card chart-card">div class="card-head"><h3>Your Retirement Blueprint</h3></div><div class="card-body"><div id="retirementBlueprint"></div></div>/div>
+        <div class="card chart-card"><div class="card-head"><h3>Your Retirement Blueprint</h3></div><div class="card-body"><div id="retirementBlueprint"></div></div></div>
       <div class="card chart-card"><div class="card-head"><h3>Decision tree path</h3></div><div class="card-body"><div class="path-title" id="pathHeadline"></div><div class="path-sub" id="pathSummary"></div><div class="tree-grid" style="margin-top:14px"><div class="tree-node"><b>1. Priority</b><span id="treePriority"></span></div><div class="tree-node"><b>2. Conversion path</b><span id="treeConversion"></span></div><div class="tree-node"><b>3. Geography path</b><span id="treeGeography"></span></div><div class="tree-node"><b>4. Healthcare constraint</b><span id="treeHealthcare"></span></div><div class="tree-node"><b>5. IRMAA tolerance</b><span id="treeIrmaa"></span></div><div class="tree-node"><b>6. Estate outcome</b><span id="treeEstate"></span></div></div></div></div>
       <div class="card chart-card"><div class="card-head"><h3>Tradeoff center</h3></div><div class="card-body"><div class="table-wrap" style="max-height:360px"><table><thead><tr><th>Tradeoff</th><th>Status</th><th>Planning lever</th><th>Why it matters</th></tr></thead><tbody id="tradeoffBody"></tbody></table></div></div></div>
       <div class="card chart-card"><div class="card-head"><h3 id="mainChartTitle">Wealth composition by age</h3></div><div class="card-body"><div class="chart-wrap"><div id="mainChart" class="svg-chart"></div></div></div></div>
@@ -1172,13 +1182,104 @@ function renderTradeoffs(rows,i){let tb=document.getElementById('tradeoffBody'),
 function decision(rows,i){let t=rows[rows.length-1],conv=rows.reduce((s,r)=>s+r.conv,0),rmd=rows.reduce((s,r)=>s+r.rmd,0),irm=rows.reduce((s,r)=>s+r.irmaa,0),early=rows.filter(r=>r.age>=i.ret&&r.age<63).reduce((s,r)=>s+r.conv,0),tax=rows.reduce((s,r)=>s+r.totalTax,0);let msg=`Primary objective: ${labelMap()[i.objective]}. This path is designed to make the tradeoff explicit: pay modeled lifetime tax of ${fmt.format(tax)} and IRMAA of ${fmt.format(irm)} to produce ${fmt.format(t.roth)} of Roth wealth at age 85, while leaving ${fmt.format(t.pretax)} in pre-tax assets. `;if(i.objective==='roth_inheritance')msg+=`Because the goal is tax-free inheritance, the model intentionally favors conversions when W-2 income, ACA, state tax, and IRMAA constraints are weakest rather than simply minimizing lifetime tax. `;if(early>0)msg+=`The strongest window is before Medicare lookback risk, with ${fmt.format(early)} converted before age 63. `;if(rmd>0)msg+=`Remaining RMD pressure is ${fmt.format(rmd)}, which is a signal to test more aggressive pre-RMD conversions if liquidity allows. `;if(i.geo.includes('abroad'))msg+=`The geography branch is being used as a planning lever: ACA is not binding while abroad, and state tax can be reduced if residency is properly changed. `;return msg}
 /* MASTER RENDER FUNCTION
    Runs project(), updates all KPI cards, charts, tables, roadmap rows, sensitivity table, and Monte Carlo. */
-function render(){let i=inputs(),rows=project(),cur=rows[0],at65=rows.find(r=>r.age===65)||rows[rows.length-1],term=rows[rows.length-1];document.getElementById('summaryText').textContent=`V6 starts with the planning priority, then builds a path combination across conversion posture, geography, ACA, IRMAA, estate preferences, and tax mechanics. Social Security starts at ${ssAge}; objective is ${labelMap()[i.objective]}; selected state is ${STATE_NAMES[i.residenceState]||i.residenceState} at ${(i.stateRate*100).toFixed(2)}% planning rate.`;document.getElementById('cardRoth65').textContent=fmt.format(at65.roth);document.getElementById('cardPretax65').textContent=fmt.format(at65.pretax);document.getElementById('cardLiquid65').textContent=fmt.format(at65.liquid);document.getElementById('cardTaxYear').textContent=fmt.format(cur.totalTax);document.getElementById('cardTaxSub').textContent=`Ord ${fmt.format(cur.ordinaryTax)} · LTCG ${fmt.format(cur.ltcgTax)} · NIIT ${fmt.format(cur.niit)}`;document.getElementById('cardRothAdded').textContent=fmt.format(cur.rothAdd);document.getElementById('cardLifetimeTax').textContent=fmt.format(rows.reduce((s,r)=>s+r.totalTax,0));document.getElementById('cardTerminalToday').textContent=fmt.format(term.totalWealth/Math.pow(1+i.infl,term.age-i.cur));renderPath(rows,i);renderTradeoffs(rows,i);document.getElementById('decisionSummary').textContent=decision(rows,i);document.getElementById('note1').textContent='The model now starts from the user priority. For Maximize Roth inheritance, lower lifetime tax is not always the answer; the model may recommend paying tax earlier to reduce taxable assets left to heirs.';document.getElementById('note2').textContent='Scenarios are now path combinations: conversion posture, residency/geography, ACA strategy, IRMAA tolerance, and estate preference. The sensitivity table compares these paths side by side.';document.getElementById('note3').textContent='The tradeoff center separates hard costs from bypassable constraints: federal tax, state tax, ACA, IRMAA, RMDs, and inherited pre-tax exposure.';document.getElementById('note4').textContent='For the Roth inheritance objective, the most attractive conversion years are usually after W-2 income ends, before RMDs, before Medicare lookback years, and during no-state-tax or abroad windows.';renderSensitivity(i);monte(i);
+function render(){let i=inputs(),rows=project(),cur=rows[0],at65=rows.find(r=>r.age===65)||rows[rows.length-1],term=rows[rows.length-1];document.getElementById('summaryText').textContent=`V6 starts with the planning priority, then builds a path combination across conversion posture, geography, ACA, IRMAA, estate preferences, and tax mechanics. Social Security starts at ${ssAge}; objective is ${labelMap()[i.objective]}; selected state is ${STATE_NAMES[i.residenceState]||i.residenceState} at ${(i.stateRate*100).toFixed(2)}% planning rate.`;document.getElementById('cardRoth65').textContent=fmt.format(at65.roth);document.getElementById('cardPretax65').textContent=fmt.format(at65.pretax);document.getElementById('cardLiquid65').textContent=fmt.format(at65.liquid);document.getElementById('cardTaxYear').textContent=fmt.format(cur.totalTax);document.getElementById('cardTaxSub').textContent=`Ord ${fmt.format(cur.ordinaryTax)} · LTCG ${fmt.format(cur.ltcgTax)} · NIIT ${fmt.format(cur.niit)}`;document.getElementById('cardRothAdded').textContent=fmt.format(cur.rothAdd);document.getElementById('cardLifetimeTax').textContent=fmt.format(rows.reduce((s,r)=>s+r.totalTax,0));document.getElementById('cardTerminalToday').textContent=fmt.format(term.totalWealth/Math.pow(1+i.infl,term.age-i.cur));if(document.getElementById('retirementBlueprint')){
+
+    document.getElementById('retirementBlueprint').innerHTML = `
+
+    <div class="blueprint-item">
+        <div class="blueprint-label">
+            Retirement Age
+        </div>
+        <div class="blueprint-value">
+            ${i.ret}
+        </div>
+    </div>
+
+    <div class="blueprint-item">
+        <div class="blueprint-label">
+            Social Security Age
+        </div>
+        <div class="blueprint-value">
+            ${ssAge}
+        </div>
+    </div>
+
+    <div class="blueprint-item">
+        <div class="blueprint-label">
+            Roth at Age 85
+        </div>
+        <div class="blueprint-value">
+            ${fmt.format(term.roth)}
+        </div>
+    </div>
+
+    <div class="blueprint-item">
+        <div class="blueprint-label">
+            Pre-Tax at Age 85
+        </div>
+        <div class="blueprint-value">
+            ${fmt.format(term.pretax)}
+        </div>
+    </div>
+
+    `;
+}renderPath(rows,i);renderTradeoffs(rows,i);document.getElementById('decisionSummary').textContent=decision(rows,i);document.getElementById('note1').textContent='The model now starts from the user priority. For Maximize Roth inheritance, lower lifetime tax is not always the answer; the model may recommend paying tax earlier to reduce taxable assets left to heirs.';document.getElementById('note2').textContent='Scenarios are now path combinations: conversion posture, residency/geography, ACA strategy, IRMAA tolerance, and estate preference. The sensitivity table compares these paths side by side.';document.getElementById('note3').textContent='The tradeoff center separates hard costs from bypassable constraints: federal tax, state tax, ACA, IRMAA, RMDs, and inherited pre-tax exposure.';document.getElementById('note4').textContent='For the Roth inheritance objective, the most attractive conversion years are usually after W-2 income ends, before RMDs, before Medicare lookback years, and during no-state-tax or abroad windows.';renderSensitivity(i);monte(i);
 let tb=document.getElementById('roadmapBody');tb.innerHTML='';for(const r of rows){let tr=document.createElement('tr');tr.innerHTML=`<td>${r.age}</td><td><span class="constraint">${r.country==='abroad'?'Abroad':'U.S.'}</span></td><td>${fmt.format(r.taxW2)}</td><td>${fmt.format(r.i1099)}</td><td>${fmt.format(r.cashInt)}</td><td>${fmt.format(r.qdiv)}</td><td>${fmt.format(r.passive)}</td><td>${fmt.format(r.ss)}</td><td>${fmt.format(r.ssTax)}</td><td>${fmt.format(r.gain)}</td><td>${fmt.format(r.rmd)}</td><td>${fmt.format(r.conv)}</td><td>${fmt.format(r.fed)}</td><td>${fmt.format(r.ltcgTax)}</td><td>${fmt.format(r.niit)}</td><td>${fmt.format(r.state)}</td><td>${fmt.format(r.irmaa)}</td><td>${fmt.format(r.totalTax)}</td><td>${r.bracket}</td><td><span class="constraint">${constraint(r,i)}</span></td>`;tb.appendChild(tr)}
 destroy();let labels=rows.map(r=>r.age),milestones=[i.cur,i.ret,60,62,65,67,70,73,75,80,85],ms=rows.filter(r=>milestones.includes(r.age));document.getElementById('mainChartTitle').textContent=chartView==='balances'?'Wealth composition by age':chartView==='flows'?'Annual flows by age':'Advanced wealth and tax view';if(chartView==='wealth'){mainChart=new Chart(document.getElementById('mainChart'),{type:'bar',data:{labels,datasets:[{label:'Brokerage',data:rows.map(r=>r.broker),backgroundColor:'#15803d',stack:'w'},{label:'Cash',data:rows.map(r=>r.cash),backgroundColor:'#86efac',stack:'w'},{label:'Pre-tax',data:rows.map(r=>r.pretax),backgroundColor:'#ea580c',stack:'w'},{label:'Roth',data:rows.map(r=>r.roth),backgroundColor:'#2563eb',stack:'w'},{label:'HSA',data:rows.map(r=>r.hsa),backgroundColor:'#0f766e',stack:'w'},{label:'529',data:rows.map(r=>r.p529),backgroundColor:'#7c3aed',stack:'w'}]},options:opts(true)})}else if(chartView==='tax'){mainChart=new Chart(document.getElementById('mainChart'),{type:'line',data:{labels,datasets:[{label:'Conversion',data:rows.map(r=>r.conv),borderColor:'#ca8a04',backgroundColor:'#ca8a04',tension:.25},{label:'RMD',data:rows.map(r=>r.rmd),borderColor:'#ea580c',backgroundColor:'#ea580c',tension:.25},{label:'Total tax',data:rows.map(r=>r.totalTax),borderColor:'#dc2626',backgroundColor:'#dc2626',tension:.25},{label:'IRMAA',data:rows.map(r=>r.irmaa),borderColor:'#991b1b',backgroundColor:'#991b1b',tension:.25},{label:'SSN',data:rows.map(r=>r.ss),borderColor:'#0891b2',backgroundColor:'#0891b2',tension:.25}]},options:opts(false)})}
 /*else{mainChart=new Chart(document.getElementById('mainChart'),{type:'line',data:{labels,datasets:[{label:'After-tax wealth',data:rows.map(r=>r.afterTax),borderColor:'#2563eb',backgroundColor:'#2563eb',tension:.25},{label:'MAGI',data:rows.map(r=>r.magi),borderColor:'#7c3aed',backgroundColor:'#7c3aed',tension:.25},{label:'RMD',data:rows.map(r=>r.rmd),borderColor:'#ea580c',backgroundColor:'#ea580c',tension:.25}]},options:opts(false)})}*/
 rothAdditionsChart=new Chart(document.getElementById('rothAdditionsChart'),{type:'bar',data:{labels,datasets:[{label:'Backdoor',data:rows.map(r=>r.bd),backgroundColor:'#0891b2',stack:'a'},{label:'Mega',data:rows.map(r=>r.mega),backgroundColor:'#16a34a',stack:'a'},{label:'Conversion',data:rows.map(r=>r.conv),backgroundColor:'#ca8a04',stack:'a'}]},options:opts(true)});wealthBlocksChart=new Chart(document.getElementById('wealthBlocksChart'),{type:'bar',data:{labels:ms.map(r=>r.age),datasets:[{label:'Pre-tax',data:ms.map(r=>r.pretax),backgroundColor:'#ea580c',stack:'pos'},{label:'Brokerage',data:ms.map(r=>r.broker),backgroundColor:'#15803d',stack:'pos'},{label:'Roth',data:ms.map(r=>r.roth),backgroundColor:'#2563eb',stack:'pos'},{label:'RMD',data:ms.map(r=>-r.rmd),backgroundColor:'#f97316',stack:'neg'},{label:'Tax',data:ms.map(r=>-r.totalTax),backgroundColor:'#dc2626',stack:'neg'},{label:'IRMAA',data:ms.map(r=>-r.irmaa),backgroundColor:'#991b1b',stack:'neg'}]},options:opts(true)})}
 function setInputValue(id,value){const el=document.getElementById(id);if(el)el.value=value}
 function setCheckedValue(id,value){const el=document.getElementById(id);if(el)el.checked=!!value}
+    let taxSaved =
+    Number(
+        document.getElementById('cardTaxSaved')
+        ?.textContent
+    ) || 0;
+    document.getElementById('retirementBlueprint').innerHTML = `
+
+<div class="blueprint-item">
+    <div class="blueprint-label">
+        Recommended Strategy
+    </div>
+    <div class="blueprint-value">
+        ${
+            scenarioMode==='abroad'
+            ? 'Overseas'
+            : scenarioMode==='us'
+            ? 'Stay in U.S.'
+            : 'Custom'
+        }
+    </div>
+</div>
+
+<div class="blueprint-item">
+    <div class="blueprint-label">
+        Retirement Age
+    </div>
+    <div class="blueprint-value">
+        ${i.ret}
+    </div>
+</div>
+
+<div class="blueprint-item">
+    <div class="blueprint-label">
+        Social Security
+    </div>
+    <div class="blueprint-value">
+        ${ssAge}
+    </div>
+</div>
+
+<div class="blueprint-item">
+    <div class="blueprint-label">
+        Roth at 85
+    </div>
+    <div class="blueprint-value">
+        ${fmt.format(term.roth)}
+    </div>
+</div>
+
+`;
 /* Scenario preset buttons. custom does not override inputs; other modes set strategy fields. */
 function applyScenarioPreset(mode){
   scenarioMode=mode;
