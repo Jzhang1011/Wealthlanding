@@ -1103,15 +1103,6 @@ if (document.getElementById('retirementBlueprint')) {
     </div>
   `;
 }
-  if (scenarioMode === 'abroad') {
-    document.getElementById('routerTitle').textContent = "Step 2: Launch International Retirement Explorer";
-    document.getElementById('routerDescription').textContent = "Analyze low-cost foreign healthcare and tax treaties to identify your pre-65 bridge locations.";
-    document.getElementById('routerActionBtn').textContent = "Explore Overseas Bridge Cities →";
-  } else {
-    document.getElementById('routerTitle').textContent = "Step 2: Launch U.S. Retirement City Matcher";
-    document.getElementById('routerDescription').textContent = "Filter states that completely shield Social Security and optimization yields from localized state taxation.";
-    document.getElementById('routerActionBtn').textContent = "Explore Domestic Cities →";
-  }
 
   renderPath(rows,i);
   document.getElementById('tradeoffBody').innerHTML='<tr><td><span class="constraint">Federal Bracket Room</span></td><td>Calculation Active</td><td>Target Level Adjustments</td><td>Ensures conversions remain smooth inside efficient margins.</td></tr>';
