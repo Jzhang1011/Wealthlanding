@@ -466,16 +466,151 @@
                     </div>
                      <span class="action-btn action-btn-secondary">Coming soon</span>
                 </div>
-                      <div class="data-card featured">
-                    <div>
-                        <h3>Design My Retirement</h3>
-                        <p>Discover tax, healthcare,location, and legacy strategies.</p>
-                    </div>
-                    <a href="Retirement-simulator/Retirement_diagnostic.html" class="action-btn action-btn-primary">Launch Retirement Diagnostic tool.</a>
+                     <div class="data-card featured">
+    <div>
+        <h3>Design My Retirement</h3>
+        <p>
+            Discover tax, healthcare, location,
+            and legacy strategies.
+        </p>
+    </div>
+
+    <button class="action-btn action-btn-primary"
+            onclick="toggleRetirementJourney()">
+        Explore Retirement Planning
+    </button>
+</div>
+                
                  <!--   <a href="/Retirement-simulator/citymatcher.html" class="action-btn action-btn-primary">I am preparing for retirement.</a>
                     <a href="/Retirement-simulator/citymatcher.html" class="action-btn action-btn-primary">I am already retired.</a>-->
                 </div>
             </section>
+                <!-- Retirement Journey-->
+<div id="retirementJourney"
+     style="display:none; margin-top:40px;">
+  <section class="retirement-hub">
+
+    <div class="retirement-header">
+        <h2>Retirement Planning System</h2>
+        <p>
+            Navigate retirement planning through a structured framework
+            covering tax optimization, location strategy, healthcare planning,
+            and legacy considerations.
+        </p>
+    </div>
+
+    <!-- Beginner Path -->
+
+    <div class="journey-card beginner-path">
+        <div class="path-badge">Recommended Starting Point</div>
+
+        <h3>Not Sure Where To Start?</h3>
+
+        <p>
+            Answer a few questions and we'll identify your biggest retirement
+            opportunity and recommend your next planning step.
+        </p>
+
+        <a href="Retirement-simulator/Retirement_diagnostic.html"
+           class="btn-primary">
+           Start Retirement Diagnostic
+        </a>
+    </div>
+
+    <!-- Power User Path -->
+
+    <div class="journey-card advanced-path">
+
+        <h3>Already Know What You're Looking For?</h3>
+
+        <div class="tool-grid">
+
+            <a href="Retirement-simulator/OptimizeRoth.html"
+               class="tool-card">
+                <span class="tool-icon">💰</span>
+                <h4>Tax Blueprint</h4>
+                <p>Roth conversions, RMDs, ACA & IRMAA planning.</p>
+            </a>
+
+            <a href="Retirement-simulator/UScitymatcher.html"
+               class="tool-card">
+                <span class="tool-icon">🇺🇸</span>
+                <h4>US City Matcher</h4>
+                <p>Compare retirement-friendly cities.</p>
+            </a>
+
+            <a href="Retirement-simulator/RetiringOverseas.html"
+               class="tool-card">
+                <span class="tool-icon">🌎</span>
+                <h4>Overseas Explorer</h4>
+                <p>Evaluate international retirement options.</p>
+            </a>
+
+            <a href="Retirement-simulator/cost_for_65+.html"
+               class="tool-card">
+                <span class="tool-icon">🏥</span>
+                <h4>Healthcare Planner</h4>
+                <p>Estimate retirement healthcare costs.</p>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Retirement Journey Roadmap -->
+
+    <div class="retirement-roadmap">
+
+        <h3>Your Retirement Journey</h3>
+
+        <div class="roadmap-steps">
+
+            <div class="step completed">
+                <span class="step-number">1</span>
+                <div>
+                    <strong>Retirement Readiness</strong>
+                    <p>Identify your biggest opportunity.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <div>
+                    <strong>Tax Blueprint</strong>
+                    <p>Optimize Roth conversion strategy.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <div>
+                    <strong>Location Strategy</strong>
+                    <p>Compare US and overseas options.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">4</span>
+                <div>
+                    <strong>Healthcare Strategy</strong>
+                    <p>Model healthcare costs and risks.</p>
+                </div>
+            </div>
+
+            <div class="step coming-soon">
+                <span class="step-number">5</span>
+                <div>
+                    <strong>Retirement Master Plan</strong>
+                    <p>Coming Soon</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+</div>
+            
            <!-- Section 3: Deep Dive — Early Retirement Masterclass -->
             <h2 class="section-title" id="retirement-hub">Featured Hub: The Early Retirement Masterclass</h2>
             <section class="masterclass">
@@ -554,5 +689,17 @@
     </div>
 <!--Google search script-->
     <script async src="https://cse.google.com/cse.js?cx=40edcbb80dea44bf1"></script>
+            <script>
+function toggleRetirementJourney() {
+    const section = document.getElementById('retirementJourney');
+
+    if (section.style.display === 'none' || section.style.display === '') {
+        section.style.display = 'block';
+        section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        section.style.display = 'none';
+    }
+}
+</script>
 </body>
 </html>
