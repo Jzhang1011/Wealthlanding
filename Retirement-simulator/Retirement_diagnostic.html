@@ -1230,7 +1230,12 @@
         }
       }
     }
-
+        // pass value to master plan
+function savePlanValue(key, value) {
+    if (value !== undefined && value !== null && value !== '') {
+        localStorage.setItem(key, value);
+    }
+}
     function processDiagnosticCalculations() {
       const age = parseInt(document.getElementById('userAge').value) || 54;
       const retire = parseInt(document.getElementById('retireAge').value) || 60;
@@ -1339,7 +1344,32 @@
       document.getElementById('analysisReport').style.display = 'block';
       document.getElementById('analysisReport').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+// Save Diagnostic Results
 
+savePlanValue('wl_currentAge', age);
+savePlanValue('wl_retireAge', retire);
+
+savePlanValue('wl_primaryConcern', selectedConcern);
+savePlanValue('wl_assetTier', selectedAsset);
+savePlanValue('wl_geoPreference', selectedGeo);
+
+savePlanValue('wl_opportunityRange', rangeText);
+
+savePlanValue('wl_primaryRisk', riskStr);
+
+savePlanValue('wl_recommendedStrategy', oppStr);
+
+savePlanValue('wl_whyOpportunityExists', mattersStr);
+
+savePlanValue(
+  'wl_opportunitySummary',
+  subtitleStr
+);
+
+savePlanValue(
+  'wl_optimizationWindow',
+  document.getElementById('v-window-text').innerText
+);
     function routeToBlueprintMaster() {
       const age = document.getElementById('userAge').value;
       const retire = document.getElementById('retireAge').value;
@@ -1352,6 +1382,7 @@
       const queryParamURL = `OptimizeRoth.html?currentAge=${age}&retireAge=${retire}&pretax=${rawPretaxMap}&geoPref=${selectedGeo}&primaryConcern=${selectedConcern}`;
       window.location.href = queryParamURL;
     }
+
   </script>
 </body>
 </html>
