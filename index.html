@@ -275,6 +275,116 @@
             color: #64748B;
             cursor: not-allowed;
         }
+          /* Retirement hub display when user click on retirement life stage */
+        .retirement-hub {
+    margin-top: 4rem;
+}
+
+.retirement-header {
+    margin-bottom: 2rem;
+}
+
+.retirement-header h2 {
+    font-size: 2rem;
+    color: #0B132B;
+}
+
+.retirement-header p {
+    color: #64748B;
+    max-width: 700px;
+}
+
+.journey-card {
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.path-badge {
+    display: inline-block;
+    background: #DCFCE7;
+    color: #166534;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: #02B17D;
+    color: white;
+    padding: 0.85rem 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.tool-card {
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+
+.tool-card:hover {
+    border-color: #02B17D;
+    transform: translateY(-2px);
+}
+
+.tool-icon {
+    font-size: 1.5rem;
+}
+
+.retirement-roadmap {
+    background: #F8FAFC;
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.roadmap-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.step {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.step-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #E2E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.completed .step-number {
+    background: #02B17D;
+    color: white;
+}
+
+.coming-soon {
+    opacity: 0.6;
+}
   /* Masterclass Sequence Row */
         .masterclass {
             background-color: var(--bg-light);
