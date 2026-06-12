@@ -1106,25 +1106,25 @@
             </div>
             <div class="mock-screenshot">
               <div class="mock-header">Calculated Module Elements</div>
-              <div class="mock-title">Retirement Tax Blueprint Elements</div>
+              <div class="mock-title">Retirement Strategy Engine Elements</div>
               <div class="mock-row">
-                <div class="mock-label"><span>✓</span> Best Roth Conversion Window</div>
+                <div class="mock-label"><span>✓</span> Retirement Readiness Range</div>
                 <div class="mock-val">Optimized</div>
               </div>
               <div class="mock-row">
-                <div class="mock-label"><span>✓</span> Estimated Tax Savings</div>
+                <div class="mock-label"><span>✓</span> Roth Conversion Window</div>
                 <div class="mock-val">Calculated</div>
               </div>
               <div class="mock-row">
-                <div class="mock-label"><span>✓</span> ACA & Premium Impact</div>
+                <div class="mock-label"><span>✓</span> Sustainable Spending Range</div>
                 <div class="mock-val">Structured</div>
               </div>
               <div class="mock-row">
-                <div class="mock-label"><span>✓</span> Medicare & Surcharge Impact</div>
+                <div class="mock-label"><span>✓</span> Social Security Timing Scenarios</div>
                 <div class="mock-val">Modeled</div>
               </div>
               <div class="mock-row">
-                <div class="mock-label"><span>✓</span> Retirement Location Opportunities</div>
+                <div class="mock-label"><span>✓</span> Location Arbitrage Opportunity</div>
                 <div class="mock-val">Matched</div>
               </div>
             </div>
@@ -1139,15 +1139,15 @@
               </div>
               <div class="journey-step active">
                 <div class="step-idx">→</div>
-                <div class="step-contents"><b>Tax Blueprint</b><span>Current Step</span></div>
+                <div class="step-contents"><b>Retirement Strategy Engine</b><span>Current Step</span></div>
               </div>
               <div class="journey-step">
                 <div class="step-idx">3</div>
-                <div class="step-contents"><b>Location Strategy</b><span>Upcoming</span></div>
+                <div class="step-contents"><b>Conversion Location</b><span>Upcoming</span></div>
               </div>
               <div class="journey-step">
                 <div class="step-idx">4</div>
-                <div class="step-contents"><b>Healthcare Strategy</b><span>Upcoming</span></div>
+                <div class="step-contents"><b>65+ Healthcare</b><span>Upcoming</span></div>
               </div>
               <div class="journey-step">
                 <div class="step-idx">5</div>
@@ -1158,7 +1158,7 @@
 
           <div class="primary-cta-banner">
             <h2>Ready to Uncover Your Strategic Window?</h2>
-            <button class="btn-master-cta" onclick="routeToBlueprintMaster()">See My Retirement Opportunity</button>
+            <button class="btn-master-cta" onclick="routeToBlueprintMaster()">Build My Retirement Strategy</button>
             <div>
               <a href="#" class="secondary-return-link" onclick="window.location.reload(); return false;">← Reset and Start Diagnostic Over</a>
             </div>
@@ -1339,11 +1339,6 @@ function savePlanValue(key, value) {
       document.getElementById('matters-explanation').innerHTML = mattersStr;
       document.getElementById('lossList').innerHTML = lossHtml;
 
-      document.getElementById('hero-fold').style.display = 'none';
-      document.getElementById('inputWizard').style.display = 'none';
-      document.getElementById('analysisReport').style.display = 'block';
-      document.getElementById('analysisReport').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
 // Save Diagnostic Results
 
 savePlanValue('wl_currentAge', age);
@@ -1370,6 +1365,13 @@ savePlanValue(
   'wl_optimizationWindow',
   document.getElementById('v-window-text').innerText
 );
+      
+      document.getElementById('hero-fold').style.display = 'none';
+      document.getElementById('inputWizard').style.display = 'none';
+      document.getElementById('analysisReport').style.display = 'block';
+      document.getElementById('analysisReport').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
     function routeToBlueprintMaster() {
       const age = document.getElementById('userAge').value;
       const retire = document.getElementById('retireAge').value;
