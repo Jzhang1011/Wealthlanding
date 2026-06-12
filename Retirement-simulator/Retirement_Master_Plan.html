@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retirement Master Plan | WealthLanding</title>
+
+  <style>
+    :root {
+      --navy: #0B132B;
+      --mint: #02B17D;
+      --mint-dark: #019367;
+      --bg: #F8FAFC;
+      --card: #FFFFFF;
+      --border: #E2E8F0;
+      --text: #1E293B;
+      --muted: #64748B;
+      --blue: #2563EB;
+      --amber: #D97706;
+      --red: #B91C1C;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .global-header {
+      background: var(--navy);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 2rem;
+      border-bottom: 1px solid #1E293B;
+    }
+
+    .logo {
+      color: white;
+      text-decoration: none;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .logo span { color: var(--mint); }
+
+    .top-nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-nav-links a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .top-nav-links a:hover,
+    .top-nav-links a.active {
+      color: white;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 48px 24px 90px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0B132B, #1E293B);
+      color: white;
+      border-radius: 24px;
+      padding: 48px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(2, 177, 125, 0.15);
+      border: 1px solid rgba(2, 177, 125, 0.35);
+      color: #A7F3D0;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      line-height: 1.05;
+      margin: 0 0 16px;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      color: #CBD5E1;
+      max-width: 780px;
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .metric-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .metric-value {
+      font-size: 1.5rem;
+      font-weight: 850;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .section-kicker {
+      color: var(--mint-dark);
+      font-size: 0.75rem;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 8px;
+    }
+
+    .panel h2 {
+      margin: 0 0 14px;
+      color: var(--navy);
+      font-size: 1.55rem;
+      letter-spacing: -0.03em;
+    }
+
+    .strategy-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .strategy-item {
+      display: flex;
+      gap: 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      background: #F8FAFC;
+    }
+
+    .strategy-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: #DCFCE7;
+      color: #166534;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .strategy-item strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .strategy-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .action-plan {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .action-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+
+    .action-row:last-child {
+      border-bottom: none;
+    }
+
+    .action-row b {
+      color: var(--navy);
+    }
+
+    .status-pill {
+      background: #EFF6FF;
+      color: var(--blue);
+      border: 1px solid #BFDBFE;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .warning {
+      background: #FFF7ED;
+      border: 1px solid #FED7AA;
+      color: #9A3412;
+    }
+
+    .success {
+      background: #ECFDF5;
+      border: 1px solid #BBF7D0;
+      color: #166534;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 18px;
+      font-weight: 750;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--mint);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--mint-dark);
+    }
+
+    .btn-secondary {
+      background: #F1F5F9;
+      color: #334155;
+    }
+
+    .empty-state {
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      color: #7F1D1D;
+      padding: 18px;
+      border-radius: 14px;
+      margin-bottom: 24px;
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .summary-grid,
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .top-nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="global-header">
+  <a href="/" class="logo">Wealth<span>Landing</span></a>
+
+  <nav aria-label="Global Main Directory">
+    <ul class="top-nav-links">
+      <li><a href="/">Overview Hub</a></li>
+      <li><a href="#">Accumulation Blueprint</a></li>
+      <li><a href="#">Optimization Systems</a></li>
+      <li><a href="#">Family Legacy Shelters</a></li>
+      <li><a href="/Retirement-simulator/Retirement_Master_Plan.html" class="active">Retirement Master Plan</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <div class="hero-badge">Retirement Master Plan</div>
+    <h1>Your Personalized Retirement Strategy</h1>
+    <p>
+      This page combines your diagnostic, tax blueprint, location strategy,
+      and healthcare estimates into one retirement planning summary.
+    </p>
+  </section>
+
+  <div id="missingDataNotice" class="empty-state">
+    Some planning inputs are missing. Start with the Retirement Diagnostic first, then return here.
+  </div>
+
+  <section class="summary-grid">
+    <div class="metric-card">
+      <div class="metric-label">Current Age</div>
+      <div class="metric-value" id="currentAge">—</div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-label">Target Retirement</div>
+      <div class="metric-value" id="retireAge">—</div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-label">Tax Opportunity</div>
+      <div class="metric-value" id="taxSaved">—</div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-label">Primary Strategy</div>
+      <div class="metric-value" id="primaryStrategy">—</div>
+    </div>
+  </section>
+
+  <section class="main-grid">
+
+    <div>
+
+      <section class="panel">
+        <div class="section-kicker">Executive Summary</div>
+        <h2>Your Retirement Opportunity</h2>
+        <p id="opportunitySummary">
+          Complete the Retirement Diagnostic to generate your customized opportunity summary.
+        </p>
+
+        <div class="strategy-list">
+          <div class="strategy-item">
+            <div class="strategy-icon">1</div>
+            <div>
+              <strong>Tax Strategy</strong>
+              <p id="taxStrategy">Run the Tax Blueprint to calculate Roth conversion opportunities.</p>
+            </div>
+          </div>
+
+          <div class="strategy-item">
+            <div class="strategy-icon">2</div>
+            <div>
+              <strong>Location Strategy</strong>
+              <p id="locationStrategy">Use the U.S. or overseas matcher to compare retirement locations.</p>
+            </div>
+          </div>
+
+          <div class="strategy-item">
+            <div class="strategy-icon">3</div>
+            <div>
+              <strong>Healthcare Strategy</strong>
+              <p id="healthcareStrategy">Use the healthcare planner to estimate premium and care exposure.</p>
+            </div>
+          </div>
+
+          <div class="strategy-item">
+            <div class="strategy-icon">4</div>
+            <div>
+              <strong>Legacy Strategy</strong>
+              <p id="legacyStrategy">Reduce pre-tax asset drag and improve after-tax inheritance flexibility.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-kicker">Recommended Action Plan</div>
+        <h2>What To Do Next</h2>
+
+        <div class="action-plan">
+          <div class="action-row">
+            <div>
+              <b>Complete Retirement Diagnostic</b>
+              <p>Identify your biggest retirement planning opportunity.</p>
+            </div>
+            <span class="status-pill success" id="diagnosticStatus">Recommended</span>
+          </div>
+
+          <div class="action-row">
+            <div>
+              <b>Run Tax Blueprint</b>
+              <p>Estimate Roth conversion value and RMD risk.</p>
+            </div>
+            <span class="status-pill" id="taxStatus">Next</span>
+          </div>
+
+          <div class="action-row">
+            <div>
+              <b>Compare Locations</b>
+              <p>Evaluate U.S. and overseas retirement options.</p>
+            </div>
+            <span class="status-pill" id="locationStatus">Optional</span>
+          </div>
+
+          <div class="action-row">
+            <div>
+              <b>Estimate Healthcare Costs</b>
+              <p>Compare Medicare, U.S. care, and international healthcare exposure.</p>
+            </div>
+            <span class="status-pill warning" id="healthStatus">Important</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <aside>
+
+      <section class="panel">
+        <div class="section-kicker">Planning Inputs</div>
+        <h2>Your Saved Profile</h2>
+
+        <p><strong>Primary concern:</strong><br><span id="primaryConcern">—</span></p>
+        <p><strong>Asset tier:</strong><br><span id="assetTier">—</span></p>
+        <p><strong>Location preference:</strong><br><span id="geoPreference">—</span></p>
+        <p><strong>Optimization window:</strong><br><span id="optimizationWindow">—</span></p>
+      </section>
+
+      <section class="panel">
+        <div class="section-kicker">Saved Results</div>
+        <h2>Tool Outputs</h2>
+
+        <p><strong>Estimated estate gain:</strong><br><span id="estateGain">—</span></p>
+        <p><strong>Pre-tax reduction:</strong><br><span id="pretaxReduction">—</span></p>
+        <p><strong>Recommended U.S. city:</strong><br><span id="usCity">—</span></p>
+        <p><strong>Recommended overseas city:</strong><br><span id="overseasCity">—</span></p>
+        <p><strong>Lowest healthcare location:</strong><br><span id="lowestHealthcare">—</span></p>
+      </section>
+
+      <section class="panel">
+        <div class="section-kicker">Continue Planning</div>
+        <h2>Launch Tools</h2>
+
+        <div class="btn-row">
+          <a class="btn btn-primary" href="Retirement_diagnostic.html">Diagnostic</a>
+          <a class="btn btn-secondary" href="OptimizeRoth.html">Tax Blueprint</a>
+          <a class="btn btn-secondary" href="UScitymatcher.html">U.S. Matcher</a>
+          <a class="btn btn-secondary" href="RetiringOverseas.html">Overseas Matcher</a>
+          <a class="btn btn-secondary" href="cost_for_65+.html">Healthcare</a>
+        </div>
+      </section>
+
+    </aside>
+
+  </section>
+
+</main>
+
+<script>
+function getValue(key, fallback = "—") {
+  return localStorage.getItem(key) || fallback;
+}
+
+function money(value) {
+  if (!value || value === "—") return "—";
+  const number = Number(value);
+  if (Number.isNaN(number)) return value;
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0
+  }).format(number);
+}
+
+function labelConcern(value) {
+  const map = {
+    taxes: "Taxes",
+    healthcare: "Healthcare costs",
+    family: "Leaving more to family",
+    overseas: "Retiring overseas",
+    timeline: "Retirement timing",
+    unspecified: "Not sure where to start"
+  };
+  return map[value] || value || "—";
+}
+
+function labelAssetTier(value) {
+  const map = {
+    low: "Less than $250,000",
+    mid: "$250,000 - $1M",
+    high: "$1M - $3M",
+    ultra: "$3M+"
+  };
+  return map[value] || value || "—";
+}
+
+function labelGeo(value) {
+  const map = {
+    static: "Stay in current area",
+    domestic: "Open to moving within the U.S.",
+    international: "Open to living overseas",
+    flexible: "Completely flexible"
+  };
+  return map[value] || value || "—";
+}
+
+function populateMasterPlan() {
+  const currentAge = getValue("wl_currentAge");
+  const retireAge = getValue("wl_retireAge");
+  const primaryConcern = getValue("wl_primaryConcern");
+  const assetTier = getValue("wl_assetTier");
+  const geoPreference = getValue("wl_geoPreference");
+
+  const opportunityRange = getValue("wl_opportunityRange");
+  const opportunitySummary = getValue("wl_opportunitySummary");
+  const recommendedStrategy = getValue("wl_recommendedStrategy");
+  const optimizationWindow = getValue("wl_optimizationWindow");
+
+  const taxSaved = getValue("wl_taxSaved");
+  const estateGain = getValue("wl_estateGain");
+  const pretaxReduction = getValue("wl_pretaxReduction");
+  const taxStrategy = getValue("wl_taxStrategy");
+
+  const usCity = getValue("wl_usCity");
+  const usState = getValue("wl_usState");
+  const overseasCity = getValue("wl_overseasCity");
+  const overseasCountry = getValue("wl_overseasCountry");
+
+  const lowestHealthcareLocation = getValue("wl_lowestHealthcareLocation");
+  const lowestHealthcarePremium = getValue("wl_lowestHealthcarePremium");
+
+  document.getElementById("currentAge").textContent = currentAge;
+  document.getElementById("retireAge").textContent = retireAge;
+  document.getElementById("taxSaved").textContent =
+    taxSaved !== "—" ? money(taxSaved) : opportunityRange;
+  document.getElementById("primaryStrategy").textContent = recommendedStrategy;
+
+  document.getElementById("primaryConcern").textContent = labelConcern(primaryConcern);
+  document.getElementById("assetTier").textContent = labelAssetTier(assetTier);
+  document.getElementById("geoPreference").textContent = labelGeo(geoPreference);
+  document.getElementById("optimizationWindow").textContent = optimizationWindow;
+
+  document.getElementById("opportunitySummary").innerHTML =
+    opportunitySummary !== "—"
+      ? opportunitySummary
+      : "Complete the Retirement Diagnostic to generate your customized opportunity summary.";
+
+  document.getElementById("taxStrategy").textContent =
+    taxStrategy !== "—"
+      ? taxStrategy + ". Estimated tax opportunity: " + money(taxSaved)
+      : "Run the Tax Blueprint to calculate Roth conversion opportunities.";
+
+  document.getElementById("locationStrategy").textContent =
+    usCity !== "—"
+      ? "Your U.S. city matcher currently points to " + usCity + ", " + usState + "."
+      : overseasCity !== "—"
+      ? "Your overseas matcher currently points to " + overseasCity + ", " + overseasCountry + "."
+      : "Use the U.S. or overseas matcher to compare retirement locations.";
+
+  document.getElementById("healthcareStrategy").textContent =
+    lowestHealthcareLocation !== "—"
+      ? "The healthcare planner currently shows " + lowestHealthcareLocation +
+        " as the lowest modeled healthcare premium location at " + lowestHealthcarePremium + "."
+      : "Use the healthcare planner to estimate premium and care exposure.";
+
+  document.getElementById("legacyStrategy").textContent =
+    estateGain !== "—"
+      ? "Your modeled estate value gain is " + money(estateGain) +
+        ", supported by pre-tax balance reduction and Roth optimization."
+      : "Reduce pre-tax asset drag and improve after-tax inheritance flexibility.";
+
+  document.getElementById("estateGain").textContent = money(estateGain);
+  document.getElementById("pretaxReduction").textContent = money(pretaxReduction);
+  document.getElementById("usCity").textContent =
+    usCity !== "—" ? usCity + ", " + usState : "—";
+  document.getElementById("overseasCity").textContent =
+    overseasCity !== "—" ? overseasCity + ", " + overseasCountry : "—";
+  document.getElementById("lowestHealthcare").textContent =
+    lowestHealthcareLocation !== "—"
+      ? lowestHealthcareLocation + " / " + lowestHealthcarePremium
+      : "—";
+
+  if (currentAge === "—" || retireAge === "—") {
+    document.getElementById("missingDataNotice").style.display = "block";
+  }
+}
+
+populateMasterPlan();
+</script>
+
+</body>
+</html>
