@@ -408,7 +408,52 @@ let myHealth = (2500 * 2) * ageMultiplier;
       ltc: '$2,500 - $4,500', ltcSub: 'High-Dependency Private Units'
     }
   ];
+// Pass medical cost comparison to master plan
+   // Save Healthcare Results
 
+savePlanValue('wl_healthcareAge', age);
+
+savePlanValue(
+    'wl_healthcareIncome',
+    totalIncome
+);
+
+savePlanValue(
+    'wl_healthcareBaselineUS',
+    usHealth
+);
+
+// Find lowest annual healthcare premium
+
+let cheapest = data[0];
+
+for (let i = 1; i < data.length; i++) {
+
+    const currentCost =
+        Number(
+            data[i].health.replace(/[^0-9]/g, '')
+        );
+
+    const cheapestCost =
+        Number(
+            cheapest.health.replace(/[^0-9]/g, '')
+        );
+
+    if (currentCost < cheapestCost) {
+        cheapest = data[i];
+    }
+}
+
+savePlanValue(
+    'wl_lowestHealthcareLocation',
+    cheapest.city
+);
+
+savePlanValue(
+    'wl_lowestHealthcarePremium',
+    cheapest.health
+);
+   
   const html = data.map(row => `
     <tr>
       <td>
@@ -449,6 +494,13 @@ Object.values(inputs).forEach(input => {
 
 // Run immediate calculations when page loads
 calculateMatrix();
+   
+// Pass medical cost choice to masterplan
+   function savePlanValue(key, value) {
+    if (value !== undefined && value !== null && value !== '') {
+        localStorage.setItem(key, value);
+    }
+}
 </script>
    <!--Google search script-->
     <script async src="https://cse.google.com/cse.js?cx=40edcbb80dea44bf1"></script>
