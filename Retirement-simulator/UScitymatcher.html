@@ -413,13 +413,28 @@ function scoreCity(c){let score=50,notes=[];
   if(state.airport==='major'){if(c.airport==='major')score+=10;else score-=8}else if(state.airport==='regional'){if(c.airport==='major'||c.airport==='regional')score+=5}else if(state.airport==='not_important')score+=1;
   return{...c,score:Math.round(score),notes};
 }
-function renderResults(){updatePath();let ranked=cities.map(scoreCity).sort((a,b)=>b.score-a.score).filter(c=>c.score>=45).slice(0,8);let grid=document.getElementById('cityGrid');grid.innerHTML='';let ben=benefitClass();document.getElementById('resultNarrative').textContent=`Based on your inputs, income-tested senior supports are classified as “${ben.label}.” Results below prioritize ${state.phase?labels.phase[state.phase].toLowerCase():'your retirement phase'}, ${state.healthcare?labels.healthcare[state.healthcare].toLowerCase():'healthcare needs'}, and your selected budget/housing profile.`;
+function renderResults(){updatePath();let ranked=cities.map(scoreCity).sort((a,b)=>b.score-a.score).filter(c=>c.score>=45).slice(0,8);
+                       //Pass US city results to master plan
+                           if (ranked.length > 0) {
+    savePlanValue('wl_usCity', ranked[0].name);
+    savePlanValue('wl_usState', ranked[0].state);
+    savePlanValue('wl_usCityScore', ranked[0].score);
+    savePlanValue('wl_usCityReason', ranked[0].why);
+}
+                         let grid=document.getElementById('cityGrid');grid.innerHTML='';let ben=benefitClass();document.getElementById('resultNarrative').textContent=`Based on your inputs, income-tested senior supports are classified as “${ben.label}.” Results below prioritize ${state.phase?labels.phase[state.phase].toLowerCase():'your retirement phase'}, ${state.healthcare?labels.healthcare[state.healthcare].toLowerCase():'healthcare needs'}, and your selected budget/housing profile.`;
   if(!ranked.length){grid.innerHTML='<div class="empty">No strong matches found. Try increasing budget, lowering healthcare depth, or accepting an additional climate risk.</div>'}else{ranked.forEach((c,i)=>{let card=document.createElement('div');card.className='city-card';card.style.animationDelay=(i*.04)+'s';let benefitNote=ben.class==='unlikely'?'Benefits: likely not income-useful':ben.class==='maybe'?'Benefits: maybe useful':'Benefits: worth researching';let taxPill=c.tax==='none'?'No state income tax':c.tax==='low'?'Low income tax':'Retirement-income friendly';card.innerHTML=`<div class="city-top"><div><div class="city-name">${c.emoji} ${c.name}</div><div class="state">${c.state}</div></div><div class="rank">Score ${c.score}</div></div><div class="badges"><span class="pill good">${taxPill}</span><span class="pill ${c.insurance==='high'?'hot':'warn'}">${c.insurance} insurance risk</span><span class="pill">${benefitNote}</span></div><div class="city-stats"><div class="stat"><b>${money(c.monthly[0])}–${money(c.monthly[1])}</b><span>Monthly planning range</span></div><div class="stat"><b>${'★'.repeat(c.health)}${'☆'.repeat(4-c.health)}</b><span>Healthcare depth</span></div></div><p class="why">${c.why}</p><p class="muted"><b>Watch:</b> ${c.risks.join(', ') || 'general costs'}; property burden ${c.property}; airport ${c.airport}.</p><a href="#compare">Compare with starter universe →</a>`;grid.appendChild(card);});}
   document.getElementById('results').classList.add('active');document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
 }
 function restartMatcher(){state={phase:null,filingStatus:null,conversionBand:null,recurringIncome:null,budgetBand:null,housing:null,supportPriority:null,healthcare:null,climateTolerance:null,airport:null};document.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));document.getElementById('results').classList.remove('active');updatePath();showStep(1)}
 function renderStarterTable(){let tb=document.getElementById('starterTable');cities.forEach(c=>{let tr=document.createElement('tr');let best=c.best.map(x=>x.replace('_',' ')).join(', ');tr.innerHTML=`<td><b>${c.name}</b></td><td>${c.state}</td><td>${best}</td><td>${money(c.monthly[0])}–${money(c.monthly[1])}</td><td>${c.health}/4</td><td>${c.benefitSensitivity==='high'?'Many supports may be income-tested':c.benefitSensitivity==='medium'?'Verify county/state rules':'More structural than income-tested'}</td>`;tb.appendChild(tr);})}
 renderStarterTable();updatePath();
+
+  // Pass US city choice to master plan
+  function savePlanValue(key, value) {
+    if (value !== undefined && value !== null && value !== '') {
+        localStorage.setItem(key, value);
+    }
+}
 </script>
   <!--Google search script-->
     <script async src="https://cse.google.com/cse.js?cx=40edcbb80dea44bf1"></script>
