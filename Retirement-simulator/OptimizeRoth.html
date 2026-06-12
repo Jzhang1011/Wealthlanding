@@ -9,7 +9,7 @@
     gtag('config', 'G-9JMJJ5CJR4');
   </script>
 
-  <title>Retirement Tax Blueprint | Wealth Landing</title>
+  <title>Retirement Strategy Engine| Wealth Landing</title>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <style>
@@ -297,11 +297,67 @@
     .switch-row.preset-locked::after{content:' — set by scenario'; font-size:11px; color:#94a3b8}
 
     /* EXECUTIVE SUMMARY STRATEGY LAYOUT */
-    #retirementBlueprint { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    @media(max-width: 768px) { #retirementBlueprint { grid-template-columns: 1fr; } }
-    .blueprint-item { padding: 16px; border: 1px solid var(--border); border-radius: 14px; background: #fff; }
-    .blueprint-label { font-size: 12px; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.02em; }
-    .blueprint-value { font-size: 20px; font-weight: 700; color: var(--text); }
+.strategy-summary-card {
+  border: 2px solid rgba(2, 177, 125, 0.25);
+}
+
+.summary-intro {
+  color: var(--muted);
+  margin: 0 0 18px 0;
+  line-height: 1.5;
+}
+
+.strategy-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media(max-width: 900px) {
+  .strategy-summary-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 520px) {
+  .strategy-summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.blueprint-item {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.blueprint-item.highlight {
+  background: #ecfdf5;
+  border-color: #bbf7d0;
+}
+
+.blueprint-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+.blueprint-value {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.blueprint-note {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
     
     /* SYSTEM PROGRESS JOURNEY LAYER */
     .next-step-panel { background: #0B132B; color: white; border-radius: 20px; padding: 40px; margin-top: 30px; }
@@ -324,6 +380,28 @@
     .router-text p { margin: 0; font-size: 0.9rem; color: #94a3b8; }
     .btn-router { background: var(--emerald); color: white; font-size: 0.95rem; font-weight: 700; padding: 12px 28px; border: none; border-radius: 8px; cursor: pointer; white-space: nowrap; transition: background 0.15s; }
     .btn-router:hover { background: #029668; }
+    .router-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.btn-router.secondary {
+  background: #2563eb;
+}
+
+.btn-router.secondary:hover {
+  background: #1d4ed8;
+}
+
+.btn-router.muted {
+  background: #334155;
+}
+
+.btn-router.muted:hover {
+  background: #475569;
+}
 
     /* PLANNER SHELL WIZARD HORIZONTAL SPECIFICATIONS */
     .planner-shell {
@@ -420,7 +498,7 @@
 <div class="wrap">
   <div class="header">
     <div>
-        <h1 class="title">Retirement Tax Blueprint</h1>
+        <h1 class="title">Retirement Strategy Engine</h1>
         <div class="subtitle" id="summaryText"></div>
     </div>
     <div class="header-actions">
@@ -592,12 +670,20 @@
         <div class="card"><div class="card-body"><div class="metric">Age 85 today $</div><div class="metric-value" id="cardTerminalToday"></div><div class="metric-sub">Inflation-adjusted</div></div></div>
       </div>
 
-      <div class="card chart-card">
-        <div class="card-head"><h3>Your Retirement Blueprint</h3></div>
-        <div class="card-body">
-          <div id="retirementBlueprint"></div>
-        </div>
-      </div>
+     <div class="card chart-card strategy-summary-card">
+  <div class="card-head">
+    <h3>Your Retirement Strategy Summary</h3>
+  </div>
+  <div class="card-body">
+    <p class="summary-intro">
+      This summary translates the simulation into plain-English retirement decisions:
+      when you retire, when Social Security starts, how much tax you may save,
+      and whether geographic arbitrage appears useful.
+    </p>
+
+    <div id="retirementBlueprint" class="strategy-summary-grid"></div>
+  </div>
+</div>
 
       <div class="card chart-card">
         <div class="card-head"><h3>Decision tree path</h3></div>
@@ -663,23 +749,75 @@
         </div>
       </div>
 
-      <div class="next-step-panel">
-        <h2>What Happens Next?</h2>
-        <p>Your strategic framework maps across a complete multi-layered process layer:</p>
-        <div class="journey-tracker">
-          <div class="journey-node completed"><div class="node-idx">✓</div><div class="node-contents"><b>Tax Blueprint</b><span>Completed</span></div></div>
-          <div class="journey-node active"><div class="node-idx">2</div><div class="node-contents"><b>Location Strategy</b><span>Select Landing Cities</span></div></div>
-          <div class="journey-node"><div class="node-idx">3</div><div class="node-contents"><b>Healthcare Strategy</b><span>Map Carrier Premium Cliffs</span></div></div>
-          <div class="journey-node"><div class="node-idx">4</div><div class="node-contents"><b>Final Retirement Plan</b><span>Export Unified Document</span></div></div>
-        </div>
-        <div class="router-box">
-          <div class="router-text">
-            <h4 id="routerTitle">Initialize Geographic Sourcing Layer</h4>
-            <p id="routerDescription">Pass your conversion metrics directly into our city matching matrices.</p>
-          </div>
-          <button class="btn-router" id="routerActionBtn" onclick="dispatchToNextGeographicTool()">Launch Location Matcher →</button>
-        </div>
+   <div class="next-step-panel">
+  <h2>Next Decision: Where Should You Execute This Strategy?</h2>
+  <p>
+    If your current location is already acceptable, you can stop here.
+    If geographic arbitrage may improve your Roth conversion years or healthcare costs,
+    choose the next planning module.
+  </p>
+
+  <div class="journey-tracker">
+    <div class="journey-node completed">
+      <div class="node-idx">✓</div>
+      <div class="node-contents">
+        <b>Retirement Strategy</b>
+        <span>Current simulation complete</span>
       </div>
+    </div>
+
+    <div class="journey-node active">
+      <div class="node-idx">2</div>
+      <div class="node-contents">
+        <b>Conversion Location</b>
+        <span>Optional next step</span>
+      </div>
+    </div>
+
+    <div class="journey-node">
+      <div class="node-idx">3</div>
+      <div class="node-contents">
+        <b>65+ Healthcare</b>
+        <span>Post-Medicare decision</span>
+      </div>
+    </div>
+
+    <div class="journey-node">
+      <div class="node-idx">4</div>
+      <div class="node-contents">
+        <b>Retirement Plan</b>
+        <span>Future summary</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="router-box">
+    <div class="router-text">
+      <h4>Choose your next planning path</h4>
+      <p>
+        Continue only if you want to compare location or healthcare choices.
+      </p>
+    </div>
+
+    <div class="router-actions">
+      <button class="btn-router muted" onclick="stayCurrentLocation()">
+        Stay Current
+      </button>
+
+      <button class="btn-router" onclick="goToUSMatcher()">
+        Explore U.S. Cities
+      </button>
+
+      <button class="btn-router" onclick="goToOverseasMatcher()">
+        Explore Overseas
+      </button>
+
+      <button class="btn-router secondary" onclick="goToHealthcareTool()">
+        Compare 65+ Healthcare
+      </button>
+    </div>
+  </div>
+</div>
 
     </div>
   </div>
@@ -845,7 +983,35 @@ function dispatchToNextGeographicTool() {
   const query = `?currentAge=${age}&retireAge=${retire}&pretax=${pretax}&primaryConcern=${v('planningObjective')}`;
   window.location.href = (scenarioMode === 'abroad') ? `RetiringOverseas.html${query}` : `UScitymatcher.html${query}`;
 }
+function buildStrategyQuery() {
+  const age = n('currentAge');
+  const retire = n('retireAge');
+  const pretax = n('pretax');
+  const spend = n('annualSpend');
+  const objective = v('planningObjective');
+  const ss = ssAge;
 
+  return `?currentAge=${age}&retireAge=${retire}&pretax=${pretax}&spend=${spend}&primaryConcern=${objective}&ssAge=${ss}`;
+}
+
+function stayCurrentLocation() {
+  alert(
+    "You selected Stay Current. Your strategy results are already shown on this page. Next, review the charts, roadmap, and decision summary before changing location."
+  );
+}
+
+function goToUSMatcher() {
+  window.location.href = `UScitymatcher.html${buildStrategyQuery()}`;
+}
+
+function goToOverseasMatcher() {
+  window.location.href = `RetiringOverseas.html${buildStrategyQuery()}`;
+}
+
+function goToHealthcareTool() {
+  window.location.href = `cost_for_65+.html${buildStrategyQuery()}`;
+}
+  
 function render(){
   let i=inputs(),rows=project(),cur=rows[0],at65=rows.find(r=>r.age===65)||rows[rows.length-1],term=rows[rows.length-1];
   
@@ -871,27 +1037,72 @@ function render(){
   document.getElementById('cardLifetimeTax').textContent=fmt.format(currentLifetimeTax);
   document.getElementById('cardTerminalToday').textContent=fmt.format(term.totalWealth/Math.pow(1+i.infl,term.age-i.cur));
 
-<!-- Capture calculated value and pass to Master plan page-->
-  savePlanValue('wl_taxSaved', calculatedTaxSaved);
-savePlanValue('wl_estateGain', calculatedEstateGain);
-savePlanValue('wl_pretaxReduction', calculatedPretaxReduction);
-savePlanValue('wl_taxStrategy', strategyLabel);
-savePlanValue('wl_rothAt65', at65.roth);
-savePlanValue('wl_pretaxAt65', at65.pretax);
-savePlanValue('wl_lifetimeTax', currentLifetimeTax);
-  
-  let strategyLabel = scenarioMode === 'us' ? 'Stay in U.S. Optimization' : (scenarioMode === 'abroad' ? 'Overseas Bridge Window' : 'Advanced Custom Path');
-  if(document.getElementById('retirementBlueprint')){
-    document.getElementById('retirementBlueprint').innerHTML = `
-      <div class="blueprint-item"><div class="blueprint-label">Retirement Age</div><div class="blueprint-value">${i.ret}</div></div>
-      <div class="blueprint-item"><div class="blueprint-label">Social Security Age</div><div class="blueprint-value">${ssAge}</div></div>
-      <div class="blueprint-item"><div class="blueprint-label">Recommended Strategy</div><div class="blueprint-value">${strategyLabel}</div></div>
-      <div class="blueprint-item"><div class="blueprint-label">Expected Conversion Window</div><div class="blueprint-value">Ages ${i.ret} - 64</div></div>
-      <div class="blueprint-item"><div class="blueprint-label">Roth at Age 85</div><div class="blueprint-value">${fmt.format(term.roth)}</div></div>
-      <div class="blueprint-item"><div class="blueprint-label">Pre-Tax at Age 85</div><div class="blueprint-value">${fmt.format(term.pretax)}</div></div>
-    `;
-  }
 
+  
+  
+let strategyLabel = scenarioMode === 'us'
+  ? 'Stay in U.S. Optimization'
+  : (scenarioMode === 'abroad'
+    ? 'Overseas Bridge Window'
+    : 'Advanced Custom Path');
+
+let geoPathLabel = scenarioMode === 'abroad'
+  ? 'Overseas conversion window'
+  : (scenarioMode === 'us'
+    ? 'U.S.-based conversion window'
+    : 'Custom location strategy');
+
+if (document.getElementById('retirementBlueprint')) {
+  document.getElementById('retirementBlueprint').innerHTML = `
+    <div class="blueprint-item highlight">
+      <div class="blueprint-label">Target Retirement Age</div>
+      <div class="blueprint-value">${i.ret}</div>
+      <div class="blueprint-note">User-selected scenario age</div>
+    </div>
+
+    <div class="blueprint-item highlight">
+      <div class="blueprint-label">Social Security Start</div>
+      <div class="blueprint-value">${ssAge}</div>
+      <div class="blueprint-note">Current selected claiming age</div>
+    </div>
+
+    <div class="blueprint-item">
+      <div class="blueprint-label">Annual Spending Modeled</div>
+      <div class="blueprint-value">${fmt.format(i.spend)}</div>
+      <div class="blueprint-note">Post-retirement annual spending</div>
+    </div>
+
+    <div class="blueprint-item">
+      <div class="blueprint-label">Strategy Path</div>
+      <div class="blueprint-value">${strategyLabel}</div>
+      <div class="blueprint-note">${geoPathLabel}</div>
+    </div>
+
+    <div class="blueprint-item">
+      <div class="blueprint-label">Lifetime Tax Saved</div>
+      <div class="blueprint-value">${fmt.format(calculatedTaxSaved)}</div>
+      <div class="blueprint-note">Compared with no-conversion path</div>
+    </div>
+
+    <div class="blueprint-item">
+      <div class="blueprint-label">Estate Value Gain</div>
+      <div class="blueprint-value">${fmt.format(calculatedEstateGain)}</div>
+      <div class="blueprint-note">Additional terminal after-tax capital</div>
+    </div>
+
+    <div class="blueprint-item">
+      <div class="blueprint-label">Roth at Age 65</div>
+      <div class="blueprint-value">${fmt.format(at65.roth)}</div>
+      <div class="blueprint-note">Tax-free account balance at Medicare age</div>
+    </div>
+
+    <div class="blueprint-item">
+      <div class="blueprint-label">Pre-tax at Age 65</div>
+      <div class="blueprint-value">${fmt.format(at65.pretax)}</div>
+      <div class="blueprint-note">Remaining RMD exposure</div>
+    </div>
+  `;
+}
   if (scenarioMode === 'abroad') {
     document.getElementById('routerTitle').textContent = "Step 2: Launch International Retirement Explorer";
     document.getElementById('routerDescription').textContent = "Analyze low-cost foreign healthcare and tax treaties to identify your pre-65 bridge locations.";
@@ -910,7 +1121,14 @@ savePlanValue('wl_lifetimeTax', currentLifetimeTax);
   
   destroy();
   let labels=rows.map(r=>r.age),milestones=[i.cur,i.ret,60,62,65,67,70,73,75,80,85],ms=rows.filter(r=>milestones.includes(r.age));
-  
+  <!-- Capture calculated value and pass to Master plan page-->
+  savePlanValue('wl_taxSaved', calculatedTaxSaved);
+savePlanValue('wl_estateGain', calculatedEstateGain);
+savePlanValue('wl_pretaxReduction', calculatedPretaxReduction);
+savePlanValue('wl_taxStrategy', strategyLabel);
+savePlanValue('wl_rothAt65', at65.roth);
+savePlanValue('wl_pretaxAt65', at65.pretax);
+savePlanValue('wl_lifetimeTax', currentLifetimeTax);
   mainChart=new Chart(document.getElementById('mainChart'),{type:'bar',data:{labels,datasets:[
     {label:'Pre-tax',data:rows.map(r=>r.pretax),backgroundColor:'#ea580c'},
     {label:'Roth',data:rows.map(r=>r.roth),backgroundColor:'#2563eb'},
