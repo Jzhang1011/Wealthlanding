@@ -30,7 +30,37 @@
             background-color: var(--bg-canvas);
             line-height: 1.5;
         }
+        
+.content-section {
+    background: #ffffff;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin: 3rem 0;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
 
+.section-kicker {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #02B17D;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #0B132B;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    color: #64748B;
+    max-width: 760px;
+    margin-bottom: 2rem;
+}
         /* 1. Global Top Navigation (VanEck Style) */
         .global-header {
             background-color: var(--brand-navy);
@@ -725,9 +755,16 @@
 </div>
             
            <!-- Section 3: Deep Dive — Early Retirement Masterclass -->
-            <h2 class="section-title" id="retirement-hub">Featured Hub: The Early Retirement Masterclass</h2>
-            <section class="masterclass">
-                <div class="step-row">
+            <section class="content-section">
+    <div class="section-kicker">Learn the Concepts</div>
+    <h2 class="section-title">Early Retirement Masterclass</h2>
+    <p class="section-subtitle">
+        Build the knowledge behind the tools: freedom number, withdrawal strategy,
+        and healthcare bridge planning.
+    </p>
+
+    <div class="step-row">
+
                     <div class="step-item">
                         <span class="step-badge">Step 1</span>
                         <h3>Calculate Your Freedom Number</h3>
@@ -747,7 +784,10 @@
             </section>
 
             <!-- Section 4: Curated Toolkit Dashboard -->
-            <h2 class="section-title">Vetted Vitals & Verification Tools</h2>
+          <section class="content-section">
+    <div class="section-kicker">Verification Tools</div>
+    <h2 class="section-title">Vetted Vitals & Verification Tools</h2>
+ 
             <div class="table-responsive">
                 <table>
                     <thead>
@@ -776,7 +816,8 @@
                     </tbody>
                 </table>
             </div>
-
+        
+</section>
             <!-- Section 5: AI & SEO Optimization Block (FAQ) -->
             <h2 class="section-title">Frequently Asked Questions</h2>
             <section class="faq-block">
