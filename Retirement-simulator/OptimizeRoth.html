@@ -870,6 +870,15 @@ function render(){
   document.getElementById('cardRothAdded').textContent=fmt.format(cur.rothAdd);
   document.getElementById('cardLifetimeTax').textContent=fmt.format(currentLifetimeTax);
   document.getElementById('cardTerminalToday').textContent=fmt.format(term.totalWealth/Math.pow(1+i.infl,term.age-i.cur));
+
+<!-- Capture calculated value and pass to Master plan page-->
+  savePlanValue('wl_taxSaved', calculatedTaxSaved);
+savePlanValue('wl_estateGain', calculatedEstateGain);
+savePlanValue('wl_pretaxReduction', calculatedPretaxReduction);
+savePlanValue('wl_taxStrategy', strategyLabel);
+savePlanValue('wl_rothAt65', at65.roth);
+savePlanValue('wl_pretaxAt65', at65.pretax);
+savePlanValue('wl_lifetimeTax', currentLifetimeTax);
   
   let strategyLabel = scenarioMode === 'us' ? 'Stay in U.S. Optimization' : (scenarioMode === 'abroad' ? 'Overseas Bridge Window' : 'Advanced Custom Path');
   if(document.getElementById('retirementBlueprint')){
@@ -1034,6 +1043,11 @@ if(params.get('geoPref')) applyScenarioPreset(params.get('geoPref') === 'interna
 
 applyScenarioPreset('baseline');
 render();
+  function savePlanValue(key, value) {
+    if (value !== undefined && value !== null && value !== '') {
+        localStorage.setItem(key, value);
+    }
+}
 </script>
 </body>
 </html>
