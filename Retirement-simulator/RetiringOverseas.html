@@ -565,6 +565,14 @@ function renderRecommendations(){
     return `<a class="rec" href="https://www.wealthlanding/Retirement-simulator/cities/${c.link}"><span class="flag">${c.flag}</span><h3>${c.city}</h3><p class="muted">${c.country} · ${c.profile}</p><div class="scoreline"><span style="width:${fit}%"></span></div><p class="why"><b>${fit}% fit</b> based on ${money(state.budget)}, ${state.lifestyle?lifestyleLabels[state.lifestyle].toLowerCase():'comfort'}, and healthcare depth.</p></a>`;
   }).join('');
   section.classList.add('show');
+
+  //Pass recommendation to master plan
+  if (ranked.length > 0) {
+    savePlanValue('wl_overseasCity', ranked[0].city);
+    savePlanValue('wl_overseasCountry', ranked[0].country);
+    savePlanValue('wl_overseasHealthScore', ranked[0].health);
+    savePlanValue('wl_overseasProfile', ranked[0].profile);
+}
 }
 function renderPath(){
   document.getElementById('sideBudget').textContent = money(state.budget);
@@ -611,6 +619,13 @@ document.getElementById('healthOptions').addEventListener('click', e=>{
 });
 document.getElementById('startOver').addEventListener('click', ()=>{state.lifestyle=null;state.health=null;syncBudget(4000);setStage(1);document.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));document.getElementById('decision-tree').scrollIntoView({behavior:'smooth'});});
 renderFlags();
+
+  // Pass medical cost choice to masterplan
+   function savePlanValue(key, value) {
+    if (value !== undefined && value !== null && value !== '') {
+        localStorage.setItem(key, value);
+    }
+}
 </script>
   <!--Google search script-->
     <script async src="https://cse.google.com/cse.js?cx=40edcbb80dea44bf1"></script>
