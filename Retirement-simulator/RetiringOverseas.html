@@ -361,7 +361,7 @@
       <span class="badge">🌎 Interactive overseas retirement matcher</span>
       <h1>Find your best retirement city path</h1>
       <p>Answer a few questions and watch the city flags narrow in real time. The decision tree starts with monthly spending capacity, then lifestyle level, then healthcare depth when there are still too many good matches.</p>
-      <div class="hero-actions"><a class="btn primary" href="#decision-tree">Start the decision tree</a><a class="btn secondary" href="#city-results">See all https://www.wealthlanding/Retirement-simulator/cities</a></div>
+      <div class="hero-actions"><a class="btn primary" href="#decision-tree">Start the decision tree</a><a class="btn secondary" href="#city-results">See all cities</a></div>
     </div>
     <aside class="hero-card">
       <h2>How the matcher works</h2>
@@ -392,7 +392,7 @@
     <section id="decision-tree" class="panel">
       <div class="kicker">Animated decision tree</div>
       <h2>Start with the constraint that matters most: monthly spend</h2>
-      <p class="muted">The https://www.wealthlanding/Retirement-simulator/cities below use planning ranges from your overseas retirement guide pages. A city qualifies for Step 1 when the selected budget falls within or above the city’s practical planning range.</p>
+      <p class="muted">The cities below use planning ranges from your overseas retirement guide pages. A city qualifies for Step 1 when the selected budget falls within or above the city’s practical planning range.</p>
       <div class="progress" id="progress">
         <div class="step active" data-step="1">Budget</div>
         <div class="step" data-step="2">Lifestyle</div>
@@ -416,7 +416,7 @@
 
       <div class="question" id="q2">
         <h3>What lifestyle are you looking for?</h3>
-        <p class="muted">This narrows the prior budget matches to https://www.wealthlanding/Retirement-simulator/cities where the chosen lifestyle tier is realistically supportable within your stated budget.</p>
+        <p class="muted">This narrows the prior budget matches to cities where the chosen lifestyle tier is realistically supportable within your stated budget.</p>
         <div class="options" id="lifestyleOptions">
           <button class="option" data-lifestyle="lean"><b>Lean comfortable</b><span>Modest apartment, local food, simple transit/ride share, careful travel budget.</span></button>
           <button class="option" data-lifestyle="comfortable"><b>Comfortable</b><span>Good apartment, regular dining, private healthcare buffer, social life, local trips.</span></button>
@@ -426,7 +426,7 @@
 
       <div class="question" id="q3">
         <h3>How important is healthcare depth?</h3>
-        <p class="muted">If more than two https://www.wealthlanding/Retirement-simulator/cities remain, the decision tree asks for healthcare depth. This is especially useful for age 60+, chronic conditions, or late-life planning.</p>
+        <p class="muted">If more than two cities remain, the decision tree asks for healthcare depth. This is especially useful for age 60+, chronic conditions, or late-life planning.</p>
         <div class="options" id="healthOptions">
           <button class="option" data-health="basic"><b>Good enough for routine care</b><span>I mainly need doctors, dental, prescriptions, and normal checkups.</span></button>
           <button class="option" data-health="strong"><b>Strong private healthcare</b><span>I want major hospitals, specialists, English support, and diagnostics.</span></button>
@@ -443,8 +443,8 @@
 
     <section id="city-results" class="panel">
       <div class="result-header">
-        <div><div class="kicker">Live city flags</div><h2>Matching https://www.wealthlanding/Retirement-simulator/cities</h2><p class="muted" id="resultText">Start with a budget to see which city flags remain. After the final answer, only matched https://www.wealthlanding/Retirement-simulator/cities are shown.</p></div>
-        <div class="result-count" id="resultCount">16 https://www.wealthlanding/Retirement-simulator/cities</div>
+        <div><div class="kicker">Live city flags</div><h2>Matching cities</h2><p class="muted" id="resultText">Start with a budget to see which city flags remain. After the final answer, only matched https://www.wealthlanding/Retirement-simulator/cities are shown.</p></div>
+        <div class="result-count" id="resultCount">16 cities</div>
       </div>
       <div class="flag-cloud" id="flagCloud"></div>
     </section>
@@ -490,7 +490,7 @@
   </div>
 </footer>
 <script>
-const https://www.wealthlanding/Retirement-simulator/cities = [
+const cities = [
   {city:'Bangkok', country:'Thailand', flag:'🇹🇭', lean:2200, comfortable:3500, luxury:5500, max:6500, health:8, link:'https://www.wealthlanding/Retirement-simulator/cities/bangkok.html', profile:'Cost leverage + private hospitals'},
   {city:'Kuala Lumpur', country:'Malaysia', flag:'🇲🇾', lean:2300, comfortable:3600, luxury:5800, max:6500, health:8.5, link:'https://www.wealthlanding/Retirement-simulator/cities/kuala_lumpur.html', profile:'English-friendly + medical value'},
   {city:'Da Nang', country:'Vietnam', flag:'🇻🇳', lean:1800, comfortable:3000, luxury:4800, max:5200, health:6, link:'https://www.wealthlanding/Retirement-simulator/cities/da_nang.html', profile:'Beach lifestyle + low cost'},
@@ -508,7 +508,7 @@ const https://www.wealthlanding/Retirement-simulator/cities = [
   {city:'Hong Kong', country:'Hong Kong', flag:'🇭🇰', lean:6000, comfortable:9500, luxury:15000, max:17000, health:8.8, link:'https://www.wealthlanding/Retirement-simulator/cities/hong_kong.html', profile:'Global city + family connectivity'},
   <!--{city:'Dubai', country:'UAE', flag:'🇦🇪', lean:5000, comfortable:8500, luxury:14000, max:16000, health:8.4, link:'#', profile:'Low tax feel + luxury services'}-->
 ];
-const state = {budget:4000,lifestyle:null,health:null,stage:1,matches:[...https://www.wealthlanding/Retirement-simulator/cities]};
+const state = {budget:4000,lifestyle:null,health:null,stage:1,matches:[...cities]};
 const money = n => '$' + Number(n).toLocaleString();
 const lifestyleLabels = {lean:'Lean comfortable',comfortable:'Comfortable',luxury:'Luxury'};
 const healthLabels = {basic:'Routine care',strong:'Strong private healthcare',elite:'Elite healthcare'};
@@ -516,33 +516,33 @@ const healthMin = {basic:0,strong:7.5,elite:8.8};
 function cityQualifiesBudget(c){return state.budget >= c.lean && state.budget <= Math.max(c.max, c.luxury + 3000)}
 function cityQualifiesLifestyle(c){if(!state.lifestyle) return true; return state.budget >= c[state.lifestyle];}
 function cityQualifiesHealth(c){if(!state.health) return true; return c.health >= healthMin[state.health];}
-function computeMatches(){return https://www.wealthlanding/Retirement-simulator/cities.filter(c => cityQualifiesBudget(c) && cityQualifiesLifestyle(c) && cityQualifiesHealth(c));}
+function computeMatches(){return cities.filter(c => cityQualifiesBudget(c) && cityQualifiesLifestyle(c) && cityQualifiesHealth(c));}
 function renderFlags(){
   state.matches = computeMatches();
   const cloud = document.getElementById('flagCloud');
 
   // UX rule: before the user starts, show the full universe.
-  // After the budget step and final answers, show only the https://www.wealthlanding/Retirement-simulator/cities that match the current criteria.
-  // This prevents the final state from feeling cluttered with irrelevant https://www.wealthlanding/Retirement-simulator/cities.
+  // After the budget step and final answers, show only the cities that match the current criteria.
+  // This prevents the final state from feeling cluttered with irrelevant cities.
   const hasStarted = state.stage > 1 || state.lifestyle || state.health;
-  const displayedhttps://www.wealthlanding/Retirement-simulator/cities = hasStarted ? state.matches : https://www.wealthlanding/Retirement-simulator/cities;
+  const displayedcities = hasStarted ? state.matches : cities;
 
-  if(!displayedhttps://www.wealthlanding/Retirement-simulator/cities.length){
-    cloud.innerHTML = `<div class="empty-state"><h3>No https://www.wealthlanding/Retirement-simulator/cities match all selected filters</h3><p>Try increasing the monthly budget or choosing a less restrictive healthcare/lifestyle setting.</p></div>`;
+  if(!displayedcities.length){
+    cloud.innerHTML = `<div class="empty-state"><h3>No cities match all selected filters</h3><p>Try increasing the monthly budget or choosing a less restrictive healthcare/lifestyle setting.</p></div>`;
   } else {
-    cloud.innerHTML = displayedhttps://www.wealthlanding/Retirement-simulator/cities.map((c,i)=>{
+    cloud.innerHTML = displayedcities.map((c,i)=>{
       const lifestyleTier = state.lifestyle ? `${lifestyleLabels[state.lifestyle]}: ${money(c[state.lifestyle])}+` : `Comfort: ${money(c.comfortable)}`;
       const delay = `style="animation-delay:${Math.min(i*38,460)}ms"`;
-      return `<a class="city-card" ${delay} href="https://www.wealthlanding/Retirement-simulator/https://www.wealthlanding/Retirement-simulator/cities/${c.link}"><span class="flag">${c.flag}</span><h4>${c.city}</h4><p>${c.country} · ${c.profile}</p><div class="tag-row"><span class="tag">${lifestyleTier}</span><span class="tag green">Health ${c.health}/10</span></div></a>`;
+      return `<a class="city-card" ${delay} href="https://www.wealthlanding/Retirement-simulator/cities/${c.link}"><span class="flag">${c.flag}</span><h4>${c.city}</h4><p>${c.country} · ${c.profile}</p><div class="tag-row"><span class="tag">${lifestyleTier}</span><span class="tag green">Health ${c.health}/10</span></div></a>`;
     }).join('');
   }
 
-  document.getElementById('resultCount').textContent = state.matches.length + (state.matches.length===1?' city':' https://www.wealthlanding/Retirement-simulator/cities');
+  document.getElementById('resultCount').textContent = state.matches.length + (state.matches.length===1?' city':'cities');
   const filterText = [];
   filterText.push(`Budget: ${money(state.budget)}/month`);
   if(state.lifestyle) filterText.push(`Lifestyle: ${lifestyleLabels[state.lifestyle]}`);
   if(state.health) filterText.push(`Healthcare: ${healthLabels[state.health]}`);
-  document.getElementById('resultText').textContent = state.matches.length ? `${state.matches.length} https://www.wealthlanding/Retirement-simulator/cities match. ${filterText.join(' · ')}` : `No https://www.wealthlanding/Retirement-simulator/cities match all selected filters. Increase budget or loosen healthcare/lifestyle requirements.`;
+  document.getElementById('resultText').textContent = state.matches.length ? `${state.matches.length} cities match. ${filterText.join(' · ')}` : `No cities match all selected filters. Increase budget or loosen healthcare/lifestyle requirements.`;
   document.getElementById('sideRemaining').textContent = state.matches.length;
   renderRecommendations();
   renderPath();
@@ -562,7 +562,7 @@ function renderRecommendations(){
   grid.innerHTML = ranked.map(c=>{
     const tier = state.lifestyle || 'comfortable';
     const fit = Math.min(96, Math.round((c.health*8) + Math.max(0, 25 - Math.abs(state.budget-c[tier])/300)));
-    return `<a class="rec" href="https://www.wealthlanding/Retirement-simulator/https://www.wealthlanding/Retirement-simulator/cities/${c.link}"><span class="flag">${c.flag}</span><h3>${c.city}</h3><p class="muted">${c.country} · ${c.profile}</p><div class="scoreline"><span style="width:${fit}%"></span></div><p class="why"><b>${fit}% fit</b> based on ${money(state.budget)}, ${state.lifestyle?lifestyleLabels[state.lifestyle].toLowerCase():'comfort'}, and healthcare depth.</p></a>`;
+    return `<a class="rec" href="https://www.wealthlanding/Retirement-simulator/cities/${c.link}"><span class="flag">${c.flag}</span><h3>${c.city}</h3><p class="muted">${c.country} · ${c.profile}</p><div class="scoreline"><span style="width:${fit}%"></span></div><p class="why"><b>${fit}% fit</b> based on ${money(state.budget)}, ${state.lifestyle?lifestyleLabels[state.lifestyle].toLowerCase():'comfort'}, and healthcare depth.</p></a>`;
   }).join('');
   section.classList.add('show');
 }
