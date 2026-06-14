@@ -25,10 +25,17 @@
         </ul>
     </nav>
 
-    <div class="search-container">
+  <div class="search-container">
+    <form action="https://www.google.com/search" method="get" target="_blank" style="width:100%;">
         <span class="search-icon">🔍</span>
-        <input type="search" class="search-input" placeholder="Search systems, tools, or cities...">
-    </div>
+        <input type="hidden" name="sitesearch" value="wealthlanding.com">
+        <input type="search"
+               name="q"
+               class="search-input"
+               placeholder="Search systems, tools, or cities..."
+               aria-label="Search WealthLanding">
+    </form>
+</div>
 </header> <!--End of the header-->
   
 <meta charset="utf-8" />
@@ -96,15 +103,20 @@
     position: relative;
     max-width: 300px;
     width: 100%;
-    display: flex;
-    align-items: center;
+}
+
+.search-container form {
+    width: 100%;
 }
 
 .search-icon {
     position: absolute;
     left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     color: #64748b;
     pointer-events: none;
+    z-index: 2;
 }
 
 .search-input {
@@ -112,14 +124,9 @@
     background-color: #1E293B;
     border: 1px solid #334155;
     color: white;
-    padding: 0.5rem 1rem 0.5rem 2.2rem; /* Left padding keeps text clear of search icon */
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
     border-radius: 6px;
     font-size: 0.875rem;
-    box-sizing: border-box;
-}
-
-.search-input::placeholder {
-    color: #64748b;
 }
   body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.topbar{height:8px;background:linear-gradient(90deg,#b91c1c,#fff,#1d4ed8)}
 .hub-nav{position:sticky;top:0;z-index:50;background:#111827;color:#fff;border-bottom:1px solid rgba(255,255,255,.14)}.hub-wrap{width:min(1180px,94%);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0;flex-wrap:wrap}.hub-title{font-weight:950;color:#fff;text-decoration:none;font-size:1.04rem}.hub-title span{color:var(--gold)}.hub-tabs{display:flex;gap:10px;flex-wrap:wrap}.hub-tabs a{color:#eaf0ff;text-decoration:none;font-weight:900;font-size:.9rem;padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}.hub-tabs a:hover{background:rgba(255,255,255,.18)}.hub-tabs .active{background:var(--gold);color:#1a1200;border-color:var(--gold)}
