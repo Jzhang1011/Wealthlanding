@@ -1121,7 +1121,7 @@ if (document.getElementById('retirementBlueprint')) {
   
   destroy();
   let labels=rows.map(r=>r.age),milestones=[i.cur,i.ret,60,62,65,67,70,73,75,80,85],ms=rows.filter(r=>milestones.includes(r.age));
-  <!-- Capture calculated value and pass to Master plan page-->
+ // Capture calculated value and pass to Master plan page
   savePlanValue('wl_taxSaved', calculatedTaxSaved);
 savePlanValue('wl_estateGain', calculatedEstateGain);
 savePlanValue('wl_pretaxReduction', calculatedPretaxReduction);
