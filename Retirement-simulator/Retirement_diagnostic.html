@@ -29,6 +29,37 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /*Google search*/
+.search-container {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+}
+
+.search-container form {
+    width: 100%;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.search-input {
+    width: 100%;
+    background-color: #1E293B;
+    border: 1px solid #334155;
+    color: white;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+}
+    
     /* INSTITUTIONAL GLOBAL HEADER */
     .global-header {
       background-color: var(--navy);
@@ -890,7 +921,17 @@
   </style>
 </head>
 <body>
-
+<div class="search-container">
+    <form action="https://www.google.com/search" method="get" target="_blank" style="width:100%;">
+        <span class="search-icon">🔍</span>
+        <input type="hidden" name="sitesearch" value="wealthlanding.com">
+        <input type="search"
+               name="q"
+               class="search-input"
+               placeholder="Search systems, tools, or cities..."
+               aria-label="Search WealthLanding">
+    </form>
+</div>
   <header class="global-header">
     <a href="#" class="logo">Wealth<span>Landing</span></a>
     <nav aria-label="Global Main Directory">
