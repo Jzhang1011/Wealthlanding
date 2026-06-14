@@ -72,36 +72,35 @@
         color: #02B17D; 
     }
 
-    .search-container {
-        position: relative;
-        max-width: 300px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-    }
+ .search-container {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+}
 
-    .search-icon {
-        position: absolute;
-        left: 10px;
-        color: #64748b;
-        pointer-events: none;
-    }
+.search-container form {
+    width: 100%;
+}
 
-    .search-input {
-        width: 100%;
-        background-color: #1E293B;
-        border: 1px solid #334155;
-        color: white;
-        padding: 0.5rem 1rem 0.5rem 2.2rem; 
-        border-radius: 6px;
-        font-size: 0.875rem;
-        box-sizing: border-box;
-    }
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    pointer-events: none;
+    z-index: 2;
+}
 
-    .search-input::placeholder {
-        color: #64748b;
-    }
-
+.search-input {
+    width: 100%;
+    background-color: #1E293B;
+    border: 1px solid #334155;
+    color: white;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+}
     .topnav{
         position:sticky;
         top:0;
@@ -462,10 +461,18 @@
             <li><a href="#">Family Legacy Shelters</a></li>
         </ul>
     </nav>
-    <div class="search-container">
+ <!-- Google search-->
+  <div class="search-container">
+    <form action="https://www.google.com/search" method="get" target="_blank" style="width:100%;">
         <span class="search-icon">🔍</span>
-        <input type="search" class="search-input" placeholder="Search systems, tools, or cities...">
-    </div>
+        <input type="hidden" name="sitesearch" value="wealthlanding.com">
+        <input type="search"
+               name="q"
+               class="search-input"
+               placeholder="Search systems, tools, or cities..."
+               aria-label="Search WealthLanding">
+    </form>
+</div>
 </header>
 
 <nav class="topnav">
