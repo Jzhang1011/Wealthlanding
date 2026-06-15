@@ -1,1 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9JMJJ5CJR4');
+  </script>
 
+  <title>Retirement Strategy Engine| Wealth Landing</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    /* ============================================================================
+       PREMIUM STYLING RECONCILIATION LAYER
+       Matches all specific framework specs from original code.
+       ============================================================================ */
+    :root{--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--royal:#2563eb;--emerald:#02B17D;--navy:#0B132B}
+    
+    body{
+      overflow-x: hidden;
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    /* PREMIUM GLOBAL HEADER */
+    .global-header {
+        background-color: #0B132B; 
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 2rem;
+        border-bottom: 1px solid #1E293B;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .top-nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .top-nav-links a {
+        color: #94A3B8;
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+
+    .top-nav-links a:hover, .top-nav-links a.active {
+        color: white;
+    }
+
+    .logo {
+        font-size: 1.35rem;
+        font-weight: 800;
+        color: white;
+        text-decoration: none;
+        letter-spacing: -0.04em;
+    }
+
+    .logo span {
+        color: #02B17D; 
+    }
+
+ .search-container {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+}
+
+.search-container form {
+    width: 100%;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.search-input {
+    width: 100%;
+    background-color: #1E293B;
+    border: 1px solid #334155;
+    color: white;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+}
+    .topnav{
+        position:sticky;
+        top:0;
+        z-index:100;
+        background:#0f172a;
+        display:flex;
+        align-items:center;
+        padding:0 28px;
+        height:52px;
+        box-shadow:0 2px 8px rgba(0,0,0,.18);
+    }
+    
+    .topnav-links{
+        display:flex;
+        gap:2px;
+        align-items:center;
+        width: 100%;
+        position: relative;
+    }
+    
+    .topnav-link{
+         color:#94a3b8;
+         text-decoration:none;
+         font-size:14px;
+         font-weight:550;
+         padding:6px 14px;
+         border-radius:8px;
+         transition:background .15s,color .15s;
+         white-space:nowrap;
+    }
+    
+    .topnav-link:hover{
+        background:rgba(255,255,255,.08);
+        color:#fff;
+    }
+    
+    .topnav-link.active{
+         background:rgba(96,165,250,.15);
+         color:#60a5fa;
+    }
+    
+    .topnav-divider{
+        width:1px;
+        height:24px;
+        background:rgba(255,255,255,.1);
+        margin:0 8px;
+    }
+
+    /* MEGA MENU FIXED ALIGNMENT OVERHANG BOUNDS */
+    .mega-menu {
+        position: absolute;
+        top: 52px;
+        left: 0;
+        width: 100%;
+        background: white;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 12px 30px rgba(0,0,0,.15);
+        padding: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1.2fr;
+        gap: 30px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all .25s ease;
+        z-index: 99999;
+        box-sizing: border-box;
+    }
+
+    .mega-menu-parent:hover .mega-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .column { display: flex; flex-direction: column; }
+    .column h4 { margin-top: 0; margin-bottom: 12px; color: #64748b; font-size: 14px; text-transform: uppercase; letter-spacing: .05em; }
+    .column a { text-decoration: none; color: #0f172a; padding: 8px 0; font-weight: 500; }
+    .column a:hover { color: #2563eb; }
+    .promo { background: #1d2252; color: white; border-radius: 8px; padding: 24px; }
+    .promo h2 { margin-top: 0; font-size: 24px; }
+    .promo p { line-height: 1.6; }
+    .promo button { margin-top: 20px; border: none; background: white; color: #1d2252; padding: 12px 20px; border-radius: 6px; font-weight: 700; cursor: pointer; }
+    
+    .wrap{max-width:1560px; margin:0 auto; padding:24px}
+    .header{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:18px}
+    .title{font-size:32px; font-weight:750; margin:0; letter-spacing:-.02em}
+    .subtitle{color:var(--muted); margin-top:8px; max-width:1050px; line-height:1.45}
+    
+    .toolbar{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:18px; align-items:center}
+    .pill-group{display:flex; gap:8px; flex-wrap:wrap}
+    button.pill{border:1px solid var(--border); background:#fff; color:var(--text); padding:9px 14px; border-radius:999px; cursor:pointer; font-weight:650}
+    button.pill.active{background:var(--text); color:#fff; border-color:var(--text)}
+
+    /* MAIN RECONFIGURED ENGINE LAYOUT */
+    .layout{display:grid; grid-template-columns:380px minmax(0,1fr); gap:24px; align-items: start;}
+    @media(max-width:1200px){ .layout{grid-template-columns: 1fr;} }
+
+    .card{background:var(--card); border:1px solid var(--border); border-radius:20px; box-shadow:0 1px 3px rgba(15,23,42,.04)}
+    .card h3{margin:0; font-size:18px}
+    .card-head{padding:18px 20px 0}
+    .card-body{padding:18px 20px 20px}
+    
+    .sidebar { position: sticky; top: 72px; display: flex; flex-direction: column; gap: 16px; }
+    .sidebar .section{border-top:1px solid var(--border); padding-top:16px; margin-top:16px}
+    
+    /* ELEGANT CASCADE DROPDOWN (ACCORDION) STYLING */
+    details.advanced-dropdown {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--card);
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+    details.advanced-dropdown[open] {
+      box-shadow: 0 4px 12px rgba(15,23,42,0.06);
+    }
+    summary.advanced-summary {
+      padding: 16px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f8fafc;
+      user-select: none;
+    }
+    summary.advanced-summary::-webkit-details-marker { display: none; }
+    summary.advanced-summary::after {
+      content: '▼';
+      font-size: 10px;
+      color: var(--muted);
+      transition: transform 0.2s ease;
+    }
+    details.advanced-dropdown[open] summary.advanced-summary::after {
+      transform: rotate(180deg);
+    }
+    .dropdown-content {
+      padding: 16px;
+      max-height: 650px;
+      overflow-y: auto;
+      background: #fff;
+    }
+
+    .field{margin-bottom:14px}
+    .field:last-child{margin-bottom:0}
+    .field label{display:block; font-size:13px; color:var(--muted); margin-bottom:6px}
+    .field input, .field select{width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:12px; font-size:14px; background:#fff; box-sizing: border-box;}
+    .switch-row{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:10px 12px; border:1px solid var(--border); border-radius:12px; margin-bottom:14px}
+    .helper{font-size:12px; color:var(--muted); margin-top:4px; margin-bottom:10px; line-height: 1.4;}
+    
+    .cards{display:grid; grid-template-columns:repeat(auto-fit, minmax(190px, 1fr)); gap:14px; margin-bottom:20px}
+    .metric{font-size:13px; color:var(--muted); margin-bottom:8px}
+    .metric-value{font-size:24px; font-weight:750; letter-spacing:-.02em; line-height:1.05}
+    .metric-sub{margin-top:8px; color:var(--muted); font-size:12px}
+    
+    .chart-card{margin-bottom:20px}
+    .chart-wrap{height:400px; padding:8px 4px 0}
+    .svg-chart{width:100%; height:100%; min-height:300px}
+    .two-col{display:grid; grid-template-columns: 1fr 1fr; gap:20px; margin-bottom:20px}
+    @media(max-width:900px){.two-col{grid-template-columns:1fr}}
+    
+    table{width:100%; border-collapse:collapse; font-size:12.5px}
+    th,td{text-align:left; padding:9px 8px; border-bottom:1px solid var(--border); vertical-align:top; white-space:nowrap}
+    th{color:var(--muted); font-weight:650; position:sticky; top:0; background:#fff; z-index:1}
+    .table-wrap{max-height:420px; overflow:auto; border-radius:14px; border:1px solid var(--border)}
+    .constraint{display:inline-block; border:1px solid var(--border); border-radius:999px; padding:4px 8px; white-space:nowrap; font-size:12px}
+    .note-list{margin:0; padding-left:18px; color:#334155; line-height:1.55}
+    .small-btn{border:1px solid var(--border); background:#fff; padding:10px 14px; border-radius:14px; cursor:pointer; font-weight:650}
+    .summary-box{line-height:1.55; color:#334155}
+    .mini-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom: 20px;}
+    
+    .callout{background:#f8fafc; border:1px solid var(--border); border-radius:14px; padding:14px; color:#334155; line-height:1.5}
+    .tree-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:12px}
+    @media(max-width: 640px){ .tree-grid { grid-template-columns: 1fr; } }
+    .tree-node{border:1px solid var(--border); border-radius:14px; padding:12px; background:#fff}
+    .tree-node b{display:block; margin-bottom:5px}
+    .tree-node span{color:var(--muted); font-size:12px; line-height:1.35}
+    .badge{display:inline-block; border:1px solid var(--border); border-radius:999px; padding:4px 8px; margin:2px 4px 2px 0; font-size:12px; background:#f8fafc; color:#334155}
+    .score{font-weight:750}
+    .path-title{font-weight:750; font-size:18px; margin-bottom:8px}
+    .path-sub{color:#475569; line-height:1.5}
+    
+    .field.preset-locked label{color:#94a3b8}
+    .field.preset-locked input, .field.preset-locked select{opacity:.45; pointer-events:none; background:#f1f5f9; color:#94a3b8}
+    .field.preset-locked::after{content:'Set by scenario'; display:block; font-size:11px; color:#94a3b8; margin-top:3px}
+    .switch-row.preset-locked{opacity:.45; pointer-events:none}
+    .switch-row.preset-locked::after{content:' — set by scenario'; font-size:11px; color:#94a3b8}
+
+    /* EXECUTIVE SUMMARY STRATEGY LAYOUT */
+.strategy-summary-card {
+  border: 2px solid rgba(2, 177, 125, 0.25);
+}
+
+.summary-intro {
+  color: var(--muted);
+  margin: 0 0 18px 0;
+  line-height: 1.5;
+}
+
+.strategy-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media(max-width: 900px) {
+  .strategy-summary-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 520px) {
+  .strategy-summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.blueprint-item {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.blueprint-item.highlight {
+  background: #ecfdf5;
+  border-color: #bbf7d0;
+}
+
+.blueprint-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+.blueprint-value {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.blueprint-note {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
+    
+    /* SYSTEM PROGRESS JOURNEY LAYER */
+    .next-step-panel { background: #0B132B; color: white; border-radius: 20px; padding: 40px; margin-top: 30px; }
+    .next-step-panel h2 { margin: 0 0 8px 0; font-size: 1.6rem; font-weight: 800; }
+    .next-step-panel p { color: #94a3b8; margin: 0 0 30px 0; font-size: 1rem; }
+    .journey-tracker { display: flex; justify-content: space-between; gap: 20px; margin-bottom: 40px; position: relative; }
+    @media(max-width: 768px) { .journey-tracker { flex-direction: column; gap: 24px; } .journey-tracker::before { display: none; } }
+    .journey-tracker::before { content: ''; position: absolute; top: 16px; left: 40px; right: 40px; height: 2px; background: #1E293B; z-index: 1; }
+    .journey-node { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; }
+    @media(max-width: 768px) { .journey-node { flex-direction: row; text-align: left; gap: 16px; } }
+    .node-idx { width: 32px; height: 32px; border-radius: 50%; background: #1E293B; border: 2px solid #334155; color: #94a3b8; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+    @media(max-width: 768px) { .node-idx { margin-bottom: 0; flex-shrink: 0; } }
+    .journey-node.completed .node-idx { background: var(--emerald); border-color: var(--emerald); color: white; }
+    .journey-node.active .node-idx { background: var(--royal); border-color: var(--royal); color: white; box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2); }
+    .node-contents b { display: block; font-size: 0.9rem; color: white; margin-bottom: 2px; }
+    .node-contents span { display: block; font-size: 0.75rem; color: #94a3b8; }
+    .router-box { background: #1E293B; border: 1px solid #334155; border-radius: 14px; padding: 24px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    @media(max-width: 640px) { .router-box { flex-direction: column; text-align: center; } }
+    .router-text h4 { margin: 0 0 4px 0; font-size: 1.1rem; color: white; }
+    .router-text p { margin: 0; font-size: 0.9rem; color: #94a3b8; }
+    .btn-router { background: var(--emerald); color: white; font-size: 0.95rem; font-weight: 700; padding: 12px 28px; border: none; border-radius: 8px; cursor: pointer; white-space: nowrap; transition: background 0.15s; }
+
+.router-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.btn-router.secondary {
+  background: #2563eb;
+}
+
+.btn-router.secondary:hover {
+  background: #1d4ed8;
+}
+
+.btn-router.muted {
+  background: #334155;
+}
+
+.btn-router.muted:hover {
+  background: #475569;
+}
+.btn-router:hover { background: #029668; }
+    .router-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+    }
+
+
+
+    /* PLANNER SHELL WIZARD HORIZONTAL SPECIFICATIONS */
+    .planner-shell {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 24px;
+        width: 100%;
+    }
+    .wizard-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 20px; 
+        padding: 24px;
+    }
+    .wizard-card .input-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+    @media(max-width: 768px){ .wizard-card .input-grid { grid-template-columns: 1fr 1fr; } }
+    @media(max-width: 480px){ .wizard-card .input-grid { grid-template-columns: 1fr; } }
+
+    .wizard-card .field {
+        margin-bottom: 0;
+    }
+    .wizard-card .strategy-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+    @media(max-width: 768px){ .wizard-card .strategy-grid { grid-template-columns: 1fr; } }
+
+    .step-title { font-size: 14px; font-weight: 700; color: var(--muted); text-transform: uppercase; margin-bottom: 14px; letter-spacing: 0.03em; }
+    .goal-btn, .strategy-btn { text-align: left; background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 16px; cursor: pointer; font-weight: 700; color: var(--text); transition: all 0.15s; }
+    .goal-btn.active, .strategy-btn.active { border: 2px solid var(--royal); background: #eff6ff; }
+    .goal-btn span, .strategy-btn span { display: block; font-weight: 400; font-size: 12px; color: var(--muted); margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+<header class="global-header">
+    <a href="/" class="logo">Wealth<span>Landing</span></a>
+    <nav aria-label="Global Main Directory">
+        <ul class="top-nav-links">
+            <li><a href="/" class="active">Overview Hub</a></li>
+            <li><a href="#">Accumulation Blueprint</a></li>
+            <li><a href="#">Optimization Systems</a></li>
+            <li><a href="#">Family Legacy Shelters</a></li>
+        </ul>
+    </nav>
+ <!-- Google search-->
+  <div class="search-container">
+    <form action="https://www.google.com/search" method="get" target="_blank" style="width:100%;">
+        <span class="search-icon">🔍</span>
+        <input type="hidden" name="sitesearch" value="wealthlanding.com">
+        <input type="search"
+               name="q"
+               class="search-input"
+               placeholder="Search systems, tools, or cities..."
+               aria-label="Search WealthLanding">
+    </form>
+</div>
+</header>
+
+<nav class="topnav">
+  <div class="topnav-links">
+    <a class="topnav-link active" href="#" onclick="showPage('intro');return false;" id="nav-intro">Introduction</a>
+    <div class="topnav-divider"></div>
+    <div class="nav-item mega-menu-parent">
+        <a class="topnav-link" href="#">Retiring Overseas</a>
+        <div class="mega-menu">
+            <div class="column">
+                <h4>Tools</h4>
+                <a href="RetiringOverseas.html">Overseas City Matcher</a>
+                <a href="cost_for_65+.html">Healthcare Cost Tool</a>
+                <a href="#">Tax Planning Tool</a>
+            </div>
+            <div class="column">
+                <h4>Cities</h4>
+                <a href="cities/auckland.html">Auckland</a>
+                <a href="cities/bangkok.html">Bangkok</a>
+                <a href="#">Lisbon</a>
+                <a href="#">Chiang Mai</a>
+            </div>
+            <div class="column promo">
+                <h2>How Roth Conversions Accelerate Wealth</h2>
+                <p>Explore how moving overseas may create low-tax Roth conversion opportunities before Medicare.</p>
+                <button>Learn More</button>
+            </div>
+        </div>
+    </div>
+    <div class="topnav-divider"></div>
+    <a class="topnav-link" href="UScitymatcher.html">US city matcher</a>
+    <div class="topnav-divider"></div>
+    <a class="topnav-link" href="cost_for_65+.html">Medical cost for retirees 65+</a>
+    <div class="topnav-divider"></div>
+  </div>
+</nav>
+
+<!-- Hero Section-->
+<section class="retirement-hero">
+
+  <div class="hero-badge">
+      Retirement Planning System
+  </div>
+
+  <h1>
+      Design Your Retirement Strategy
+  </h1>
+
+  <p>
+      Discover when you can retire, how much you can safely spend,
+      how Roth conversions impact your future wealth, and whether
+      location decisions can improve your retirement outcomes.
+  </p>
+
+  <a href="Retirement_diagnostic.html"
+     class="btn-primary">
+     Start Retirement Assessment
+  </a>
+
+</section>
+
+<!--Journey Visualization-->
+<section class="journey-section">
+
+  <h2>Your Retirement Journey</h2>
+
+  <div class="journey-flow">
+
+      <div class="journey-step">
+          <div class="step-number">1</div>
+          <h3>Can I Retire?</h3>
+          <p>
+              Quick retirement assessment.
+          </p>
+      </div>
+
+      <div class="journey-arrow">→</div>
+
+      <div class="journey-step">
+          <div class="step-number">2</div>
+          <h3>Build My Strategy</h3>
+          <p>
+              Retirement age, spending,
+              Roth conversion and SS planning.
+          </p>
+      </div>
+
+      <div class="journey-arrow">→</div>
+
+      <div class="journey-step">
+          <div class="step-number">3</div>
+          <h3>Optimize Location</h3>
+          <p>
+              Compare U.S. and overseas opportunities.
+          </p>
+      </div>
+
+      <div class="journey-arrow">→</div>
+
+      <div class="journey-step">
+          <div class="step-number">4</div>
+          <h3>Plan Healthcare</h3>
+          <p>
+              Evaluate Medicare,
+              private insurance and LTC.
+          </p>
+      </div>
+
+
+  </div>
+
+</section>
+
+    <!--Start here card-->
+<section class="start-card">
+
+    <div class="start-badge">
+        Recommended Starting Point
+    </div>
+
+    <h2>
+        Not Sure Where To Start?
+    </h2>
+
+    <p>
+        Answer a few questions and we'll identify
+        your biggest retirement planning opportunity.
+    </p>
+
+    <a href="Retirement_diagnostic.html"
+       class="btn-primary">
+       Start Retirement Assessment
+    </a>
+
+</section>
+
+<!-- Power user section-->
+<section class="systems-grid">
+
+    <div class="system-card">
+        <h3>Retirement Strategy Engine</h3>
+        <p>
+            Determine retirement age,
+            spending level and Roth opportunities.
+        </p>
+
+        <a href="OptimizeRoth.html">
+            Open Strategy Engine →
+        </a>
+    </div>
+
+    <div class="system-card">
+        <h3>U.S. City Matcher</h3>
+
+        <p>
+            Compare retirement-friendly
+            U.S. locations.
+        </p>
+
+        <a href="UScitymatcher.html">
+            Explore Cities →
+        </a>
+    </div>
+
+    <div class="system-card">
+        <h3>Overseas Matcher</h3>
+
+        <p>
+            Evaluate international
+            retirement destinations.
+        </p>
+
+        <a href="RetiringOverseas.html">
+            Explore Countries →
+        </a>
+    </div>
+
+    <div class="system-card">
+        <h3>65+ Healthcare Planner</h3>
+
+        <p>
+            Compare Medicare,
+            private insurance and LTC exposure.
+        </p>
+
+        <a href="cost_for_65+.html">
+            Compare Healthcare →
+        </a>
+    </div>
+
+</section>
+
+<!--Outcome section-->
+<section class="outcomes-section">
+
+    <h2>
+        Questions We Help You Answer
+    </h2>
+
+    <div class="outcomes-grid">
+
+        <div>
+            ✓ Can I retire?
+        </div>
+
+        <div>
+            ✓ When should I retire?
+        </div>
+
+        <div>
+            ✓ How much can I spend?
+        </div>
+
+        <div>
+            ✓ When should I claim Social Security?
+        </div>
+
+        <div>
+            ✓ Should I perform Roth conversions?
+        </div>
+
+        <div>
+            ✓ Would moving improve my outcomes?
+        </div>
+
+        <div>
+            ✓ How much tax can I save?
+        </div>
+
+        <div>
+            ✓ What happens after age 65?
+        </div>
+
+    </div>
+
+</section>
+<!-- CTA footer-->
+<section class="hub-footer">
+
+    <h2>
+        Ready To Explore Your Retirement Options?
+    </h2>
+
+    <p>
+        Start with a quick retirement assessment
+        and discover your biggest opportunity.
+    </p>
+
+    <a href="Retirement_diagnostic.html"
+       class="btn-primary">
+       Start Retirement Assessment
+    </a>
+
+</section>
