@@ -9,980 +9,341 @@
     gtag('config', 'G-9JMJJ5CJR4');
   </script>
 
-  <title>Retirement Strategy Engine| Wealth Landing</title>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WealthLanding — Your Personalized Retirement Hub</title>
+  
   <style>
-    /* ============================================================================
-       PREMIUM STYLING RECONCILIATION LAYER
-       Matches all specific framework specs from original code.
-       ============================================================================ */
-    :root{--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--royal:#2563eb;--emerald:#02B17D;--navy:#0B132B}
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --royal: #2563eb;
+      --emerald: #02B17D;
+      --navy: #0B132B;
+    }
     
-    body{
-      overflow-x: hidden;
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text);
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      color: var(--text);
     }
 
-    /* PREMIUM GLOBAL HEADER */
+    /* GLOBAL HEADER */
     .global-header {
-        background-color: #0B132B; 
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0.75rem 2rem;
-        border-bottom: 1px solid #1E293B;
-        width: 100%;
-        box-sizing: border-box;
+      background-color: var(--navy); 
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 2rem;
+      border-bottom: 1px solid #1E293B;
     }
 
     .top-nav-links {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
-        margin: 0;
-        padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
     }
 
     .top-nav-links a {
-        color: #94A3B8;
-        text-decoration: none;
-        font-size: 0.95rem;
-        font-weight: 500;
-        transition: color 0.2s;
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
     }
 
-    .top-nav-links a:hover, .top-nav-links a.active {
-        color: white;
+    .top-nav-links a.active, .top-nav-links a:hover {
+      color: white;
     }
 
     .logo {
-        font-size: 1.35rem;
-        font-weight: 800;
-        color: white;
-        text-decoration: none;
-        letter-spacing: -0.04em;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: white;
+      text-decoration: none;
+      letter-spacing: -0.04em;
     }
 
-    .logo span {
-        color: #02B17D; 
+    .logo span { color: var(--emerald); }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
     }
 
- .search-container {
-    position: relative;
-    max-width: 300px;
-    width: 100%;
-}
-
-.search-container form {
-    width: 100%;
-}
-
-.search-icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #64748b;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.search-input {
-    width: 100%;
-    background-color: #1E293B;
-    border: 1px solid #334155;
-    color: white;
-    padding: 0.5rem 1rem 0.5rem 2.5rem;
-    border-radius: 6px;
-    font-size: 0.875rem;
-}
-    .topnav{
-        position:sticky;
-        top:0;
-        z-index:100;
-        background:#0f172a;
-        display:flex;
-        align-items:center;
-        padding:0 28px;
-        height:52px;
-        box-shadow:0 2px 8px rgba(0,0,0,.18);
-    }
-    
-    .topnav-links{
-        display:flex;
-        gap:2px;
-        align-items:center;
-        width: 100%;
-        position: relative;
-    }
-    
-    .topnav-link{
-         color:#94a3b8;
-         text-decoration:none;
-         font-size:14px;
-         font-weight:550;
-         padding:6px 14px;
-         border-radius:8px;
-         transition:background .15s,color .15s;
-         white-space:nowrap;
-    }
-    
-    .topnav-link:hover{
-        background:rgba(255,255,255,.08);
-        color:#fff;
-    }
-    
-    .topnav-link.active{
-         background:rgba(96,165,250,.15);
-         color:#60a5fa;
-    }
-    
-    .topnav-divider{
-        width:1px;
-        height:24px;
-        background:rgba(255,255,255,.1);
-        margin:0 8px;
+    /* OPPORTUNITY SECTION GRID */
+    .opportunity-section {
+      margin: 3.5rem 0;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 1rem;
+      padding: 2.5rem;
+      color: white;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
     }
 
-    /* MEGA MENU FIXED ALIGNMENT OVERHANG BOUNDS */
-    .mega-menu {
-        position: absolute;
-        top: 52px;
-        left: 0;
-        width: 100%;
-        background: white;
-        border-radius: 0 0 12px 12px;
-        box-shadow: 0 12px 30px rgba(0,0,0,.15);
-        padding: 30px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1.2fr;
-        gap: 30px;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(10px);
-        transition: all .25s ease;
-        z-index: 99999;
-        box-sizing: border-box;
+    .opportunity-section h2 {
+      margin-top: 0;
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      text-align: center;
     }
 
-    .mega-menu-parent:hover .mega-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+    .opportunity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
     }
 
-    .column { display: flex; flex-direction: column; }
-    .column h4 { margin-top: 0; margin-bottom: 12px; color: #64748b; font-size: 14px; text-transform: uppercase; letter-spacing: .05em; }
-    .column a { text-decoration: none; color: #0f172a; padding: 8px 0; font-weight: 500; }
-    .column a:hover { color: #2563eb; }
-    .promo { background: #1d2252; color: white; border-radius: 8px; padding: 24px; }
-    .promo h2 { margin-top: 0; font-size: 24px; }
-    .promo p { line-height: 1.6; }
-    .promo button { margin-top: 20px; border: none; background: white; color: #1d2252; padding: 12px 20px; border-radius: 6px; font-weight: 700; cursor: pointer; }
-    
-    .wrap{max-width:1560px; margin:0 auto; padding:24px}
-    .header{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:18px}
-    .title{font-size:32px; font-weight:750; margin:0; letter-spacing:-.02em}
-    .subtitle{color:var(--muted); margin-top:8px; max-width:1050px; line-height:1.45}
-    
-    .toolbar{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:18px; align-items:center}
-    .pill-group{display:flex; gap:8px; flex-wrap:wrap}
-    button.pill{border:1px solid var(--border); background:#fff; color:var(--text); padding:9px 14px; border-radius:999px; cursor:pointer; font-weight:650}
-    button.pill.active{background:var(--text); color:#fff; border-color:var(--text)}
-
-   
-  /* ==================================================
-   RETIREMENT HUB V2
-   ================================================== */
-
-.retirement-hero{
-    background:linear-gradient(135deg,#0B132B,#1E293B);
-    color:white;
-    padding:70px 60px;
-    border-radius:28px;
-    margin:40px auto;
-    max-width:1400px;
-}
-
-.hero-grid{
-    display:grid;
-    grid-template-columns:1.4fr 0.9fr;
-    gap:50px;
-    align-items:center;
-}
-
-.hero-badge{
-    display:inline-block;
-    background:rgba(2,177,125,.15);
-    border:1px solid rgba(2,177,125,.35);
-    color:#A7F3D0;
-    padding:8px 14px;
-    border-radius:999px;
-    font-size:12px;
-    font-weight:700;
-    margin-bottom:18px;
-}
-
-.retirement-hero h1{
-    font-size:56px;
-    line-height:1.05;
-    margin:0 0 18px;
-    letter-spacing:-.04em;
-}
-
-.retirement-hero p{
-    color:#CBD5E1;
-    font-size:18px;
-    line-height:1.7;
-    max-width:700px;
-}
-
-.hero-benefits{
-    margin-top:28px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-}
-
-.hero-benefits div{
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:12px;
-    padding:12px;
-    font-size:14px;
-}
-
-.btn-primary{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:#02B17D;
-    color:white;
-    text-decoration:none;
-    padding:14px 24px;
-    border-radius:10px;
-    font-weight:700;
-    transition:.2s;
-}
-
-.btn-primary:hover{
-    transform:translateY(-2px);
-    background:#019367;
-}
-
-.preview-card{
-    background:white;
-    color:#0F172A;
-    border-radius:24px;
-    padding:28px;
-    box-shadow:0 20px 40px rgba(0,0,0,.15);
-}
-
-.preview-card h3{
-    margin-top:0;
-    font-size:16px;
-    color:#64748B;
-    text-transform:uppercase;
-    letter-spacing:.05em;
-}
-
-.preview-score{
-    font-size:72px;
-    font-weight:800;
-    color:#02B17D;
-    line-height:1;
-}
-
-.preview-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:16px;
-    margin-top:20px;
-}
-
-.preview-metric{
-    background:#F8FAFC;
-    border:1px solid #E2E8F0;
-    border-radius:12px;
-    padding:12px;
-}
-
-.preview-label{
-    font-size:12px;
-    color:#64748B;
-}
-
-.preview-value{
-    font-size:24px;
-    font-weight:700;
-}
-
-/* ==================================================
-   JOURNEY MAP
-   ================================================== */
-section{
-    margin-top:80px;
-}
-    section h2{
-    font-size:42px;
-    letter-spacing:-.03em;
-    text-align:center;
-    margin-bottom:20px;
-}
-
-section p{
-    color:#64748B;
-}
-
-    .preview-card{
-    background:white;
-    border-radius:24px;
-    padding:28px;
-    box-shadow:0 20px 40px rgba(0,0,0,.08);
-}
-
-.preview-score{
-    font-size:72px;
-    font-weight:800;
-    color:#02B17D;
-    line-height:1;
-}
-
-.preview-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:16px;
-    margin-top:20px;
-}
-.journey-section{
-    max-width:1400px;
-    margin:70px auto;
-    padding:0 20px;
-}
-
-.journey-section h2{
-    text-align:center;
-    font-size:40px;
-    margin-bottom:40px;
-}
-
-.journey-flow{
-    display:grid;
-    grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;
-    gap:18px;
-    align-items:center;
-}
-
-.journey-step{
-    background:white;
-    border:1px solid #E2E8F0;
-    border-radius:20px;
-    padding:24px;
-    text-align:center;
-    min-height:180px;
-}
-
-.step-number{
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    background:#02B17D;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:700;
-    margin:0 auto 14px;
-}
-
-.journey-step h3{
-    margin:0 0 10px;
-}
-
-.journey-step p{
-    color:#64748B;
-    font-size:14px;
-}
-
-.journey-arrow{
-    font-size:28px;
-    color:#94A3B8;
-}
-
-/* ==================================================
-   START HERE
-   ================================================== */
-
-.start-card{
-    max-width:1000px;
-    margin:80px auto;
-    background:white;
-    border:2px solid #02B17D;
-    border-radius:24px;
-    padding:40px;
-    text-align:center;
-}
-
-.start-badge{
-    display:inline-block;
-    background:#ECFDF5;
-    color:#166534;
-    border:1px solid #BBF7D0;
-    padding:8px 12px;
-    border-radius:999px;
-    font-size:12px;
-    font-weight:700;
-}
-
-.start-card h2{
-    font-size:42px;
-    margin:16px 0;
-}
-
-/* ==================================================
-   TOOLS GRID
-   ================================================== */
-
-.systems-grid{
-    max-width:1400px;
-    margin:80px auto;
-    padding:0 20px;
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:24px;
-}
-
-.system-card{
-    background:white;
-    border:1px solid #E2E8F0;
-    border-radius:20px;
-    padding:28px;
-    transition:.2s;
-}
-
-.system-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-}
-
-.system-card h3{
-    margin-top:0;
-}
-
-.system-card p{
-    color:#64748B;
-    line-height:1.6;
-}
-
-.system-card a{
-    color:#2563EB;
-    font-weight:700;
-    text-decoration:none;
-}
-
-/* ==================================================
-   QUESTIONS SECTION
-   ================================================== */
-
-.outcomes-section{
-    max-width:1400px;
-    margin:80px auto;
-    padding:0 20px;
-}
-
-.outcomes-section h2{
-    text-align:center;
-    font-size:40px;
-    margin-bottom:30px;
-}
-
-.outcomes-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:16px;
-}
-
-.outcomes-grid div{
-    background:white;
-    border:1px solid #E2E8F0;
-    border-radius:14px;
-    padding:18px;
-    font-weight:600;
-}
-
-/* ==================================================
-   FOOTER CTA
-   ================================================== */
-
-.hub-footer{
-    margin:80px auto;
-    max-width:1200px;
-    background:#0B132B;
-    color:white;
-    border-radius:28px;
-    padding:60px;
-    text-align:center;
-}
-
-.hub-footer h2{
-    font-size:42px;
-    margin-top:0;
-}
-
-.hub-footer p{
-    color:#CBD5E1;
-    font-size:18px;
-}
-
-/* ==================================================
-   RESPONSIVE
-   ================================================== */
-
-@media(max-width:1000px){
-
-    .hero-grid{
-        grid-template-columns:1fr;
+    .opportunity-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
-    .journey-flow{
-        grid-template-columns:1fr;
+    .opportunity-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(2, 177, 125, 0.4);
     }
 
-    .journey-arrow{
-        display:none;
+    .opportunity-card .icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
     }
 
-    .systems-grid{
-        grid-template-columns:1fr;
+    .opportunity-card .metric-label {
+      color: #94a3b8;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
-    .outcomes-grid{
-        grid-template-columns:1fr 1fr;
+    .opportunity-card .metric-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #34d399;
+      margin-top: 0.25rem;
     }
-
-    .retirement-hero h1{
-        font-size:42px;
-    }
-
-    .start-card h2{
-        font-size:32px;
-    }
-}
-
-@media(max-width:600px){
-
-    .outcomes-grid{
-        grid-template-columns:1fr;
-    }
-
-    .hero-benefits{
-        grid-template-columns:1fr;
-    }
-
-    .preview-grid{
-        grid-template-columns:1fr;
-    }
-
-    .retirement-hero{
-        padding:40px 24px;
-    }
-}
-    .hub-container{
-    max-width:1400px;
-    margin:auto;
-    padding:0 20px;
-}
-
   </style>
+
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 
-<header class="global-header">
+  <!-- Top Global Navigation Header -->
+  <header class="global-header">
     <a href="/" class="logo">Wealth<span>Landing</span></a>
     <nav aria-label="Global Main Directory">
-        <ul class="top-nav-links">
-            <li><a href="/" class="active">Overview Hub</a></li>
-            <li><a href="#">Accumulation Blueprint</a></li>
-            <li><a href="#">Optimization Systems</a></li>
-            <li><a href="#">Family Legacy Shelters</a></li>
-        </ul>
+      <ul class="top-nav-links">
+        <li><a href="/">Overview Hub</a></li>
+        <li><a href="#" class="active">Accumulation Blueprint</a></li>
+        <li><a href="#">Optimization Systems</a></li>
+        <li><a href="#">Family Legacy Shelters</a></li>
+      </ul>
     </nav>
- <!-- Google search-->
-  <div class="search-container">
-    <form action="https://www.google.com/search" method="get" target="_blank" style="width:100%;">
-        <span class="search-icon">🔍</span>
-        <input type="hidden" name="sitesearch" value="wealthlanding.com">
-        <input type="search"
-               name="q"
-               class="search-input"
-               placeholder="Search systems, tools, or cities..."
-               aria-label="Search WealthLanding">
-    </form>
-</div>
-</header>
-
-<nav class="topnav">
-  <div class="topnav-links">
-    <a class="topnav-link active" href="#" onclick="showPage('intro');return false;" id="nav-intro">Introduction</a>
-    <div class="topnav-divider"></div>
-    <div class="nav-item mega-menu-parent">
-        <a class="topnav-link" href="#">Retiring Overseas</a>
-        <div class="mega-menu">
-            <div class="column">
-                <h4>Tools</h4>
-                <a href="RetiringOverseas.html">Overseas City Matcher</a>
-                <a href="cost_for_65+.html">Healthcare Cost Tool</a>
-                <a href="#">Tax Planning Tool</a>
-            </div>
-            <div class="column">
-                <h4>Cities</h4>
-                <a href="cities/auckland.html">Auckland</a>
-                <a href="cities/bangkok.html">Bangkok</a>
-                <a href="#">Lisbon</a>
-                <a href="#">Chiang Mai</a>
-            </div>
-            <div class="column promo">
-                <h2>How Roth Conversions Accelerate Wealth</h2>
-                <p>Explore how moving overseas may create low-tax Roth conversion opportunities before Medicare.</p>
-                <button>Learn More</button>
-            </div>
-        </div>
+    <div class="w-full max-w-[240px] relative">
+      <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-sm">🔍</span>
+      <input type="search" class="w-full bg-slate-800 border border-slate-700 text-white pl-9 pr-4 py-1.5 rounded-md text-xs focus:outline-none focus:border-emerald-500" placeholder="Search systems...">
     </div>
-    <div class="topnav-divider"></div>
-    <a class="topnav-link" href="UScitymatcher.html">US city matcher</a>
-    <div class="topnav-divider"></div>
-    <a class="topnav-link" href="cost_for_65+.html">Medical cost for retirees 65+</a>
-    <div class="topnav-divider"></div>
-  </div>
-</nav>
+  </header>
 
-
-<!-- Hero Section-->
-  <div class="hub-container">
-<section class="retirement-hero">
-
-  <div class="hero-grid">
-
-    <div>
-
-      <div class="hero-badge">
-        Retirement Planning System
-      </div>
-
-      <h1>
-        Design Your Retirement Strategy
-      </h1>
-
-      <p>
-        Discover when you can retire,
-        how much you can safely spend,
-        how Roth conversions impact your future wealth,
-        and whether location decisions can improve outcomes.
-      </p>
-
-      <div class="hero-benefits">
-
-        <div>✓ Earliest Retirement Age</div>
-
-        <div>✓ Best SS Strategy</div>
-
-        <div>✓ Tax Savings Opportunities</div>
-
-        <div>✓ Spending Capacity</div>
-
-      </div>
-
-      <a href="Retirement_diagnostic.html"
-         class="btn-primary">
-         Start Retirement Assessment
-      </a>
-
-    </div>
-
-    <div class="preview-card">
-
-      <h3>Typical Discovery</h3>
-
-      <div class="preview-score">
-        91
-      </div>
-
-      <p>
-        Retirement Confidence
-      </p>
-
-      <div class="preview-grid">
-
-        <div class="preview-metric">
-          <div class="preview-label">
-            Retire
-          </div>
-          <div class="preview-value">
-            58
-          </div>
-        </div>
-
-        <div class="preview-metric">
-          <div class="preview-label">
-            SS Start
-          </div>
-          <div class="preview-value">
-            67
-          </div>
-        </div>
-
-        <div class="preview-metric">
-          <div class="preview-label">
-            Tax Savings
-          </div>
-          <div class="preview-value">
-            $430k
-          </div>
-        </div>
-
-        <div class="preview-metric">
-          <div class="preview-label">
-            Spending
-          </div>
-          <div class="preview-value">
-            $115k
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-  </div>
-
-  <!-- Start card-->
-  <section class="start-card">
-
-  <div class="start-badge">
-    Most Visitors Discover
-  </div>
-
-  <h2>
-    Retirement Is Usually More Flexible Than Expected
-  </h2>
-
-  <p>
-    Many users discover they can retire earlier,
-    spend more comfortably,
-    reduce taxes through Roth conversions,
-    and improve outcomes through location optimization.
-  </p>
-
-</section>
-
-<!--Journey Visualization-->
-
-  <div class="hub-container">
-    <section class="journey-section">
-
-  <h2>Your Retirement Journey</h2>
-
-  <div class="journey-flow">
-
-      <div class="journey-step">
-          <div class="step-number">1</div>
-          <h3>Can I Retire?</h3>
-          <p>
-              Quick retirement assessment.
+  <div class="wrap">
+    
+    <!-- LINKED HERO BANNER: Welcome Back Frame Contextualization Layer -->
+    <section class="bg-white border border-slate-200/80 rounded-2xl p-8 shadow-sm mb-8">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div>
+          <span class="bg-emerald-50 text-emerald-700 font-bold text-xs uppercase tracking-wider px-3 py-1 rounded-full border border-emerald-200/60">
+            Retirement Planning System
+          </span>
+          <h1 id="welcome-heading" class="text-3xl font-extrabold tracking-tight text-slate-900 mt-3">
+            Welcome Back to WealthLanding
+          </h1>
+          <p class="text-slate-500 mt-2 text-sm max-w-xl">
+            Your initial onboarding entries have successfully mapped a live evaluation baseline. Tweak your optimization modules below to begin engineering financial freedom.
           </p>
+        </div>
+        
+        <!-- Live Synchronized Stats Badge Container -->
+        <div class="bg-slate-950 text-white rounded-xl p-5 min-w-[280px] border border-slate-800 shadow-inner space-y-3">
+          <div class="text-[11px] uppercase tracking-widest font-bold text-slate-400 border-b border-slate-800 pb-1.5">
+            🎯 Active Scenario Baseline
+          </div>
+          <div class="grid grid-cols-2 gap-y-2 gap-x-4 text-xs">
+            <div class="text-slate-400">Current Age:</div>
+            <div id="hero-current-age" class="text-right font-bold text-slate-200">--</div>
+            
+            <div class="text-slate-400">Target Retirement:</div>
+            <div id="hero-target-age" class="text-right font-bold text-slate-200">--</div>
+            
+            <div class="text-slate-400">Current Savings:</div>
+            <div id="hero-savings" class="text-right font-bold text-emerald-400">--</div>
+            
+            <div class="text-slate-400">Target Outflow:</div>
+            <div id="hero-spend" class="text-right font-bold text-slate-200">--</div>
+          </div>
+          
+          <div class="pt-2 border-t border-slate-800 flex justify-between items-center text-xs">
+            <span class="text-slate-400 font-medium">Goal Attainment:</span>
+            <span id="hero-attainment" class="font-extrabold text-emerald-400 text-sm">--</span>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="journey-arrow">→</div>
-
-      <div class="journey-step">
-          <div class="step-number">2</div>
-          <h3>Build My Strategy</h3>
-          <p>
-              Retirement age, spending,
-              Roth conversion and SS planning.
-          </p>
+    <!-- CRITICAL MISSING LINK: VALUE ACCELERATION & URGENCY LAYER -->
+    <section class="opportunity-section">
+      <h2>What Could Retirement Optimization Be Worth to You?</h2>
+      <div class="opportunity-grid">
+        <div class="opportunity-card">
+          <div class="icon">💰</div>
+          <div class="metric-label">Tax Savings Potential</div>
+          <div class="metric-value">$100k - $500k+</div>
+        </div>
+        <div class="opportunity-card">
+          <div class="icon">⏳</div>
+          <div class="metric-label">Earlier Retirement</div>
+          <div class="metric-value">1 - 5 Years</div>
+        </div>
+        <div class="opportunity-card">
+          <div class="icon">📈</div>
+          <div class="metric-label">Higher Spend Rate</div>
+          <div class="metric-value">10% - 30%</div>
+        </div>
+        <div class="opportunity-card">
+          <div class="icon">🏥</div>
+          <div class="metric-label">Healthcare Savings</div>
+          <div class="metric-value">$50k+</div>
+        </div>
       </div>
+    </section>
 
-      <div class="journey-arrow">→</div>
+    <!-- NEW FLOW INTEGRATION: Direct Routing Panels (No Redundant Diagnostic) -->
+    <section class="space-y-4">
+      <h3 class="text-lg font-bold text-slate-800 tracking-tight">Active Optimization Engines</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Module 1: Strategy Engine Matrix -->
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 bg-blue-50 border border-blue-200 rounded-lg flex items-center justify-center text-blue-600 font-bold mb-4">01</div>
+            <h4 class="text-base font-bold text-slate-900">Build Strategy Engine</h4>
+            <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">
+              Model asset decumulation orders, maximize your Roth conversions, and establish investment trajectory vectors tailored to compress your <span class="unfunded-gap-text font-bold text-amber-600">--</span> shortfall gap.
+            </p>
+          </div>
+          <button onclick="routeToNext('StrategyEngine.html')" class="mt-6 w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2 rounded-lg text-xs transition-colors">
+            Configure Core Strategy →
+          </button>
+        </div>
 
-      <div class="journey-step">
-          <div class="step-number">3</div>
-          <h3>Optimize Location</h3>
-          <p>
-              Compare U.S. and overseas opportunities.
-          </p>
+        <!-- Module 2: Geo-Arbitrage Allocation Engine -->
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 bg-emerald-50 border border-emerald-200 rounded-lg flex items-center justify-center text-emerald-600 font-bold mb-4">02</div>
+            <h4 class="text-base font-bold text-slate-900">Location Arbitrage Matcher</h4>
+            <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">
+              Leverage regional cost-of-living differences. Simulate how moving overseas or changing states lowers structural expenses to instantly extend your wealth runway.
+            </p>
+          </div>
+          <button onclick="routeToNext('LocationArbitrage.html')" class="mt-6 w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2 rounded-lg text-xs transition-colors">
+            Analyze Cost Footprints →
+          </button>
+        </div>
+
+        <!-- Module 3: Healthcare Optimization Matrix -->
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 bg-purple-50 border border-purple-200 rounded-lg flex items-center justify-center text-purple-600 font-bold mb-4">03</div>
+            <h4 class="text-base font-bold text-slate-900">Healthcare Premium Shelters</h4>
+            <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">
+              Bridge the dangerous structural window before Medicare eligibility. Optimize Modified Adjusted Gross Income to qualify for significant ACA premium tax credits.
+            </p>
+          </div>
+          <button onclick="routeToNext('HealthcareShelters.html')" class="mt-6 w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2 rounded-lg text-xs transition-colors">
+            Insulate Health Liabilities →
+          </button>
+        </div>
+
       </div>
-
-      <div class="journey-arrow">→</div>
-
-      <div class="journey-step">
-          <div class="step-number">4</div>
-          <h3>Plan Healthcare</h3>
-          <p>
-              Evaluate Medicare,
-              private insurance and LTC.
-          </p>
-      </div>
-
+    </section>
 
   </div>
 
-</section>
-  </div>
-    <!--Start here card-->
-<div class="hub-container">
-  <section class="start-card">
+  <!-- PERSISTENT STATE RECOVERY SCRIPT LAYER -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Parse query string variables passed from launchRetirementHub()
+      const urlParams = new URLSearchParams(window.location.search);
+      
+      let currentAge = urlParams.get('currentAge');
+      let retireAge = urlParams.get('retireAge');
+      let savings = urlParams.get('savings');
+      let spend = urlParams.get('spend');
 
-    <div class="start-badge">
-        Recommended Starting Point
-    </div>
+      // Intercept and persist data if explicitly provided via the URL parameters
+      if (currentAge) {
+        localStorage.setItem('wl_current_age', currentAge);
+        localStorage.setItem('wl_target_age', retireAge);
+        localStorage.setItem('wl_savings', savings);
+        localStorage.setItem('wl_spend', spend);
+      } else {
+        // Safe Fallback: Recover data from browser storage cache
+        currentAge = localStorage.getItem('wl_current_age') || "30";
+        retireAge = localStorage.getItem('wl_target_age') || "65";
+        savings = localStorage.getItem('wl_savings') || "25000";
+        spend = localStorage.getItem('wl_spend') || "4000";
+      }
 
-    <h2>
-        Not Sure Where To Start?
-    </h2>
+      // Convert variables to numbers to run the mathematical model engine
+      const ageNum = parseInt(currentAge);
+      const retireNum = parseInt(retireAge);
+      const savingsNum = parseInt(savings) || 0;
+      const spendNum = parseInt(spend);
 
-    <p>
-        Answer a few questions and we'll identify
-        your biggest retirement planning opportunity.
-    </p>
+      const yearsToRetire = Math.max(1, retireNum - ageNum);
+      const estimatedChances = (savingsNum + (yearsToRetire * 12 * 400)) / (spendNum * 12 * 22);
+      const finalScore = Math.min(100, Math.max(12, Math.round(estimatedChances * 100)));
+      const gapScore = 100 - finalScore;
 
-    <a href="Retirement_diagnostic.html"
-       class="btn-primary">
-       Start Retirement Assessment
-    </a>
+      // Hydrate HTML nodes dynamically
+      document.getElementById('hero-current-age').innerText = `${ageNum} yrs`;
+      document.getElementById('hero-target-age').innerText = `Age ${retireNum}`;
+      document.getElementById('hero-savings').innerText = `$${savingsNum.toLocaleString()}`;
+      document.getElementById('hero-spend').innerText = `$${spendNum.toLocaleString()}/mo`;
+      document.getElementById('hero-attainment').innerText = `${finalScore}%`;
 
-</section>
-</div>
+      // Update informational callouts across the dashboard
+      const gapTextElements = document.querySelectorAll('.unfunded-gap-text');
+      gapTextElements.forEach(el => {
+        el.innerText = `${gapScore}%`;
+      });
+    });
 
-<!-- Power user section-->
-<div class="hub-container">
-  <section class="systems-grid">
+    // Unified routing handler to push parameters downstream to the strategy engines
+    function routeToNext(targetPage) {
+      const currentAge = localStorage.getItem('wl_current_age') || "30";
+      const retireAge = localStorage.getItem('wl_target_age') || "65";
+      const savings = localStorage.getItem('wl_savings') || "25000";
+      const spend = localStorage.getItem('wl_spend') || "4000";
 
-    <div class="system-card">
-        <h3>Retirement Strategy Engine</h3>
-        <p>
-            Determine retirement age,
-            spending level and Roth opportunities.
-        </p>
-
-        <a href="OptimizeRoth.html">
-            Open Strategy Engine →
-        </a>
-    </div>
-
-    <div class="system-card">
-        <h3>U.S. City Matcher</h3>
-
-        <p>
-            Compare retirement-friendly
-            U.S. locations.
-        </p>
-
-        <a href="UScitymatcher.html">
-            Explore Cities →
-        </a>
-    </div>
-
-    <div class="system-card">
-        <h3>Overseas Matcher</h3>
-
-        <p>
-            Evaluate international
-            retirement destinations.
-        </p>
-
-        <a href="RetiringOverseas.html">
-            Explore Countries →
-        </a>
-    </div>
-
-    <div class="system-card">
-        <h3>65+ Healthcare Planner</h3>
-
-        <p>
-            Compare Medicare,
-            private insurance and LTC exposure.
-        </p>
-
-        <a href="cost_for_65+.html">
-            Compare Healthcare →
-        </a>
-    </div>
-
-</section>
-</div>
-<!--Outcome section-->
-<div class="hub-container">
-  <section class="outcomes-section">
-
-    <h2>
-        Questions We Help You Answer
-    </h2>
-
-    <div class="outcomes-grid">
-
-        <div>
-            ✓ Can I retire?
-        </div>
-
-        <div>
-            ✓ When should I retire?
-        </div>
-
-        <div>
-            ✓ How much can I spend?
-        </div>
-
-        <div>
-            ✓ When should I claim Social Security?
-        </div>
-
-        <div>
-            ✓ Should I perform Roth conversions?
-        </div>
-
-        <div>
-            ✓ Would moving improve my outcomes?
-        </div>
-
-        <div>
-            ✓ How much tax can I save?
-        </div>
-
-        <div>
-            ✓ What happens after age 65?
-        </div>
-
-    </div>
-
-</section>
-</div>
-<!-- CTA footer-->
-<div class="hub-container">
-  <section class="hub-footer">
-
-    <h2>
-        Ready To Explore Your Retirement Options?
-    </h2>
-
-    <p>
-        Start with a quick retirement assessment
-        and discover your biggest opportunity.
-    </p>
-
-    <a href="Retirement_diagnostic.html"
-       class="btn-primary">
-       Start Retirement Assessment
-    </a>
-
-</section>
-</div>
+      // Keep parameters in the URL query string so subsequent downstream subtools don't break
+      window.location.href = `${targetPage}?currentAge=${currentAge}&retireAge=${retireAge}&savings=${savings}&spend=${spend}`;
+    }
+  </script>
+</body>
+</html>
