@@ -1,190 +1,292 @@
-import React, { useState } from 'react';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WealthLanding — Retirement Baseline</title>
+  <!-- Tailwind CSS via CDN for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-900 flex flex-col justify-center items-center p-4 text-slate-100 font-sans">
 
-export default function WealthLandingGateway() {
-  const [step, setStep] = useState(1);
-  const [currentAge, setCurrentAge] = useState(30);
-  const [targetAge, setTargetAge] = useState(65);
-  const [currentSavings, setCurrentSavings] = useState(25000);
-  const [monthlySpend, setMonthlySpend] = useState(4000);
-
-  // Simple, robust thumb-rule calculation for the instant reward loop
-  const calculateScore = () => {
-    const yearsToRetire = Math.max(1, targetAge - currentAge);
-    const estimatedChances = (currentSavings + (yearsToRetire * 12 * 400)) / (monthlySpend * 12 * 22);
-    return Math.min(95, Math.max(15, Math.round(estimatedChances * 100)));
-  };
-
-  const score = calculateScore();
-
-  return (
-    <div className="min-h-screen bg-slate-900 flex flex-col justify-center items-center p-4 text-slate-100 font-sans">
-      <div className="w-full max-w-xl bg-slate-800/80 backdrop-blur-md rounded-2xl p-8 border border-slate-700/50 shadow-2xl">
-        
-        {/* Step Indicators */}
-        <div className="flex items-center justify-between mb-8 px-4">
-          {[1, 2, 3].map((s) => (
-            <div key={s} className="flex items-center flex-1 last:flex-none">
-              <div className={`w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all ${
-                step === s ? 'bg-emerald-500 text-slate-900 ring-4 ring-emerald-500/20' : 
-                step > s ? 'bg-emerald-600 text-white' : 'bg-slate-700 text-slate-400'
-              }`}>
-                {s}
-              </div>
-              {s < 3 && (
-                <div className={`h-1 flex-1 mx-2 rounded transition-all ${step > s ? 'bg-emerald-600' : 'bg-slate-700'}`} />
-              )}
-            </div>
-          ))}
+  <!-- Main Card Wrapper -->
+  <div class="w-full max-w-xl bg-slate-800/80 backdrop-blur-md rounded-2xl p-8 border border-slate-700/50 shadow-2xl">
+    
+    <!-- Step Indicators -->
+    <div class="flex items-center justify-between mb-8 px-4">
+      <!-- Step 1 Dot -->
+      <div class="flex items-center flex-1">
+        <div id="dot-1" class="w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-emerald-500 text-slate-900 ring-4 ring-emerald-500/20">
+          1
         </div>
-
-        {/* STEP 1: Core Metrics */}
-        {step === 1 && (
-          <div className="space-y-6">
-            <div>
-              <h2 className="text-2xl font-bold tracking-tight">Let's check your retirement baseline</h2>
-              <p className="text-slate-400 text-sm mt-1">We'll map this into a visual model on the next screen.</p>
-            </div>
-
-            <div className="space-y-4">
-              <div>
-                <div className="flex justify-between text-sm font-medium mb-1">
-                  <label>Current Age</label>
-                  <span className="text-emerald-400 font-semibold">{currentAge} years old</span>
-                </div>
-                <input 
-                  type="range" min="18" max="70" value={currentAge} 
-                  onChange={(e) => setCurrentAge(Number(e.target.value))}
-                  className="w-full accent-emerald-500 bg-slate-700 h-2 rounded-lg appearance-none cursor-pointer"
-                />
-              </div>
-
-              <div>
-                <div className="flex justify-between text-sm font-medium mb-1">
-                  <label>Target Retirement Age</label>
-                  <span className="text-emerald-400 font-semibold">{targetAge} years old</span>
-                </div>
-                <input 
-                  type="range" min="50" max="85" value={targetAge} 
-                  onChange={(e) => setTargetAge(Number(e.target.value))}
-                  className="w-full accent-emerald-500 bg-slate-700 h-2 rounded-lg appearance-none cursor-pointer"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-1">Current Retirement Savings ($)</label>
-                <input 
-                  type="number" value={currentSavings}
-                  onChange={(e) => setCurrentSavings(Number(e.target.value))}
-                  className="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                />
-              </div>
-            </div>
-
-            <button 
-              onClick={() => setStep(2)}
-              className="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold py-3 rounded-lg transition-colors mt-4 shadow-lg shadow-emerald-500/10"
-            >
-              Next: Define Lifestyle
-            </button>
-          </div>
-        )}
-
-        {/* STEP 2: Lifestyle Baseline */}
-        {step === 2 && (
-          <div className="space-y-6">
-            <div>
-              <h2 className="text-2xl font-bold tracking-tight">Your Target Lifestyle</h2>
-              <p className="text-slate-400 text-sm mt-1">How much do you estimate spending each month in today's dollars?</p>
-            </div>
-
-            <div className="space-y-5">
-              <div>
-                <div className="flex justify-between text-sm font-medium mb-1">
-                  <label>Estimated Monthly Spending</label>
-                  <span className="text-emerald-400 font-bold">${monthlySpend.toLocaleString()}/mo</span>
-                </div>
-                <input 
-                  type="range" min="1000" max="15000" step="100" value={monthlySpend} 
-                  onChange={(e) => setMonthlySpend(Number(e.target.value))}
-                  className="w-full accent-emerald-500 bg-slate-700 h-2 rounded-lg appearance-none cursor-pointer"
-                />
-              </div>
-
-              <button 
-                onClick={() => setMonthlySpend(4500)}
-                className="w-full bg-slate-700/60 hover:bg-slate-700 border border-slate-600 text-slate-300 text-xs py-2 rounded-md transition-all"
-              >
-                💡 Don't know? Apply National Average ($4,500/mo)
-              </button>
-            </div>
-
-            <div className="flex gap-3 pt-4">
-              <button 
-                onClick={() => setStep(1)}
-                className="flex-1 bg-slate-700 hover:bg-slate-600 text-slate-200 font-medium py-3 rounded-lg transition-colors"
-              >
-                Back
-              </button>
-              <button 
-                onClick={() => setStep(3)}
-                className="flex-1 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold py-3 rounded-lg transition-colors shadow-lg shadow-emerald-500/10"
-              >
-                Calculate Score
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* STEP 3: The Aha! Moment */}
-        {step === 3 && (
-          <div className="space-y-6 text-center py-2">
-            <div>
-              <h2 className="text-2xl font-bold tracking-tight">Your WealthLanding Baseline</h2>
-              <p className="text-slate-400 text-sm mt-1">Based on initial inputs and automatic macroeconomic safety parameters.</p>
-            </div>
-
-            {/* Custom SVG Circular Gauge */}
-            <div className="relative flex justify-center items-center my-6">
-              <svg className="w-44 h-44 transform -rotate-90">
-                <circle cx="88" cy="88" r="76" strokeWidth="10" stroke="#334155" fill="transparent" />
-                <circle 
-                  cx="88" cy="88" r="76" strokeWidth="10" stroke="#10b981" fill="transparent"
-                  strokeDasharray={2 * Math.PI * 76}
-                  strokeDashoffset={2 * Math.PI * 76 * (1 - score / 100)}
-                  strokeLinecap="round"
-                  className="transition-all duration-1000 ease-out"
-                />
-              </svg>
-              <div className="absolute inset-0 flex flex-col justify-center items-center">
-                <span className="text-4xl font-extrabold tracking-tight text-white">{score}%</span>
-                <span className="text-[10px] uppercase tracking-widest text-slate-400 font-semibold mt-0.5">Funded Goal</span>
-              </div>
-            </div>
-
-            <div className="bg-slate-900/50 border border-slate-700/40 rounded-xl p-4 text-left max-w-md mx-auto">
-              <p className="text-xs text-slate-300 leading-relaxed">
-                🚀 **Smart Defaults Applied:** We've pre-configured a standard **2.5% long-term inflation rate**, standard federal tax projections, and a conservative **6% average market return** so you don't have to calculate them yourself.
-              </p>
-            </div>
-
-            <div className="space-y-3 pt-4">
-              <button 
-                onClick={() => alert('Redirecting to /retirement-hub...')}
-                className="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold py-3.5 rounded-lg transition-all shadow-lg shadow-emerald-500/20 tracking-wide"
-              >
-                Enter Your Retirement Hub
-              </button>
-              <button 
-                onClick={() => setStep(2)}
-                className="text-slate-400 hover:text-slate-300 text-xs font-medium underline transition-all"
-              >
-                Adjust My Onboarding Answers
-              </button>
-            </div>
-          </div>
-        )}
-
+        <div id="line-1" class="h-1 flex-1 mx-2 rounded transition-all bg-slate-700"></div>
+      </div>
+      <!-- Step 2 Dot -->
+      <div class="flex items-center flex-1">
+        <div id="dot-2" class="w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-slate-700 text-slate-400">
+          2
+        </div>
+        <div id="line-2" class="h-1 flex-1 mx-2 rounded transition-all bg-slate-700"></div>
+      </div>
+      <!-- Step 3 Dot -->
+      <div class="flex items-center">
+        <div id="dot-3" class="w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-slate-700 text-slate-400">
+          3
+        </div>
       </div>
     </div>
-  );
-}
+
+    <!-- STEP 1 CONTAINER -->
+    <div id="step-1-view" class="space-y-6">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight">Let's check your retirement baseline</h2>
+        <p class="text-slate-400 text-sm mt-1">We'll map this into a visual model on the next screen.</p>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <div class="flex justify-between text-sm font-medium mb-1">
+            <label for="input-current-age">Current Age</label>
+            <span id="label-current-age" class="text-emerald-400 font-semibold">30 years old</span>
+          </div>
+          <input 
+            type="range" min="18" max="70" value="30" id="input-current-age"
+            class="w-full accent-emerald-500 bg-slate-700 h-2 rounded-lg appearance-none cursor-pointer"
+          />
+        </div>
+
+        <div>
+          <div class="flex justify-between text-sm font-medium mb-1">
+            <label for="input-target-age">Target Retirement Age</label>
+            <span id="label-target-age" class="text-emerald-400 font-semibold">65 years old</span>
+          </div>
+          <input 
+            type="range" min="50" max="85" value="65" id="input-target-age"
+            class="w-full accent-emerald-500 bg-slate-700 h-2 rounded-lg appearance-none cursor-pointer"
+          />
+        </div>
+
+        <div>
+          <label for="input-savings" class="block text-sm font-medium mb-1">Current Retirement Savings ($)</label>
+          <input 
+            type="number" value="25000" id="input-savings"
+            class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          />
+        </div>
+      </div>
+
+      <button 
+        onclick="goToStep(2)"
+        class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold py-3 rounded-lg transition-colors mt-4 shadow-lg shadow-emerald-500/10"
+      >
+        Next: Define Lifestyle
+      </button>
+    </div>
+
+    <!-- STEP 2 CONTAINER (Hidden by default) -->
+    <div id="step-2-view" class="space-y-6 hidden">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight">Your Target Lifestyle</h2>
+        <p class="text-slate-400 text-sm mt-1">How much do you estimate spending each month in today's dollars?</p>
+      </div>
+
+      <div class="space-y-5">
+        <div>
+          <div class="flex justify-between text-sm font-medium mb-1">
+            <label for="input-spend">Estimated Monthly Spending</label>
+            <span id="label-spend" class="text-emerald-400 font-bold">$4,000/mo</span>
+          </div>
+          <input 
+            type="range" min="1000" max="15000" step="100" value="4000" id="input-spend"
+            class="w-full accent-emerald-500 bg-slate-700 h-2 rounded-lg appearance-none cursor-pointer"
+          />
+        </div>
+
+        <button 
+          onclick="applyAverage()"
+          class="w-full bg-slate-700/60 hover:bg-slate-700 border border-slate-600 text-slate-300 text-xs py-2 rounded-md transition-all"
+        >
+          💡 Don't know? Apply National Average ($4,500/mo)
+        </button>
+      </div>
+
+      <div class="flex gap-3 pt-4">
+        <button 
+          onclick="goToStep(1)"
+          class="flex-1 bg-slate-700 hover:bg-slate-600 text-slate-200 font-medium py-3 rounded-lg transition-colors"
+        >
+          Back
+        </button>
+        <button 
+          onclick="calculateAndShowScore()"
+          class="flex-1 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold py-3 rounded-lg transition-colors shadow-lg shadow-emerald-500/10"
+        >
+          Calculate Score
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 3 CONTAINER (Hidden by default) -->
+    <div id="step-3-view" class="space-y-6 text-center py-2 hidden">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight">Your WealthLanding Baseline</h2>
+        <p class="text-slate-400 text-sm mt-1">Based on initial inputs and automatic macroeconomic safety parameters.</p>
+      </div>
+
+      <!-- Custom SVG Circular Gauge -->
+      <div class="relative flex justify-center items-center my-6">
+        <svg class="w-44 h-44 transform -rotate-90">
+          <circle cx="88" cy="88" r="76" strokeWidth="10" stroke="#334155" fill="transparent" />
+          <circle 
+            id="gauge-ring"
+            cx="88" cy="88" r="76" stroke-width="10" stroke="#10b981" fill="transparent"
+            stroke-dasharray="477.52"
+            stroke-dashoffset="477.52"
+            stroke-linecap="round"
+            style="transition: stroke-dashoffset 1s ease-out;"
+          />
+        </svg>
+        <div class="absolute inset-0 flex flex-col justify-center items-center">
+          <span id="score-display" class="text-4xl font-extrabold tracking-tight text-white">0%</span>
+          <span class="text-[10px] uppercase tracking-widest text-slate-400 font-semibold mt-0.5">Funded Goal</span>
+        </div>
+      </div>
+
+      <div class="bg-slate-900/50 border border-slate-700/40 rounded-xl p-4 text-left max-w-md mx-auto">
+        <p class="text-xs text-slate-300 leading-relaxed">
+          🚀 <strong>Smart Defaults Applied:</strong> We've pre-configured a standard <strong>2.5% long-term inflation rate</strong>, standard federal tax projections, and a conservative <strong>6% average market return</strong> so you don't have to calculate them yourself.
+        </p>
+      </div>
+
+      <div class="space-y-3 pt-4">
+        <button 
+          onclick="alert('Redirecting to /retirement-hub...')"
+          class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold py-3.5 rounded-lg transition-all shadow-lg shadow-emerald-500/20 tracking-wide"
+        >
+          Enter Your Retirement Hub
+        </button>
+        <button 
+          onclick="goToStep(2)"
+          class="text-slate-400 hover:text-slate-300 text-xs font-medium underline transition-all"
+        >
+          Adjust My Onboarding Answers
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- State & Form Controller Scripts -->
+  <script>
+    // State management variables
+    let currentStep = 1;
+
+    // DOM Element selections
+    const ageInput = document.getElementById('input-current-age');
+    const ageLabel = document.getElementById('label-current-age');
+    
+    const targetInput = document.getElementById('input-target-age');
+    const targetLabel = document.getElementById('label-target-age');
+    
+    const savingsInput = document.getElementById('input-savings');
+    
+    const spendInput = document.getElementById('input-spend');
+    const spendLabel = document.getElementById('label-spend');
+
+    // UI Sliders synchronizers
+    ageInput.addEventListener('input', (e) => {
+      ageLabel.innerText = `${e.target.value} years old`;
+    });
+
+    targetInput.addEventListener('input', (e) => {
+      targetLabel.innerText = `${e.target.value} years old`;
+    });
+
+    spendInput.addEventListener('input', (e) => {
+      spendLabel.innerText = `$${Number(e.target.value).toLocaleString()}/mo`;
+    });
+
+    // Helper to override default spending
+    function applyAverage() {
+      spendInput.value = 4500;
+      spendLabel.innerText = "$4,4500/mo".replace("4,45", "4,5"); // safety parsing formatting
+      spendLabel.innerText = "$4,500/mo";
+    }
+
+    // Step Switcher Workflow Controller
+    function goToStep(stepNumber) {
+      currentStep = stepNumber;
+
+      // Hide all panels initially
+      document.getElementById('step-1-view').classList.add('hidden');
+      document.getElementById('step-2-view').classList.add('hidden');
+      document.getElementById('step-3-view').classList.add('hidden');
+
+      // Unhide target step layout
+      document.getElementById(`step-${stepNumber}-view`).classList.remove('hidden');
+
+      // Sync step wizard UI tracking header indicators
+      updateIndicators(stepNumber);
+    }
+
+    function updateIndicators(activeStep) {
+      const dot1 = document.getElementById('dot-1');
+      const dot2 = document.getElementById('dot-2');
+      const dot3 = document.getElementById('dot-3');
+      const line1 = document.getElementById('line-1');
+      const line2 = document.getElementById('line-2');
+
+      // Reset definitions to default styling defaults
+      [dot1, dot2, dot3].forEach(dot => {
+        dot.className = "w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-slate-700 text-slate-400";
+      });
+      line1.className = "h-1 flex-1 mx-2 rounded transition-all bg-slate-700";
+      line2.className = "h-1 flex-1 mx-2 rounded transition-all bg-slate-700";
+
+      // Re-apply states contextually
+      if (activeStep === 1) {
+        dot1.className = "w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-emerald-500 text-slate-900 ring-4 ring-emerald-500/20";
+      } else if (activeStep === 2) {
+        dot1.className = "w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-emerald-600 text-white";
+        line1.className = "h-1 flex-1 mx-2 rounded transition-all bg-emerald-600";
+        dot2.className = "w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-emerald-500 text-slate-900 ring-4 ring-emerald-500/20";
+      } else if (activeStep === 3) {
+        dot1.className = "w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-emerald-600 text-white";
+        dot2.className = "w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-emerald-600 text-white";
+        line1.className = "h-1 flex-1 mx-2 rounded transition-all bg-emerald-600";
+        line2.className = "h-1 flex-1 mx-2 rounded transition-all bg-emerald-600";
+        dot3.className = "w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-emerald-500 text-slate-900 ring-4 ring-emerald-500/20";
+      }
+    }
+
+    // Dynamic Calculation Logic Engine & SVG Stroke Offset triggers
+    function calculateAndShowScore() {
+      // Pull latest parsed integers
+      const age = parseInt(ageInput.value);
+      const target = parseInt(targetInput.value);
+      const savings = parseInt(savingsInput.value) || 0;
+      const spend = parseInt(spendInput.value);
+
+      const yearsToRetire = Math.max(1, target - age);
+      // Rough linear heuristic tracking compound additions
+      const estimatedChances = (savings + (yearsToRetire * 12 * 400)) / (spend * 12 * 22);
+      const finalScore = Math.min(95, Math.max(15, Math.round(estimatedChances * 100)));
+
+      // Advance layout frame panel to Step 3
+      goToStep(3);
+
+      // Trigger text value animation delays
+      document.getElementById('score-display').innerText = `${finalScore}%`;
+
+      // Update Custom SVG Ring Gauge filling transitions dynamically (circumference = 2 * pi * 76 ≈ 477.52)
+      const circumference = 2 * Math.PI * 76;
+      const offset = circumference * (1 - finalScore / 100);
+      
+      // Delay briefly to allow rendering engine layout frame cycle animations to trigger smoothly
+      setTimeout(() => {
+        document.getElementById('gauge-ring').style.strokeDashoffset = offset;
+      }, 50);
+    }
+  </script>
+</body>
+</html>
