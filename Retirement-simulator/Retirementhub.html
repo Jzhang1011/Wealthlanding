@@ -258,17 +258,20 @@
 }
 
 .btn-primary{
-    display:inline-block;
-    margin-top:24px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
     background:#02B17D;
     color:white;
     text-decoration:none;
     padding:14px 24px;
     border-radius:10px;
     font-weight:700;
+    transition:.2s;
 }
 
 .btn-primary:hover{
+    transform:translateY(-2px);
     background:#019367;
 }
 
@@ -322,7 +325,40 @@
 /* ==================================================
    JOURNEY MAP
    ================================================== */
+section{
+    margin-top:80px;
+}
+    section h2{
+    font-size:42px;
+    letter-spacing:-.03em;
+    text-align:center;
+    margin-bottom:20px;
+}
 
+section p{
+    color:#64748B;
+}
+
+    .preview-card{
+    background:white;
+    border-radius:24px;
+    padding:28px;
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+.preview-score{
+    font-size:72px;
+    font-weight:800;
+    color:#02B17D;
+    line-height:1;
+}
+
+.preview-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-top:20px;
+}
 .journey-section{
     max-width:1400px;
     margin:70px auto;
@@ -556,6 +592,12 @@
         padding:40px 24px;
     }
 }
+    .hub-container{
+    max-width:1400px;
+    margin:auto;
+    padding:0 20px;
+}
+
   </style>
 </head>
 <body>
@@ -619,6 +661,16 @@
   </div>
 </nav>
 
+  <div class="hub-container">
+
+   hero
+   journey
+   start card
+   systems
+   outcomes
+   footer
+
+</div>
 <!-- Hero Section-->
 <section class="retirement-hero">
 
