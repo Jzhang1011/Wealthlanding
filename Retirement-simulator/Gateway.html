@@ -321,11 +321,47 @@
       </div>
 
       <!-- STEP 3 CONTAINER (Hidden Default with Summary Framework Modifications) -->
-      <div id="step-3-view" class="space-y-6 text-center py-2 hidden">
-        <div>
-          <h2 class="text-2xl font-bold tracking-tight text-white">Your WealthLanding Score</h2>
-          <p class="text-slate-400 text-sm mt-1">Your core assumptions drive your readiness trajectory towards your goal:</p>
-        </div>
+    <div id="step-3-view" class="space-y-6 text-center py-2 hidden">
+  <div>
+    <h2 class="text-2xl font-bold tracking-tight text-white">Your WealthLanding Score</h2>
+    <p class="text-slate-400 text-sm mt-1">Your core assumptions drive your readiness trajectory towards your goal:</p>
+  </div>
+
+  <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl p-4 text-left text-sm max-w-md mx-auto space-y-2 text-slate-300">
+    <div>• Your current age is <span id="summary-age" class="text-emerald-400 font-bold">--</span>, looking to step away at age <span id="summary-retire" class="text-emerald-400 font-bold">--</span>.</div>
+    <div>• Your existing retirement asset pool sits at <span id="summary-savings" class="text-emerald-400 font-bold">--</span>.</div>
+    <div>• Your ongoing target monthly cash flow output is set at <span id="summary-spend" class="text-emerald-400 font-bold">--</span>.</div>
+  </div>
+
+  <div class="relative flex justify-center items-center my-6">
+    <svg class="w-44 h-44 transform -rotate-90">
+      <circle cx="88" cy="88" r="76" strokeWidth="10" stroke="#334155" fill="transparent" />
+      <circle id="gauge-ring" cx="88" cy="88" r="76" stroke-width="10" stroke="#10b981" fill="transparent" stroke-dasharray="477.52" stroke-dashoffset="477.52" stroke-linecap="round" style="transition: stroke-dashoffset 1s ease-out;" />
+    </svg>
+    <div class="absolute inset-0 flex flex-col justify-center items-center">
+      <span id="score-display" class="text-4xl font-extrabold tracking-tight text-white">0%</span>
+      <span class="text-[10px] uppercase tracking-widest text-slate-400 font-semibold mt-0.5">Goal Attainment</span>
+    </div>
+  </div>
+
+  <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 text-sm text-left max-w-md mx-auto space-y-1">
+    <div class="text-amber-400 font-bold flex items-center gap-1.5">
+      ⚠️ You have an <span id="gap-display">82%</span> Unfunded Gap
+    </div>
+    <p class="text-xs text-slate-300 leading-relaxed">
+      Your current strategy leaves a shortfall. In your personalized Retirement Hub, you will simulate how **Roth Conversions**, **Overseas Geo-Arbitrage**, and optimizing **Social Security** can bridge this gap to 100%.
+    </p>
+  </div>
+
+  <div class="space-y-3 pt-2">
+    <button onclick="launchRetirementHub()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold py-3.5 rounded-lg transition-all shadow-lg shadow-emerald-500/20 tracking-wide">
+      Fix My <span id="btn-gap-display">82%</span> Gap in the Hub
+    </button>
+    <button onclick="goToStep(2)" class="text-slate-400 hover:text-slate-300 text-xs font-medium underline transition-all">
+      Adjust My Onboarding Answers
+    </button>
+  </div>
+</div>
 
         <!-- NEW: INPUT MEMORY REMINDER BLOCK -->
         <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl p-4 text-left text-sm max-w-md mx-auto space-y-2 text-slate-300">
