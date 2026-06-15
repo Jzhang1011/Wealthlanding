@@ -462,6 +462,10 @@
       const target = parseInt(targetInput.value);
       const savings = parseInt(savingsInput.value) || 0;
       const spend = parseInt(spendInput.value);
+      // Calculate the remainder gap
+const gapScore = 100 - finalScore;
+document.getElementById('gap-display').innerText = `${gapScore}% Unfunded Gap`;
+document.getElementById('btn-gap-display').innerText = `${gapScore}%`;
 
       // POPULATE SUMMARY INJECTORS BEFORE RENDER STEP SHOWS
       document.getElementById('summary-age').innerText = `${age} years old`;
