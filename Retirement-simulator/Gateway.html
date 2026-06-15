@@ -13,6 +13,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WealthLanding — Retirement Baseline</title>
+<style>
    /* ============================================================================
        PREMIUM STYLING RECONCILIATION LAYER
        Matches all specific framework specs from original code.
@@ -187,7 +188,7 @@
     .pill-group{display:flex; gap:8px; flex-wrap:wrap}
     button.pill{border:1px solid var(--border); background:#fff; color:var(--text); padding:9px 14px; border-radius:999px; cursor:pointer; font-weight:650}
     button.pill.active{background:var(--text); color:#fff; border-color:var(--text)}
-
+</style>
   
   <!-- Tailwind CSS via CDN for styling -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -219,7 +220,7 @@
 
 <nav class="topnav">
   <div class="topnav-links">
-    <a class="topnav-link active" href="#" onclick="showPage('intro');return false;" id="nav-intro">Introduction</a>
+    <a class="topnav-link active" href="/" id="nav-intro">Introduction</a>
     <div class="topnav-divider"></div>
     <div class="nav-item mega-menu-parent">
         <a class="topnav-link" href="#">Retiring Overseas</a>
@@ -251,6 +252,8 @@
     <div class="topnav-divider"></div>
   </div>
 </nav>
+
+    <div class="min-h-screen bg-slate-900 flex justify-center items-center p-6">
   <!-- Main Card Wrapper -->
   <div class="w-full max-w-xl bg-slate-800/80 backdrop-blur-md rounded-2xl p-8 border border-slate-700/50 shadow-2xl">
     
@@ -402,7 +405,24 @@
 
       <div class="space-y-3 pt-4">
         <button 
-          onclick="alert('Redirecting to /retirement-hub...')"
+          onclick="launchRetirementHub()"
+            function launchRetirementHub(){
+
+    const age =
+      document.getElementById('input-current-age').value;
+
+    const retire =
+      document.getElementById('input-target-age').value;
+
+    const savings =
+      document.getElementById('input-savings').value;
+
+    const spend =
+      document.getElementById('input-spend').value;
+
+    window.location.href =
+      `RetirementHub.html?currentAge=${age}&retireAge=${retire}&savings=${savings}&spend=${spend}`;
+}
           class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold py-3.5 rounded-lg transition-all shadow-lg shadow-emerald-500/20 tracking-wide"
         >
           Enter Your Retirement Hub
@@ -415,7 +435,7 @@
         </button>
       </div>
     </div>
-
+  </div>
   </div>
 
   <!-- State & Form Controller Scripts -->
