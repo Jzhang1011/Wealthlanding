@@ -11,7 +11,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WealthLanding — Your Personalized Retirement Hub</title>
+  <title>Your WealthLanding Retirement Plan</title>
   
   <style>
     :root {
@@ -28,7 +28,7 @@
     body {
       margin: 0;
       font-family: Inter, system-ui, -apple-system, sans-serif;
-      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      background: #f8fafc;
       color: var(--text);
     }
 
@@ -74,69 +74,33 @@
 
     .logo span { color: var(--emerald); }
 
+    /* SOPHISTICATED PREMIUM SECTIONS (INCREASED WHITE SPACE) */
+    section {
+      padding-top: 85px;
+      padding-bottom: 85px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    section:last-of-type { border-bottom: none; }
+
     .wrap {
-      max-width: 1200px;
+      max-width: 1050px;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem;
+      padding: 0 1.5rem;
     }
 
-    /* OPPORTUNITY SECTION GRID */
-    .opportunity-section {
-      margin: 3.5rem 0;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      border-radius: 1rem;
-      padding: 2.5rem;
-      color: white;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-    }
-
-    .opportunity-section h2 {
-      margin-top: 0;
+    /* SECTION TITLE STYLES */
+    .section-title {
       font-size: 1.75rem;
       font-weight: 800;
       letter-spacing: -0.03em;
-      margin-bottom: 1.5rem;
+      color: #0f172a;
+      margin-bottom: 2.5rem;
       text-align: center;
     }
 
-    .opportunity-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .opportunity-card {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 0.75rem;
-      padding: 1.5rem;
-      text-align: center;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .opportunity-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(2, 177, 125, 0.4);
-    }
-
-    .opportunity-card .icon {
-      font-size: 1.75rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .opportunity-card .metric-label {
-      color: #94a3b8;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .opportunity-card .metric-value {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #34d399;
-      margin-top: 0.25rem;
+    /* GAUGE KEYFRAME EMISSION TRANSITIONS */
+    #gauge-ring {
+      transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
   </style>
 
@@ -155,139 +119,251 @@
         <li><a href="#">Family Legacy Shelters</a></li>
       </ul>
     </nav>
-    <div class="w-full max-w-[240px] relative">
+    <div class="w-full max-w-[220px] relative">
       <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-sm">🔍</span>
       <input type="search" class="w-full bg-slate-800 border border-slate-700 text-white pl-9 pr-4 py-1.5 rounded-md text-xs focus:outline-none focus:border-emerald-500" placeholder="Search systems...">
     </div>
   </header>
 
-  <div class="wrap">
-    
-    <!-- LINKED HERO BANNER: Welcome Back Frame Contextualization Layer -->
-    <section class="bg-white border border-slate-200/80 rounded-2xl p-8 shadow-sm mb-8">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
-        <div>
-          <span class="bg-emerald-50 text-emerald-700 font-bold text-xs uppercase tracking-wider px-3 py-1 rounded-full border border-emerald-200/60">
-            Retirement Planning System
-          </span>
-          <h1 id="welcome-heading" class="text-3xl font-extrabold tracking-tight text-slate-900 mt-3">
-            Welcome Back to WealthLanding
-          </h1>
-          <p class="text-slate-500 mt-2 text-sm max-w-xl">
-            Your initial onboarding entries have successfully mapped a live evaluation baseline. Tweak your optimization modules below to begin engineering financial freedom.
-          </p>
+  <!-- SECTION 1: RETIREMENT STATUS (THE VISUAL HERO CENTERPIECE) -->
+  <section class="bg-slate-950 text-white relative overflow-hidden !pt-20 !pb-24">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.08),transparent_50%)]"></div>
+    <div class="wrap max-w-4xl relative z-10 text-center">
+      <span class="text-[11px] uppercase tracking-widest font-extrabold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+        YOUR RETIREMENT STATUS
+      </span>
+      
+      <!-- One Giant Visual Anchor Loop -->
+      <div class="flex flex-col items-center justify-center mt-10 mb-8">
+        <div class="relative w-56 h-56 flex justify-center items-center">
+          <svg class="w-full h-full transform -rotate-90">
+            <circle cx="112" cy="112" r="98" strokeWidth="12" stroke="#1e293b" fill="transparent" />
+            <circle id="gauge-ring" cx="112" cy="112" r="98" stroke-width="12" stroke="#10b981" fill="transparent" stroke-dasharray="615.75" stroke-dashoffset="615.75" stroke-linecap="round" />
+          </svg>
+          <div class="absolute inset-0 flex flex-col justify-center items-center">
+            <span id="hero-attainment" class="text-5xl font-black tracking-tighter text-white">--</span>
+            <span class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mt-1">Goal Attainment</span>
+          </div>
         </div>
         
-        <!-- Live Synchronized Stats Badge Container -->
-        <div class="bg-slate-950 text-white rounded-xl p-5 min-w-[280px] border border-slate-800 shadow-inner space-y-3">
-          <div class="text-[11px] uppercase tracking-widest font-bold text-slate-400 border-b border-slate-800 pb-1.5">
-            🎯 Active Scenario Baseline
+        <div class="mt-6 text-center">
+          <div class="text-xl font-bold text-amber-400 flex items-center justify-center gap-2">
+            ⚠️ <span id="hero-status-text">Needs Attention</span>
           </div>
-          <div class="grid grid-cols-2 gap-y-2 gap-x-4 text-xs">
-            <div class="text-slate-400">Current Age:</div>
-            <div id="hero-current-age" class="text-right font-bold text-slate-200">--</div>
-            
-            <div class="text-slate-400">Target Retirement:</div>
-            <div id="hero-target-age" class="text-right font-bold text-slate-200">--</div>
-            
-            <div class="text-slate-400">Current Savings:</div>
-            <div id="hero-savings" class="text-right font-bold text-emerald-400">--</div>
-            
-            <div class="text-slate-400">Target Outflow:</div>
-            <div id="hero-spend" class="text-right font-bold text-slate-200">--</div>
+          <p class="text-slate-400 text-xs mt-1">Potential Improvement Window: <span id="hero-gap" class="text-white font-semibold">--</span></p>
+        </div>
+      </div>
+
+      <!-- User Information Contextual Blueprint Row -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto border-t border-b border-slate-800 py-5 my-8 text-left sm:text-center">
+        <div>
+          <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Current Age</div>
+          <div id="hero-current-age" class="text-lg font-bold text-slate-200 mt-0.5">--</div>
+        </div>
+        <div>
+          <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Retirement Goal</div>
+          <div id="hero-target-age" class="text-lg font-bold text-slate-200 mt-0.5">--</div>
+        </div>
+        <div>
+          <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Current Pool</div>
+          <div id="hero-savings" class="text-lg font-bold text-emerald-400 mt-0.5">--</div>
+        </div>
+        <div>
+          <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Target Lifestyle</div>
+          <div id="hero-spend" class="text-lg font-bold text-slate-200 mt-0.5">--</div>
+        </div>
+      </div>
+
+      <button onclick="document.getElementById('next-action-section').scrollIntoView({behavior: 'smooth'})" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-8 py-3.5 rounded-lg transition-all text-sm shadow-xl shadow-emerald-500/10 tracking-wide">
+        Fix My <span class="unfunded-gap-text">--</span> Gap Now
+      </button>
+    </div>
+  </section>
+
+  <!-- SECTION 2: YOUR BIGGEST OPPORTUNITIES -->
+  <section class="bg-white">
+    <div class="wrap">
+      <h2 class="section-title">Your Biggest Opportunities</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-slate-50 border border-slate-200/60 rounded-xl p-6 text-center">
+          <div class="text-2xl mb-2">💰</div>
+          <div class="text-[11px] uppercase tracking-wider font-bold text-slate-400">Potential Tax Savings</div>
+          <div class="text-xl font-extrabold text-slate-900 mt-1">$430,000</div>
+        </div>
+        <div class="bg-slate-50 border border-slate-200/60 rounded-xl p-6 text-center">
+          <div class="text-2xl mb-2">⏳</div>
+          <div class="text-[11px] uppercase tracking-wider font-bold text-slate-400">Earlier Retirement</div>
+          <div class="text-xl font-extrabold text-emerald-600 mt-1">3 Years Faster</div>
+        </div>
+        <div class="bg-slate-50 border border-slate-200/60 rounded-xl p-6 text-center">
+          <div class="text-2xl mb-2">📈</div>
+          <div class="text-[11px] uppercase tracking-wider font-bold text-slate-400">More Monthly Spending</div>
+          <div class="text-xl font-extrabold text-slate-900 mt-1">+$1,500/mo</div>
+        </div>
+        <div class="bg-slate-50 border border-slate-200/60 rounded-xl p-6 text-center">
+          <div class="text-2xl mb-2">🏥</div>
+          <div class="text-[11px] uppercase tracking-wider font-bold text-slate-400">Healthcare Protection</div>
+          <div class="text-xl font-extrabold text-slate-900 mt-1">$80,000 Safe</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: RECOMMENDED NEXT STEP (DOMINANT CARD INTENT) -->
+  <section id="next-action-section" class="bg-slate-50">
+    <div class="wrap max-w-2xl">
+      <h2 class="section-title">Recommended Next Action</h2>
+      <div class="bg-white border border-slate-200 shadow-sm rounded-2xl p-8 border-t-4 border-t-emerald-500">
+        <span class="text-[10px] font-extrabold bg-blue-50 text-blue-700 px-2.5 py-1 rounded border border-blue-100">
+          SYSTEM HIGHLIGHT
+        </span>
+        <h3 class="text-xl font-black tracking-tight text-slate-900 mt-4">Build Your Retirement Strategy</h3>
+        <p class="text-slate-500 text-sm mt-2 leading-relaxed">
+          Based on your baseline profile input metrics, your current model leaves an active <span class="unfunded-gap-text font-bold text-amber-600">--</span> shortfall gap. We must run explicit structural optimization simulations next.
+        </p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-6 text-slate-700 text-sm">
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-500 font-bold">✓</span> Earliest Retirement Age
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-500 font-bold">✓</span> Social Security Strategy
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-500 font-bold">✓</span> Roth Conversion Window
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-500 font-bold">✓</span> Sustainable Spend Rate
+          </div>
+        </div>
+
+        <button onclick="routeToNext('StrategyEngine.html')" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-lg text-sm transition-colors shadow-lg tracking-wide">
+          Launch Strategy Engine
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: RETIREMENT ROADMAP (SOFTWARE PROGRESS SYSTEM) -->
+  <section class="bg-white">
+    <div class="wrap max-w-3xl">
+      <h2 class="section-title">Your Retirement Roadmap</h2>
+      
+      <div class="relative flex flex-col gap-8 pl-8 before:absolute before:left-[15px] before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-200">
+        <!-- Milestone 1 -->
+        <div class="relative flex justify-between items-start gap-4">
+          <div class="absolute -left-[31px] w-4 h-4 rounded-full bg-emerald-500 ring-4 ring-emerald-100 flex items-center justify-center text-[10px] text-white font-bold">✓</div>
+          <div>
+            <h4 class="text-sm font-bold text-slate-400 line-through">Gateway Onboarding Baseline</h4>
+            <p class="text-xs text-slate-400 mt-0.5">Initial demographic and savings baseline captured.</p>
+          </div>
+          <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Complete</span>
+        </div>
+
+        <!-- Milestone 2 -->
+        <div class="relative flex justify-between items-start gap-4">
+          <div class="absolute -left-[31px] w-4 h-4 rounded-full bg-blue-600 ring-4 ring-blue-100 flex items-center justify-center text-[10px] text-white font-bold">→</div>
+          <div>
+            <h4 class="text-sm font-bold text-slate-900">Core Strategy Engine Setup</h4>
+            <p class="text-xs text-slate-500 mt-0.5">Map liquidation ordering structures and asset allocation tiers.</p>
+          </div>
+          <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded animate-pulse">Next Action</span>
+        </div>
+
+        <!-- Milestone 3 -->
+        <div class="relative flex justify-between items-start gap-4 opacity-50">
+          <div class="absolute -left-[27px] w-2 h-2 rounded-full bg-slate-300"></div>
+          <div>
+            <h4 class="text-sm font-bold text-slate-900">Location Footprint Optimization</h4>
+            <p class="text-xs text-slate-500 mt-0.5">Evaluate geo-arbitrage vectors across state lines or international territories.</p>
+          </div>
+        </div>
+
+        <!-- Milestone 4 -->
+        <div class="relative flex justify-between items-start gap-4 opacity-50">
+          <div class="absolute -left-[27px] w-2 h-2 rounded-full bg-slate-300"></div>
+          <div>
+            <h4 class="text-sm font-bold text-slate-900">Healthcare Premium Engineering</h4>
+            <p class="text-xs text-slate-500 mt-0.5">Insulate structural liabilities and maximize ACA premium tax credit tiers.</p>
+          </div>
+        </div>
+
+        <!-- Milestone 5 -->
+        <div class="relative flex justify-between items-start gap-4 opacity-50">
+          <div class="absolute -left-[27px] w-2 h-2 rounded-full bg-slate-300"></div>
+          <div>
+            <h4 class="text-sm font-bold text-slate-900">Final Personalized Master Plan</h4>
+            <p class="text-xs text-slate-500 mt-0.5">Lock down sustainable annual spending targets and dynamic withdrawal rules.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 5: PEOPLE LIKE YOU DISCOVER (PSYCHOLOGICAL MARKTING HOOK) -->
+  <section class="bg-slate-50">
+    <div class="wrap max-w-2xl">
+      <h2 class="section-title">What Planners Like You Discover</h2>
+      <div class="bg-white border border-slate-200 rounded-xl p-6 space-y-4">
+        <p class="text-slate-500 text-xs font-medium leading-relaxed italic border-b border-slate-100 pb-3">
+          Most users entering with an <span class="user-age-bracket">Age 50-60</span> track window and retirement assets under $1M uncover consistent structural patterns:
+        </p>
+        <div class="space-y-2.5 text-slate-700 text-xs">
+          <div class="flex items-start gap-2.5">
+            <span class="text-emerald-500 font-bold mt-0.5">⚡</span>
+            <span><strong>Retirement is possible sooner:</strong> Strategic liquidation matching often unlocks financial runway milestones 1-3 years ahead of conservative projections.</span>
+          </div>
+          <div class="flex items-start gap-2.5">
+            <span class="text-emerald-500 font-bold mt-0.5">⚡</span>
+            <span><strong>Social Security timing optimization:</strong> Deferral models typically represent a six-figure variance in ultimate lifetime distribution metrics.</span>
+          </div>
+          <div class="flex items-start gap-2.5">
+            <span class="text-emerald-500 font-bold mt-0.5">⚡</span>
+            <span><strong>Tax allocations matter more than returns:</strong> Tax bracket compression via early Roth adjustments regularly outpaces market gains.</span>
+          </div>
+          <div class="flex items-start gap-2.5">
+            <span class="text-emerald-500 font-bold mt-0.5">⚡</span>
+            <span><strong>Geography provides immediate margin:</strong> Running location optimization can structuralize immediate premium spending upgrades.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: ADVANCED PLANNING MODULES (ACCORDION DRAWER FOR POWER USERS) -->
+  <section class="bg-white">
+    <div class="wrap max-w-2xl">
+      <button onclick="toggleAdvancedModules()" class="w-full bg-slate-100 hover:bg-slate-200/80 border border-slate-200 rounded-xl px-6 py-4 flex justify-between items-center transition-colors">
+        <span class="text-sm font-bold text-slate-900 flex items-center gap-2">🛠️ Advanced Optimization Modules</span>
+        <span id="accordion-arrow" class="text-slate-500 text-xs transition-transform duration-200">▼ Expand</span>
+      </button>
+
+      <div id="advanced-drawer" class="hidden mt-4 space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-slate-50 border border-slate-200 p-5 rounded-lg flex flex-col justify-between">
+            <div>
+              <h4 class="text-xs font-bold text-slate-900">Location Arbitrage Matcher</h4>
+              <p class="text-[11px] text-slate-500 mt-1">Simulate structural cost improvements from shifting geographic footprints.</p>
+            </div>
+            <button onclick="routeToNext('LocationArbitrage.html')" class="mt-4 text-left text-xs font-semibold text-blue-600 hover:text-blue-700">Open Panel →</button>
           </div>
           
-          <div class="pt-2 border-t border-slate-800 flex justify-between items-center text-xs">
-            <span class="text-slate-400 font-medium">Goal Attainment:</span>
-            <span id="hero-attainment" class="font-extrabold text-emerald-400 text-sm">--</span>
+          <div class="bg-slate-50 border border-slate-200 p-5 rounded-lg flex flex-col justify-between">
+            <div>
+              <h4 class="text-xs font-bold text-slate-900">Healthcare Premium Shelters</h4>
+              <p class="text-[11px] text-slate-500 mt-1">Bridge the early retirement liability gap prior to Medicare eligibility brackets.</p>
+            </div>
+            <button onclick="routeToNext('HealthcareShelters.html')" class="mt-4 text-left text-xs font-semibold text-blue-600 hover:text-blue-700">Open Panel →</button>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CRITICAL MISSING LINK: VALUE ACCELERATION & URGENCY LAYER -->
-    <section class="opportunity-section">
-      <h2>What Could Retirement Optimization Be Worth to You?</h2>
-      <div class="opportunity-grid">
-        <div class="opportunity-card">
-          <div class="icon">💰</div>
-          <div class="metric-label">Tax Savings Potential</div>
-          <div class="metric-value">$100k - $500k+</div>
-        </div>
-        <div class="opportunity-card">
-          <div class="icon">⏳</div>
-          <div class="metric-label">Earlier Retirement</div>
-          <div class="metric-value">1 - 5 Years</div>
-        </div>
-        <div class="opportunity-card">
-          <div class="icon">📈</div>
-          <div class="metric-label">Higher Spend Rate</div>
-          <div class="metric-value">10% - 30%</div>
-        </div>
-        <div class="opportunity-card">
-          <div class="icon">🏥</div>
-          <div class="metric-label">Healthcare Savings</div>
-          <div class="metric-value">$50k+</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- NEW FLOW INTEGRATION: Direct Routing Panels (No Redundant Diagnostic) -->
-    <section class="space-y-4">
-      <h3 class="text-lg font-bold text-slate-800 tracking-tight">Active Optimization Engines</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <!-- Module 1: Strategy Engine Matrix -->
-        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 bg-blue-50 border border-blue-200 rounded-lg flex items-center justify-center text-blue-600 font-bold mb-4">01</div>
-            <h4 class="text-base font-bold text-slate-900">Build Strategy Engine</h4>
-            <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">
-              Model asset decumulation orders, maximize your Roth conversions, and establish investment trajectory vectors tailored to compress your <span class="unfunded-gap-text font-bold text-amber-600">--</span> shortfall gap.
-            </p>
-          </div>
-          <button onclick="routeToNext('StrategyEngine.html')" class="mt-6 w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2 rounded-lg text-xs transition-colors">
-            Configure Core Strategy →
-          </button>
-        </div>
-
-        <!-- Module 2: Geo-Arbitrage Allocation Engine -->
-        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 bg-emerald-50 border border-emerald-200 rounded-lg flex items-center justify-center text-emerald-600 font-bold mb-4">02</div>
-            <h4 class="text-base font-bold text-slate-900">Location Arbitrage Matcher</h4>
-            <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">
-              Leverage regional cost-of-living differences. Simulate how moving overseas or changing states lowers structural expenses to instantly extend your wealth runway.
-            </p>
-          </div>
-          <button onclick="routeToNext('LocationArbitrage.html')" class="mt-6 w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2 rounded-lg text-xs transition-colors">
-            Analyze Cost Footprints →
-          </button>
-        </div>
-
-        <!-- Module 3: Healthcare Optimization Matrix -->
-        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 bg-purple-50 border border-purple-200 rounded-lg flex items-center justify-center text-purple-600 font-bold mb-4">03</div>
-            <h4 class="text-base font-bold text-slate-900">Healthcare Premium Shelters</h4>
-            <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">
-              Bridge the dangerous structural window before Medicare eligibility. Optimize Modified Adjusted Gross Income to qualify for significant ACA premium tax credits.
-            </p>
-          </div>
-          <button onclick="routeToNext('HealthcareShelters.html')" class="mt-6 w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2 rounded-lg text-xs transition-colors">
-            Insulate Health Liabilities →
-          </button>
-        </div>
-
-      </div>
-    </section>
-
-  </div>
-
-  <!-- PERSISTENT STATE RECOVERY SCRIPT LAYER -->
+  <!-- RECOVERY & DYNAMIC VALUE DISPATCH SCRIPT MATRIX -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // Parse query string variables passed from launchRetirementHub()
       const urlParams = new URLSearchParams(window.location.search);
       
       let currentAge = urlParams.get('currentAge');
@@ -295,21 +371,18 @@
       let savings = urlParams.get('savings');
       let spend = urlParams.get('spend');
 
-      // Intercept and persist data if explicitly provided via the URL parameters
       if (currentAge) {
         localStorage.setItem('wl_current_age', currentAge);
         localStorage.setItem('wl_target_age', retireAge);
         localStorage.setItem('wl_savings', savings);
         localStorage.setItem('wl_spend', spend);
       } else {
-        // Safe Fallback: Recover data from browser storage cache
         currentAge = localStorage.getItem('wl_current_age') || "30";
         retireAge = localStorage.getItem('wl_target_age') || "65";
         savings = localStorage.getItem('wl_savings') || "25000";
         spend = localStorage.getItem('wl_spend') || "4000";
       }
 
-      // Convert variables to numbers to run the mathematical model engine
       const ageNum = parseInt(currentAge);
       const retireNum = parseInt(retireAge);
       const savingsNum = parseInt(savings) || 0;
@@ -320,28 +393,66 @@
       const finalScore = Math.min(100, Math.max(12, Math.round(estimatedChances * 100)));
       const gapScore = 100 - finalScore;
 
-      // Hydrate HTML nodes dynamically
-      document.getElementById('hero-current-age').innerText = `${ageNum} yrs`;
+      // Update Hero Stats Nodes
+      document.getElementById('hero-current-age').innerText = `${ageNum} years old`;
       document.getElementById('hero-target-age').innerText = `Age ${retireNum}`;
       document.getElementById('hero-savings').innerText = `$${savingsNum.toLocaleString()}`;
       document.getElementById('hero-spend').innerText = `$${spendNum.toLocaleString()}/mo`;
+      
+      // Update Core Attainment Gauges Numbers
+      document.getElementById('score-display')?.remove(); // Cleanup legacy elements if present
       document.getElementById('hero-attainment').innerText = `${finalScore}%`;
+      document.getElementById('hero-gap').innerText = `${gapScore}%`;
 
-      // Update informational callouts across the dashboard
-      const gapTextElements = document.querySelectorAll('.unfunded-gap-text');
-      gapTextElements.forEach(el => {
+      // Contextual Alert Adjustments
+      const statusText = document.getElementById('hero-status-text');
+      if (finalScore >= 80) {
+        statusText.innerText = "Strong Framework";
+        statusText.className = "text-xl font-bold text-emerald-400 flex items-center justify-center gap-2";
+      } else if (finalScore >= 50) {
+        statusText.innerText = "Moderate Tracking";
+        statusText.className = "text-xl font-bold text-yellow-400 flex items-center justify-center gap-2";
+      }
+
+      // Update Dynamic Shortfall Text Selectors
+      document.querySelectorAll('.unfunded-gap-text').forEach(el => {
         el.innerText = `${gapScore}%`;
       });
+
+      // Tailor Demographic Marketing Hook Brackets Based on Age Input
+      const ageBracketText = document.querySelectorAll('.user-age-bracket');
+      const lowerAgeFloor = Math.floor(ageNum / 10) * 10;
+      ageBracketText.forEach(el => {
+        el.innerText = `Age ${lowerAgeFloor}-${lowerAgeFloor + 10}`;
+      });
+
+      // Trigger Radial Gauge Animation Loop via Custom Circumference (2 * pi * 98 ≈ 615.75)
+      const circumference = 2 * Math.PI * 98;
+      const offset = circumference * (1 - finalScore / 100);
+      setTimeout(() => {
+        document.getElementById('gauge-ring').style.strokeDashoffset = offset;
+      }, 150);
     });
 
-    // Unified routing handler to push parameters downstream to the strategy engines
+    // Accordion Visibility Toggle Handler
+    function toggleAdvancedModules() {
+      const drawer = document.getElementById('advanced-drawer');
+      const arrow = document.getElementById('accordion-arrow');
+      if (drawer.classList.contains('hidden')) {
+        drawer.classList.remove('hidden');
+        arrow.innerText = "▲ Collapse";
+      } else {
+        drawer.classList.add('hidden');
+        arrow.innerText = "▼ Expand";
+      }
+    }
+
+    // Downstream Redirection Routing Wrapper
     function routeToNext(targetPage) {
       const currentAge = localStorage.getItem('wl_current_age') || "30";
       const retireAge = localStorage.getItem('wl_target_age') || "65";
       const savings = localStorage.getItem('wl_savings') || "25000";
       const spend = localStorage.getItem('wl_spend') || "4000";
-
-      // Keep parameters in the URL query string so subsequent downstream subtools don't break
       window.location.href = `${targetPage}?currentAge=${currentAge}&retireAge=${retireAge}&savings=${savings}&spend=${spend}`;
     }
   </script>
