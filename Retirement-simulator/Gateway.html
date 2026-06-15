@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -13,161 +12,171 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WealthLanding — Retirement Baseline</title>
-<style>
-   /* ============================================================================
+  
+  <style>
+    /* ============================================================================
        PREMIUM STYLING RECONCILIATION LAYER
        Matches all specific framework specs from original code.
        ============================================================================ */
-    :root{--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--royal:#2563eb;--emerald:#02B17D;--navy:#0B132B}
+    :root {
+      --bg: #f1f5f9;
+      --card: #fff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --royal: #2563eb;
+      --emerald: #02B17D;
+      --navy: #0B132B;
+    }
     
-    body{
+    body {
       overflow-x: hidden;
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text);
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      color: var(--text);
     }
 
-    /* PREMIUM GLOBAL HEADER */
+    /* FIX: GLOBAL HEADER HORIZONTAL DISPLAY WITH UNIFORM GAP COHESION */
     .global-header {
-        background-color: #0B132B; 
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0.75rem 2rem;
-        border-bottom: 1px solid #1E293B;
-        width: 100%;
-        box-sizing: border-box;
+      background-color: #0B132B; 
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 2rem;
+      border-bottom: 1px solid #1E293B;
+      width: 100%;
+      box-sizing: border-box;
     }
- .topnav{
-        position:sticky;
-        top:0;
-        z-index:100;
-        background:#0f172a;
-        display:flex;
-        align-items:center;
-        padding:0 28px;
-        height:52px;
-        box-shadow:0 2px 8px rgba(0,0,0,.18);
+
+    /* FIX: FORCED LIST ITEM ROW PACKING TO PREVENT VERTICAL STACKING BLOCKS */
+    .top-nav-links {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center;
+      gap: 1.5rem;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
     }
-    
-    .topnav-links{
-        display:flex;
-        gap:2px;
-        align-items:center;
-        width: 100%;
-        position: relative;
-    }
-    
-    .topnav-link{
-         color:#94a3b8;
-         text-decoration:none;
-         font-size:14px;
-         font-weight:550;
-         padding:6px 14px;
-         border-radius:8px;
-         transition:background .15s,color .15s;
-         white-space:nowrap;
-    }
-    
-    .topnav-link:hover{
-        background:rgba(255,255,255,.08);
-        color:#fff;
-    }
-    
-    .topnav-link.active{
-         background:rgba(96,165,250,.15);
-         color:#60a5fa;
-    }
-    
-    .topnav-divider{
-        width:1px;
-        height:24px;
-        background:rgba(255,255,255,.1);
-        margin:0 8px;
-    }
-   
+
     .top-nav-links a {
-        color: #94A3B8;
-        text-decoration: none;
-        font-size: 0.95rem;
-        font-weight: 500;
-        transition: color 0.2s;
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+      white-space: nowrap;
     }
 
     .top-nav-links a:hover, .top-nav-links a.active {
-        color: white;
+      color: white;
     }
 
     .logo {
-        font-size: 1.35rem;
-        font-weight: 800;
-        color: white;
-        text-decoration: none;
-        letter-spacing: -0.04em;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: white;
+      text-decoration: none;
+      letter-spacing: -0.04em;
     }
 
     .logo span {
-        color: #02B17D; 
+      color: #02B17D; 
     }
 
- .search-container {
-    position: relative;
-    max-width: 300px;
-    width: 100%;
-}
+    .search-container {
+      position: relative;
+      max-width: 300px;
+      width: 100%;
+    }
 
-.search-container form {
-    width: 100%;
-}
+    .search-input {
+      width: 100%;
+      background-color: #1E293B;
+      border: 1px solid #334155;
+      color: white;
+      padding: 0.5rem 1rem 0.5rem 2.5rem;
+      border-radius: 6px;
+      font-size: 0.875rem;
+    }
 
-.search-icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #64748b;
-    pointer-events: none;
-    z-index: 2;
-}
+    /* FIX: CORRECT HORIZONTAL TOP NAV FLEX MATRIX */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #0f172a;
+      display: flex;
+      align-items: center;
+      padding: 0 28px;
+      height: 52px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.18);
+    }
+    
+    .topnav-links {
+      display: flex;
+      flex-direction: row;
+      gap: 2px;
+      align-items: center;
+      width: 100%;
+      position: relative;
+    }
+    
+    .topnav-link {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 555;
+      padding: 6px 14px;
+      border-radius: 8px;
+      transition: background .15s, color .15s;
+      white-space: nowrap;
+    }
+    
+    .topnav-link:hover {
+      background: rgba(255,255,255,.08);
+      color: #fff;
+    }
+    
+    .topnav-link.active {
+      background: rgba(96,165,250,.15);
+      color: #60a5fa;
+    }
+    
+    .topnav-divider {
+      width: 1px;
+      height: 24px;
+      background: rgba(255,255,255,.1);
+      margin: 0 8px;
+    }
 
-.search-input {
-    width: 100%;
-    background-color: #1E293B;
-    border: 1px solid #334155;
-    color: white;
-    padding: 0.5rem 1rem 0.5rem 2.5rem;
-    border-radius: 6px;
-    font-size: 0.875rem;
-}
-   
-
-    /* MEGA MENU FIXED ALIGNMENT OVERHANG BOUNDS */
+    /* MEGA MENU EXTENSIONS */
     .mega-menu {
-        position: absolute;
-        top: 52px;
-        left: 0;
-        width: 100%;
-        background: white;
-        border-radius: 0 0 12px 12px;
-        box-shadow: 0 12px 30px rgba(0,0,0,.15);
-        padding: 30px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1.2fr;
-        gap: 30px;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(10px);
-        transition: all .25s ease;
-        z-index: 99999;
-        box-sizing: border-box;
+      position: absolute;
+      top: 52px;
+      left: 0;
+      width: 100%;
+      background: white;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.15);
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.2fr;
+      gap: 30px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all .25s ease;
+      z-index: 99999;
+      box-sizing: border-box;
     }
 
     .mega-menu-parent:hover .mega-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
     }
 
     .column { display: flex; flex-direction: column; }
@@ -176,318 +185,211 @@
     .column a:hover { color: #2563eb; }
     .promo { background: #1d2252; color: white; border-radius: 8px; padding: 24px; }
     .promo h2 { margin-top: 0; font-size: 24px; }
-    .promo p { line-height: 1.6; }
-    .promo button { margin-top: 20px; border: none; background: white; color: #1d2252; padding: 12px 20px; border-radius: 6px; font-weight: 700; cursor: pointer; }
-    
-    .wrap{max-width:1560px; margin:0 auto; padding:24px}
-    .header{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:18px}
-    .title{font-size:32px; font-weight:750; margin:0; letter-spacing:-.02em}
-    .subtitle{color:var(--muted); margin-top:8px; max-width:1050px; line-height:1.45}
-    
-    .toolbar{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:18px; align-items:center}
-    .pill-group{display:flex; gap:8px; flex-wrap:wrap}
-    button.pill{border:1px solid var(--border); background:#fff; color:var(--text); padding:9px 14px; border-radius:999px; cursor:pointer; font-weight:650}
-    button.pill.active{background:var(--text); color:#fff; border-color:var(--text)}
-</style>
+  </style>
   
-  <!-- Tailwind CSS via CDN for styling -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-<header class="global-header">
+
+  <!-- Top Global Directory Header -->
+  <header class="global-header">
     <a href="/" class="logo">Wealth<span>Landing</span></a>
     <nav aria-label="Global Main Directory">
-        <ul class="top-nav-links">
-            <li><a href="/" class="active">Overview Hub</a></li>
-            <li><a href="#">Accumulation Blueprint</a></li>
-            <li><a href="#">Optimization Systems</a></li>
-            <li><a href="#">Family Legacy Shelters</a></li>
-        </ul>
+      <ul class="top-nav-links">
+        <li><a href="/" class="active">Overview Hub</a></li>
+        <li><a href="#">Accumulation Blueprint</a></li>
+        <li><a href="#">Optimization Systems</a></li>
+        <li><a href="#">Family Legacy Shelters</a></li>
+      </ul>
     </nav>
- <!-- Google search-->
-  <div class="search-container">
-    <form action="https://www.google.com/search" method="get" target="_blank" style="width:100%;">
-        <span class="search-icon">🔍</span>
+    <div class="search-container">
+      <form action="https://www.google.com/search" method="get" target="_blank">
+        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none z-10">🔍</span>
         <input type="hidden" name="sitesearch" value="wealthlanding.com">
-        <input type="search"
-               name="q"
-               class="search-input"
-               placeholder="Search systems, tools, or cities..."
-               aria-label="Search WealthLanding">
-    </form>
-</div>
-</header>
+        <input type="search" name="q" class="search-input" placeholder="Search systems, tools..." aria-label="Search WealthLanding">
+      </form>
+    </div>
+  </header>
 
-<nav class="topnav">
-  <div class="topnav-links">
-    <a class="topnav-link active" href="/" id="nav-intro">Introduction</a>
-    <div class="topnav-divider"></div>
-    <div class="nav-item mega-menu-parent">
+  <!-- Sticky Context Secondary Navigation -->
+  <nav class="topnav">
+    <div class="topnav-links">
+      <a class="topnav-link active" href="/" id="nav-intro">Introduction</a>
+      <div class="topnav-divider"></div>
+      <div class="nav-item mega-menu-parent">
         <a class="topnav-link" href="#">Retiring Overseas</a>
         <div class="mega-menu">
-            <div class="column">
-                <h4>Tools</h4>
-                <a href="RetiringOverseas.html">Overseas City Matcher</a>
-                <a href="cost_for_65+.html">Healthcare Cost Tool</a>
-                <a href="#">Tax Planning Tool</a>
-            </div>
-            <div class="column">
-                <h4>Cities</h4>
-                <a href="cities/auckland.html">Auckland</a>
-                <a href="cities/bangkok.html">Bangkok</a>
-                <a href="#">Lisbon</a>
-                <a href="#">Chiang Mai</a>
-            </div>
-            <div class="column promo">
-                <h2>How Roth Conversions Accelerate Wealth</h2>
-                <p>Explore how moving overseas may create low-tax Roth conversion opportunities before Medicare.</p>
-                <button>Learn More</button>
-            </div>
-        </div>
-    </div>
-    <div class="topnav-divider"></div>
-    <a class="topnav-link" href="UScitymatcher.html">US city matcher</a>
-    <div class="topnav-divider"></div>
-    <a class="topnav-link" href="cost_for_65+.html">Medical cost for retirees 65+</a>
-    <div class="topnav-divider"></div>
-  </div>
-</nav>
-
-    <div class="min-h-screen bg-slate-900 flex justify-center items-center p-6">
-  <!-- Main Card Wrapper -->
-  <div class="w-full max-w-xl bg-slate-800/80 backdrop-blur-md rounded-2xl p-8 border border-slate-700/50 shadow-2xl">
-    
-    <!-- Step Indicators -->
-    <div class="flex items-center justify-between mb-8 px-4">
-      <!-- Step 1 Dot -->
-      <div class="flex items-center flex-1">
-        <div id="dot-1" class="w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-emerald-500 text-slate-900 ring-4 ring-emerald-500/20">
-          1
-        </div>
-        <div id="line-1" class="h-1 flex-1 mx-2 rounded transition-all bg-slate-700"></div>
-      </div>
-      <!-- Step 2 Dot -->
-      <div class="flex items-center flex-1">
-        <div id="dot-2" class="w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-slate-700 text-slate-400">
-          2
-        </div>
-        <div id="line-2" class="h-1 flex-1 mx-2 rounded transition-all bg-slate-700"></div>
-      </div>
-      <!-- Step 3 Dot -->
-      <div class="flex items-center">
-        <div id="dot-3" class="w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-slate-700 text-slate-400">
-          3
-        </div>
-      </div>
-    </div>
-
-    <!-- STEP 1 CONTAINER -->
-    <div id="step-1-view" class="space-y-6">
-      <div>
-        <h2 class="text-2xl font-bold tracking-tight">Let's check your retirement baseline</h2>
-        <p class="text-slate-400 text-sm mt-1">We'll map this into a visual model on the next screen.</p>
-      </div>
-
-      <div class="space-y-4">
-        <div>
-          <div class="flex justify-between text-sm font-medium mb-1">
-            <label for="input-current-age">Current Age</label>
-            <span id="label-current-age" class="text-emerald-400 font-semibold">30 years old</span>
+          <div class="column">
+            <h4>Tools</h4>
+            <a href="RetiringOverseas.html">Overseas City Matcher</a>
+            <a href="cost_for_65+.html">Healthcare Cost Tool</a>
+            <a href="#">Tax Planning Tool</a>
           </div>
-          <input 
-            type="range" min="18" max="70" value="30" id="input-current-age"
-            class="w-full accent-emerald-500 bg-slate-700 h-2 rounded-lg appearance-none cursor-pointer"
-          />
-        </div>
-
-        <div>
-          <div class="flex justify-between text-sm font-medium mb-1">
-            <label for="input-target-age">Target Retirement Age</label>
-            <span id="label-target-age" class="text-emerald-400 font-semibold">65 years old</span>
+          <div class="column">
+            <h4>Cities</h4>
+            <a href="cities/auckland.html">Auckland</a>
+            <a href="cities/bangkok.html">Bangkok</a>
+            <a href="#">Lisbon</a>
+            <a href="#">Chiang Mai</a>
           </div>
-          <input 
-            type="range" min="50" max="85" value="65" id="input-target-age"
-            class="w-full accent-emerald-500 bg-slate-700 h-2 rounded-lg appearance-none cursor-pointer"
-          />
-        </div>
-
-        <div>
-          <label for="input-savings" class="block text-sm font-medium mb-1">Current Retirement Savings ($)</label>
-          <input 
-            type="number" value="25000" id="input-savings"
-            class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
-          />
-        </div>
-      </div>
-
-      <button 
-        onclick="goToStep(2)"
-        class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold py-3 rounded-lg transition-colors mt-4 shadow-lg shadow-emerald-500/10"
-      >
-        Next: Define Lifestyle
-      </button>
-    </div>
-
-    <!-- STEP 2 CONTAINER (Hidden by default) -->
-    <div id="step-2-view" class="space-y-6 hidden">
-      <div>
-        <h2 class="text-2xl font-bold tracking-tight">Your Target Lifestyle</h2>
-        <p class="text-slate-400 text-sm mt-1">How much do you estimate spending each month in today's dollars?</p>
-      </div>
-
-      <div class="space-y-5">
-        <div>
-          <div class="flex justify-between text-sm font-medium mb-1">
-            <label for="input-spend">Estimated Monthly Spending</label>
-            <span id="label-spend" class="text-emerald-400 font-bold">$4,000/mo</span>
+          <div class="column promo">
+            <h2>How Roth Conversions Accelerate Wealth</h2>
+            <p class="text-sm opacity-90 mt-2">Explore how moving overseas may create low-tax Roth conversion opportunities before Medicare.</p>
+            <button class="mt-4 px-4 py-2 bg-white text-slate-900 rounded font-bold text-xs">Learn More</button>
           </div>
-          <input 
-            type="range" min="1000" max="15000" step="100" value="4000" id="input-spend"
-            class="w-full accent-emerald-500 bg-slate-700 h-2 rounded-lg appearance-none cursor-pointer"
-          />
         </div>
-
-        <button 
-          onclick="applyAverage()"
-          class="w-full bg-slate-700/60 hover:bg-slate-700 border border-slate-600 text-slate-300 text-xs py-2 rounded-md transition-all"
-        >
-          💡 Don't know? Apply National Average ($4,500/mo)
-        </button>
       </div>
-
-      <div class="flex gap-3 pt-4">
-        <button 
-          onclick="goToStep(1)"
-          class="flex-1 bg-slate-700 hover:bg-slate-600 text-slate-200 font-medium py-3 rounded-lg transition-colors"
-        >
-          Back
-        </button>
-        <button 
-          onclick="calculateAndShowScore()"
-          class="flex-1 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold py-3 rounded-lg transition-colors shadow-lg shadow-emerald-500/10"
-        >
-          Calculate Score
-        </button>
-      </div>
+      <div class="topnav-divider"></div>
+      <a class="topnav-link" href="UScitymatcher.html">US city matcher</a>
+      <div class="topnav-divider"></div>
+      <a class="topnav-link" href="cost_for_65+.html">Medical cost for retirees 65+</a>
     </div>
+  </nav>
 
-    <!-- STEP 3 CONTAINER (Hidden by default) -->
-    <div id="step-3-view" class="space-y-6 text-center py-2 hidden">
-      <div>
-        <h2 class="text-2xl font-bold tracking-tight">Your WealthLanding Baseline</h2>
-        <p class="text-slate-400 text-sm mt-1">Based on initial inputs and automatic macroeconomic safety parameters.</p>
-      </div>
-
-      <!-- Custom SVG Circular Gauge -->
-      <div class="relative flex justify-center items-center my-6">
-        <svg class="w-44 h-44 transform -rotate-90">
-          <circle cx="88" cy="88" r="76" strokeWidth="10" stroke="#334155" fill="transparent" />
-          <circle 
-            id="gauge-ring"
-            cx="88" cy="88" r="76" stroke-width="10" stroke="#10b981" fill="transparent"
-            stroke-dasharray="477.52"
-            stroke-dashoffset="477.52"
-            stroke-linecap="round"
-            style="transition: stroke-dashoffset 1s ease-out;"
-          />
-        </svg>
-        <div class="absolute inset-0 flex flex-col justify-center items-center">
-          <span id="score-display" class="text-4xl font-extrabold tracking-tight text-white">0%</span>
-          <span class="text-[10px] uppercase tracking-widest text-slate-400 font-semibold mt-0.5">Funded Goal</span>
+  <!-- Centered Interactive Wizard Grid Wrapper -->
+  <div class="py-16 px-4 flex justify-center items-center">
+    <div class="w-full max-w-xl bg-slate-800 rounded-2xl p-8 border border-slate-700/60 shadow-2xl">
+      
+      <!-- Step Level Indicators -->
+      <div class="flex items-center justify-between mb-8 px-4">
+        <div class="flex items-center flex-1">
+          <div id="dot-1" class="w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-emerald-500 text-slate-900 ring-4 ring-emerald-500/20">1</div>
+          <div id="line-1" class="h-1 flex-1 mx-2 rounded transition-all bg-slate-700"></div>
+        </div>
+        <div class="flex items-center flex-1">
+          <div id="dot-2" class="w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-slate-700 text-slate-400">2</div>
+          <div id="line-2" class="h-1 flex-1 mx-2 rounded transition-all bg-slate-700"></div>
+        </div>
+        <div class="flex items-center">
+          <div id="dot-3" class="w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-slate-700 text-slate-400">3</div>
         </div>
       </div>
 
-      <div class="bg-slate-900/50 border border-slate-700/40 rounded-xl p-4 text-left max-w-md mx-auto">
-        <p class="text-xs text-slate-300 leading-relaxed">
-          🚀 <strong>Smart Defaults Applied:</strong> We've pre-configured a standard <strong>2.5% long-term inflation rate</strong>, standard federal tax projections, and a conservative <strong>6% average market return</strong> so you don't have to calculate them yourself.
-        </p>
-      </div>
-
-      <div class="space-y-3 pt-4">
-        <button 
-          onclick="launchRetirementHub()"
-            function launchRetirementHub(){
-
-    const age =
-      document.getElementById('input-current-age').value;
-
-    const retire =
-      document.getElementById('input-target-age').value;
-
-    const savings =
-      document.getElementById('input-savings').value;
-
-    const spend =
-      document.getElementById('input-spend').value;
-
-    window.location.href =
-      `RetirementHub.html?currentAge=${age}&retireAge=${retire}&savings=${savings}&spend=${spend}`;
-}
-          class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold py-3.5 rounded-lg transition-all shadow-lg shadow-emerald-500/20 tracking-wide"
-        >
-          Enter Your Retirement Hub
-        </button>
-        <button 
-          onclick="goToStep(2)"
-          class="text-slate-400 hover:text-slate-300 text-xs font-medium underline transition-all"
-        >
-          Adjust My Onboarding Answers
+      <!-- STEP 1 CONTAINER -->
+      <div id="step-1-view" class="space-y-6">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight text-white">Let's check your retirement baseline</h2>
+          <p class="text-slate-400 text-sm mt-1">We'll map this into a visual model on the next screen.</p>
+        </div>
+        <div class="space-y-4">
+          <div>
+            <div class="flex justify-between text-sm font-medium mb-1 text-slate-200">
+              <label for="input-current-age">Current Age</label>
+              <span id="label-current-age" class="text-emerald-400 font-semibold">30 years old</span>
+            </div>
+            <input type="range" min="18" max="70" value="30" id="input-current-age" class="w-full accent-emerald-500 bg-slate-700 h-2 rounded-lg appearance-none cursor-pointer">
+          </div>
+          <div>
+            <div class="flex justify-between text-sm font-medium mb-1 text-slate-200">
+              <label for="input-target-age">Target Retirement Age</label>
+              <span id="label-target-age" class="text-emerald-400 font-semibold">65 years old</span>
+            </div>
+            <input type="range" min="50" max="85" value="65" id="input-target-age" class="w-full accent-emerald-500 bg-slate-700 h-2 rounded-lg appearance-none cursor-pointer">
+          </div>
+          <div>
+            <label for="input-savings" class="block text-sm font-medium mb-1 text-slate-200">Current Retirement Savings ($)</label>
+            <input type="number" value="25000" id="input-savings" class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
+          </div>
+        </div>
+        <button onclick="goToStep(2)" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold py-3 rounded-lg transition-colors shadow-lg shadow-emerald-500/10">
+          Next: Define Lifestyle
         </button>
       </div>
+
+      <!-- STEP 2 CONTAINER (Hidden Default) -->
+      <div id="step-2-view" class="space-y-6 hidden">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight text-white">Your Target Lifestyle</h2>
+          <p class="text-slate-400 text-sm mt-1">How much do you estimate spending each month in today's dollars?</p>
+        </div>
+        <div class="space-y-5">
+          <div>
+            <div class="flex justify-between text-sm font-medium mb-1 text-slate-200">
+              <label for="input-spend">Estimated Monthly Spending</label>
+              <span id="label-spend" class="text-emerald-400 font-bold">$4,000/mo</span>
+            </div>
+            <input type="range" min="1000" max="15000" step="100" value="4000" id="input-spend" class="w-full accent-emerald-500 bg-slate-700 h-2 rounded-lg appearance-none cursor-pointer">
+          </div>
+          <button onclick="applyAverage()" class="w-full bg-slate-700/60 hover:bg-slate-700 border border-slate-600 text-slate-300 text-xs py-2 rounded-md transition-all">
+            💡 Don't know? Apply National Average ($4,500/mo)
+          </button>
+        </div>
+        <div class="flex gap-3 pt-4">
+          <button onclick="goToStep(1)" class="flex-1 bg-slate-700 hover:bg-slate-600 text-slate-200 font-medium py-3 rounded-lg transition-colors">Back</button>
+          <button onclick="calculateAndShowScore()" class="flex-1 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold py-3 rounded-lg transition-colors shadow-lg shadow-emerald-500/10">Calculate Score</button>
+        </div>
+      </div>
+
+      <!-- STEP 3 CONTAINER (Hidden Default with Summary Framework Modifications) -->
+      <div id="step-3-view" class="space-y-6 text-center py-2 hidden">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight text-white">Your WealthLanding Score</h2>
+          <p class="text-slate-400 text-sm mt-1">Your core assumptions drive your readiness trajectory towards your goal:</p>
+        </div>
+
+        <!-- NEW: INPUT MEMORY REMINDER BLOCK -->
+        <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl p-4 text-left text-sm max-w-md mx-auto space-y-2 text-slate-300">
+          <div>• Your current age is <span id="summary-age" class="text-emerald-400 font-bold">--</span>, looking to step away at age <span id="summary-retire" class="text-emerald-400 font-bold">--</span>.</div>
+          <div>• Your existing retirement asset pool sits at <span id="summary-savings" class="text-emerald-400 font-bold">--</span>.</div>
+          <div>• Your ongoing target monthly cash flow output is set at <span id="summary-spend" class="text-emerald-400 font-bold">--</span>.</div>
+        </div>
+
+        <!-- Radial Gauge Indicator -->
+        <div class="relative flex justify-center items-center my-6">
+          <svg class="w-44 h-44 transform -rotate-90">
+            <circle cx="88" cy="88" r="76" strokeWidth="10" stroke="#334155" fill="transparent" />
+            <circle id="gauge-ring" cx="88" cy="88" r="76" stroke-width="10" stroke="#10b981" fill="transparent" stroke-dasharray="477.52" stroke-dashoffset="477.52" stroke-linecap="round" style="transition: stroke-dashoffset 1s ease-out;" />
+          </svg>
+          <div class="absolute inset-0 flex flex-col justify-center items-center">
+            <span id="score-display" class="text-4xl font-extrabold tracking-tight text-white">0%</span>
+            <span class="text-[10px] uppercase tracking-widest text-slate-400 font-semibold mt-0.5">Goal Attainment</span>
+          </div>
+        </div>
+
+        <div class="bg-slate-900/40 border border-slate-700/30 rounded-xl p-4 text-xs text-left max-w-md mx-auto text-slate-400">
+          🚀 <strong>Macro Parameter Settings:</strong> Model tracking pre-calculates an underlying 2.5% inflation rate alongside standard tax tier frameworks automatically.
+        </div>
+
+        <div class="space-y-3 pt-4">
+          <!-- FIX: CLEAN EXECUTION SEPARATION FROM INLINE DEFINITION BLOCKS -->
+          <button onclick="launchRetirementHub()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold py-3.5 rounded-lg transition-all shadow-lg shadow-emerald-500/20 tracking-wide">
+            Enter Your Retirement Hub
+          </button>
+          <button onclick="goToStep(2)" class="text-slate-400 hover:text-slate-300 text-xs font-medium underline transition-all">
+            Adjust My Onboarding Answers
+          </button>
+        </div>
+      </div>
+      
     </div>
   </div>
-  </div>
 
-  <!-- State & Form Controller Scripts -->
   <script>
-    // State management variables
     let currentStep = 1;
 
-    // DOM Element selections
     const ageInput = document.getElementById('input-current-age');
     const ageLabel = document.getElementById('label-current-age');
-    
     const targetInput = document.getElementById('input-target-age');
     const targetLabel = document.getElementById('label-target-age');
-    
     const savingsInput = document.getElementById('input-savings');
-    
     const spendInput = document.getElementById('input-spend');
     const spendLabel = document.getElementById('label-spend');
 
-    // UI Sliders synchronizers
-    ageInput.addEventListener('input', (e) => {
-      ageLabel.innerText = `${e.target.value} years old`;
-    });
+    ageInput.addEventListener('input', (e) => { ageLabel.innerText = `${e.target.value} years old`; });
+    targetInput.addEventListener('input', (e) => { targetLabel.innerText = `${e.target.value} years old`; });
+    spendInput.addEventListener('input', (e) => { spendLabel.innerText = `$${Number(e.target.value).toLocaleString()}/mo`; });
 
-    targetInput.addEventListener('input', (e) => {
-      targetLabel.innerText = `${e.target.value} years old`;
-    });
-
-    spendInput.addEventListener('input', (e) => {
-      spendLabel.innerText = `$${Number(e.target.value).toLocaleString()}/mo`;
-    });
-
-    // Helper to override default spending
     function applyAverage() {
       spendInput.value = 4500;
-      spendLabel.innerText = "$4,4500/mo".replace("4,45", "4,5"); // safety parsing formatting
       spendLabel.innerText = "$4,500/mo";
     }
 
-    // Step Switcher Workflow Controller
     function goToStep(stepNumber) {
       currentStep = stepNumber;
-
-      // Hide all panels initially
       document.getElementById('step-1-view').classList.add('hidden');
       document.getElementById('step-2-view').classList.add('hidden');
       document.getElementById('step-3-view').classList.add('hidden');
-
-      // Unhide target step layout
       document.getElementById(`step-${stepNumber}-view`).classList.remove('hidden');
-
-      // Sync step wizard UI tracking header indicators
       updateIndicators(stepNumber);
     }
 
@@ -498,14 +400,12 @@
       const line1 = document.getElementById('line-1');
       const line2 = document.getElementById('line-2');
 
-      // Reset definitions to default styling defaults
       [dot1, dot2, dot3].forEach(dot => {
         dot.className = "w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-slate-700 text-slate-400";
       });
       line1.className = "h-1 flex-1 mx-2 rounded transition-all bg-slate-700";
       line2.className = "h-1 flex-1 mx-2 rounded transition-all bg-slate-700";
 
-      // Re-apply states contextually
       if (activeStep === 1) {
         dot1.className = "w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-emerald-500 text-slate-900 ring-4 ring-emerald-500/20";
       } else if (activeStep === 2) {
@@ -521,33 +421,41 @@
       }
     }
 
-    // Dynamic Calculation Logic Engine & SVG Stroke Offset triggers
     function calculateAndShowScore() {
-      // Pull latest parsed integers
       const age = parseInt(ageInput.value);
       const target = parseInt(targetInput.value);
       const savings = parseInt(savingsInput.value) || 0;
       const spend = parseInt(spendInput.value);
 
+      // POPULATE SUMMARY INJECTORS BEFORE RENDER STEP SHOWS
+      document.getElementById('summary-age').innerText = `${age} years old`;
+      document.getElementById('summary-retire').innerText = `${target}`;
+      document.getElementById('summary-savings').innerText = `$${savings.toLocaleString()}`;
+      document.getElementById('summary-spend').innerText = `$${spend.toLocaleString()}/mo`;
+
       const yearsToRetire = Math.max(1, target - age);
-      // Rough linear heuristic tracking compound additions
       const estimatedChances = (savings + (yearsToRetire * 12 * 400)) / (spend * 12 * 22);
-      const finalScore = Math.min(95, Math.max(15, Math.round(estimatedChances * 100)));
+      const finalScore = Math.min(100, Math.max(12, Math.round(estimatedChances * 100)));
 
-      // Advance layout frame panel to Step 3
       goToStep(3);
-
-      // Trigger text value animation delays
       document.getElementById('score-display').innerText = `${finalScore}%`;
 
-      // Update Custom SVG Ring Gauge filling transitions dynamically (circumference = 2 * pi * 76 ≈ 477.52)
       const circumference = 2 * Math.PI * 76;
       const offset = circumference * (1 - finalScore / 100);
       
-      // Delay briefly to allow rendering engine layout frame cycle animations to trigger smoothly
       setTimeout(() => {
         document.getElementById('gauge-ring').style.strokeDashoffset = offset;
       }, 50);
+    }
+
+    /* REDIRECTION FRAME ACTION ENGINE HANDLER */
+    function launchRetirementHub() {
+      const age = document.getElementById('input-current-age').value;
+      const retire = document.getElementById('input-target-age').value;
+      const savings = document.getElementById('input-savings').value;
+      const spend = document.getElementById('input-spend').value;
+
+      window.location.href = `RetirementHub.html?currentAge=${age}&retireAge=${retire}&savings=${savings}&spend=${spend}`;
     }
   </script>
 </body>
