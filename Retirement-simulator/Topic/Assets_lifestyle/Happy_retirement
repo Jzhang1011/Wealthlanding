@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9JMJJ5CJR4');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WealthLanding Content Library — Explore Stories</title>
+  
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --royal: #2563eb;
+      --emerald: #02B17D;
+      --navy: #0B132B;
+    }
+    
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    /* GLOBAL NAVIGATION HEADER */
+    .global-header {
+      background-color: var(--navy); 
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 2rem;
+      border-bottom: 1px solid #1E293B;
+      position: relative;
+      z-index: 200;
+    }
+
+    .top-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-nav-links > li {
+      position: static !important; 
+    }
+
+    .top-nav-links a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.5rem 0;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .top-nav-links a:hover, .top-nav-links a.active {
+      color: white;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: white;
+      text-decoration: none;
+      letter-spacing: -0.04em;
+    }
+
+    .logo span { color: var(--emerald); }
+
+    /* RESTRUCTURED EXTENDED DROPDOWN WITH PROMO PANEL MAP */
+    .dropdown-trigger:hover .mega-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .mega-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      width: 90%;
+      max-width: 1140px; 
+      margin: 0 auto; 
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1.2fr 3fr;
+      gap: 3rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.2s ease;
+      z-index: 500;
+      box-sizing: border-box;
+    }
+
+    /* RIGHT COLUMN LINKS SUB-GRID */
+    .links-matrix {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem 1.5rem;
+    }
+
+    .dropdown-column h4 {
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .dropdown-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .dropdown-column ul a {
+      color: var(--muted) !important;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0;
+    }
+
+    .dropdown-column ul a:hover {
+      color: var(--royal) !important;
+    }
+
+    /* STORY HUB GRID LAYOUT FIXES */
+    .hub-wrap {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem 2rem;
+    }
+
+    /* FIX: Populated correct grid structural layout modifiers for responsive view scaling */
+    @media (min-width: 640px) {
+      .story-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .story-grid { 
+        grid-template-columns: repeat(3, 1fr); 
+      }
+    }
+
+    .story-card {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .story-image-wrapper {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      background-color: #e2e8f0;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .placeholder-svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .story-card:hover .placeholder-svg {
+      transform: scale(1.03);
+    }
+  </style>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+  <!-- Top Global Navigation Header -->
+  <header class="global-header">
+    <a href="/" class="logo">Wealth<span>Landing</span></a>
+    <nav aria-label="Global Main Directory">
+      <ul class="top-nav-links">
+        <li><a href="/">Overview Hub</a></li>
+        <li><a href="#">Accumulation Blueprint</a></li>
+        <li><a href="#">Optimization Systems</a></li>
+        <li><a href="#">Family Legacy Shelters</a></li>
+        
+        <!-- DROPDOWN CONTAINER WITH PROMOTIONAL HIGHLIGHT SECTION -->
+        <li class="dropdown-trigger">
+          <a href="#" class="active font-bold text-white">
+            Explore Stories <span class="text-[10px] opacity-70">▼</span>
+          </a>
+          
+          <div class="mega-dropdown">
+            
+            <!-- LEFT COLUMN: PROMOTIONAL SIDEBAR BANNER AREA -->
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
+              <div class="space-y-3">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Blog</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Your guide to financial planning and retirement.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" class="text-slate-900 font-bold text-sm inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Read Most Recent <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-xs text-slate-400 mt-1">The latest tips and system parameters.</p>
+              </div>
+            </div>
+
+            <!-- RIGHT COLUMN: MULTI-COLUMN SECTIONS ACCORDING TO SYSTEM CONFIGURATION -->
+            <div class="links-matrix text-left">
+              
+              <!-- Column 1 -->
+              <div class="dropdown-column">
+                <h4>🌱 Planning</h4>
+                <ul>
+                  <li><a href="#">Financial Wellness</a></li>
+                  <li><a href="RetirementHub.html">Retirement Planning</a></li>
+                  <li><a href="#">Estate Planning</a></li>
+                  <li><a href="#">Tax Mitigation Systems</a></li>
+                </ul>
+              </div>
+
+              <!-- Column 2 -->
+              <div class="dropdown-column">
+                <h4>💵 Earning & Outflow</h4>
+                <ul>
+                  <li><a href="#">Retirement Income</a></li>
+                  <li><a href="#">Social Security Timing</a></li>
+                  <li><a href="#">Pensions & Annuities</a></li>
+                  <li><a href="#">Budget Optimization</a></li>
+                </ul>
+              </div>
+
+              <!-- Column 3 -->
+              <div class="dropdown-column">
+                <h4>🏡 Assets & Lifestyle</h4>
+                <ul>
+                  <li><a href="#">Saving & Investing</a></li>
+                  <li><a href="#">Real Estate Allocation</a></li>
+                  <li><a href="CelebratingRetirement.html">Happy Retirement</a></li>
+                  <li><a href="#">Aging Well Systems</a></li>
+                </ul>
+              </div>
+
+            </div><!-- End Links Matrix -->
+
+          </div><!-- End Mega Dropdown -->
+        </li>
+      </ul>
+    </nav>
+    <div class="w-full max-w-[200px] relative">
+      <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-sm">🔍</span>
+      <input type="search" class="w-full bg-slate-800 border border-slate-700 text-white pl-9 pr-4 py-1.5 rounded-md text-xs focus:outline-none focus:border-emerald-500" placeholder="Search stories...">
+    </div>
+  </header>
+
+  <!-- CONTENT HUB MAIN CONTENT VIEWPORT -->
+  <main class="w-full">
+    
+    <section class="bg-slate-900 text-white py-16 px-6 relative overflow-hidden mb-12 border-b border-slate-800">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(2,177,125,0.06),transparent_45%)]"></div>
+      
+      <div class="max-w-[1140px] mx-auto relative z-10 text-left space-y-4">
+        <div class="text-[10px] font-bold tracking-widest text-slate-500 uppercase flex items-center gap-2">
+          <a href="#" class="hover:text-slate-300">Resources</a>
+          <span>/</span>
+          <a href="#" class="hover:text-slate-300">Blog</a>
+          <span>/</span>
+          <span class="text-emerald-400">Happy Retirement</span>
+        </div>
+
+        <h1 id="hub-main-title" class="text-4xl sm:text-5xl font-black tracking-tight text-white leading-tight">
+          Happy Retirement
+        </h1>
+
+        <p id="dynamic-hub-intro" class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl font-normal">
+          Planning your future financial wellness needs to address with whom you spend your time, what you'll do, where you'll live, and also your purpose or how you'll find meaning for this time of your life. <a href="#" class="text-emerald-400 font-semibold underline hover:text-emerald-300 transition-colors">Read More</a>
+        </p>
+
+        <div class="pt-4 max-w-sm relative">
+          <span class="absolute left-3.5 top-[70%] -translate-y-1/2 text-slate-400 pointer-events-none text-sm z-10">🔍</span>
+          <input 
+            type="search" 
+            class="w-full bg-slate-800/80 border border-slate-700/80 text-white pl-10 pr-4 py-2.5 rounded-lg text-xs focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 placeholder-slate-400" 
+            placeholder="Search articles, podcasts, or tips..."
+          >
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-[1140px] mx-auto px-6 pb-20">
+      <h2 class="text-2xl font-black tracking-tight text-slate-900 mb-8">Explore content</h2>
+      
+      <div class="story-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <a href="CelebratingRetirement.html" class="story-card">
+          <div class="story-image-wrapper">
+            <svg class="placeholder-svg" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="250" fill="#0B132B"/>
+              <circle cx="200" cy="125" r="80" fill="#02B17D" opacity="0.15"/>
+              <path d="M120 180 L200 80 L280 180 Z" fill="#1E293B"/>
+              <path d="M180 180 L240 110 L300 180 Z" fill="#334155"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 leading-snug hover:text-blue-600 transition-colors">
+            Retirement Travel: 20 Ideas for Keeping It Affordable and Safe
+          </h3>
+          <p class="text-slate-500 text-xs mt-2 line-clamp-3 leading-relaxed">
+            Travel is a top retirement goal. Get the most out of it with senior discounts, cheap lodgings, national park passes, and long-trip wealth retention strategies.
+          </p>
+          <div class="text-[11px] font-semibold text-slate-400 tracking-wide uppercase mt-4">June 17, 2026</div>
+        </a>
+        </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const currentAge = localStorage.getItem('wl_current_age');
+      const targetAge = localStorage.getItem('wl_target_age');
+      const gapScore = localStorage.getItem('wl_gap') || "82%";
+      
+      if (currentAge && targetAge) {
+        // Personalize the main header block text contextually
+        document.getElementById('hub-main-title').innerHTML = `Your Lifestyle & Meaning System`;
+        document.getElementById('dynamic-hub-intro').innerHTML = `
+          Welcome back. You are actively optimizing your roadmap to step away at <strong>Age ${targetAge}</strong>. Below are personalized case studies and time architecture guides focused on converting your remaining <strong>${gapScore} shortfall gap</strong> into guaranteed lifestyle flexibility.
+        `;
+      }
+    });
+  </script>
+
+    <!-- CONTENT STORIES CARD GRID STRUCTURE -->
+    <!-- FIX: Added utility layout classes matching your responsive specifications -->
+    <div class="story-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Card 1 -->
+      <a href="CelebratingRetirement.html" class="story-card">
+        <div class="story-image-wrapper">
+          <svg class="placeholder-svg" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="250" fill="#0B132B"/>
+            <circle cx="200" cy="125" r="80" fill="#02B17D" opacity="0.15"/>
+            <path d="M120 180 L200 80 L280 180 Z" fill="#1E293B"/>
+            <path d="M180 180 L240 110 L300 180 Z" fill="#334155"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-slate-900 leading-snug hover:text-blue-600 transition-colors">
+          Retirement Travel: 20 Ideas for Keeping It Affordable and Safe
+        </h3>
+        <p class="text-slate-500 text-xs mt-2 line-clamp-3 leading-relaxed">
+          Travel is a top retirement goal. Get the most out of it with senior discounts, cheap lodgings, national park passes, and long-trip wealth retention strategies.
+        </p>
+        <div class="text-[11px] font-semibold text-slate-400 tracking-wide uppercase mt-4">
+          June 17, 2026
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="#" class="story-card">
+        <div class="story-image-wrapper">
+          <svg class="placeholder-svg" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="250" fill="#0F172A"/>
+            <circle cx="200" cy="110" r="45" fill="#3b82f6" opacity="0.2"/>
+            <circle cx="230" cy="140" r="45" fill="#02B17D" opacity="0.2"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-slate-900 leading-snug hover:text-blue-600 transition-colors">
+          Life After Retirement: How to Find Meaning and Purpose
+        </h3>
+        <p class="text-slate-500 text-xs mt-2 line-clamp-3 leading-relaxed">
+          Most retirees plan their finances. Few plan who they'll be. Here are functional ways for rebuilding structural identity, including baseline mindfulness and ikigai maps.
+        </p>
+        <div class="text-[11px] font-semibold text-slate-400 tracking-wide uppercase mt-4">
+          April 26, 2026
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="#" class="story-card">
+        <div class="story-image-wrapper">
+          <svg class="placeholder-svg" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="250" fill="#1E293B"/>
+            <rect x="80" y="140" width="40" height="60" fill="#334155"/>
+            <rect x="140" y="110" width="40" height="90" fill="#02B17D" opacity="0.6"/>
+            <rect x="200" y="80" width="40" height="120" fill="#02B17D"/>
+            <path d="M60 160 L160 120 L220 70 L320 50" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-slate-900 leading-snug hover:text-blue-600 transition-colors">
+          ‘Do We Have Enough?’ How This Couple Knew When to Retire
+        </h3>
+        <p class="text-slate-500 text-xs mt-2 line-clamp-3 leading-relaxed">
+          Leslie and Thomas Martin stress-tested their financial plans against high inflation brackets and successfully claimed the confidence to step away securely.
+        </p>
+        <div class="text-[11px] font-semibold text-slate-400 tracking-wide uppercase mt-4">
+          March 25, 2026
+        </div>
+      </a>
+
+      <!-- Card 4 -->
+      <a href="#" class="story-card">
+        <div class="story-image-wrapper">
+          <svg class="placeholder-svg" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="250" fill="#0B132B"/>
+            <path d="M100 125 C 150 50, 250 200, 300 125" stroke="#475569" stroke-width="3" stroke-dasharray="6 6"/>
+            <circle cx="100" cy="125" r="6" fill="#3b82f6"/>
+            <circle cx="300" cy="125" r="6" fill="#02B17D"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-slate-900 leading-snug hover:text-blue-600 transition-colors">
+          International Geo-Arbitrage: Mapping Low-Tax Foreign Havens
+        </h3>
+        <p class="text-slate-500 text-xs mt-2 line-clamp-3 leading-relaxed">
+          Discover how shifting structural footprints overseas creates premium lifestyle expansions while maintaining clean compliance channels with the IRS.
+        </p>
+        <div class="text-[11px] font-semibold text-slate-400 tracking-wide uppercase mt-4">
+          February 11, 2026
+        </div>
+      </a>
+
+      <!-- Card 5 -->
+      <a href="#" class="story-card">
+        <div class="story-image-wrapper">
+          <svg class="placeholder-svg" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="250" fill="#0F172A"/>
+            <path d="M150 75 H250 V175 H150 Z" stroke="#334155" stroke-width="2"/>
+            <path d="M130 95 H270 V155 H130 Z" stroke="#02B17D" stroke-width="2" stroke-dasharray="4 4"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-slate-900 leading-snug hover:text-blue-600 transition-colors">
+          Roth Conversions: Compressing Tax Liabilities Pre-Medicare
+        </h3>
+        <p class="text-slate-500 text-xs mt-2 line-clamp-3 leading-relaxed">
+          Timing your tax conversions during lower-income gap years keeps your lifetime tax liabilities minimized and guards against structural Medicare surcharges.
+        </p>
+        <div class="text-[11px] font-semibold text-slate-400 tracking-wide uppercase mt-4">
+          January 29, 2026
+        </div>
+      </a>
+
+      <!-- Card 6 -->
+      <a href="#" class="story-card">
+        <div class="story-image-wrapper">
+          <svg class="placeholder-svg" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="250" fill="#1E293B"/>
+            <circle cx="200" cy="125" r="50" stroke="#64748b" stroke-width="2"/>
+            <path d="M175 125 H225 M200 100 V150" stroke="#02B17D" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-slate-900 leading-snug hover:text-blue-600 transition-colors">
+          Navigating Early Retirement ACA Premium Tax Subsidies
+        </h3>
+        <p class="text-slate-500 text-xs mt-2 line-clamp-3 leading-relaxed">
+          Learn the mechanical frameworks required to monitor your Modified Adjusted Gross Income (MAGI) to secure maximum health insurance savings.
+        </p>
+        <div class="text-[11px] font-semibold text-slate-400 tracking-wide uppercase mt-4">
+          January 04, 2026
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+</body>
+</html>
