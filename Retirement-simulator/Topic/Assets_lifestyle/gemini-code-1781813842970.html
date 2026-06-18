@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9JMJJ5CJR4');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>20 Retirement Travel Ideas — WealthLanding Template</title>
+  
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --royal: #2563eb;
+      --emerald: #02B17D;
+      --navy: #0B132B;
+    }
+    
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    /* GLOBAL NAVIGATION HEADER */
+    .global-header {
+      background-color: var(--navy); 
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 2rem;
+      border-bottom: 1px solid #1E293B;
+      position: relative;
+      z-index: 200;
+    }
+
+    .top-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-nav-links > li {
+      position: static !important; 
+    }
+
+    .top-nav-links a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.5rem 0;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .top-nav-links a:hover, .top-nav-links a.active {
+      color: white;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: white;
+      text-decoration: none;
+      letter-spacing: -0.04em;
+    }
+
+    .logo span { color: var(--emerald); }
+
+    /* RESTRUCTURED EXTENDED DROPDOWN WITH PROMO PANEL MAP */
+    .dropdown-trigger:hover .mega-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .mega-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      width: 90%;
+      max-width: 1140px; 
+      margin: 0 auto; 
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1.2fr 3fr;
+      gap: 3rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.2s ease;
+      z-index: 500;
+      box-sizing: border-box;
+    }
+
+    .links-matrix {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem 1.5rem;
+    }
+
+    .dropdown-column h4 {
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .dropdown-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .dropdown-column ul a {
+      color: var(--muted) !important;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0;
+    }
+
+    .dropdown-column ul a:hover {
+      color: var(--royal) !important;
+    }
+
+    /* EDITORIAL TWO-COLUMN ARTICLE WRAPPER */
+    .article-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+    }
+
+    @media (min-width: 960px) {
+      .article-container {
+        grid-template-columns: 2.2fr 1fr;
+      }
+    }
+
+    /* CORE EDITORIAL TEXT TYPOGRAPHY SETUP */
+    .editorial-content p {
+      font-size: 1.1rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 1.5rem;
+    }
+
+    .editorial-content h2 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .editorial-content h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* PREMIUM LIST ARTICLE SPACING CONFIGURATION */
+    .list-item-block {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      border-left: 3px solid var(--border);
+      padding-left: 1.25rem;
+    }
+  </style>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+  <header class="global-header">
+    <a href="/" class="logo">Wealth<span>Landing</span></a>
+    <nav aria-label="Global Main Directory">
+      <ul class="top-nav-links">
+        <li><a href="/">Overview Hub</a></li>
+        <li><a href="#">Accumulation Blueprint</a></li>
+        <li><a href="#">Optimization Systems</a></li>
+        <li><a href="#">Family Legacy Shelters</a></li>
+        
+        <li class="dropdown-trigger">
+          <a href="Happy_retirement.html" class="active font-bold text-white">
+            Explore Stories <span class="text-[10px] opacity-70">▼</span>
+          </a>
+          
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
+              <div class="space-y-3">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Blog</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">Your guide to financial planning and retirement.</p>
+              </div>
+              <div class="pt-8">
+                <a href="Happy_retirement.html" class="text-slate-900 font-bold text-sm inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Read Most Recent <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-xs text-slate-400 mt-1">The latest tips and system parameters.</p>
+              </div>
+            </div>
+
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>🌱 Planning</h4>
+                <ul>
+                  <li><a href="#">Financial Wellness</a></li>
+                  <li><a href="RetirementHub.html">Retirement Planning</a></li>
+                  <li><a href="#">Estate Planning</a></li>
+                  <li><a href="#">Tax Mitigation Systems</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>💵 Earning & Outflow</h4>
+                <ul>
+                  <li><a href="#">Retirement Income</a></li>
+                  <li><a href="#">Social Security Timing</a></li>
+                  <li><a href="#">Pensions & Annuities</a></li>
+                  <li><a href="#">Budget Optimization</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🏡 Assets & Lifestyle</h4>
+                <ul>
+                  <li><a href="#">Saving & Investing</a></li>
+                  <li><a href="#">Real Estate Allocation</a></li>
+                  <li><a href="CelebratingRetirement.html">Happy Retirement</a></li>
+                  <li><a href="#">Aging Well Systems</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="w-full max-w-[200px] relative">
+      <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-sm">🔍</span>
+      <input type="search" class="w-full bg-slate-800 border border-slate-700 text-white pl-9 pr-4 py-1.5 rounded-md text-xs focus:outline-none focus:border-emerald-500" placeholder="Search stories...">
+    </div>
+  </header>
+
+  <div class="bg-slate-50 border-b border-slate-100 py-3.5">
+    <div class="max-w-[1140px] mx-auto px-6 text-xs font-semibold tracking-wide text-slate-400 uppercase flex items-center gap-2">
+      <a href="RetirementHub.html" class="hover:text-slate-600">Retirement Hub</a>
+      <span>/</span>
+      <a href="Happy_retirement.html" class="hover:text-slate-600">Happy Retirement</a>
+      <span>/</span>
+      <span class="text-slate-600">Retirement Travel</span>
+    </div>
+  </div>
+
+  <main class="article-container">
+    
+    <article class="editorial-content text-left">
+      <header class="mb-8">
+        <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 mb-4 leading-tight">
+          Retirement Travel: 20 Ideas for Keeping It Affordable and Safe
+        </h1>
+        <div class="text-sm text-slate-400 font-medium">
+          Published by <span class="text-slate-700 font-semibold">WealthLanding Editorial Team</span> • June 2026
+        </div>
+      </header>
+
+      <div class="w-full aspect-[16/9] bg-slate-900 rounded-xl overflow-hidden mb-8">
+        <svg class="w-full h-full object-cover" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="800" height="450" fill="#0B132B"/>
+          <circle cx="400" cy="225" r="140" fill="#02B17D" opacity="0.1"/>
+          <path d="M250 350 L400 150 L550 350 Z" fill="#1E293B"/>
+        </svg>
+      </div>
+
+      <p class="text-lg text-slate-600 !leading-relaxed mb-6 font-medium">
+        Travel often registers as the number one aspirational objective for new retirees. Turning those destination maps into a sustainable lifestyle reality requires protecting your underlying assets.
+      </p>
+
+      <p>
+        Without systemic structure, continuous high-end vacation outflows can introduce early sequence risk into your decumulation plan. By implementing standard discount paths, long-term geographic options, and credits, you can safely widen your travel footprint.
+      </p>
+
+      <h2>Top Systems to Structuralize Extended Travel</h2>
+
+      <div class="list-item-block">
+        <h3>1. Extended Stay Geo-Arbitrage</h3>
+        <p>Instead of jumping from hotel to hotel every three days, shift your roadmap toward month-long apartment leases. Renting structures for thirty days or longer routinely secures 30% to 50% discounts over daily lodging averages while deeply lowering food overhead via kitchen access.</p>
+      </div>
+
+      <div class="list-item-block">
+        <h3>2. Shoulder Season Capital Capture</h3>
+        <p>Skipping narrow peak windows by traveling right before or after standard vacation timelines protects asset margin. Shoulder season booking delivers standard tier service and ideal weather conditions while cutting transport and hotel overhead in half.</p>
+      </div>
+
+      <div class="list-item-block">
+        <h3>3. Structural Health Insurance Bridges</h3>
+        <p>Safe travel requires insulating health risk liabilities. If traveling outside standard networks or internationally before turning 65, verify how your ACA medical premium structure or international emergency wrappers apply to prevent exposing capital pools to unexpected healthcare costs.</p>
+      </div>
+
+      <p class="pt-4 border-t border-slate-100 text-sm text-slate-400">
+        Note: The strategic travel concepts structured above depend on maintaining an optimized personal plan blueprint.
+      </p>
+    </article>
+
+    <aside class="space-y-6">
+      <div class="sticky top-24 bg-slate-950 text-white rounded-2xl p-6 border border-slate-800 shadow-xl space-y-5">
+        <div class="border-b border-slate-800 pb-4 text-left">
+          <span class="text-[10px] uppercase tracking-widest font-extrabold text-emerald-400">Your Active Footprint</span>
+          <h3 class="text-lg font-bold mt-1 text-slate-100 tracking-tight">Sync This Idea to Your Hub</h3>
+        </div>
+
+        <div class="space-y-2.5 text-xs text-left">
+          <div class="flex justify-between py-1.5 border-b border-slate-900">
+            <span class="text-slate-400">Current Age:</span>
+            <span id="side-age" class="font-bold text-slate-200">--</span>
+          </div>
+          <div class="flex justify-between py-1.5 border-b border-slate-900">
+            <span class="text-slate-400">Target Retirement:</span>
+            <span id="side-retire" class="font-bold text-slate-200">--</span>
+          </div>
+          <div class="flex justify-between py-1.5 border-b border-slate-900">
+            <span class="text-slate-400">Target Outflow:</span>
+            <span id="side-spend" class="font-bold text-slate-200">--</span>
+          </div>
+          <div class="flex justify-between py-1.5 pt-3">
+            <span class="text-slate-400 font-medium">Baseline Attainment:</span>
+            <span id="side-score" class="font-black text-emerald-400 text-sm">--</span>
+          </div>
+        </div>
+
+        <div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 text-xs text-left space-y-1">
+          <div class="text-amber-400 font-bold flex items-center gap-1.5">⚠️ Gap Notice</div>
+          <p class="text-slate-400 leading-relaxed">
+            You currently hold a <span id="side-gap" class="text-white font-bold">--</span> unfunded retirement gap. Travel budgets must be structurally optimization-modeled in the Hub to protect asset health.
+          </p>
+        </div>
+
+        <button onclick="window.location.href='StrategyEngine.html'" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3 rounded-lg text-xs transition-colors shadow-lg tracking-wide uppercase">
+          Model Travel in the Strategy Engine
+        </button>
+
+        <a href="RetirementHub.html" class="block text-center text-[11px] text-slate-500 hover:text-slate-400 font-medium underline">
+          Return to My Retirement Dashboard
+        </a>
+      </div>
+    </aside>
+
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Pull state variables out of local browser cache
+      const currentAge = localStorage.getItem('wl_current_age') || "30";
+      const retireAge = localStorage.getItem('wl_target_age') || "65";
+      const savings = localStorage.getItem('wl_savings') || "25000";
+      const spend = localStorage.getItem('wl_spend') || "4000";
+
+      const ageNum = parseInt(currentAge);
+      const retireNum = parseInt(retireAge);
+      const savingsNum = parseInt(savings) || 0;
+      const spendNum = parseInt(spend);
+
+      const yearsToRetire = Math.max(1, retireNum - ageNum);
+      const estimatedChances = (savingsNum + (yearsToRetire * 12 * 400)) / (spendNum * 12 * 22);
+      const finalScore = Math.min(100, Math.max(12, Math.round(estimatedChances * 100)));
+      const gapScore = 100 - finalScore;
+
+      // Hydrate sticky calculation container inputs 
+      document.getElementById('side-age').innerText = `${ageNum} yrs old`;
+      document.getElementById('side-retire').innerText = `Age ${retireNum}`;
+      document.getElementById('side-spend').innerText = `$${spendNum.toLocaleString()}/mo`;
+      document.getElementById('side-score').innerText = `${finalScore}%`;
+      document.getElementById('side-gap').innerText = `${gapScore}%`;
+    });
+  </script>
+</body>
+</html>
