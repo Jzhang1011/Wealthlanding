@@ -388,30 +388,60 @@
   </main>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // Recover dynamic cache parameters from onboarding session memory
-      const currentAge = localStorage.getItem('wl_current_age') || "30";
-      const retireAge = localStorage.getItem('wl_target_age') || "65";
-      const savings = localStorage.getItem('wl_savings') || "25000";
-      const spend = localStorage.getItem('wl_spend') || "4000";
+  document.addEventListener("DOMContentLoaded", function() {
+  // 1. Attempt to fetch baseline variables from local browser memory cache
+  const rawAge = localStorage.getItem('wl_current_age');
+  const rawRetire = localStorage.getItem('wl_target_age');
+  const rawSavings = localStorage.getItem('wl_savings');
+  const rawSpend = localStorage.getItem('wl_spend');
 
-      const ageNum = parseInt(currentAge);
-      const retireNum = parseInt(retireAge);
-      const savingsNum = parseInt(savings) || 0;
-      const spendNum = parseInt(spend);
+  // 2. Check if this is a brand new, un-onboarded user
+  const isBrandNewUser = (!rawAge || !rawRetire || !rawSpend);
 
-      const yearsToRetire = Math.max(1, retireNum - ageNum);
-      const estimatedChances = (savingsNum + (yearsToRetire * 12 * 400)) / (spendNum * 12 * 22);
-      const finalScore = Math.min(100, Math.max(12, Math.round(estimatedChances * 100)));
-      const gapScore = 100 - finalScore;
+  // 3. Establish strict baseline fallbacks if no local memory cache exists
+  const currentAge = rawAge || "30";
+  const retireAge = rawRetire || "65";
+  const savings = rawSavings || "25000";
+  const spend = rawSpend || "4000";
 
-      // Inject values cleanly into the conversion sidebar module
-      document.getElementById('side-age').innerText = `${ageNum} yrs old`;
-      document.getElementById('side-retire').innerText = `Age ${retireNum}`;
-      document.getElementById('side-savings').innerText = `$${savingsNum.toLocaleString()}`;
-      document.getElementById('side-score').innerText = `${finalScore}%`;
-      document.getElementById('side-gap').innerText = `${gapScore}%`;
-    });
+  const ageNum = parseInt(currentAge);
+  const retireNum = parseInt(retireAge);
+  const savingsNum = parseInt(savings) || 0;
+  const spendNum = parseInt(spend);
+
+  // 4. Run the core mathematical execution logic loop
+  const yearsToRetire = Math.max(1, retireNum - ageNum);
+  const estimatedChances = (savingsNum + (yearsToRetire * 12 * 400)) / (spendNum * 12 * 22);
+  const finalScore = Math.min(100, Math.max(12, Math.round(estimatedChances * 100)));
+  const gapScore = 100 - finalScore;
+
+  // 5. Populate standard UI text nodes dynamically
+  document.getElementById('side-age').innerText = `${ageNum} yrs old`;
+  document.getElementById('side-retire').innerText = `Age ${retireNum}`;
+  document.getElementById('side-savings').innerText = `$${savingsNum.toLocaleString()}`;
+  document.getElementById('side-score').innerText = `${finalScore}%`;
+  document.getElementById('side-gap').innerText = `${gapScore}%`;
+
+  // 6. DYNAMIC OVERRIDE: Shift messaging if user has no saved profile data
+  if (isBrandNewUser) {
+    // Reframe the header widget to invite interaction
+    document.querySelector('aside h3').innerText = "Personalize Your Footprint";
+    
+    // Inject a subtle helper banner above the stats indicating these are national defaults
+    const noticeBox = document.createElement('div');
+    noticeBox.className = "text-[11px] bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-lg p-2.5 mb-2 text-left leading-normal";
+    noticeBox.innerHTML = "💡 Viewing national baseline averages. <a href='Gateway.html' class='underline text-white font-semibold hover:text-emerald-400'>Click here to input your exact ages</a> to see if your assets are leaking.";
+    
+    // Anchor the instruction link safely inside the widget view block
+    const statsContainer = document.getElementById('side-age').closest('.space-y-2\\.5');
+    statsContainer.parentNode.insertBefore(noticeBox, statsContainer);
+
+    // Update button text to explicitly guide them to the onboarding gateway wizard first
+    const actionBtn = document.querySelector('aside button');
+    actionBtn.innerText = "Check My Personal Tax Leakage";
+    actionBtn.setAttribute('onclick', "window.location.href='Gateway.html'");
+  }
+});
   </script>
 </body>
 </html>
