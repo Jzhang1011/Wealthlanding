@@ -25,13 +25,11 @@
       --navy: #0B132B;
     }
     
-
-     body{
-    margin:0;
-    font-family:Inter,system-ui,sans-serif;
-    background:#ffffff;
-    color:#0F172A;
-
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: #ffffff;
+      color: #0F172A;
     }
 
     /* GLOBAL NAVIGATION HEADER */
@@ -182,46 +180,48 @@
       color: #1e293b;
       line-height: 1.6;
     }
-/*Story charts*/
-    .legacy-comparison{
-    background:#f8fafc;
-    border:1px solid #e2e8f0;
-    border-radius:18px;
-    padding:28px;
-    margin:40px 0;
-}
 
-.legacy-name{
-    font-weight:700;
-    margin-bottom:6px;
-}
+    /* Story charts */
+    .legacy-comparison {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 28px;
+      margin: 40px 0;
+    }
 
-.legacy-value{
-    font-size:34px;
-    font-weight:900;
-    margin-bottom:12px;
-}
+    .legacy-name {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
 
-.legacy-bar{
-    height:16px;
-    border-radius:999px;
-}
+    .legacy-value {
+      font-size: 34px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
 
-.bill-bar{
-    width:100%;
-    background:#02B17D;
-}
+    .legacy-bar {
+      height: 16px;
+      border-radius: 999px;
+    }
 
-.tom-bar{
-    width:65%;
-    background:#3b82f6;
-}
+    .bill-bar {
+      width: 100%;
+      background: #02B17D;
+    }
 
-.legacy-gap{
-    margin-top:20px;
-    font-size:15px;
-    font-weight:700;
-}
+    .tom-bar {
+      width: 65%;
+      background: #3b82f6;
+    }
+
+    .legacy-gap {
+      margin-top: 20px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
     /* RELATED STORIES GRID AT FOOTER */
     .related-section {
       border-top: 1px solid var(--border);
@@ -229,47 +229,47 @@
       margin-top: 4rem;
     }
 
-    /*Strategy section*/
-    .strategy-reveal{
-    background:#F8FAFC;
-    border-left:6px solid #02B17D;
-    border-radius:12px;
-    padding:28px;
-    margin:40px 0;
-}
+    /* Strategy section */
+    .strategy-reveal {
+      background: #F8FAFC;
+      border-left: 6px solid #02B17D;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 40px 0;
+    }
 
-.strategy-reveal h3{
-    margin-top:0;
-    font-size:28px;
-    font-weight:800;
-    color:#0F172A;
-}
+    .strategy-reveal h3 {
+      margin-top: 0;
+      font-size: 28px;
+      font-weight: 800;
+      color: #0F172A;
+    }
 
-.strategy-reveal .strategy-intro{
-    color:#475569;
-    font-style:italic;
-    margin-bottom:18px;
-}
+    .strategy-reveal .strategy-intro {
+      color: #475569;
+      font-style: italic;
+      margin-bottom: 18px;
+    }
 
-.strategy-list{
-    display:grid;
-    gap:14px;
-}
+    .strategy-list {
+      display: grid;
+      gap: 14px;
+    }
 
-.strategy-item{
-    background:white;
-    border:1px solid #E2E8F0;
-    border-radius:12px;
-    padding:14px;
-    color:#0F172A;
-    font-weight:600;
-  
-  .strategy-item::before{
-    content:"✓ ";
-    color:#02B17D;
-    font-weight:800;
-}
-}
+    .strategy-item {
+      background: white;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 14px;
+      color: #0F172A;
+      font-weight: 600;
+    }
+
+    .strategy-item::before {
+      content: "✓ ";
+      color: #02B17D;
+      font-weight: 800;
+    }
   </style>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -372,12 +372,11 @@
         Bill and Tom retired on the exact same day. For nearly thirty years, they had worked side by side as electrical engineers. They started at the same company, lived in the same neighborhood, raised their children in similar schools, and took similar vacations.
       </p>
 
-      <!-- NEW CHANGER ADJUSTMENT 1: BRAND IMAGE PLACEHOLDER FOLLOWING VACATIONS ROW -->
+      <!-- BRAND IMAGE PLACEHOLDER FOLLOWING VACATIONS ROW -->
       <div class="w-full aspect-[16/9] bg-slate-900 rounded-xl overflow-hidden my-8 shadow-sm">
         <svg class="w-full h-full object-cover" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="800" height="450" fill="#0B132B"/>
           <circle cx="400" cy="225" r="140" fill="#02B17D" opacity="0.1"/>
-          <!-- Vector architecture mimicking professional lifestyle metrics -->
           <path d="M150 380 L350 220 L500 320 L680 180" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
           <path d="M150 380 L350 280 L500 360 L680 260" stroke="#02B17D" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 8"/>
         </svg>
@@ -417,95 +416,45 @@
       <blockquote>
         "Bill's children inherited approximately $5.1 million. Tom's children inherited approximately $3.3 million. Nearly two million dollars separated the outcomes."
       </blockquote>
-<div class="legacy-comparison">
 
-  <div class="legacy-person bill">
-
-      <div class="legacy-name">
-          Bill's Family
+      <div class="legacy-comparison">
+        <div class="legacy-person bill">
+          <div class="legacy-name">Bill's Family</div>
+          <div class="legacy-value text-emerald-600">$5.1M</div>
+          <div class="legacy-bar bill-bar"></div>
+        </div>
+        <div class="legacy-person tom mt-4">
+          <div class="legacy-name">Tom's Family</div>
+          <div class="legacy-value text-blue-600">$3.3M</div>
+          <div class="legacy-bar tom-bar"></div>
+        </div>
+        <div class="legacy-gap text-slate-900">
+          Difference: $1.8M
+        </div>
       </div>
 
-      <div class="legacy-value">
-          $5.1M
-      </div>
-
-      <div class="legacy-bar bill-bar"></div>
-
-  </div>
-
-  <div class="legacy-person tom">
-
-      <div class="legacy-name">
-          Tom's Family
-      </div>
-
-      <div class="legacy-value">
-          $3.3M
-      </div>
-
-      <div class="legacy-bar tom-bar"></div>
-
-  </div>
-
-  <div class="legacy-gap">
-      Difference: $1.8M
-  </div>
-
-</div>
       <p>
         The children were shocked. The families were shocked. How could two men who appeared so financially similar leave such dramatically different legacies? Did Bill invest better? No. Did he find a secret stock? No. Did Tom make terrible choices? Also no. Tom did exactly what most retirees do. And that's the point.
       </p>
 
-      <!-- NEW CHANGER ADJUSTMENT 2: THE "WHAT BILL DID DIFFERENTLY" STRATEGY LAYOUT MODULE -->
-      
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.06),transparent_40%)]"></div>
-        <div class="relative z-10 space-y-4">
-          <span class="text-[10px] font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20">
-            SYSTEM COMPARISON
-          </span>
-        <div class="strategy-reveal">
-
-    <h3>
-        The Three Decisions That Changed Everything
-    </h3>
-
-    <div class="strategy-intro">
-
-        Bill didn't beat the market.
-
-        Bill didn't work longer.
-
-        Bill didn't take more risk.
-
-    </div>
-
-    <div class="strategy-list">
-
-        <div class="strategy-item">
-            ✓ Converted assets during low-income years
+      <!-- FIXED: COHESIVE INTERIOR WRAPPING STRATEGY REVEAL CARDS -->
+      <div class="strategy-reveal">
+        <h3>The Three Decisions That Changed Everything</h3>
+        <div class="strategy-intro">
+          Bill didn't beat the market.<br>
+          Bill didn't work longer.<br>
+          Bill didn't take more risk.
         </div>
 
-        <div class="strategy-item">
-            ✓ Reduced future RMD exposure
+        <div class="strategy-list">
+          <div class="strategy-item">Converted assets during low-income years</div>
+          <div class="strategy-item">Reduced future RMD exposure</div>
+          <div class="strategy-item">Increased tax-free wealth</div>
         </div>
 
-        <div class="strategy-item">
-            ✓ Increased tax-free wealth
-        </div>
-
-    </div>
-
-    <p style="margin-top:20px;">
-        The result wasn't a better portfolio.
-        The result was a more efficient retirement system.
-    </p>
-
-</div>
-
-          <p class="text-sm text-slate-300 pt-4 border-t border-slate-800 leading-relaxed">
-            The result wasn't a better portfolio. <strong>The result was a more efficient retirement system.</strong>
-          </p>
-        </div>
+        <p class="text-sm font-semibold text-slate-800" style="margin-top:20px;">
+          The result wasn't a better portfolio. The result was a more efficient retirement system.
+        </p>
       </div>
 
       <h2>The Collision with Required Minimum Distributions (RMDs)</h2>
@@ -528,7 +477,7 @@
     <!-- RIGHT SIDEBAR: HIGH-CONVERTING INTERACTIVE WIDGET MATRIX -->
     <aside class="space-y-6">
       
-      <!-- CHANGE ADJUSTMENT 4: FIXED INTERACTIVE LINE LINE-ART INTERACTION RESHARE UTILITY ROW -->
+      <!-- FIXED INTERACTIVE LINE LINE-ART INTERACTION RESHARE UTILITY ROW -->
       <div class="bg-white border border-slate-200/60 rounded-2xl p-6 shadow-sm space-y-3 text-left">
         <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Share This Case Study:</span>
         <div class="flex items-center gap-3">
@@ -590,7 +539,7 @@
 
   </div>
 
-  <!-- NEW CHANGER ADJUSTMENT 3: RELATED STORIES DIRECTORY TIERS AT THE BOTTOM -->
+  <!-- RELATED STORIES DIRECTORY TIERS AT THE BOTTOM -->
   <div class="max-w-[1140px] mx-auto px-6 pb-24">
     <section class="related-section text-left">
       <h3 class="text-xl font-black tracking-tight text-slate-900 mb-6">Related Stories</h3>
