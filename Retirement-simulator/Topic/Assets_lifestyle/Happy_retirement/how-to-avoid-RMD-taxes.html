@@ -74,7 +74,7 @@
     .logo { font-size: 1.35rem; font-weight: 800; color: white; text-decoration: none; letter-spacing: -0.04em; }
     .logo span { color: var(--emerald); }
 
-    /* RESTRUCTURED EXTENDED DROPDOWN WITH PROMO PANEL MAP */
+    /* EXTENDED DROP SYSTEM */
     .dropdown-trigger:hover .mega-dropdown {
       opacity: 1;
       visibility: visible;
@@ -132,7 +132,7 @@
 
     .dropdown-column ul a:hover { color: var(--royal) !important; }
 
-    /* TWO-COLUMN LAYOUT CRADLE */
+    /* LAYOUT BOUNDS GRID */
     .article-container {
       max-width: 1140px;
       margin: 0 auto;
@@ -146,7 +146,7 @@
       .article-container { grid-template-columns: 2.2fr 1fr; }
     }
 
-    /* PREMIUM STORY ENGAGEMENT TYPOGRAPHY */
+    /* TYPOGRAPHY MATRIX */
     .story-content p {
       font-size: 1.15rem;
       line-height: 1.85;
@@ -163,6 +163,14 @@
       margin-bottom: 1.25rem;
     }
 
+    .story-content h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
     .story-content blockquote {
       border-left: 4px solid var(--emerald);
       padding-left: 1.5rem;
@@ -171,6 +179,13 @@
       font-size: 1.25rem;
       color: #1e293b;
       line-height: 1.6;
+    }
+
+    /* RELATED STORIES GRID AT FOOTER */
+    .related-section {
+      border-top: 1px solid var(--border);
+      padding-top: 4rem;
+      margin-top: 4rem;
     }
   </style>
 
@@ -257,10 +272,10 @@
     </div>
   </div>
 
-  <!-- MAIN ARTICLE CONTAINER -->
-  <main class="article-container">
+  <!-- MAIN CONTAINER BLOCKS -->
+  <div class="article-container">
     
-    <!-- LEFT SIDE: CASE STUDY TEXT GRID -->
+    <!-- LEFT SIDE CONTENT COLUMN -->
     <article class="story-content text-left">
       <header class="mb-10">
         <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded">Tax Location Case Study</span>
@@ -270,15 +285,26 @@
         <p class="text-slate-400 text-sm">Case Study Analysis by the WealthLanding Research Board • June 2026</p>
       </header>
 
-      <p class="text-xl text-slate-600 !leading-relaxed font-normal mb-8">
+      <p class="text-xl text-slate-600 !leading-relaxed font-normal mb-6">
         Bill and Tom retired on the exact same day. For nearly thirty years, they had worked side by side as electrical engineers. They started at the same company, lived in the same neighborhood, raised their children in similar schools, and took similar vacations.
       </p>
 
+      <!-- NEW CHANGER ADJUSTMENT 1: BRAND IMAGE PLACEHOLDER FOLLOWING VACATIONS ROW -->
+      <div class="w-full aspect-[16/9] bg-slate-900 rounded-xl overflow-hidden my-8 shadow-sm">
+        <svg class="w-full h-full object-cover" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="800" height="450" fill="#0B132B"/>
+          <circle cx="400" cy="225" r="140" fill="#02B17D" opacity="0.1"/>
+          <!-- Vector architecture mimicking professional lifestyle metrics -->
+          <path d="M150 380 L350 220 L500 320 L680 180" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
+          <path d="M150 380 L350 280 L500 360 L680 260" stroke="#02B17D" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 8"/>
+        </svg>
+      </div>
+
       <p>
-        If you had attended their retirement party, you would have assumed they were living nearly identical lives. In many ways, they were. When they retired at age 60, both families had accumulated approximately <strong>$3.8 million</strong>. 
+        They drove similar cars. If you had attended their retirement party, you would have assumed they were living nearly identical lives. In many ways, they were. When they retired at age 60, both families had accumulated approximately <strong>$3.8 million</strong>.
       </p>
 
-      <!-- Comparative Asset Location Metrics Table Layer -->
+      <!-- Comparative Accounts Info Card -->
       <div class="my-8 bg-slate-50 border border-slate-200 rounded-xl p-6">
         <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Baseline Portfolio Structures at Retirement</h4>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
@@ -309,62 +335,90 @@
         "Bill's children inherited approximately $5.1 million. Tom's children inherited approximately $3.3 million. Nearly two million dollars separated the outcomes."
       </blockquote>
 
-      <h2>The Hidden Silent Partner</h2>
       <p>
-        Did Bill invest better? No. Did he find a secret stock? No. Tom wasn't reckless or financially illiterate; he did exactly what most retirees do. 
-      </p>
-      <p>
-        A few years before retirement, Bill attended a workshop where a presenter noted: <em>"If most of your retirement wealth sits inside traditional tax-deferred accounts, you have a silent partner. The government hasn't forgotten the bill; it's simply been postponed."</em>
+        The children were shocked. The families were shocked. How could two men who appeared so financially similar leave such dramatically different legacies? Did Bill invest better? No. Did he find a secret stock? No. Did Tom make terrible choices? Also no. Tom did exactly what most retirees do. And that's the point.
       </p>
 
-      <h2>The Power of Tactical Conversions</h2>
-      <p>
-        Bill took action. Between his retirement date and Medicare eligibility, his income dropped significantly. He used this low-bracket flexibility to execute gradual, annual <strong>Roth Conversions</strong>. He voluntarily paid smaller taxes on his own terms now, while Tom chose to leave his money deferred, letting it grow untouched.
-      </p>
+      <!-- NEW CHANGER ADJUSTMENT 2: THE "WHAT BILL DID DIFFERENTLY" STRATEGY LAYOUT MODULE -->
+      <div class="my-10 bg-slate-900 text-white rounded-2xl p-8 relative overflow-hidden border border-slate-800">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.06),transparent_40%)]"></div>
+        <div class="relative z-10 space-y-4">
+          <span class="text-[10px] font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20">
+            SYSTEM COMPARISON
+          </span>
+          <h3 class="text-2xl font-black text-white tracking-tight !mt-2">What Bill Did Differently</h3>
+          
+          <div class="space-y-1 text-slate-300 text-base italic border-b border-slate-800 pb-4">
+            <div>Bill didn't beat the market.</div>
+            <div>Bill didn't work longer.</div>
+            <div>Bill didn't take more risk.</div>
+          </div>
+          
+          <div class="pt-2">
+            <p class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">He made three strategic decisions:</p>
+            <ul class="space-y-2.5 text-slate-200 text-sm">
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Converted assets during low-income years</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Reduced future RMD exposure</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Increased the percentage of wealth growing tax-free</li>
+            </ul>
+          </div>
+
+          <p class="text-sm text-slate-300 pt-4 border-t border-slate-800 leading-relaxed">
+            The result wasn't a better portfolio. <strong>The result was a more efficient retirement system.</strong>
+          </p>
+        </div>
+      </div>
 
       <h2>The Collision with Required Minimum Distributions (RMDs)</h2>
       <p>
-        The true divergence accelerated silently until age 73, when <strong>Required Minimum Distributions (RMDs)</strong> hit. Because Tom's tax-deferred accounts had grown massive, the government forced mandatory distributions on its schedule—not his. 
+        The divergence accelerated silently until age 73, when <strong>Required Minimum Distributions (RMDs)</strong> hit. Because Tom's tax-deferred accounts had grown massive, the government forced mandatory distributions on its schedule—not his. 
       </p>
       <p>
         These oversized forced withdrawals spiked Tom's taxable bracket, triggering a costly domino effect: higher tax rates, increased healthcare premiums, and the unnecessary taxation of his Social Security distributions. Bill bypassed this entire trap because his systematic multi-year conversions had already safely insulated his wealth inside a tax-free Roth shelter.
       </p>
 
-     <!-- RECONCILED HIGH-CONTRAST TAKEAWAY BLOCK (FIXED FOR IMAGE_8ffd46.PNG) -->
-<div class="bg-emerald-50 border border-emerald-200/80 rounded-xl p-6 my-8">
-  <h4 class="font-bold text-lg tracking-tight mb-2 text-emerald-800">
-    The WealthLanding Optimization Takeaway
-  </h4>
-  <p class="text-sm leading-relaxed text-slate-800 font-normal">
-    Retirement isn't just a savings problem—it's an optimization problem. Two families can hold the exact same asset base and secure the exact same returns, yet arrive at completely different destinations based entirely on account structure execution.
-  </p>
-</div>
+      <!-- OPTIMIZED ACCESSIBLE HIGH-CONTRAST TAKEAWAY BLOCK -->
+      <div class="bg-emerald-50 border border-emerald-200/80 rounded-xl p-6 my-8">
+        <h4 class="font-bold text-lg tracking-tight mb-2 text-emerald-800">The WealthLanding Optimization Takeaway</h4>
+        <p class="text-sm leading-relaxed text-slate-800 font-normal">
+          Retirement isn't just a savings problem—it's an optimization problem. Two families can hold the exact same asset base and secure the exact same returns, yet arrive at completely different destinations based entirely on account structure execution.
+        </p>
+      </div>
     </article>
 
-   <!-- RIGHT SIDEBAR: HYPER-PERSONALIZED STORY-LINKED ENGINE -->
+    <!-- RIGHT SIDEBAR: HIGH-CONVERTING INTERACTIVE WIDGET MATRIX -->
     <aside class="space-y-6">
       
-      <!-- BOLDIN-STYLE SHARE BUTTONS -->
+      <!-- CHANGE ADJUSTMENT 4: FIXED INTERACTIVE LINE LINE-ART INTERACTION RESHARE UTILITY ROW -->
       <div class="bg-white border border-slate-200/60 rounded-2xl p-6 shadow-sm space-y-3 text-left">
         <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Share This Case Study:</span>
-        <div class="flex items-center gap-3 text-slate-500 text-xs">
-          <a href="#" class="hover:text-slate-900 transition-colors">📘 Facebook</a>
-          <a href="#" class="hover:text-slate-900 transition-colors">𝕏 Twitter</a>
-          <a href="#" class="hover:text-slate-900 transition-colors">💼 LinkedIn</a>
-          <a href="#" class="hover:text-slate-900 transition-colors">🔗 Copy Link</a>
+        <div class="flex items-center gap-3">
+          <!-- Facebook Icon button -->
+          <button onclick="window.open('https://facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href))" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors text-slate-600" title="Share on Facebook">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.85z"/></svg>
+          </button>
+          <!-- X / Twitter Icon button -->
+          <button onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(window.location.href))" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors text-slate-600" title="Share on X">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 3.778 8.502 11.24H16.17l-5.214-6.817L4.99 17.25H1.68l7.73-8.035L1.254 2.25H8.08l4.713 6.231zm-1.161 13.02h1.833L7.084 4.126H5.117z"/></svg>
+          </button>
+          <!-- LinkedIn Icon button -->
+          <button onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href))" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors text-slate-600" title="Share on LinkedIn">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </button>
+          <!-- Copy Link Interactive button -->
+          <button onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied to clipboard!');" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors text-slate-600" title="Copy Link URL">
+            <svg class="w-3.5 h-3.5 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+          </button>
         </div>
       </div>
 
-      <!-- DYNAMIC USER CONTEXT ENGINE -->
+      <!-- PERSONALIZED PROFILE HOOK MODULE -->
       <div class="bg-slate-950 text-white rounded-2xl p-6 border border-slate-800 shadow-xl space-y-5">
-        
-        <!-- Header -->
         <div class="border-b border-slate-800 pb-4 text-left">
-          <span class="text-[10px] uppercase tracking-widest font-extrabold text-emerald-400 tracking-wider block">Your Profile</span>
+          <span class="text-[10px] uppercase tracking-widest font-extrabold text-emerald-400 block">Your Profile</span>
           <h3 class="text-xl font-black mt-1 text-slate-100 tracking-tight">Your Retirement Snapshot</h3>
         </div>
 
-        <!-- Live Snapshot Parameters Grid -->
         <div class="grid grid-cols-2 gap-y-3 gap-x-4 text-xs text-left border-b border-slate-900 pb-4">
           <div class="text-slate-400">Current Tracking Age:</div>
           <div id="side-age" class="text-right font-bold text-slate-200">--</div>
@@ -376,39 +430,60 @@
           <div id="side-savings" class="text-right font-bold text-emerald-400">--</div>
           
           <div class="text-slate-400 mt-1">Potential Opportunity:</div>
-          <div id="side-opportunity-tier" class="text-right font-extrabold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 w-max justify-self-end text-[10px] uppercase tracking-wider">
-            High
-          </div>
+          <div id="side-opportunity-tier" class="text-right font-extrabold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 w-max justify-self-end text-[10px] uppercase tracking-wider">High</div>
         </div>
 
-        <!-- THE PSYCHOLOGICAL BRIDGE: CONNECTING DYNAMIC DATA TO STORY MORAL -->
         <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 text-xs text-left space-y-2">
-          <div class="text-slate-300 font-bold uppercase tracking-wider text-[10px] text-amber-400 flex items-center gap-1">
-            💡 Why This Story Matters To You:
-          </div>
-          <p id="dynamic-story-moral" class="text-slate-300 leading-relaxed font-normal">
+          <div class="text-slate-300 font-bold uppercase tracking-wider text-[10px] text-amber-400">💡 Why This Story Matters To You:</div>
+          <p class="text-slate-300 leading-relaxed font-normal">
             Like Tom, a large portion of your <span id="moral-savings-display" class="text-white font-semibold">--</span> retirement wealth may still be completely exposed to heavy future taxes and forced structural distributions.
           </p>
         </div>
 
-        <!-- Action Drives -->
         <div class="space-y-3 pt-2">
-          <button onclick="window.location.href='StrategyEngine.html'" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3.5 rounded-lg text-xs transition-colors shadow-lg tracking-wide uppercase font-black">
+          <button onclick="window.location.href='StrategyEngine.html'" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3.5 rounded-lg text-xs transition-colors shadow-lg tracking-wide uppercase">
             Eliminate My Tax Leakage Now
           </button>
-          <a href="RetirementHub.html" class="block text-center text-[11px] text-slate-500 hover:text-slate-400 font-medium underline">
-            Return to My Master Dashboard
-          </a>
+          <a href="RetirementHub.html" class="block text-center text-[11px] text-slate-500 hover:text-slate-400 font-medium underline">Return to Dashboard</a>
         </div>
-
       </div>
     </aside>
 
-  </main>
+  </div>
 
- <script>
+  <!-- NEW CHANGER ADJUSTMENT 3: RELATED STORIES DIRECTORY TIERS AT THE BOTTOM -->
+  <div class="max-w-[1140px] mx-auto px-6 pb-24">
+    <section class="related-section text-left">
+      <h3 class="text-xl font-black tracking-tight text-slate-900 mb-6">Related Stories</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Story Card 1 -->
+        <a href="#" class="block bg-slate-50 border border-slate-200/60 rounded-xl p-5 hover:border-emerald-500/40 transition-all group">
+          <span class="text-[10px] font-extrabold uppercase text-blue-600 tracking-wider">Healthcare Systems</span>
+          <h4 class="text-base font-bold text-slate-900 mt-2 group-hover:text-blue-600 transition-colors">The Couple Who Paid $80k Too Much</h4>
+          <p class="text-xs text-slate-500 mt-1 line-clamp-2">How missing the ACA premium threshold phase window triggered massive health overhead penalties.</p>
+        </a>
+
+        <!-- Story Card 2 -->
+        <a href="#" class="block bg-slate-50 border border-slate-200/60 rounded-xl p-5 hover:border-emerald-500/40 transition-all group">
+          <span class="text-[10px] font-extrabold uppercase text-emerald-600 tracking-wider">Geo-Arbitrage</span>
+          <h4 class="text-base font-bold text-slate-900 mt-2 group-hover:text-blue-600 transition-colors">The Move Worth $500k</h4>
+          <p class="text-xs text-slate-500 mt-1 line-clamp-2">A metrics breakdown tracing a relocation footprint that unlocked half a million in immediate retirement runway.</p>
+        </a>
+
+        <!-- Story Card 3 -->
+        <a href="#" class="block bg-slate-50 border border-slate-200/60 rounded-xl p-5 hover:border-emerald-500/40 transition-all group">
+          <span class="text-[10px] font-extrabold uppercase text-purple-600 tracking-wider">Timing & Subsidies</span>
+          <h4 class="text-base font-bold text-slate-900 mt-2 group-hover:text-blue-600 transition-colors">The Rule That Changes Everything At 63</h4>
+          <p class="text-xs text-slate-500 mt-1 line-clamp-2">Why your tax returns at age 63 determine your future Medicare IRMAA premium surcharges at 65.</p>
+        </a>
+
+      </div>
+    </section>
+  </div>
+
+  <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // 1. Fetch live metrics from data onboarding cache
       const currentAge = localStorage.getItem('wl_current_age') || "30";
       const retireAge = localStorage.getItem('wl_target_age') || "65";
       const savings = localStorage.getItem('wl_savings') || "25000";
@@ -419,21 +494,16 @@
       const savingsNum = parseInt(savings) || 0;
       const spendNum = parseInt(spend);
 
-      // 2. Math processing loops to evaluate opportunity windows
       const yearsToRetire = Math.max(1, retireNum - ageNum);
       const estimatedChances = (savingsNum + (yearsToRetire * 12 * 400)) / (spendNum * 12 * 22);
       const finalScore = Math.min(100, Math.max(12, Math.round(estimatedChances * 100)));
       const gapScore = 100 - finalScore;
 
-      // 3. Hydrate primary profile blocks dynamically
       document.getElementById('side-age').innerText = `${ageNum} yrs old`;
       document.getElementById('side-retire').innerText = `Age ${retireNum}`;
       document.getElementById('side-savings').innerText = `$${savingsNum.toLocaleString()}`;
-      
-      // 4. Connect the dynamic numbers directly inside your custom moral sentence text block
       document.getElementById('moral-savings-display').innerText = `$${savingsNum.toLocaleString()}`;
 
-      // 5. Contextual Opportunity Tier Calculation Node
       const oppTier = document.getElementById('side-opportunity-tier');
       if (gapScore >= 70) {
         oppTier.innerText = "Critical";
