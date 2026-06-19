@@ -227,6 +227,40 @@ color:#0F172A;
       padding-top: 4rem;
       margin-top: 4rem;
     }
+
+    /*Strategy section*/
+    .strategy-reveal{
+    background:#F8FAFC;
+    border-left:6px solid #02B17D;
+    border-radius:12px;
+    padding:28px;
+    margin:40px 0;
+}
+
+.strategy-reveal h3{
+    margin-top:0;
+    font-size:28px;
+    font-weight:800;
+    color:#0F172A;
+}
+
+.strategy-reveal .strategy-intro{
+    color:#475569;
+    font-style:italic;
+    margin-bottom:18px;
+}
+
+.strategy-list{
+    display:grid;
+    gap:14px;
+}
+
+.strategy-item{
+    background:white;
+    border:1px solid #E2E8F0;
+    border-radius:12px;
+    padding:14px;
+}
   </style>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -414,28 +448,51 @@ color:#0F172A;
       </p>
 
       <!-- NEW CHANGER ADJUSTMENT 2: THE "WHAT BILL DID DIFFERENTLY" STRATEGY LAYOUT MODULE -->
-      <div class="my-10 bg-slate-900 text-white rounded-2xl p-8 relative overflow-hidden border border-slate-800">
+      <div class="my-10 bg-emerald-50 text-white rounded-2xl p-8 relative overflow-hidden border border border-emerald-200
+text-slate-900">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.06),transparent_40%)]"></div>
         <div class="relative z-10 space-y-4">
           <span class="text-[10px] font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20">
             SYSTEM COMPARISON
           </span>
-          <h3 class="text-2xl font-black text-white tracking-tight !mt-2">The Three Decisions That Changed Everything</h3>
-          
-          <div class="space-y-1 text-slate-300 text-base italic border-b border-slate-800 pb-4">
-            <div>Bill didn't beat the market.</div>
-            <div>Bill didn't work longer.</div>
-            <div>Bill didn't take more risk.</div>
-          </div>
-          
-          <div class="pt-2">
-            <p class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">He made three strategic decisions:</p>
-            <ul class="space-y-2.5 text-slate-200 text-sm">
-              <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Converted assets during low-income years</li>
-              <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Reduced future RMD exposure</li>
-              <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Increased the percentage of wealth growing tax-free</li>
-            </ul>
-          </div>
+        <div class="strategy-reveal">
+
+    <h3>
+        The Three Decisions That Changed Everything
+    </h3>
+
+    <div class="strategy-intro">
+
+        Bill didn't beat the market.
+
+        Bill didn't work longer.
+
+        Bill didn't take more risk.
+
+    </div>
+
+    <div class="strategy-list">
+
+        <div class="strategy-item">
+            ✓ Converted assets during low-income years
+        </div>
+
+        <div class="strategy-item">
+            ✓ Reduced future RMD exposure
+        </div>
+
+        <div class="strategy-item">
+            ✓ Increased tax-free wealth
+        </div>
+
+    </div>
+
+    <p style="margin-top:20px;">
+        The result wasn't a better portfolio.
+        The result was a more efficient retirement system.
+    </p>
+
+</div>
 
           <p class="text-sm text-slate-300 pt-4 border-t border-slate-800 leading-relaxed">
             The result wasn't a better portfolio. <strong>The result was a more efficient retirement system.</strong>
