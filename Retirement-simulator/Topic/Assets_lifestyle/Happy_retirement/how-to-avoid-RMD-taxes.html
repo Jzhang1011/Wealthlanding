@@ -341,107 +341,111 @@
 </div>
     </article>
 
-    <!-- RIGHT SIDE: THE DYNAMIC CONVERSION SIDEBAR -->
+   <!-- RIGHT SIDEBAR: HYPER-PERSONALIZED STORY-LINKED ENGINE -->
     <aside class="space-y-6">
-      <div class="sticky top-24 bg-slate-950 text-white rounded-2xl p-6 border border-slate-800 shadow-xl space-y-5">
+      
+      <!-- BOLDIN-STYLE SHARE BUTTONS -->
+      <div class="bg-white border border-slate-200/60 rounded-2xl p-6 shadow-sm space-y-3 text-left">
+        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Share This Case Study:</span>
+        <div class="flex items-center gap-3 text-slate-500 text-xs">
+          <a href="#" class="hover:text-slate-900 transition-colors">📘 Facebook</a>
+          <a href="#" class="hover:text-slate-900 transition-colors">𝕏 Twitter</a>
+          <a href="#" class="hover:text-slate-900 transition-colors">💼 LinkedIn</a>
+          <a href="#" class="hover:text-slate-900 transition-colors">🔗 Copy Link</a>
+        </div>
+      </div>
+
+      <!-- DYNAMIC USER CONTEXT ENGINE -->
+      <div class="bg-slate-950 text-white rounded-2xl p-6 border border-slate-800 shadow-xl space-y-5">
+        
+        <!-- Header -->
         <div class="border-b border-slate-800 pb-4 text-left">
-          <span class="text-[10px] uppercase tracking-widest font-extrabold text-emerald-400">Personalized Engine Test</span>
-          <h3 class="text-lg font-bold mt-1 text-slate-100 tracking-tight">Are You Leaking Assets?</h3>
+          <span class="text-[10px] uppercase tracking-widest font-extrabold text-emerald-400 tracking-wider block">Your Profile</span>
+          <h3 class="text-xl font-black mt-1 text-slate-100 tracking-tight">Your Retirement Snapshot</h3>
         </div>
 
-        <div class="space-y-2.5 text-xs text-left">
-          <div class="flex justify-between py-1.5 border-b border-slate-900">
-            <span class="text-slate-400">Current Track Age:</span>
-            <span id="side-age" class="font-bold text-slate-200">--</span>
-          </div>
-          <div class="flex justify-between py-1.5 border-b border-slate-900">
-            <span class="text-slate-400">Target Goal Line:</span>
-            <span id="side-retire" class="font-bold text-slate-200">--</span>
-          </div>
-          <div class="flex justify-between py-1.5 border-b border-slate-900">
-            <span class="text-slate-400">Current Asset Pool:</span>
-            <span id="side-savings" class="font-bold text-emerald-400">--</span>
-          </div>
-          <div class="flex justify-between py-1.5 pt-3">
-            <span class="text-slate-400 font-medium">Your Goal Readiness:</span>
-            <span id="side-score" class="font-black text-emerald-400 text-sm">--</span>
+        <!-- Live Snapshot Parameters Grid -->
+        <div class="grid grid-cols-2 gap-y-3 gap-x-4 text-xs text-left border-b border-slate-900 pb-4">
+          <div class="text-slate-400">Current Tracking Age:</div>
+          <div id="side-age" class="text-right font-bold text-slate-200">--</div>
+          
+          <div class="text-slate-400">Target Goal Line:</div>
+          <div id="side-retire" class="text-right font-bold text-slate-200">--</div>
+          
+          <div class="text-slate-400">Active Savings Pool:</div>
+          <div id="side-savings" class="text-right font-bold text-emerald-400">--</div>
+          
+          <div class="text-slate-400 mt-1">Potential Opportunity:</div>
+          <div id="side-opportunity-tier" class="text-right font-extrabold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 w-max justify-self-end text-[10px] uppercase tracking-wider">
+            High
           </div>
         </div>
 
-        <div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 text-xs text-left space-y-1.5">
-          <div class="text-amber-400 font-bold flex items-center gap-1.5">⚠️ Active Deficit Warning</div>
-          <p class="text-slate-400 leading-relaxed">
-            Your profile indicates an active <span id="side-gap" class="text-white font-bold">--</span> unfunded gap. Like Tom, leaving your assets unoptimized risks millions in structural leakage.
+        <!-- THE PSYCHOLOGICAL BRIDGE: CONNECTING DYNAMIC DATA TO STORY MORAL -->
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 text-xs text-left space-y-2">
+          <div class="text-slate-300 font-bold uppercase tracking-wider text-[10px] text-amber-400 flex items-center gap-1">
+            💡 Why This Story Matters To You:
+          </div>
+          <p id="dynamic-story-moral" class="text-slate-300 leading-relaxed font-normal">
+            Like Tom, a large portion of your <span id="moral-savings-display" class="text-white font-semibold">--</span> retirement wealth may still be completely exposed to heavy future taxes and forced structural distributions.
           </p>
         </div>
 
-        <button onclick="window.location.href='StrategyEngine.html'" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3 rounded-lg text-xs transition-colors shadow-lg tracking-wide uppercase">
-          Eliminate My Leakage Now
-        </button>
+        <!-- Action Drives -->
+        <div class="space-y-3 pt-2">
+          <button onclick="window.location.href='StrategyEngine.html'" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3.5 rounded-lg text-xs transition-colors shadow-lg tracking-wide uppercase font-black">
+            Eliminate My Tax Leakage Now
+          </button>
+          <a href="RetirementHub.html" class="block text-center text-[11px] text-slate-500 hover:text-slate-400 font-medium underline">
+            Return to My Master Dashboard
+          </a>
+        </div>
 
-        <a href="RetirementHub.html" class="block text-center text-[11px] text-slate-500 hover:text-slate-400 font-medium underline">
-          Go directly to my Retirement Hub
-        </a>
       </div>
     </aside>
 
   </main>
 
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-  // 1. Attempt to fetch baseline variables from local browser memory cache
-  const rawAge = localStorage.getItem('wl_current_age');
-  const rawRetire = localStorage.getItem('wl_target_age');
-  const rawSavings = localStorage.getItem('wl_savings');
-  const rawSpend = localStorage.getItem('wl_spend');
+ <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // 1. Fetch live metrics from data onboarding cache
+      const currentAge = localStorage.getItem('wl_current_age') || "30";
+      const retireAge = localStorage.getItem('wl_target_age') || "65";
+      const savings = localStorage.getItem('wl_savings') || "25000";
+      const spend = localStorage.getItem('wl_spend') || "4000";
 
-  // 2. Check if this is a brand new, un-onboarded user
-  const isBrandNewUser = (!rawAge || !rawRetire || !rawSpend);
+      const ageNum = parseInt(currentAge);
+      const retireNum = parseInt(retireAge);
+      const savingsNum = parseInt(savings) || 0;
+      const spendNum = parseInt(spend);
 
-  // 3. Establish strict baseline fallbacks if no local memory cache exists
-  const currentAge = rawAge || "30";
-  const retireAge = rawRetire || "65";
-  const savings = rawSavings || "25000";
-  const spend = rawSpend || "4000";
+      // 2. Math processing loops to evaluate opportunity windows
+      const yearsToRetire = Math.max(1, retireNum - ageNum);
+      const estimatedChances = (savingsNum + (yearsToRetire * 12 * 400)) / (spendNum * 12 * 22);
+      const finalScore = Math.min(100, Math.max(12, Math.round(estimatedChances * 100)));
+      const gapScore = 100 - finalScore;
 
-  const ageNum = parseInt(currentAge);
-  const retireNum = parseInt(retireAge);
-  const savingsNum = parseInt(savings) || 0;
-  const spendNum = parseInt(spend);
+      // 3. Hydrate primary profile blocks dynamically
+      document.getElementById('side-age').innerText = `${ageNum} yrs old`;
+      document.getElementById('side-retire').innerText = `Age ${retireNum}`;
+      document.getElementById('side-savings').innerText = `$${savingsNum.toLocaleString()}`;
+      
+      // 4. Connect the dynamic numbers directly inside your custom moral sentence text block
+      document.getElementById('moral-savings-display').innerText = `$${savingsNum.toLocaleString()}`;
 
-  // 4. Run the core mathematical execution logic loop
-  const yearsToRetire = Math.max(1, retireNum - ageNum);
-  const estimatedChances = (savingsNum + (yearsToRetire * 12 * 400)) / (spendNum * 12 * 22);
-  const finalScore = Math.min(100, Math.max(12, Math.round(estimatedChances * 100)));
-  const gapScore = 100 - finalScore;
-
-  // 5. Populate standard UI text nodes dynamically
-  document.getElementById('side-age').innerText = `${ageNum} yrs old`;
-  document.getElementById('side-retire').innerText = `Age ${retireNum}`;
-  document.getElementById('side-savings').innerText = `$${savingsNum.toLocaleString()}`;
-  document.getElementById('side-score').innerText = `${finalScore}%`;
-  document.getElementById('side-gap').innerText = `${gapScore}%`;
-
-  // 6. DYNAMIC OVERRIDE: Shift messaging if user has no saved profile data
-  if (isBrandNewUser) {
-    // Reframe the header widget to invite interaction
-    document.querySelector('aside h3').innerText = "Personalize Your Footprint";
-    
-    // Inject a subtle helper banner above the stats indicating these are national defaults
-    const noticeBox = document.createElement('div');
-    noticeBox.className = "text-[11px] bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-lg p-2.5 mb-2 text-left leading-normal";
-    noticeBox.innerHTML = "💡 Viewing national baseline averages. <a href='Gateway.html' class='underline text-white font-semibold hover:text-emerald-400'>Click here to input your exact ages</a> to see if your assets are leaking.";
-    
-    // Anchor the instruction link safely inside the widget view block
-    const statsContainer = document.getElementById('side-age').closest('.space-y-2\\.5');
-    statsContainer.parentNode.insertBefore(noticeBox, statsContainer);
-
-    // Update button text to explicitly guide them to the onboarding gateway wizard first
-    const actionBtn = document.querySelector('aside button');
-    actionBtn.innerText = "Check My Personal Tax Leakage";
-    actionBtn.setAttribute('onclick', "window.location.href='Gateway.html'");
-  }
-});
+      // 5. Contextual Opportunity Tier Calculation Node
+      const oppTier = document.getElementById('side-opportunity-tier');
+      if (gapScore >= 70) {
+        oppTier.innerText = "Critical";
+        oppTier.className = "text-right font-extrabold text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/20 w-max justify-self-end text-[10px] uppercase tracking-wider";
+      } else if (gapScore >= 40) {
+        oppTier.innerText = "High";
+        oppTier.className = "text-right font-extrabold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20 w-max justify-self-end text-[10px] uppercase tracking-wider";
+      } else {
+        oppTier.innerText = "Moderate";
+        oppTier.className = "text-right font-extrabold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 w-max justify-self-end text-[10px] uppercase tracking-wider";
+      }
+    });
   </script>
 </body>
 </html>
