@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Odyssey Experience Studio | WealthLanding</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0F172A;
+      --navy-light: #334155;
+      --mint: #10B981;
+      --mint-dark: #059669;
+      --bg: #FAFAFB;
+      --card: #FFFFFF;
+      --border: #F1F5F9;
+      --border-dark: #E2E8F0;
+      --text: #1E293B;
+      --muted: #64748B;
+      --blue: #2563EB;
+      --blue-light: #EFF6FF;
+      --amber: #D97706;
+      --red: #DC2626;
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.02);
+      --shadow-md: 0 12px 34px rgba(15, 23, 42, 0.04);
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+      --score-low: #DC2626;
+      --score-med: #D97706;
+      --score-high: #2563EB;
+      --score-vhigh: #02B17D;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --- GLOBAL TOP NAVIGATION --- */
+    .global-header {
+      background: var(--navy);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 3rem;
+      border-bottom: 1px solid #1E293B;
+    }
+
+    .logo {
+      color: white;
+      text-decoration: none;
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .logo span { color: var(--mint); }
+
+    .top-nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-nav-links a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .top-nav-links a.active { color: white; border-bottom: 2px solid var(--mint); padding-bottom: 4px; }
+
+    /* --- LAYOUT WRAPPER --- */
+    .container {
+      max-width: 1750px;
+      margin: 0 auto;
+      padding: 40px 30px 100px;
+    }
+
+    /* --- RETIREMENT BLUEPRINT HERO CONTEXT BRIDGE --- */
+    .blueprint-context {
+      background: linear-gradient(135deg, #0F172A, #1E293B);
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .blueprint-context h2 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--mint);
+      margin: 0 0 20px 0;
+      font-weight: 800;
+    }
+
+    .blueprint-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 24px;
+    }
+
+    .blueprint-meta h4 {
+      font-size: 0.75rem;
+      color: #94A3B8;
+      text-transform: uppercase;
+      margin: 0 0 6px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .blueprint-meta select {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 6px;
+      outline: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .blueprint-meta p {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: white;
+      margin: 0;
+    }
+
+    .blueprint-intro {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: #E2E8F0;
+      font-style: italic;
+    }
+
+    /* --- UNIFIED JOURNEY COMPARISON LEDGER MATRIX --- */
+    .comparison-ledger-panel {
+      background: var(--card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .comparison-ledger-panel h4 {
+      margin: 0 0 16px 0;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: var(--navy);
+      letter-spacing: 0.08em;
+      font-weight: 800;
+    }
+
+    .ledger-table-wrapper {
+      overflow-x: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+    }
+
+    .ledger-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    .ledger-table th, .ledger-table td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ledger-table th {
+      background: #F8FAFC;
+      color: var(--navy-light);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .ledger-table td { font-weight: 600; }
+
+    /* --- WORKSPACE LAYOUT --- */
+    .simulator-workspace {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    @media (max-width: 1200px) {
+      .simulator-workspace { grid-template-columns: 1fr; }
+    }
+
+    /* --- INTAKE SYSTEMS --- */
+    .intake-card {
+      background: var(--card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .intake-card h3 {
+      margin: 0 0 24px 0;
+      color: var(--navy);
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
+      font-weight: 800;
+    }
+
+    .intake-section-break {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue);
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+
+    .form-element { margin-bottom: 18px; }
+    .form-element label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+    .form-element select {
+      width: 100%;
+      background: #F8FAFC;
+      border: 1px solid var(--border-dark);
+      color: var(--text);
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* --- HORIZONTAL GRID CARDS DISPLAY WORKSPACE --- */
+    .cards-horizontal-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 1650px) { .cards-horizontal-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 1000px) { .cards-horizontal-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 680px) { .cards-horizontal-grid { grid-template-columns: 1fr; } }
+
+    /* --- PROFILE RESPONSIVE JOURNEY CARD --- */
+    .scen-card {
+      background: var(--card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .scen-card:hover {
+      border-color: #CBD5E1;
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .scen-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin: 0 0 4px 0;
+      font-weight: 700;
+      min-height: 44px;
+    }
+
+    /* Who Chooses This Life Emotional Segment Box */
+    .persona-box {
+      background: #FAFAFB;
+      border-left: 3px solid var(--navy-light);
+      padding: 10px 12px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.82rem;
+      color: var(--navy-light);
+      line-height: 1.4;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    .scen-section-title {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-top: 20px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
+
+    /* Timelines Path Stack Node Structural Framework */
+    .timeline-stack { display: flex; flex-direction: column; gap: 12px; }
+    .timeline-segment-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--blue);
+      padding: 12px;
+      border-radius: 6px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .seg-age-line { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+    .seg-age-line span:first-child { background: #F1F5F9; color: var(--navy-light); font-size: 0.75rem; font-weight: 800; padding: 2px 8px; border-radius: 4px; }
+    .seg-age-line span:last-child { font-size: 0.8rem; font-weight: 700; color: var(--navy); }
+    .seg-location-line { color: var(--blue); font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+    .seg-focus-line { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
+
+    .example-eligibility-wrapper {
+      margin-top: 8px;
+      font-size: 0.75rem;
+      background: #F8FAFC;
+      border: 1px dashed var(--border-dark);
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+
+    /* Attributes Layout Box Matrices */
+    .characteristics-box { display: flex; flex-direction: column; gap: 8px; background: #F8FAFC; padding: 14px; border-radius: 10px; }
+    .char-item-row { display: flex; justify-content: space-between; font-size: 0.85rem; }
+    .char-label { color: var(--muted); font-weight: 600; }
+    .char-value { font-weight: 700; }
+
+    .color-low { color: var(--red); }
+    .color-med { color: var(--amber); }
+    .color-high { color: var(--blue); }
+    .color-vhigh { color: var(--mint-dark); }
+
+    /* Gains vs Sacrifices Columns Display Layout */
+    .tradeoff-split { display: flex; flex-direction: column; gap: 10px; }
+    .tradeoff-split h5 { font-size: 0.75rem; text-transform: uppercase; margin: 0; font-weight: 800; }
+    .tradeoff-split .lbl-g { color: var(--mint-dark); }
+    .tradeoff-split .lbl-s { color: var(--red); }
+    .tradeoff-split ul { margin: 0; padding-left: 12px; list-style: none; font-size: 0.85rem; color: var(--text); display: flex; flex-direction: column; gap: 4px; }
+    .tradeoff-split .ul-g li::before { content: "✓ "; color: var(--mint-dark); font-weight: bold; margin-left: -12px; margin-right: 4px; }
+    .tradeoff-split .ul-s li::before { content: "✗ "; color: var(--red); font-weight: bold; margin-left: -12px; margin-right: 4px; }
+
+    .card-footer-action { margin-top: 24px; }
+    .card-footer-action button {
+      width: 100%; background: #F1F5F9; color: var(--navy-light); border: 1px solid var(--border-dark);
+      padding: 12px; border-radius: 10px; font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease;
+    }
+    .card-footer-action button:hover { background: var(--navy); color: white; border-color: var(--navy); }
+
+    /* --- EXPANDED DEEP OVERLAY COMPONENT LABELS --- */
+    .exploration-view { display: none; background: var(--card); border: 1px solid var(--border-dark); border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--shadow-md); }
+    .btn-revert { background: none; border: 1px solid var(--border-dark); color: var(--muted); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 0.85rem; margin-bottom: 24px; }
+    .btn-revert:hover { border-color: var(--text); color: var(--text); }
+
+    .exp-header h2 { font-family: var(--font-serif); font-size: 2.2rem; color: var(--navy); margin: 0 0 12px 0; }
+    .exp-header p { color: var(--muted); margin: 0 0 32px 0; font-size: 1.1rem; max-width: 800px; }
+
+    .exp-split-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; }
+    @media (max-width: 950px) { .exp-split-grid { grid-template-columns: 1fr; } }
+
+    .trace-card, .consular-card { background: #F8FAFC; border: 1px solid var(--border-dark); border-radius: var(--radius-md); padding: 24px; margin-bottom: 24px; }
+    .trace-card h4, .consular-card h4 { margin: 0 0 16px 0; font-size: 0.8rem; text-transform: uppercase; color: var(--navy); font-weight: 800; }
+    .trace-line-item { display: flex; gap: 8px; font-size: 0.95rem; margin-bottom: 8px; color: var(--text); }
+    .trace-marker { color: var(--mint-dark); font-weight: 900; }
+
+    .consular-loop { padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid var(--border-dark); }
+    .consular-loop:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+    .consular-loop strong { font-size: 1.05rem; color: var(--navy); display: block; margin-bottom: 4px; }
+    .consular-badge { display: inline-block; font-size: 0.7rem; font-weight: 800; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; margin-top: 4px; }
+    .badge-acc { background: #ECFDF5; color: var(--mint-dark); border: 1px solid #A7F3D0; }
+    .badge-pot { background: #FFF7ED; color: var(--amber); border: 1px solid #FED7AA; }
+
+  </style>
+</head>
+<body>
+
+<header class="global-header">
+  <a href="/" class="logo">Wealth<span>Landing</span></a>
+  <nav aria-label="Global Directory">
+    <ul class="top-nav-links">
+      <li><a href="/">Overview Hub</a></li>
+      <li><a href="#">Accumulation Blueprint</a></li>
+      <li><a href="#">Optimization Systems</a></li>
+      <li><a href="#">Family Legacy Shelters</a></li>
+      <li><a href="#" class="active">Retirement Journeys (Odyssey)</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="blueprint-context">
+    <h2>Your Live Retirement Master Plan Variables</h2>
+    <div class="blueprint-grid">
+      <div class="blueprint-meta">
+        <h4>Target Milestones Window</h4>
+        <p>Age 52 → 60</p>
+      </div>
+      <div class="blueprint-meta">
+        <h4>Primary Planning Concern</h4>
+        <p>Tax & Lifestyle Flexibility</p>
+      </div>
+      <div class="blueprint-meta">
+        <h4>Asset Footprint Tier</h4>
+        <select id="mp_assetTier" onchange="fireOdysseySimulator()">
+          <option value="HNW" selected>High Net Worth ($1M - $5M)</option>
+          <option value="Core">Core Wealth ($250k - $1M)</option>
+          <option value="Ultra">Bespoke Institutional ($5M+)</option>
+        </select>
+      </div>
+      <div class="blueprint-meta">
+        <h4>Geographic Preference</h4>
+        <p>International / Hybrid</p>
+      </div>
+      <div class="blueprint-meta">
+        <h4>Master Recommended Track</h4>
+        <p>Sequential Roth Conversion Platform</p>
+      </div>
+    </div>
+    <div class="blueprint-intro">
+      "Let's explore alternative retirement lives built dynamically around your profile rules."
+    </div>
+  </section>
+
+  <section class="comparison-ledger-panel">
+    <h4>Unified Journey Comparison Ledger</h4>
+    <div class="ledger-table-wrapper">
+      <table class="ledger-table">
+        <thead>
+          <tr>
+            <th>Retirement Journey Archetype</th>
+            <th>Tax Efficiency</th>
+            <th>Healthcare Security</th>
+            <th>Family Integration Meter</th>
+            <th>Lifestyle Flexibility</th>
+            <th>Legacy Preservation</th>
+            <th>System Complexity</th>
+          </tr>
+        </thead>
+        <tbody id="comparisonLedgerBody">
+          </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="simulator-workspace">
+    
+    <aside class="intake-card">
+      <h3>Odyssey Intake</h3>
+      
+      <div class="intake-section-break">Baseline Credentials</div>
+      <div class="form-element">
+        <label for="wl_citizenship">Citizenship Baseline</label>
+        <select id="wl_citizenship" onchange="fireOdysseySimulator()">
+          <option value="US" selected>US</option>
+          <option value="Canada">Canada</option>
+          <option value="Australia">Australia</option>
+          <option value="China">China</option>
+          <option value="Singapore">Singapore</option>
+        </select>
+      </div>
+
+      <div class="form-element">
+        <label for="wl_residencyRights">Existing Residency Rights</label>
+        <select id="wl_residencyRights" onchange="fireOdysseySimulator()">
+          <option value="None" selected>None</option>
+          <option value="EU Passport">EU Passport</option>
+          <option value="Taiwan APRC">Taiwan APRC</option>
+          <option value="Taiwan Gold Card">Taiwan Gold Card</option>
+          <option value="Australian PR">Australian PR</option>
+        </select>
+      </div>
+
+      <div class="form-element">
+        <label for="wl_childrenLocation">Where Do Your Children Live?</label>
+        <select id="wl_childrenLocation" onchange="fireOdysseySimulator()">
+          <option value="Same State">Same Metro / State Base</option>
+          <option value="Different US State" selected>Different US State Location</option>
+          <option value="Outside US">International Destination Base</option>
+          <option value="No Children">No Children / Direct Estate Pool</option>
+        </select>
+      </div>
+
+      <div class="intake-section-break">Ages 50–65: Active Era</div>
+      <div class="form-element">
+        <label for="wl_stage1Priority">What matters most here?</label>
+        <select id="wl_stage1Priority" onchange="fireOdysseySimulator()">
+          <option value="Tax Optimization" selected>Tax Optimization Window</option>
+          <option value="Travel">Active Travel & Exploration</option>
+          <option value="Cost of Living">Cost of Living Arbitrage</option>
+          <option value="Healthcare">Healthcare Grid Underwriting</option>
+          <option value="Family">Family Integration Core</option>
+        </select>
+      </div>
+
+      <div class="intake-section-break">Ages 65–78: Transition Era</div>
+      <div class="form-element">
+        <label for="wl_stage2Priority">What matters most here?</label>
+        <select id="wl_stage2Priority" onchange="fireOdysseySimulator()">
+          <option value="Lifestyle" selected>Premium Urban Lifestyle</option>
+          <option value="Healthcare">Secure Universal Healthcare</option>
+          <option value="Travel">Ongoing Global Rotation</option>
+          <option value="Family">Generational Proximity</option>
+          <option value="Inheritance">Legacy Shield Management</option>
+        </select>
+      </div>
+
+      <div class="intake-section-break">Ages 78+: Care & Legacy Era</div>
+      <div class="form-element">
+        <label for="wl_stage3Priority">What matters most here?</label>
+        <select id="wl_stage3Priority" onchange="fireOdysseySimulator()">
+          <option value="Family Proximity" selected>Family Proximity & Co-location</option>
+          <option value="Long-Term Care">Continuous Long-Term Clinical Care</option>
+          <option value="Healthcare">High-End Medical System Insulation</option>
+          <option value="Inheritance">Heir Distribution Finalization</option>
+          <option value="Independence">Aging in Place Autonomy</option>
+        </select>
+      </div>
+    </aside>
+
+    <section>
+      <div id="cardsGridView" class="cards-horizontal-grid"></div>
+
+      <div id="explorationView" class="exploration-view">
+        <button class="btn-revert" onclick="exitExplorationView()">← Back to Journey Dashboard</button>
+        <div id="explorationContent"></div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<script>
+// Structural Rule Mapping Matrix Object System
+const structuralRegistry = {
+  blueprints: [
+    {
+      id: "home_base",
+      name: "Home Base Path",
+      persona: "Best for retirees who value absolute stability, simplicity, and staying deeply anchored within established domestic support networks.",
+      getMetrics: (inputs) => ({ tax: "Medium", health: "High", family: "Very High", flexibility: "Low", legacy: "High", complexity: "Low" }),
+      generateTimeline: (inputs) => [
+        { age: "50-65", title: "Domestic Anchor Base", text: `Locked completely inside native state lines. Organizing local drawing vectors matching ${inputs.wl_stage1Priority}.` },
+        { age: "65-78", title: "Single Metro Area", text: `Zero moving adjustments. Sustaining local address configurations to favor local ${inputs.wl_stage2Priority}.` },
+        { age: "78+", title: "One Support Network", text: `Consolidated care deployment inside target domestic area: ${inputs.wl_childrenLocation === "Different US State" ? "Relocate to Children's State Base" : "Preserve Native City Base"}.` }
+      ]
+    },
+    {
+      id: "wealth_maximizer",
+      name: "Wealth Maximizer",
+      persona: "Best for retirees willing to embrace operational complexity and jurisdictional shifts in exchange for maximizing inheritance and tax efficiency.",
+      getMetrics: (inputs) => ({ tax: "Very High", health: "Medium", family: "Medium", flexibility: "Medium", legacy: "Very High", complexity: "High" }),
+      generateTimeline: (inputs) => {
+        let assetFocus = inputs.mp_assetTier === "Ultra" ? "Establish multi-border Offshore Asset Shelters and legacy holding trusts." : "Maximize basic internal sequential Roth conversions and tax bracket arbitrage slots.";
+        let stage1Focus = inputs.wl_stage1Priority === "Tax Optimization" ? `Execute maximum low-drag structural conversions. ${assetFocus}` : `Balance basic capital sheltering models with initial ${inputs.wl_stage1Priority} requirements.`;
+        
+        return [
+          { age: "50-65", title: "Tax Optimization Hub", text: stage1Focus, explicitExamples: ["Taiwan"] },
+          { age: "65-78", title: "Sovereign Asset Haven", text: `Shelter foreign investment capital and secure low tax distributions matching ${inputs.wl_stage2Priority}.` },
+          { age: "78+", title: "Trust Distribution Point", text: `Final execution point. Disbursing residual assets near target location loop: ${inputs.wl_childrenLocation === "No Children" ? "Charitable / Direct Legacy Base" : "Heir Proximity Hub"}.` }
+        ];
+      }
+    },
+    {
+      id: "global_explorer",
+      name: "Global Explorer",
+      persona: "Best for retirees who want retirement to feel like an entirely new chapter of life filled with exploration, rather than a continuation of the old one.",
+      getMetrics: (inputs) => ({ tax: "High", health: "Medium", family: "Low", flexibility: "Very High", legacy: "Medium", complexity: "Very High" }),
+      generateTimeline: (inputs) => {
+        let activeStage = inputs.wl_stage1Priority === "Travel" ? "Establish sequential multi-flag travel tracks across Southeast Asia and Latin America to maximize experiential capital." : `Isolate early sovereign bases to secure localized cost-of-living arbitrage supporting ${inputs.wl_stage1Priority}.`;
+        let transitionStage = inputs.wl_stage2Priority === "Travel" ? "Extend geographical rotations into Western European coastal hubs via active nomad pathways." : `Anchor within high-end international lifestyle spaces favoring secure ${inputs.wl_stage2Priority}.`;
+
+        return [
+          { age: "50-65", title: "Active Exploration Hub", text: activeStage, explicitExamples: ["Taiwan"] },
+          { age: "65-78", title: "Lifestyle Arbitrage Hub", text: transitionStage, explicitExamples: ["Portugal"] },
+          { age: "78+", title: "Domestic Core Re-Anchor", text: `Terminate multi-border tracking. Relocate assets and physical setting to center directly around: ${inputs.wl_childrenLocation === "Different US State" ? "Children's Out-of-State Support Web" : "Primary Domestic Care Hub"}.` }
+        ];
+      }
+    },
+    {
+      id: "care_shield",
+      name: "Care Shield Path",
+      persona: "Best for retirees who prioritize long-term physical insulation, medical tier guarantees, and robust healthcare safety models above all else.",
+      getMetrics: (inputs) => ({ tax: "Medium", health: "Very High", family: "High", flexibility: "Medium", legacy: "High", complexity: "High" }),
+      generateTimeline: (inputs) => [
+        { age: "50-65", title: "Premium Healthcare Infrastructure", text: `Underwrite medical entry rights inside premium international hospital networks matching ${inputs.wl_stage1Priority}.`, explicitExamples: ["Taiwan"] },
+        { age: "65-78", title: "Insulated Medical Base", text: `Activate integrated universal coverage protections to guard transitions into ${inputs.wl_stage2Priority}.` },
+        { age: "78+", title: "Vetted Institutional Care Node", text: `Final clinical alignment tracking. Transitioning directly into continuous care environments near: ${inputs.wl_childrenLocation === "Same State" ? "Local Family Oversight Base" : "Premium Care Facility Hub"}.` }
+      ]
+    },
+    {
+      id: "phase_optimizer",
+      name: "Phase Optimizer",
+      persona: "Best for retirees who believe different stages of retirement deserve entirely different locations, structures, and optimization strategies.",
+      getMetrics: (inputs) => ({
+        tax: inputs.wl_stage1Priority === "Tax Optimization" ? "Very High" : "High",
+        health: inputs.wl_stage2Priority === "Healthcare" || inputs.wl_stage3Priority === "Long-Term Care" ? "Very High" : "High",
+        family: inputs.wl_stage3Priority === "Family Proximity" ? "Very High" : "Medium",
+        flexibility: "High",
+        legacy: "High",
+        complexity: "High"
+      }),
+      generateTimeline: (inputs) => {
+        let era1Loc = "Global Arbitrage Hub";
+        let era1Text = `Optimize all financial and physical capital footprints around primary active ${inputs.wl_stage1Priority} requirements.`;
+        if (inputs.wl_stage1Priority === "Tax Optimization") { era1Loc = "Taiwan / Strategic Tax Hub"; era1Text = "Isolate drawing channels completely from capital gains drag via territorial tax treatments."; }
+        if (inputs.wl_stage1Priority === "Travel") { era1Loc = "Portugal / Mediterranean Hub"; era1Text = "Deploy active travel operations utilizing local logistical networks for frictionless exploration."; }
+
+        let era2Loc = "Sovereign Lifestyle Space";
+        let era2Text = `Pivot geographic foundation to introduce high lifestyle asset adjustments matching ${inputs.wl_stage2Priority}.`;
+        if (inputs.wl_stage2Priority === "Lifestyle") { era2Loc = "Southeast Asian Urban Center"; era2Text = "Acquire premium metropolitan housing access with dedicated culinary/cultural nodes."; }
+        if (inputs.wl_stage2Priority === "Healthcare") { era2Loc = "Western European Medical Hub"; era2Text = "Transition framework into universal clinical systems to capture locked premium protections."; }
+
+        let era3Loc = "Integrated Care Base";
+        let era3Text = `Wind down complex international entities. Complete terminal asset consolidation centered around ${inputs.wl_stage3Priority}.`;
+        if (inputs.wl_childrenLocation === "Different US State" || inputs.wl_childrenLocation === "Same State") {
+          era3Loc = "Generational Co-location Base";
+          era3Text = `Relocate physical address to stand within immediate physical range of children to secure multi-stage family integration.`;
+        }
+
+        return [
+          { age: "50-65", title: era1Loc, text: era1Text, explicitExamples: [era1Loc.includes("Taiwan") ? "Taiwan" : "Portugal"] },
+          { age: "65-78", title: era2Loc, text: era2Text, explicitExamples: [era2Loc.includes("Asian") ? "Malaysia" : "Portugal"] },
+          { age: "78+", title: era3Loc, text: era3Text }
+        ];
+      }
+    }
+  ]
+};
+
+function computeConditionalExamples(countries, inputs) {
+  if (!countries || countries.length === 0) return "";
+  let validated = countries.map(c => {
+    let check = "Potentially Available";
+    if (inputs.wl_residencyRights.includes(c)) check = "Accessible via Pre-existing Rights";
+    else if (c === "Taiwan" && inputs.wl_residencyRights.includes("Gold Card")) check = "Accessible via Active Gold Card Track";
+    return `${c} (${check})`;
+  });
+  return `<div class="example-eligibility-wrapper"><strong>Possible Examples (Pending Audit):</strong> ${validated.join(', ')}</div>`;
+}
+
+function resolveGainsAndSacrifices(id, inputs) {
+  if (id === "home_base") {
+    return {
+      gains: ["Clean structural simplicity", "Complete protection from complex cross-border exit taxation rules"],
+      sacrifices: ["Forfeits geometric lifestyle arbitrage opportunities", "Sustained exposure to local domestic state tax boundaries"]
+    };
+  }
+  if (id === "wealth_maximizer") {
+    return {
+      gains: ["Unrivaled preservation of core inheritance assets", "Optimized sequencing of cross-border asset liquidations"],
+      sacrifices: ["Imposes rigid calendar tracking and travel verification requirements", "High professional trust and entity maintenance expenses"]
+    };
+  }
+  if (id === "global_explorer") {
+    return {
+      gains: ["Maximum experiential capital acquisition while healthy", "Complete optimization of sovereign cost discrepancies"],
+      sacrifices: ["Prolonged geographic separation from centralized family roots", "Continuous overhead monitoring active entry visa tracks"]
+    };
+  }
+  if (id === "care_shield") {
+    return {
+      gains: ["Insulated access to world-class continuous healthcare systems", "Complete insulation from late-life medical cost inflation"],
+      sacrifices: ["Requires rigid geographic commitments early in the chronology", "Complex cross-border healthcare compliance tracking"]
+    };
+  }
+  return {
+    gains: ["Surgical precision in matching settings to unique age constraints", "High early accumulation advantages paired with seamless safe legacy returns"],
+    sacrifices: ["Imposes physical relocation friction cycles across major chapters", "Continuous overhead monitoring varying cross-border tax treaties"]
+  };
+}
+
+function fireOdysseySimulator() {
+  const inputs = {
+    wl_citizenship: document.getElementById("wl_citizenship").value,
+    wl_residencyRights: document.getElementById("wl_residencyRights").value,
+    wl_childrenLocation: document.getElementById("wl_childrenLocation").value,
+    wl_stage1Priority: document.getElementById("wl_stage1Priority").value,
+    wl_stage2Priority: document.getElementById("wl_stage2Priority").value,
+    wl_stage3Priority: document.getElementById("wl_stage3Priority").value,
+    mp_assetTier: document.getElementById("mp_assetTier").value
+  };
+
+  // Render Section 7 & Missing Feature Matrix Ledger
+  const ledgerBody = document.getElementById("comparisonLedgerBody");
+  ledgerBody.innerHTML = "";
+  structuralRegistry.blueprints.forEach(bp => {
+    const scores = bp.getMetrics(inputs);
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td style="color:var(--blue); font-weight:800;">${bp.name}</td>
+      <td class="${getScoreColorClass(scores.tax)}">${scores.tax}</td>
+      <td class="${getScoreColorClass(scores.health)}">${scores.health}</td>
+      <td class="${getScoreColorClass(scores.family)}">${scores.family}</td>
+      <td class="${getScoreColorClass(scores.flexibility)}">${scores.flexibility}</td>
+      <td class="${getScoreColorClass(scores.legacy)}">${scores.legacy}</td>
+      <td class="${getScoreColorClass(scores.complexity)}">${scores.complexity}</td>
+    `;
+    ledgerBody.appendChild(row);
+  });
+
+  // Render Horizontal Cards Layout
+  const gridContainer = document.getElementById("cardsGridView");
+  gridContainer.innerHTML = "";
+
+  structuralRegistry.blueprints.forEach(bp => {
+    const timeline = bp.generateTimeline(inputs);
+    const scores = bp.getMetrics(inputs);
+    const ts = resolveGainsAndSacrifices(bp.id, inputs);
+
+    const card = document.createElement("div");
+    card.className = "scen-card";
+    card.innerHTML = `
+      <div>
+        <h3>${bp.name}</h3>
+        <div class="persona-box">${bp.persona}</div>
+        
+        <div class="scen-section-title">Timeline & Path Framework</div>
+        <div class="timeline-stack">
+          ${timeline.map(t => `
+            <div class="timeline-segment-box">
+              <div class="seg-age-line">
+                <span>Ages ${t.age}</span>
+                <span>${t.title}</span>
+              </div>
+              <div class="seg-location-line">${t.title.includes("Domestic") || t.title.includes("Area") || t.title.includes("Network") || t.title.includes("Anchor") ? "Seattle Base Hub" : "Sovereign Target Hub Option"}</div>
+              <div class="seg-focus-line">${t.text}</div>
+              ${t.explicitExamples ? computeConditionalExamples(t.explicitExamples, inputs) : ""}
+            </div>
+          `).join('')}
+        </div>
+
+        <div class="scen-section-title">Outcome Matrix</div>
+        <div class="characteristics-box">
+          <div class="char-item-row"><span class="char-label">Tax Efficiency</span><span class="char-value ${getScoreColorClass(scores.tax)}">${scores.tax}</span></div>
+          <div class="char-item-row"><span class="char-label">Healthcare Security</span><span class="char-value ${getScoreColorClass(scores.health)}">${scores.health}</span></div>
+          <div class="char-item-row"><span class="char-label">Family Integration</span><span class="char-value ${getScoreColorClass(scores.family)}">${scores.family}</span></div>
+          <div class="char-item-row"><span class="char-label">Lifestyle Flexibility</span><span class="char-value ${getScoreColorClass(scores.flexibility)}">${scores.flexibility}</span></div>
+          <div class="char-item-row"><span class="char-label">Complexity</span><span class="char-value ${getScoreColorClass(scores.complexity)}">${scores.complexity}</span></div>
+        </div>
+
+        <div class="scen-section-title">Key Tradeoffs</div>
+        <div class="tradeoff-split">
+          <div class="lbl-g">What You Gain</div>
+          <ul class="ul-g">${ts.gains.map(g => `<li>${g}</li>`).join('')}</ul>
+          <div class="lbl-s" style="margin-top:6px;">What You Sacrifice</div>
+          <ul class="ul-s">${ts.sacrifices.map(s => `<li>${s}</li>`).join('')}</ul>
+        </div>
+      </div>
+
+      <div class="card-footer-action">
+        <button onclick="launchExplorationPanel('${bp.id}')">Explore Journey Path →</button>
+      </div>
+    `;
+    gridContainer.appendChild(card);
+  });
+}
+
+function getScoreColorClass(val) {
+  switch(val.toLowerCase().replace(" ", "")) {
+    case "low": return "color-low";
+    case "medium": return "color-med";
+    case "high": return "color-high";
+    case "veryhigh": return "color-vhigh";
+    default: return "";
+  }
+}
+
+function launchExplorationPanel(id) {
+  const inputs = {
+    wl_citizenship: document.getElementById("wl_citizenship").value,
+    wl_residencyRights: document.getElementById("wl_residencyRights").value,
+    wl_childrenLocation: document.getElementById("wl_childrenLocation").value,
+    wl_stage1Priority: document.getElementById("wl_stage1Priority").value,
+    wl_stage2Priority: document.getElementById("wl_stage2Priority").value,
+    wl_stage3Priority: document.getElementById("wl_stage3Priority").value,
+    mp_assetTier: document.getElementById("mp_assetTier").value
+  };
+
+  const bp = structuralRegistry.blueprints.find(b => b.id === id);
+  const timeline = bp.generateTimeline(inputs);
+  const ts = resolveGainsAndSacrifices(id, inputs);
+
+  let targetedConsularFlags = [];
+  if (id !== "home_base") {
+    targetedConsularFlags.push("Taiwan");
+    if (id === "global_explorer" || id === "phase_optimizer") targetedConsularFlags.push("Portugal");
+  }
+
+  const windowView = document.getElementById("explorationContent");
+  windowView.innerHTML = `
+    <div class="exp-header">
+      <h2>${bp.name} Profile Trace</h2>
+      <p>Verifying exact variable matching logic across global visa parameters to confirm plan viability benchmarks.</p>
+    </div>
+
+    <div class="exp-split-grid">
+      <div>
+        <div class="trace-card">
+          <h4>✓ Account Verification Markers Logged</h4>
+          <div class="trace-line-item"><span class="trace-marker">✓</span><span>Ages 50-65 Operational Focus = <strong>${inputs.wl_stage1Priority}</strong></span></div>
+          <div class="trace-line-item"><span class="trace-marker">✓</span><span>Ages 65-78 Transition Anchor = <strong>${inputs.wl_stage2Priority}</strong></span></div>
+          <div class="trace-line-item"><span class="trace-marker">✓</span><span>Ages 78+ Legacy Destination = <strong>${inputs.wl_stage3Priority}</strong></span></div>
+          <div class="trace-line-item"><span class="trace-marker">✓</span><span>Heirs/Children Setting Anchor = <strong>${inputs.wl_childrenLocation}</strong></span></div>
+          <div class="trace-line-item"><span class="trace-marker">✓</span><span>Calculated Asset Footprint Tier = <strong>${inputs.mp_assetTier}</strong></span></div>
+        </div>
+
+        <div class="scen-section-title">Functional Architecture Segments</div>
+        <div class="timeline-stack">
+          ${timeline.map(t => `
+            <div class="timeline-segment-box" style="padding:16px;">
+              <div class="seg-age-line" style="font-size:0.95rem;"><span>Ages ${t.age}</span><strong>${t.title}</strong></div>
+              <div class="seg-focus-line" style="font-size:0.9rem; margin-top:6px; color:var(--text);">${t.text}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <div>
+        <div class="eligibility-box">
+          <h4>Consular Eligibility Filtering Matrix</h4>
+          <p style="font-size:0.85rem; color:var(--muted); margin-bottom:14px;">Evaluating processing tracks across active parameters.</p>
+          
+          ${targetedConsularFlags.length === 0 ? `
+            <div class="consular-loop">
+              <strong>US Domestic System Assets</strong>
+              <span class="consular-badge badge-acc">Accessible</span>
+              <p style="font-size:0.85rem; margin:6px 0 0 0; color:var(--muted);">Standard native verification processes apply cleanly.</p>
+            </div>
+          ` : targetedConsularFlags.map(c => {
+              let isAcc = inputs.wl_residencyRights.includes(c) || (c === "Taiwan" && inputs.wl_residencyRights.includes("Gold Card"));
+              return `
+                <div class="consular-loop">
+                  <strong>Sovereign Hub: ${c} Framework</strong>
+                  <span class="consular-badge ${isAcc ? 'badge-acc' : 'badge-pot'}">${isAcc ? 'Accessible' : 'Potentially Available'}</span>
+                  <p style="font-size:0.85rem; margin:6px 0 0 0; color:var(--muted);">
+                    ${isAcc ? 'Active legal residential criteria confirmed on profile logs.' : `Requires independent entry qualification tracking metrics (such as passive asset distribution or special professional visa streams).`}
+                  </p>
+                </div>
+              `;
+          }).join('')}
+        </div>
+
+        <div class="scen-section-title">Bilateral Tradeoff Summary</div>
+        <div style="background:#F8FAFC; padding:18px; border-radius:12px; border:1px solid var(--border-dark);" class="tradeoff-split">
+          <div class="lbl-g">Gains Summary</div>
+          <ul class="ul-g">${ts.gains.map(g => `<li>${g}</li>`).join('')}</ul>
+          <div class="lbl-s" style="margin-top:10px;">Sacrifices Summary</div>
+          <ul class="ul-s">${ts.sacrifices.map(s => `<li>${s}</li>`).join('')}</ul>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.getElementById("dashboardView").style.display = "none";
+  document.getElementById("explorationView").style.display = "block";
+  window.scrollTo({ top: 150, behavior: "smooth" });
+}
+
+function exitExplorationView() {
+  document.getElementById("explorationView").style.display = "none";
+  document.getElementById("dashboardView").style.display = "grid";
+}
+
+window.onload = function() {
+  fireOdysseySimulator();
+};
+</script>
+
+</body>
+</html>
