@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-50/50 text-slate-800 antialiased">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WealthLanding — Retirement Transition Plan</title>
+    <!-- Tailwind CSS for robust modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter & Playfair Display for premium editorial typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .transition-all-300 {
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-emerald-100 selection:text-emerald-900">
+
+    <!-- WealthLanding Premium Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/60 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <span class="font-black text-sm tracking-tight bg-slate-900 text-white px-2.5 py-1 rounded">WL</span>
+                <span class="font-extrabold text-slate-800 text-xs tracking-wider uppercase hidden md:inline">WEALTHLANDING</span>
+            </div>
+            
+            <!-- Platform-consistent Breadcrumbs / Active state -->
+            <div class="hidden lg:flex items-center space-x-6 text-[11px] font-semibold text-slate-500 uppercase tracking-widest">
+                <a href="#" class="hover:text-slate-950 transition-colors">Overview</a>
+                <a href="#" class="hover:text-slate-950 transition-colors">Diagnostic</a>
+                <a href="#" class="hover:text-slate-950 transition-colors">Strategy Engine</a>
+                <a href="#" class="hover:text-slate-950 transition-colors">Master Plan</a>
+                <a href="#" class="hover:text-slate-950 transition-colors">Odyssey</a>
+                <a href="#" class="hover:text-slate-950 transition-colors">Profiles</a>
+                <a href="#" class="text-emerald-600 border-b-2 border-emerald-500 pb-5 pt-5">Transition Plan</a>
+            </div>
+
+            <div>
+                <button onclick="resetPlan()" class="text-[10px] font-bold tracking-wider px-3.5 py-2 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition duration-300 uppercase shadow-sm">
+                    Reset Workspace
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-5xl w-full mx-auto px-4 py-8 md:py-12 space-y-12">
+
+        <!-- HEADER SECTION -->
+        <div class="space-y-2 border-b border-slate-200/80 pb-6 text-center md:text-left">
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Phase-Based Preparation</span>
+            <h1 class="text-3xl md:text-4xl font-serif font-bold text-slate-950 tracking-tight">Your Retirement Transition Plan</h1>
+            <p class="text-slate-500 text-xs md:text-sm max-w-3xl leading-relaxed">
+                A personalized sequence of financial, geographic, healthcare, and lifestyle milestones designed to help you transition from your current situation to your chosen retirement journey.
+            </p>
+        </div>
+
+        <!-- SECTION 1 & 11: HERO CARD & EMOTIONAL REINFORCEMENT -->
+        <div class="space-y-4">
+            <div class="bg-gradient-to-br from-slate-900 to-slate-950 text-white rounded-3xl p-6 md:p-8 shadow-xl border border-slate-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative overflow-hidden group">
+                <div class="absolute inset-0 bg-emerald-500/[0.02] mix-blend-overlay pointer-events-none"></div>
+                
+                <div class="space-y-4 max-w-2xl">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-0.5 rounded-full text-[9px] font-mono tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase font-bold">Your Next Retirement Milestone</span>
+                        <span class="text-slate-500 font-mono text-[10px]">• Track 1 of 6</span>
+                    </div>
+                    <h2 id="hero_milestone_title" class="text-xl md:text-2xl font-serif font-bold tracking-tight text-white leading-tight">
+                        Build Your Roth Conversion Strategy
+                    </h2>
+                    <p id="hero_milestone_desc" class="text-slate-300 text-xs md:text-sm leading-relaxed font-light">
+                        This is your largest remaining lifetime tax opportunity. Shifting assets into a tax-free vehicle early maximizes your tax sheltering before mandatory distributions begin.
+                    </p>
+                    <div class="flex flex-wrap gap-x-6 gap-y-2 text-[11px] font-mono text-slate-400">
+                        <div>Target Completion: <strong id="hero_milestone_target" class="text-emerald-400 font-semibold">Before Age 55</strong></div>
+                        <div>Priority Weight: <strong class="text-slate-200">Critical Opportunity</strong></div>
+                    </div>
+                </div>
+
+                <div class="shrink-0 w-full md:w-auto text-right">
+                    <button onclick="scrollToNextMilestone()" class="w-full md:w-auto bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold tracking-wider px-6 py-3.5 rounded-xl transition duration-300 shadow-lg hover:shadow-emerald-500/10 uppercase">
+                        Continue Roth Strategy
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Emotional Reinforcement Statement -->
+            <p class="text-[12px] md:text-xs text-slate-500 font-medium text-center italic tracking-wide">
+                "You've already designed your retirement. This page helps you build it one milestone at a time."
+            </p>
+        </div>
+
+        <!-- TWO COLUMN LAYOUT (Left: Timeline & Milestones, Right: Horizon Map, Gaps, Progress) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- LEFT COLUMN: TIME CLOCK & INTERACTIVE EXPANDABLE MILESTONES (8 Cols) -->
+            <div class="lg:col-span-8 space-y-8">
+                
+                <!-- Section 2: Visual Elegant Retirement Timeline Clock -->
+                <div class="bg-white border border-slate-200/60 rounded-2xl p-6 shadow-sm space-y-4">
+                    <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">Retirement Roadmap At A Glance</h3>
+                    
+                    <div class="relative flex flex-col md:flex-row justify-between items-start md:items-center gap-6 py-4 px-2">
+                        <!-- Horizontal Track (Only on desktop) -->
+                        <div class="absolute left-6 md:left-4 md:right-4 top-8 bottom-8 md:bottom-auto md:top-8 border-l-2 md:border-l-0 md:border-t-2 border-dashed border-slate-200 -z-0"></div>
+                        
+                        <!-- Today Point -->
+                        <div class="flex md:flex-col items-center gap-4 md:gap-2 relative z-10 w-full md:w-24">
+                            <div class="w-8 h-8 rounded-full bg-slate-900 border-4 border-white shadow-md flex items-center justify-center text-[10px] font-bold text-white font-mono">52</div>
+                            <div class="text-left md:text-center">
+                                <span class="block text-[10px] font-bold text-slate-800 uppercase tracking-tight">Today</span>
+                                <span class="text-[9px] text-slate-400 font-mono block">Age 52</span>
+                            </div>
+                        </div>
+
+                        <!-- Distance Pin 1 -->
+                        <div class="hidden md:block text-slate-400 font-mono text-[10px]">&rarr; 8 Years &rarr;</div>
+
+                        <!-- Retirement Point -->
+                        <div class="flex md:flex-col items-center gap-4 md:gap-2 relative z-10 w-full md:w-24">
+                            <div id="clock_retire_node" class="w-8 h-8 rounded-full bg-emerald-500 border-4 border-white shadow-md flex items-center justify-center text-[10px] font-bold text-white font-mono">60</div>
+                            <div class="text-left md:text-center">
+                                <span id="clock_retire_label" class="block text-[10px] font-bold text-emerald-700 uppercase tracking-tight">Retire</span>
+                                <span id="clock_retire_age" class="text-[9px] text-slate-400 font-mono block">Age 60</span>
+                            </div>
+                        </div>
+
+                        <!-- Distance Pin 2 -->
+                        <div class="hidden md:block text-slate-400 font-mono text-[10px]">&rarr; 5 Years &rarr;</div>
+
+                        <!-- Medicare Point -->
+                        <div class="flex md:flex-col items-center gap-4 md:gap-2 relative z-10 w-full md:w-24">
+                            <div class="w-8 h-8 rounded-full bg-sky-500 border-4 border-white shadow-md flex items-center justify-center text-[10px] font-bold text-white font-mono">65</div>
+                            <div class="text-left md:text-center">
+                                <span class="block text-[10px] font-bold text-sky-700 uppercase tracking-tight">Medicare</span>
+                                <span class="text-[9px] text-slate-400 font-mono block">Age 65</span>
+                            </div>
+                        </div>
+
+                        <!-- Distance Pin 3 -->
+                        <div class="hidden md:block text-slate-400 font-mono text-[10px]">&rarr; 15 Years &rarr;</div>
+
+                        <!-- Care Phase Point -->
+                        <div class="flex md:flex-col items-center gap-4 md:gap-2 relative z-10 w-full md:w-24">
+                            <div class="w-8 h-8 rounded-full bg-purple-500 border-4 border-white shadow-md flex items-center justify-center text-[10px] font-bold text-white font-mono">80</div>
+                            <div class="text-left md:text-center">
+                                <span class="block text-[10px] font-bold text-purple-700 uppercase tracking-tight">Care Phase</span>
+                                <span class="text-[9px] text-slate-400 font-mono block">Age 80</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTIONS 3, 5, 6, 12: EXPANDABLE ACCORDION TIMELINE CARDS -->
+                <div class="space-y-4">
+                    <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">Your Strategic Milestone Timeline</h3>
+                    
+                    <!-- MILESTONE 1 (Expanded by Default) -->
+                    <div id="milestone_card_52" class="bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                        <!-- Toggle Header -->
+                        <button onclick="toggleMilestone('52')" class="w-full text-left p-5 flex items-center justify-between gap-4 focus:outline-none">
+                            <div class="flex items-center gap-4">
+                                <span class="font-mono text-sm font-bold text-slate-400 bg-slate-50 border border-slate-100 px-2 py-1 rounded">Age 52</span>
+                                <div>
+                                    <h4 class="font-serif font-bold text-slate-900 text-sm md:text-base leading-tight">Build Roth Strategy</h4>
+                                    <span class="text-[10px] font-mono text-slate-400 block mt-0.5">Focus Track: Finance</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span id="status_badge_52" class="px-2.5 py-1 rounded-full text-[9px] font-mono bg-amber-50 text-amber-700 border border-amber-100 font-bold uppercase tracking-wider">In Progress</span>
+                                <svg id="arrow_icon_52" class="w-4 h-4 text-slate-400 transform transition-transform duration-300 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            </div>
+                        </button>
+                        
+                        <!-- Content Window -->
+                        <div id="content_52" class="border-t border-slate-100 bg-slate-50/20 p-5 space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-3">
+                                    <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Why This Matters</h5>
+                                    <p class="text-xs text-slate-600 leading-relaxed">
+                                        Your earned income is highly stable today, but you have major unutilized low tax brackets. Creating your Roth rules early ensures your liquid cash shifts into a permanently sheltered environment before retirement.
+                                    </p>
+                                </div>
+                                <div class="space-y-3">
+                                    <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest text-amber-600">What Happens If You Wait</h5>
+                                    <p class="text-xs text-slate-500 leading-relaxed">
+                                        If ignored, assets remain in traditional tax-deferred silos, exposing your entire portfolio to higher required minimum distributions (RMDs) and tax rates in your 70s.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Integrated Checklists (Section 5) -->
+                            <div class="space-y-3 bg-white p-4 rounded-xl border border-slate-100">
+                                <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Your Practical Checklist</h5>
+                                <div class="space-y-2.5 font-mono text-xs text-slate-700">
+                                    <label class="flex items-start gap-3 cursor-pointer">
+                                        <input type="checkbox" checked onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                                        <span class="line-through text-slate-400">Model initial tax boundary limits under current bracket realities</span>
+                                    </label>
+                                    <label class="flex items-start gap-3 cursor-pointer">
+                                        <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                                        <span>Isolate exact liquid sub-funding accounts for first conversion track</span>
+                                    </label>
+                                    <label class="flex items-start gap-3 cursor-pointer">
+                                        <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                                        <span>Establish automated monthly transition transfers from traditional reserves</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Embedded Resources (Section 12) -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                                <div class="p-3.5 bg-white border border-slate-100 rounded-xl flex items-center justify-between text-xs">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-wider text-slate-400 font-mono block">Ecosystem Tool</span>
+                                        <strong class="text-slate-800">Roth Optimization Sandbox</strong>
+                                    </div>
+                                    <a href="#" class="text-emerald-600 font-bold hover:underline">Launch &rarr;</a>
+                                </div>
+                                <div class="p-3.5 bg-white border border-slate-100 rounded-xl flex items-center justify-between text-xs">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-wider text-slate-400 font-mono block">Related Story</span>
+                                        <strong class="text-slate-800">The Bracket Bump</strong>
+                                    </div>
+                                    <a href="#" class="text-emerald-600 font-bold hover:underline">Read &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MILESTONE 2 -->
+                    <div id="milestone_card_54" class="bg-white border border-slate-200/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                        <button onclick="toggleMilestone('54')" class="w-full text-left p-5 flex items-center justify-between gap-4 focus:outline-none">
+                            <div class="flex items-center gap-4">
+                                <span class="font-mono text-sm font-bold text-slate-400 bg-slate-50 border border-slate-100 px-2 py-1 rounded">Age 54</span>
+                                <div>
+                                    <h4 class="font-serif font-bold text-slate-900 text-sm md:text-base leading-tight">Increase Roth Conversion</h4>
+                                    <span class="text-[10px] font-mono text-slate-400 block mt-0.5">Focus Track: Finance</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span id="status_badge_54" class="px-2.5 py-1 rounded-full text-[9px] font-mono bg-slate-50 text-slate-500 border border-slate-100 font-bold uppercase tracking-wider">Not Started</span>
+                                <svg id="arrow_icon_54" class="w-4 h-4 text-slate-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            </div>
+                        </button>
+                        
+                        <div id="content_54" class="hidden border-t border-slate-100 bg-slate-50/20 p-5 space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-3">
+                                    <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Why This Matters</h5>
+                                    <p class="text-xs text-slate-600 leading-relaxed">
+                                        As your earned salary begins to decline, your marginal tax bracket will scale downward. This timing represents the golden pocket to expand conversion volumes with minimum friction.
+                                    </p>
+                                </div>
+                                <div class="space-y-3">
+                                    <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest text-amber-600">What Happens If You Wait</h5>
+                                    <p class="text-xs text-slate-500 leading-relaxed">
+                                        Once your Medicare milestones initiate at Age 65, increased taxable conversion amounts can trigger severe IRMAA premium surcharges, lowering your healthcare efficiency.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3 bg-white p-4 rounded-xl border border-slate-100">
+                                <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Your Practical Checklist</h5>
+                                <div class="space-y-2.5 font-mono text-xs text-slate-700">
+                                    <label class="flex items-start gap-3 cursor-pointer">
+                                        <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                                        <span>Model bracket edge margins against potential Medicare IRMAA limits</span>
+                                    </label>
+                                    <label class="flex items-start gap-3 cursor-pointer">
+                                        <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                                        <span>Audit total conversion compounding projections across 10-year horizons</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                                <div class="p-3.5 bg-white border border-slate-100 rounded-xl flex items-center justify-between text-xs">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-wider text-slate-400 font-mono block">Ecosystem Tool</span>
+                                        <strong class="text-slate-800">Tax Bracket Sizer</strong>
+                                    </div>
+                                    <a href="#" class="text-emerald-600 font-bold hover:underline">Launch &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MILESTONE 3 -->
+                    <div id="milestone_card_57" class="bg-white border border-slate-200/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                        <button onclick="toggleMilestone('57')" class="w-full text-left p-5 flex items-center justify-between gap-4 focus:outline-none">
+                            <div class="flex items-center gap-4">
+                                <span class="font-mono text-sm font-bold text-slate-400 bg-slate-50 border border-slate-100 px-2 py-1 rounded">Age 57</span>
+                                <div>
+                                    <h4 id="milestone_title_57" class="font-serif font-bold text-slate-900 text-sm md:text-base leading-tight">Research Taiwan Residency</h4>
+                                    <span class="text-[10px] font-mono text-slate-400 block mt-0.5">Focus Track: Geography & Legality</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span id="status_badge_57" class="px-2.5 py-1 rounded-full text-[9px] font-mono bg-slate-50 text-slate-500 border border-slate-100 font-bold uppercase tracking-wider">Not Started</span>
+                                <svg id="arrow_icon_57" class="w-4 h-4 text-slate-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            </div>
+                        </button>
+                        
+                        <div id="content_57" class="hidden border-t border-slate-100 bg-slate-50/20 p-5 space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-3">
+                                    <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Why This Matters</h5>
+                                    <p id="milestone_why_57" class="text-xs text-slate-600 leading-relaxed">
+                                        Moving between countries requires securing regulatory foundations early. Investigating Gold Card visa rules helps guarantee clean transit eligibility when your physical moving calendar launches.
+                                    </p>
+                                </div>
+                                <div class="space-y-3">
+                                    <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest text-amber-600">What Happens If You Wait</h5>
+                                    <p id="milestone_wait_57" class="text-xs text-slate-500 leading-relaxed">
+                                        Sovereign processing delays can freeze travel structures. If you miss this planning horizon, you risk career gap years spent in high-tax administrative limbo.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3 bg-white p-4 rounded-xl border border-slate-100">
+                                <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Your Practical Checklist</h5>
+                                <div id="milestone_checks_57" class="space-y-2.5 font-mono text-xs text-slate-700">
+                                    <label class="flex items-start gap-3 cursor-pointer">
+                                        <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                                        <span>Evaluate gold card income threshold metrics</span>
+                                    </label>
+                                    <label class="flex items-start gap-3 cursor-pointer">
+                                        <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                                        <span>Isolate double-taxation liabilities under local rules</span>
+                                    </label>
+                                    <label class="flex items-start gap-3 cursor-pointer">
+                                        <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                                        <span>Establish initial local banking structures</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                                <div class="p-3.5 bg-white border border-slate-100 rounded-xl flex items-center justify-between text-xs">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-wider text-slate-400 font-mono block">Ecosystem Guide</span>
+                                        <strong id="milestone_tool_57">The Gold Card System</strong>
+                                    </div>
+                                    <a href="#" class="text-emerald-600 font-bold hover:underline">Launch &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MILESTONE 4 (Includes Decision Gates - Section 6) -->
+                    <div id="milestone_card_60" class="bg-white border border-slate-200/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                        <button onclick="toggleMilestone('60')" class="w-full text-left p-5 flex items-center justify-between gap-4 focus:outline-none">
+                            <div class="flex items-center gap-4">
+                                <span class="font-mono text-sm font-bold text-slate-400 bg-slate-50 border border-slate-100 px-2 py-1 rounded">Age 60</span>
+                                <div>
+                                    <h4 class="font-serif font-bold text-slate-900 text-sm md:text-base leading-tight">Retire & Transition</h4>
+                                    <span class="text-[10px] font-mono text-slate-400 block mt-0.5">Focus Track: Lifestyle & Relocation</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span id="status_badge_60" class="px-2.5 py-1 rounded-full text-[9px] font-mono bg-slate-50 text-slate-500 border border-slate-100 font-bold uppercase tracking-wider">Not Started</span>
+                                <svg id="arrow_icon_60" class="w-4 h-4 text-slate-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            </div>
+                        </button>
+                        
+                        <div id="content_60" class="hidden border-t border-slate-100 bg-slate-50/20 p-5 space-y-6">
+                            
+                            <!-- Decision Gate Block (Progressive Disclosure) -->
+                            <div class="bg-amber-50/40 border border-amber-200/60 rounded-2xl p-4 md:p-5 space-y-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="bg-amber-100 text-amber-800 text-[9px] font-mono px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">Decision Gate</span>
+                                    <h5 class="text-xs font-bold text-slate-800 font-mono">Select Core Relocation Track</h5>
+                                </div>
+                                <p class="text-slate-600 text-xs leading-relaxed">
+                                    Your relocation choice changes your financial, tax, and medical blueprints entirely. Review the impact pathways below:
+                                </p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                    <button onclick="selectGate60('twn')" id="gate60_btn_twn" class="p-3.5 bg-white border-2 border-emerald-500 rounded-xl text-left text-xs transition-all hover:border-emerald-500">
+                                        <div class="font-bold text-slate-900 flex items-center justify-between mb-1">
+                                            <span>Move to Taiwan</span>
+                                            <span id="gate60_dot_twn" class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                        </div>
+                                        <p class="text-[11px] text-slate-500 leading-relaxed">Enjoy maximum geographic flexibility, premium low-cost medical coverage, and dynamic travel.</p>
+                                    </button>
+                                    
+                                    <button onclick="selectGate60('us')" id="gate60_btn_us" class="p-3.5 bg-white border-2 border-emerald-500 rounded-xl text-left text-xs transition-all hover:border-slate-300">
+                                        <div class="font-bold text-slate-900 flex items-center justify-between mb-1">
+                                            <span>Stay in US</span>
+                                            <span id="gate60_dot_us" class="w-2 h-2 rounded-full bg-slate-200"></span>
+                                        </div>
+                                        <p class="text-[11px] text-slate-500 leading-relaxed">Prioritize immediate family roots and community networks. Slower asset drawdown model.</p>
+                                    </button>
+
+                                    <button onclick="selectGate60('work')" id="gate60_btn_work" class="p-3.5 bg-white border border-slate-200 rounded-xl text-left text-xs transition-all hover:border-slate-300">
+                                        <div class="font-bold text-slate-900 flex items-center justify-between mb-1">
+                                            <span>Continue Working</span>
+                                            <span id="gate60_dot_work" class="w-2 h-2 rounded-full bg-slate-200"></span>
+                                        </div>
+                                        <p class="text-[11px] text-slate-500 leading-relaxed">Defer retirement withdrawals. Accumulate higher core liquid reserves to offset future inflation.</p>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-3">
+                                    <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Why This Matters</h5>
+                                    <p class="text-xs text-slate-600 leading-relaxed">
+                                        This marks the active pivot point. Establishing your base of choice early secures maximum wellness years in your destination of choice.
+                                    </p>
+                                </div>
+                                <div class="space-y-3">
+                                    <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest text-amber-600">What Happens If You Wait</h5>
+                                    <p class="text-xs text-slate-500 leading-relaxed">
+                                        Postponing relocations cuts your highest mobility windows short, making international transitions unnecessarily exhausting down the line.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3 bg-white p-4 rounded-xl border border-slate-100">
+                                <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Your Practical Checklist</h5>
+                                <div class="space-y-2.5 font-mono text-xs text-slate-700">
+                                    <label class="flex items-start gap-3 cursor-pointer">
+                                        <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                                        <span>Trigger structural corporate exit protocols</span>
+                                    </label>
+                                    <label class="flex items-start gap-3 cursor-pointer">
+                                        <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                                        <span>Execute physical asset relocation logistics contracts</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                                <div class="p-3.5 bg-white border border-slate-100 rounded-xl flex items-center justify-between text-xs">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-wider text-slate-400 font-mono block">Ecosystem Tool</span>
+                                        <strong class="text-slate-800">Drawdown Map Master</strong>
+                                    </div>
+                                    <a href="#" class="text-emerald-600 font-bold hover:underline">Launch &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MILESTONE 5 (Includes Decision Gates) -->
+                    <div id="milestone_card_65" class="bg-white border border-slate-200/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                        <button onclick="toggleMilestone('65')" class="w-full text-left p-5 flex items-center justify-between gap-4 focus:outline-none">
+                            <div class="flex items-center gap-4">
+                                <span class="font-mono text-sm font-bold text-slate-400 bg-slate-50 border border-slate-100 px-2 py-1 rounded">Age 65</span>
+                                <div>
+                                    <h4 class="font-serif font-bold text-slate-900 text-sm md:text-base leading-tight">Evaluate Portugal Transition</h4>
+                                    <span class="text-[10px] font-mono text-slate-400 block mt-0.5">Focus Track: Lifestyle & Residency</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span id="status_badge_65" class="px-2.5 py-1 rounded-full text-[9px] font-mono bg-slate-50 text-slate-500 border border-slate-100 font-bold uppercase tracking-wider">Not Started</span>
+                                <svg id="arrow_icon_65" class="w-4 h-4 text-slate-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            </div>
+                        </button>
+                        
+                        <div id="content_65" class="hidden border-t border-slate-100 bg-slate-50/20 p-5 space-y-6">
+                            
+                            <!-- Decision Gate Block -->
+                            <div class="bg-amber-50/40 border border-amber-200/60 rounded-2xl p-4 md:p-5 space-y-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="bg-amber-100 text-amber-800 text-[9px] font-mono px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">Decision Gate</span>
+                                    <h5 class="text-xs font-bold text-slate-800 font-mono">Healthcare Strategy Framework</h5>
+                                </div>
+                                <p class="text-slate-600 text-xs leading-relaxed">
+                                    With US Medicare active at Age 65, how will you structure international wellness portability?
+                                </p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                    <button onclick="selectGate65('hybrid')" id="gate65_btn_hybrid" class="p-3.5 bg-white border-2 border-emerald-500 rounded-xl text-left text-xs transition-all hover:border-emerald-500">
+                                        <div class="font-bold text-slate-900 flex items-center justify-between mb-1">
+                                            <span>Hybrid Model</span>
+                                            <span id="gate65_dot_hybrid" class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                        </div>
+                                        <p class="text-[11px] text-slate-500 leading-relaxed">Combine standard US Medicare baseline with private global catastrophic policy riders.</p>
+                                    </button>
+                                    
+                                    <button onclick="selectGate65('us')" id="gate65_btn_us" class="p-3.5 bg-white border border-slate-200 rounded-xl text-left text-xs transition-all hover:border-slate-300">
+                                        <div class="font-bold text-slate-900 flex items-center justify-between mb-1">
+                                            <span>Full Return</span>
+                                            <span id="gate65_dot_us" class="w-2 h-2 rounded-full bg-slate-200"></span>
+                                        </div>
+                                        <p class="text-[11px] text-slate-500 leading-relaxed">Repatriate fully to secure standard provider access. Relies 100% on domestic Medicare nets.</p>
+                                    </button>
+
+                                    <button onclick="selectGate65('intl')" id="gate65_btn_intl" class="p-3.5 bg-white border border-slate-200 rounded-xl text-left text-xs transition-all hover:border-slate-300">
+                                        <div class="font-bold text-slate-900 flex items-center justify-between mb-1">
+                                            <span>Pure Expat Cover</span>
+                                            <span id="gate65_dot_intl" class="w-2 h-2 rounded-full bg-slate-200"></span>
+                                        </div>
+                                        <p class="text-[11px] text-slate-500 leading-relaxed">Maintain private local European networks entirely. Defer US Part B enrollment risks.</p>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-3">
+                                    <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Why This Matters</h5>
+                                    <p class="text-xs text-slate-600 leading-relaxed">
+                                        Evaluating D7 visa modifications alongside US entitlement eligibility allows you to split tax efficiency benefits and high-end lifestyles smoothly.
+                                    </p>
+                                </div>
+                                <div class="space-y-3">
+                                    <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest text-amber-600">What Happens If You Wait</h5>
+                                    <p class="text-xs text-slate-500 leading-relaxed">
+                                        Without a firm path chosen, double taxation traps or Medicare late enrollment penalties can severely degrade late-retirement cash flows.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3 bg-white p-4 rounded-xl border border-slate-100">
+                                <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Your Practical Checklist</h5>
+                                <div class="space-y-2.5 font-mono text-xs text-slate-700">
+                                    <label class="flex items-start gap-3 cursor-pointer">
+                                        <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                                        <span>Analyze D7 passive income metric developments</span>
+                                    </label>
+                                    <label class="flex items-start gap-3 cursor-pointer">
+                                        <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                                        <span>Confirm cross-border healthcare compliance</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MILESTONE 6 -->
+                    <div id="milestone_card_78" class="bg-white border border-slate-200/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                        <button onclick="toggleMilestone('78')" class="w-full text-left p-5 flex items-center justify-between gap-4 focus:outline-none">
+                            <div class="flex items-center gap-4">
+                                <span class="font-mono text-sm font-bold text-slate-400 bg-slate-50 border border-slate-100 px-2 py-1 rounded">Age 78</span>
+                                <div>
+                                    <h4 id="milestone_title_78" class="font-serif font-bold text-slate-900 text-sm md:text-base leading-tight">Return Near Family Base</h4>
+                                    <span class="text-[10px] font-mono text-slate-400 block mt-0.5">Focus Track: Lifestyle & Legacy</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span id="status_badge_78" class="px-2.5 py-1 rounded-full text-[9px] font-mono bg-slate-50 text-slate-500 border border-slate-100 font-bold uppercase tracking-wider">Not Started</span>
+                                <svg id="arrow_icon_78" class="w-4 h-4 text-slate-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            </div>
+                        </button>
+                        
+                        <div id="content_78" class="hidden border-t border-slate-100 bg-slate-50/20 p-5 space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-3">
+                                    <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Why This Matters</h5>
+                                    <p id="milestone_why_78" class="text-xs text-slate-600 leading-relaxed">
+                                        Relational support networks and local healthcare continuity systematically override tax or geography optimization as we age. Returning home consolidates your life base gracefully.
+                                    </p>
+                                </div>
+                                <div class="space-y-3">
+                                    <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest text-amber-600">What Happens If You Wait</h5>
+                                    <p class="text-xs text-slate-500 leading-relaxed">
+                                        Delaying your return increases the physical strain of multi-continental moves, leaving you geographically isolated during sensitive health transitions.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3 bg-white p-4 rounded-xl border border-slate-100">
+                                <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Your Practical Checklist</h5>
+                                <div class="space-y-2.5 font-mono text-xs text-slate-700">
+                                    <label class="flex items-start gap-3 cursor-pointer">
+                                        <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                                        <span>Consolidate global accounts to core domestic bases</span>
+                                    </label>
+                                    <label class="flex items-start gap-3 cursor-pointer">
+                                        <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                                        <span>Secure residential properties within easy range of family hubs</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- SECTION 7: SCENARIO LAB (COLLAPSIBLE PANEL) -->
+                <div class="bg-white border border-slate-200/60 rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleScenarioLab()" class="w-full text-left p-5 flex items-center justify-between gap-4 focus:outline-none hover:bg-slate-50/50 transition duration-300">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 rounded-xl bg-indigo-50 border border-indigo-100 shrink-0">
+                                <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-slate-900 text-sm">Scenario Lab</h4>
+                                <p class="text-[10px] text-slate-400 uppercase font-mono tracking-wider mt-0.5">Test real-life adjustments & adapt your plan instantly</p>
+                            </div>
+                        </div>
+                        <svg id="lab_arrow_icon" class="w-4 h-4 text-slate-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    
+                    <div id="scenario_lab_content" class="hidden border-t border-slate-100 bg-slate-50/40 p-5 space-y-4">
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            Retirement is dynamic. Test how your flight sequence adapts if life changes unexpectedly:
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <button id="scenario_btn_texas" onclick="activateScenario('texas')" class="p-4 bg-white border border-slate-200/80 rounded-xl text-left text-xs hover:border-indigo-400 transition-all">
+                                <strong class="text-slate-800 block mb-1">Scenario A: Children Move to Texas</strong>
+                                <span class="text-[11px] text-slate-500 leading-relaxed block">Reprioritizes your family base coordinates earlier, bypassing the Taiwan tracking paths.</span>
+                            </button>
+                            
+                            <button id="scenario_btn_taiwan" onclick="activateScenario('taiwan')" class="p-4 bg-white border border-slate-200/80 rounded-xl text-left text-xs hover:border-indigo-400 transition-all">
+                                <strong class="text-slate-800 block mb-1">Scenario B: Taiwan Immigration Changes</strong>
+                                <span class="text-[11px] text-slate-500 leading-relaxed block">Rule modifications force an accelerated transition direct to Portugal's coastal lifestyle track.</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN: PROGRESS, GAPS, COLLAPSED RISKS (4 Cols) -->
+            <div class="lg:col-span-4 space-y-6">
+                
+                <!-- Section 8: Simplified Roadmap Progress Tracking -->
+                <div class="bg-white border border-slate-200/60 rounded-2xl p-5 shadow-sm space-y-3">
+                    <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">Roadmap Progress</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-end">
+                            <span class="text-xs font-mono text-slate-500">Completed Steps</span>
+                            <span id="progress_pct_label" class="text-2xl font-bold font-mono text-emerald-600 leading-none">33%</span>
+                        </div>
+                        
+                        <div class="w-full bg-slate-100 rounded-full h-2 p-0.5 border border-slate-200/50">
+                            <div id="progress_bar_fill" class="bg-emerald-500 h-full rounded-full transition-all duration-500" style="width: 33%"></div>
+                        </div>
+                        
+                        <!-- Simple Status Pillars -->
+                        <div class="grid grid-cols-3 gap-1 pt-2 text-center text-[10px] font-mono">
+                            <div class="bg-slate-50 border border-slate-100 rounded p-1.5">
+                                <span class="text-slate-400 block">Done</span>
+                                <strong id="progress_done_count" class="text-slate-800 text-xs block">1</strong>
+                            </div>
+                            <div class="bg-slate-50 border border-slate-100 rounded p-1.5">
+                                <span class="text-slate-400 block">Next Up</span>
+                                <strong id="progress_next_count" class="text-slate-800 text-xs block">11</strong>
+                            </div>
+                            <div class="bg-slate-50 border border-slate-100 rounded p-1.5 animate-pulse">
+                                <span class="text-slate-400 block">Active</span>
+                                <strong class="text-emerald-600 text-xs block">Age 52</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 4: Compact Adaptive Gap Analysis Accordions -->
+                <div class="bg-white border border-slate-200/60 rounded-2xl p-5 shadow-sm space-y-3">
+                    <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">Structural Gap Audit</h3>
+                    
+                    <div class="space-y-2">
+                        <!-- GAP item 1 -->
+                        <div class="border border-slate-100 rounded-xl overflow-hidden">
+                            <button onclick="toggleGap('fin')" class="w-full text-left p-3 flex items-center justify-between text-xs font-mono focus:outline-none">
+                                <span class="text-slate-700 font-bold">Financial Gap</span>
+                                <span class="text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full text-[9px] font-bold">&bull; Ready</span>
+                            </button>
+                            <div id="gap_detail_fin" class="hidden px-3 pb-3 pt-1 text-[11px] text-slate-500 bg-slate-50/50 leading-relaxed border-t border-slate-100">
+                                ✓ Assets sufficient<br>✓ Retirement age achievable<br>⚠ Roth conversion strategy requires active execution.
+                            </div>
+                        </div>
+
+                        <!-- GAP item 2 -->
+                        <div class="border border-slate-100 rounded-xl overflow-hidden">
+                            <button onclick="toggleGap('geo')" class="w-full text-left p-3 flex items-center justify-between text-xs font-mono focus:outline-none">
+                                <span class="text-slate-700 font-bold">Geographic Gap</span>
+                                <span id="gap_badge_geo" class="text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full text-[9px] font-bold">&bull; Needs Attention</span>
+                            </button>
+                            <div id="gap_detail_geo" class="hidden px-3 pb-3 pt-1 text-[11px] text-slate-500 bg-slate-50/50 leading-relaxed border-t border-slate-100">
+                                <span id="gap_text_geo">⚠ Taiwan residency not established<br>⚠ Portugal residency unknown<br>✓ US citizenship available.</span>
+                            </div>
+                        </div>
+
+                        <!-- GAP item 3 -->
+                        <div class="border border-slate-100 rounded-xl overflow-hidden">
+                            <button onclick="toggleGap('health')" class="w-full text-left p-3 flex items-center justify-between text-xs font-mono focus:outline-none">
+                                <span class="text-slate-700 font-bold">Healthcare Gap</span>
+                                <span class="text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full text-[9px] font-bold">&bull; Needs Attention</span>
+                            </button>
+                            <div id="gap_detail_health" class="hidden px-3 pb-3 pt-1 text-[11px] text-slate-500 bg-slate-50/50 leading-relaxed border-t border-slate-100">
+                                ✓ Medicare strategy modeled<br>⚠ Overseas healthcare eligibility open<br>⚠ Long-Term Care strategy incomplete.
+                            </div>
+                        </div>
+
+                        <!-- GAP item 4 -->
+                        <div class="border border-slate-100 rounded-xl overflow-hidden">
+                            <button onclick="toggleGap('legacy')" class="w-full text-left p-3 flex items-center justify-between text-xs font-mono focus:outline-none">
+                                <span class="text-slate-700 font-bold">Legacy Gap</span>
+                                <span class="text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full text-[9px] font-bold">&bull; Needs Attention</span>
+                            </button>
+                            <div id="gap_detail_legacy" class="hidden px-3 pb-3 pt-1 text-[11px] text-slate-500 bg-slate-50/50 leading-relaxed border-t border-slate-100">
+                                ✓ Estate optimized<br>⚠ Trust planning incomplete<br>⚠ Beneficiary reviews recommended.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 9: Collapsed Risk Assessment Panel -->
+                <div class="bg-white border border-slate-200/60 rounded-2xl p-5 shadow-sm space-y-3">
+                    <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">Active Strategic Risks</h3>
+                    
+                    <div id="risks_container" class="space-y-3">
+                        <!-- Risk 1 -->
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                            <div class="flex items-center justify-between mb-1">
+                                <strong id="risk_title_1" class="text-xs text-slate-800">Geopolitical Imposed Visa Rule Changes</strong>
+                                <span id="risk_badge_1" class="text-[9px] font-mono text-rose-600 bg-rose-50 border border-rose-100 px-1.5 py-0.5 rounded font-bold">HIGH</span>
+                            </div>
+                            <p id="risk_desc_1" class="text-[11px] text-slate-500 leading-relaxed">
+                                Immigration criteria for Taiwan Gold Card visa options could tighten unexpectedly.
+                            </p>
+                            <span id="risk_mitigation_1" class="text-[10px] text-emerald-700 font-mono block mt-1.5">&bull; Fail-safe: Maintain primary US residency domicile hooks.</span>
+                        </div>
+
+                        <!-- Risk 2 -->
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                            <div class="flex items-center justify-between mb-1">
+                                <strong class="text-xs text-slate-800">Unexpected Early Long-Term Care Needs</strong>
+                                <span class="text-[9px] font-mono text-amber-600 bg-amber-50 border border-amber-100 px-1.5 py-0.5 rounded font-bold">MED</span>
+                            </div>
+                            <p class="text-[11px] text-slate-500 leading-relaxed">
+                                Serious health issues occurring early in retirement prior to standard Medicare activations.
+                            </p>
+                            <span class="text-[10px] text-emerald-700 font-mono block mt-1.5">&bull; Fail-safe: Commit to localized LTC cover before Age 70.</span>
+                        </div>
+
+                        <!-- Extended Hidden Risks -->
+                        <div id="extended_risks" class="hidden space-y-3">
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                                <div class="flex items-center justify-between mb-1">
+                                    <strong class="text-xs text-slate-800">Double Taxation Friction</strong>
+                                    <span class="text-[9px] font-mono text-amber-600 bg-amber-50 border border-amber-100 px-1.5 py-0.5 rounded font-bold">MED</span>
+                                </div>
+                                <p class="text-[11px] text-slate-500 leading-relaxed">
+                                    Tax residency triggers overlap across multiple global tax jurisdictions.
+                                </p>
+                                <span class="text-[10px] text-emerald-700 font-mono block mt-1.5">&bull; Fail-safe: Structure non-US source assets cleanly early.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="toggle_risks_btn" onclick="toggleRisks()" class="w-full text-center text-xs font-mono font-bold text-slate-500 hover:text-slate-800 py-1 border-t border-slate-100 pt-2 block">
+                        Show All Risks
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Platform Footer -->
+    <footer class="mt-auto border-t border-slate-200/60 bg-slate-50/50 py-8 text-center text-[11px] text-slate-400 font-mono px-4 space-y-1">
+        <div>&copy; 2026 WealthLanding. Plan Config: Phase_Optimizer_Active_v4.</div>
+        <div class="text-slate-500 font-bold">Your Next Step: Build Your Roth Strategy (Age 52)</div>
+    </footer>
+
+    <!-- INTERACTIVE APP LOGIC -->
+    <script>
+        // Set the active timeline items status elements
+        let activeScenario = 'default';
+
+        // Toggle Expandable Timeline Cards (Progressive Disclosure)
+        function toggleMilestone(id) {
+            const content = document.getElementById(`content_${id}`);
+            const arrow = document.getElementById(`arrow_icon_${id}`);
+
+            if (content.classList.contains('hidden')) {
+                // Collapse currently opened cards (only keep one open)
+                document.querySelectorAll("[id^='content_']").forEach(el => el.classList.add('hidden'));
+                document.querySelectorAll("[id^='arrow_icon_']").forEach(el => el.classList.remove('rotate-180'));
+                
+                content.classList.remove('hidden');
+                arrow.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                arrow.classList.remove('rotate-180');
+            }
+        }
+
+        // Toggle Gaps progress display
+        function toggleGap(id) {
+            const detail = document.getElementById(`gap_detail_${id}`);
+            detail.classList.toggle('hidden');
+        }
+
+        // Toggle Scenario Lab Drawer
+        function toggleScenarioLab() {
+            const drawer = document.getElementById('scenario_lab_content');
+            const arrow = document.getElementById('lab_arrow_icon');
+            drawer.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+        }
+
+        // Toggle Risks lists
+        function toggleRisks() {
+            const extended = document.getElementById('extended_risks');
+            const btn = document.getElementById('toggle_risks_btn');
+            
+            if (extended.classList.contains('hidden')) {
+                extended.classList.remove('hidden');
+                btn.innerText = 'Collapse Risk List';
+            } else {
+                extended.classList.add('hidden');
+                btn.innerText = 'Show All Risks';
+            }
+        }
+
+        // Scroll helper down to milestones if clicking top action button
+        function scrollToNextMilestone() {
+            const card = document.getElementById('milestone_card_52');
+            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // Ensure first is expanded
+            const content = document.getElementById('content_52');
+            if (content.classList.contains('hidden')) {
+                toggleMilestone('52');
+            }
+        }
+
+        // Recalculates total progress bar percent & lists based on interactive checklist checkboxes
+        function updateProgress() {
+            const checks = document.querySelectorAll('.task-check');
+            const total = checks.length;
+            let checkedCount = 0;
+            
+            checks.forEach(c => {
+                if (c.checked) checkedCount++;
+            });
+
+            const percent = total > 0 ? Math.round((checkedCount / total) * 100) : 0;
+
+            // Update UI widgets safely with conditional checks to avoid null exceptions
+            const progressPctLabel = document.getElementById('progress_pct_label');
+            if (progressPctLabel) {
+                progressPctLabel.innerText = `${percent}%`;
+            }
+
+            const progressBarFill = document.getElementById('progress_bar_fill');
+            if (progressBarFill) {
+                progressBarFill.style.width = `${percent}%`;
+            }
+
+            const progressDoneCount = document.getElementById('progress_done_count');
+            if (progressDoneCount) {
+                progressDoneCount.innerText = checkedCount;
+            }
+
+            const progressNextCount = document.getElementById('progress_next_count');
+            if (progressNextCount) {
+                progressNextCount.innerText = total - checkedCount;
+            }
+
+            // Adjust the status badge of the expanded item dynamically
+            // Age 52 checks
+            const card52Checks = document.querySelectorAll('#content_52 .task-check');
+            let checked52 = 0;
+            card52Checks.forEach(c => { if(c.checked) checked52++; });
+            const badge52 = document.getElementById('status_badge_52');
+            if (badge52) {
+                if (checked52 === card52Checks.length) {
+                    badge52.innerText = 'Completed';
+                    badge52.className = 'px-2.5 py-1 rounded-full text-[9px] font-mono bg-emerald-50 text-emerald-700 border border-emerald-100 font-bold uppercase tracking-wider';
+                } else if (checked52 > 0) {
+                    badge52.innerText = 'In Progress';
+                    badge52.className = 'px-2.5 py-1 rounded-full text-[9px] font-mono bg-amber-50 text-amber-700 border border-amber-100 font-bold uppercase tracking-wider';
+                } else {
+                    badge52.innerText = 'Not Started';
+                    badge52.className = 'px-2.5 py-1 rounded-full text-[9px] font-mono bg-slate-50 text-slate-500 border border-slate-100 font-bold uppercase tracking-wider';
+                }
+            }
+
+            // Age 54 checks
+            const card54Checks = document.querySelectorAll('#content_54 .task-check');
+            let checked54 = 0;
+            card54Checks.forEach(c => { if(c.checked) checked54++; });
+            const badge54 = document.getElementById('status_badge_54');
+            if (badge54) {
+                if (checked54 === card54Checks.length && card54Checks.length > 0) {
+                    badge54.innerText = 'Completed';
+                    badge54.className = 'px-2.5 py-1 rounded-full text-[9px] font-mono bg-emerald-50 text-emerald-700 border border-emerald-100 font-bold uppercase tracking-wider';
+                } else if (checked54 > 0) {
+                    badge54.innerText = 'In Progress';
+                    badge54.className = 'px-2.5 py-1 rounded-full text-[9px] font-mono bg-amber-50 text-amber-700 border border-amber-100 font-bold uppercase tracking-wider';
+                } else {
+                    badge54.innerText = 'Not Started';
+                    badge54.className = 'px-2.5 py-1 rounded-full text-[9px] font-mono bg-slate-50 text-slate-500 border border-slate-100 font-bold uppercase tracking-wider';
+                }
+            }
+
+            // Age 57 checks
+            const card57Checks = document.querySelectorAll('#content_57 .task-check');
+            let checked57 = 0;
+            card57Checks.forEach(c => { if(c.checked) checked57++; });
+            const badge57 = document.getElementById('status_badge_57');
+            if (badge57) {
+                if (checked57 === card57Checks.length && card57Checks.length > 0) {
+                    badge57.innerText = 'Completed';
+                    badge57.className = 'px-2.5 py-1 rounded-full text-[9px] font-mono bg-emerald-50 text-emerald-700 border border-emerald-100 font-bold uppercase tracking-wider';
+                } else if (checked57 > 0) {
+                    badge57.innerText = 'In Progress';
+                    badge57.className = 'px-2.5 py-1 rounded-full text-[9px] font-mono bg-amber-50 text-amber-700 border border-amber-100 font-bold uppercase tracking-wider';
+                } else {
+                    badge57.innerText = 'Not Started';
+                    badge57.className = 'px-2.5 py-1 rounded-full text-[9px] font-mono bg-slate-50 text-slate-500 border border-slate-100 font-bold uppercase tracking-wider';
+                }
+            }
+
+            // Age 60 checks
+            const card60Checks = document.querySelectorAll('#content_60 .task-check');
+            let checked60 = 0;
+            card60Checks.forEach(c => { if(c.checked) checked60++; });
+            const badge60 = document.getElementById('status_badge_60');
+            if (badge60) {
+                if (checked60 === card60Checks.length && card60Checks.length > 0) {
+                    badge60.innerText = 'Completed';
+                    badge60.className = 'px-2.5 py-1 rounded-full text-[9px] font-mono bg-emerald-50 text-emerald-700 border border-emerald-100 font-bold uppercase tracking-wider';
+                } else if (checked60 > 0) {
+                    badge60.innerText = 'In Progress';
+                    badge60.className = 'px-2.5 py-1 rounded-full text-[9px] font-mono bg-amber-50 text-amber-700 border border-amber-100 font-bold uppercase tracking-wider';
+                } else {
+                    badge60.innerText = 'Not Started';
+                    badge60.className = 'px-2.5 py-1 rounded-full text-[9px] font-mono bg-slate-50 text-slate-500 border border-slate-100 font-bold uppercase tracking-wider';
+                }
+            }
+
+            // Age 65 checks
+            const card65Checks = document.querySelectorAll('#content_65 .task-check');
+            let checked65 = 0;
+            card65Checks.forEach(c => { if(c.checked) checked65++; });
+            const badge65 = document.getElementById('status_badge_65');
+            if (badge65) {
+                if (checked65 === card65Checks.length && card65Checks.length > 0) {
+                    badge65.innerText = 'Completed';
+                    badge65.className = 'px-2.5 py-1 rounded-full text-[9px] font-mono bg-emerald-50 text-emerald-700 border border-emerald-100 font-bold uppercase tracking-wider';
+                } else if (checked65 > 0) {
+                    badge65.innerText = 'In Progress';
+                    badge65.className = 'px-2.5 py-1 rounded-full text-[9px] font-mono bg-amber-50 text-amber-700 border border-amber-100 font-bold uppercase tracking-wider';
+                } else {
+                    badge65.innerText = 'Not Started';
+                    badge65.className = 'px-2.5 py-1 rounded-full text-[9px] font-mono bg-slate-50 text-slate-500 border border-slate-100 font-bold uppercase tracking-wider';
+                }
+            }
+
+            // Age 78 checks
+            const card78Checks = document.querySelectorAll('#content_78 .task-check');
+            let checked78 = 0;
+            card78Checks.forEach(c => { if(c.checked) checked78++; });
+            const badge78 = document.getElementById('status_badge_78');
+            if (badge78) {
+                if (checked78 === card78Checks.length && card78Checks.length > 0) {
+                    badge78.innerText = 'Completed';
+                    badge78.className = 'px-2.5 py-1 rounded-full text-[9px] font-mono bg-emerald-50 text-emerald-700 border border-emerald-100 font-bold uppercase tracking-wider';
+                } else if (checked78 > 0) {
+                    badge78.innerText = 'In Progress';
+                    badge78.className = 'px-2.5 py-1 rounded-full text-[9px] font-mono bg-amber-50 text-amber-700 border border-amber-100 font-bold uppercase tracking-wider';
+                } else {
+                    badge78.innerText = 'Not Started';
+                    badge78.className = 'px-2.5 py-1 rounded-full text-[9px] font-mono bg-slate-50 text-slate-500 border border-slate-100 font-bold uppercase tracking-wider';
+                }
+            }
+        }
+
+        // Section 6: Interactive Decision Gates
+        function selectGate60(option) {
+            const btnTwn = document.getElementById('gate60_btn_twn');
+            const btnUs = document.getElementById('gate60_btn_us');
+            const btnWork = document.getElementById('gate60_btn_work');
+            
+            const dotTwn = document.getElementById('gate60_dot_twn');
+            const dotUs = document.getElementById('gate60_dot_us');
+            const dotWork = document.getElementById('gate60_dot_work');
+
+            // Reset borders and dots
+            [btnTwn, btnUs, btnWork].forEach(b => {
+                if (b) b.className = "p-3.5 bg-white border border-slate-200 rounded-xl text-left text-xs transition-all hover:border-slate-300";
+            });
+            [dotTwn, dotUs, dotWork].forEach(d => {
+                if (d) d.className = "w-2 h-2 rounded-full bg-slate-200";
+            });
+
+            if (option === 'twn' && btnTwn && dotTwn) {
+                btnTwn.className = "p-3.5 bg-white border-2 border-emerald-500 rounded-xl text-left text-xs transition-all";
+                dotTwn.className = "w-2 h-2 rounded-full bg-emerald-500";
+            } else if (option === 'us' && btnUs && dotUs) {
+                btnUs.className = "p-3.5 bg-white border-2 border-emerald-500 rounded-xl text-left text-xs transition-all";
+                dotUs.className = "w-2 h-2 rounded-full bg-emerald-500";
+            } else if (option === 'work' && btnWork && dotWork) {
+                btnWork.className = "p-3.5 bg-white border-2 border-emerald-500 rounded-xl text-left text-xs transition-all";
+                dotWork.className = "w-2 h-2 rounded-full bg-emerald-500";
+            }
+        }
+
+        function selectGate65(option) {
+            const btnHybrid = document.getElementById('gate65_btn_hybrid');
+            const btnUs = document.getElementById('gate65_btn_us');
+            const btnIntl = document.getElementById('gate65_btn_intl');
+            
+            const dotHybrid = document.getElementById('gate65_dot_hybrid');
+            const dotUs = document.getElementById('gate65_dot_us');
+            const dotIntl = document.getElementById('gate65_dot_intl');
+
+            // Reset borders and dots
+            [btnHybrid, btnUs, btnIntl].forEach(b => {
+                if (b) b.className = "p-3.5 bg-white border border-slate-200 rounded-xl text-left text-xs transition-all hover:border-slate-300";
+            });
+            [dotHybrid, dotUs, dotIntl].forEach(d => {
+                if (d) d.className = "w-2 h-2 rounded-full bg-slate-200";
+            });
+
+            if (option === 'hybrid' && btnHybrid && dotHybrid) {
+                btnHybrid.className = "p-3.5 bg-white border-2 border-emerald-500 rounded-xl text-left text-xs transition-all";
+                dotHybrid.className = "w-2 h-2 rounded-full bg-emerald-500";
+            } else if (option === 'us' && btnUs && dotUs) {
+                btnUs.className = "p-3.5 bg-white border-2 border-emerald-500 rounded-xl text-left text-xs transition-all";
+                dotUs.className = "w-2 h-2 rounded-full bg-emerald-500";
+            } else if (option === 'intl' && btnIntl && dotIntl) {
+                btnIntl.className = "p-3.5 bg-white border-2 border-emerald-500 rounded-xl text-left text-xs transition-all";
+                dotIntl.className = "w-2 h-2 rounded-full bg-emerald-500";
+            }
+        }
+
+        // Section 7: Adaptive Scenario Activation
+        function activateScenario(type) {
+            const btnTexas = document.getElementById('scenario_btn_texas');
+            const btnTaiwan = document.getElementById('scenario_btn_taiwan');
+
+            // Reset buttons
+            if (btnTexas) btnTexas.className = "p-4 bg-white border border-slate-200/80 rounded-xl text-left text-xs hover:border-indigo-400 transition-all";
+            if (btnTaiwan) btnTaiwan.className = "p-4 bg-white border border-slate-200/80 rounded-xl text-left text-xs hover:border-indigo-400 transition-all";
+
+            if (type === 'texas') {
+                activeScenario = 'texas';
+                if (btnTexas) btnTexas.className = "p-4 bg-indigo-50/50 border-2 border-indigo-500 rounded-xl text-left text-xs transition-all";
+                
+                // Dynamically update the Hero details
+                document.getElementById('hero_milestone_title').innerText = "Coordinate Austin Relocation Logistics";
+                document.getElementById('hero_milestone_desc').innerText = "Your children moving to Texas alters your geographic base timeline. Preparing family real estate limits early guarantees smooth multi-generational co-location.";
+                document.getElementById('hero_milestone_target').innerText = "Before Age 54";
+
+                // Dynamic updates to Retirement Clock Label (Section 2)
+                document.getElementById('clock_retire_node').innerText = "57";
+                document.getElementById('clock_retire_age').innerText = "Age 57";
+                document.getElementById('clock_retire_label').innerText = "Austin Move";
+                document.getElementById('clock_retire_label').className = "block text-[10px] font-bold text-indigo-700 uppercase tracking-tight";
+                document.getElementById('clock_retire_node').className = "w-8 h-8 rounded-full bg-indigo-500 border-4 border-white shadow-md flex items-center justify-center text-[10px] font-bold text-white font-mono";
+
+                // Update Age 57 card dynamically (Section 3)
+                document.getElementById('milestone_title_57').innerText = "Acquire Austin Family Base";
+                document.getElementById('milestone_why_57').innerText = "Setting up your state residence in Texas bypasses the complex international tax setups of East Asia, simplifying your direct estate distribution channels.";
+                document.getElementById('milestone_wait_57').innerText = "If postponed, you miss the childhood growth phases of your grandchildren and pay high local short-term travel fees.";
+                document.getElementById('milestone_tool_57').innerText = "Texas Domicile Guide";
+
+                // Re-write Age 57 Checklist items inline (Section 5)
+                document.getElementById('milestone_checks_57').innerHTML = `
+                    <label class="flex items-start gap-3 cursor-pointer">
+                        <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                        <span>Compare Washington vs Texas homestead tax exemptions</span>
+                    </label>
+                    <label class="flex items-start gap-3 cursor-pointer">
+                        <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                        <span>Research neighborhood school metrics and proximity structures</span>
+                    </label>
+                `;
+
+                // Adapt Gaps Matrix (Section 4)
+                document.getElementById('gap_badge_geo').innerText = "✓ Ready";
+                document.getElementById('gap_badge_geo').className = "text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full text-[9px] font-bold";
+                document.getElementById('gap_text_geo').innerHTML = "✓ Texas base determined<br>✓ Direct family co-location planned<br>✓ US primary healthcare channels secured.";
+
+                // Adapt Risks Matrix (Section 9)
+                document.getElementById('risk_title_1').innerText = "US State-to-State Tax Residency Disputes";
+                document.getElementById('risk_badge_1').innerText = "MED";
+                document.getElementById('risk_badge_1').className = "text-[9px] font-mono text-amber-600 bg-amber-50 border border-amber-100 px-1.5 py-0.5 rounded font-bold";
+                document.getElementById('risk_desc_1').innerText = "Audits from former high-tax residential locations challenging your foreign tax break transitions.";
+                document.getElementById('risk_mitigation_1').innerHTML = "&bull; Fail-safe: Formally sever Washington ties (voter card, licenses) immediately.";
+
+            } else if (type === 'taiwan') {
+                activeScenario = 'taiwan';
+                if (btnTaiwan) btnTaiwan.className = "p-4 bg-indigo-50/50 border-2 border-indigo-500 rounded-xl text-left text-xs transition-all";
+
+                // Dynamically update the Hero details
+                document.getElementById('hero_milestone_title').innerText = "Accelerate Portugal D7 Visa Strategy";
+                document.getElementById('hero_milestone_desc').innerText = "Sovereign rules in Taiwan have shifted. Accelerating your Portugal passive income timeline preserves your target geographic diversification ahead of schedule.";
+                document.getElementById('hero_milestone_target').innerText = "Before Age 56";
+
+                // Dynamic updates to Retirement Clock Label (Section 2)
+                document.getElementById('clock_retire_node').innerText = "60";
+                document.getElementById('clock_retire_age').innerText = "Age 60";
+                document.getElementById('clock_retire_label').innerText = "Portugal Base";
+                document.getElementById('clock_retire_label').className = "block text-[10px] font-bold text-sky-700 uppercase tracking-tight";
+                document.getElementById('clock_retire_node').className = "w-8 h-8 rounded-full bg-sky-500 border-4 border-white shadow-md flex items-center justify-center text-[10px] font-bold text-white font-mono";
+
+                // Update Age 57 card dynamically (Section 3)
+                document.getElementById('milestone_title_57').innerText = "Secure Portugal D7 Visa Path";
+                document.getElementById('milestone_why_57').innerText = "Schengen immigration rules require proof of reliable long-term passive income. Executing this step secures global visa protections early.";
+                document.getElementById('milestone_wait_57').innerText = "Waiting risks D7 structural passive income requirement caps increasing out of reach under new European Union directives.";
+                document.getElementById('milestone_tool_57').innerText = "The D7 Blueprint";
+
+                // Re-write Age 57 Checklist items inline (Section 5)
+                document.getElementById('milestone_checks_57').innerHTML = `
+                    <label class="flex items-start gap-3 cursor-pointer">
+                        <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                        <span>Establish Portuguese bank accounts and secure NIF tax numbers</span>
+                    </label>
+                    <label class="flex items-start gap-3 cursor-pointer">
+                        <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                        <span>Align investment yields with local passive income requirements</span>
+                    </label>
+                `;
+
+                // Adapt Gaps Matrix (Section 4)
+                document.getElementById('gap_badge_geo').innerText = "⚠ Critical Shift";
+                document.getElementById('gap_badge_geo').className = "text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full text-[9px] font-bold";
+                document.getElementById('gap_text_geo').innerHTML = "⚠ Taiwan path blocked by rule shift<br>⚠ Portugal D7 timeline accelerated<br>✓ US anchor intact.";
+
+                // Adapt Risks Matrix (Section 9)
+                document.getElementById('risk_title_1').innerText = "Schengen Zone Visa Adjustments";
+                document.getElementById('risk_badge_1').innerText = "HIGH";
+                document.getElementById('risk_badge_1').className = "text-[9px] font-mono text-rose-600 bg-rose-50 border border-rose-100 px-1.5 py-0.5 rounded font-bold";
+                document.getElementById('risk_desc_1').innerText = "Portugal tightens foreign income requirements or terminates D7 residency pathways unexpectedly.";
+                document.getElementById('risk_mitigation_1').innerHTML = "&bull; Fail-safe: Maintain liquid secondary options in alternative Mediterranean regions.";
+            }
+
+            // Expand corresponding milestones to guide user to new context
+            toggleMilestone('57');
+            // Re-calculate the progress bar dynamically
+            updateProgress();
+            
+            // Auto close Scenario Lab
+            toggleScenarioLab();
+        }
+
+        // Full reset of interactive configuration states
+        function resetPlan() {
+            // Restore default values
+            activeScenario = 'default';
+            
+            // Reset Scenario buttons
+            const btnTexas = document.getElementById('scenario_btn_texas');
+            const btnTaiwan = document.getElementById('scenario_btn_taiwan');
+            if (btnTexas) btnTexas.className = "p-4 bg-white border border-slate-200/80 rounded-xl text-left text-xs hover:border-indigo-400 transition-all";
+            if (btnTaiwan) btnTaiwan.className = "p-4 bg-white border border-slate-200/80 rounded-xl text-left text-xs hover:border-indigo-400 transition-all";
+
+            // Reset Hero
+            document.getElementById('hero_milestone_title').innerText = "Build Your Roth Conversion Strategy";
+            document.getElementById('hero_milestone_desc').innerText = "This is your largest remaining lifetime tax opportunity. Shifting assets into a tax-free vehicle early maximizes your tax sheltering before mandatory distributions begin.";
+            document.getElementById('hero_milestone_target').innerText = "Before Age 55";
+
+            // Reset Clock
+            document.getElementById('clock_retire_node').innerText = "60";
+            document.getElementById('clock_retire_age').innerText = "Age 60";
+            document.getElementById('clock_retire_label').innerText = "Retire";
+            document.getElementById('clock_retire_label').className = "block text-[10px] font-bold text-emerald-700 uppercase tracking-tight";
+            document.getElementById('clock_retire_node').className = "w-8 h-8 rounded-full bg-emerald-500 border-4 border-white shadow-md flex items-center justify-center text-[10px] font-bold text-white font-mono";
+
+            // Reset Age 57 Card
+            document.getElementById('milestone_title_57').innerText = "Research Taiwan Residency";
+            document.getElementById('milestone_why_57').innerText = "Moving between countries requires securing regulatory foundations early. Investigating Gold Card visa rules helps guarantee clean transit eligibility when your physical moving calendar launches.";
+            document.getElementById('milestone_wait_57').innerText = "Sovereign processing delays can freeze travel structures. If you miss this planning horizon, you risk career gap years spent in high-tax administrative limbo.";
+            document.getElementById('milestone_tool_57').innerText = "The Gold Card System";
+
+            document.getElementById('milestone_checks_57').innerHTML = `
+                <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                    <span>Evaluate gold card income threshold metrics</span>
+                </label>
+                <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                    <span>Isolate double-taxation liabilities under local rules</span>
+                </label>
+                <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" onchange="updateProgress()" class="task-check mt-0.5 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400">
+                    <span>Establish initial local banking structures</span>
+                </label>
+            `;
+
+            // Reset Gaps
+            document.getElementById('gap_badge_geo').innerText = "Needs Attention";
+            document.getElementById('gap_badge_geo').className = "text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full text-[9px] font-bold";
+            document.getElementById('gap_text_geo').innerHTML = "⚠ Taiwan residency not established<br>⚠ Portugal residency unknown<br>✓ US citizenship available.";
+
+            // Reset Risks
+            document.getElementById('risk_title_1').innerText = "Geopolitical Imposed Visa Rule Changes";
+            document.getElementById('risk_badge_1').innerText = "HIGH";
+            document.getElementById('risk_badge_1').className = "text-[9px] font-mono text-rose-600 bg-rose-50 border border-rose-100 px-1.5 py-0.5 rounded font-bold";
+            document.getElementById('risk_desc_1').innerText = "Immigration criteria for Taiwan Gold Card visa options could tighten unexpectedly.";
+            document.getElementById('risk_mitigation_1').innerHTML = "&bull; Fail-safe: Maintain primary US residency domicile hooks.";
+
+            // Uncheck all except the first model checkbox
+            const checks = document.querySelectorAll('.task-check');
+            checks.forEach((c, idx) => {
+                c.checked = (idx === 0);
+            });
+
+            // Re-collapse all milestones except 52
+            document.querySelectorAll("[id^='content_']").forEach((el, idx) => {
+                if (idx === 0) {
+                    el.classList.remove('hidden');
+                } else {
+                    el.classList.add('hidden');
+                }
+            });
+            document.querySelectorAll("[id^='arrow_icon_']").forEach((el, idx) => {
+                if (idx === 0) {
+                    el.classList.add('rotate-180');
+                } else {
+                    el.classList.remove('rotate-180');
+                }
+            });
+
+            updateProgress();
+        }
+
+        // Initialize progress state on load
+        window.onload = function() {
+            updateProgress();
+        };
+    </script>
+</body>
+</html>
