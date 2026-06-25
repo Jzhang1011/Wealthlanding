@@ -99,7 +99,7 @@
             color: var(--brand-mint);
         }
 
-        .top-nav-links {
+        .top-nav- {
             display: flex;
             gap: 2rem;
             list-style: none;
@@ -553,7 +553,7 @@ table a:hover {
       transform: translateX(-50%) translateY(0);
     }
   
-    /* RIGHT COLUMN LINKS SUB-GRID */
+ /* RIGHT COLUMN LINKS SUB-GRID */
     .links-matrix {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -561,7 +561,7 @@ table a:hover {
     }
 
     .dropdown-column h4 {
-      color: var(--text);
+      color: var(--text-dark); /* ◄ FIXED: Changed from var(--text) */
       font-size: 0.9rem;
       font-weight: 700;
       margin-top: 0;
@@ -581,14 +581,14 @@ table a:hover {
     }
 
     .dropdown-column ul a {
-      color: var(--muted) !important;
+      color: var(--text-muted) !important; /* ◄ FIXED: Changed from var(--muted) */
       font-size: 0.85rem;
       font-weight: 500;
       padding: 0;
     }
 
     .dropdown-column ul a:hover {
-      color: var(--royal) !important;
+      color: var(--brand-mint) !important; /* ◄ FIXED: Changed from var(--royal) to match your theme */
     }
 /* Add this to your existing CSS */
 .dropdown-trigger {
