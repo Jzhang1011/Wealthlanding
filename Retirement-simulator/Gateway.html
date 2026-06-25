@@ -37,7 +37,7 @@
       color: var(--text);
     }
 
-    /* FIXED: GLOBAL HEADER HORIZONTAL DISPLAY WITH UNIFORM GAP COHESION */
+    /* FIXED: GLOBAL HEADER POSITIONING AND HIGH STACKING INDEX Context */
     .global-header {
       background-color: #0B132B; 
       color: white;
@@ -48,6 +48,8 @@
       border-bottom: 1px solid #1E293B;
       width: 100%;
       box-sizing: border-box;
+      position: relative; /* ◄ Establish containing block for the absolute mega dropdown */
+      z-index: 1001;      /* ◄ Override the 100 z-index sticky topnav bar context */
     }
 
     /* FIXED: FORCED LIST ITEM ROW PACKING TO PREVENT VERTICAL STACKING BLOCKS */
@@ -60,10 +62,7 @@
       margin: 0;
       padding: 0;
     }
-/* Add this explicitly to anchor the absolute calculations */
-.top-nav-links li {
-  position: relative;
-}
+
     .top-nav-links a {
       color: #94A3B8;
       text-decoration: none;
@@ -154,7 +153,9 @@
       background: rgba(255,255,255,.1);
       margin: 0 8px;
     }
-.mega-dropdown {
+
+    /* FIXED: VIEWPONT-CENTERED FLUID MEGA DROPDOWN BOX */
+    .mega-dropdown {
       position: absolute;
       top: 100%;
       left: 50%;                     
@@ -172,7 +173,7 @@
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
-      z-index: 2000; /* ◄ INCREASE THIS FROM 500 TO 2000 */
+      z-index: 2000; 
       box-sizing: border-box;
     }
 
@@ -191,7 +192,7 @@
     }
 
     .dropdown-column h4 {
-      color: var(--text); /* ◄ FIXED: Changed from var(--text-dark) to var(--text) */
+      color: var(--text); 
       font-size: 0.9rem;
       font-weight: 700;
       margin-top: 0;
@@ -211,18 +212,19 @@
     }
 
     .dropdown-column ul a {
-      color: var(--muted) !important; /* ◄ FIXED: Changed from var(--text-muted) to var(--muted) */
+      color: var(--muted) !important; 
       font-size: 0.85rem;
       font-weight: 500;
       padding: 0;
     }
 
     .dropdown-column ul a:hover {
-      color: var(--emerald) !important; /* ◄ FIXED: Changed from var(--brand-mint) to use your local var(--emerald) */
+      color: var(--emerald) !important; 
     }
 
+    /* FIXED: Let dropdown anchor align to .global-header container for perfect center horizontal align */
     .dropdown-trigger {
-      position: relative;
+      position: static;
     }
   </style>
   
@@ -239,7 +241,7 @@
         <li><a href="#">Accumulation Blueprint</a></li>
         <li><a href="#">Optimization Systems</a></li>
         <li><a href="#">Family Legacy Shelters</a></li>
-          <!-- DROPDOWN CONTAINER WITH PROMOTIONAL HIGHLIGHT SECTION -->
+        <!-- DROPDOWN CONTAINER WITH PROMOTIONAL HIGHLIGHT SECTION -->
         <li class="dropdown-trigger">
           <a href="#" class="active font-bold text-white">
             Explore Stories <span class="text-[10px] opacity-70">▼</span>
@@ -302,6 +304,7 @@
             </div><!-- End Links Matrix -->
 
           </div><!-- End Mega Dropdown -->
+        </li> <!-- ◄ FIXED: Added missing list item closing bracket -->
       </ul>
     </nav>
     <div class="search-container">
@@ -422,7 +425,7 @@
         </div>
       </div>
 
-      <!-- STEP 3 CONTAINER (Everything cleanly wrapped inside) -->
+      <!-- STEP 3 CONTAINER -->
       <div id="step-3-view" class="space-y-6 text-center py-2 hidden">
         <div>
           <h2 class="text-2xl font-bold tracking-tight text-white">Your WealthLanding Score</h2>
