@@ -745,27 +745,31 @@
     .mega-dropdown {
       position: absolute;
       top: 100%;
-      left: 0;
-      right: 0;
-      width: 100%;
+      left: 50%;                     /* 1. Push menu to the horizontal center pointer */
+      transform: translateX(-50%) translateY(10px); /* 2. Offset exactly half its width to dead center it */
+      width: 90vw;                   /* 3. Give it a predictable fluid width across devices */
       max-width: 1140px; 
-      margin: 0 auto; 
       background: white;
       border: 1px solid var(--border);
       border-radius: 0.75rem;
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
       padding: 2.5rem;
-      display: grid;
+      display: grid !important;      /* 4. Force grid display to override broken layout assumptions */
       grid-template-columns: 1.2fr 3fr;
       gap: 3rem;
       opacity: 0;
       visibility: hidden;
-      transform: translateY(10px);
-      transition: all 0.2s ease;
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
       z-index: 500;
       box-sizing: border-box;
     }
 
+    /* Update the hover selector transformation so it keeps centering properties intact */
+    .dropdown-trigger:hover .mega-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
     /* RIGHT COLUMN LINKS SUB-GRID */
     .links-matrix {
       display: grid;
