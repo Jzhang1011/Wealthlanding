@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+   <script async src="https://https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -743,12 +743,12 @@
     }
 
     
-    /* RESTRUCTURED EXTENDED DROPDOWN WITH PROMO PANEL MAP*/
+    /* RESTRUCTURED EXTENDED DROPDOWN WITH PROMO PANEL MAP
     .dropdown-trigger:hover .mega-dropdown {
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
-    } 
+    } */
 
     .mega-dropdown {
       position: absolute;
@@ -772,7 +772,12 @@
       box-sizing: border-box;
     }
 
-  
+    /* Update the hover selector transformation so it keeps centering properties intact */
+    .dropdown-trigger:hover .mega-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
     /* RIGHT COLUMN LINKS SUB-GRID */
     .links-matrix {
       display: grid;
@@ -814,14 +819,6 @@
 .dropdown-trigger {
   position: relative;
 }
-
-
-      /* Update the hover selector transformation so it keeps centering properties intact 
-    .dropdown-trigger:hover .mega-dropdown {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(-50%) translateY(0);
-    }*/
     /* Odyssey Framework Update */
     .odyssey-teaser {
       background: linear-gradient(135deg, #0B132B, #1E293B);
