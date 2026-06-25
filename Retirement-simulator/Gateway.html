@@ -151,40 +151,75 @@
       background: rgba(255,255,255,.1);
       margin: 0 8px;
     }
-
-    /* MEGA MENU EXTENSIONS */
-    .mega-menu {
+ .mega-dropdown {
       position: absolute;
-      top: 52px;
-      left: 0;
-      width: 100%;
+      top: 100%;
+      left: 50%;                     /* 1. Push menu to the horizontal center pointer */
+      transform: translateX(-50%) translateY(10px); /* 2. Offset exactly half its width to dead center it */
+      width: 90vw;                   /* 3. Give it a predictable fluid width across devices */
+      max-width: 1140px; 
       background: white;
-      border-radius: 0 0 12px 12px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.15);
-      padding: 30px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1.2fr;
-      gap: 30px;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      padding: 2.5rem;
+      display: grid !important;      /* 4. Force grid display to override broken layout assumptions */
+      grid-template-columns: 1.2fr 3fr;
+      gap: 3rem;
       opacity: 0;
       visibility: hidden;
-      transform: translateY(10px);
-      transition: all .25s ease;
-      z-index: 99999;
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+      z-index: 500;
       box-sizing: border-box;
     }
-
-    .mega-menu-parent:hover .mega-menu {
+  /* Update the hover selector transformation so it keeps centering properties intact */
+    .dropdown-trigger:hover .mega-dropdown {
       opacity: 1;
       visibility: visible;
-      transform: translateY(0);
+      transform: translateX(-50%) translateY(0);
+    }
+  
+ /* RIGHT COLUMN LINKS SUB-GRID */
+    .links-matrix {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem 1.5rem;
     }
 
-    .column { display: flex; flex-direction: column; }
-    .column h4 { margin-top: 0; margin-bottom: 12px; color: #64748b; font-size: 14px; text-transform: uppercase; letter-spacing: .05em; }
-    .column a { text-decoration: none; color: #0f172a; padding: 8px 0; font-weight: 500; }
-    .column a:hover { color: #2563eb; }
-    .promo { background: #1d2252; color: white; border-radius: 8px; padding: 24px; }
-    .promo h2 { margin-top: 0; font-size: 24px; }
+    .dropdown-column h4 {
+      color: var(--text-dark); /* ◄ FIXED: Changed from var(--text) */
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .dropdown-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .dropdown-column ul a {
+      color: var(--text-muted) !important; /* ◄ FIXED: Changed from var(--muted) */
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0;
+    }
+
+    .dropdown-column ul a:hover {
+      color: var(--brand-mint) !important; /* ◄ FIXED: Changed from var(--royal) to match your theme */
+    }
+/* Add this to your existing CSS */
+.dropdown-trigger {
+  position: relative;
+}
   </style>
   
   <script src="https://cdn.tailwindcss.com"></script>
@@ -200,6 +235,69 @@
         <li><a href="#">Accumulation Blueprint</a></li>
         <li><a href="#">Optimization Systems</a></li>
         <li><a href="#">Family Legacy Shelters</a></li>
+          <!-- DROPDOWN CONTAINER WITH PROMOTIONAL HIGHLIGHT SECTION -->
+        <li class="dropdown-trigger">
+          <a href="#" class="active font-bold text-white">
+            Explore Stories <span class="text-[10px] opacity-70">▼</span>
+          </a>
+          
+          <div class="mega-dropdown">
+            
+            <!-- LEFT COLUMN: PROMOTIONAL SIDEBAR BANNER AREA -->
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
+              <div class="space-y-3">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Blog</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Your guide to financial planning and retirement.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" class="text-slate-900 font-bold text-sm inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Read Most Recent <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-xs text-slate-400 mt-1">The latest tips and system parameters.</p>
+              </div>
+            </div>
+
+            <!-- RIGHT COLUMN: MULTI-COLUMN SECTIONS ACCORDING TO SYSTEM CONFIGURATION -->
+            <div class="links-matrix text-left">
+              
+              <!-- Column 1 -->
+              <div class="dropdown-column">
+                <h4>🌱 Planning</h4>
+                <ul>
+                  <li><a href="#">Financial Wellness</a></li>
+                  <li><a href="RetirementHub.html">Retirement Planning</a></li>
+                  <li><a href="#">Estate Planning</a></li>
+                  <li><a href="#">Tax Mitigation Systems</a></li>
+                </ul>
+              </div>
+
+              <!-- Column 2 -->
+              <div class="dropdown-column">
+                <h4>💵 Earning & Outflow</h4>
+                <ul>
+                  <li><a href="#">Retirement Income</a></li>
+                  <li><a href="#">Social Security Timing</a></li>
+                  <li><a href="#">Pensions & Annuities</a></li>
+                  <li><a href="#">Budget Optimization</a></li>
+                </ul>
+              </div>
+
+              <!-- Column 3 -->
+              <div class="dropdown-column">
+                <h4>🏡 Assets & Lifestyle</h4>
+                <ul>
+                  <li><a href="#">Saving & Investing</a></li>
+                  <li><a href="#">Real Estate Allocation</a></li>
+                  <li><a href="CelebratingRetirement.html">Happy Retirement</a></li>
+                  <li><a href="#">Aging Well Systems</a></li>
+                </ul>
+              </div>
+
+            </div><!-- End Links Matrix -->
+
+          </div><!-- End Mega Dropdown -->
       </ul>
     </nav>
     <div class="search-container">
