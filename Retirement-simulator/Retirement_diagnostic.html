@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -9,10 +9,10 @@
 
     gtag('config', 'G-9JMJJ5CJR4');
   </script>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <a href="/"><title>Independent Wealth Building Engine | WealthLanding</title></a>
+  <title>Independent Wealth Building Engine | WealthLanding</title>
   <style>
     :root {
       --bg: #f4f6fa;
@@ -39,37 +39,37 @@
     }
 
     /*Google search*/
-.search-container {
-    position: relative;
-    max-width: 300px;
-    width: 100%;
-}
+    .search-container {
+      position: relative;
+      max-width: 300px;
+      width: 100%;
+    }
 
-.search-container form {
-    width: 100%;
-}
+    .search-container form {
+      width: 100%;
+    }
 
-.search-icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #64748b;
-    pointer-events: none;
-    z-index: 2;
-}
+    .search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #64748b;
+      pointer-events: none;
+      z-index: 2;
+    }
 
-.search-input {
-    width: 100%;
-    background-color: #1E293B;
-    border: 1px solid #334155;
-    color: white;
-    padding: 0.5rem 1rem 0.5rem 2.5rem;
-    border-radius: 6px;
-    font-size: 0.875rem;
-}
+    .search-input {
+      width: 100%;
+      background-color: #1E293B;
+      border: 1px solid #334155;
+      color: white;
+      padding: 0.5rem 1rem 0.5rem 2.5rem;
+      border-radius: 6px;
+      font-size: 0.875rem;
+    }
     
-   /* GLOBAL HEADER POSITIONING AND HIGH STACKING INDEX Context */
+    /* GLOBAL HEADER POSITIONING AND HIGH STACKING INDEX Context */
     .global-header {
       background-color: #0B132B; 
       color: white;
@@ -262,7 +262,7 @@
     /* SECTION 1: HERO EXECUTIVE SUMMARY */
     .executive-summary {
       text-align: center;
-      padding: 40px 0 30px;
+      padding: 50px 0 40px;
     }
 
     .hero-badge {
@@ -294,6 +294,30 @@
       max-width: 760px;
       margin: 0 auto;
       line-height: 1.6;
+    }
+
+    .btn-hero {
+      display: inline-block;
+      background: var(--navy);
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 14px 38px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      margin-top: 24px;
+      box-shadow: 0 4px 12px rgba(11, 19, 43, 0.15);
+      transition: background-color 0.15s, transform 0.15s;
+    }
+
+    .btn-hero:hover {
+      background: #1e293b;
+      transform: translateY(-2px);
+    }
+
+    .btn-hero:active {
+      transform: translateY(0);
     }
 
     /* DIAGNOSTIC PANEL COMPONENT */
@@ -1072,7 +1096,7 @@
   </style>
 </head>
 <body>
- <!-- Top Global Directory Header -->
+  <!-- Top Global Directory Header -->
   <header class="global-header">
     <a href="/" class="logo">Wealth<span>Landing</span></a>
     <nav aria-label="Global Main Directory">
@@ -1438,16 +1462,17 @@
     </div>
   </header>
 
-
-  <section class="hero" id="hero-fold">
-    <div class="hero-content">
+  <!-- Centered, beautifully typeset executive summary hero section -->
+  <section class="executive-summary" id="hero-fold">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="hero-badge">Strategic Vulnerability Audit</div>
       <h1>The Most Expensive Retirement Mistakes Happen Before Age 65</h1>
       <p>Most retirement plans focus on investments. The greatest opportunities often come from tax planning, healthcare strategy, and location decisions made during the years between retirement and Medicare.</p>
       <button class="btn-hero" onclick="scrollToDiagnostic()">Find My Retirement Stage</button>
     </div>
   </section>
 
-  <main class="container">
+  <main class="container mx-auto px-4 py-8">
     <section class="diagnostic-container" id="diagnostic-anchor">
       <div class="diagnostic-card" id="inputWizard">
         <div class="diagnostic-header">
@@ -1765,12 +1790,14 @@
         }
       }
     }
-        // pass value to master plan
-function savePlanValue(key, value) {
-    if (value !== undefined && value !== null && value !== '') {
+    
+    // pass value to master plan
+    function savePlanValue(key, value) {
+      if (value !== undefined && value !== null && value !== '') {
         localStorage.setItem(key, value);
+      }
     }
-}
+
     function processDiagnosticCalculations() {
       const age = parseInt(document.getElementById('userAge').value) || 54;
       const retire = parseInt(document.getElementById('retireAge').value) || 60;
@@ -1874,32 +1901,31 @@ function savePlanValue(key, value) {
       document.getElementById('matters-explanation').innerHTML = mattersStr;
       document.getElementById('lossList').innerHTML = lossHtml;
 
-// Save Diagnostic Results
+      // Save Diagnostic Results
+      savePlanValue('wl_currentAge', age);
+      savePlanValue('wl_retireAge', retire);
 
-savePlanValue('wl_currentAge', age);
-savePlanValue('wl_retireAge', retire);
+      savePlanValue('wl_primaryConcern', selectedConcern);
+      savePlanValue('wl_assetTier', selectedAsset);
+      savePlanValue('wl_geoPreference', selectedGeo);
 
-savePlanValue('wl_primaryConcern', selectedConcern);
-savePlanValue('wl_assetTier', selectedAsset);
-savePlanValue('wl_geoPreference', selectedGeo);
+      savePlanValue('wl_opportunityRange', rangeText);
 
-savePlanValue('wl_opportunityRange', rangeText);
+      savePlanValue('wl_primaryRisk', riskStr);
 
-savePlanValue('wl_primaryRisk', riskStr);
+      savePlanValue('wl_recommendedStrategy', oppStr);
 
-savePlanValue('wl_recommendedStrategy', oppStr);
+      savePlanValue('wl_whyOpportunityExists', mattersStr);
 
-savePlanValue('wl_whyOpportunityExists', mattersStr);
+      savePlanValue(
+        'wl_opportunitySummary',
+        subtitleStr
+      );
 
-savePlanValue(
-  'wl_opportunitySummary',
-  subtitleStr
-);
-
-savePlanValue(
-  'wl_optimizationWindow',
-  document.getElementById('v-window-text').innerText
-);
+      savePlanValue(
+        'wl_optimizationWindow',
+        document.getElementById('v-window-text').innerText
+      );
       
       document.getElementById('hero-fold').style.display = 'none';
       document.getElementById('inputWizard').style.display = 'none';
@@ -1919,7 +1945,6 @@ savePlanValue(
       const queryParamURL = `OptimizeRoth.html?currentAge=${age}&retireAge=${retire}&pretax=${rawPretaxMap}&geoPref=${selectedGeo}&primaryConcern=${selectedConcern}`;
       window.location.href = queryParamURL;
     }
-
   </script>
 </body>
 </html>
