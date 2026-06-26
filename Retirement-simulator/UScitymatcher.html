@@ -47,87 +47,195 @@
   --ink:#12213f;--muted:#65748a;--bg:#f6f8fc;--card:#fff;--line:#dfe5ef;--blue:#2563eb;--navy:#111827;--gold:#f4b942;--green:#15803d;--red:#dc2626;--orange:#ea580c;--violet:#7c3aed;--shadow:0 18px 50px rgba(18,33,61,.12);--radius:24px;
 }
 *{box-sizing:border-box}
-   /* --- PREMIUM TOP NAVIGATION STYLES --- */
-.global-header {
-    background-color: #0B132B; /* Premium Dark Navy to match your simulator bar */
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.75rem 2rem;
-    border-bottom: 1px solid #1E293B;
-    width: 100%;
-    box-sizing: border-box;
-}
+    /* GLOBAL HEADER POSITIONING AND HIGH STACKING INDEX Context */
+    .global-header {
+      background-color: #0B132B; 
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 2.25rem; /* Slightly tightened padding */
+      border-bottom: 1px solid #1E293B;
+      width: 100%;
+      box-sizing: border-box;
+      position: relative; /* ◄ Establish containing block for the absolute mega dropdown */
+      z-index: 1001;      /* ◄ Override the 100 z-index sticky topnav bar context */
+    }
 
-/* Remove default bullet points and stack horizontally */
-.top-nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+    /* FORCED LIST ITEM ROW PACKING TO PREVENT VERTICAL STACKING BLOCKS */
+    .top-nav-links {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center;
+      gap:1.25rem; /* Adjusted gap */
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
 
-.top-nav-links li {
-    margin: 0;
-    padding: 0;
-}
+    .top-nav-links a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.95rem; /* ◄ Adjusted from 1.425rem (10% smaller) */
+      font-weight: 500;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
 
-.top-nav-links a {
-    color: #94A3B8;
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: color 0.2s;
-}
+    .top-nav-links a:hover, .top-nav-links a.active {
+      color: white;
+    }
 
-.top-nav-links a:hover, .top-nav-links a.active {
-    color: white;
-}
+    .logo {
+      font-size: 1.45rem; /* ◄ Adjusted from 2rem (10% smaller) */
+      font-weight: 800;
+      color: white;
+      text-decoration: none;
+      letter-spacing: -0.04em;
+    }
 
-.logo {
-    font-size: 1.35rem;
-    font-weight: 800;
-    color: white;
-    text-decoration: none;
-    letter-spacing: -0.04em;
-}
+    .logo span {
+      color: #02B17D; 
+    }
 
-.logo span {
-    color: #02B17D; /* Brand Mint Green */
-}
+    .search-container {
+      position: relative;
+      max-width: 400px; /* Adjusted container width */
+      width: 100%;
+    }
 
-/* Fix the Search Container & Input sizing */
-.search-container {
-    position: relative;
-    max-width: 300px;
-    width: 100%;
-}
+    .search-input {
+      width: 100%;
+      background-color: #1E293B;
+      border: 1px solid #334155;
+      color: white;
+      padding: 0.65rem 1.25rem 0.65rem 3rem; /* Adjusted padding */
+      border-radius: 8px;
+      font-size: 0.9rem; /* ◄ Adjusted from 1.3125rem (10% smaller) */
+    }
 
-.search-container form {
-    width: 100%;
-}
+    /* CORRECT HORIZONTAL TOP NAV FLEX MATRIX */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #0f172a;
+      display: flex;
+      align-items: center;
+      padding: 0 38px;
+      height: 70px; /* Adjusted height */
+      box-shadow: 0 2px 8px rgba(0,0,0,.18);
+    }
+    
+    .topnav-links {
+      display: flex;
+      flex-direction: row;
+      gap: 4px;
+      align-items: center;
+      width: 100%;
+      position: relative;
+    }
+    
+    .topnav-link {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 18.9px; /* ◄ Adjusted from 21px (10% smaller) */
+      font-weight: 555;
+      padding: 8px 18px;
+      border-radius: 8px;
+      transition: background .15s, color .15s;
+      white-space: nowrap;
+    }
+    
+    .topnav-link:hover {
+      background: rgba(255,255,255,.08);
+      color: #fff;
+    }
+    
+    .topnav-link.active {
+      background: rgba(96,165,250,.15);
+      color: #60a5fa;
+    }
+    
+    .topnav-divider {
+      width: 1px;
+      height: 32px; /* Adjusted divider */
+      background: rgba(255,255,255,.1);
+      margin: 0 10px;
+    }
 
-.search-icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #64748b;
-    pointer-events: none;
-    z-index: 2;
-}
+    /* VIEWPONT-CENTERED FLUID MEGA DROPDOWN BOX */
+    .mega-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 50%;                     
+      transform: translateX(-50%) translateY(12px); 
+      width: 95vw;                   
+      max-width: 1240px; /* Adjusted width */
+      background: white;
+      border: 1px solid var(--border); 
+      border-radius: 1rem;
+      box-shadow: 0 22px 30px -5px rgba(0, 0, 0, 0.16), 0 12px 12px -5px rgba(0, 0, 0, 0.05);
+      padding: 3.25rem; /* Adjusted padding */
+      display: grid !important;      
+      grid-template-columns: 1.1fr 2.9fr; 
+      gap: 3.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+      z-index: 2000; 
+      box-sizing: border-box;
+    }
 
-.search-input {
-    width: 100%;
-    background-color: #1E293B;
-    border: 1px solid #334155;
-    color: white;
-    padding: 0.5rem 1rem 0.5rem 2.5rem;
-    border-radius: 6px;
-    font-size: 0.875rem;
-}
+    /* Keep centering properties intact on hover triggers */
+    .dropdown-trigger:hover .mega-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+  
+    /* RIGHT COLUMN LINKS SUB-GRID */
+    .links-matrix {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem 1.75rem; /* Adjusted spacing */
+    }
+
+    .dropdown-column h4 {
+      color: var(--text); 
+      font-size: 1.215rem; /* ◄ Adjusted from 1.35rem (10% smaller) */
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .dropdown-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem; /* Adjusted spacing */
+    }
+
+    .dropdown-column ul a {
+      color: var(--muted) !important; 
+      font-size: 0.95 rem; /* ◄ Adjusted from 1.275rem (10% smaller) */
+      font-weight: 500;
+      padding: 0;
+    }
+
+    .dropdown-column ul a:hover {
+      color: var(--emerald) !important; 
+    }
+
+    /* Let dropdown anchor align to .global-header container for perfect center horizontal align */
+    .dropdown-trigger {
+      position: static;
+    }
   body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.topbar{height:8px;background:linear-gradient(90deg,#b91c1c,#fff,#1d4ed8)}
 .hub-nav{position:sticky;top:0;z-index:50;background:#111827;color:#fff;border-bottom:1px solid rgba(255,255,255,.14)}.hub-wrap{width:min(1180px,94%);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0;flex-wrap:wrap}.hub-title{font-weight:950;color:#fff;text-decoration:none;font-size:1.04rem}.hub-title span{color:var(--gold)}.hub-tabs{display:flex;gap:10px;flex-wrap:wrap}.hub-tabs a{color:#eaf0ff;text-decoration:none;font-weight:900;font-size:.9rem;padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}.hub-tabs a:hover{background:rgba(255,255,255,.18)}.hub-tabs .active{background:var(--gold);color:#1a1200;border-color:var(--gold)}
 .hero{position:relative;overflow:hidden;background:#0b1220}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,20,40,.92),rgba(10,20,40,.67),rgba(10,20,40,.25)),url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=80') center/cover no-repeat;filter:saturate(1.05)}.hero-inner{position:relative;z-index:1;width:min(1180px,94%);margin:auto;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;min-height:560px;padding:64px 0}.badge{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.27);color:#fff;padding:9px 14px;border-radius:999px;font-weight:800;backdrop-filter:blur(8px)}h1{font-size:clamp(2.4rem,5vw,4.8rem);line-height:.98;color:#fff;margin:18px 0;letter-spacing:-.055em}.hero p{color:#e8edf7;font-size:1.15rem;max-width:760px}.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 17px;border-radius:14px;font-weight:900;border:0;cursor:pointer;text-decoration:none}.btn.primary{background:var(--gold);color:#1a1200}.btn.secondary{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.35);color:#fff}.btn.dark{background:var(--ink);color:#fff}.snapshot{background:rgba(255,255,255,.93);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;backdrop-filter:blur(10px)}.snapshot h2{margin:0 0 14px;font-size:1.45rem}.score-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.metric{background:#f8faff;border:1px solid var(--line);border-radius:16px;padding:14px}.metric strong{display:block;font-size:1.35rem;color:var(--blue);line-height:1.05}.metric span{font-size:.82rem;color:var(--muted);font-weight:800}.verdict{margin-top:16px;background:#ecfdf3;border:1px solid #bbf7d0;color:#14532d;border-radius:16px;padding:14px;font-weight:800}
@@ -142,17 +250,369 @@ main{width:min(1180px,94%);margin:34px auto 80px}.intro-grid{display:grid;grid-t
 </style>
 </head>
 <body>
-<div class="topbar"></div>
-<nav class="hub-nav">
-  <div class="hub-wrap">
-    <a class="hub-title" href="OptimizeRoth.html">Retirement <span>Simulator</span></a>
-    <div class="hub-tabs">
-      <a href="OptimizeRoth.html#intro">Introduction</a>
-      <a href="OptimizeRoth.html">Decision tree dashboard</a>
-      <a href="RetiringOverseas.html">Retiring Overseas</a>
-      <a class="active" href="UScitymatcher.html">U.S. City Matcher</a>
-        <a class="active" href="cost_for_65+.html">Medical cost for retirees 65+</a>
-    </div>
+ <!-- Top Global Directory Header -->
+  <header class="global-header">
+    <a href="/" class="logo">Wealth<span>Landing</span></a>
+    <nav aria-label="Global Main Directory">
+      <ul class="top-nav-links">
+        
+        <!-- DROP-DOWN 1: OVERVIEW -->
+        <li class="dropdown-trigger">
+          <a href="#" class="active font-bold text-white">Overview <span class="text-[14px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
+              <div class="space-y-3">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Overview</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Your primary workspace baseline dashboard. Track targets, access planning workflows, and monitor active signals.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" onclick="goToStep(1)" class="text-slate-900 font-bold text-sm inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Start Diagnostic Tool <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-xs text-slate-400 mt-1">Review onboarding scores and map your baseline variables.</p>
+              </div>
+            </div>
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>🚀 Start Here</h4>
+                <ul>
+                  <li><a href="#" onclick="goToStep(1)">Financial Diagnostic</a></li>
+                  <li><a href="#" onclick="goToStep(3)">Wealth Score Tracker</a></li>
+                  <li><a href="/">Personal Dashboard</a></li>
+                  <li><a href="#">My Custom Roadmap</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🌟 Popular Journeys</h4>
+                <ul>
+                  <li><a href="#">Build My First Million</a></li>
+                  <li><a href="#">Early Retirement Strategy</a></li>
+                  <li><a href="#">Family Legacy Structures</a></li>
+                  <li><a href="#">Retirement Odyssey Hub</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>⏱️ Progress Framework</h4>
+                <ul>
+                  <li><a href="#">Latest Estimators</a></li>
+                  <li><a href="#">Core Strategic Guides</a></li>
+                  <li><a href="Retirement_Master_Plan.html">Resume Master Plan</a></li>
+                  <li><a href="#">Resume Transition Plan</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 2: BUILD WEALTH -->
+        <li class="dropdown-trigger">
+          <a href="#" class="active font-bold text-white">Build Wealth <span class="text-[14px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
+              <div class="space-y-3">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Build Wealth</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Optimized cash flow architectures, active career negotiation parameters, and systematic credit rewards optimization.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" class="text-slate-900 font-bold text-sm inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Explore Cash Flow Tactics <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-xs text-slate-400 mt-1">Discover strategic frameworks to accelerate personal savings rates.</p>
+              </div>
+            </div>
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>💼 Income Optimization</h4>
+                <ul>
+                  <li><a href="#">Salary Negotiation Rules</a></li>
+                  <li><a href="#">Career ROI Strategy</a></li>
+                  <li><a href="#">Side Business Design</a></li>
+                  <li><a href="#">Active Entrepreneurship</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>💵 Cash Flow & Credit</h4>
+                <ul>
+                  <li><a href="#">Budget Optimization</a></li>
+                  <li><a href="#">High-Yield Savings & Banking</a></li>
+                  <li><a href="#">Emergency Reserves Audit</a></li>
+                  <li><a href="#">Travel Hacking Protocols</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🛡️ Taxes & Tools</h4>
+                <ul>
+                  <li><a href="#">Tax Bracket Minimization</a></li>
+                  <li><a href="#">HSA & FSA Maximizers</a></li>
+                  <li><a href="#">Credit Card Rewards Optimizer</a></li>
+                  <li><a href="#">Dynamic Cash Flow Planner</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 3: GROW WEALTH -->
+        <li class="dropdown-trigger">
+          <a href="#" class="active font-bold text-white">Grow Wealth <span class="text-[14px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
+              <div class="space-y-3">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Grow Wealth</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Harness compounding index allocations, explore tax-insulated Roth conversions, and evaluate cash-producing real estate.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" class="text-slate-900 font-bold text-sm inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Review Growth Blueprints <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-xs text-slate-400 mt-1">Construct long-term automated investment models.</p>
+              </div>
+            </div>
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>📈 Asset Allocation</h4>
+                <ul>
+                  <li><a href="#">Index Investing & ETFs</a></li>
+                  <li><a href="#">Portfolio Optimization</a></li>
+                  <li><a href="#">Modern Portfolio Design</a></li>
+                  <li><a href="OptimizeRoth.html">Roth Conversions & Tax-Loss</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🏡 Real Estate & Leverage</h4>
+                <ul>
+                  <li><a href="#">Rental Property Sourcing</a></li>
+                  <li><a href="#">REIT & Index Allocation</a></li>
+                  <li><a href="#">House Hacking Blueprint</a></li>
+                  <li><a href="#">Mortgage Strategy & Margin</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>⚙️ Interactive Tools</h4>
+                <ul>
+                  <li><a href="OptimizeRoth.html">Retirement Strategy Engine</a></li>
+                  <li><a href="#">Advanced Portfolio Simulator</a></li>
+                  <li><a href="#">Real Estate Income Analyzer</a></li>
+                  <li><a href="#">Withdrawal Sequencing Modeler</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 4: PROTECT WEALTH -->
+        <li class="dropdown-trigger">
+          <a href="#" class="active font-bold text-white">Protect Wealth <span class="text-[14px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
+              <div class="space-y-3">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Protect Wealth</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Shield your net worth from sequence risk, structural tax drag, medical surcharges, and asset litigation.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" class="text-slate-900 font-bold text-sm inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Audit Asset Protections <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-xs text-slate-400 mt-1">Review legal structures and risk metrics.</p>
+              </div>
+            </div>
+
+            <!-- RIGHT COLUMN: MULTI-COLUMN SECTIONS ACCORDING TO SYSTEM CONFIGURATION -->
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>🏥 Health & Insurance</h4>
+                <ul>
+                  <li><a href="cost_for_65+.html">Medicare Optimization</a></li>
+                  <li><a href="#">Global Medical Coverage</a></li>
+                  <li><a href="#">ACA Subsidy Bridge Math</a></li>
+                  <li><a href="#">Umbrella & Disability Policies</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🛡️ Estate basics & Trusts</h4>
+                <ul>
+                  <li><a href="#">Asset Protection Basics</a></li>
+                  <li><a href="#">Irrevocable Trust Vehicles</a></li>
+                  <li><a href="#">Beneficiary Nominations</a></li>
+                  <li><a href="#">Digital Cybersecurity Audits</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>📉 Risk Management</h4>
+                <ul>
+                  <li><a href="#">Sequence of Returns Risks</a></li>
+                  <li><a href="#">Inflation Protection Plans</a></li>
+                  <li><a href="cost_for_65+.html">Interactive Healthcare Planner</a></li>
+                  <li><a href="#">LTC Surcharge Analyzer</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 5: DESIGN YOUR LIFE -->
+        <li class="dropdown-trigger">
+          <a href="#" class="active font-bold text-white">Design Your Life <span class="text-[14px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
+              <div class="space-y-3">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Design Your Life</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Map your life transition, compare domestic US states against overseas tax shelters, and design lifestyle pathways.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" class="text-slate-900 font-bold text-sm inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Design Life Roadmap <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-xs text-slate-400 mt-1">Harness geographic arbitrage scenarios.</p>
+              </div>
+            </div>
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>🗺️ Retirement Planning</h4>
+                <ul>
+                  <li><a href="RetirementHub.html">Retirement Blueprint Map</a></li>
+                  <li><a href="Retirement_Master_Plan.html">The Master Plan Module</a></li>
+                  <li><a href="#">Transition Workspace</a></li>
+                </ul>
+              </div>
+          <div class="dropdown-column">
+                <h4>✈️ Location Arbitrage</h4>
+               <ul>
+                  <li><a href="UScitymatcher.html">US City Matcher Tool</a></li>
+                  <li><a href="RetiringOverseas.html">Overseas Matcher Tool</a></li>
+                  <li><a href="#">Geographic Cost Indexes</a></li>
+                  <li><a href="#">Digital Nomad Infrastructure</a></li>
+                </ul> 
+              </div>
+              <div class="dropdown-column">
+                <h4>⚙️ Interactive Tools</h4>
+                <ul>
+                  <li><a href="#">Odyssey Journey Simulator</a></li>
+                  <li><a href="#">Lifestyle Comparison Engine</a></li>
+                  <li><a href="#">Retirement Profile Explorer</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 6: LEGACY -->
+        <li class="dropdown-trigger">
+          <a href="#" class="active font-bold text-white">Legacy <span class="text-[14px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
+              <div class="space-y-3">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Legacy</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Equip descendants with early wealth vehicles, optimize trust structures, and evaluate giving parameters.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" class="text-slate-900 font-bold text-sm inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Build Estate Roadmap <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-xs text-slate-400 mt-1">Pass wealth and knowledge forward cleanly.</p>
+              </div>
+            </div>
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>👶 Children & Family</h4>
+                <ul>
+                  <li><a href="#">529 College Funding Models</a></li>
+                  <li><a href="#">Custodial Roth IRAs</a></li>
+                  <li><a href="#">Building Wealth Early</a></li>
+                  <li><a href="#">Youth Financial Education</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🏰 Estate & Governance</h4>
+                <ul>
+                  <li><a href="#">Trust Structures Blueprint</a></li>
+                  <li><a href="#">Roth IRA Inheritances</a></li>
+                  <li><a href="#">Estate Tax Surcharges</a></li>
+                  <li><a href="#">Charitable Giving & DAFs</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🛠️ Interactive Tools</h4>
+                <ul>
+                  <li><a href="#">Legacy Planner</a></li>
+                  <li><a href="#">Education Funding Calculator</a></li>
+                  <li><a href="#">Generational Wealth Map</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 7: KNOWLEDGE LIBRARY -->
+        <li class="dropdown-trigger">
+          <a href="#" class="active font-bold text-white">Knowledge Library <span class="text-[14px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
+              <div class="space-y-3">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Knowledge Library</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Access our searchable, vetted concepts base. Avoid generalized advisor speak—review strict, logical formulas.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" class="text-slate-900 font-bold text-sm inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Search All Knowledge Base <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-xs text-slate-400 mt-1">Vetted research, calculators, and detailed case studies.</p>
+              </div>
+            </div>
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>💡 By Decision</h4>
+                <ul>
+                  <li><a href="#">Should I retire early?</a></li>
+                  <li><a href="#">Should I buy a rental property?</a></li>
+                  <li><a href="#">Should I convert to a Roth IRA?</a></li>
+                  <li><a href="#">Should I move overseas?</a></li>
+                  <li><a href="#">Should I delay Social Security?</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>⏳ By Life Stage & Topic</h4>
+                <ul>
+                  <li><a href="#">Planning in your 20s & 30s</a></li>
+                  <li><a href="#">Acceleration in your 40s & 50s</a></li>
+                  <li><a href="#">Distribution Models at 60+</a></li>
+                  <li><a href="#">Taxes, Investing & Healthcare</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>📚 Vetted Collections</h4>
+                <ul>
+                  <li><a href="#">Vetted Case Studies</a></li>
+                  <li><a href="#">Systematic Research Papers</a></li>
+                  <li><a href="CelebratingRetirement.html">Real Client Journeys</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    
+    <div class="search-container">
+      <form action="https://www.google.com/search" method="get" target="_blank">
+        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none z-10">🔍</span>
+        <input type="hidden" name="sitesearch" value="wealthlanding.com">
+        <input type="search" name="q" class="search-input" placeholder="Search systems, tools..." aria-label="Search WealthLanding">
+      </form>
   </div>
 </nav>
 <header class="hero">
