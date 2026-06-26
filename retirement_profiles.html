@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9JMJJ5CJR4');
+  </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WealthLanding — Retirement Profile Explorer</title>
@@ -642,7 +650,197 @@
             });
         }
     </script>
+ /* GLOBAL HEADER POSITIONING AND HIGH STACKING INDEX Context */
+    .global-header {
+      background-color: #0B132B; 
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 2.25rem; /* Slightly tightened padding */
+      border-bottom: 1px solid #1E293B;
+      width: 100%;
+      box-sizing: border-box;
+      position: relative; /* ◄ Establish containing block for the absolute mega dropdown */
+      z-index: 1001;      /* ◄ Override the 100 z-index sticky topnav bar context */
+    }
 
+    /* FORCED LIST ITEM ROW PACKING TO PREVENT VERTICAL STACKING BLOCKS */
+    .top-nav-links {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center;
+      gap:1.25rem; /* Adjusted gap */
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-nav-links a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.95rem; /* ◄ Adjusted from 1.425rem (10% smaller) */
+      font-weight: 500;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .top-nav-links a:hover, .top-nav-links a.active {
+      color: white;
+    }
+
+    .logo {
+      font-size: 1.45rem; /* ◄ Adjusted from 2rem (10% smaller) */
+      font-weight: 800;
+      color: white;
+      text-decoration: none;
+      letter-spacing: -0.04em;
+    }
+
+    .logo span {
+      color: #02B17D; 
+    }
+
+    .search-container {
+      position: relative;
+      max-width: 400px; /* Adjusted container width */
+      width: 100%;
+    }
+
+    .search-input {
+      width: 100%;
+      background-color: #1E293B;
+      border: 1px solid #334155;
+      color: white;
+      padding: 0.65rem 1.25rem 0.65rem 3rem; /* Adjusted padding */
+      border-radius: 8px;
+      font-size: 0.9rem; /* ◄ Adjusted from 1.3125rem (10% smaller) */
+    }
+
+    /* CORRECT HORIZONTAL TOP NAV FLEX MATRIX */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #0f172a;
+      display: flex;
+      align-items: center;
+      padding: 0 38px;
+      height: 70px; /* Adjusted height */
+      box-shadow: 0 2px 8px rgba(0,0,0,.18);
+    }
+    
+    .topnav-links {
+      display: flex;
+      flex-direction: row;
+      gap: 4px;
+      align-items: center;
+      width: 100%;
+      position: relative;
+    }
+    
+    .topnav-link {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 18.9px; /* ◄ Adjusted from 21px (10% smaller) */
+      font-weight: 555;
+      padding: 8px 18px;
+      border-radius: 8px;
+      transition: background .15s, color .15s;
+      white-space: nowrap;
+    }
+    
+    .topnav-link:hover {
+      background: rgba(255,255,255,.08);
+      color: #fff;
+    }
+    
+    .topnav-link.active {
+      background: rgba(96,165,250,.15);
+      color: #60a5fa;
+    }
+    
+    .topnav-divider {
+      width: 1px;
+      height: 32px; /* Adjusted divider */
+      background: rgba(255,255,255,.1);
+      margin: 0 10px;
+    }
+
+    /* VIEWPONT-CENTERED FLUID MEGA DROPDOWN BOX */
+    .mega-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 50%;                     
+      transform: translateX(-50%) translateY(12px); 
+      width: 95vw;                   
+      max-width: 1240px; /* Adjusted width */
+      background: white;
+      border: 1px solid var(--border); 
+      border-radius: 1rem;
+      box-shadow: 0 22px 30px -5px rgba(0, 0, 0, 0.16), 0 12px 12px -5px rgba(0, 0, 0, 0.05);
+      padding: 3.25rem; /* Adjusted padding */
+      display: grid !important;      
+      grid-template-columns: 1.1fr 2.9fr; 
+      gap: 3.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+      z-index: 2000; 
+      box-sizing: border-box;
+    }
+
+    /* Keep centering properties intact on hover triggers */
+    .dropdown-trigger:hover .mega-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+  
+    /* RIGHT COLUMN LINKS SUB-GRID */
+    .links-matrix {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem 1.75rem; /* Adjusted spacing */
+    }
+
+    .dropdown-column h4 {
+      color: var(--text); 
+      font-size: 1.215rem; /* ◄ Adjusted from 1.35rem (10% smaller) */
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .dropdown-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem; /* Adjusted spacing */
+    }
+
+    .dropdown-column ul a {
+      color: var(--muted) !important; 
+      font-size: 0.95 rem; /* ◄ Adjusted from 1.275rem (10% smaller) */
+      font-weight: 500;
+      padding: 0;
+    }
+
+    .dropdown-column ul a:hover {
+      color: var(--emerald) !important; 
+    }
+
+    /* Let dropdown anchor align to .global-header container for perfect center horizontal align */
+    .dropdown-trigger {
+      position: static;
+    }
+  </style>
+</head>
     <!-- Sticky Navigation -->
     <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/50">
         <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
