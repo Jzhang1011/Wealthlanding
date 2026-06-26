@@ -4,8 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Retiring overseas | Wealth Landing</title>
-  <meta name="description" content="Compare healthcare costs, taxes, and retirement outcomes across countries with Wealth Landing's retirement planning tools in a foreign city">
-  
+  <meta name="description" content="Compare healthcare costs, taxes, and retirement outcomes across countries with Wealth Landing's retirement planning tools in a foreign city" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -14,16 +15,54 @@
     gtag('config', 'G-9JMJJ5CJR4');
   </script>
 
+  <!-- Google Fonts: Inter & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <style>
-    :root{
-      --ink:#101827;--muted:#607087;--gold:#f4b942;--blue:#214c97;--red:#d84b45;--green:#1f7a4d;--orange:#e87d24;
-      --bg:#f5f7fb;--card:#ffffff;--line:#e4e8f0;--shadow:0 20px 60px rgba(16,24,39,.14);--radius:26px;
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+          }
+        }
+      }
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+  </script>
+
+  <style>
+    :root {
+      --ink: #101827;
+      --muted: #607087;
+      --gold: #f4b942;
+      --blue: #214c97;
+      --red: #d84b45;
+      --green: #1f7a4d;
+      --orange: #e87d24;
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --line: #e4e8f0;
+      --shadow: 0 20px 60px rgba(16, 24, 39, 0.14);
+      --radius: 26px;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --emerald: #10b981;
+    }
     
+    * {
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+
     /* GLOBAL HEADER POSITIONING AND HIGH STACKING INDEX Context */
     .global-header {
       background-color: #0B132B; 
@@ -35,8 +74,9 @@
       border-bottom: 1px solid #1E293B;
       width: 100%;
       box-sizing: border-box;
-      position: relative;
-      z-index: 1001;
+      position: relative; /* Establish containing block for the absolute mega dropdown */
+      z-index: 1001;      /* Override the 100 z-index sticky topnav context */
+      font-family: 'Inter', sans-serif;
     }
 
     /* FORCED LIST ITEM ROW PACKING TO PREVENT VERTICAL STACKING BLOCKS */
@@ -44,7 +84,7 @@
       display: flex !important;
       flex-direction: row !important;
       align-items: center;
-      gap:1.25rem;
+      gap: 1.25rem;
       list-style-type: none;
       margin: 0;
       padding: 0;
@@ -91,57 +131,7 @@
       font-size: 0.9rem;
     }
 
-    /* CORRECT HORIZONTAL TOP NAV FLEX MATRIX */
-    .topnav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: #0f172a;
-      display: flex;
-      align-items: center;
-      padding: 0 38px;
-      height: 70px;
-      box-shadow: 0 2px 8px rgba(0,0,0,.18);
-    }
-    
-    .topnav-links {
-      display: flex;
-      flex-direction: row;
-      gap: 4px;
-      align-items: center;
-      width: 100%;
-      position: relative;
-    }
-    
-    .topnav-link {
-      color: #94a3b8;
-      text-decoration: none;
-      font-size: 18.9px;
-      font-weight: 555;
-      padding: 8px 18px;
-      border-radius: 8px;
-      transition: background .15s, color .15s;
-      white-space: nowrap;
-    }
-    
-    .topnav-link:hover {
-      background: rgba(255,255,255,.08);
-      color: #fff;
-    }
-    
-    .topnav-link.active {
-      background: rgba(96,165,250,.15);
-      color: #60a5fa;
-    }
-    
-    .topnav-divider {
-      width: 1px;
-      height: 32px;
-      background: rgba(255,255,255,.1);
-      margin: 0 10px;
-    }
-
-    /* VIEWPONT-CENTERED FLUID MEGA DROPDOWN BOX */
+    /* VIEWPORT-CENTERED FLUID MEGA DROPDOWN BOX */
     .mega-dropdown {
       position: absolute;
       top: 100%;
@@ -164,12 +154,14 @@
       box-sizing: border-box;
     }
 
+    /* Keep centering properties intact on hover triggers */
     .dropdown-trigger:hover .mega-dropdown {
       opacity: 1;
       visibility: visible;
       transform: translateX(-50%) translateY(0);
     }
   
+    /* RIGHT COLUMN LINKS SUB-GRID */
     .links-matrix {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -210,52 +202,798 @@
     .dropdown-trigger {
       position: static;
     }
-    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
-    a{color:inherit;text-decoration:none}
+
+    /* GLOBAL TYPOGRAPHY UNIFORMITY SCHEME */
+    body {
+      margin: 0;
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+    }
     
-    .hero{position:relative;overflow:hidden;background:#0b1020;color:#fff}
-    .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 20%,rgba(244,185,66,.24),transparent 30%),radial-gradient(circle at 80% 10%,rgba(78,124,216,.25),transparent 28%),linear-gradient(135deg,rgba(9,18,39,.98),rgba(21,38,78,.92)),url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;filter:saturate(1.05)}
-    .hero-inner{position:relative;z-index:1;width:min(1200px,94%);margin:auto;min-height:520px;display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;padding:72px 0}
-    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);padding:9px 14px;border-radius:999px;font-weight:800;backdrop-filter:blur(10px)}
-    h1{font-size:clamp(2.4rem,5.2vw,5.4rem);line-height:.98;letter-spacing:-.055em;margin:18px 0}.hero p{color:#e5ecfa;font-size:1.16rem;max-width:760px}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:15px;padding:14px 18px;font-weight:950;cursor:pointer}.btn.primary{background:var(--gold);color:#1a1200}.btn.secondary{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff}
-    .hero-card{background:rgba(255,255,255,.94);color:var(--ink);border:1px solid rgba(255,255,255,.5);box-shadow:var(--shadow);border-radius:var(--radius);padding:26px;backdrop-filter:blur(14px)}
-    .hero-card h2{margin:0 0 12px}.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stat{background:#f7f9fd;border:1px solid var(--line);border-radius:18px;padding:15px}.stat b{display:block;color:var(--blue);font-size:1.6rem}.stat span{color:var(--muted);font-weight:800;font-size:.85rem}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Unified Hero Display Title (Sans Serif) */
+    h1 {
+      font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 800; /* Ultra bold for premium editorial presentation */
+      font-size: clamp(2.4rem, 4.8vw, 5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 0 0 18px 0;
+    }
+
+    /* Editorial Display Section Headers */
+    h2, h3, .editorial-heading {
+      font-family: 'Playfair Display', Georgia, Cambria, serif;
+      font-weight: 700;
+    }
     
-    .matcher-flow{display:grid;gap:10px;margin-top:16px}.flow-step{position:relative;display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:center;background:#f7f9fd;border:1px solid var(--line);border-radius:18px;padding:13px 14px;box-shadow:0 8px 18px rgba(16,24,39,.05)}.flow-step:not(:last-child){margin-bottom:18px}.flow-step:not(:last-child)::after{content:"↓";position:absolute;left:50%;bottom:-27px;transform:translateX(-50%);width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#1a1200;font-weight:1000;box-shadow:0 8px 18px rgba(244,185,66,.32)}.flow-num{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:#10213f;color:#fff;font-size:1.15rem;font-weight:1000}.flow-copy b{display:block;font-size:1rem;color:var(--ink)}.flow-copy span{display:block;color:var(--muted);font-size:.84rem;font-weight:750;line-height:1.35;margin-top:2px}.flow-step.final{background:#fff8e8;border-color:#f4d58a}.flow-step.final .flow-num{background:var(--gold);color:#1a1200}.flow-step.final .flow-copy b{color:#1a1200}
+    .topbar {
+      height: 10px;
+      background: linear-gradient(90deg, #c1121f, #fff, #0b3d91);
+    }
 
-    main{width:min(1200px,94%);margin:34px auto 80px}.layout{display:grid;grid-template-columns:2fr .92fr;gap:28px;align-items:start}.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 12px 36px rgba(16,24,39,.07);padding:26px;margin-bottom:24px}.panel h2{font-size:clamp(1.7rem,3vw,2.6rem);line-height:1.05;margin:0 0 10px;letter-spacing:-.035em}.kicker{font-weight:950;color:var(--red);text-transform:uppercase;letter-spacing:.08em;font-size:.78rem}.muted{color:var(--muted)}
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: #0b1020;
+      color: #fff;
+    }
+    
+    .hero:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 15% 20%, rgba(244, 185, 66, 0.24), transparent 30%),
+                  radial-gradient(circle at 80% 10%, rgba(78, 124, 216, 0.25), transparent 28%),
+                  linear-gradient(135deg, rgba(9, 18, 39, 0.98), rgba(21, 38, 78, 0.92)),
+                  url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+      filter: saturate(1.05);
+    }
+    
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(1200px, 94%);
+      margin: auto;
+      min-height: 520px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: center;
+      padding: 72px 0;
+    }
+    
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      backdrop-filter: blur(10px);
+      /* Unified Badge Font Stack to Inter */
+      font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem; /* Clean vertical baseline separation */
+    }
+    
+    .hero p {
+      color: #e5ecfa;
+      font-size: 1.16rem;
+      max-width: 760px;
+    }
+    
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 15px;
+      padding: 14px 18px;
+      font-weight: 950;
+      cursor: pointer;
+    }
+    
+    .btn.primary {
+      background: var(--gold);
+      color: #1a1200;
+    }
+    
+    .btn.secondary {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #fff;
+    }
+    
+    .hero-card {
+      background: rgba(255, 255, 255, 0.94);
+      color: var(--ink);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 26px;
+      backdrop-filter: blur(14px);
+    }
+    
+    .hero-card h2 {
+      margin: 0 0 12px;
+    }
+    
+    .matcher-flow {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    
+    .flow-step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: center;
+      background: #f7f9fd;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 13px 14px;
+      box-shadow: 0 8px 18px rgba(16, 24, 39, 0.05);
+    }
+    
+    .flow-step:not(:last-child) {
+      margin-bottom: 18px;
+    }
+    
+    .flow-step:not(:last-child)::after {
+      content: "↓";
+      position: absolute;
+      left: 50%;
+      bottom: -27px;
+      transform: translateX(-50%);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--gold);
+      color: #1a1200;
+      font-weight: 1000;
+      box-shadow: 0 8px 18px rgba(244, 185, 66, 0.32);
+    }
+    
+    .flow-num {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: #10213f;
+      color: #fff;
+      font-size: 1.15rem;
+      font-weight: 700;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    
+    .flow-copy b {
+      display: block;
+      font-size: 1rem;
+      color: var(--ink);
+    }
+    
+    .flow-copy span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-top: 2px;
+    }
+    
+    .flow-step.final {
+      background: #fff8e8;
+      border-color: #f4d58a;
+    }
+    
+    .flow-step.final .flow-num {
+      background: var(--gold);
+      color: #1a1200;
+    }
+    
+    .flow-step.final .flow-copy b {
+      color: #1a1200;
+    }
 
-    .progress{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 8px}.step{position:relative;border:1px solid var(--line);background:#f8faff;border-radius:18px;padding:12px 12px 12px 42px;font-weight:900;color:#5b667a}.step:before{content:attr(data-step);position:absolute;left:12px;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#dde6f6;color:#214c97;font-size:.78rem;font-weight:950}.step.active{background:#fff8e8;border-color:#f4d58a;color:#1f2937;box-shadow:0 10px 22px rgba(244,185,66,.18)}.step.active:before{background:var(--gold);color:#1a1200}.step.done{background:#edf8f1;color:#145c38;border-color:#c8ead6}.step.done:before{background:var(--green);color:#fff}
+    main {
+      width: min(1200px, 94%);
+      margin: 34px auto 80px;
+    }
+    
+    .layout {
+      display: grid;
+      grid-template-columns: 2fr 0.92fr;
+      gap: 28px;
+      align-items: start;
+    }
+    
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 36px rgba(16, 24, 39, 0.07);
+      padding: 26px;
+      margin-bottom: 24px;
+    }
+    
+    .panel h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      line-height: 1.15;
+      margin: 0 0 10px;
+      letter-spacing: -0.01em;
+    }
+    
+    .kicker {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-weight: 700;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.76rem;
+    }
+    
+    .muted {
+      color: var(--muted);
+    }
 
-    .question{display:none;animation:fadeUp .42s ease both}.question.active{display:block}.question h3{font-size:1.55rem;margin:18px 0 8px}.options{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.option{border:1px solid var(--line);background:#fbfcff;border-radius:20px;padding:18px;text-align:left;cursor:pointer;transition:.22s ease;min-height:126px}.option:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(16,24,39,.12);border-color:#cfd8ea}.option.selected{background:#10213f;color:#fff;border-color:#10213f;box-shadow:0 20px 48px rgba(16,33,63,.22)}.option b{display:block;font-size:1.08rem;margin-bottom:6px}.option span{color:var(--muted);font-weight:700}.option.selected span{color:#dbe7ff}.range-wrap{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;margin-top:22px}.range-card{background:#f8faff;border:1px solid var(--line);border-radius:22px;padding:20px}.budget-value{font-size:2.7rem;font-weight:1000;color:var(--blue);letter-spacing:-.04em}.range-card input{width:100%;accent-color:var(--blue)}.range-labels{display:flex;justify-content:space-between;color:var(--muted);font-size:.82rem;font-weight:800;margin-top:8px}.field{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px}.field input{border:0;outline:0;font-size:1.05rem;font-weight:900;width:130px;color:var(--ink)}
+    .progress {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 18px 0 8px;
+    }
+    
+    .step {
+      position: relative;
+      border: 1px solid var(--line);
+      background: #f8faff;
+      border-radius: 18px;
+      padding: 12px 12px 12px 42px;
+      font-weight: 800;
+      color: #5b667a;
+    }
+    
+    .step:before {
+      content: attr(data-step);
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #dde6f6;
+      color: #214c97;
+      font-size: 0.78rem;
+      font-weight: 700;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    
+    .step.active {
+      background: #fff8e8;
+      border-color: #f4d58a;
+      color: #1f2937;
+      box-shadow: 0 10px 22px rgba(244, 185, 66, 0.18);
+    }
+    
+    .step.active:before {
+      background: var(--gold);
+      color: #1a1200;
+    }
+    
+    .step.done {
+      background: #edf8f1;
+      color: #145c38;
+      border-color: #c8ead6;
+    }
+    
+    .step.done:before {
+      background: var(--green);
+      color: #fff;
+    }
 
-    .flag-cloud{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;margin-top:18px;min-height:160px}.city-card{position:relative;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;box-shadow:0 10px 22px rgba(16,24,39,.06);animation:pop .35s ease both;transition:.25s ease}.city-card:hover{transform:translateY(-5px);box-shadow:0 18px 42px rgba(16,24,39,.12)}.city-card.filtered-out{opacity:.18;transform:scale(.95);filter:grayscale(1)}.flag{font-size:2.3rem;display:inline-block;filter:drop-shadow(0 6px 8px rgba(0,0,0,.12))}.city-card h4{margin:8px 0 4px;font-size:1.1rem}.city-card p{margin:0;color:var(--muted);font-size:.86rem;font-weight:700}.tag-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.tag{font-size:.72rem;font-weight:900;border-radius:999px;padding:4px 8px;background:#eef3ff;color:#214c97}.tag.green{background:#eaf8ef;color:#17633d}.tag.orange{background:#fff2e8;color:#944d00}.tag.red{background:#ffeaec;color:#9b0d18}
+    .question {
+      display: none;
+      animation: fadeUp 0.42s ease both;
+    }
+    
+    .question.active {
+      display: block;
+    }
+    
+    .question h3 {
+      font-size: 1.55rem;
+      margin: 18px 0 8px;
+    }
+    
+    .options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+    
+    .option {
+      border: 1px solid var(--line);
+      background: #fbfcff;
+      border-radius: 20px;
+      padding: 18px;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.22s ease;
+      min-height: 126px;
+    }
+    
+    .option:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 38px rgba(16, 24, 39, 0.12);
+      border-color: #cfd8ea;
+    }
+    
+    .option.selected {
+      background: #10213f;
+      color: #fff;
+      border-color: #10213f;
+      box-shadow: 0 20px 48px rgba(16, 33, 63, 0.22);
+    }
+    
+    .option b {
+      display: block;
+      font-size: 1.08rem;
+      margin-bottom: 6px;
+    }
+    
+    .option span {
+      color: var(--muted);
+      font-weight: 500;
+    }
+    
+    .option.selected span {
+      color: #dbe7ff;
+    }
+    
+    .range-wrap {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+      margin-top: 22px;
+    }
+    
+    .range-card {
+      background: #f8faff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
+    }
+    
+    .budget-value {
+      font-size: 2.7rem;
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: -0.04em;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    
+    .range-card input {
+      width: 100%;
+      accent-color: var(--blue);
+    }
+    
+    .range-labels {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-top: 8px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    
+    .field {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px 14px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    
+    .field input {
+      border: 0;
+      outline: 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      width: 130px;
+      color: var(--ink);
+    }
 
-    .empty-state{grid-column:1/-1;background:#fff8e8;border:1px solid #f4d58a;border-radius:22px;padding:24px;text-align:center;color:#1f2937}.empty-state h3{margin:0 0 6px}.empty-state p{margin:0;color:var(--muted);font-weight:700}
-    .result-header{display:flex;justify-content:space-between;gap:14px;align-items:end;flex-wrap:wrap}.result-count{font-weight:1000;color:var(--blue);font-size:1.15rem}.decision-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.mini-btn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 13px;font-weight:950;cursor:pointer}.mini-btn.primary{background:#10213f;color:#fff;border-color:#10213f}.mini-btn.gold{background:var(--gold);color:#1a1200;border-color:var(--gold)}
+    .flag-cloud {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+      min-height: 160px;
+    }
+    
+    .city-card {
+      position: relative;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 16px;
+      box-shadow: 0 10px 22px rgba(16, 24, 39, 0.06);
+      animation: pop 0.35s ease both;
+      transition: 0.25s ease;
+    }
+    
+    .city-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 42px rgba(16, 24, 39, 0.12);
+    }
+    
+    .flag {
+      font-size: 2.3rem;
+      display: inline-block;
+      filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.12));
+    }
+    
+    .city-card h4 {
+      margin: 8px 0 4px;
+      font-size: 1.1rem;
+      font-family: 'Playfair Display', Georgia, Cambria, serif;
+    }
+    
+    .city-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+    
+    .tag-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 4px 8px;
+      background: #eef3ff;
+      color: #214c97;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    
+    .tag.green {
+      background: #eaf8ef;
+      color: #17633d;
+    }
 
-    .recommendations{display:none}.recommendations.show{display:block;animation:fadeUp .45s ease both}.rec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:16px}.rec{border:1px solid var(--line);border-radius:22px;background:#fbfcff;padding:18px}.rec .flag{font-size:2rem}.rec h3{margin:6px 0}.scoreline{height:9px;border-radius:999px;background:#e6ebf3;overflow:hidden}.scoreline span{display:block;height:100%;background:linear-gradient(90deg,var(--red),var(--gold),var(--green));border-radius:999px}.why{margin-top:12px;color:var(--muted);font-weight:700}
+    .empty-state {
+      grid-column: 1/-1;
+      background: #fff8e8;
+      border: 1px solid #f4d58a;
+      border-radius: 22px;
+      padding: 24px;
+      text-align: center;
+      color: #1f2937;
+    }
+    
+    .empty-state h3 {
+      margin: 0 0 6px;
+    }
+    
+    .empty-state p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    
+    .result-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: end;
+      flex-wrap: wrap;
+    }
+    
+    .result-count {
+      font-weight: 700;
+      color: var(--blue);
+      font-size: 1.15rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    
+    .decision-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    
+    .mini-btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 999px;
+      padding: 10px 13px;
+      font-weight: 950;
+      cursor: pointer;
+    }
+    
+    .mini-btn.primary {
+      background: #10213f;
+      color: #fff;
+      border-color: #10213f;
+    }
+    
+    .mini-btn.gold {
+      background: var(--gold);
+      color: #1a1200;
+      border-color: var(--gold);
+    }
 
-    .side{position:sticky;top:82px}.side-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:20px;margin-bottom:18px;box-shadow:0 12px 30px rgba(16,24,39,.06)}.side-card h3{margin:0 0 8px}.lead{background:linear-gradient(135deg,#101827,#244476);color:#fff}.lead input{width:100%;border:0;border-radius:14px;padding:13px;margin:10px 0;color:#111}.lead button{width:100%;border:0;border-radius:14px;padding:13px;background:var(--gold);font-weight:1000}.criteria-list{display:grid;gap:10px}.criteria{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:10px}.criteria:last-child{border-bottom:0}.criteria b{color:var(--blue)}
-    .path{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.path span{border-radius:999px;background:#f0f4fb;border:1px solid var(--line);padding:7px 10px;font-weight:850;color:#42526a;font-size:.84rem}
+    .recommendations {
+      display: none;
+    }
+    
+    .recommendations.show {
+      display: block;
+      animation: fadeUp 0.45s ease both;
+    }
+    
+    .rec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    
+    .rec {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #fbfcff;
+      padding: 18px;
+    }
+    
+    .rec .flag {
+      font-size: 2rem;
+    }
+    
+    .rec h3 {
+      margin: 6px 0;
+    }
+    
+    .scoreline {
+      height: 9px;
+      border-radius: 999px;
+      background: #e6ebf3;
+      overflow: hidden;
+    }
+    
+    .scoreline span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--red), var(--gold), var(--green));
+      border-radius: 999px;
+    }
+    
+    .why {
+      margin-top: 12px;
+      color: var(--muted);
+      font-weight: 600;
+    }
 
-    .footer{background:#101827;color:#dbe4f4;padding:36px 0}.footer-inner{width:min(1200px,94%);margin:auto}.disclaimer{color:#b9c5da;border-top:1px solid rgba(255,255,255,.12);padding-top:18px;margin-top:18px;font-size:.9rem}
-    .nav-item { position: relative; }
+    .why b {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
 
-    @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes pop{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
-    @media(max-width:930px){.hero-inner,.layout{grid-template-columns:1fr}.side{position:static}.options{grid-template-columns:1fr}.progress{grid-template-columns:1fr 1fr}.range-wrap{grid-template-columns:1fr}.hero-inner{min-height:auto;padding:56px 0}.stat-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:560px){.progress{grid-template-columns:1fr}.stat-grid{grid-template-columns:1fr}.flag-cloud{grid-template-columns:1fr}.budget-value{font-size:2.2rem}}
+    .side {
+      position: sticky;
+      top: 82px;
+    }
+    
+    .side-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 12px 30px rgba(16, 24, 39, 0.06);
+    }
+    
+    .side-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.25rem;
+    }
+    
+    .lead {
+      background: linear-gradient(135deg, #101827, #244476);
+      color: #fff;
+    }
+    
+    .lead input {
+      width: 100%;
+      border: 0;
+      border-radius: 14px;
+      padding: 13px;
+      margin: 10px 0;
+      color: #111;
+    }
+    
+    .lead button {
+      width: 100%;
+      border: 0;
+      border-radius: 14px;
+      padding: 13px;
+      background: var(--gold);
+      font-weight: 1000;
+    }
+    
+    .criteria-list {
+      display: grid;
+      gap: 10px;
+    }
+    
+    .criteria {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 10px;
+    }
+    
+    .criteria:last-child {
+      border-bottom: 0;
+    }
+    
+    .criteria b {
+      color: var(--blue);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-weight: 700;
+    }
+    
+    .path {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    
+    .path span {
+      border-radius: 999px;
+      background: #f0f4fb;
+      border: 1px solid var(--line);
+      padding: 7px 10px;
+      font-weight: 700;
+      color: #42526a;
+      font-size: 0.84rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .footer {
+      background: #101827;
+      color: #dbe4f4;
+      padding: 36px 0;
+    }
+    
+    .footer-inner {
+      width: min(1200px, 94%);
+      margin: auto;
+    }
+    
+    .disclaimer {
+      color: #b9c5da;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 18px;
+      margin-top: 18px;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes pop {
+      from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    
+    @media(max-width:930px) {
+      .hero-inner, .layout {
+        grid-template-columns: 1fr;
+      }
+      .side {
+        position: static;
+      }
+      .options {
+        grid-template-columns: 1fr;
+      }
+      .progress {
+        grid-template-columns: 1fr 1fr;
+      }
+      .range-wrap {
+        grid-template-columns: 1fr;
+      }
+      .hero-inner {
+        min-height: auto;
+        padding: 56px 0;
+      }
+      .stat-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    @media(max-width:560px) {
+      .progress {
+        grid-template-columns: 1fr;
+      }
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+      .flag-cloud {
+        grid-template-columns: 1fr;
+      }
+      .budget-value {
+        font-size: 2.2rem;
+      }
+    }
   </style>
 </head>
 <body>
 
+  <!-- Top Global Directory Header -->
   <header class="global-header">
     <a href="/" class="logo">Wealth<span>Landing</span></a>
     <nav aria-label="Global Main Directory">
       <ul class="top-nav-links">
         
+        <!-- DROP-DOWN 1: OVERVIEW -->
         <li class="dropdown-trigger">
           <a href="#" class="active font-bold text-white">Overview <span class="text-[14px] opacity-70">▼</span></a>
           <div class="mega-dropdown">
@@ -305,6 +1043,7 @@
           </div>
         </li>
 
+        <!-- DROP-DOWN 2: BUILD WEALTH -->
         <li class="dropdown-trigger">
           <a href="#" class="active font-bold text-white">Build Wealth <span class="text-[14px] opacity-70">▼</span></a>
           <div class="mega-dropdown">
@@ -354,6 +1093,7 @@
           </div>
         </li>
 
+        <!-- DROP-DOWN 3: GROW WEALTH -->
         <li class="dropdown-trigger">
           <a href="#" class="active font-bold text-white">Grow Wealth <span class="text-[14px] opacity-70">▼</span></a>
           <div class="mega-dropdown">
@@ -403,6 +1143,7 @@
           </div>
         </li>
 
+        <!-- DROP-DOWN 4: PROTECT WEALTH -->
         <li class="dropdown-trigger">
           <a href="#" class="active font-bold text-white">Protect Wealth <span class="text-[14px] opacity-70">▼</span></a>
           <div class="mega-dropdown">
@@ -421,6 +1162,7 @@
               </div>
             </div>
 
+            <!-- RIGHT COLUMN: MULTI-COLUMN SECTIONS ACCORDING TO SYSTEM CONFIGURATION -->
             <div class="links-matrix text-left">
               <div class="dropdown-column">
                 <h4>🏥 Health & Insurance</h4>
@@ -453,6 +1195,7 @@
           </div>
         </li>
 
+        <!-- DROP-DOWN 5: DESIGN YOUR LIFE -->
         <li class="dropdown-trigger">
           <a href="#" class="active font-bold text-white">Design Your Life <span class="text-[14px] opacity-70">▼</span></a>
           <div class="mega-dropdown">
@@ -500,6 +1243,7 @@
           </div>
         </li>
 
+        <!-- DROP-DOWN 6: LEGACY -->
         <li class="dropdown-trigger">
           <a href="#" class="active font-bold text-white">Legacy <span class="text-[14px] opacity-70">▼</span></a>
           <div class="mega-dropdown">
@@ -548,6 +1292,7 @@
           </div>
         </li>
 
+        <!-- DROP-DOWN 7: KNOWLEDGE LIBRARY -->
         <li class="dropdown-trigger">
           <a href="#" class="active font-bold text-white">Knowledge Library <span class="text-[14px] opacity-70">▼</span></a>
           <div class="mega-dropdown">
@@ -606,7 +1351,7 @@
         <input type="search" name="q" class="search-input" placeholder="Search systems, tools..." aria-label="Search WealthLanding">
       </form>
     </div>
-  </header>
+  </header> <!-- Perfect close of global-header bar -->
 
   <header class="hero">
     <div class="hero-inner">
@@ -646,6 +1391,7 @@
         <div class="kicker">Animated decision tree</div>
         <h2>Start with the constraint that matters most: monthly spend</h2>
         <p class="muted">The cities below use planning ranges from your overseas retirement guide pages. A city qualifies for Step 1 when the selected budget falls within or above the city’s practical planning range.</p>
+        
         <div class="progress" id="progress">
           <div class="step active" data-step="1">Budget</div>
           <div class="step" data-step="2">Lifestyle</div>
@@ -697,7 +1443,7 @@
       <section id="city-results" class="panel">
         <div class="result-header">
           <div><div class="kicker">Live city flags</div><h2>Matching cities</h2><p class="muted" id="resultText">Start with a budget to see which city flags remain. After the final answer, only matched cities are shown.</p></div>
-          <div class="result-count" id="resultCount">16 cities</div>
+          <div class="result-count" id="resultCount">15 cities</div>
         </div>
         <div class="flag-cloud" id="flagCloud"></div>
       </section>
@@ -712,7 +1458,7 @@
     <aside class="side">
       <div class="side-card lead">
         <p>Enter your email to get a full “Overseas Retirement City Scorecard.”</p>
-        <input placeholder="Email address" />
+        <input placeholder="Email address" aria-label="Email address for scorecard" />
         <button>Send my scorecard</button>
       </div>
       <div class="side-card">
@@ -725,7 +1471,7 @@
           <div class="criteria"><span>Budget</span><b id="sideBudget">$4,000</b></div>
           <div class="criteria"><span>Lifestyle</span><b id="sideLifestyle">Not selected</b></div>
           <div class="criteria"><span>Healthcare</span><b id="sideHealth">Not selected</b></div>
-          <div class="criteria"><span>Remaining</span><b id="sideRemaining">16</b></div>
+          <div class="criteria"><span>Remaining</span><b id="sideRemaining">15</b></div>
         </div>
       </div>
     </aside>
@@ -740,150 +1486,241 @@
   </footer>
 
   <script>
-  const cities = [
-    {city:'Bangkok', country:'Thailand', flag:'🇹🇭', lean:2200, comfortable:3500, luxury:5500, max:6500, health:8, link:'https://www.wealthlanding/Retirement-simulator/cities/bangkok.html', profile:'Cost leverage + private hospitals'},
-    {city:'Kuala Lumpur', country:'Malaysia', flag:'🇲🇾', lean:2300, comfortable:3600, luxury:5800, max:6500, health:8.5, link:'https://www.wealthlanding/Retirement-simulator/cities/kuala_lumpur.html', profile:'English-friendly + medical value'},
-    {city:'Da Nang', country:'Vietnam', flag:'🇻🇳', lean:1800, comfortable:3000, luxury:4800, max:5200, health:6, link:'https://www.wealthlanding/Retirement-simulator/cities/da_nang.html', profile:'Beach lifestyle + low cost'},
-    {city:'Mérida', country:'Mexico', flag:'🇲🇽', lean:2200, comfortable:3800, luxury:6000, max:7000, health:6.8, link:'https://www.wealthlanding/Retirement-simulator/cities/merida.html', profile:'U.S. proximity + warm climate'},
-    {city:'Lisbon', country:'Portugal', flag:'🇵🇹', lean:3200, comfortable:5200, luxury:8000, max:8500, health:7.4, link:'https://www.wealthlanding/Retirement-simulator/cities/lisbon.html', profile:'Europe lifestyle + retiree community'},
-    {city:'Barcelona', country:'Spain', flag:'🇪🇸', lean:3300, comfortable:5500, luxury:8500, max:9000, health:8, link:'https://www.wealthlanding/Retirement-simulator/cities/barcelona.html', profile:'Mediterranean city + healthcare'},
-    {city:'Rome', country:'Italy', flag:'🇮🇹', lean:3200, comfortable:5400, luxury:8200, max:9000, health:7.6, link:'https://www.wealthlanding/Retirement-simulator/cities/rome.html', profile:'Culture + European base'},
-    {city:'Tokyo', country:'Japan', flag:'🇯🇵', lean:4200, comfortable:6800, luxury:10500, max:12000, health:9.2, link:'https://www.wealthlanding/Retirement-simulator/cities/tokyo.html', profile:'Safety + elite infrastructure'},
-    {city:'Seoul', country:'South Korea', flag:'🇰🇷', lean:3900, comfortable:6200, luxury:9500, max:10500, health:9, link:'https://www.wealthlanding/Retirement-simulator/cities/seoul.html', profile:'Healthcare + transit + safety'},
-    {city:'Shanghai', country:'China', flag:'🇨🇳', lean:3600, comfortable:6000, luxury:9500, max:10500, health:8, link:'https://www.wealthlanding/Retirement-simulator/cities/shanghai.html', profile:'Megacity convenience + premium care'},
-    {city:'Sydney', country:'Australia', flag:'🇦🇺', lean:5200, comfortable:8200, luxury:12500, max:14000, health:8.6, link:'https://www.wealthlanding/Retirement-simulator/cities/sydney.html', profile:'Quality of life + English'},
-    {city:'Auckland', country:'New Zealand', flag:'🇳🇿', lean:5000, comfortable:7800, luxury:11500, max:13000, health:8.2, link:'https://www.wealthlanding/Retirement-simulator/cities/auckland.html', profile:'Calm lifestyle + nature'},
-    {city:'Zurich', country:'Switzerland', flag:'🇨🇭', lean:7000, comfortable:10500, luxury:16000, max:18000, health:9.5, link:'https://www.wealthlanding/Retirement-simulator/cities/zurich.html', profile:'Elite safety + healthcare'},
-    {city:'Singapore', country:'Singapore', flag:'🇸🇬', lean:6500, comfortable:10000, luxury:15500, max:18000, health:9.4, link:'https://www.wealthlanding/Retirement-simulator/cities/singapore.html', profile:'Elite infrastructure + safety'},
-    {city:'Hong Kong', country:'Hong Kong', flag:'🇭🇰', lean:6000, comfortable:9500, luxury:15000, max:17000, health:8.8, link:'https://www.wealthlanding/Retirement-simulator/cities/hong_kong.html', profile:'Global city + family connectivity'}
-  ];
-  const state = {budget:4000,lifestyle:null,health:null,stage:1,matches:[...cities]};
-  const money = n => '$' + Number(n).toLocaleString();
-  const lifestyleLabels = {lean:'Lean comfortable',comfortable:'Comfortable',luxury:'Luxury'};
-  const healthLabels = {basic:'Routine care',strong:'Strong private healthcare',elite:'Elite healthcare'};
-  const healthMin = {basic:0,strong:7.5,elite:8.8};
-  
-  function cityQualifiesBudget(c){return state.budget >= c.lean && state.budget <= Math.max(c.max, c.luxury + 3000)}
-  function cityQualifiesLifestyle(c){if(!state.lifestyle) return true; return state.budget >= c[state.lifestyle];}
-  function cityQualifiesHealth(c){if(!state.health) return true; return c.health >= healthMin[state.health];}
-  function computeMatches(){return cities.filter(c => cityQualifiesBudget(c) && cityQualifiesLifestyle(c) && cityQualifiesHealth(c));}
-  
-  function renderFlags(){
-    state.matches = computeMatches();
-    const cloud = document.getElementById('flagCloud');
-    const hasStarted = state.stage > 1 || state.lifestyle || state.health;
-    const displayedcities = hasStarted ? state.matches : cities;
+    // Safe route definition for steps
+    function goToStep(step) {
+      console.log("Navigating to step via header dropdown: " + step);
+      if (step === 1) {
+        syncBudget(4000);
+        setStage(1);
+        document.getElementById('decision-tree').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else if (step === 3) {
+        syncBudget(4000);
+        setStage(3);
+        document.getElementById('decision-tree').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
 
-    if(!displayedcities.length){
-      cloud.innerHTML = `<div class="empty-state"><h3>No cities match all selected filters</h3><p>Try increasing the monthly budget or choosing a less restrictive healthcare/lifestyle setting.</p></div>`;
-    } else {
-      cloud.innerHTML = displayedcities.map((c,i)=>{
-        const lifestyleTier = state.lifestyle ? `${lifestyleLabels[state.lifestyle]}: ${money(c[state.lifestyle])}+` : `Comfort: ${money(c.comfortable)}`;
-        const delay = `style="animation-delay:${Math.min(i*38,460)}ms"`;
-        return `<a class="city-card" ${delay} href="${c.link}"><span class="flag">${c.flag}</span><h4>${c.city}</h4><p>${c.country} · ${c.profile}</p><div class="tag-row"><span class="tag">${lifestyleTier}</span><span class="tag green">Health ${c.health}/10</span></div></a>`;
+    const cities = [
+      {city:'Bangkok', country:'Thailand', flag:'🇹🇭', lean:2200, comfortable:3500, luxury:5500, max:6500, health:8, link:'bangkok.html', profile:'Cost leverage + private hospitals'},
+      {city:'Kuala Lumpur', country:'Malaysia', flag:'🇲🇾', lean:2300, comfortable:3600, luxury:5800, max:6500, health:8.5, link:'kuala_lumpur.html', profile:'English-friendly + medical value'},
+      {city:'Da Nang', country:'Vietnam', flag:'🇻🇳', lean:1800, comfortable:3000, luxury:4800, max:5200, health:6, link:'da_nang.html', profile:'Beach lifestyle + low cost'},
+      {city:'Mérida', country:'Mexico', flag:'🇲🇽', lean:2200, comfortable:3800, luxury:6000, max:7000, health:6.8, link:'merida.html', profile:'U.S. proximity + warm climate'},
+      {city:'Lisbon', country:'Portugal', flag:'🇵🇹', lean:3200, comfortable:5200, luxury:8000, max:8500, health:7.4, link:'lisbon.html', profile:'Europe lifestyle + retiree community'},
+      {city:'Barcelona', country:'Spain', flag:'🇪🇸', lean:3300, comfortable:5500, luxury:8500, max:9000, health:8, link:'barcelona.html', profile:'Mediterranean city + healthcare'},
+      {city:'Rome', country:'Italy', flag:'🇮🇹', lean:3200, comfortable:5400, luxury:8200, max:9000, health:7.6, link:'rome.html', profile:'Culture + European base'},
+      {city:'Tokyo', country:'Japan', flag:'🇯🇵', lean:4200, comfortable:6800, luxury:10500, max:12000, health:9.2, link:'tokyo.html', profile:'Safety + elite infrastructure'},
+      {city:'Seoul', country:'South Korea', flag:'🇰🇷', lean:3900, comfortable:6200, luxury:9500, max:10500, health:9, link:'seoul.html', profile:'Healthcare + transit + safety'},
+      {city:'Shanghai', country:'China', flag:'🇨🇳', lean:3600, comfortable:6000, luxury:9500, max:10500, health:8, link:'shanghai.html', profile:'Megacity convenience + premium care'},
+      {city:'Sydney', country:'Australia', flag:'🇦🇺', lean:5200, comfortable:8200, luxury:12500, max:14000, health:8.6, link:'sydney.html', profile:'Quality of life + English'},
+      {city:'Auckland', country:'New Zealand', flag:'🇳🇿', lean:5000, comfortable:7800, luxury:11500, max:13000, health:8.2, link:'auckland.html', profile:'Calm lifestyle + nature'},
+      {city:'Zurich', country:'Switzerland', flag:'🇨🇭', lean:7000, comfortable:10500, luxury:16000, max:18000, health:9.5, link:'zurich.html', profile:'Elite safety + healthcare'},
+      {city:'Singapore', country:'Singapore', flag:'🇸🇬', lean:6500, comfortable:10000, luxury:15500, max:18000, health:9.4, link:'singapore.html', profile:'Elite infrastructure + safety'},
+      {city:'Hong Kong', country:'Hong Kong', flag:'🇭🇰', lean:6000, comfortable:9500, luxury:15000, max:17000, health:8.8, link:'hong_kong.html', profile:'Global city + family connectivity'}
+    ];
+
+    const state = { budget: 4000, lifestyle: null, health: null, stage: 1, matches: [...cities] };
+    const money = n => '$' + Number(n).toLocaleString();
+    const lifestyleLabels = { lean: 'Lean comfortable', comfortable: 'Comfortable', luxury: 'Luxury' };
+    const healthLabels = { basic: 'Routine care', strong: 'Strong private healthcare', elite: 'Elite healthcare' };
+    const healthMin = { basic: 0, strong: 7.5, elite: 8.8 };
+
+    function cityQualifiesBudget(c) { 
+      return state.budget >= c.lean && state.budget <= Math.max(c.max, c.luxury + 3000); 
+    }
+    
+    function cityQualifiesLifestyle(c) { 
+      if (!state.lifestyle) return true; 
+      return state.budget >= c[state.lifestyle]; 
+    }
+    
+    function cityQualifiesHealth(c) { 
+      if (!state.health) return true; 
+      return c.health >= healthMin[state.health]; 
+    }
+    
+    function computeMatches() { 
+      return cities.filter(c => cityQualifiesBudget(c) && cityQualifiesLifestyle(c) && cityQualifiesHealth(c)); 
+    }
+
+    function renderFlags() {
+      state.matches = computeMatches();
+      const cloud = document.getElementById('flagCloud');
+
+      const hasStarted = state.stage > 1 || state.lifestyle || state.health;
+      const displayedcities = hasStarted ? state.matches : cities;
+
+      if (!displayedcities.length) {
+        cloud.innerHTML = `<div class="empty-state"><h3>No cities match all selected filters</h3><p>Try increasing the monthly budget or choosing a less restrictive healthcare/lifestyle setting.</p></div>`;
+      } else {
+        cloud.innerHTML = displayedcities.map((c, i) => {
+          const lifestyleTier = state.lifestyle ? `${lifestyleLabels[state.lifestyle]}: ${money(c[state.lifestyle])}+` : `Comfort: ${money(c.comfortable)}`;
+          const delay = `style="animation-delay:${Math.min(i * 38, 460)}ms"`;
+          return `
+            <a class="city-card" ${delay} href="https://wealthlanding.com/Retirement-simulator/cities/${c.link}">
+              <span class="flag">${c.flag}</span>
+              <h4>${c.city}</h4>
+              <p>${c.country} · ${c.profile}</p>
+              <div class="tag-row">
+                <span class="tag">${lifestyleTier}</span>
+                <span class="tag green">Health ${c.health}/10</span>
+              </div>
+            </a>`;
+        }).join('');
+      }
+
+      document.getElementById('resultCount').textContent = state.matches.length + (state.matches.length === 1 ? ' city' : ' cities');
+      const filterText = [];
+      filterText.push(`Budget: ${money(state.budget)}/month`);
+      if (state.lifestyle) filterText.push(`Lifestyle: ${lifestyleLabels[state.lifestyle]}`);
+      if (state.health) filterText.push(`Healthcare: ${healthLabels[state.health]}`);
+      
+      document.getElementById('resultText').textContent = state.matches.length 
+        ? `${state.matches.length} cities match. ${filterText.join(' · ')}` 
+        : `No cities match all selected filters. Increase budget or loosen healthcare/lifestyle requirements.`;
+      
+      document.getElementById('sideRemaining').textContent = state.matches.length;
+      renderRecommendations();
+      renderPath();
+    }
+
+    function renderRecommendations() {
+      const section = document.getElementById('recommendations');
+      const grid = document.getElementById('recGrid');
+      if (state.stage < 4 && !(state.health && state.matches.length <= 4)) {
+        section.classList.remove('show'); 
+        return;
+      }
+      const ranked = [...state.matches].sort((a, b) => {
+        const tier = state.lifestyle || 'comfortable';
+        const aBudgetFit = Math.max(0, 100 - Math.abs(state.budget - a[tier]) / 100);
+        const bBudgetFit = Math.max(0, 100 - Math.abs(state.budget - b[tier]) / 100);
+        const aScore = aBudgetFit + a.health * 10;
+        const bScore = bBudgetFit + b.health * 10;
+        return bScore - aScore;
+      }).slice(0, 4);
+
+      grid.innerHTML = ranked.map(c => {
+        const tier = state.lifestyle || 'comfortable';
+        const fit = Math.min(96, Math.round((c.health * 8) + Math.max(0, 25 - Math.abs(state.budget - c[tier]) / 300)));
+        return `
+          <a class="rec" href="https://wealthlanding.com/Retirement-simulator/cities/${c.link}">
+            <span class="flag">${c.flag}</span>
+            <h3>${c.city}</h3>
+            <p class="muted">${c.country} · ${c.profile}</p>
+            <div class="scoreline"><span style="width:${fit}%"></span></div>
+            <p class="why"><b>${fit}% fit</b> based on ${money(state.budget)}, ${state.lifestyle ? lifestyleLabels[state.lifestyle].toLowerCase() : 'comfort'}, and healthcare depth.</p>
+          </a>`;
       }).join('');
+      section.classList.add('show');
+
+      // Pass recommendation parameters to master plan
+      if (ranked.length > 0) {
+        savePlanValue('wl_overseasCity', ranked[0].city);
+        savePlanValue('wl_overseasCountry', ranked[0].country);
+        savePlanValue('wl_overseasHealthScore', ranked[0].health);
+        savePlanValue('wl_overseasProfile', ranked[0].profile);
+      }
     }
 
-    document.getElementById('resultCount').textContent = state.matches.length + (state.matches.length===1?' city':'cities');
-    const filterText = [];
-    filterText.push(`Budget: ${money(state.budget)}/month`);
-    if(state.lifestyle) filterText.push(`Lifestyle: ${lifestyleLabels[state.lifestyle]}`);
-    if(state.health) filterText.push(`Healthcare: ${healthLabels[state.health]}`);
-    document.getElementById('resultText').textContent = state.matches.length ? `${state.matches.length} cities match. ${filterText.join(' · ')}` : `No cities match all selected filters. Increase budget or loosen healthcare/lifestyle requirements.`;
-    document.getElementById('sideRemaining').textContent = state.matches.length;
-    renderRecommendations();
-    renderPath();
-  }
-  
-  function renderRecommendations(){
-    const section = document.getElementById('recommendations');
-    const grid = document.getElementById('recGrid');
-    if(state.stage < 4 && !(state.health && state.matches.length<=4)){section.classList.remove('show'); return;}
-    const ranked = [...state.matches].sort((a,b)=>{
-      const tier = state.lifestyle || 'comfortable';
-      const aBudgetFit = Math.max(0, 100 - Math.abs(state.budget - a[tier]) / 100);
-      const bBudgetFit = Math.max(0, 100 - Math.abs(state.budget - b[tier]) / 100);
-      const aScore = aBudgetFit + a.health*10;
-      const bScore = bBudgetFit + b.health*10;
-      return bScore - aScore;
-    }).slice(0,4);
-    grid.innerHTML = ranked.map(c=>{
-      const tier = state.lifestyle || 'comfortable';
-      const fit = Math.min(96, Math.round((c.health*8) + Math.max(0, 25 - Math.abs(state.budget-c[tier])/300)));
-      return `<a class="rec" href="${c.link}"><span class="flag">${c.flag}</span><h3>${c.city}</h3><p class="muted">${c.country} · ${c.profile}</p><div class="scoreline"><span style="width:${fit}%"></span></div><p class="why"><b>${fit}% fit</b> based on ${money(state.budget)}, ${state.lifestyle?lifestyleLabels[state.lifestyle].toLowerCase():'comfort'}, and healthcare depth.</p></a>`;
-    }).join('');
-    section.classList.add('show');
-
-    if (ranked.length > 0) {
-      savePlanValue('wl_overseasCity', ranked[0].city);
-      savePlanValue('wl_overseasCountry', ranked[0].country);
-      savePlanValue('wl_overseasHealthScore', ranked[0].health);
-      savePlanValue('wl_overseasProfile', ranked[0].profile);
+    function renderPath() {
+      document.getElementById('sideBudget').textContent = money(state.budget);
+      document.getElementById('sideLifestyle').textContent = state.lifestyle ? lifestyleLabels[state.lifestyle] : 'Not selected';
+      document.getElementById('sideHealth').textContent = state.health ? healthLabels[state.health] : 'Not selected';
+      const tags = [`Budget ${money(state.budget)}`];
+      if (state.lifestyle) tags.push(lifestyleLabels[state.lifestyle]);
+      if (state.health) tags.push(healthLabels[state.health]);
+      document.getElementById('pathTags').innerHTML = tags.map(t => `<span>${t}</span>`).join('');
     }
-  }
-  
-  function renderPath(){
-    document.getElementById('sideBudget').textContent = money(state.budget);
-    document.getElementById('sideLifestyle').textContent = state.lifestyle ? lifestyleLabels[state.lifestyle] : 'Not selected';
-    document.getElementById('sideHealth').textContent = state.health ? healthLabels[state.health] : 'Not selected';
-    const tags = [`Budget ${money(state.budget)}`];
-    if(state.lifestyle) tags.push(lifestyleLabels[state.lifestyle]);
-    if(state.health) tags.push(healthLabels[state.health]);
-    document.getElementById('pathTags').innerHTML = tags.map(t=>`<span>${t}</span>`).join('');
-  }
-  
-  function setStage(n){
-    state.stage=n;
-    document.querySelectorAll('.question').forEach(q=>q.classList.remove('active'));
-    document.getElementById('q'+n).classList.add('active');
-    document.querySelectorAll('.step').forEach((s,i)=>{s.classList.remove('active','done'); if(i+1<n)s.classList.add('done'); if(i+1===n)s.classList.add('active');});
-  }
-  
-  function scrollToQuestion(n){
-    setTimeout(()=>document.getElementById('q'+n).scrollIntoView({behavior:'smooth',block:'center'}),80);
-  }
-  
-  function scrollToResults(){
-    setTimeout(()=>document.getElementById('city-results').scrollIntoView({behavior:'smooth',block:'start'}),140);
-  }
-  
-  function syncBudget(v){
-    state.budget = Math.max(1800, Math.min(25000, Number(v)||4000));
-    document.getElementById('budgetSlider').value = Math.min(12000,state.budget);
-    document.getElementById('budgetInput').value = state.budget;
-    document.getElementById('budgetDisplay').textContent = money(state.budget);
-    renderFlags();
-  }
-  
-  document.getElementById('budgetSlider').addEventListener('input', e=>syncBudget(e.target.value));
-  document.getElementById('budgetInput').addEventListener('input', e=>syncBudget(e.target.value));
-  document.getElementById('nextBudget').addEventListener('click', ()=>{setStage(2); renderFlags(); scrollToQuestion(2);});
-  document.getElementById('reset1').addEventListener('click', ()=>{state.lifestyle=null;state.health=null;syncBudget(4000);setStage(1);document.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));});
-  
-  document.getElementById('lifestyleOptions').addEventListener('click', e=>{
-    const btn = e.target.closest('.option'); if(!btn) return;
-    state.lifestyle = btn.dataset.lifestyle; document.querySelectorAll('#lifestyleOptions .option').forEach(o=>o.classList.remove('selected')); btn.classList.add('selected');
-    renderFlags();
-    if(state.matches.length>2){setStage(3); scrollToQuestion(3);} else {setStage(4); scrollToResults();}
-  });
-  
-  document.getElementById('healthOptions').addEventListener('click', e=>{
-    const btn = e.target.closest('.option'); if(!btn) return;
-    state.health = btn.dataset.health; document.querySelectorAll('#healthOptions .option').forEach(o=>o.classList.remove('selected')); btn.classList.add('selected');
-    setStage(4); renderFlags(); renderRecommendations(); scrollToResults();
-  });
-  
-  document.getElementById('startOver').addEventListener('click', ()=>{state.lifestyle=null;state.health=null;syncBudget(4000);setStage(1);document.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));document.getElementById('decision-tree').scrollIntoView({behavior:'smooth'});});
-  
-  renderFlags();
 
-  function savePlanValue(key, value) {
-    if (value !== undefined && value !== null && value !== '') {
+    function setStage(n) {
+      state.stage = n;
+      document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
+      document.getElementById('q' + n).classList.add('active');
+      document.querySelectorAll('.step').forEach((s, i) => {
+        s.classList.remove('active', 'done'); 
+        if (i + 1 < n) s.classList.add('done'); 
+        if (i + 1 === n) s.classList.add('active');
+      });
+    }
+
+    function scrollToQuestion(n) {
+      setTimeout(() => document.getElementById('q' + n).scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+    }
+
+    function scrollToResults() {
+      setTimeout(() => document.getElementById('city-results').scrollIntoView({ behavior: 'smooth', block: 'start' }), 140);
+    }
+
+    function syncBudget(v) {
+      state.budget = Math.max(1800, Math.min(25000, Number(v) || 4000));
+      document.getElementById('budgetSlider').value = Math.min(12000, state.budget);
+      document.getElementById('budgetInput').value = state.budget;
+      document.getElementById('budgetDisplay').textContent = money(state.budget);
+      renderFlags();
+    }
+
+    document.getElementById('budgetSlider').addEventListener('input', e => syncBudget(e.target.value));
+    document.getElementById('budgetInput').addEventListener('input', e => syncBudget(e.target.value));
+    document.getElementById('nextBudget').addEventListener('click', () => { 
+      setStage(2); 
+      renderFlags(); 
+      scrollToQuestion(2); 
+    });
+    
+    document.getElementById('reset1').addEventListener('click', () => {
+      state.lifestyle = null;
+      state.health = null;
+      syncBudget(4000);
+      setStage(1);
+      document.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+    });
+
+    document.getElementById('lifestyleOptions').addEventListener('click', e => {
+      const btn = e.target.closest('.option'); 
+      if (!btn) return;
+      state.lifestyle = btn.dataset.lifestyle; 
+      document.querySelectorAll('#lifestyleOptions .option').forEach(o => o.classList.remove('selected')); 
+      btn.classList.add('selected');
+      renderFlags();
+      if (state.matches.length > 2) { 
+        setStage(3); 
+        scrollToQuestion(3); 
+      } else { 
+        setStage(4); 
+        scrollToResults(); 
+      }
+    });
+
+    document.getElementById('healthOptions').addEventListener('click', e => {
+      const btn = e.target.closest('.option'); 
+      if (!btn) return;
+      state.health = btn.dataset.health; 
+      document.querySelectorAll('#healthOptions .option').forEach(o => o.classList.remove('selected')); 
+      btn.classList.add('selected');
+      setStage(4); 
+      renderFlags(); 
+      renderRecommendations(); 
+      scrollToResults();
+    });
+
+    document.getElementById('startOver').addEventListener('click', () => {
+      state.lifestyle = null;
+      state.health = null;
+      syncBudget(4000);
+      setStage(1);
+      document.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+      document.getElementById('decision-tree').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Initial render
+    renderFlags();
+
+    // Pass medical cost choice to masterplan local storage context
+    function savePlanValue(key, value) {
+      if (value !== undefined && value !== null && value !== '') {
         localStorage.setItem(key, value);
+      }
     }
-  }
   </script>
-  
-  <script async src="https://cse.google.com/cse.js?cx=40edcbb80dea44bf1"></script>
 </body>
 </html>
