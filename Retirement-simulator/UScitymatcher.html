@@ -1,26 +1,50 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9JMJJ5CJR4');
-</script>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>U.S. Retirement City Matcher | Roth Conversion, Tax, Healthcare & Senior Support</title>
-<meta name="description" content="Interactive U.S. retirement city matcher for Roth conversion years, post-conversion retirement, tax filing status, income profile, senior benefits, healthcare, climate risk, and airport access." />
- <script src="https://cdn.tailwindcss.com"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9JMJJ5CJR4');
+  </script>
+
+  <title>U.S. Retirement City Matcher | Roth Conversion, Tax, Healthcare & Senior Support | Wealth Landing</title>
+  <meta name="description" content="Interactive U.S. retirement city matcher for Roth conversion years, post-conversion retirement, tax filing status, income profile, senior benefits, healthcare, climate risk, and airport access." />
+
+  <!-- Google Fonts: Inter to unify typography perfectly across all browsers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
-:root{
-  --ink:#12213f;--muted:#65748a;--bg:#f6f8fc;--card:#fff;--line:#dfe5ef;--blue:#2563eb;--navy:#111827;--gold:#f4b942;--green:#15803d;--red:#dc2626;--orange:#ea580c;--violet:#7c3aed;--shadow:0 18px 50px rgba(18,33,61,.12);--radius:24px;
-}
-*{box-sizing:border-box}
+    :root {
+      --ink: #12213f;
+      --muted: #65748a;
+      --bg: #f6f8fc;
+      --card: #fff;
+      --line: #dfe5ef;
+      --border: #dfe5ef;
+      --blue: #2563eb;
+      --navy: #111827;
+      --gold: #f4b942;
+      --green: #15803d;
+      --red: #dc2626;
+      --orange: #ea580c;
+      --violet: #7c3aed;
+      --shadow: 0 18px 50px rgba(18, 33, 61, .12);
+      --radius: 24px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+
     /* GLOBAL HEADER POSITIONING AND HIGH STACKING INDEX Context */
     .global-header {
       background-color: #0B132B; 
@@ -28,12 +52,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.85rem 2.25rem; /* Slightly tightened padding */
+      padding: 0.85rem 2.25rem;
       border-bottom: 1px solid #1E293B;
       width: 100%;
       box-sizing: border-box;
-      position: relative; /* ◄ Establish containing block for the absolute mega dropdown */
-      z-index: 1001;      /* ◄ Override the 100 z-index sticky topnav bar context */
+      position: relative; 
+      z-index: 1001;      
     }
 
     /* FORCED LIST ITEM ROW PACKING TO PREVENT VERTICAL STACKING BLOCKS */
@@ -41,7 +65,7 @@
       display: flex !important;
       flex-direction: row !important;
       align-items: center;
-      gap:1.25rem; /* Adjusted gap */
+      gap: 1.25rem;
       list-style-type: none;
       margin: 0;
       padding: 0;
@@ -50,7 +74,7 @@
     .top-nav-links a {
       color: #94A3B8;
       text-decoration: none;
-      font-size: 0.95rem; /* ◄ Adjusted from 1.425rem (10% smaller) */
+      font-size: 0.95rem; 
       font-weight: 500;
       transition: color 0.2s;
       white-space: nowrap;
@@ -61,7 +85,7 @@
     }
 
     .logo {
-      font-size: 1.45rem; /* ◄ Adjusted from 2rem (10% smaller) */
+      font-size: 1.45rem; 
       font-weight: 800;
       color: white;
       text-decoration: none;
@@ -74,7 +98,7 @@
 
     .search-container {
       position: relative;
-      max-width: 400px; /* Adjusted container width */
+      max-width: 400px; 
       width: 100%;
     }
 
@@ -83,9 +107,9 @@
       background-color: #1E293B;
       border: 1px solid #334155;
       color: white;
-      padding: 0.65rem 1.25rem 0.65rem 3rem; /* Adjusted padding */
+      padding: 0.65rem 1.25rem 0.65rem 3rem; 
       border-radius: 8px;
-      font-size: 0.9rem; /* ◄ Adjusted from 1.3125rem (10% smaller) */
+      font-size: 0.9rem; 
     }
 
     /* CORRECT HORIZONTAL TOP NAV FLEX MATRIX */
@@ -97,7 +121,7 @@
       display: flex;
       align-items: center;
       padding: 0 38px;
-      height: 70px; /* Adjusted height */
+      height: 70px; 
       box-shadow: 0 2px 8px rgba(0,0,0,.18);
     }
     
@@ -113,7 +137,7 @@
     .topnav-link {
       color: #94a3b8;
       text-decoration: none;
-      font-size: 18.9px; /* ◄ Adjusted from 21px (10% smaller) */
+      font-size: 18.9px; 
       font-weight: 555;
       padding: 8px 18px;
       border-radius: 8px;
@@ -133,7 +157,7 @@
     
     .topnav-divider {
       width: 1px;
-      height: 32px; /* Adjusted divider */
+      height: 32px; 
       background: rgba(255,255,255,.1);
       margin: 0 10px;
     }
@@ -145,12 +169,12 @@
       left: 50%;                     
       transform: translateX(-50%) translateY(12px); 
       width: 95vw;                   
-      max-width: 1240px; /* Adjusted width */
+      max-width: 1240px; 
       background: white;
       border: 1px solid var(--border); 
       border-radius: 1rem;
       box-shadow: 0 22px 30px -5px rgba(0, 0, 0, 0.16), 0 12px 12px -5px rgba(0, 0, 0, 0.05);
-      padding: 3.25rem; /* Adjusted padding */
+      padding: 3.25rem; 
       display: grid !important;      
       grid-template-columns: 1.1fr 2.9fr; 
       gap: 3.5rem;
@@ -172,12 +196,12 @@
     .links-matrix {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem 1.75rem; /* Adjusted spacing */
+      gap: 2.5rem 1.75rem; 
     }
 
     .dropdown-column h4 {
-      color: var(--text); 
-      font-size: 1.215rem; /* ◄ Adjusted from 1.35rem (10% smaller) */
+      color: var(--navy); 
+      font-size: 1.215rem; 
       font-weight: 700;
       margin-top: 0;
       margin-bottom: 1.15rem;
@@ -192,47 +216,919 @@
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 0.85rem; /* Adjusted spacing */
+      gap: 0.85rem; 
     }
 
     .dropdown-column ul a {
       color: var(--muted) !important; 
-      font-size: 0.95 rem; /* ◄ Adjusted from 1.275rem (10% smaller) */
+      font-size: 0.95rem; 
       font-weight: 500;
       padding: 0;
     }
 
     .dropdown-column ul a:hover {
-      color: var(--emerald) !important; 
+      color: #02B17D !important; 
     }
 
     /* Let dropdown anchor align to .global-header container for perfect center horizontal align */
     .dropdown-trigger {
       position: static;
     }
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.topbar{height:8px;background:linear-gradient(90deg,#b91c1c,#fff,#1d4ed8)}
-.hub-nav{position:sticky;top:0;z-index:50;background:#111827;color:#fff;border-bottom:1px solid rgba(255,255,255,.14)}.hub-wrap{width:min(1180px,94%);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0;flex-wrap:wrap}.hub-title{font-weight:950;color:#fff;text-decoration:none;font-size:1.04rem}.hub-title span{color:var(--gold)}.hub-tabs{display:flex;gap:10px;flex-wrap:wrap}.hub-tabs a{color:#eaf0ff;text-decoration:none;font-weight:900;font-size:.9rem;padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}.hub-tabs a:hover{background:rgba(255,255,255,.18)}.hub-tabs .active{background:var(--gold);color:#1a1200;border-color:var(--gold)}
-.hero{position:relative;overflow:hidden;background:#0b1220}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,20,40,.92),rgba(10,20,40,.67),rgba(10,20,40,.25)),url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=80') center/cover no-repeat;filter:saturate(1.05)}.hero-inner{position:relative;z-index:1;width:min(1180px,94%);margin:auto;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;min-height:560px;padding:64px 0}.badge{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.27);color:#fff;padding:9px 14px;border-radius:999px;font-weight:800;backdrop-filter:blur(8px)}h1{font-size:clamp(2.4rem,5vw,4.8rem);line-height:.98;color:#fff;margin:18px 0;letter-spacing:-.055em}.hero p{color:#e8edf7;font-size:1.15rem;max-width:760px}.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 17px;border-radius:14px;font-weight:900;border:0;cursor:pointer;text-decoration:none}.btn.primary{background:var(--gold);color:#1a1200}.btn.secondary{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.35);color:#fff}.btn.dark{background:var(--ink);color:#fff}.snapshot{background:rgba(255,255,255,.93);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;backdrop-filter:blur(10px)}.snapshot h2{margin:0 0 14px;font-size:1.45rem}.score-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.metric{background:#f8faff;border:1px solid var(--line);border-radius:16px;padding:14px}.metric strong{display:block;font-size:1.35rem;color:var(--blue);line-height:1.05}.metric span{font-size:.82rem;color:var(--muted);font-weight:800}.verdict{margin-top:16px;background:#ecfdf3;border:1px solid #bbf7d0;color:#14532d;border-radius:16px;padding:14px;font-weight:800}
-.subnav{position:sticky;top:58px;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.subnav .inner{width:min(1180px,94%);margin:auto;display:flex;gap:16px;overflow:auto;padding:12px 0}.subnav a{white-space:nowrap;font-size:.88rem;font-weight:900;color:var(--ink)}
-main{width:min(1180px,94%);margin:34px auto 80px}.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:24px}.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 10px 32px rgba(18,33,61,.07);padding:26px}.kicker{text-transform:uppercase;letter-spacing:.08em;color:#b91c1c;font-size:.76rem;font-weight:950}.panel h2{font-size:clamp(1.7rem,3vw,2.55rem);line-height:1.05;letter-spacing:-.04em;margin:6px 0 12px}.muted{color:var(--muted)}
-.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:stretch}.flow-step{position:relative;background:#f8faff;border:1px solid var(--line);border-radius:18px;padding:14px;min-height:110px}.flow-step:not(:last-child):after{content:"→";position:absolute;right:-17px;top:38%;font-weight:1000;color:#94a3b8;background:#fff;border:1px solid var(--line);border-radius:50%;width:24px;height:24px;text-align:center;line-height:22px;z-index:2}.flow-step b{display:block;font-size:.95rem;margin-bottom:6px}.flow-step span{display:block;color:var(--muted);font-size:.78rem;font-weight:650}.flow-num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#dbeafe;color:#1d4ed8;font-weight:950;margin-bottom:8px}
-.matcher{display:grid;grid-template-columns:1fr 350px;gap:22px;align-items:start}.question-card{background:var(--card);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);padding:28px;margin-bottom:18px;display:none;animation:rise .38s ease both}.question-card.active{display:block}@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}.q-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}.q-num{width:42px;height:42px;border-radius:50%;background:#eff6ff;color:#1d4ed8;display:flex;align-items:center;justify-content:center;font-weight:1000;flex:0 0 auto}.q-title{font-size:1.45rem;font-weight:950;letter-spacing:-.025em;margin:0}.q-sub{margin:6px 0 0;color:var(--muted)}.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.option{border:1px solid var(--line);border-radius:18px;background:#fbfcff;padding:16px;cursor:pointer;transition:.16s;min-height:100px}.option:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(18,33,61,.08)}.option.selected{border-color:#2563eb;background:#eff6ff;box-shadow:0 0 0 3px rgba(37,99,235,.12)}.option b{display:block;margin-bottom:6px}.option span{font-size:.87rem;color:var(--muted)}.input-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.field label{display:block;font-size:.83rem;font-weight:900;color:#475569;margin:0 0 6px}.field input,.field select{width:100%;border:1px solid var(--line);border-radius:14px;padding:12px;font-size:1rem;background:#fff}.field small{display:block;color:var(--muted);font-size:.75rem;margin-top:5px}.actions{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:22px}.actions .btn.secondary{color:var(--ink);background:#fff;border:1px solid var(--line)}
-.side{position:sticky;top:112px}.path-box{background:#111827;color:#e5e7eb;border-radius:24px;padding:22px;margin-bottom:18px}.path-box h3{margin:0 0 14px;color:#fff}.path-item{border-top:1px solid rgba(255,255,255,.12);padding:10px 0}.path-item:first-of-type{border-top:0}.path-label{font-size:.72rem;text-transform:uppercase;color:#94a3b8;font-weight:950}.path-value{font-weight:900;color:#fff}.benefit-meter{background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px;margin-bottom:18px}.meter{height:12px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin:12px 0}.meter span{display:block;height:100%;width:0;background:linear-gradient(90deg,#16a34a,#f4b942,#dc2626);transition:.3s}.benefit-status{font-size:1.35rem;font-weight:1000}.leadbox{background:linear-gradient(135deg,#eff6ff,#fff);border:1px solid #bfdbfe;border-radius:22px;padding:20px}.leadbox input{width:100%;border:1px solid #bfdbfe;border-radius:12px;padding:12px;margin:8px 0}.leadbox button{width:100%;border:0;border-radius:12px;background:var(--blue);color:#fff;font-weight:900;padding:12px}
-.results{display:none;margin-top:26px}.results.active{display:block}.results-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:16px}.results-head h2{font-size:2.2rem;letter-spacing:-.04em;margin:0}.city-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.city-card{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 10px 30px rgba(18,33,61,.07);padding:20px;animation:pop .35s ease both;position:relative;overflow:hidden}.city-card:before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:linear-gradient(90deg,#2563eb,#f4b942)}@keyframes pop{from{opacity:0;transform:scale(.98)}to{opacity:1;transform:scale(1)}}.city-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.city-name{font-size:1.35rem;font-weight:1000;letter-spacing:-.02em}.state{color:var(--muted);font-weight:800}.rank{background:#ecfdf3;color:#166534;border:1px solid #bbf7d0;border-radius:999px;padding:5px 9px;font-weight:950;font-size:.78rem}.badges{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}.pill{font-size:.75rem;border-radius:999px;background:#f1f5f9;border:1px solid var(--line);padding:5px 8px;font-weight:850;color:#334155}.pill.good{background:#ecfdf3;color:#166534;border-color:#bbf7d0}.pill.warn{background:#fff7ed;color:#9a3412;border-color:#fed7aa}.pill.hot{background:#fef2f2;color:#991b1b;border-color:#fecaca}.city-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.stat{background:#f8faff;border:1px solid var(--line);border-radius:14px;padding:10px}.stat b{display:block;color:#1d4ed8}.stat span{font-size:.75rem;color:var(--muted);font-weight:850}.why{font-size:.92rem;color:#334155}.city-card a{display:inline-flex;margin-top:12px;font-weight:950}.empty{background:#fff;border:1px dashed #94a3b8;border-radius:24px;padding:28px;text-align:center;color:#475569}
-.compare{margin-top:28px}.compare table{width:100%;border-collapse:collapse;font-size:.9rem;background:#fff;border-radius:20px;overflow:hidden;border:1px solid var(--line)}.compare th,.compare td{padding:12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.compare th{background:#f8faff;color:#475569;text-transform:uppercase;font-size:.76rem;letter-spacing:.06em}.sources{background:#0f172a;color:#dbe4f4;padding:34px 0}.sources .inner{width:min(1180px,94%);margin:auto}.sources a{color:#93c5fd}.sources li{margin-bottom:8px}.disclaimer{border-top:1px solid rgba(255,255,255,.13);margin-top:18px;padding-top:16px;color:#b9c5da;font-size:.86rem}
-@media(max-width:950px){.hero-inner,.matcher,.intro-grid{grid-template-columns:1fr}.hero-inner{min-height:auto}.side{position:static}.flow{grid-template-columns:1fr}.flow-step:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-18px;transform:translateX(-50%)}.city-grid{grid-template-columns:1fr}.options,.input-grid{grid-template-columns:1fr}.subnav{top:0}.city-stats{grid-template-columns:1fr}}
-</style>
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      line-height: 1.55;
+    }
+    
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    .topbar {
+      height: 8px;
+      background: linear-gradient(90deg, #b91c1c, #fff, #1d4ed8);
+    }
+
+    .hub-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #111827;
+      color: #fff;
+      border-bottom: 1px solid rgba(255, 255, 255, .14);
+    }
+    
+    .hub-wrap {
+      width: min(1180px, 94%);
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+    
+    .hub-title {
+      font-weight: 950;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.04rem;
+    }
+    
+    .hub-title span {
+      color: var(--gold);
+    }
+    
+    .hub-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    
+    .hub-tabs a {
+      color: #eaf0ff;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: .9rem;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .14);
+    }
+    
+    .hub-tabs a:hover {
+      background: rgba(255, 255, 255, .18);
+    }
+    
+    .hub-tabs .active {
+      background: var(--gold);
+      color: #1a1200;
+      border-color: var(--gold);
+    }
+    
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: #0b1220;
+    }
+    
+    .hero:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(10, 20, 40, .92), rgba(10, 20, 40, .67), rgba(10, 20, 40, .25)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=80') center/cover no-repeat;
+      filter: saturate(1.05);
+    }
+    
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(1180px, 94%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 28px;
+      align-items: center;
+      min-height: 560px;
+      padding: 64px 0;
+    }
+    
+    .badge {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      background: rgba(255, 255, 255, .13);
+      border: 1px solid rgba(255, 255, 255, .27);
+      color: #fff;
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      backdrop-filter: blur(8px);
+      margin-bottom: 24px; /* Added spacing to separate the badge cleanly from the headline below */
+    }
+    
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      line-height: 1.05;
+      color: #fff;
+      margin: 0 0 20px 0;
+      letter-spacing: -.04em;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-weight: 800;
+    }
+    
+    .hero p {
+      color: #e8edf7;
+      font-size: 1.15rem;
+      max-width: 760px;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 17px;
+      border-radius: 14px;
+      font-weight: 900;
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    
+    .btn.primary {
+      background: var(--gold);
+      color: #1a1200;
+    }
+    
+    .btn.secondary {
+      background: rgba(255, 255, 255, .13);
+      border: 1px solid rgba(255, 255, 255, .35);
+      color: #fff;
+    }
+    
+    .btn.dark {
+      background: var(--ink);
+      color: #fff;
+    }
+    
+    .snapshot {
+      background: rgba(255, 255, 255, .93);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .snapshot h2 {
+      margin: 0 0 14px;
+      font-size: 1.45rem;
+      color: var(--ink);
+    }
+    
+    .score-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    
+    .metric {
+      background: #f8faff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+    }
+    
+    .metric strong {
+      display: block;
+      font-size: 1.35rem;
+      color: var(--blue);
+      line-height: 1.05;
+    }
+    
+    .metric span {
+      font-size: .82rem;
+      color: var(--muted);
+      font-weight: 800;
+    }
+    
+    .verdict {
+      margin-top: 16px;
+      background: #ecfdf3;
+      border: 1px solid #bbf7d0;
+      color: #14532d;
+      border-radius: 16px;
+      padding: 14px;
+      font-weight: 800;
+    }
+    
+    .subnav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(255, 255, 255, .94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    
+    .subnav .inner {
+      width: min(1180px, 94%);
+      margin: auto;
+      display: flex;
+      gap: 16px;
+      overflow: auto;
+      padding: 12px 0;
+    }
+    
+    .subnav a {
+      white-space: nowrap;
+      font-size: .88rem;
+      font-weight: 900;
+      color: var(--ink);
+    }
+    
+    main {
+      width: min(1180px, 94%);
+      margin: 34px auto 80px;
+    }
+    
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 32px rgba(18, 33, 61, .07);
+      padding: 26px;
+    }
+    
+    .kicker {
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #b91c1c;
+      font-size: .76rem;
+      font-weight: 950;
+    }
+    
+    .panel h2 {
+      font-size: clamp(1.7rem, 3vw, 2.55rem);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      margin: 6px 0 12px;
+    }
+    
+    .muted {
+      color: var(--muted);
+    }
+    
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      align-items: stretch;
+    }
+    
+    .flow-step {
+      position: relative;
+      background: #f8faff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+      min-height: 110px;
+    }
+    
+    .flow-step:not(:last-child):after {
+      content: "→";
+      position: absolute;
+      right: -17px;
+      top: 38%;
+      font-weight: 1000;
+      color: #94a3b8;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      text-align: center;
+      line-height: 22px;
+      z-index: 2;
+    }
+    
+    .flow-step b {
+      display: block;
+      font-size: .95rem;
+      margin-bottom: 6px;
+    }
+    
+    .flow-step span {
+      display: block;
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 650;
+    }
+    
+    .flow-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #dbeafe;
+      color: #1d4ed8;
+      font-weight: 950;
+      margin-bottom: 8px;
+    }
+    
+    .matcher {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 22px;
+      align-items: start;
+    }
+    
+    .question-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-bottom: 18px;
+      display: none;
+      animation: rise .38s ease both;
+    }
+    
+    .question-card.active {
+      display: block;
+    }
+    
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(12px)
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+    
+    .q-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    
+    .q-num {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #eff6ff;
+      color: #1d4ed8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 1000;
+      flex: 0 0 auto;
+    }
+    
+    .q-title {
+      font-size: 1.45rem;
+      font-weight: 950;
+      letter-spacing: -.025em;
+      margin: 0;
+    }
+    
+    .q-sub {
+      margin: 6px 0 0;
+      color: var(--muted);
+    }
+    
+    .options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    
+    .option {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fbfcff;
+      padding: 16px;
+      cursor: pointer;
+      transition: .16s;
+      min-height: 100px;
+    }
+    
+    .option:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(18, 33, 61, .08);
+    }
+    
+    .option.selected {
+      border-color: #2563eb;
+      background: #eff6ff;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, .12);
+    }
+    
+    .option b {
+      display: block;
+      margin-bottom: 6px;
+    }
+    
+    .option span {
+      font-size: .87rem;
+      color: var(--muted);
+    }
+    
+    .input-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    
+    .field label {
+      display: block;
+      font-size: .83rem;
+      font-weight: 900;
+      color: #475569;
+      margin: 0 0 6px;
+    }
+    
+    .field input, .field select {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px;
+      font-size: 1rem;
+      background: #fff;
+    }
+    
+    .field small {
+      display: block;
+      color: var(--muted);
+      font-size: .75rem;
+      margin-top: 5px;
+    }
+    
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+    
+    .actions .btn.secondary {
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+    
+    .side {
+      position: sticky;
+      top: 112px;
+    }
+    
+    .path-box {
+      background: #111827;
+      color: #e5e7eb;
+      border-radius: 24px;
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+    
+    .path-box h3 {
+      margin: 0 0 14px;
+      color: #fff;
+    }
+    
+    .path-item {
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      padding: 10px 0;
+    }
+    
+    .path-item:first-of-type {
+      border-top: 0;
+    }
+    
+    .path-label {
+      font-size: .72rem;
+      text-transform: uppercase;
+      color: #94a3b8;
+      font-weight: 950;
+    }
+    
+    .path-value {
+      font-weight: 900;
+      color: #fff;
+    }
+    
+    .benefit-meter {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+    
+    .meter {
+      height: 12px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 12px 0;
+    }
+    
+    .meter span {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #16a34a, #f4b942, #dc2626);
+      transition: .3s;
+    }
+    
+    .benefit-status {
+      font-size: 1.35rem;
+      font-weight: 1000;
+    }
+    
+    .leadbox {
+      background: linear-gradient(135deg, #eff6ff, #fff);
+      border: 1px solid #bfdbfe;
+      border-radius: 22px;
+      padding: 20px;
+    }
+    
+    .leadbox input {
+      width: 100%;
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 12px;
+      margin: 8px 0;
+    }
+    
+    .leadbox button {
+      width: 100%;
+      border: 0;
+      border-radius: 12px;
+      background: var(--blue);
+      color: #fff;
+      font-weight: 900;
+      padding: 12px;
+    }
+    
+    .results {
+      display: none;
+      margin-top: 26px;
+    }
+    
+    .results.active {
+      display: block;
+    }
+    
+    .results-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    
+    .results-head h2 {
+      font-size: 2.2rem;
+      letter-spacing: -.04em;
+      margin: 0;
+    }
+    
+    .city-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    
+    .city-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(18, 33, 61, .07);
+      padding: 20px;
+      animation: pop .35s ease both;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .city-card:before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 6px;
+      background: linear-gradient(90deg, #2563eb, #f4b942);
+    }
+    
+    @keyframes pop {
+      from {
+        opacity: 0;
+        transform: scale(.98)
+      }
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+    
+    .city-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    
+    .city-name {
+      font-size: 1.35rem;
+      font-weight: 1000;
+      letter-spacing: -.02em;
+    }
+    
+    .state {
+      color: var(--muted);
+      font-weight: 800;
+    }
+    
+    .rank {
+      background: #ecfdf3;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-weight: 950;
+      font-size: .78rem;
+    }
+    
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 12px 0;
+    }
+    
+    .pill {
+      font-size: .75rem;
+      border-radius: 999px;
+      background: #f1f5f9;
+      border: 1px solid var(--line);
+      padding: 5px 8px;
+      font-weight: 850;
+      color: #334155;
+    }
+    
+    .pill.good {
+      background: #ecfdf3;
+      color: #166534;
+      border-color: #bbf7d0;
+    }
+    
+    .pill.warn {
+      background: #fff7ed;
+      color: #9a3412;
+      border-color: #fed7aa;
+    }
+    
+    .pill.hot {
+      background: #fef2f2;
+      color: #991b1b;
+      border-color: #fecaca;
+    }
+    
+    .city-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 14px 0;
+    }
+    
+    .stat {
+      background: #f8faff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 10px;
+    }
+    
+    .stat b {
+      display: block;
+      color: #1d4ed8;
+    }
+    
+    .stat span {
+      font-size: .75rem;
+      color: var(--muted);
+      font-weight: 850;
+    }
+    
+    .why {
+      font-size: .92rem;
+      color: #334155;
+    }
+    
+    .city-card a {
+      display: inline-flex;
+      margin-top: 12px;
+      font-weight: 950;
+    }
+    
+    .empty {
+      background: #fff;
+      border: 1px dashed #94a3b8;
+      border-radius: 24px;
+      padding: 28px;
+      text-align: center;
+      color: #475569;
+    }
+    
+    .compare {
+      margin-top: 28px;
+    }
+    
+    .compare table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .9rem;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+    
+    .compare th, .compare td {
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    
+    .compare th {
+      background: #f8faff;
+      color: #475569;
+      text-transform: uppercase;
+      font-size: .76rem;
+      letter-spacing: .06em;
+    }
+    
+    .sources {
+      background: #0f172a;
+      color: #dbe4f4;
+      padding: 34px 0;
+    }
+    
+    .sources .inner {
+      width: min(1180px, 94%);
+      margin: auto;
+    }
+    
+    .sources a {
+      color: #93c5fd;
+    }
+    
+    .sources li {
+      margin-bottom: 8px;
+    }
+    
+    .disclaimer {
+      border-top: 1px solid rgba(255, 255, 255, .13);
+      margin-top: 18px;
+      padding-top: 16px;
+      color: #b9c5da;
+      font-size: .86rem;
+    }
+    
+    @media(max-width:1024px) {
+      .global-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+        padding: 1rem;
+      }
+      .global-header nav {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 4px;
+      }
+      .top-nav-links {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 1rem;
+      }
+      .search-container {
+        max-width: 100%;
+      }
+      .mega-dropdown {
+        width: 95vw;
+        left: 50%;
+        transform: translateX(-50%) translateY(8px);
+        padding: 1.5rem;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+      .links-matrix {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+      }
+    }
+
+    @media(max-width:950px) {
+      .hero-inner, .matcher, .intro-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-inner {
+        min-height: auto;
+      }
+      .side {
+        position: static;
+      }
+      .flow {
+        grid-template-columns: 1fr;
+      }
+      .flow-step:not(:last-child):after {
+        content: "↓";
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: -18px;
+        transform: translateX(-50%);
+      }
+      .city-grid {
+        grid-template-columns: 1fr;
+      }
+      .options, .input-grid {
+        grid-template-columns: 1fr;
+      }
+      .subnav {
+        top: 0;
+      }
+      .city-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
- <!-- Top Global Directory Header -->
+
+  <!-- Top Global Directory Header -->
   <header class="global-header">
     <a href="/" class="logo">Wealth<span>Landing</span></a>
+    
     <nav aria-label="Global Main Directory">
       <ul class="top-nav-links">
         
         <!-- DROP-DOWN 1: OVERVIEW -->
         <li class="dropdown-trigger">
-          <a href="#" class="active font-bold text-white">Overview <span class="text-[14px] opacity-70">▼</span></a>
+          <a href="#" class="active font-bold text-white">Overview <span class="text-[12px] opacity-70">▼</span></a>
           <div class="mega-dropdown">
             <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
               <div class="space-y-3">
@@ -272,8 +1168,8 @@ main{width:min(1180px,94%);margin:34px auto 80px}.intro-grid{display:grid;grid-t
                 <ul>
                   <li><a href="#">Latest Estimators</a></li>
                   <li><a href="#">Core Strategic Guides</a></li>
-                  <li><a href="Retirement_Master_Plan.html">Resume Master Plan</a></li>
-                  <li><a href="#">Resume Transition Plan</a></li>
+                  <li><a href="Retirement_Master_Plan.html">Retirement Master Plan</a></li>
+                  <li><a href="#">Retirement Transition Plan</a></li>
                 </ul>
               </div>
             </div>
@@ -282,7 +1178,7 @@ main{width:min(1180px,94%);margin:34px auto 80px}.intro-grid{display:grid;grid-t
 
         <!-- DROP-DOWN 2: BUILD WEALTH -->
         <li class="dropdown-trigger">
-          <a href="#" class="active font-bold text-white">Build Wealth <span class="text-[14px] opacity-70">▼</span></a>
+          <a href="#" class="active font-bold text-white">Build Wealth <span class="text-[12px] opacity-70">▼</span></a>
           <div class="mega-dropdown">
             <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
               <div class="space-y-3">
@@ -332,7 +1228,7 @@ main{width:min(1180px,94%);margin:34px auto 80px}.intro-grid{display:grid;grid-t
 
         <!-- DROP-DOWN 3: GROW WEALTH -->
         <li class="dropdown-trigger">
-          <a href="#" class="active font-bold text-white">Grow Wealth <span class="text-[14px] opacity-70">▼</span></a>
+          <a href="#" class="active font-bold text-white">Grow Wealth <span class="text-[12px] opacity-70">▼</span></a>
           <div class="mega-dropdown">
             <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
               <div class="space-y-3">
@@ -382,7 +1278,7 @@ main{width:min(1180px,94%);margin:34px auto 80px}.intro-grid{display:grid;grid-t
 
         <!-- DROP-DOWN 4: PROTECT WEALTH -->
         <li class="dropdown-trigger">
-          <a href="#" class="active font-bold text-white">Protect Wealth <span class="text-[14px] opacity-70">▼</span></a>
+          <a href="#" class="active font-bold text-white">Protect Wealth <span class="text-[12px] opacity-70">▼</span></a>
           <div class="mega-dropdown">
             <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
               <div class="space-y-3">
@@ -398,8 +1294,6 @@ main{width:min(1180px,94%);margin:34px auto 80px}.intro-grid{display:grid;grid-t
                 <p class="text-xs text-slate-400 mt-1">Review legal structures and risk metrics.</p>
               </div>
             </div>
-
-            <!-- RIGHT COLUMN: MULTI-COLUMN SECTIONS ACCORDING TO SYSTEM CONFIGURATION -->
             <div class="links-matrix text-left">
               <div class="dropdown-column">
                 <h4>🏥 Health & Insurance</h4>
@@ -434,7 +1328,7 @@ main{width:min(1180px,94%);margin:34px auto 80px}.intro-grid{display:grid;grid-t
 
         <!-- DROP-DOWN 5: DESIGN YOUR LIFE -->
         <li class="dropdown-trigger">
-          <a href="#" class="active font-bold text-white">Design Your Life <span class="text-[14px] opacity-70">▼</span></a>
+          <a href="#" class="active font-bold text-white">Design Your Life <span class="text-[12px] opacity-70">▼</span></a>
           <div class="mega-dropdown">
             <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
               <div class="space-y-3">
@@ -459,9 +1353,9 @@ main{width:min(1180px,94%);margin:34px auto 80px}.intro-grid{display:grid;grid-t
                   <li><a href="#">Transition Workspace</a></li>
                 </ul>
               </div>
-          <div class="dropdown-column">
+              <div class="dropdown-column">
                 <h4>✈️ Location Arbitrage</h4>
-               <ul>
+                <ul>
                   <li><a href="UScitymatcher.html">US City Matcher Tool</a></li>
                   <li><a href="RetiringOverseas.html">Overseas Matcher Tool</a></li>
                   <li><a href="#">Geographic Cost Indexes</a></li>
@@ -482,7 +1376,7 @@ main{width:min(1180px,94%);margin:34px auto 80px}.intro-grid{display:grid;grid-t
 
         <!-- DROP-DOWN 6: LEGACY -->
         <li class="dropdown-trigger">
-          <a href="#" class="active font-bold text-white">Legacy <span class="text-[14px] opacity-70">▼</span></a>
+          <a href="#" class="active font-bold text-white">Legacy <span class="text-[12px] opacity-70">▼</span></a>
           <div class="mega-dropdown">
             <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
               <div class="space-y-3">
@@ -531,7 +1425,7 @@ main{width:min(1180px,94%);margin:34px auto 80px}.intro-grid{display:grid;grid-t
 
         <!-- DROP-DOWN 7: KNOWLEDGE LIBRARY -->
         <li class="dropdown-trigger">
-          <a href="#" class="active font-bold text-white">Knowledge Library <span class="text-[14px] opacity-70">▼</span></a>
+          <a href="#" class="active font-bold text-white">Knowledge Library <span class="text-[12px] opacity-70">▼</span></a>
           <div class="mega-dropdown">
             <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
               <div class="space-y-3">
@@ -580,6 +1474,7 @@ main{width:min(1180px,94%);margin:34px auto 80px}.intro-grid{display:grid;grid-t
         </li>
 
       </ul>
+    </nav>
     
     <div class="search-container">
       <form action="https://www.google.com/search" method="get" target="_blank">
@@ -587,297 +1482,729 @@ main{width:min(1180px,94%);margin:34px auto 80px}.intro-grid{display:grid;grid-t
         <input type="hidden" name="sitesearch" value="wealthlanding.com">
         <input type="search" name="q" class="search-input" placeholder="Search systems, tools..." aria-label="Search WealthLanding">
       </form>
-  </div>
-</nav>
-<header class="hero">
-  <div class="hero-inner">
-    <div>
-      <span class="badge">🇺🇸 U.S. Retirement City Decision Tree</span>
-      <h1>Find the right U.S. city for your retirement phase.</h1>
-      <p>This matcher separates two very different decisions: where to live during U.S.-based Roth conversion years, and where to settle after the conversion window is done. It screens tax status, filing status, Social Security, passive income, senior supports, healthcare depth, cost, climate, and airport access.</p>
-      <div class="hero-cta"><a class="btn primary" href="#matcher">Start the matcher</a><a class="btn secondary" href="#how">See how it works</a></div>
     </div>
-    <aside class="snapshot">
-      <h2>What this page optimizes</h2>
-      <div class="score-grid">
-        <div class="metric"><strong>Phase first</strong><span>Conversion years vs. post-conversion life</span></div>
-        <div class="metric"><strong>Tax aware</strong><span>Filing status + state tax sensitivity</span></div>
-        <div class="metric"><strong>Support aware</strong><span>Income-tested benefit screening</span></div>
-        <div class="metric"><strong>Age-friendly</strong><span>Healthcare, climate, transit, community</span></div>
+  </header>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="badge">
+          <!-- Vector Map Pin Icon to replace fallback system emojis -->
+          <svg class="w-4 h-4 mr-1 text-[#f4b942]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+          </svg>
+          U.S. Retirement City Decision Tree
+        </span>
+        <h1>Find the right U.S. city for your retirement phase.</h1>
+        <p>This matcher separates two very different decisions: where to live during U.S.-based Roth conversion years, and where to settle after the conversion window is done. It screens tax status, filing status, Social Security, passive income, senior supports, healthcare depth, cost, climate, and airport access.</p>
+        <div class="hero-cta"><a class="btn primary" href="#matcher">Start the matcher</a><a class="btn secondary" href="#how">See how it works</a></div>
       </div>
-      <div class="verdict">Best use: narrow a large U.S. city list into a practical shortlist before deeper tax, housing, and benefit research.</div>
-    </aside>
-  </div>
-</header>
-<nav class="subnav"><div class="inner"><a href="#how">How it works</a><a href="#matcher">Matcher</a><a href="#results">Results</a><a href="#compare">Comparison table</a><a href="#sources">Sources</a></div></nav>
-<main>
-  <section id="how" class="intro-grid">
-    <div class="panel">
-      <div class="kicker">Logic driven</div>
-      <h2>Start with the retirement phase, not the state.</h2>
-      <p class="muted">A no-income-tax state can be excellent during Roth conversion years, but after the conversion window is complete, healthcare depth, property tax, insurance, senior transportation, and long-term care may matter more.</p>
+      <aside class="snapshot">
+        <h2>What this page optimizes</h2>
+        <div class="score-grid">
+          <div class="metric"><strong>Phase first</strong><span>Conversion years vs. post-conversion life</span></div>
+          <div class="metric"><strong>Tax aware</strong><span>Filing status + state tax sensitivity</span></div>
+          <div class="metric"><strong>Support aware</strong><span>Income-tested benefit screening</span></div>
+          <div class="metric"><strong>Age-friendly</strong><span>Healthcare, climate, transit, community</span></div>
+        </div>
+        <div class="verdict">Best use: narrow a large U.S. city list into a practical shortlist before deeper tax, housing, and benefit research.</div>
+      </aside>
     </div>
-    <div class="panel">
-      <div class="kicker">Benefit screening</div>
-      <h2>You don't need to know local benefit limits.</h2>
-      <p class="muted">The matcher asks for filing status and recurring income, then classifies income-tested senior supports as likely useful, maybe useful, or unlikely to apply. Exact program eligibility still requires county/state verification.</p>
+  </header>
+
+  <nav class="subnav">
+    <div class="inner">
+      <a href="#how">How it works</a>
+      <a href="#matcher">Matcher</a>
+      <a href="#results">Results</a>
+      <a href="#compare">Comparison table</a>
+      <a href="#sources">Sources</a>
     </div>
-  </section>
-  <section class="panel" style="margin-bottom:24px">
-    <div class="kicker">Question flow</div>
-    <h2>How the U.S. city matcher works</h2>
-    <div class="flow">
-      <div class="flow-step"><div class="flow-num">1</div><b>Retirement phase</b><span>U.S. conversion years, return after overseas conversions, or already 65+.</span></div>
-      <div class="flow-step"><div class="flow-num">2</div><b>Tax profile</b><span>Filing status, Roth conversion income, Social Security, pension, IRA, and passive income.</span></div>
-      <div class="flow-step"><div class="flow-num">3</div><b>Cost + housing</b><span>Monthly budget plus rent/own choice, property tax, insurance, and HOA sensitivity.</span></div>
-      <div class="flow-step"><div class="flow-num">4</div><b>Support + health</b><span>Senior benefits, Medicare provider depth, hospitals, long-term-care ecosystem.</span></div>
-      <div class="flow-step"><div class="flow-num">5</div><b>Risk + access</b><span>Climate tolerance, airport connectivity, family access, and final city shortlist.</span></div>
+  </nav>
+
+  <main>
+    <section id="how" class="intro-grid">
+      <div class="panel">
+        <div class="kicker">Logic driven</div>
+        <h2>Start with the retirement phase, not the state.</h2>
+        <p class="muted">A no-income-tax state can be excellent during Roth conversion years, but after the conversion window is complete, healthcare depth, property tax, insurance, senior transportation, and long-term care may matter more.</p>
+      </div>
+      <div class="panel">
+        <div class="kicker">Benefit screening</div>
+        <h2>You don't need to know local benefit limits.</h2>
+        <p class="muted">The matcher asks for filing status and recurring income, then classifies income-tested senior supports as likely useful, maybe useful, or unlikely to apply. Exact program eligibility still requires county/state verification.</p>
+      </div>
+    </section>
+
+    <section class="panel" style="margin-bottom:24px">
+      <div class="kicker">Question flow</div>
+      <h2>How the U.S. city matcher works</h2>
+      <div class="flow">
+        <div class="flow-step"><div class="flow-num">1</div><b>Retirement phase</b><span>U.S. conversion years, return after overseas conversions, or already 65+.</span></div>
+        <div class="flow-step"><div class="flow-num">2</div><b>Tax profile</b><span>Filing status, Roth conversion income, Social Security, pension, IRA, and passive income.</span></div>
+        <div class="flow-step"><div class="flow-num">3</div><b>Cost + housing</b><span>Monthly budget plus rent/own choice, property tax, insurance, and HOA sensitivity.</span></div>
+        <div class="flow-step"><div class="flow-num">4</div><b>Support + health</b><span>Senior benefits, Medicare provider depth, hospitals, long-term-care ecosystem.</span></div>
+        <div class="flow-step"><div class="flow-num">5</div><b>Risk + access</b><span>Climate tolerance, airport connectivity, family access, and final city shortlist.</span></div>
+      </div>
+    </section>
+
+    <section id="matcher" class="matcher">
+      <div>
+        <div class="question-card active" data-step="1">
+          <div class="q-head">
+            <div class="q-num">1</div>
+            <div>
+              <h3 class="q-title">What retirement phase are you planning for?</h3>
+              <p class="q-sub">This drives whether the tool prioritizes state-tax-free Roth conversions or post-conversion retirement support.</p>
+            </div>
+          </div>
+          <div class="options" data-key="phase">
+            <div class="option" data-value="us_conversion"><b>U.S.-based Roth conversion years</b><span>I will live in the U.S. before 65 and convert pre-tax assets here.</span></div>
+            <div class="option" data-value="post_overseas"><b>Returning after overseas conversion years</b><span>I expect major conversions were completed abroad before settling in the U.S.</span></div>
+            <div class="option" data-value="age65plus"><b>Already 65+ / Medicare phase</b><span>I care most about healthcare, senior support, property costs, and aging-in-place.</span></div>
+            <div class="option" data-value="not_sure"><b>Not sure yet</b><span>Show both conversion-city and post-conversion-city logic.</span></div>
+          </div>
+        </div>
+
+        <div class="question-card" data-step="2">
+          <div class="q-head">
+            <div class="q-num">2</div>
+            <div>
+              <h3 class="q-title">What tax filing status should we use?</h3>
+              <p class="q-sub">Filing status changes federal bracket room, IRMAA exposure, and senior-benefit screening.</p>
+            </div>
+          </div>
+          <div class="options" data-key="filingStatus">
+            <div class="option" data-value="single"><b>Single</b><span>Lower bracket and benefit thresholds; no-income-tax states can matter more per dollar converted.</span></div>
+            <div class="option" data-value="mfj"><b>Married filing jointly</b><span>Higher federal bracket room and usually higher household income thresholds.</span></div>
+            <div class="option" data-value="hoh"><b>Head of household</b><span>Useful for single retirees supporting qualifying dependents.</span></div>
+            <div class="option" data-value="mfs"><b>Married filing separately</b><span>Advanced case; often more complicated for Social Security taxation, IRMAA, and credits.</span></div>
+          </div>
+          <div class="actions">
+            <button class="btn secondary" onclick="prevStep()">← Back</button>
+          </div>
+        </div>
+
+        <div class="question-card" data-step="3">
+          <div class="q-head">
+            <div class="q-num">3</div>
+            <div>
+              <h3 class="q-title">Will you have U.S.-based Roth conversion income?</h3>
+              <p class="q-sub">This determines how much extra weight to give no-income-tax states.</p>
+            </div>
+          </div>
+          <div class="options" data-key="conversionBand">
+            <div class="option" data-value="none"><b>No / already completed</b><span>Do not overweight no-income-tax states for conversion years.</span></div>
+            <div class="option" data-value="low"><b>Under $75k/year</b><span>Moderate state-tax sensitivity.</span></div>
+            <div class="option" data-value="medium"><b>$75k–$200k/year</b><span>High state-tax sensitivity.</span></div>
+            <div class="option" data-value="high"><b>$200k+/year</b><span>Very high state-tax sensitivity; tax-free states get strong preference.</span></div>
+          </div>
+          <div class="actions">
+            <button class="btn secondary" onclick="prevStep()">← Back</button>
+          </div>
+        </div>
+
+        <div class="question-card" data-step="4">
+          <div class="q-head">
+            <div class="q-num">4</div>
+            <div>
+              <h3 class="q-title">Estimate recurring income after major conversions.</h3>
+              <p class="q-sub">The model uses this to estimate whether income-tested senior benefits might be useful. You can leave fields at zero.</p>
+            </div>
+          </div>
+          <div class="input-grid">
+            <div class="field"><label>Annual Social Security</label><input id="ssIncome" type="number" value="60000"><small>Household annual amount.</small></div>
+            <div class="field"><label>Annual pension</label><input id="pensionIncome" type="number" value="0"><small>Taxable pension income.</small></div>
+            <div class="field"><label>IRA / 401(k) withdrawals</label><input id="iraIncome" type="number" value="30000"><small>Expected recurring withdrawals after conversions.</small></div>
+            <div class="field"><label>Passive / brokerage income</label><input id="passiveIncome" type="number" value="25000"><small>Interest, dividends, rentals, realized gains.</small></div>
+          </div>
+          <div class="actions">
+            <button class="btn secondary" onclick="prevStep()">← Back</button>
+            <button class="btn dark" onclick="saveIncomeAndNext()">Continue to budget</button>
+          </div>
+        </div>
+
+        <div class="question-card" data-step="5">
+          <div class="q-head">
+            <div class="q-num">5</div>
+            <div>
+              <h3 class="q-title">What monthly spending budget are you targeting?</h3>
+              <p class="q-sub">Exclude federal tax. Include housing, local taxes, insurance, healthcare premiums, transportation, food, and lifestyle.</p>
+            </div>
+          </div>
+          <div class="options" data-key="budgetBand">
+            <div class="option" data-value="low"><b>Under $4,000/month</b><span>Cost-sensitive inland or smaller metros.</span></div>
+            <div class="option" data-value="mid"><b>$4,000–$6,000/month</b><span>Comfortable mid-cost retirement cities.</span></div>
+            <div class="option" data-value="upper"><b>$6,000–$9,000/month</b><span>Stronger healthcare/lifestyle metros.</span></div>
+            <div class="option" data-value="premium"><b>$9,000+/month</b><span>Premium retirement metros and expensive lifestyle cities.</span></div>
+          </div>
+          <div class="actions">
+            <button class="btn secondary" onclick="prevStep()">← Back</button>
+          </div>
+        </div>
+
+        <div class="question-card" data-step="6">
+          <div class="q-head">
+            <div class="q-num">6</div>
+            <div>
+              <h3 class="q-title">Will you rent or own?</h3>
+              <p class="q-sub">Senior property-tax relief usually matters only if you own, while insurance and HOA costs can offset income-tax savings.</p>
+            </div>
+          </div>
+          <div class="options" data-key="housing">
+            <div class="option" data-value="rent"><b>Rent</b><span>Prioritize rent affordability, flexibility, and rent inflation risk.</span></div>
+            <div class="option" data-value="own_no_mortgage"><b>Own with no mortgage</b><span>Property tax, insurance, HOA, and maintenance become the focus.</span></div>
+            <div class="option" data-value="own_mortgage"><b>Own with mortgage</b><span>Housing affordability and property tax burden matter most.</span></div>
+            <div class="option" data-value="not_sure"><b>Not sure</b><span>Recommend rent-first cities and avoid irreversible purchase risk.</span></div>
+          </div>
+          <div class="actions">
+            <button class="btn secondary" onclick="prevStep()">← Back</button>
+          </div>
+        </div>
+
+        <div class="question-card" data-step="7">
+          <div class="q-head">
+            <div class="q-num">7</div>
+            <div>
+              <h3 class="q-title">Which local retirement support matters most?</h3>
+              <p class="q-sub">The matcher will flag whether income-tested benefits look likely, maybe, or unlikely based on your income profile.</p>
+            </div>
+          </div>
+          <div class="options" data-key="supportPriority">
+            <div class="option" data-value="property_tax"><b>Property tax relief / homestead protections</b><span>Useful for homeowners; many senior programs are income-limited.</span></div>
+            <div class="option" data-value="transport"><b>Senior transportation + daily support</b><span>Paratransit, local senior services, walkability, and errands.</span></div>
+            <div class="option" data-value="ltc"><b>Long-term-care ecosystem</b><span>Home care labor, assisted living, Medicaid/LTC(Long-term care) planning environment.</span></div>
+            <div class="option" data-value="community"><b>Senior centers / community programs</b><span>Social connection, local programs, meals, education, and volunteer life.</span></div>
+          </div>
+          <div class="actions">
+            <button class="btn secondary" onclick="prevStep()">← Back</button>
+          </div>
+        </div>
+
+        <div class="question-card" data-step="8">
+          <div class="q-head">
+            <div class="q-num">8</div>
+            <div>
+              <h3 class="q-title">How much healthcare depth do you need nearby?</h3>
+              <p class="q-sub">This is one of the strongest retirement filters, especially after age 65.</p>
+            </div>
+          </div>
+          <div class="options" data-key="healthcare">
+            <div class="option" data-value="routine"><b>Routine care is enough</b><span>Primary care, pharmacy, basic specialists.</span></div>
+            <div class="option" data-value="regional"><b>Strong regional hospital</b><span>Good local specialists and emergency care.</span></div>
+            <div class="option" data-value="academic"><b>Academic / teaching medical center</b><span>University health system or broader specialty access.</span></div>
+            <div class="option" data-value="top"><b>Top-tier specialist depth</b><span>Large metro, major specialist networks, complex-care readiness.</span></div>
+          </div>
+          <div class="actions">
+            <button class="btn secondary" onclick="prevStep()">← Back</button>
+          </div>
+        </div>
+
+        <div class="question-card" data-step="9">
+          <div class="q-head">
+            <div class="q-num">9</div>
+            <div>
+              <h3 class="q-title">Which climate risks are acceptable?</h3>
+              <p class="q-sub">Choose the risk you are most willing to accept. The model will penalize cities with the risks you did not choose.</p>
+            </div>
+          </div>
+          <div class="options" data-key="climateTolerance">
+            <div class="option" data-value="heat"><b>Heat is acceptable</b><span>I can manage hot summers if taxes/costs are attractive.</span></div>
+            <div class="option" data-value="hurricane"><b>Hurricane / flood risk is acceptable</b><span>I understand insurance and storm risk may be higher.</span></div>
+            <div class="option" data-value="snow"><b>Snow / winter is acceptable</b><span>I can handle winter if healthcare and cost are strong.</span></div>
+            <div class="option" data-value="low_risk"><b>I prefer lower climate stress</b><span>Avoid extreme heat, hurricanes, wildfire/smoke, and heavy winter where possible.</span></div>
+          </div>
+          <div class="actions">
+            <button class="btn secondary" onclick="prevStep()">← Back</button>
+          </div>
+        </div>
+
+        <div class="question-card" data-step="10">
+          <div class="q-head">
+            <div class="q-num">10</div>
+            <div>
+              <h3 class="q-title">How important is airport or family connectivity?</h3>
+              <p class="q-sub">This keeps the shortlist practical for adult children, grandkids, medical travel, and emergencies.</p>
+            </div>
+          </div>
+          <div class="options" data-key="airport">
+            <div class="option" data-value="major"><b>Must be near a major airport</b><span>Prioritize larger metros or strong airport access.</span></div>
+            <div class="option" data-value="regional"><b>Regional airport is fine</b><span>Mid-sized cities are acceptable.</span></div>
+            <div class="option" data-value="family_region"><b>Driving distance to family matters most</b><span>Show balanced results and let family geography drive final choice.</span></div>
+            <div class="option" data-value="not_important"><b>Not important</b><span>Optimize for tax, cost, healthcare, and support instead.</span></div>
+          </div>
+          <div class="actions">
+            <button class="btn secondary" onclick="prevStep()">← Back</button>
+          </div>
+        </div>
+
+        <!-- Matched Shortlist Results Area -->
+        <section id="results" class="results">
+          <div class="results-head">
+            <div>
+              <div class="kicker">Matched shortlist</div>
+              <h2>Your U.S. retirement city matches</h2>
+              <p class="muted" id="resultNarrative"></p>
+            </div>
+            <button class="btn dark" onclick="restartMatcher()">Start over</button>
+          </div>
+          <div id="cityGrid" class="city-grid"></div>
+        </section>
+
+        <!-- Starter Table Universe -->
+        <section id="compare" class="compare">
+          <h2>Starter city universe</h2>
+          <p class="muted mb-4">This table is intentionally simplified. The interactive score above is a first-pass filter; each city still needs property tax, insurance, Medicare network, housing, and county benefit verification.</p>
+          
+          <!-- Interactive Quick Search Filter -->
+          <div class="mb-4">
+            <input type="text" id="tableSearch" onkeyup="filterStarterTable()" placeholder="🔍 Search table by city, state, or attributes..." class="w-full md:w-80 p-3 border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+          </div>
+
+          <div style="overflow:auto">
+            <table>
+              <thead>
+                <tr>
+                  <th>City</th>
+                  <th>State</th>
+                  <th>Best use</th>
+                  <th>Monthly cost tier</th>
+                  <th>Healthcare</th>
+                  <th>Support note</th>
+                </tr>
+              </thead>
+              <tbody id="starterTable"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Sidebar Column -->
+      <aside class="side">
+        <div class="path-box">
+          <h3>Your path</h3>
+          <div class="path-item"><div class="path-label">Phase</div><div class="path-value" id="pathPhase">Not selected</div></div>
+          <div class="path-item"><div class="path-label">Filing status</div><div class="path-value" id="pathFiling">Not selected</div></div>
+          <div class="path-item"><div class="path-label">Conversion income</div><div class="path-value" id="pathConversion">Not selected</div></div>
+          <div class="path-item"><div class="path-label">Recurring income</div><div class="path-value" id="pathIncome">Not entered</div></div>
+          <div class="path-item"><div class="path-label">Budget + housing</div><div class="path-value" id="pathBudget">Not selected</div></div>
+        </div>
+        <div class="benefit-meter">
+          <div class="kicker">Benefit eligibility screen</div>
+          <div class="benefit-status" id="benefitStatus">Waiting for income</div>
+          <div class="meter"><span id="benefitMeter"></span></div>
+          <p class="muted" id="benefitText">Enter filing status and recurring income to estimate whether income-tested senior programs may be useful.</p>
+        </div>
+        <div class="leadbox">
+          <p class="muted font-bold text-slate-800 mb-2">U.S. Retirement City Tax Checklist</p>
+          <p class="muted text-xs mb-3">Download our complete checklist outlining property taxes, state-by-state conversion tax codes, and senior benefit eligibility rules.</p>
+          <input placeholder="Email address" />
+          <button>Get the checklist</button>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer id="sources" class="sources">
+    <div class="inner">
+      <h2>Sources and planning notes</h2>
+      <ol>
+        <li>No-broad-based-income-tax states and retirement-income tax treatment should be verified each year; several states with no state income tax or exempt retirement income can still have meaningful property, sales, insurance, or local taxes.</li>
+        <li>Tennessee property tax relief is described by the state as a program for low-income elderly and disabled homeowners, disabled veteran homeowners, and surviving spouses; therefore this page treats it as income-sensitive rather than universal.</li>
+        <li>Florida property tax exemptions are administered locally by county property appraisers; the Florida Department of Revenue notes further benefits for senior citizens and other groups, but local rules and income limits must be checked.</li>
+        <li>Texas homestead exemptions reduce appraised value for a primary residence, and Texas provides over-65/disabled protections such as school-tax ceilings in many contexts; property tax burden still varies heavily by county, city, school district, and home value.</li>
+      </ol>
+      <p class="disclaimer"><b>Disclaimer:</b> This page is an educational prototype, not tax, legal, Medicare, Medicaid, real-estate, or investment advice. State and county rules change. Senior benefits may depend on age, disability, homeownership, residence duration, income, assets, veteran status, and local ordinances. Verify with official state/county agencies and qualified advisors before relocating or making Roth conversion decisions.</p>
     </div>
-  </section>
+  </footer>
 
-  <section id="matcher" class="matcher">
-    <div>
-      <div class="question-card active" data-step="1">
-        <div class="q-head"><div class="q-num">1</div><div><h3 class="q-title">What retirement phase are you planning for?</h3><p class="q-sub">This drives whether the tool prioritizes state-tax-free Roth conversions or post-conversion retirement support.</p></div></div>
-        <div class="options" data-key="phase">
-          <div class="option" data-value="us_conversion"><b>U.S.-based Roth conversion years</b><span>I will live in the U.S. before 65 and convert pre-tax assets here.</span></div>
-          <div class="option" data-value="post_overseas"><b>Returning after overseas conversion years</b><span>I expect major conversions were completed abroad before settling in the U.S.</span></div>
-          <div class="option" data-value="age65plus"><b>Already 65+ / Medicare phase</b><span>I care most about healthcare, senior support, property costs, and aging-in-place.</span></div>
-          <div class="option" data-value="not_sure"><b>Not sure yet</b><span>Show both conversion-city and post-conversion-city logic.</span></div>
-        </div>
-      </div>
+  <script>
+    /*
+      U.S. RETIREMENT CITY MATCHER LOGIC
+      ----------------------------------
+      The city data below is a first-pass decision tree dataset. It is designed to guide a user to a shortlist,
+      not to determine exact tax or benefit eligibility. The scoring algorithm combines many metrics.
+    */
+    const cities = [
+      {name:'Knoxville',state:'TN',emoji:'🏔️',tax:'none',retireTax:'friendly',cost:'mid',monthly:[3900,6200],health:3,support:3,benefitSensitivity:'high',property:'low',insurance:'low',airport:'regional',risks:['heat'],best:['conversion','cost','healthcare'],why:'No state income tax, relatively affordable housing, good regional healthcare, and strong mountain lifestyle fit.'},
+      {name:'Chattanooga',state:'TN',emoji:'🌉',tax:'none',retireTax:'friendly',cost:'low',monthly:[3600,5800],health:2,support:3,benefitSensitivity:'high',property:'low',insurance:'low',airport:'regional',risks:['heat'],best:['conversion','cost'],why:'Cost-effective, scenic, no state income tax, and easier lifestyle pace than many large metros.'},
+      {name:'Johnson City / Tri-Cities',state:'TN',emoji:'🌄',tax:'none',retireTax:'friendly',cost:'low',monthly:[3200,5200],health:2,support:2,benefitSensitivity:'high',property:'low',insurance:'low',airport:'regional',risks:['snow'],best:['cost'],why:'Very cost-effective Tennessee option with regional healthcare and slower pace.'},
+      {name:'Henderson / Summerlin',state:'NV',emoji:'🌵',tax:'none',retireTax:'friendly',cost:'upper',monthly:[5200,8500],health:3,support:3,benefitSensitivity:'medium',property:'medium',insurance:'medium',airport:'major',risks:['heat','drought'],best:['conversion','airport','hnw'],why:'No state income tax, strong retiree ecosystem, major airport, and Las Vegas healthcare access.'},
+      {name:'Reno / Sparks',state:'NV',emoji:'🏞️',tax:'none',retireTax:'friendly',cost:'upper',monthly:[5200,8500],health:3,support:2,benefitSensitivity:'medium',property:'medium',insurance:'medium',airport:'regional',risks:['snow','wildfire'],best:['conversion','outdoors'],why:'Tax-friendly Nevada base with outdoor access, but housing and wildfire/smoke risk need review.'},
+      {name:'San Antonio',state:'TX',emoji:'🏥',tax:'none',retireTax:'friendly',cost:'mid',monthly:[4300,7200],health:4,support:3,benefitSensitivity:'low',property:'high',insurance:'medium',airport:'major',risks:['heat'],best:['conversion','healthcare','airport'],why:'Large-city healthcare depth, no state income tax, airport access, and lower cost than many major medical metros.'},
+      {name:'Georgetown / Round Rock',state:'TX',emoji:'🏘️',tax:'none',retireTax:'friendly',cost:'upper',monthly:[5200,8500],health:3,support:4,benefitSensitivity:'low',property:'high',insurance:'medium',airport:'major',risks:['heat'],best:['conversion','community'],why:'Strong retiree communities near Austin-area healthcare, but property tax and housing cost matter.'},
+      {name:'Denton',state:'TX',emoji:'🎓',tax:'none',retireTax:'friendly',cost:'mid',monthly:[4200,7000],health:3,support:3,benefitSensitivity:'low',property:'high',insurance:'medium',airport:'major',risks:['heat'],best:['conversion','college_town'],why:'College-town amenities with Dallas-Fort Worth healthcare and airport access.'},
+      {name:'Sioux Falls',state:'SD',emoji:'❄️',tax:'none',retireTax:'friendly',cost:'low',monthly:[3500,5700],health:3,support:2,benefitSensitivity:'medium',property:'medium',insurance:'low',airport:'regional',risks:['snow'],best:['conversion','cost','healthcare'],why:'No state income tax, low-cost profile, and strong regional healthcare for its size.'},
+      {name:'Rapid City',state:'SD',emoji:'⛰️',tax:'none',retireTax:'friendly',cost:'low',monthly:[3300,5600],health:2,support:2,benefitSensitivity:'medium',property:'medium',insurance:'low',airport:'regional',risks:['snow'],best:['cost','outdoors'],why:'Low-tax Black Hills lifestyle, but healthcare depth and airport options are more limited.'},
+      {name:'Cheyenne',state:'WY',emoji:'🤠',tax:'none',retireTax:'friendly',cost:'low',monthly:[3500,5800],health:2,support:2,benefitSensitivity:'medium',property:'low',insurance:'low',airport:'regional',risks:['snow'],best:['conversion','cost'],why:'Tax-friendly Wyoming base with low property-tax profile and proximity to Colorado Front Range.'},
+      {name:'Prescott',state:'AZ',emoji:'🌲',tax:'low',retireTax:'mixed',cost:'mid',monthly:[4600,7600],health:2,support:4,benefitSensitivity:'high',property:'low',insurance:'medium',airport:'regional',risks:['heat','wildfire'],best:['post_conversion','community'],why:'Popular retirement community with milder high-desert climate and strong senior ecosystem.'},
+      {name:'Tucson',state:'AZ',emoji:'☀️',tax:'low',retireTax:'mixed',cost:'mid',monthly:[4300,7200],health:4,support:3,benefitSensitivity:'high',property:'low',insurance:'medium',airport:'regional',risks:['heat','drought'],best:['healthcare','post_conversion'],why:'University medical depth, lower cost than Phoenix/Scottsdale, but heat and water risk matter.'},
+      {name:'Gainesville',state:'FL',emoji:'🎓',tax:'none',retireTax:'friendly',cost:'mid',monthly:[4200,7000],health:4,support:3,benefitSensitivity:'high',property:'medium',insurance:'high',airport:'regional',risks:['hurricane','heat'],best:['post_conversion','healthcare'],why:'Florida tax benefits plus university healthcare at lower cost than many coastal metros.'},
+      {name:'Tampa / St. Petersburg',state:'FL',emoji:'🌴',tax:'none',retireTax:'friendly',cost:'upper',monthly:[5500,9200],health:4,support:4,benefitSensitivity:'high',property:'medium',insurance:'high',airport:'major',risks:['hurricane','heat'],best:['post_conversion','healthcare','airport'],why:'Major airport, healthcare depth, retiree services, and no state income tax; insurance/flood zones are key.'},
+      {name:'Sarasota / Bradenton',state:'FL',emoji:'🏖️',tax:'none',retireTax:'friendly',cost:'upper',monthly:[5600,9500],health:3,support:4,benefitSensitivity:'high',property:'medium',insurance:'high',airport:'major',risks:['hurricane','heat'],best:['post_conversion','community'],why:'Deep retiree infrastructure and lifestyle appeal, offset by coastal insurance and housing pressure.'},
+      {name:'Greenville',state:'SC',emoji:'🌳',tax:'low',retireTax:'mixed',cost:'mid',monthly:[4200,7000],health:3,support:3,benefitSensitivity:'high',property:'low',insurance:'medium',airport:'regional',risks:['heat'],best:['post_conversion','community'],why:'Quality-of-life city with healthcare access, moderate cost, and strong lifestyle appeal.'},
+      {name:'Lancaster',state:'PA',emoji:'🏘️',tax:'retirement_friendly',retireTax:'friendly',cost:'mid',monthly:[4000,6800],health:3,support:3,benefitSensitivity:'medium',property:'medium',insurance:'low',airport:'regional',risks:['snow'],best:['post_conversion','retire_tax'],why:'Pennsylvania retirement-income treatment can be favorable, with lower housing cost than many Northeast metros.'},
+      {name:'Pittsburgh suburbs',state:'PA',emoji:'🏥',tax:'retirement_friendly',retireTax:'friendly',cost:'mid',monthly:[4300,7400],health:4,support:3,benefitSensitivity:'medium',property:'medium',insurance:'low',airport:'major',risks:['snow'],best:['healthcare','post_conversion'],why:'Strong medical systems and lower housing cost than many large healthcare metros; property taxes vary by district.'},
+      {name:'Wilmington / Leland',state:'NC',emoji:'🌊',tax:'low',retireTax:'mixed',cost:'mid',monthly:[4300,7300],health:3,support:3,benefitSensitivity:'high',property:'low',insurance:'medium',airport:'regional',risks:['hurricane','heat'],best:['post_conversion','coastal'],why:'Coastal lifestyle with moderate cost, but North Carolina tax and storm risk need modeling.'}
+    ];
 
-      <div class="question-card" data-step="2">
-        <div class="q-head"><div class="q-num">2</div><div><h3 class="q-title">What tax filing status should we use?</h3><p class="q-sub">Filing status changes federal bracket room, IRMAA exposure, and senior-benefit screening.</p></div></div>
-        <div class="options" data-key="filingStatus">
-          <div class="option" data-value="single"><b>Single</b><span>Lower bracket and benefit thresholds; no-income-tax states can matter more per dollar converted.</span></div>
-          <div class="option" data-value="mfj"><b>Married filing jointly</b><span>Higher federal bracket room and usually higher household income thresholds.</span></div>
-          <div class="option" data-value="hoh"><b>Head of household</b><span>Useful for single retirees supporting qualifying dependents.</span></div>
-          <div class="option" data-value="mfs"><b>Married filing separately</b><span>Advanced case; often more complicated for Social Security taxation, IRMAA, and credits.</span></div>
-        </div>
-      </div>
+    const labels = {
+      phase: {us_conversion:'U.S. conversion years',post_overseas:'Post-overseas return',age65plus:'Already 65+ / Medicare',not_sure:'Not sure'},
+      filingStatus: {single:'Single',mfj:'Married filing jointly',hoh:'Head of household',mfs:'Married filing separately'},
+      conversionBand: {none:'No / already completed',low:'Under $75k/year',medium:'$75k–$200k/year',high:'$200k+/year'},
+      budgetBand: {low:'Under $4k/month',mid:'$4k–$6k/month',upper:'$6k–$9k/month',premium:'$9k+/month'},
+      housing: {rent:'Rent',own_no_mortgage:'Own, no mortgage',own_mortgage:'Own with mortgage',not_sure:'Not sure'},
+      supportPriority: {property_tax:'Property tax relief',transport:'Transportation/support',ltc:'Long-term care ecosystem',community:'Senior community programs'},
+      healthcare: {routine:'Routine care',regional:'Regional hospital',academic:'Academic medical center',top:'Top-tier specialist depth'},
+      climateTolerance: {heat:'Heat acceptable',hurricane:'Hurricane/flood acceptable',snow:'Snow acceptable',low_risk:'Prefer lower climate stress'},
+      airport: {major:'Major airport required',regional:'Regional airport fine',family_region:'Family geography matters',not_important:'Not important'}
+    };
 
-      <div class="question-card" data-step="3">
-        <div class="q-head"><div class="q-num">3</div><div><h3 class="q-title">Will you have U.S.-based Roth conversion income?</h3><p class="q-sub">This determines how much extra weight to give no-income-tax states.</p></div></div>
-        <div class="options" data-key="conversionBand">
-          <div class="option" data-value="none"><b>No / already completed</b><span>Do not overweight no-income-tax states for conversion years.</span></div>
-          <div class="option" data-value="low"><b>Under $75k/year</b><span>Moderate state-tax sensitivity.</span></div>
-          <div class="option" data-value="medium"><b>$75k–$200k/year</b><span>High state-tax sensitivity.</span></div>
-          <div class="option" data-value="high"><b>$200k+/year</b><span>Very high state-tax sensitivity; tax-free states get strong preference.</span></div>
-        </div>
-      </div>
+    let state = {
+      phase: null,
+      filingStatus: null,
+      conversionBand: null,
+      recurringIncome: null,
+      budgetBand: null,
+      housing: null,
+      supportPriority: null,
+      healthcare: null,
+      climateTolerance: null,
+      airport: null
+    };
 
-      <div class="question-card" data-step="4">
-        <div class="q-head"><div class="q-num">4</div><div><h3 class="q-title">Estimate recurring income after major conversions.</h3><p class="q-sub">The model uses this to estimate whether income-tested senior benefits might be useful. You can leave fields at zero.</p></div></div>
-        <div class="input-grid">
-          <div class="field"><label>Annual Social Security</label><input id="ssIncome" type="number" value="60000"><small>Household annual amount.</small></div>
-          <div class="field"><label>Annual pension</label><input id="pensionIncome" type="number" value="0"><small>Taxable pension income.</small></div>
-          <div class="field"><label>IRA / 401(k) withdrawals</label><input id="iraIncome" type="number" value="30000"><small>Expected recurring withdrawals after conversions.</small></div>
-          <div class="field"><label>Passive / brokerage income</label><input id="passiveIncome" type="number" value="25000"><small>Interest, dividends, rentals, realized gains.</small></div>
-        </div>
-        <div class="actions"><button class="btn secondary" onclick="prevStep()">Back</button><button class="btn dark" onclick="saveIncomeAndNext()">Continue to budget</button></div>
-      </div>
+    let currentStep = 1;
 
-      <div class="question-card" data-step="5">
-        <div class="q-head"><div class="q-num">5</div><div><h3 class="q-title">What monthly spending budget are you targeting?</h3><p class="q-sub">Exclude federal tax. Include housing, local taxes, insurance, healthcare premiums, transportation, food, and lifestyle.</p></div></div>
-        <div class="options" data-key="budgetBand">
-          <div class="option" data-value="low"><b>Under $4,000/month</b><span>Cost-sensitive inland or smaller metros.</span></div>
-          <div class="option" data-value="mid"><b>$4,000–$6,000/month</b><span>Comfortable mid-cost retirement cities.</span></div>
-          <div class="option" data-value="upper"><b>$6,000–$9,000/month</b><span>Stronger healthcare/lifestyle metros.</span></div>
-          <div class="option" data-value="premium"><b>$9,000+/month</b><span>Premium retirement metros and expensive lifestyle cities.</span></div>
-        </div>
-      </div>
-
-      <div class="question-card" data-step="6">
-        <div class="q-head"><div class="q-num">6</div><div><h3 class="q-title">Will you rent or own?</h3><p class="q-sub">Senior property-tax relief usually matters only if you own, while insurance and HOA costs can offset income-tax savings.</p></div></div>
-        <div class="options" data-key="housing">
-          <div class="option" data-value="rent"><b>Rent</b><span>Prioritize rent affordability, flexibility, and rent inflation risk.</span></div>
-          <div class="option" data-value="own_no_mortgage"><b>Own with no mortgage</b><span>Property tax, insurance, HOA, and maintenance become the focus.</span></div>
-          <div class="option" data-value="own_mortgage"><b>Own with mortgage</b><span>Housing affordability and property tax burden matter most.</span></div>
-          <div class="option" data-value="not_sure"><b>Not sure</b><span>Recommend rent-first cities and avoid irreversible purchase risk.</span></div>
-        </div>
-      </div>
-
-      <div class="question-card" data-step="7">
-        <div class="q-head"><div class="q-num">7</div><div><h3 class="q-title">Which local retirement support matters most?</h3><p class="q-sub">The matcher will flag whether income-tested benefits look likely, maybe, or unlikely based on your income profile.</p></div></div>
-        <div class="options" data-key="supportPriority">
-          <div class="option" data-value="property_tax"><b>Property tax relief / homestead protections</b><span>Useful for homeowners; many senior programs are income-limited.</span></div>
-          <div class="option" data-value="transport"><b>Senior transportation + daily support</b><span>Paratransit, local senior services, walkability, and errands.</span></div>
-          <div class="option" data-value="ltc"><b>Long-term-care ecosystem</b><span>Home care labor, assisted living, Medicaid/LTC planning environment.</span></div>
-          <div class="option" data-value="community"><b>Senior centers / community programs</b><span>Social connection, local programs, meals, education, and volunteer life.</span></div>
-        </div>
-      </div>
-
-      <div class="question-card" data-step="8">
-        <div class="q-head"><div class="q-num">8</div><div><h3 class="q-title">How much healthcare depth do you need nearby?</h3><p class="q-sub">This is one of the strongest retirement filters, especially after age 65.</p></div></div>
-        <div class="options" data-key="healthcare">
-          <div class="option" data-value="routine"><b>Routine care is enough</b><span>Primary care, pharmacy, basic specialists.</span></div>
-          <div class="option" data-value="regional"><b>Strong regional hospital</b><span>Good local specialists and emergency care.</span></div>
-          <div class="option" data-value="academic"><b>Academic / teaching medical center</b><span>University health system or broader specialty access.</span></div>
-          <div class="option" data-value="top"><b>Top-tier specialist depth</b><span>Large metro, major specialist networks, complex-care readiness.</span></div>
-        </div>
-      </div>
-
-      <div class="question-card" data-step="9">
-        <div class="q-head"><div class="q-num">9</div><div><h3 class="q-title">Which climate risks are acceptable?</h3><p class="q-sub">Choose the risk you are most willing to accept. The model will penalize cities with the risks you did not choose.</p></div></div>
-        <div class="options" data-key="climateTolerance">
-          <div class="option" data-value="heat"><b>Heat is acceptable</b><span>I can manage hot summers if taxes/costs are attractive.</span></div>
-          <div class="option" data-value="hurricane"><b>Hurricane / flood risk is acceptable</b><span>I understand insurance and storm risk may be higher.</span></div>
-          <div class="option" data-value="snow"><b>Snow / winter is acceptable</b><span>I can handle winter if healthcare and cost are strong.</span></div>
-          <div class="option" data-value="low_risk"><b>I prefer lower climate stress</b><span>Avoid extreme heat, hurricanes, wildfire/smoke, and heavy winter where possible.</span></div>
-        </div>
-      </div>
-
-      <div class="question-card" data-step="10">
-        <div class="q-head"><div class="q-num">10</div><div><h3 class="q-title">How important is airport or family connectivity?</h3><p class="q-sub">This keeps the shortlist practical for adult children, grandkids, medical travel, and emergencies.</p></div></div>
-        <div class="options" data-key="airport">
-          <div class="option" data-value="major"><b>Must be near a major airport</b><span>Prioritize larger metros or strong airport access.</span></div>
-          <div class="option" data-value="regional"><b>Regional airport is fine</b><span>Mid-sized cities are acceptable.</span></div>
-          <div class="option" data-value="family_region"><b>Driving distance to family matters most</b><span>Show balanced results and let family geography drive final choice.</span></div>
-          <div class="option" data-value="not_important"><b>Not important</b><span>Optimize for tax, cost, healthcare, and support instead.</span></div>
-        </div>
-      </div>
-
-      <section id="results" class="results">
-        <div class="results-head"><div><div class="kicker">Matched shortlist</div><h2>Your U.S. retirement city matches</h2><p class="muted" id="resultNarrative"></p></div><button class="btn dark" onclick="restartMatcher()">Start over</button></div>
-        <div id="cityGrid" class="city-grid"></div>
-      </section>
-
-      <section id="compare" class="compare">
-        <h2>Starter city universe</h2>
-        <p class="muted">This table is intentionally simplified. The interactive score above is a first-pass filter; each city still needs property tax, insurance, Medicare network, housing, and county benefit verification.</p>
-        <div style="overflow:auto"><table><thead><tr><th>City</th><th>State</th><th>Best use</th><th>Monthly cost tier</th><th>Healthcare</th><th>Support note</th></tr></thead><tbody id="starterTable"></tbody></table></div>
-      </section>
-    </div>
-    <aside class="side">
-      <div class="path-box">
-        <h3>Your path</h3>
-        <div class="path-item"><div class="path-label">Phase</div><div class="path-value" id="pathPhase">Not selected</div></div>
-        <div class="path-item"><div class="path-label">Filing status</div><div class="path-value" id="pathFiling">Not selected</div></div>
-        <div class="path-item"><div class="path-label">Conversion income</div><div class="path-value" id="pathConversion">Not selected</div></div>
-        <div class="path-item"><div class="path-label">Recurring income</div><div class="path-value" id="pathIncome">Not entered</div></div>
-        <div class="path-item"><div class="path-label">Budget + housing</div><div class="path-value" id="pathBudget">Not selected</div></div>
-      </div>
-      <div class="benefit-meter">
-        <div class="kicker">Benefit eligibility screen</div>
-        <div class="benefit-status" id="benefitStatus">Waiting for income</div>
-        <div class="meter"><span id="benefitMeter"></span></div>
-        <p class="muted" id="benefitText">Enter filing status and recurring income to estimate whether income-tested senior programs may be useful.</p>
-      </div>
-      <div class="leadbox">
-       <!-- <h3>Future lead magnet</h3>-->
-        <p class="muted">Offer a downloadable “U.S. Retirement City Tax + Support Checklist” after results.</p>
-        <input placeholder="Email address" />
-        <button>Get the checklist</button>
-      </div>
-    </aside>
-  </section>
-</main>
-<footer id="sources" class="sources">
-  <div class="inner">
-    <h2>Sources and planning notes</h2>
-    <ol>
-      <li>No-broad-based-income-tax states and retirement-income tax treatment should be verified each year; several states with no state income tax or exempt retirement income can still have meaningful property, sales, insurance, or local taxes.</li>
-      <li>Tennessee property tax relief is described by the state as a program for low-income elderly and disabled homeowners, disabled veteran homeowners, and surviving spouses; therefore this page treats it as income-sensitive rather than universal.</li>
-      <li>Florida property tax exemptions are administered locally by county property appraisers; the Florida Department of Revenue notes further benefits for senior citizens and other groups, but local rules and income limits must be checked.</li>
-      <li>Texas homestead exemptions reduce appraised value for a primary residence, and Texas provides over-65/disabled protections such as school-tax ceilings in many contexts; property tax burden still varies heavily by county, city, school district, and home value.</li>
-    </ol>
-    <p class="disclaimer"><b>Disclaimer:</b> This page is an educational prototype, not tax, legal, Medicare, Medicaid, real-estate, or investment advice. State and county rules change. Senior benefits may depend on age, disability, homeownership, residence duration, income, assets, veteran status, and local ordinances. Verify with official state/county agencies and qualified advisors before relocating or making Roth conversion decisions.</p>
-  </div>
-</footer>
-<script>
-/*
-  U.S. RETIREMENT CITY MATCHER LOGIC
-  ----------------------------------
-  The city data below is a first-pass decision tree dataset. It is designed to guide a user to a shortlist,
-  not to determine exact tax or benefit eligibility. The scoring algorithm combines:
-  1) retirement phase, 2) filing status, 3) Roth conversion income sensitivity, 4) recurring income and benefit likelihood,
-  5) monthly budget, 6) rent/own preference, 7) senior support priority, 8) healthcare depth, 9) climate risk, and 10) airport access.
-*/
-const cities=[
-  {name:'Knoxville',state:'TN',emoji:'🏔️',tax:'none',retireTax:'friendly',cost:'mid',monthly:[3900,6200],health:3,support:3,benefitSensitivity:'high',property:'low',insurance:'low',airport:'regional',risks:['heat'],best:['conversion','cost','healthcare'],why:'No state income tax, relatively affordable housing, good regional healthcare, and strong mountain lifestyle fit.'},
-  {name:'Chattanooga',state:'TN',emoji:'🌉',tax:'none',retireTax:'friendly',cost:'low',monthly:[3600,5800],health:2,support:3,benefitSensitivity:'high',property:'low',insurance:'low',airport:'regional',risks:['heat'],best:['conversion','cost'],why:'Cost-effective, scenic, no state income tax, and easier lifestyle pace than many large metros.'},
-  {name:'Johnson City / Tri-Cities',state:'TN',emoji:'🌄',tax:'none',retireTax:'friendly',cost:'low',monthly:[3200,5200],health:2,support:2,benefitSensitivity:'high',property:'low',insurance:'low',airport:'regional',risks:['snow'],best:['cost'],why:'Very cost-effective Tennessee option with regional healthcare and slower pace.'},
-  {name:'Henderson / Summerlin',state:'NV',emoji:'🌵',tax:'none',retireTax:'friendly',cost:'upper',monthly:[5200,8500],health:3,support:3,benefitSensitivity:'medium',property:'medium',insurance:'medium',airport:'major',risks:['heat','drought'],best:['conversion','airport','hnw'],why:'No state income tax, strong retiree ecosystem, major airport, and Las Vegas healthcare access.'},
-  {name:'Reno / Sparks',state:'NV',emoji:'🏞️',tax:'none',retireTax:'friendly',cost:'upper',monthly:[5200,8500],health:3,support:2,benefitSensitivity:'medium',property:'medium',insurance:'medium',airport:'regional',risks:['snow','wildfire'],best:['conversion','outdoors'],why:'Tax-friendly Nevada base with outdoor access, but housing and wildfire/smoke risk need review.'},
-  {name:'San Antonio',state:'TX',emoji:'🏥',tax:'none',retireTax:'friendly',cost:'mid',monthly:[4300,7200],health:4,support:3,benefitSensitivity:'low',property:'high',insurance:'medium',airport:'major',risks:['heat'],best:['conversion','healthcare','airport'],why:'Large-city healthcare depth, no state income tax, airport access, and lower cost than many major medical metros.'},
-  {name:'Georgetown / Round Rock',state:'TX',emoji:'🏘️',tax:'none',retireTax:'friendly',cost:'upper',monthly:[5200,8500],health:3,support:4,benefitSensitivity:'low',property:'high',insurance:'medium',airport:'major',risks:['heat'],best:['conversion','community'],why:'Strong retiree communities near Austin-area healthcare, but property tax and housing cost matter.'},
-  {name:'Denton',state:'TX',emoji:'🎓',tax:'none',retireTax:'friendly',cost:'mid',monthly:[4200,7000],health:3,support:3,benefitSensitivity:'low',property:'high',insurance:'medium',airport:'major',risks:['heat'],best:['conversion','college_town'],why:'College-town amenities with Dallas-Fort Worth healthcare and airport access.'},
-  {name:'Sioux Falls',state:'SD',emoji:'❄️',tax:'none',retireTax:'friendly',cost:'low',monthly:[3500,5700],health:3,support:2,benefitSensitivity:'medium',property:'medium',insurance:'low',airport:'regional',risks:['snow'],best:['conversion','cost','healthcare'],why:'No state income tax, low-cost profile, and strong regional healthcare for its size.'},
-  {name:'Rapid City',state:'SD',emoji:'⛰️',tax:'none',retireTax:'friendly',cost:'low',monthly:[3300,5600],health:2,support:2,benefitSensitivity:'medium',property:'medium',insurance:'low',airport:'regional',risks:['snow'],best:['cost','outdoors'],why:'Low-tax Black Hills lifestyle, but healthcare depth and airport options are more limited.'},
-  {name:'Cheyenne',state:'WY',emoji:'🤠',tax:'none',retireTax:'friendly',cost:'low',monthly:[3500,5800],health:2,support:2,benefitSensitivity:'medium',property:'low',insurance:'low',airport:'regional',risks:['snow'],best:['conversion','cost'],why:'Tax-friendly Wyoming base with low property-tax profile and proximity to Colorado Front Range.'},
-  {name:'Prescott',state:'AZ',emoji:'🌲',tax:'low',retireTax:'mixed',cost:'mid',monthly:[4600,7600],health:2,support:4,benefitSensitivity:'high',property:'low',insurance:'medium',airport:'regional',risks:['heat','wildfire'],best:['post_conversion','community'],why:'Popular retirement community with milder high-desert climate and strong senior ecosystem.'},
-  {name:'Tucson',state:'AZ',emoji:'☀️',tax:'low',retireTax:'mixed',cost:'mid',monthly:[4300,7200],health:4,support:3,benefitSensitivity:'high',property:'low',insurance:'medium',airport:'regional',risks:['heat','drought'],best:['healthcare','post_conversion'],why:'University medical depth, lower cost than Phoenix/Scottsdale, but heat and water risk matter.'},
-  {name:'Gainesville',state:'FL',emoji:'🎓',tax:'none',retireTax:'friendly',cost:'mid',monthly:[4200,7000],health:4,support:3,benefitSensitivity:'high',property:'medium',insurance:'high',airport:'regional',risks:['hurricane','heat'],best:['post_conversion','healthcare'],why:'Florida tax benefits plus university healthcare at lower cost than many coastal metros.'},
-  {name:'Tampa / St. Petersburg',state:'FL',emoji:'🌴',tax:'none',retireTax:'friendly',cost:'upper',monthly:[5500,9200],health:4,support:4,benefitSensitivity:'high',property:'medium',insurance:'high',airport:'major',risks:['hurricane','heat'],best:['post_conversion','healthcare','airport'],why:'Major airport, healthcare depth, retiree services, and no state income tax; insurance/flood zones are key.'},
-  {name:'Sarasota / Bradenton',state:'FL',emoji:'🏖️',tax:'none',retireTax:'friendly',cost:'upper',monthly:[5600,9500],health:3,support:4,benefitSensitivity:'high',property:'medium',insurance:'high',airport:'major',risks:['hurricane','heat'],best:['post_conversion','community'],why:'Deep retiree infrastructure and lifestyle appeal, offset by coastal insurance and housing pressure.'},
-  {name:'Greenville',state:'SC',emoji:'🌳',tax:'low',retireTax:'mixed',cost:'mid',monthly:[4200,7000],health:3,support:3,benefitSensitivity:'high',property:'low',insurance:'medium',airport:'regional',risks:['heat'],best:['post_conversion','community'],why:'Quality-of-life city with healthcare access, moderate cost, and strong lifestyle appeal.'},
-  {name:'Lancaster',state:'PA',emoji:'🏘️',tax:'retirement_friendly',retireTax:'friendly',cost:'mid',monthly:[4000,6800],health:3,support:3,benefitSensitivity:'medium',property:'medium',insurance:'low',airport:'regional',risks:['snow'],best:['post_conversion','retire_tax'],why:'Pennsylvania retirement-income treatment can be favorable, with lower housing cost than many Northeast metros.'},
-  {name:'Pittsburgh suburbs',state:'PA',emoji:'🏥',tax:'retirement_friendly',retireTax:'friendly',cost:'mid',monthly:[4300,7400],health:4,support:3,benefitSensitivity:'medium',property:'medium',insurance:'low',airport:'major',risks:['snow'],best:['healthcare','post_conversion'],why:'Strong medical systems and lower housing cost than many large healthcare metros; property taxes vary by district.'},
-  {name:'Wilmington / Leland',state:'NC',emoji:'🌊',tax:'low',retireTax:'mixed',cost:'mid',monthly:[4300,7300],health:3,support:3,benefitSensitivity:'high',property:'low',insurance:'medium',airport:'regional',risks:['hurricane','heat'],best:['post_conversion','coastal'],why:'Coastal lifestyle with moderate cost, but North Carolina tax and storm risk need modeling.'}
-];
-const labels={phase:{us_conversion:'U.S. conversion years',post_overseas:'Post-overseas return',age65plus:'Already 65+ / Medicare',not_sure:'Not sure'},filingStatus:{single:'Single',mfj:'Married filing jointly',hoh:'Head of household',mfs:'Married filing separately'},conversionBand:{none:'No / already completed',low:'Under $75k/year',medium:'$75k–$200k/year',high:'$200k+/year'},budgetBand:{low:'Under $4k/month',mid:'$4k–$6k/month',upper:'$6k–$9k/month',premium:'$9k+/month'},housing:{rent:'Rent',own_no_mortgage:'Own, no mortgage',own_mortgage:'Own with mortgage',not_sure:'Not sure'},supportPriority:{property_tax:'Property tax relief',transport:'Transportation/support',ltc:'Long-term care ecosystem',community:'Senior community programs'},healthcare:{routine:'Routine care',regional:'Regional hospital',academic:'Academic medical center',top:'Top-tier specialist depth'},climateTolerance:{heat:'Heat acceptable',hurricane:'Hurricane/flood acceptable',snow:'Snow acceptable',low_risk:'Prefer lower climate stress'},airport:{major:'Major airport required',regional:'Regional airport fine',family_region:'Family geography matters',not_important:'Not important'}};
-let state={phase:null,filingStatus:null,conversionBand:null,recurringIncome:null,budgetBand:null,housing:null,supportPriority:null,healthcare:null,climateTolerance:null,airport:null};
-let currentStep=1;
-function money(x){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(x)}
-function showStep(step){currentStep=step;document.querySelectorAll('.question-card').forEach(c=>c.classList.toggle('active',Number(c.dataset.step)===step));document.getElementById('matcher').scrollIntoView({behavior:'smooth',block:'start'});updatePath();}
-function nextStep(){showStep(Math.min(10,currentStep+1))}function prevStep(){showStep(Math.max(1,currentStep-1))}
-document.querySelectorAll('.options').forEach(group=>{group.addEventListener('click',e=>{const opt=e.target.closest('.option');if(!opt)return;group.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));opt.classList.add('selected');const key=group.dataset.key;state[key]=opt.dataset.value;updatePath();if(Number(group.closest('.question-card').dataset.step)===10){renderResults();}else{setTimeout(nextStep,250)}})});
-function saveIncomeAndNext(){const ss=Number(document.getElementById('ssIncome').value||0),pension=Number(document.getElementById('pensionIncome').value||0),ira=Number(document.getElementById('iraIncome').value||0),passive=Number(document.getElementById('passiveIncome').value||0);state.recurringIncome={ss,pension,ira,passive,total:ss+pension+ira+passive};updatePath();nextStep();}
-function benefitClass(){if(!state.filingStatus||!state.recurringIncome)return{class:'unknown',text:'Enter filing status and recurring income to estimate benefit usefulness.',meter:0,label:'Waiting for income'};let total=state.recurringIncome.total;let likely=50000,maybe=90000;if(state.filingStatus==='mfj'){likely=75000;maybe=130000}else if(state.filingStatus==='hoh'){likely=65000;maybe=110000}else if(state.filingStatus==='mfs'){likely=45000;maybe=80000}
-  if(total<=likely)return{class:'likely',label:'Likely useful',meter:28,text:`Recurring income of ${money(total)} suggests income-tested senior supports may be worth researching city-by-city.`};
-  if(total<=maybe)return{class:'maybe',label:'Maybe useful',meter:58,text:`Recurring income of ${money(total)} means some local programs may help, but limits will vary by state and county.`};
-  return{class:'unlikely',label:'Unlikely to apply',meter:92,text:`Recurring income of ${money(total)} makes many income-tested programs unlikely; prioritize tax structure, healthcare, and cost control.`};
-}
-function updatePath(){document.getElementById('pathPhase').textContent=state.phase?labels.phase[state.phase]:'Not selected';document.getElementById('pathFiling').textContent=state.filingStatus?labels.filingStatus[state.filingStatus]:'Not selected';document.getElementById('pathConversion').textContent=state.conversionBand?labels.conversionBand[state.conversionBand]:'Not selected';document.getElementById('pathIncome').textContent=state.recurringIncome?money(state.recurringIncome.total):'Not entered';document.getElementById('pathBudget').textContent=[state.budgetBand?labels.budgetBand[state.budgetBand]:'Not selected',state.housing?labels.housing[state.housing]:null].filter(Boolean).join(' · ');let b=benefitClass();document.getElementById('benefitStatus').textContent=b.label;document.getElementById('benefitText').textContent=b.text;document.getElementById('benefitMeter').style.width=b.meter+'%';}
-function healthNeed(){return{routine:1,regional:2,academic:3,top:4}[state.healthcare||'regional']}
-function budgetMax(){return{low:4200,mid:6200,upper:9200,premium:99999}[state.budgetBand||'mid']}
-function scoreCity(c){let score=50,notes=[];
-  // Phase logic: U.S. conversion years reward no-income-tax states; post-conversion rewards healthcare/support.
-  if(state.phase==='us_conversion'||state.phase==='not_sure'){if(c.tax==='none'){score+=18;notes.push('strong for state-tax-free conversion years')}else if(c.tax==='low'||c.tax==='retirement_friendly'){score+=7;notes.push('lower-tax but not fully tax-free')}}
-  if(state.phase==='post_overseas'||state.phase==='age65plus'){score+=c.health*4+c.support*3;notes.push('weighted for post-conversion retirement living')}
-  // Conversion amount logic.
-  if(state.conversionBand==='high'&&c.tax==='none')score+=18;if(state.conversionBand==='medium'&&c.tax==='none')score+=11;if(state.conversionBand==='low'&&c.tax==='none')score+=5;if(state.conversionBand==='none'&&c.tax!=='none')score+=3;
-  // Budget logic.
-  if(c.monthly[0]<=budgetMax())score+=14;else score-=16;if(state.budgetBand==='low'&&c.cost==='low')score+=10;if(state.budgetBand==='premium'&&c.cost==='upper')score+=4;
-  // Housing logic.
-  if(state.housing&&state.housing.startsWith('own')){if(c.property==='low')score+=8;if(c.property==='high')score-=8;if(c.insurance==='high')score-=9;if(state.supportPriority==='property_tax'&&c.support>=3)score+=5}
-  if(state.housing==='rent'&&c.cost==='low')score+=6;if(state.housing==='not_sure')score+=2;
-  // Benefit likely/maybe/unlikely logic.
-  const ben=benefitClass().class;if(state.supportPriority==='property_tax'){if(ben==='likely'&&c.benefitSensitivity==='high')score+=8;if(ben==='maybe'&&c.benefitSensitivity!=='low')score+=4;if(ben==='unlikely'&&c.benefitSensitivity==='high')score-=4;}
-  if(state.supportPriority==='transport'||state.supportPriority==='community')score+=c.support*2;if(state.supportPriority==='ltc')score+=c.health*2+c.support;
-  // Healthcare logic.
-  const need=healthNeed();if(c.health>=need)score+=16;else score-=18*(need-c.health);
-  // Climate logic.
-  if(state.climateTolerance==='low_risk'){score-=c.risks.length*6;if(c.insurance==='high')score-=6}else if(state.climateTolerance&&c.risks.includes(state.climateTolerance)){score+=6}else if(state.climateTolerance&&state.climateTolerance!=='family_region'){score-=c.risks.length>1?3:0}
-  // Airport logic.
-  if(state.airport==='major'){if(c.airport==='major')score+=10;else score-=8}else if(state.airport==='regional'){if(c.airport==='major'||c.airport==='regional')score+=5}else if(state.airport==='not_important')score+=1;
-  return{...c,score:Math.round(score),notes};
-}
-function renderResults(){updatePath();let ranked=cities.map(scoreCity).sort((a,b)=>b.score-a.score).filter(c=>c.score>=45).slice(0,8);
-                       //Pass US city results to master plan
-                           if (ranked.length > 0) {
-    savePlanValue('wl_usCity', ranked[0].name);
-    savePlanValue('wl_usState', ranked[0].state);
-    savePlanValue('wl_usCityScore', ranked[0].score);
-    savePlanValue('wl_usCityReason', ranked[0].why);
-}
-                         let grid=document.getElementById('cityGrid');grid.innerHTML='';let ben=benefitClass();document.getElementById('resultNarrative').textContent=`Based on your inputs, income-tested senior supports are classified as “${ben.label}.” Results below prioritize ${state.phase?labels.phase[state.phase].toLowerCase():'your retirement phase'}, ${state.healthcare?labels.healthcare[state.healthcare].toLowerCase():'healthcare needs'}, and your selected budget/housing profile.`;
-  if(!ranked.length){grid.innerHTML='<div class="empty">No strong matches found. Try increasing budget, lowering healthcare depth, or accepting an additional climate risk.</div>'}else{ranked.forEach((c,i)=>{let card=document.createElement('div');card.className='city-card';card.style.animationDelay=(i*.04)+'s';let benefitNote=ben.class==='unlikely'?'Benefits: likely not income-useful':ben.class==='maybe'?'Benefits: maybe useful':'Benefits: worth researching';let taxPill=c.tax==='none'?'No state income tax':c.tax==='low'?'Low income tax':'Retirement-income friendly';card.innerHTML=`<div class="city-top"><div><div class="city-name">${c.emoji} ${c.name}</div><div class="state">${c.state}</div></div><div class="rank">Score ${c.score}</div></div><div class="badges"><span class="pill good">${taxPill}</span><span class="pill ${c.insurance==='high'?'hot':'warn'}">${c.insurance} insurance risk</span><span class="pill">${benefitNote}</span></div><div class="city-stats"><div class="stat"><b>${money(c.monthly[0])}–${money(c.monthly[1])}</b><span>Monthly planning range</span></div><div class="stat"><b>${'★'.repeat(c.health)}${'☆'.repeat(4-c.health)}</b><span>Healthcare depth</span></div></div><p class="why">${c.why}</p><p class="muted"><b>Watch:</b> ${c.risks.join(', ') || 'general costs'}; property burden ${c.property}; airport ${c.airport}.</p><a href="#compare">Compare with starter universe →</a>`;grid.appendChild(card);});}
-  document.getElementById('results').classList.add('active');document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
-}
-function restartMatcher(){state={phase:null,filingStatus:null,conversionBand:null,recurringIncome:null,budgetBand:null,housing:null,supportPriority:null,healthcare:null,climateTolerance:null,airport:null};document.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));document.getElementById('results').classList.remove('active');updatePath();showStep(1)}
-function renderStarterTable(){let tb=document.getElementById('starterTable');cities.forEach(c=>{let tr=document.createElement('tr');let best=c.best.map(x=>x.replace('_',' ')).join(', ');tr.innerHTML=`<td><b>${c.name}</b></td><td>${c.state}</td><td>${best}</td><td>${money(c.monthly[0])}–${money(c.monthly[1])}</td><td>${c.health}/4</td><td>${c.benefitSensitivity==='high'?'Many supports may be income-tested':c.benefitSensitivity==='medium'?'Verify county/state rules':'More structural than income-tested'}</td>`;tb.appendChild(tr);})}
-renderStarterTable();updatePath();
-
-  // Pass US city choice to master plan
-  function savePlanValue(key, value) {
-    if (value !== undefined && value !== null && value !== '') {
-        localStorage.setItem(key, value);
+    function money(x) {
+      return new Intl.NumberFormat('en-US', {style:'currency', currency:'USD', maximumFractionDigits:0}).format(x);
     }
-}
-</script>
-  <!--Google search script-->
-    <script async src="https://cse.google.com/cse.js?cx=40edcbb80dea44bf1"></script>
+
+    function showStep(step) {
+      currentStep = step;
+      document.querySelectorAll('.question-card').forEach(c => c.classList.toggle('active', Number(c.dataset.step) === step));
+      document.getElementById('matcher').scrollIntoView({behavior:'smooth', block:'start'});
+      updatePath();
+    }
+
+    // Pass US city choice to master plan module
+    function savePlanValue(key, value) {
+      if (value !== undefined && value !== null && value !== '') {
+        localStorage.setItem(key, value);
+      }
+    }
+
+    function nextStep() {
+      showStep(Math.min(10, currentStep + 1));
+    }
+
+    function prevStep() {
+      showStep(Math.max(1, currentStep - 1));
+    }
+
+    function goToStep(step) {
+      showStep(step);
+      const el = document.getElementById('matcher');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    document.querySelectorAll('.options').forEach(group => {
+      group.addEventListener('click', e => {
+        const opt = e.target.closest('.option');
+        if (!opt) return;
+        group.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        const key = group.dataset.key;
+        state[key] = opt.dataset.value;
+        updatePath();
+        
+        if (Number(group.closest('.question-card').dataset.step) === 10) {
+          renderResults();
+        } else {
+          setTimeout(nextStep, 250);
+        }
+      });
+    });
+
+    function saveIncomeAndNext() {
+      const ss = Number(document.getElementById('ssIncome').value || 0);
+      const pension = Number(document.getElementById('pensionIncome').value || 0);
+      const ira = Number(document.getElementById('iraIncome').value || 0);
+      const passive = Number(document.getElementById('passiveIncome').value || 0);
+      state.recurringIncome = {ss, pension, ira, passive, total: ss + pension + ira + passive};
+      updatePath();
+      nextStep();
+    }
+
+    function benefitClass() {
+      if (!state.filingStatus || !state.recurringIncome) {
+        return {
+          class: 'unknown',
+          text: 'Enter filing status and recurring income to estimate benefit usefulness.',
+          meter: 0,
+          label: 'Waiting for income'
+        };
+      }
+      
+      let total = state.recurringIncome.total;
+      let likely = 50000, maybe = 90000;
+      if (state.filingStatus === 'mfj') {
+        likely = 75000;
+        maybe = 130000;
+      } else if (state.filingStatus === 'hoh') {
+        likely = 65000;
+        maybe = 110000;
+      } else if (state.filingStatus === 'mfs') {
+        likely = 45000;
+        maybe = 80000;
+      }
+      
+      if (total <= likely) {
+        return {
+          class: 'likely',
+          label: 'Likely useful',
+          meter: 28,
+          text: `Recurring income of ${money(total)} suggests income-tested senior supports may be worth researching city-by-city.`
+        };
+      }
+      if (total <= maybe) {
+        return {
+          class: 'maybe',
+          label: 'Maybe useful',
+          meter: 58,
+          text: `Recurring income of ${money(total)} means some local programs may help, but limits will vary by state and county.`
+        };
+      }
+      return {
+        class: 'unlikely',
+        label: 'Unlikely to apply',
+        meter: 92,
+        text: `Recurring income of ${money(total)} makes many income-tested programs unlikely; prioritize tax structure, healthcare, and cost control.`
+      };
+    }
+
+    function updatePath() {
+      document.getElementById('pathPhase').textContent = state.phase ? labels.phase[state.phase] : 'Not selected';
+      document.getElementById('pathFiling').textContent = state.filingStatus ? labels.filingStatus[state.filingStatus] : 'Not selected';
+      document.getElementById('pathConversion').textContent = state.conversionBand ? labels.conversionBand[state.conversionBand] : 'Not selected';
+      document.getElementById('pathIncome').textContent = state.recurringIncome ? money(state.recurringIncome.total) : 'Not entered';
+      document.getElementById('pathBudget').textContent = [
+        state.budgetBand ? labels.budgetBand[state.budgetBand] : 'Not selected',
+        state.housing ? labels.housing[state.housing] : null
+      ].filter(Boolean).join(' · ');
+      
+      let b = benefitClass();
+      document.getElementById('benefitStatus').textContent = b.label;
+      document.getElementById('benefitText').textContent = b.text;
+      document.getElementById('benefitMeter').style.width = b.meter + '%';
+    }
+
+    function healthNeed() {
+      return {routine: 1, regional: 2, academic: 3, top: 4}[state.healthcare || 'regional'];
+    }
+
+    function budgetMax() {
+      return {low: 4200, mid: 6200, upper: 9200, premium: 99999}[state.budgetBand || 'mid'];
+    }
+
+    function scoreCity(c) {
+      let score = 50, notes = [];
+      
+      // Phase logic: U.S. conversion years reward no-income-tax states; post-conversion rewards healthcare/support.
+      if (state.phase === 'us_conversion' || state.phase === 'not_sure') {
+        if (c.tax === 'none') {
+          score += 18;
+          notes.push('strong for state-tax-free conversion years');
+        } else if (c.tax === 'low' || c.tax === 'retirement_friendly') {
+          score += 7;
+          notes.push('lower-tax but not fully tax-free');
+        }
+      }
+      if (state.phase === 'post_overseas' || state.phase === 'age65plus') {
+        score += c.health * 4 + c.support * 3;
+        notes.push('weighted for post-conversion retirement living');
+      }
+      
+      // Conversion amount logic.
+      if (state.conversionBand === 'high' && c.tax === 'none') score += 18;
+      if (state.conversionBand === 'medium' && c.tax === 'none') score += 11;
+      if (state.conversionBand === 'low' && c.tax === 'none') score += 5;
+      if (state.conversionBand === 'none' && c.tax !== 'none') score += 3;
+      
+      // Budget logic.
+      if (c.monthly[0] <= budgetMax()) score += 14;
+      else score -= 16;
+      if (state.budgetBand === 'low' && c.cost === 'low') score += 10;
+      if (state.budgetBand === 'premium' && c.cost === 'upper') score += 4;
+      
+      // Housing logic.
+      if (state.housing && state.housing.startsWith('own')) {
+        if (c.property === 'low') score += 8;
+        if (c.property === 'high') score -= 8;
+        if (c.insurance === 'high') score -= 9;
+        if (state.supportPriority === 'property_tax' && c.support >= 3) score += 5;
+      }
+      if (state.housing === 'rent' && c.cost === 'low') score += 6;
+      if (state.housing === 'not_sure') score += 2;
+      
+      // Benefit likely/maybe/unlikely logic.
+      const ben = benefitClass().class;
+      if (state.supportPriority === 'property_tax') {
+        if (ben === 'likely' && c.benefitSensitivity === 'high') score += 8;
+        if (ben === 'maybe' && c.benefitSensitivity !== 'low') score += 4;
+        if (ben === 'unlikely' && c.benefitSensitivity === 'high') score -= 4;
+      }
+      if (state.supportPriority === 'transport' || state.supportPriority === 'community') score += c.support * 2;
+      if (state.supportPriority === 'ltc') score += c.health * 2 + c.support;
+      
+      // Healthcare logic.
+      const need = healthNeed();
+      if (c.health >= need) score += 16;
+      else score -= 18 * (need - c.health);
+      
+      // Climate logic.
+      if (state.climateTolerance === 'low_risk') {
+        score -= c.risks.length * 6;
+        if (c.insurance === 'high') score -= 6;
+      } else if (state.climateTolerance && c.risks.includes(state.climateTolerance)) {
+        score += 6;
+      } else if (state.climateTolerance && state.climateTolerance !== 'family_region') {
+        score -= c.risks.length > 1 ? 3 : 0;
+      }
+      
+      // Airport logic.
+      if (state.airport === 'major') {
+        if (c.airport === 'major') score += 10;
+        else score -= 8;
+      } else if (state.airport === 'regional') {
+        if (c.airport === 'major' || c.airport === 'regional') score += 5;
+      } else if (state.airport === 'not_important') {
+        score += 1;
+      }
+      
+      return {...c, score: Math.round(score), notes};
+    }
+
+    function renderResults() {
+      updatePath();
+      let ranked = cities.map(scoreCity).sort((a, b) => b.score - a.score).filter(c => c.score >= 45).slice(0, 8);
+      
+      // Pass top US city results to master plan
+      if (ranked.length > 0) {
+        savePlanValue('wl_usCity', ranked[0].name);
+        savePlanValue('wl_usState', ranked[0].state);
+        savePlanValue('wl_usCityScore', ranked[0].score);
+        savePlanValue('wl_usCityReason', ranked[0].why);
+      }
+      
+      let grid = document.getElementById('cityGrid');
+      grid.innerHTML = '';
+      
+      let ben = benefitClass();
+      const phaseStr = state.phase ? (labels.phase[state.phase] || '').toLowerCase() : 'your retirement phase';
+      const healthStr = state.healthcare ? (labels.healthcare[state.healthcare] || '').toLowerCase() : 'healthcare needs';
+      
+      document.getElementById('resultNarrative').textContent = `Based on your inputs, income-tested senior supports are classified as “${ben.label}.” Results below prioritize ${phaseStr}, ${healthStr}, and your selected budget/housing profile.`;
+      
+      if (!ranked.length) {
+        grid.innerHTML = '<div class="empty">No strong matches found. Try increasing budget, lowering healthcare depth, or accepting an additional climate risk.</div>';
+      } else {
+        ranked.forEach((c, i) => {
+          let card = document.createElement('div');
+          card.className = 'city-card';
+          card.style.animationDelay = (i * .04) + 's';
+          let benefitNote = ben.class === 'unlikely' ? 'Benefits: likely not income-useful' : ben.class === 'maybe' ? 'Benefits: maybe useful' : 'Benefits: worth researching';
+          let taxPill = c.tax === 'none' ? 'No state income tax' : c.tax === 'low' ? 'Low income tax' : 'Retirement-income friendly';
+          
+          card.innerHTML = `
+            <div class="city-top">
+              <div>
+                <div class="city-name">${c.emoji} ${c.name}</div>
+                <div class="state">${c.state}</div>
+              </div>
+              <div class="rank">Score ${c.score}</div>
+            </div>
+            <div class="badges">
+              <span class="pill good">${taxPill}</span>
+              <span class="pill ${c.insurance === 'high' ? 'hot' : 'warn'}">${c.insurance} insurance risk</span>
+              <span class="pill">${benefitNote}</span>
+            </div>
+            <div class="city-stats">
+              <div class="stat">
+                <b>${money(c.monthly[0])}–${money(c.monthly[1])}</b>
+                <span>Monthly planning range</span>
+              </div>
+              <div class="stat">
+                <b>${'★'.repeat(c.health)}${'☆'.repeat(4 - c.health)}</b>
+                <span>Healthcare depth</span>
+              </div>
+            </div>
+            <p class="why">${c.why}</p>
+            <p class="muted"><b>Watch:</b> ${c.risks.join(', ') || 'general costs'}; property burden ${c.property}; airport ${c.airport}.</p>
+            <a href="#compare">Compare with starter universe →</a>
+          `;
+          grid.appendChild(card);
+        });
+      }
+      
+      document.getElementById('results').classList.add('active');
+      document.getElementById('results').scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
+
+    function restartMatcher() {
+      state = {
+        phase: null,
+        filingStatus: null,
+        conversionBand: null,
+        recurringIncome: null,
+        budgetBand: null,
+        housing: null,
+        supportPriority: null,
+        healthcare: null,
+        climateTolerance: null,
+        airport: null
+      };
+      document.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+      document.getElementById('results').classList.remove('active');
+      updatePath();
+      showStep(1);
+    }
+
+    function renderStarterTable() {
+      let tb = document.getElementById('starterTable');
+      tb.innerHTML = '';
+      cities.forEach(c => {
+        let tr = document.createElement('tr');
+        let best = c.best.map(x => x.replace('_', ' ')).join(', ');
+        tr.innerHTML = `
+          <td><b>${c.name}</b></td>
+          <td>${c.state}</td>
+          <td>${best}</td>
+          <td>${money(c.monthly[0])}–${money(c.monthly[1])}</td>
+          <td>${c.health}/4</td>
+          <td>${c.benefitSensitivity === 'high' ? 'Many supports may be income-tested' : c.benefitSensitivity === 'medium' ? 'Verify county/state rules' : 'More structural than income-tested'}</td>
+        `;
+        tb.appendChild(tr);
+      });
+    }
+
+    function filterStarterTable() {
+      const query = document.getElementById('tableSearch').value.toLowerCase();
+      const rows = document.querySelectorAll('#starterTable tr');
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(query) ? '' : 'none';
+      });
+    }
+
+    // Initialize View Elements on Load
+    renderStarterTable();
+    updatePath();
+  </script>
+  
+  <!-- Google Custom Search Engine script -->
+  <script async src="https://cse.google.com/cse.js?cx=40edcbb80dea44bf1"></script>
 </body>
 </html>
