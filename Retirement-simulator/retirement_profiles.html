@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9JMJJ5CJR4');
+  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WealthLanding — Retirement Profile Explorer</title>
+    <!-- Tailwind CSS for modern responsive utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter & Playfair Display Google Fonts for Editorial Elegance -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50/50 text-slate-800 antialiased min-h-screen flex flex-col selection:bg-emerald-100 selection:text-emerald-900">
+
+    <script>
+        // High-fidelity database containing all 5 curated profiles matching image_6be5cb.jpg columns
+        const profiles = {
+            home_base: {
+                id: 'home_base',
+                theme: 'Rooted • Stable • Family-centered',
+                accentColor: 'emerald',
+                themeClasses: {
+                    accentText: 'text-emerald-600',
+                    badgeBg: 'bg-emerald-50 text-emerald-700 border-emerald-100',
+                    dotActive: 'bg-emerald-500',
+                    bgAccent: 'bg-emerald-50/60',
+                    borderAccent: 'border-emerald-100/80 bg-emerald-50/30 text-emerald-900',
+                    gradientFrom: 'from-emerald-500/10',
+                    timelineLine: 'border-emerald-500',
+                    timelineCircle: 'border-emerald-500 text-emerald-600'
+                },
+                title: 'The Home Base Retirement',
+                subtitle: 'Build retirement around people, community, and continuity.',
+                priorities: [
+                    "Community & Stability selected for 50–65",
+                    "Local Roots selected for 65–78",
+                    "Family Proximity selected for 78+",
+                    "Result: Home Base Profile"
+                ],
+                philosophy: 'This path explicitly prioritizes deep-set roots. The goal is not maximizing every financial variable, but rather maximizing lifelong familiarity, support networks, and family accessibility.',
+                phases: [
+                    { age: "50-65", title: "Reinforcing Local Roots", desc: "Investing in long-term friendships, modifying the home for physical longevity, and cementing community ties." },
+                    { age: "65-78", title: "Lifestyle Stability", desc: "Engaging in deeply familiar regional rituals and social circles with zero friction or relocation stress." },
+                    { age: "78+", title: "Family Support Base", desc: "Re-anchoring within immediate physical range of family, kin, and trusted local clinical networks." }
+                ],
+                dayInLife: [
+                    {
+                        time: "Morning Coffee",
+                        desc: "Walking down to the local corner diner where the owners know your name and exact preference.",
+                        gradient: "from-amber-200/60 to-rose-300/40",
+                        svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z"/>`
+                    },
+                    {
+                        time: "Local Activities",
+                        desc: "Volunteering at the historical society or tending a long-standing community plot.",
+                        gradient: "from-sky-200/60 to-indigo-200/40",
+                        svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>`
+                    },
+                    {
+                        time: "Family Gatherings",
+                        desc: "Hosting spontaneous weeknight dinners with grandkids living only minutes away.",
+                        gradient: "from-emerald-200/60 to-teal-300/40",
+                        svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>`
+                    }
+                ],
+                reflection: '"Looking back from eighty-five, the true brilliance of this choice shines bright. While others spent energy adjusting to new states, my life enjoyed absolute familiarity, emotional stability, and a deep, comforting continuity."',
+                metrics: [
+                    { label: "Family Proximity", score: 5 },
+                    { label: "Simplicity & Ease", score: 5 },
+                    { label: "Healthcare Access", score: 5 },
+                    { label: "Tax Efficiency", score: 2 },
+                    { label: "Geographic Flexibility", score: 1 },
+                    { label: "Lifestyle Arbitrage", score: 2 }
+                ],
+                checks: [
+                    { type: 'success', text: 'Standard domestic health structures (Medicare, local systems) are fully <strong>Accessible</strong> via long-term providers.' },
+                    { type: 'warning', text: 'Basing plans entirely on family requires backup structures if children relocate for careers.' },
+                    { type: 'success', text: 'Local community roots act as an organic safety net, delaying or eliminating clinical care transitions.' }
+                ],
+                advantages: [
+                    "<strong>Family Proximity:</strong> Watching grandkids grow up and having an immediate physical support circle.",
+                    "<strong>Extreme Simplicity:</strong> No state-to-state moving hassles, tax structures, or healthcare networks to re-learn.",
+                    "<strong>Community Capital:</strong> Decades of built-up trust with local doctors, businesses, and friends.",
+                    "<strong>Financial Predictability:</strong> High certainty of local costs and lifestyle overhead parameters."
+                ],
+                tradeoffs: [
+                    "<strong>Tax Overhead:</strong> Forgoing the option to relocate to low-income-tax or high-optimization jurisdictions.",
+                    "<strong>Cost Constraints:</strong> Your cost of living is locked strictly to your native domestic zip code.",
+                    "<strong>Climate Boredom:</strong> Enduring native winters and seasons without migration offsets."
+                ],
+                mistakes: [
+                    "Assuming Medicare solves everything without mapping local provider networks.",
+                    "Ignoring Long-Term Care (LTC) assuming family can manage 100% of physical work.",
+                    "Failing to adapt or establish backup community groups when children relocate."
+                ],
+                locations: ["Established Suburbs", "Walkable College Towns", "Family-centered Neighborhoods"],
+                stories: [
+                    { title: "Family Proximity Planning", desc: "Balancing relational desires with economic boundaries." },
+                    { title: "The Nursing Home Cliff", desc: "Protecting family assets against runaway clinical care costs." },
+                    { title: "Aging In Place Successfully", desc: "Retrofitting domestic layouts for structural safety." },
+                    { title: "Medicare Doesn't Solve Everything", desc: "Uncovering early-stage planning coverage gaps." }
+                ]
+            },
+            phase_optimizer: {
+                id: 'phase_optimizer',
+                theme: 'Dynamic • Strategic • Stage-Based',
+                accentColor: 'indigo',
+                themeClasses: {
+                    accentText: 'text-indigo-600',
+                    badgeBg: 'bg-indigo-50 text-indigo-700 border-indigo-100',
+                    dotActive: 'bg-indigo-500',
+                    bgAccent: 'bg-indigo-50/60',
+                    borderAccent: 'border-indigo-100/80 bg-indigo-50/30 text-indigo-900',
+                    gradientFrom: 'from-indigo-500/10',
+                    timelineLine: 'border-indigo-500',
+                    timelineCircle: 'border-indigo-500 text-indigo-600'
+                },
+                title: 'The Phase Optimizer',
+                subtitle: 'Right place. Right time. Every stage of life maximized.',
+                priorities: [
+                    "Tax Optimization selected for 50–65",
+                    "Lifestyle selected for 65–78",
+                    "Family Proximity selected for 78+",
+                    "Result: Phase Optimizer Profile"
+                ],
+                philosophy: 'Why compromise? This path dynamically matches your residency and financial setup to each specific phase, shifting from optimization hubs to coastal lifestyle retreats, and finally to deep family support bases.',
+                phases: [
+                    { age: "50-65", title: "Taiwan / Tax Optimization Hub", desc: "Execute strategic Roth conversions and global income optimization while utilizing regional business infrastructure." },
+                    { age: "65-78", title: "Portugal / Coastal Lifestyle Hub", desc: "Transition daily focus to comfort, world-class culinary networks, pristine climates, and highly optimized coastal living." },
+                    { age: "78+", title: "Family Support Base (US Base)", desc: "Consolidate plans to re-anchor within immediate physical range of family, reverting to domestic systems for clinical support." }
+                ],
+                dayInLife: [
+                    {
+                        time: "Morning Coffee",
+                        desc: "Enjoying sunrise ocean views with fresh local pastries in Portugal.",
+                        gradient: "from-orange-200/50 to-amber-300/40",
+                        svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z"/>`
+                    },
+                    {
+                        time: "Culture & Cuisine",
+                        desc: "Exploring local culinary markets and historical quarters in your favorite coastal city.",
+                        gradient: "from-indigo-200/60 to-pink-200/40",
+                        svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h2m-1.053 6H17a2 2 0 002-2V9a2 2 0 00-2-2h-1a2 2 0 00-2 2v3a2 2 0 00-2 2z"/>`
+                    },
+                    {
+                        time: "Grandkids & Quality Time",
+                        desc: "Conserving quality energy and allocating time strictly to family and grandchildren.",
+                        gradient: "from-purple-200/50 to-violet-300/40",
+                        svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a3 3 0 11-6 0 3 3 0 016 0z"/>`
+                    }
+                ],
+                reflection: '"At age 85, you look back on a retirement lived in deliberate, highly optimized chapters. You maximized wealth during accumulation, enjoyed pristine lifestyle seasons, and returned home to family before you ever needed a complex clinical hand."',
+                metrics: [
+                    { label: "Tax Efficiency", score: 5 },
+                    { label: "Lifestyle & Experience", score: 5 },
+                    { label: "Healthcare Access", score: 5 },
+                    { label: "Family Integration Meter", score: 4 },
+                    { label: "Flexibility", score: 5 },
+                    { label: "Complexity", score: 4 }
+                ],
+                checks: [
+                    { type: 'success', text: 'Standard domestic transition plans are fully <strong>Accessible</strong> via native US citizenship.' },
+                    { type: 'warning', text: 'Sovereign options (e.g. Taiwan, Portugal) remain marked as <strong>Potentially Available</strong>. Complete eligibility audits.' },
+                    { type: 'success', text: 'Staged phase strategy mitigates tax drag by up to 42% over standard fixed-location plans.' }
+                ],
+                advantages: [
+                    "<strong>Perfect Phasing:</strong> Matches your geographic tax brackets to your changing physical stamina.",
+                    "<strong>Ultra Optimization:</strong> Slashes global tax burdens while young enough to easily relocate.",
+                    "<strong>No Regrets:</strong> Combines high-octane travel early with robust family care late in life.",
+                    "<strong>Relational Balance:</strong> Keeps family relationships fresh by structuring dedicated blocks of quality visits."
+                ],
+                tradeoffs: [
+                    "<strong>Complex Logistics:</strong> Requires multiple moves, variable visa audits, and updating dynamic estate plans.",
+                    "<strong>Social Disruption:</strong> Transitioning core friendship circles every 10–12 years.",
+                    "<strong>Double Taxation Risks:</strong> Demands strict cross-border tax advisory support."
+                ],
+                mistakes: [
+                    "Waiting too long to exit high-tax hubs, burning peak health years in transit.",
+                    "Failing to model the financial cost of dynamic international-to-domestic healthcare transitions.",
+                    "Overestimating the duration of high-mobility windows."
+                ],
+                locations: ["Global Transit Hubs", "Pristine European Coasts", "US Major Healthcare Corridors"],
+                stories: [
+                    { title: "Sovereign Tax Structuring", desc: "Setting up territorial tax anchors before you relocate." },
+                    { title: "The Staged Exit Playbook", desc: "When and how to transition from global explorer back to base." },
+                    { title: "Dynamic Medicare Portability", desc: "Managing coverage gaps during structural moves." },
+                    { title: "International Moving Audits", desc: "Avoiding costly errors when shipping personal property." }
+                ]
+            },
+            sovereign_expat: {
+                id: 'sovereign_expat',
+                theme: 'Optimized • Global • Adventurous',
+                accentColor: 'indigo',
+                themeClasses: {
+                    accentText: 'text-indigo-600',
+                    badgeBg: 'bg-indigo-50 text-indigo-700 border-indigo-100',
+                    dotActive: 'bg-indigo-500',
+                    bgAccent: 'bg-indigo-50/60',
+                    borderAccent: 'border-indigo-100/80 bg-indigo-50/30 text-indigo-900',
+                    gradientFrom: 'from-indigo-500/10',
+                    timelineLine: 'border-indigo-500',
+                    timelineCircle: 'border-indigo-500 text-indigo-600'
+                },
+                title: 'The Sovereign Expat',
+                subtitle: 'Unlock global jurisdictions to secure ultimate freedom and asset control.',
+                priorities: [
+                    "High Tax Efficiency selected for 50–65",
+                    "Dynamic Travel selected for 65–78",
+                    "Private Healthcare selected for 78+",
+                    "Result: Sovereign Expat Profile"
+                ],
+                philosophy: 'This path views boundaries as tools rather than containers. By diversifying residency, tax domicile, and assets across systems, you achieve maximum tax protection.',
+                phases: [
+                    { age: "50-65", title: "Establish International Hubs", desc: "Securing foreign residency-by-investment, restructuring passive assets, and optimizing territorial incomes." },
+                    { age: "65-78", title: "Active High-Arbitrage Living", desc: "Enjoying five-star luxury living at a fraction of the cost in tax-friendly, highly scenic jurisdictions." },
+                    { age: "78+", title: "Private Medical Sanctuaries", desc: "Anchoring in countries offering high-end private medical networks with zero regulatory queue times." }
+                ],
+                dayInLife: [
+                    {
+                        time: "Foreign Asset Review",
+                        desc: "Checking global currency spreads and checking in with offshore tax custodians.",
+                        gradient: "from-sky-100 to-indigo-100",
+                        svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>`
+                    },
+                    {
+                        time: "Immigration Consulting",
+                        desc: "Attending a private client meeting with investment migration lawyers in a beautiful capital city.",
+                        gradient: "from-teal-100 to-emerald-100",
+                        svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>`
+                    },
+                    {
+                        time: "Yacht Club Reception",
+                        desc: "Discussing real estate or global developments with an international circle of peers.",
+                        gradient: "from-rose-100 to-pink-100",
+                        svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>`
+                    }
+                ],
+                reflection: '"Reflecting at eighty-five, I bypassed the standard domestic wealth-siphon of runaway taxes and high inflation. By using sovereign borders to my advantage, I lived like royalty while retaining full control of my assets."',
+                metrics: [
+                    { label: "Tax Efficiency", score: 5 },
+                    { label: "Lifestyle & Experience", score: 5 },
+                    { label: "Healthcare Access", score: 3 },
+                    { label: "Family Integration", score: 1 },
+                    { label: "Flexibility", score: 5 },
+                    { label: "Complexity", score: 5 }
+                ],
+                checks: [
+                    { type: 'success', text: 'Territorial tax exemptions protect 100% of non-local investment returns.' },
+                    { type: 'warning', text: 'Requires maintaining strict calendar tracking to prove non-residency to domestic agencies.' },
+                    { type: 'warning', text: 'Private medical coverage is highly premium but is entirely self-funded in later stages.' }
+                ],
+                advantages: [
+                    "<strong>Tax Erasure:</strong> Legally minimizing or eliminating state income and estate taxes.",
+                    "<strong>Arbitrage:</strong> Leveraging high-value currencies in beautiful low-cost countries.",
+                    "<strong>Asset Protection:</strong> Isolating assets out of reach of high-litigation domestic jurisdictions.",
+                    "<strong>Premium Medical Care:</strong> Direct access to concierge international physicians."
+                ],
+                tradeoffs: [
+                    "<strong>Extreme Friction:</strong> Complex tax filings, language hurdles, and tedious bureaucratic audits.",
+                    "<strong>Distance from Family:</strong> Living flights away from grandchildren and childhood communities.",
+                    "<strong>Global Instability Risks:</strong> Vulnerability to sudden visa law modifications or geopolitical shifts."
+                ],
+                mistakes: [
+                    "Triggering unexpected home-country tax exit clawbacks.",
+                    "Relying on weak local health structures during a severe clinical emergency.",
+                    "Underestimating the sheer legal compliance burden of multi-border lifestyles."
+                ],
+                locations: ["Low-Tax Havens", "Southeast Asian Hubs", "Mediterranean Enclaves"],
+                stories: [
+                    { title: "The Sovereign Tax Escape", desc: "Legally breaking tax ties with high-burden states." },
+                    { title: "Top International Health Networks", desc: "Which private medical centers match or exceed US quality." },
+                    { title: "The Multi-Passport Blueprint", desc: "Securing secondary citizenships strategically." },
+                    { title: "Exit Tax Guidebook", desc: "How to avoid costly penalties when expatriating." }
+                ]
+            },
+            roaming_nomad: {
+                id: 'roaming_nomad',
+                theme: 'Minimal • Flexible • Experiential',
+                accentColor: 'amber',
+                themeClasses: {
+                    accentText: 'text-amber-600',
+                    badgeBg: 'bg-amber-50 text-amber-700 border-amber-100',
+                    dotActive: 'bg-amber-500',
+                    bgAccent: 'bg-amber-50/60',
+                    borderAccent: 'border-amber-100/80 bg-amber-50/30 text-amber-900',
+                    gradientFrom: 'from-amber-500/10',
+                    timelineLine: 'border-amber-500',
+                    timelineCircle: 'border-amber-500 text-amber-600'
+                },
+                title: 'The Roaming Nomad',
+                subtitle: 'Zero anchors. Infinite horizons. Prioritize experiences over assets.',
+                priorities: [
+                    "Minimal Footprint selected for 50–65",
+                    "Global Wanderlust selected for 65–78",
+                    "Adaptive Living selected for 78+",
+                    "Result: Roaming Nomad Profile"
+                ],
+                philosophy: 'Ownership is a liability. This path optimizes for ultimate simplicity by keeping possessions minimalist and traveling seamlessly between high-end rentals and cultural capitals.',
+                phases: [
+                    { age: "50-65", title: "Complete Asset Liquidation", desc: "Selling complex physical real estate, transitioning to modern digital-first portfolios, and traveling light." },
+                    { age: "65-78", title: "Continuous Global Exploration", desc: "Living 3–6 months at a time in curated boutique properties across varying continents and climates." },
+                    { age: "78+", title: "Assisted Luxury Lodgings", desc: "Transitioning to premium, full-service serviced apartments or luxury long-term hotel residences." }
+                ],
+                dayInLife: [
+                    {
+                        time: "Sunrise Rail Journey",
+                        desc: "Waking up in a new territory, observing shifting country vistas with minimal luggage.",
+                        gradient: "from-amber-100 to-orange-100",
+                        svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 5l7 7-7 7M5 5l7 7-7 7"/>`
+                    },
+                    {
+                        time: "Boutique Check-In",
+                        desc: "Checking into a fully managed, beautifully designed historic penthouse in a cultural capital.",
+                        gradient: "from-yellow-100 to-amber-200",
+                        svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>`
+                    },
+                    {
+                        time: "Local Street Markets",
+                        desc: "Savoring authentic local street food with freshly met travelers from all corners of the world.",
+                        svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 009 11M12 11c0-3.517 1.009-6.799 2.753-9.571m3.44 2.04l-.054.09A13.916 13.916 0 0015 11"/>`,
+                        gradient: "from-orange-100 to-red-100"
+                    }
+                ],
+                reflection: '"At eighty-five, my memory banks are filled with rich global scenes instead of local lawn maintenance files or property management stresses. I owned absolutely nothing, yet experienced everything."',
+                metrics: [
+                    { label: "Tax Efficiency", score: 3 },
+                    { label: "Lifestyle & Experience", score: 5 },
+                    { label: "Healthcare Access", score: 2 },
+                    { label: "Family Integration", score: 1 },
+                    { label: "Flexibility", score: 5 },
+                    { label: "Complexity", score: 3 }
+                ],
+                checks: [
+                    { type: 'warning', text: 'Continuous travel requires custom global medical policies with evacuation riders.' },
+                    { type: 'success', text: 'Selling off real estate anchors cuts your annual maintenance costs to zero.' },
+                    { type: 'warning', text: 'Lack of geographical base can make mail, banking, and voting registration highly complex.' }
+                ],
+                advantages: [
+                    "<strong>Infinite Adventure:</strong> Waking up in changing environments whenever your curiosity shifts.",
+                    "<strong>Zero Upkeep:</strong> No roofs to repair, no home association fees, and no property tax risks.",
+                    "<strong>Asset Freedom:</strong> 100% of net worth remains compounding in liquid, highly accessible index funds.",
+                    "<strong>Hyper-Minimalism:</strong> Living completely unencumbered by material objects."
+                ],
+                tradeoffs: [
+                    "<strong>Social Isolation:</strong> Difficult to build lasting community bonds when constantly on the move.",
+                    "<strong>Friction of Transit:</strong> Packing, visa renewals, changing currencies, and physical fatigue.",
+                    "<strong>Inflation Risk:</strong> Exposed directly to the compounding inflation of short-term rental markets."
+                ],
+                mistakes: [
+                    "Failing to maintain a stable administrative legal mailing address.",
+                    "Not planning for physical decline or mobility limitations in late-stage plans.",
+                    "Underestimating the compounding inflation of short-term rental markets."
+                ],
+                locations: ["Curated Rental Flats", "Boutique Hotel Chains", "Dynamic Transit Cities"],
+                stories: [
+                    { title: "The Zero-Property Portfolio", desc: "Investing liquid funds for maximum cash flow." },
+                    { title: "Global Emergency Medical Logistics", desc: "Setting up evacuation policies for ultimate peace of mind." },
+                    { title: "The Legal Mailbox Hack", desc: "Retaining legal residence with no physical real estate." },
+                    { title: "Gear & Luggage Optimization", desc: "How to fit your entire life inside a premium carry-on." }
+                ]
+            },
+            dual_base: {
+                id: 'dual_base',
+                theme: 'Seasonal • Structured • Connected',
+                accentColor: 'cyan',
+                themeClasses: {
+                    accentText: 'text-cyan-600',
+                    badgeBg: 'bg-cyan-50 text-cyan-700 border-cyan-100',
+                    dotActive: 'bg-cyan-500',
+                    bgAccent: 'bg-cyan-50/60',
+                    borderAccent: 'border-cyan-100/80 bg-cyan-50/30 text-cyan-900',
+                    gradientFrom: 'from-cyan-500/10',
+                    timelineLine: 'border-cyan-500',
+                    timelineCircle: 'border-cyan-500 text-cyan-600'
+                },
+                title: 'The Dual-Base Snowbird',
+                subtitle: 'Two structured homes. Zero cold winters. Perfect community continuity.',
+                priorities: [
+                    "Northern Summer selected for 50–65",
+                    "Southern Sun selected for 65–78",
+                    "Dual Support selected for 78+",
+                    "Result: Dual-Base Snowbird Profile"
+                ],
+                philosophy: 'Why choose one home? This layout balances two specialized physical bases—typically a northern home near family for summers, and a southern base for sunny, active winters.',
+                phases: [
+                    { age: "50-65", title: "Select Secondary Base", desc: "Evaluating properties, analyzing local regional tax profiles, and planning the semi-annual logistics system." },
+                    { age: "65-78", title: "Seasonal Migration Balance", desc: "Splitting the year 6/6 or 7/5, enjoying premium weather seasons and preserving dual community circles." },
+                    { age: "78+", title: "Consolidate to Preferred Base", desc: "Gracefully offloading the secondary home to anchor fully in the location with superior healthcare." }
+                ],
+                dayInLife: [
+                    {
+                        time: "Sunrise Beach Coffee",
+                        desc: "Strolling along your warm winter beach without a single snowflake in sight.",
+                        gradient: "from-cyan-100 to-sky-100",
+                        svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>`
+                    },
+                    {
+                        time: "Home Transition Check",
+                        desc: "Checking the remote security of your northern base while comfortably sitting in the south.",
+                        gradient: "from-sky-100 to-indigo-100",
+                        svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`
+                    },
+                    {
+                        time: "Reunion Dinner Party",
+                        desc: "Welcoming back fellow seasonal neighbors at the local country club or community patio.",
+                        gradient: "from-teal-100 to-cyan-100",
+                        svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>`
+                    }
+                ],
+                reflection: '"Looking back at eighty-five, splitting my life into seasonal chapters was the ultimate luxury. I never suffered through freezing northern winters, yet preserved deep ties with family every summer."',
+                metrics: [
+                    { label: "Family Integration", score: 4 },
+                    { label: "Lifestyle & Experience", score: 4 },
+                    { label: "Healthcare Access", score: 4 },
+                    { label: "Tax Efficiency", score: 2 },
+                    { label: "Flexibility", score: 4 },
+                    { label: "Complexity", score: 3 }
+                ],
+                checks: [
+                    { type: 'success', text: 'Medicare and domestic health plans transfer seamlessly between US state lines.' },
+                    { type: 'warning', text: 'Tax status rules require spending less than 183 days in high-tax states to protect income.' },
+                    { type: 'warning', text: 'Maintaining dual properties doubles maintenance overhead and property tax liability.' }
+                ],
+                advantages: [
+                    "<strong>Perfect Weather:</strong> Bypassing northern freezes and humid southern summers completely.",
+                    "<strong>Dual Communities:</strong> Enjoying two distinct social circles, golf clubs, and neighbor networks.",
+                    "<strong>Family Proximity:</strong> Remaining an active, present figure in grandchildren's summer memories.",
+                    "<strong>Double Asset Growth:</strong> Owning real estate in two highly sought-after vacation submarkets."
+                ],
+                tradeoffs: [
+                    "<strong>Double Maintenance:</strong> Managing two properties, paying double utility bills, and arranging home watch groups.",
+                    "<strong>Travel Logistics:</strong> Packing up and traveling twice a year with pets, cars, and paperwork.",
+                    "<strong>High Entry Cost:</strong> Requires significant capital to acquire two highly desirable residential assets."
+                ],
+                mistakes: [
+                    "Failing to track physical days of residency, triggering painful audits from state auditors.",
+                    "Buying a secondary home that is too large, turning seasonal travel into exhausting physical chores.",
+                    "Neglecting local physician networks in your secondary seasonal location."
+                ],
+                locations: ["Florida/Maine Split", "Arizona/Colorado Split", "Southern Coast/Midwest Split"],
+                stories: [
+                    { title: "The 183-Day Audit Playbook", desc: "How to legally document your residency migration." },
+                    { title: "Dual Home Remote Management", desc: "The smart tech stack to secure properties from afar." },
+                    { title: "Medicare Across State Lines", desc: "Avoiding unexpected out-of-network medical surprises." },
+                    { title: "Seasonal Property Tax Loopholes", desc: "Minimizing state property taxation structures legally." }
+                ]
+            }
+        };
+
+        let activeProfileId = 'home_base';
+
+        // High-end 5-dot score renderer
+        function renderMetrics(metrics, themeClasses) {
+            const container = document.getElementById('metrics_container');
+            container.innerHTML = '';
+
+            metrics.forEach(m => {
+                let dotsHtml = '';
+                for (let i = 1; i <= 5; i++) {
+                    if (i <= m.score) {
+                        dotsHtml += `<span class="w-2.5 h-2.5 rounded-full ${themeClasses.dotActive} shadow-[0_0_8px_rgba(0,0,0,0.05)] transition-all duration-300"></span>`;
+                    } else {
+                        dotsHtml += `<span class="w-2.5 h-2.5 rounded-full bg-slate-200/70 transition-all duration-300"></span>`;
+                    }
+                }
+
+                const item = document.createElement('div');
+                item.className = 'flex items-center justify-between py-2.5 border-b border-slate-100 text-xs tracking-wide';
+                item.innerHTML = `
+                    <span class="text-slate-500 font-medium">${m.label}</span>
+                    <div class="flex gap-1.5">${dotsHtml}</div>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        // Profile switcher engine
+        function selectProfile(profileId) {
+            activeProfileId = profileId;
+            const data = profiles[profileId];
+
+            // Toggle selector buttons styling
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                if (btn.dataset.id === profileId) {
+                    btn.className = "tab-btn flex-1 min-w-[130px] text-xs font-semibold py-2.5 px-4 rounded-xl transition-all duration-300 bg-white text-slate-900 shadow-sm border border-slate-200/50";
+                } else {
+                    btn.className = "tab-btn flex-1 min-w-[130px] text-xs font-medium py-2.5 px-4 rounded-xl transition-all duration-300 text-slate-500 hover:text-slate-800 hover:bg-slate-50";
+                }
+            });
+
+            // Set Title & Subtitle
+            document.getElementById('profile_title').innerText = data.title;
+            document.getElementById('profile_subtitle').innerText = data.subtitle;
+            document.getElementById('profile_badge').innerText = `Theme: ${data.theme}`;
+
+            // Priority Box contents (styled green aligned box)
+            const prioritiesContainer = document.getElementById('priorities_container');
+            prioritiesContainer.innerHTML = '';
+            data.priorities.forEach((p, idx) => {
+                const isLast = idx === data.priorities.length - 1;
+                const bullet = isLast ? '★' : '✓';
+                const classText = isLast ? 'font-bold mt-2 pt-2 border-t border-emerald-900/10 block text-emerald-900' : 'block text-emerald-800/90 text-xs';
+                prioritiesContainer.innerHTML += `<span class="${classText} mb-1 flex items-start gap-1.5">
+                    <span class="font-bold shrink-0">${bullet}</span>
+                    <span>${p}</span>
+                </span>`;
+            });
+
+            // Left Column Phases Timeline
+            const timelineLine = document.getElementById('timeline_line');
+            timelineLine.className = `absolute left-[15px] top-4 bottom-4 border-l-2 ${data.themeClasses.timelineLine} opacity-80`;
+
+            const phasesContainer = document.getElementById('phases_container');
+            phasesContainer.innerHTML = '';
+            data.phases.forEach((p, index) => {
+                phasesContainer.innerHTML += `
+                    <div class="relative flex items-start gap-5 group">
+                        <!-- Number Node on Line -->
+                        <div class="absolute left-0 w-8 h-8 rounded-full border-2 ${data.themeClasses.timelineCircle} bg-white flex items-center justify-center font-bold text-xs z-10 shadow-sm group-hover:scale-105 transition-all duration-300">
+                            ${index + 1}
+                        </div>
+                        <!-- High visual content card -->
+                        <div class="ml-12 flex-1 bg-white border border-slate-200/60 rounded-2xl p-4 shadow-[0_4px_20px_rgb(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-0.5 transition-all duration-300">
+                            <div class="flex items-center gap-2 mb-1.5">
+                                <span class="px-2 py-0.5 rounded text-[10px] font-bold border ${data.themeClasses.badgeBg}">${p.age}</span>
+                                <h4 class="font-bold text-slate-800 text-xs tracking-tight">${p.title}</h4>
+                            </div>
+                            <p class="text-[11px] text-slate-500 leading-relaxed">${p.desc}</p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Philosophy overview text
+            document.getElementById('philosophy_text').innerText = data.philosophy;
+
+            // Day in the Life visuals with curated minimalist vector illustrations
+            const dayContainer = document.getElementById('day_container');
+            dayContainer.innerHTML = '';
+            data.dayInLife.forEach(d => {
+                dayContainer.innerHTML += `
+                    <div class="bg-white border border-slate-200/60 p-3 rounded-2xl flex flex-col justify-between hover:shadow-md transition-all duration-300">
+                        <div>
+                            <!-- Visually attractive placeholder featuring vector line icon -->
+                            <div class="w-full h-20 rounded-xl bg-gradient-to-tr ${d.gradient} flex items-center justify-center mb-2.5 shadow-inner relative group overflow-hidden">
+                                <div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <svg class="w-7 h-7 text-slate-700/80 drop-shadow-sm transform group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    ${d.svg}
+                                </svg>
+                            </div>
+                            <span class="text-[9px] uppercase font-bold tracking-widest text-slate-400 block mb-0.5">${d.time}</span>
+                            <p class="text-[11px] text-slate-600 leading-relaxed">${d.desc}</p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Quote Box reflection
+            document.getElementById('reflection_text').innerText = data.reflection;
+
+            // Dot metrics lists
+            renderMetrics(data.metrics, data.themeClasses);
+
+            // Structural checking segments
+            const checksContainer = document.getElementById('checks_container');
+            checksContainer.innerHTML = '';
+            data.checks.forEach(c => {
+                const bullet = c.type === 'success' 
+                    ? `<span class="text-emerald-500 bg-emerald-50 rounded-full w-5 h-5 flex items-center justify-center shrink-0">✓</span>` 
+                    : `<span class="text-amber-500 bg-amber-50 rounded-full w-5 h-5 flex items-center justify-center shrink-0">⚠</span>`;
+                checksContainer.innerHTML += `
+                    <li class="flex items-start gap-3 text-xs leading-relaxed text-slate-600">
+                        ${bullet}
+                        <span class="pt-0.5">${c.text}</span>
+                    </li>
+                `;
+            });
+
+            // Advantages lists
+            const advantagesList = document.getElementById('advantages_list');
+            advantagesList.innerHTML = '';
+            data.advantages.forEach(a => {
+                advantagesList.innerHTML += `<li class="flex items-start gap-2.5 text-xs text-slate-600 leading-relaxed">
+                    <span class="text-emerald-600 font-bold shrink-0 bg-emerald-50 w-5 h-5 rounded-full flex items-center justify-center text-[10px]">✓</span>
+                    <span class="pt-0.5">${a}</span>
+                </li>`;
+            });
+
+            // Tradeoffs lists
+            const tradeoffsList = document.getElementById('tradeoffs_list');
+            tradeoffsList.innerHTML = '';
+            data.tradeoffs.forEach(t => {
+                tradeoffsList.innerHTML += `<li class="flex items-start gap-2.5 text-xs text-slate-600 leading-relaxed">
+                    <span class="text-amber-600 font-bold shrink-0 bg-amber-50 w-5 h-5 rounded-full flex items-center justify-center text-[10px]">➔</span>
+                    <span class="pt-0.5">${t}</span>
+                </li>`;
+            });
+
+            // Pitfalls lists
+            const mistakesList = document.getElementById('mistakes_list');
+            mistakesList.innerHTML = '';
+            data.mistakes.forEach((m, idx) => {
+                mistakesList.innerHTML += `
+                    <div class="border-l-2 border-rose-500 pl-4 py-0.5">
+                        <h5 class="font-bold text-slate-800 text-xs">Risk ${idx + 1}</h5>
+                        <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">${m}</p>
+                    </div>
+                `;
+            });
+
+            // Locations
+            const locationsContainer = document.getElementById('locations_container');
+            locationsContainer.innerHTML = '';
+            data.locations.forEach(loc => {
+                locationsContainer.innerHTML += `
+                    <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl font-semibold text-[11px] text-slate-600 text-center hover:bg-white hover:border-slate-300 hover:shadow-sm transition-all duration-300">
+                        ${loc}
+                    </div>
+                `;
+            });
+
+            // Related Stories
+            const storiesContainer = document.getElementById('stories_container');
+            storiesContainer.innerHTML = '';
+            data.stories.forEach(story => {
+                storiesContainer.innerHTML += `
+                    <a href="#" class="p-3 bg-white border border-slate-200/60 rounded-2xl hover:border-slate-400 hover:shadow-sm transition-all duration-300 group block">
+                        <h4 class="font-bold text-slate-800 group-hover:text-slate-600 text-[11px] flex items-center justify-between">
+                            <span>${story.title}</span>
+                            <span class="text-slate-400 group-hover:translate-x-0.5 transition-transform duration-300">&rarr;</span>
+                        </h4>
+                        <p class="text-[10px] text-slate-400 mt-1">${story.desc}</p>
+                    </a>
+                `;
+            });
+        }
+    </script>
+ /* GLOBAL HEADER POSITIONING AND HIGH STACKING INDEX Context */
+    .global-header {
+      background-color: #0B132B; 
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 2.25rem; /* Slightly tightened padding */
+      border-bottom: 1px solid #1E293B;
+      width: 100%;
+      box-sizing: border-box;
+      position: relative; /* ◄ Establish containing block for the absolute mega dropdown */
+      z-index: 1001;      /* ◄ Override the 100 z-index sticky topnav bar context */
+    }
+
+    /* FORCED LIST ITEM ROW PACKING TO PREVENT VERTICAL STACKING BLOCKS */
+    .top-nav-links {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center;
+      gap:1.25rem; /* Adjusted gap */
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-nav-links a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.95rem; /* ◄ Adjusted from 1.425rem (10% smaller) */
+      font-weight: 500;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .top-nav-links a:hover, .top-nav-links a.active {
+      color: white;
+    }
+
+    .logo {
+      font-size: 1.45rem; /* ◄ Adjusted from 2rem (10% smaller) */
+      font-weight: 800;
+      color: white;
+      text-decoration: none;
+      letter-spacing: -0.04em;
+    }
+
+    .logo span {
+      color: #02B17D; 
+    }
+
+    .search-container {
+      position: relative;
+      max-width: 400px; /* Adjusted container width */
+      width: 100%;
+    }
+
+    .search-input {
+      width: 100%;
+      background-color: #1E293B;
+      border: 1px solid #334155;
+      color: white;
+      padding: 0.65rem 1.25rem 0.65rem 3rem; /* Adjusted padding */
+      border-radius: 8px;
+      font-size: 0.9rem; /* ◄ Adjusted from 1.3125rem (10% smaller) */
+    }
+
+    /* CORRECT HORIZONTAL TOP NAV FLEX MATRIX */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #0f172a;
+      display: flex;
+      align-items: center;
+      padding: 0 38px;
+      height: 70px; /* Adjusted height */
+      box-shadow: 0 2px 8px rgba(0,0,0,.18);
+    }
+    
+    .topnav-links {
+      display: flex;
+      flex-direction: row;
+      gap: 4px;
+      align-items: center;
+      width: 100%;
+      position: relative;
+    }
+    
+    .topnav-link {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 18.9px; /* ◄ Adjusted from 21px (10% smaller) */
+      font-weight: 555;
+      padding: 8px 18px;
+      border-radius: 8px;
+      transition: background .15s, color .15s;
+      white-space: nowrap;
+    }
+    
+    .topnav-link:hover {
+      background: rgba(255,255,255,.08);
+      color: #fff;
+    }
+    
+    .topnav-link.active {
+      background: rgba(96,165,250,.15);
+      color: #60a5fa;
+    }
+    
+    .topnav-divider {
+      width: 1px;
+      height: 32px; /* Adjusted divider */
+      background: rgba(255,255,255,.1);
+      margin: 0 10px;
+    }
+
+    /* VIEWPONT-CENTERED FLUID MEGA DROPDOWN BOX */
+    .mega-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 50%;                     
+      transform: translateX(-50%) translateY(12px); 
+      width: 95vw;                   
+      max-width: 1240px; /* Adjusted width */
+      background: white;
+      border: 1px solid var(--border); 
+      border-radius: 1rem;
+      box-shadow: 0 22px 30px -5px rgba(0, 0, 0, 0.16), 0 12px 12px -5px rgba(0, 0, 0, 0.05);
+      padding: 3.25rem; /* Adjusted padding */
+      display: grid !important;      
+      grid-template-columns: 1.1fr 2.9fr; 
+      gap: 3.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+      z-index: 2000; 
+      box-sizing: border-box;
+    }
+
+    /* Keep centering properties intact on hover triggers */
+    .dropdown-trigger:hover .mega-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+  
+    /* RIGHT COLUMN LINKS SUB-GRID */
+    .links-matrix {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem 1.75rem; /* Adjusted spacing */
+    }
+
+    .dropdown-column h4 {
+      color: var(--text); 
+      font-size: 1.215rem; /* ◄ Adjusted from 1.35rem (10% smaller) */
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .dropdown-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem; /* Adjusted spacing */
+    }
+
+    .dropdown-column ul a {
+      color: var(--muted) !important; 
+      font-size: 0.95 rem; /* ◄ Adjusted from 1.275rem (10% smaller) */
+      font-weight: 500;
+      padding: 0;
+    }
+
+    .dropdown-column ul a:hover {
+      color: var(--emerald) !important; 
+    }
+
+    /* Let dropdown anchor align to .global-header container for perfect center horizontal align */
+    .dropdown-trigger {
+      position: static;
+    }
+  </style>
+</head>
+    <!-- Sticky Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/50">
+        <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="font-black text-sm tracking-tight bg-slate-900 text-white px-2 py-1 rounded">WL</span>
+                <span class="font-extrabold text-slate-800 text-xs hidden sm:inline tracking-wider">WEALTHLANDING</span>
+            </div>
+            <div class="flex space-x-6 text-[11px] font-semibold text-slate-500 uppercase tracking-widest">
+                <a href="#" class="hover:text-slate-900 transition-colors">Profiles</a>
+                <a href="#" class="hover:text-slate-900 transition-colors">Library</a>
+                <a href="#" class="hover:text-slate-900 transition-colors">Tools</a>
+            </div>
+            <a href="#cta" class="bg-slate-900 text-white text-[10px] font-bold tracking-wider px-3.5 py-1.5 rounded-lg hover:bg-slate-800 transition duration-300 uppercase shadow-sm">
+                Consult Advisor
+            </a>
+        </div>
+    </nav>
+
+    <!-- Interactive Segmented Selector -->
+    <div class="bg-white border-b border-slate-200/50 py-3.5 px-4 shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
+        <div class="max-w-6xl mx-auto">
+            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest text-center mb-2">Toggle Retirement Standard Blueprint Profiles</p>
+            <div class="bg-slate-100/80 p-1 rounded-2xl flex flex-wrap justify-center gap-1 max-w-3xl mx-auto border border-slate-200/30">
+                <button onclick="selectProfile('home_base')" data-id="home_base" class="tab-btn">Home Base</button>
+                <button onclick="selectProfile('phase_optimizer')" data-id="phase_optimizer" class="tab-btn">Phase Optimizer</button>
+                <button onclick="selectProfile('sovereign_expat')" data-id="sovereign_expat" class="tab-btn">Sovereign Expat</button>
+                <button onclick="selectProfile('roaming_nomad')" data-id="roaming_nomad" class="tab-btn">Roaming Nomad</button>
+                <button onclick="selectProfile('dual_base')" data-id="dual_base" class="tab-btn">Dual-Base</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Interactive Dashboard Grid -->
+    <main class="flex-grow max-w-6xl w-full mx-auto p-4 md:p-6 space-y-6">
+        
+        <!-- Header Profile Showcase Card -->
+        <div class="bg-white rounded-2xl border border-slate-200/60 p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-[0_8px_30px_rgb(0,0,0,0.02)]">
+            <!-- Title Content -->
+            <div class="flex items-start gap-4">
+                <div class="p-3 rounded-2xl bg-slate-50 border border-slate-100 shrink-0 shadow-inner">
+                    <!-- Standard icon placeholder -->
+                    <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                    </svg>
+                </div>
+                <div>
+                    <h1 id="profile_title" class="text-xl md:text-2xl font-serif font-bold text-slate-900 leading-none">
+                        <!-- Dynamic Title -->
+                    </h1>
+                    <p id="profile_subtitle" class="text-[10px] text-slate-400 uppercase tracking-wider font-bold mt-1.5">
+                        <!-- Dynamic Subtitle -->
+                    </p>
+                    <div id="profile_badge" class="inline-block bg-slate-100 border border-slate-200/50 text-slate-500 text-[9px] font-semibold tracking-wide px-2.5 py-0.5 rounded-md mt-2">
+                        <!-- Dynamic Badges -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Align Priority green box (Mirrors image_6be5cb.jpg top right block) -->
+            <div class="p-4 rounded-xl border border-emerald-100/80 bg-emerald-50/40 text-emerald-800 shrink-0 max-w-sm md:w-80 shadow-sm">
+                <h3 class="text-[9px] uppercase tracking-widest font-black text-emerald-600 mb-2">Most Aligned With Your Priorities</h3>
+                <div id="priorities_container" class="space-y-1">
+                    <!-- Loaded dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 3-Column Profile Dashboard Block (Replicating layout from image_6be5cb.jpg) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <!-- COLUMN 1: YOUR RETIREMENT PHASES -->
+            <div class="lg:col-span-4 space-y-3">
+                <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Your Retirement Phases</h3>
+                
+                <div class="relative pl-1">
+                    <!-- Absolute linking tracker line -->
+                    <div id="timeline_line" class="absolute left-4 top-2 bottom-2 border-l-2"></div>
+                    
+                    <div id="phases_container" class="space-y-4">
+                        <!-- Dynamic loaded phase milestones -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMN 2: WHAT THIS LIFE LOOKS LIKE -->
+            <div class="lg:col-span-5 space-y-4">
+                <div>
+                    <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">What This Life Looks Like</h3>
+                    <p id="philosophy_text" class="text-xs text-slate-500 leading-relaxed bg-white border border-slate-200/60 rounded-2xl p-4 shadow-[0_4px_2px_rgb(0,0,0,0.01)]">
+                        <!-- Dynamic core description text -->
+                    </p>
+                </div>
+
+                <!-- A Day In This Life Visual Grid -->
+                <div class="space-y-2">
+                    <h4 class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">A Day In This Life</h4>
+                    <div id="day_container" class="grid grid-cols-3 gap-2.5">
+                        <!-- Dynamic Day cards loaded here with clean vectors -->
+                    </div>
+                </div>
+
+                <!-- Age 85 Reflection Quotation Card -->
+                <div class="bg-stone-50 border border-slate-200/60 rounded-2xl p-4 shadow-[0_4px_2px_rgb(0,0,0,0.01)]">
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <span class="text-slate-400">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </span>
+                        <h4 class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Age 85 Reflection</h4>
+                    </div>
+                    <p id="reflection_text" class="text-xs font-serif italic text-slate-500 leading-relaxed">
+                        <!-- Dynamic reflection quotation -->
+                    </p>
+                </div>
+            </div>
+
+            <!-- COLUMN 3: OUTCOME HIGHLIGHTS & STRUCTURAL CHECKS -->
+            <div class="lg:col-span-3 space-y-4">
+                <!-- Highlight metrics block -->
+                <div class="bg-white border border-slate-200/60 rounded-2xl p-4 shadow-sm space-y-2">
+                    <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">Outcome Highlights</h3>
+                    <div id="metrics_container" class="space-y-0.5">
+                        <!-- Dynamic score metrics metrics tracker -->
+                    </div>
+                </div>
+
+                <!-- Profile Structural Checks block -->
+                <div class="bg-white border border-slate-200/60 rounded-2xl p-4 shadow-sm space-y-3">
+                    <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Profile Structural Checks</h3>
+                    <ul id="checks_container" class="space-y-3">
+                        <!-- Dynamic eligibility alerts and checkers -->
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Detailed Assessment Blocks -->
+        <div class="bg-white rounded-2xl border border-slate-200/60 p-5 md:p-6 shadow-sm space-y-6">
+            
+            <!-- Advantages vs Tradeoffs Split -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xs font-bold text-slate-800 uppercase tracking-widest mb-3 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span> Advantages
+                    </h3>
+                    <ul id="advantages_list" class="space-y-2.5">
+                        <!-- Dynamic advantages loaded -->
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xs font-bold text-slate-800 uppercase tracking-widest mb-3 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-amber-500 inline-block"></span> Tradeoffs
+                    </h3>
+                    <ul id="tradeoffs_list" class="space-y-2.5">
+                        <!-- Dynamic tradeoffs loaded -->
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-slate-100" />
+
+            <!-- Common Risks & Physical Locations Row -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-3">
+                    <h3 class="text-xs font-bold text-slate-800 uppercase tracking-widest">Common Risks & Mistakes</h3>
+                    <div id="mistakes_list" class="space-y-2.5">
+                        <!-- Dynamic Risks load -->
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h3 class="text-xs font-bold text-slate-800 uppercase tracking-widest">Typical Architectural Locations</h3>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                        These frameworks operate best inside civic landscapes structured specifically to match their structural requirements:
+                    </p>
+                    <div id="locations_container" class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
+                        <!-- Dynamic typical locations -->
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-slate-100" />
+
+            <!-- Related Library Stories segment -->
+            <div class="space-y-3">
+                <h3 class="text-[9px] uppercase tracking-widest text-slate-400 font-bold">Related WealthLanding Stories</h3>
+                <div id="stories_container" class="grid sm:grid-cols-4 gap-3">
+                    <!-- Dynamic Stories navigation blocks -->
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Section 10: Call To Action segment -->
+        <section id="cta" class="bg-gradient-to-br from-slate-900 to-slate-950 text-white rounded-3xl p-6 md:p-12 text-center space-y-4 shadow-lg border border-slate-800">
+            <div class="max-w-xl mx-auto space-y-3">
+                <h3 class="text-lg md:text-xl font-serif font-bold tracking-tight">Could This Life Work For Me?</h3>
+                <p class="text-slate-400 text-[11px] leading-relaxed">
+                    Instantly analyze how your private net worth baseline, pension parameters, health records, and family structures match against these 5 frameworks.
+                </p>
+                <div class="pt-2">
+                    <button class="bg-emerald-500 hover:bg-emerald-600 text-white transition-colors duration-300 px-6 py-2.5 rounded-xl font-bold text-xs shadow-md tracking-wider uppercase">
+                        Personalize This Path
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer segment -->
+    <footer class="border-t border-slate-200 bg-slate-100/50 py-6 text-center text-[10px] text-slate-400 tracking-wide">
+        &copy; 2026 WealthLanding. Dynamic 5-Profile standard layout inspired by image_6be5cb.jpg.
+    </footer>
+
+    <script>
+        // Start the application with Home Base Profile as default
+        window.onload = function() {
+            selectProfile('home_base');
+        }
+    </script>
+</body>
+</html>
