@@ -1,0 +1,1804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9JMJJ5CJR4');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WealthLanding — Retirement Baseline Onboarding</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Scale standard Tailwind sizes by exactly 1.35x (10% smaller than previous 1.5x scale)
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontSize: {
+            'xs': ['1.0125rem', { lineHeight: '1.6' }],     // 0.75rem * 1.35 = 1.0125rem
+            'sm': ['1.18125rem', { lineHeight: '1.7' }],    // 0.875rem * 1.35 = 1.18125rem
+            'base': ['1.35rem', { lineHeight: '1.8' }],     // 1rem * 1.35 = 1.35rem
+            'lg': ['1.51875rem', { lineHeight: '1.8' }],    // 1.125rem * 1.35 = 1.51875rem
+            'xl': ['1.6875rem', { lineHeight: '1.8' }],     // 1.25rem * 1.35 = 1.6875rem
+            '2xl': ['2.025rem', { lineHeight: '1.6' }],     // 1.5rem * 1.35 = 2.025rem
+            '3xl': ['2.53125rem', { lineHeight: '1.5' }],   // 1.875rem * 1.35 = 2.53125rem
+            '4xl': ['3.0375rem', { lineHeight: '1.4' }],    // 2.25rem * 1.35 = 3.0375rem
+            '5xl': ['4.05rem', { lineHeight: '1.3' }],      // 3rem * 1.35 = 4.05rem
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ============================================================================
+       PREMIUM STYLING RECONCILIATION LAYER
+       ============================================================================ */
+    :root {
+      --bg: #F8FAFC;
+      --card: #fff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --royal: #2563eb;
+      --emerald: #02B17D;
+      --navy: #0B132B;
+    }
+    
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      color: var(--text);
+      font-size: 1.35rem; 
+      line-height: 1.7;   
+    }
+
+    /* GLOBAL HEADER POSITIONING AND HIGH STACKING INDEX Context */
+    .global-header {
+      background-color: #0B132B; 
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 2.25rem; 
+      border-bottom: 1px solid #1E293B;
+      width: 100%;
+      box-sizing: border-box;
+      position: relative; 
+      z-index: 1001;      
+    }
+
+    .top-nav-links {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center;
+      gap:1.25rem; 
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-nav-links a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.95rem; 
+      font-weight: 500;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .top-nav-links a:hover, .top-nav-links a.active {
+      color: white;
+    }
+
+    .logo {
+      font-size: 1.45rem; 
+      font-weight: 800;
+      color: white;
+      text-decoration: none;
+      letter-spacing: -0.04em;
+    }
+
+    .logo span {
+      color: #02B17D; 
+    }
+
+    .search-container {
+      position: relative;
+      max-width: 400px; 
+      width: 100%;
+    }
+
+    .search-input {
+      width: 100%;
+      background-color: #1E293B;
+      border: 1px solid #334155;
+      color: white;
+      padding: 0.65rem 1.25rem 0.65rem 3rem; 
+      border-radius: 8px;
+      font-size: 0.9rem; 
+    }
+
+    .mega-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 50%;                     
+      transform: translateX(-50%) translateY(12px); 
+      width: 95vw;                   
+      max-width: 1240px; 
+      background: white;
+      border: 1px solid var(--border); 
+      border-radius: 1rem;
+      box-shadow: 0 22px 30px -5px rgba(0, 0, 0, 0.16), 0 12px 12px -5px rgba(0, 0, 0, 0.05);
+      padding: 3.25rem; 
+      display: grid !important;      
+      grid-template-columns: 1.1fr 2.9fr; 
+      gap: 3.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+      z-index: 2000; 
+      box-sizing: border-box;
+    }
+
+    .dropdown-trigger:hover .mega-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+  
+    .links-matrix {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem 1.75rem; 
+    }
+
+    .dropdown-column h4 {
+      color: var(--text); 
+      font-size: 1.215rem; 
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .dropdown-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem; 
+    }
+
+    .dropdown-column ul a {
+      color: var(--muted) !important; 
+      font-size: 0.95rem; 
+      font-weight: 500;
+      padding: 0;
+    }
+
+    .dropdown-column ul a:hover {
+      color: var(--emerald) !important; 
+    }
+
+    .dropdown-trigger {
+      position: static;
+    }
+  </style>
+</head>
+<body class="pb-24 lg:pb-0">
+
+  <!-- Top Global Directory Header -->
+  <header class="global-header">
+    <a href="/" class="logo">Wealth<span>Landing</span></a>
+    <nav aria-label="Global Main Directory">
+      <ul class="top-nav-links">
+        
+        <!-- DROP-DOWN 1: OVERVIEW -->
+        <li class="dropdown-trigger">
+          <a href="#" class="active font-bold text-white">Overview <span class="text-[14px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
+              <div class="space-y-3">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Overview</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Your primary workspace baseline dashboard. Track targets, access planning workflows, and monitor active signals.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" onclick="goToStep(1)" class="text-slate-900 font-bold text-sm inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Start Diagnostic Tool <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-xs text-slate-400 mt-1">Review onboarding scores and map your baseline variables.</p>
+              </div>
+            </div>
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>🚀 Start Here</h4>
+                <ul>
+                  <li><a href="#" onclick="goToStep(1)">Financial Diagnostic</a></li>
+                  <li><a href="#" onclick="goToStep(3)">Wealth Score Tracker</a></li>
+                  <li><a href="/">Personal Dashboard</a></li>
+                  <li><a href="#">My Custom Roadmap</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🌟 Popular Journeys</h4>
+                <ul>
+                  <li><a href="#">Build My First Million</a></li>
+                  <li><a href="#">Early Retirement Strategy</a></li>
+                  <li><a href="#">Family Legacy Structures</a></li>
+                  <li><a href="#">Retirement Odyssey Hub</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>⏱️ Progress Framework</h4>
+                <ul>
+                  <li><a href="#">Latest Estimators</a></li>
+                  <li><a href="#">Core Strategic Guides</a></li>
+                  <li><a href="Retirement_Master_Plan.html">Resume Master Plan</a></li>
+                  <li><a href="#">Resume Transition Plan</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 2: BUILD WEALTH -->
+        <li class="dropdown-trigger">
+          <a href="#" class="active font-bold text-white">Build Wealth <span class="text-[14px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
+              <div class="space-y-3">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Build Wealth</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Optimized cash flow architectures, active career negotiation parameters, and systematic credit rewards optimization.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" class="text-slate-900 font-bold text-sm inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Explore Cash Flow Tactics <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-xs text-slate-400 mt-1">Discover strategic frameworks to accelerate personal savings rates.</p>
+              </div>
+            </div>
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>💼 Income Optimization</h4>
+                <ul>
+                  <li><a href="#">Salary Negotiation Rules</a></li>
+                  <li><a href="#">Career ROI Strategy</a></li>
+                  <li><a href="#">Side Business Design</a></li>
+                  <li><a href="#">Active Entrepreneurship</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>💵 Cash Flow & Credit</h4>
+                <ul>
+                  <li><a href="#">Budget Optimization</a></li>
+                  <li><a href="#">High-Yield Savings & Banking</a></li>
+                  <li><a href="#">Emergency Reserves Audit</a></li>
+                  <li><a href="#">Travel Hacking Protocols</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🛡️ Taxes & Tools</h4>
+                <ul>
+                  <li><a href="#">Tax Bracket Minimization</a></li>
+                  <li><a href="#">HSA & FSA Maximizers</a></li>
+                  <li><a href="#">Credit Card Rewards Optimizer</a></li>
+                  <li><a href="#">Dynamic Cash Flow Planner</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 3: GROW WEALTH -->
+        <li class="dropdown-trigger">
+          <a href="#" class="active font-bold text-white">Grow Wealth <span class="text-[14px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
+              <div class="space-y-3">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Grow Wealth</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Harness compounding index allocations, explore tax-insulated Roth conversions, and evaluate cash-producing real estate.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" class="text-slate-900 font-bold text-sm inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Review Growth Blueprints <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-xs text-slate-400 mt-1">Construct long-term automated investment models.</p>
+              </div>
+            </div>
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>📈 Asset Allocation</h4>
+                <ul>
+                  <li><a href="#">Index Investing & ETFs</a></li>
+                  <li><a href="#">Portfolio Optimization</a></li>
+                  <li><a href="#">Modern Portfolio Design</a></li>
+                  <li><a href="OptimizeRoth.html">Roth Conversions & Tax-Loss</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🏡 Real Estate & Leverage</h4>
+                <ul>
+                  <li><a href="#">Rental Property Sourcing</a></li>
+                  <li><a href="#">REIT & Index Allocation</a></li>
+                  <li><a href="#">House Hacking Blueprint</a></li>
+                  <li><a href="#">Mortgage Strategy & Margin</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>⚙️ Interactive Tools</h4>
+                <ul>
+                  <li><a href="OptimizeRoth.html">Retirement Strategy Engine</a></li>
+                  <li><a href="#">Advanced Portfolio Simulator</a></li>
+                  <li><a href="#">Real Estate Income Analyzer</a></li>
+                  <li><a href="#">Withdrawal Sequencing Modeler</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 4: PROTECT WEALTH -->
+        <li class="dropdown-trigger">
+          <a href="#" class="active font-bold text-white">Protect Wealth <span class="text-[14px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
+              <div class="space-y-3">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Protect Wealth</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Shield your net worth from sequence risk, structural tax drag, medical surcharges, and asset litigation.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" class="text-slate-900 font-bold text-sm inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Audit Asset Protections <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-xs text-slate-400 mt-1">Review legal structures and risk metrics.</p>
+              </div>
+            </div>
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>🏥 Health & Insurance</h4>
+                <ul>
+                  <li><a href="cost_for_65+.html">Medicare Optimization</a></li>
+                  <li><a href="#">Global Medical Coverage</a></li>
+                  <li><a href="#">ACA Subsidy Bridge Math</a></li>
+                  <li><a href="#">Umbrella & Disability Policies</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🛡️ Estate basics & Trusts</h4>
+                <ul>
+                  <li><a href="#">Asset Protection Basics</a></li>
+                  <li><a href="#">Irrevocable Trust Vehicles</a></li>
+                  <li><a href="#">Beneficiary Nominations</a></li>
+                  <li><a href="#">Digital Cybersecurity Audits</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>📉 Risk Management</h4>
+                <ul>
+                  <li><a href="#">Sequence of Returns Risks</a></li>
+                  <li><a href="#">Inflation Protection Plans</a></li>
+                  <li><a href="cost_for_65+.html">Interactive Healthcare Planner</a></li>
+                  <li><a href="#">LTC Surcharge Analyzer</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 5: DESIGN YOUR LIFE -->
+        <li class="dropdown-trigger">
+          <a href="#" class="active font-bold text-white">Design Your Life <span class="text-[14px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
+              <div class="space-y-3">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Design Your Life</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Map your life transition, compare domestic US states against overseas tax shelters, and design lifestyle pathways.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" class="text-slate-900 font-bold text-sm inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Design Life Roadmap <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-xs text-slate-400 mt-1">Harness geographic arbitrage scenarios.</p>
+              </div>
+            </div>
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>🗺️ Retirement Planning</h4>
+                <ul>
+                  <li><a href="RetirementHub.html">Retirement Blueprint Map</a></li>
+                  <li><a href="Retirement_master_plan.html">The Master Plan Module</a></li>
+                  <li><a href="#">Transition Workspace</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>✈️ Location Arbitrage</h4>
+                <ul>
+                  <li><a href="UScitymatcher.html">US City Matcher Tool</a></li>
+                  <li><a href="RetiringOverseas.html">Overseas Matcher Tool</a></li>
+                  <li><a href="#">Geographic Cost Indexes</a></li>
+                  <li><a href="#">Digital Nomad Infrastructure</a></li>
+                </ul> 
+              </div>
+              <div class="dropdown-column">
+                <h4>⚙️ Interactive Tools</h4>
+                <ul>
+                  <li><a href="#">Odyssey Journey Simulator</a></li>
+                  <li><a href="#">Lifestyle Comparison Engine</a></li>
+                  <li><a href="#">Retirement Profile Explorer</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 6: LEGACY -->
+        <li class="dropdown-trigger">
+          <a href="#" class="active font-bold text-white">Legacy <span class="text-[14px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
+              <div class="space-y-3">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Legacy</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Equip descendants with early wealth vehicles, optimize trust structures, and evaluate giving parameters.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" class="text-slate-900 font-bold text-sm inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Build Estate Roadmap <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-xs text-slate-400 mt-1">Pass wealth and knowledge forward cleanly.</p>
+              </div>
+            </div>
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>👶 Children & Family</h4>
+                <ul>
+                  <li><a href="#">529 College Funding Models</a></li>
+                  <li><a href="#">Custodial Roth IRAs</a></li>
+                  <li><a href="#">Building Wealth Early</a></li>
+                  <li><a href="#">Youth Financial Education</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🏰 Estate & Governance</h4>
+                <ul>
+                  <li><a href="#">Trust Structures Blueprint</a></li>
+                  <li><a href="#">Roth IRA Inheritances</a></li>
+                  <li><a href="#">Estate Tax Surcharges</a></li>
+                  <li><a href="#">Charitable Giving & DAFs</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🛠️ Interactive Tools</h4>
+                <ul>
+                  <li><a href="#">Legacy Planner</a></li>
+                  <li><a href="#">Education Funding Calculator</a></li>
+                  <li><a href="#">Generational Wealth Map</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 7: KNOWLEDGE LIBRARY -->
+        <li class="dropdown-trigger">
+          <a href="#" class="active font-bold text-white">Knowledge Library <span class="text-[14px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100 text-left">
+              <div class="space-y-3">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Knowledge Library</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Access our searchable, vetted concepts base. Avoid generalized advisor speak—review strict, logical formulas.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" class="text-slate-900 font-bold text-sm inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Search All Knowledge Base <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-xs text-slate-400 mt-1">Vetted research, calculators, and detailed case studies.</p>
+              </div>
+            </div>
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>💡 By Decision</h4>
+                <ul>
+                  <li><a href="#">Should I retire early?</a></li>
+                  <li><a href="#">Should I buy a rental property?</a></li>
+                  <li><a href="#">Should I convert to a Roth IRA?</a></li>
+                  <li><a href="#">Should I move overseas?</a></li>
+                  <li><a href="#">Should I delay Social Security?</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>⏳ By Life Stage & Topic</h4>
+                <ul>
+                  <li><a href="#">Planning in your 20s & 30s</a></li>
+                  <li><a href="#">Acceleration in your 40s & 50s</a></li>
+                  <li><a href="#">Distribution Models at 60+</a></li>
+                  <li><a href="#">Taxes, Investing & Healthcare</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>📚 Vetted Collections</h4>
+                <ul>
+                  <li><a href="#">Vetted Case Studies</a></li>
+                  <li><a href="#">Systematic Research Papers</a></li>
+                  <li><a href="CelebratingRetirement.html">Real Client Journeys</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+    <div class="search-container">
+      <form action="https://www.google.com/search" method="get" target="_blank">
+        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none z-10">🔍</span>
+        <input type="hidden" name="sitesearch" value="wealthlanding.com">
+        <input type="search" name="q" class="search-input" placeholder="Search systems, tools..." aria-label="Search WealthLanding">
+      </form>
+    </div>
+  </header>
+
+  <!-- Centered Interactive Wizard Grid Wrapper -->
+  <div class="py-12 px-4 max-w-7xl mx-auto w-full">
+    
+    <!-- Streamlined Educational Interview Hero Header -->
+    <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+      <span class="bg-emerald-500/10 text-emerald-400 text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full border border-emerald-500/20 inline-block">
+        Decision Intelligence Onboarding
+      </span>
+      <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+        Build Your Retirement Blueprint
+      </h1>
+      <p class="text-slate-500 text-sm md:text-base max-w-2xl mx-auto">
+        We’ll start with your baseline, diagnose your retirement opportunities, then build your master plan before exploring lifestyle paths and optimization.
+      </p>
+    </div>
+
+    <!-- Responsive Split Grid Layout (Form Wizard Left, Confidence/Progress Sidebar Right) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- LEFT COLUMN: The 3-Step Wizard & Contextual story support -->
+      <div class="lg:col-span-8 flex flex-col space-y-8">
+        
+        <!-- Main Wizard Card -->
+        <div id="calculator-card" class="bg-gradient-to-br from-[#0c2f35] to-[#051517] rounded-3xl p-6 md:p-10 border border-teal-800/40 shadow-2xl relative overflow-hidden transition-all duration-300">
+          
+          <!-- Background Vector Grid Decoration -->
+          <div class="absolute inset-0 opacity-15 pointer-events-none mix-blend-overlay">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <pattern id="grid-inner" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#5eead4" stroke-width="1"/>
+              </pattern>
+              <rect width="100%" height="100%" fill="url(#grid-inner)" />
+              <path d="M-100,150 C100,50 300,250 500,100 C700,-50 900,150 1100,50" fill="none" stroke="#02B17D" stroke-width="3" />
+              <path d="M-50,220 C200,120 400,320 600,180 C800,40 1000,280 1200,120" fill="none" stroke="#2563EB" stroke-width="2" />
+            </svg>
+          </div>
+
+          <div class="relative z-10">
+            
+            <!-- Step Level Indicators (Updated) -->
+            <div class="flex items-center justify-between mb-8 px-4 max-w-xl mx-auto">
+              <div class="flex items-center flex-1">
+                <div id="dot-1" class="w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-emerald-500 text-slate-900 ring-4 ring-emerald-500/20">1</div>
+                <span class="hidden sm:inline text-xs text-slate-300 ml-2 font-bold whitespace-nowrap">Life Stage</span>
+                <div id="line-1" class="h-1 flex-1 mx-2 rounded transition-all bg-teal-800"></div>
+              </div>
+              <div class="flex items-center flex-1">
+                <div id="dot-2" class="w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-teal-950 text-teal-400">2</div>
+                <span class="hidden sm:inline text-xs text-slate-400 ml-2 font-bold whitespace-nowrap">Financials</span>
+                <div id="line-2" class="h-1 flex-1 mx-2 rounded transition-all bg-teal-800"></div>
+              </div>
+              <div class="flex items-center">
+                <div id="dot-3" class="w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-teal-950 text-teal-400">3</div>
+                <span class="hidden sm:inline text-xs text-slate-400 ml-2 font-bold whitespace-nowrap">Priorities</span>
+              </div>
+            </div>
+
+            <!-- Dynamic In-Card Error Banner (For clean validation) -->
+            <div id="validation-banner" class="hidden bg-red-950/80 border border-red-500/50 text-red-200 rounded-xl p-4 text-xs font-semibold mb-6 flex items-start gap-3">
+              <span class="text-base text-red-400">⚠️</span>
+              <div class="text-left">
+                <p class="font-bold mb-1">Please resolve the following fields:</p>
+                <ul id="validation-errors" class="list-disc pl-4 space-y-1"></ul>
+              </div>
+            </div>
+
+            <!-- STEP 1 CONTAINER (Life Stage & Demographics) -->
+            <div id="step-1-view" class="space-y-6">
+              <div class="text-center md:text-left border-b border-teal-800/20 pb-4">
+                <h2 class="text-2xl font-extrabold text-white">Household Coordinates & Life Stage</h2>
+                <p class="text-teal-300/80 text-xs mt-1">First, let's map out your age baseline and legal filing jurisdictions.</p>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                
+                <!-- Sliders -->
+                <div class="space-y-4 bg-teal-950/10 border border-teal-800/20 p-5 rounded-2xl">
+                  <div>
+                    <div class="flex justify-between text-xs font-semibold mb-1 text-slate-200">
+                      <label for="input-current-age">Current Age</label>
+                      <span id="label-current-age" class="text-emerald-400 font-bold">30 years old</span>
+                    </div>
+                    <input type="range" min="18" max="75" value="30" id="input-current-age" class="w-full accent-emerald-500 bg-teal-950 h-2 rounded-lg appearance-none cursor-pointer">
+                  </div>
+                  
+                  <div>
+                    <div class="flex justify-between text-xs font-semibold mb-1 text-slate-200">
+                      <label for="input-target-age">Target Retirement Age</label>
+                      <span id="label-target-age" class="text-emerald-400 font-bold">65 years old</span>
+                    </div>
+                    <input type="range" min="50" max="85" value="65" id="input-target-age" class="w-full accent-emerald-500 bg-teal-950 h-2 rounded-lg appearance-none cursor-pointer">
+                  </div>
+                </div>
+
+                <!-- General Dropdowns -->
+                <div class="space-y-4">
+                  <div class="grid grid-cols-2 gap-4">
+                    <div>
+                      <label for="input-marital-status" class="block text-[11px] font-semibold mb-1 text-slate-200 uppercase tracking-wider">Marital Status</label>
+                      <select id="input-marital-status" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-3 py-2 text-white text-xs font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                        <option value="Single" selected>Single</option>
+                        <option value="Married">Married</option>
+                        <option value="Divorced">Divorced</option>
+                        <option value="Widowed">Widowed</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="input-filing-status" class="block text-[11px] font-semibold mb-1 text-slate-200 uppercase tracking-wider">Filing Status *</label>
+                      <select id="input-filing-status" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-3 py-2 text-white text-xs font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                        <option value="" disabled selected>Select filing...</option>
+                        <option value="Single">Single</option>
+                        <option value="Married Filing Jointly">Married Filing Jointly</option>
+                        <option value="Married Filing Separately">Married Filing Separately</option>
+                        <option value="Head of Household">Head of Household</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-4">
+                    <div>
+                      <label for="input-state" class="block text-[11px] font-semibold mb-1 text-slate-200 uppercase tracking-wider">Current State *</label>
+                      <select id="input-state" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-3 py-2 text-white text-xs font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                        <option value="" disabled selected>Select state...</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="input-children-count" class="block text-[11px] font-semibold mb-1 text-slate-200 uppercase tracking-wider">Number of Children</label>
+                      <input type="number" min="0" max="10" value="0" id="input-children-count" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-3 py-2 text-white text-xs font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dynamic Children Ages Container -->
+              <div id="children-ages-container" class="hidden bg-teal-950/40 border border-teal-800/40 p-5 rounded-2xl">
+                <p class="text-[11px] font-semibold text-teal-400 mb-3 uppercase tracking-wider text-left">Children's Ages (Optional)</p>
+                <div id="children-ages-wrapper" class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-3"></div>
+              </div>
+
+              <div class="pt-4 max-w-sm mx-auto">
+                <button onclick="goToStep(2)" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-black py-4 rounded-xl transition-all shadow-lg shadow-emerald-500/20 text-center tracking-wide text-xs hover:scale-[1.01]">
+                  Next: Financial Baseline →
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 2 CONTAINER (Financial Baseline Balances) -->
+            <div id="step-2-view" class="space-y-6 hidden">
+              <div class="text-center md:text-left border-b border-teal-800/20 pb-4">
+                <h2 class="text-2xl font-extrabold text-white">Your Financial Baseline</h2>
+                <p class="text-teal-300/80 text-xs mt-1">Detail your assets, liabilities, and existing annual future inflows.</p>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                
+                <!-- Left side: Assets accounts -->
+                <div class="bg-teal-950/20 border border-teal-800/30 rounded-2xl p-4 space-y-3">
+                  <h3 class="text-xs font-extrabold text-teal-400 uppercase tracking-wider border-b border-teal-800/40 pb-1">Asset Accounts</h3>
+                  
+                  <div>
+                    <label for="input-traditional" class="block text-[11px] text-slate-300 font-semibold mb-1">Traditional 401k/IRA ($)</label>
+                    <input type="number" id="input-traditional" value="25000" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-3 py-1.5 text-white text-xs font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                  </div>
+                  
+                  <div>
+                    <label for="input-roth" class="block text-[11px] text-slate-300 font-semibold mb-1">Roth Portfolio ($)</label>
+                    <input type="number" id="input-roth" value="0" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-3 py-1.5 text-white text-xs font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                  </div>
+
+                  <div>
+                    <label for="input-brokerage" class="block text-[11px] text-slate-300 font-semibold mb-1">Taxable Brokerage ($)</label>
+                    <input type="number" id="input-brokerage" value="0" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-3 py-1.5 text-white text-xs font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-2">
+                    <div>
+                      <label for="input-cash" class="block text-[10px] text-slate-300 font-semibold mb-1">Cash Reserves ($)</label>
+                      <input type="number" id="input-cash" value="10000" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-2 py-1.5 text-white text-[11px] font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                    </div>
+                    <div>
+                      <label for="input-hsa" class="block text-[10px] text-slate-300 font-semibold mb-1">HSA Balance ($)</label>
+                      <input type="number" id="input-hsa" value="0" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-2 py-1.5 text-white text-[11px] font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                    </div>
+                  </div>
+
+                  <div>
+                    <label for="input-529" class="block text-[11px] text-slate-300 font-semibold mb-1">529 College Savings ($)</label>
+                    <input type="number" id="input-529" value="0" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-3 py-1.5 text-white text-xs font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                  </div>
+                </div>
+
+                <!-- Middle: Property & Liabilities -->
+                <div class="bg-teal-950/20 border border-teal-800/30 rounded-2xl p-4 space-y-4 flex flex-col justify-between">
+                  <div>
+                    <h3 class="text-xs font-extrabold text-teal-400 uppercase tracking-wider border-b border-teal-800/40 pb-1 mb-3">Home & Debt</h3>
+                    
+                    <div class="space-y-3">
+                      <div>
+                        <label for="input-home-equity" class="block text-[11px] text-slate-300 font-semibold mb-1">Home Equity ($)</label>
+                        <input type="number" id="input-home-equity" value="0" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-3 py-1.5 text-white text-xs font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                      </div>
+                      
+                      <div>
+                        <label for="input-mortgage" class="block text-[11px] text-slate-300 font-semibold mb-1">Mortgage Balance ($)</label>
+                        <input type="number" id="input-mortgage" value="0" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-3 py-1.5 text-white text-xs font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bg-teal-950/40 border border-teal-800/40 p-4 rounded-xl text-xs text-slate-400 leading-relaxed mt-4">
+                    💡 High-interest mortgage debt is mapped alongside asset portfolios to calculate structural balance sheets.
+                  </div>
+                </div>
+
+                <!-- Right: Income & Inflows -->
+                <div class="bg-teal-950/20 border border-teal-800/30 rounded-2xl p-4 space-y-3">
+                  <h3 class="text-xs font-extrabold text-teal-400 uppercase tracking-wider border-b border-teal-800/40 pb-1">Annual Future Inflows</h3>
+                  
+                  <div>
+                    <label for="input-w2-income" class="block text-[11px] text-slate-300 font-semibold mb-1">Current W-2 Income (Annual $)</label>
+                    <input type="number" id="input-w2-income" value="85000" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-3 py-1.5 text-white text-xs font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                  </div>
+
+                  <div>
+                    <label for="input-pension-income" class="block text-[11px] text-slate-300 font-semibold mb-1">Annual Pension Inflow ($)</label>
+                    <input type="number" id="input-pension-income" value="0" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-3 py-1.5 text-white text-xs font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                  </div>
+
+                  <div>
+                    <label for="input-social-security" class="block text-[11px] text-slate-300 font-semibold mb-1">Est. Social Security (Annual $)</label>
+                    <input type="number" id="input-social-security" value="24000" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-3 py-1.5 text-white text-xs font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                  </div>
+
+                  <div>
+                    <label for="input-rental-income" class="block text-[11px] text-slate-300 font-semibold mb-1">Annual Rental Income ($)</label>
+                    <input type="number" id="input-rental-income" value="0" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-3 py-1.5 text-white text-xs font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="flex gap-4 pt-4 max-w-md mx-auto">
+                <button onclick="goToStep(1)" class="flex-1 bg-teal-950/60 hover:bg-teal-900 text-slate-200 font-bold py-3.5 rounded-xl transition-all border border-teal-800/40 text-xs">← Back</button>
+                <button onclick="goToStep(3)" class="flex-1 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-black py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-500/20 text-xs hover:scale-[1.01]">Next: Establish Goals →</button>
+              </div>
+            </div>
+
+            <!-- STEP 3 CONTAINER (Priorities & Goals) -->
+            <div id="step-3-view" class="space-y-6 hidden">
+              <div class="text-center md:text-left border-b border-teal-800/20 pb-4">
+                <h2 class="text-2xl font-extrabold text-white">Your Priorities & Lifestyle</h2>
+                <p class="text-teal-300/80 text-xs mt-1">Configure your monthly expenditure goals and rate strategic planning variables.</p>
+              </div>
+              
+              <div class="space-y-6 text-left">
+                
+                <!-- Spend Slider -->
+                <div class="bg-teal-950/10 border border-teal-800/20 p-5 rounded-2xl">
+                  <div class="flex justify-between text-xs font-semibold mb-2 text-slate-200">
+                    <label for="input-spend" class="uppercase tracking-wider text-[11px] text-teal-300">Estimated Monthly Spending</label>
+                    <span id="label-spend" class="text-emerald-400 font-bold text-lg">$4,000/mo</span>
+                  </div>
+                  <input type="range" min="1000" max="25000" step="100" value="4000" id="input-spend" class="w-full accent-emerald-500 bg-teal-950 h-2 rounded-lg appearance-none cursor-pointer">
+                  <p class="text-[11px] text-slate-400 mt-2">Estimate in today's dollars. This sets the safe withdrawal target.</p>
+                  <div class="mt-3 flex justify-end">
+                    <button type="button" onclick="applyAverage()" class="bg-teal-900/60 hover:bg-teal-900 border border-teal-800/60 text-emerald-400 text-xs px-3 py-1.5 rounded-lg font-bold transition-all">
+                      💡 Apply National Average ($4,500/mo)
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Priorities selection grids -->
+                <div class="bg-teal-950/10 border border-teal-800/20 p-5 rounded-2xl">
+                  <h3 class="text-xs font-extrabold text-teal-400 uppercase tracking-wider mb-3">Onboarding Focus Priority Weights</h3>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label for="input-legacy-priority" class="block text-[11px] font-semibold text-slate-300 mb-1">Legacy Priority</label>
+                      <select id="input-legacy-priority" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-3 py-2 text-white text-xs font-bold focus:outline-none">
+                        <option value="None">None (Drawdown all assets)</option>
+                        <option value="Low">Low (Pass residuals)</option>
+                        <option value="Medium">Medium (Preserve baseline)</option>
+                        <option value="High" selected>High (Maximize bequest)</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="input-healthcare-priority" class="block text-[11px] font-semibold text-slate-300 mb-1">Healthcare Priority</label>
+                      <select id="input-healthcare-priority" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-3 py-2 text-white text-xs font-bold focus:outline-none">
+                        <option value="None">None</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High" selected>High (Secure pre-65 bridge)</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="input-family-priority" class="block text-[11px] font-semibold text-slate-300 mb-1">Family Proximity Priority</label>
+                      <select id="input-family-priority" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-3 py-2 text-white text-xs font-bold focus:outline-none">
+                        <option value="None">None</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium" selected>Medium</option>
+                        <option value="High">High (Live near grandchildren)</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="input-tax-priority" class="block text-[11px] font-semibold text-slate-300 mb-1">Tax Optimization Priority</label>
+                      <select id="input-tax-priority" class="w-full bg-teal-950/80 border border-teal-800/60 rounded-xl px-3 py-2 text-white text-xs font-bold focus:outline-none">
+                        <option value="None">None</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High" selected>High (Minimize tax drag)</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Location flexibility options -->
+                <div class="bg-teal-950/10 border border-teal-800/20 p-5 rounded-2xl">
+                  <h3 class="text-xs font-extrabold text-teal-400 uppercase tracking-wider mb-3">Retirement Location Flexibility</h3>
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <label class="relative flex flex-col p-4 bg-teal-950/40 border border-teal-800/40 hover:border-teal-700 rounded-xl cursor-pointer select-none">
+                      <input type="radio" name="input-location-flexibility" value="stay_us" checked class="absolute right-4 top-4 accent-emerald-500">
+                      <span class="text-xs font-bold text-white mb-1">Stay in US</span>
+                      <span class="text-[10px] text-slate-400">Prioritize local state tax match</span>
+                    </label>
+                    <label class="relative flex flex-col p-4 bg-teal-950/40 border border-teal-800/40 hover:border-teal-700 rounded-xl cursor-pointer select-none">
+                      <input type="radio" name="input-location-flexibility" value="overseas" class="absolute right-4 top-4 accent-emerald-500">
+                      <span class="text-xs font-bold text-white mb-1">Expatriate Overseas</span>
+                      <span class="text-[10px] text-slate-400">Explore low-overhead havens</span>
+                    </label>
+                    <label class="relative flex flex-col p-4 bg-teal-950/40 border border-teal-800/40 hover:border-teal-700 rounded-xl cursor-pointer select-none">
+                      <input type="radio" name="input-location-flexibility" value="undecided" class="absolute right-4 top-4 accent-emerald-500">
+                      <span class="text-xs font-bold text-white mb-1">Undecided</span>
+                      <span class="text-[10px] text-slate-400">Run parallel geo comparisons</span>
+                    </label>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="flex gap-4 pt-4 max-w-md mx-auto">
+                <button onclick="goToStep(2)" class="flex-1 bg-teal-950/60 hover:bg-teal-900 text-slate-200 font-bold py-3.5 rounded-xl transition-all border border-teal-800/40 text-xs">← Back</button>
+                <button onclick="calculateAndShowScore()" class="flex-1 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-black py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-500/20 text-xs hover:scale-[1.01]">Calculate & Review Score →</button>
+              </div>
+            </div>
+
+            <!-- STEP 4 CONTAINER (Strategic Review Baseline) -->
+            <div id="step-4-view" class="space-y-6 hidden">
+              <div class="text-center">
+                <span class="bg-emerald-500 text-slate-950 text-xs font-black uppercase tracking-wider px-3.5 py-1 rounded-full inline-block">Onboarding Complete</span>
+                <h1 class="text-3xl font-extrabold tracking-tight text-white mt-2">Your Preliminary Wealth Score</h1>
+                <p class="text-teal-300/80 text-xs mt-1">Review your core starting coordinates before initiating diagnostic scans.</p>
+              </div>
+
+              <!-- Dual Gauge & Parameter Layout Block -->
+              <div class="flex flex-col md:flex-row items-center justify-center gap-8 bg-teal-950/30 border border-teal-800/30 rounded-2xl p-6 text-left max-w-2xl mx-auto">
+                <div class="relative flex justify-center items-center mx-auto md:mx-0">
+                  <svg class="w-40 h-40 transform -rotate-90">
+                    <circle cx="80" cy="80" r="66" stroke-width="10" stroke="#113a3e" fill="transparent" />
+                    <circle id="gauge-ring" cx="80" cy="80" r="66" stroke-width="10" stroke="#02b17d" fill="transparent" stroke-dasharray="414.69" stroke-dashoffset="414.69" stroke-linecap="round" style="transition: stroke-dashoffset 1s ease-out;" />
+                  </svg>
+                  <div class="absolute inset-0 flex flex-col justify-center items-center">
+                    <span id="score-display" class="text-3xl font-black tracking-tight text-white">0%</span>
+                    <span class="text-[10px] uppercase tracking-widest text-teal-300 font-bold mt-0.5">Goal Attainment</span>
+                  </div>
+                </div>
+                
+                <div class="text-slate-300 space-y-2.5 flex-1">
+                  <div class="text-xs uppercase tracking-wider text-teal-400 font-black border-b border-teal-800 pb-1 mb-1">Onboarding Summary</div>
+                  <div class="flex justify-between border-b border-teal-950 pb-1 text-xs">
+                    <span>Current Age</span>
+                    <span id="summary-age" class="text-white font-bold">--</span>
+                  </div>
+                  <div class="flex justify-between border-b border-teal-950 pb-1 text-xs">
+                    <span>Target Exit Age</span>
+                    <span id="summary-retire" class="text-white font-bold">--</span>
+                  </div>
+                  <div class="flex justify-between border-b border-teal-950 pb-1 text-xs">
+                    <span>Aggregated Investable Assets</span>
+                    <span id="summary-savings" class="text-white font-bold">--</span>
+                  </div>
+                  <div class="flex justify-between pb-1 text-xs">
+                    <span>Target Monthly Spend</span>
+                    <span id="summary-spend" class="text-white font-bold">--</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-4 max-w-sm mx-auto text-center space-y-3">
+                <button onclick="saveAndProceed()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-black py-4 rounded-xl transition-all shadow-lg shadow-emerald-500/20 text-center tracking-wide text-xs hover:scale-[1.01]">
+                  Continue to Retirement Diagnostic →
+                </button>
+                <button onclick="goToStep(3)" class="text-slate-400 hover:text-white text-xs font-semibold underline block mx-auto bg-transparent border-none cursor-pointer">
+                  ← Modify Priorities & Goals
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CONTEXTUAL EDUCATION ENFORCEMENT BOX (Shows only after users begin entering filing status/priorities) -->
+        <div id="contextual-insight-card" class="hidden bg-white border border-slate-200 rounded-3xl p-6 shadow-sm text-left relative overflow-hidden transition-all duration-300">
+          <div class="flex items-center gap-3 border-b border-slate-100 pb-3 mb-4">
+            <span class="text-lg">💡</span>
+            <div>
+              <p class="text-slate-400 text-[10px] font-black uppercase tracking-wider leading-none">Contextual Insight</p>
+              <h3 class="text-sm font-bold text-slate-900 mt-1">Before we analyze your retirement, here is one story you'll find interesting:</h3>
+            </div>
+          </div>
+          <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="space-y-1 max-w-xl">
+              <span id="contextual-badge" class="bg-emerald-50 text-emerald-600 text-[9px] font-black uppercase px-2.5 py-0.5 rounded-full border border-emerald-100">TAX STRATEGY</span>
+              <h4 id="contextual-title" class="font-extrabold text-slate-900 text-sm">Bill vs Tom</h4>
+              <p id="contextual-desc" class="text-slate-500 text-xs leading-relaxed">Two retirees begin with identical wealth. One family inherits nearly twice as much.</p>
+            </div>
+            <button onclick="openExplainModal('why-it-happens')" class="bg-slate-900 hover:bg-slate-800 text-white font-black text-[11px] px-4 py-2.5 rounded-xl transition-all shadow-sm whitespace-nowrap cursor-pointer">
+              Read Story →
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN: Live Summary (Self-knowledge), Outcomes Roadmap (Structured Journey), "Did You Know?" (Single Insight) -->
+      <div class="lg:col-span-4 space-y-6 lg:sticky lg:top-8">
+        
+        <!-- 1. Live Profile Card ("This is me") -->
+        <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm text-left">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-400">📊 Your Profile So Far</h3>
+            <span class="text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full text-[9px] font-black tracking-wide border border-emerald-100">LIVE UPDATE</span>
+          </div>
+          <div class="space-y-2.5 text-xs text-slate-600">
+            <div class="flex justify-between border-b border-slate-100 pb-1.5">
+              <span class="text-slate-400 font-medium">Current Age</span>
+              <span id="summary-card-age" class="font-bold text-slate-900">30 yrs</span>
+            </div>
+            <div class="flex justify-between border-b border-slate-100 pb-1.5">
+              <span class="text-slate-400 font-medium">Retirement Age</span>
+              <span id="summary-card-retire" class="font-bold text-slate-900">65 yrs</span>
+            </div>
+            <div class="flex justify-between border-b border-slate-100 pb-1.5">
+              <span class="text-slate-400 font-medium">Filing Status</span>
+              <span id="summary-card-filing" class="font-bold text-slate-900">--</span>
+            </div>
+            <div class="flex justify-between border-b border-slate-100 pb-1.5">
+              <span class="text-slate-400 font-medium">Current State</span>
+              <span id="summary-card-state" class="font-bold text-slate-900">--</span>
+            </div>
+            <div class="flex justify-between border-b border-slate-100 pb-1.5">
+              <span class="text-slate-400 font-medium">Est. Annual Spend</span>
+              <span id="summary-card-annual-spend" class="font-bold text-slate-900">--</span>
+            </div>
+            <div class="flex justify-between border-b border-slate-100 pb-1.5">
+              <span class="text-slate-400 font-medium">Total Investable Assets</span>
+              <span id="summary-card-assets" class="font-bold text-slate-900">$35,000</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400 font-medium">Primary Focus Priority</span>
+              <span id="summary-card-priority" class="font-bold text-emerald-600">Healthcare (High)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Simplified Outcome-Driven Journey Panel -->
+        <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm text-left">
+          <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2">
+            <span>🧭</span> Your Retirement Journey
+          </h3>
+          
+          <div class="space-y-4">
+            <!-- Phase 1 -->
+            <div class="relative pl-5 border-l-2 border-emerald-500">
+              <div class="absolute -left-[7px] top-0.5 w-3 h-3 rounded-full bg-emerald-500 ring-4 ring-emerald-100"></div>
+              <div class="flex justify-between items-start text-xs">
+                <span class="font-black text-slate-900">Phase 1: Build Your Baseline</span>
+                <span class="text-emerald-600 font-black tracking-wide bg-emerald-50 px-1.5 py-0.5 rounded text-[9px] border border-emerald-100">◉ CURRENT</span>
+              </div>
+              <p class="text-slate-400 text-[11px] mt-1">Timeline: ~5 minutes remaining</p>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="relative pl-5 border-l-2 border-slate-100">
+              <div class="absolute -left-[7px] top-0.5 w-3 h-3 rounded-full bg-slate-100 border-2 border-slate-300"></div>
+              <div class="flex justify-between items-start text-xs">
+                <span class="font-extrabold text-slate-400">Phase 2: Discover Your Best Strategy</span>
+                <span class="text-slate-400 font-bold text-[9px]">○ NEXT</span>
+              </div>
+              <p class="text-slate-400 text-[11px] mt-1">Diagnostic run, state-by-state geo comparisons, & pre-65 health costs.</p>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="relative pl-5">
+              <div class="absolute -left-[7px] top-0.5 w-3 h-3 rounded-full bg-slate-100 border-2 border-slate-300"></div>
+              <div class="flex justify-between items-start text-xs">
+                <span class="font-extrabold text-slate-400">Phase 3: Build Your Blueprint</span>
+                <span class="text-slate-400 font-bold text-[9px]">○ FINAL</span>
+              </div>
+              <p class="text-slate-400 text-[11px] mt-1">Consolidated chronological cash flows, Roth converting, & estate bequest charts.</p>
+            </div>
+
+            <div class="border-t border-slate-100 pt-3 space-y-2">
+              <p class="text-slate-400 text-[10px] font-black uppercase tracking-wider">You'll Receive Today</p>
+              <ul class="text-[11px] text-slate-600 space-y-1">
+                <li class="flex items-center gap-1.5"><span class="text-emerald-500 font-bold">✓</span> Safe Withdrawal Health Score</li>
+                <li class="flex items-center gap-1.5"><span class="text-emerald-500 font-bold">✓</span> Personalized Tax Opportunity Report</li>
+                <li class="flex items-center gap-1.5"><span class="text-emerald-500 font-bold">✓</span> Baseline Chronological Retirement Plan</li>
+              </ul>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-100/80 p-3 rounded-xl text-[11px] text-slate-500">
+              <span class="font-extrabold text-slate-700 block mb-0.5">After Today</span>
+              Discover your ideal retirement lifestyle parameters & run geographic tax arbitrage simulations.
+            </div>
+
+            <div class="flex items-center justify-between text-xs font-semibold bg-slate-50 border border-slate-100 p-3 rounded-xl mt-2">
+              <span class="text-slate-500">Onboarding Progress</span>
+              <span class="text-emerald-600 font-black text-sm">10% Complete</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. "Did You Know?" Educational Insight Card (Replaces Today's Recommendation) -->
+        <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm text-left relative overflow-hidden" id="sidebar-recommendation-panel">
+          <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-2">
+            <span>💡</span> Did You Know?
+          </h3>
+          <div class="space-y-4">
+            <p class="text-slate-700 text-xs leading-relaxed font-semibold">
+              Most people entering retirement lose more money from compounding tax drag and structural surcharges than poor investment management.
+            </p>
+            <div class="bg-blue-50 border border-blue-100/60 rounded-xl p-3 text-[11px] text-blue-700 leading-relaxed">
+              Traditional pre-tax accounts can carry a silent liability. Bill and Tom retired with identical balances, but one strategy protected nearly twice as much legacy wealth.
+            </div>
+            <button onclick="openExplainModal('why-it-happens')" class="block w-full text-center bg-slate-900 hover:bg-slate-800 text-white font-black text-xs py-3 rounded-xl transition-all shadow-sm cursor-pointer border-none">
+              Bill vs Tom Story →
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Compact Mobile Sticky Bottom Panel -->
+  <div id="mobile-sticky-bar" class="lg:hidden fixed bottom-0 left-0 right-0 bg-slate-950 border-t border-teal-800/40 px-5 py-4 z-[999] flex justify-between items-center text-slate-300 shadow-xl">
+    <div>
+      <span class="block text-slate-400 font-bold uppercase tracking-wider text-[10px]" id="mobile-sticky-step">Step 1 of 3</span>
+      <span class="font-black text-white text-sm" id="mobile-sticky-bar-title">Life Stage Basics</span>
+    </div>
+    <div class="text-right">
+      <span class="block text-slate-400 font-bold uppercase tracking-wider text-[10px]">Assets / Monthly Spend</span>
+      <span class="font-black text-emerald-400 text-sm"><span id="mobile-sticky-assets">$35,000</span> / <span id="mobile-sticky-spend">$4,000</span></span>
+    </div>
+  </div>
+
+  <!-- Dynamic Explanation Modal Overlays -->
+  <div id="explain-modal" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-slate-800 border border-slate-700/80 rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300">
+      
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-slate-700/60 flex items-center justify-between">
+        <h3 id="modal-title" class="text-lg font-bold text-white">Explanation</h3>
+        <button onclick="closeExplainModal()" class="text-slate-400 hover:text-white text-xl font-bold leading-none bg-transparent border-none cursor-pointer">&times;</button>
+      </div>
+      
+      <!-- Modal Content -->
+      <div class="p-6 space-y-4 text-slate-300 text-sm leading-relaxed" id="modal-body"></div>
+      
+      <!-- Modal Footer -->
+      <div class="px-6 py-4 border-t border-slate-700/60 flex justify-end">
+        <button onclick="closeExplainModal()" class="bg-slate-700 hover:bg-slate-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-xs cursor-pointer">
+          Got It, Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentStep = 1;
+
+    // Core Wizard Elements
+    const ageInput = document.getElementById('input-current-age');
+    const ageLabel = document.getElementById('label-current-age');
+    const targetInput = document.getElementById('input-target-age');
+    const targetLabel = document.getElementById('label-target-age');
+    const spendInput = document.getElementById('input-spend');
+    const spendLabel = document.getElementById('label-spend');
+
+    // Populating US States on load
+    const states = [
+      "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", 
+      "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", 
+      "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", 
+      "WI", "WY", "DC", "Expat / International"
+    ];
+
+    // Curated content library for post-onboarding dynamic matches
+    const StoryLibrary = [
+      {
+        id: "bill-vs-tom",
+        title: "Bill vs Tom",
+        category: "Tax Strategy",
+        tags: ["tax", "legacy", "roth"],
+        description: "How two identical retirees produced very different inheritances.",
+        time: "5 min read"
+      },
+      {
+        id: "million-dollar-rmd",
+        title: "The Million Dollar RMD",
+        category: "Tax Strategy",
+        tags: ["tax", "age-high"],
+        description: "Understand why retirement success can create future tax problems.",
+        time: "4 min read"
+      },
+      {
+        id: "irs-co-owner",
+        title: "The IRS Co-owner",
+        category: "Tax Strategy",
+        tags: ["tax", "age-high"],
+        description: "Most retirees don't actually own all of their retirement account.",
+        time: "5 min read"
+      },
+      {
+        id: "million-dollar-conversation",
+        title: "The Million Dollar Conversation",
+        category: "Legacy",
+        tags: ["legacy"],
+        description: "Planning isn't just about retirement. It's about your family.",
+        time: "5 min read"
+      },
+      {
+        id: "most-expensive-account",
+        title: "Most Expensive Account To Leave Children",
+        category: "Legacy",
+        tags: ["legacy"],
+        description: "Leaving pre-tax vs. Roth assets can dramatically alter child tax brackets.",
+        time: "6 min read"
+      },
+      {
+        id: "rule-at-63",
+        title: "Rule That Changes Everything At 63",
+        category: "Healthcare",
+        tags: ["healthcare", "age-high"],
+        description: "Learn how the IRMAA lookback window triggers surcharges.",
+        time: "4 min read"
+      },
+      {
+        id: "couple-paid-too-much",
+        title: "The Couple Who Paid $80,000 Too Much",
+        category: "Healthcare",
+        tags: ["healthcare"],
+        description: "Why healthcare planning matters years before Medicare.",
+        time: "6 min read"
+      },
+      {
+        id: "medicare-not-everything",
+        title: "Medicare Doesn't Solve Everything",
+        category: "Healthcare",
+        tags: ["healthcare"],
+        description: "Unraveling the gap between Part B, supplemental coverage, and long term care.",
+        time: "5 min read"
+      },
+      {
+        id: "portugal-five-years",
+        title: "Portugal For Five Years",
+        category: "Geography",
+        tags: ["location-overseas"],
+        description: "Establishing an active Schengen Zone bridge with tax favorability.",
+        time: "7 min read"
+      },
+      {
+        id: "move-worth-500k",
+        title: "The Move Worth $500,000",
+        category: "Geography",
+        tags: ["location-overseas", "location-us"],
+        description: "How one relocation dramatically changed retirement outcomes.",
+        time: "4 min read"
+      },
+      {
+        id: "three-locations",
+        title: "Three Retirement Locations",
+        category: "Geography",
+        tags: ["location-overseas", "location-us"],
+        description: "Compare baseline costs of living across highly optimized states.",
+        time: "5 min read"
+      },
+      {
+        id: "state-line-saved-250k",
+        title: "State Line That Saved $250,000",
+        category: "Geography",
+        tags: ["location-us"],
+        description: "How crossing state borders modifies structural tax drag.",
+        time: "4 min read"
+      }
+    ];
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const stateSelect = document.getElementById('input-state');
+      states.forEach(st => {
+        const opt = document.createElement('option');
+        opt.value = st;
+        opt.innerText = st;
+        stateSelect.appendChild(opt);
+      });
+
+      // Bind reactive updates
+      document.querySelectorAll('input, select').forEach(elem => {
+        elem.addEventListener('input', updateLiveSummary);
+        elem.addEventListener('change', updateLiveSummary);
+      });
+
+      document.getElementById('input-children-count').addEventListener('input', updateChildrenAgesFields);
+
+      // Read pre-existing profile if any to bootstrap
+      const cached = localStorage.getItem("RetirementProfile");
+      if (cached) {
+        try {
+          const profile = JSON.parse(cached);
+          if (profile.identity) {
+            ageInput.value = profile.identity.currentAge || 30;
+            targetInput.value = profile.identity.targetRetirementAge || 65;
+            document.getElementById('input-marital-status').value = profile.identity.maritalStatus || 'Single';
+            document.getElementById('input-filing-status').value = profile.identity.filingStatus || '';
+            document.getElementById('input-state').value = profile.identity.currentState || '';
+            document.getElementById('input-children-count').value = profile.identity.childrenCount || 0;
+            updateChildrenAgesFields();
+            if (profile.identity.childrenAges) {
+              const ageInputs = document.querySelectorAll('.child-age-input');
+              profile.identity.childrenAges.forEach((val, index) => {
+                if (ageInputs[index]) ageInputs[index].value = val;
+              });
+            }
+          }
+          if (profile.finances) {
+            document.getElementById('input-traditional').value = profile.finances.traditionalBalance ?? 25000;
+            document.getElementById('input-roth').value = profile.finances.rothBalance ?? 0;
+            document.getElementById('input-brokerage').value = profile.finances.brokerageBalance ?? 0;
+            document.getElementById('input-cash').value = profile.finances.cashReserve ?? 10000;
+            document.getElementById('input-hsa').value = profile.finances.hsaBalance ?? 0;
+            document.getElementById('input-529').value = profile.finances.plan529Balance ?? 0;
+            document.getElementById('input-home-equity').value = profile.finances.homeEquity ?? 0;
+            document.getElementById('input-mortgage').value = profile.finances.mortgageBalance ?? 0;
+          }
+          if (profile.income) {
+            document.getElementById('input-w2-income').value = profile.income.currentW2Income ?? 85000;
+            document.getElementById('input-pension-income').value = profile.income.pensionIncome ?? 0;
+            document.getElementById('input-social-security').value = profile.income.socialSecurityIncome ?? 24000;
+            document.getElementById('input-rental-income').value = profile.income.rentalIncome ?? 0;
+          }
+          if (profile.goals) {
+            spendInput.value = profile.goals.monthlyRetirementSpending || 4000;
+            document.getElementById('input-legacy-priority').value = profile.goals.legacyPriority || 'High';
+            document.getElementById('input-healthcare-priority').value = profile.goals.healthcarePriority || 'High';
+            document.getElementById('input-family-priority').value = profile.goals.familyProximityPriority || 'Medium';
+            document.getElementById('input-tax-priority').value = profile.goals.taxOptimizationPriority || 'High';
+            if (profile.goals.locationFlexibility) {
+              const rad = document.querySelector(`input[name="input-location-flexibility"][value="${profile.goals.locationFlexibility}"]`);
+              if (rad) rad.checked = true;
+            }
+          }
+        } catch (e) {
+          console.warn("Could not load previous cached state", e);
+        }
+      }
+
+      // Sync labels
+      ageLabel.innerText = `${ageInput.value} years old`;
+      targetLabel.innerText = `${targetInput.value} years old`;
+      spendLabel.innerText = `$${Number(spendInput.value).toLocaleString()}/mo`;
+
+      updateLiveSummary();
+    });
+
+    // Handle Children ages creation
+    function updateChildrenAgesFields() {
+      const count = parseInt(document.getElementById('input-children-count').value) || 0;
+      const container = document.getElementById('children-ages-container');
+      const wrapper = document.getElementById('children-ages-wrapper');
+      
+      if (count <= 0) {
+        container.classList.add('hidden');
+        wrapper.innerHTML = '';
+        return;
+      }
+      
+      container.classList.remove('hidden');
+      wrapper.innerHTML = '';
+      
+      for (let i = 0; i < count; i++) {
+        const div = document.createElement('div');
+        div.className = 'space-y-1 text-left';
+        div.innerHTML = `
+          <label class="block text-[10px] font-semibold text-slate-300">Child ${i+1} Age</label>
+          <input type="number" min="0" max="40" placeholder="Age" class="child-age-input w-full bg-teal-950/80 border border-teal-800/60 rounded-lg px-2.5 py-1.5 text-white text-xs font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500">
+        `;
+        wrapper.appendChild(div);
+      }
+    }
+
+    // Dynamic slider label event tracking
+    ageInput.addEventListener('input', (e) => { 
+      ageLabel.innerText = `${e.target.value} years old`; 
+      updateLiveSummary();
+    });
+    targetInput.addEventListener('input', (e) => { 
+      targetLabel.innerText = `${e.target.value} years old`; 
+      updateLiveSummary();
+    });
+    spendInput.addEventListener('input', (e) => { 
+      spendLabel.innerText = `$${Number(e.target.value).toLocaleString()}/mo`; 
+      updateLiveSummary();
+    });
+
+    function applyAverage() {
+      spendInput.value = 4500;
+      spendLabel.innerText = "$4,500/mo";
+      updateLiveSummary();
+    }
+
+    // Comprehensive multi-step routing logic
+    function goToStep(stepNumber) {
+      if (stepNumber > currentStep) {
+        if (!validateStep(currentStep)) return;
+      }
+
+      currentStep = stepNumber;
+      
+      // Control Wizard section displays
+      document.getElementById('step-1-view').classList.add('hidden');
+      document.getElementById('step-2-view').classList.add('hidden');
+      document.getElementById('step-3-view').classList.add('hidden');
+      document.getElementById('step-4-view').classList.add('hidden');
+      
+      if (stepNumber === 1) {
+        document.getElementById('step-1-view').classList.remove('hidden');
+        document.getElementById('mobile-sticky-bar-title').innerText = "Life Stage Basics";
+      } else if (stepNumber === 2) {
+        document.getElementById('step-2-view').classList.remove('hidden');
+        document.getElementById('mobile-sticky-bar-title').innerText = "Asset Accounts";
+      } else if (stepNumber === 3) {
+        document.getElementById('step-3-view').classList.remove('hidden');
+        document.getElementById('mobile-sticky-bar-title').innerText = "Define Goals";
+      } else if (stepNumber === 4) {
+        document.getElementById('step-4-view').classList.remove('hidden');
+        document.getElementById('mobile-sticky-bar-title').innerText = "Review Status";
+      }
+      
+      updateIndicators(stepNumber);
+      updateLiveSummary();
+
+      // Scroll smoothly back to top of the onboarding container
+      document.getElementById('calculator-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function updateIndicators(activeStep) {
+      const dot1 = document.getElementById('dot-1');
+      const dot2 = document.getElementById('dot-2');
+      const dot3 = document.getElementById('dot-3');
+      const line1 = document.getElementById('line-1');
+      const line2 = document.getElementById('line-2');
+
+      const baseDot = "w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-teal-950 text-teal-400";
+      const activeDot = "w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-emerald-500 text-slate-900 ring-4 ring-emerald-500/20";
+      const completedDot = "w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-all bg-emerald-600 text-white";
+
+      [dot1, dot2, dot3].forEach(dot => dot.className = baseDot);
+      line1.className = "h-1 flex-1 mx-2 rounded transition-all bg-teal-800";
+      line2.className = "h-1 flex-1 mx-2 rounded transition-all bg-teal-800";
+
+      if (activeStep === 1) {
+        dot1.className = activeDot;
+        dot1.innerHTML = "1";
+        dot2.innerHTML = "2";
+        dot3.innerHTML = "3";
+      } else if (activeStep === 2) {
+        dot1.className = completedDot;
+        dot1.innerHTML = "✓";
+        dot2.className = activeDot;
+        dot2.innerHTML = "2";
+        dot3.innerHTML = "3";
+        line1.className = "h-1 flex-1 mx-2 rounded transition-all bg-emerald-600";
+      } else if (activeStep === 3) {
+        dot1.className = completedDot;
+        dot1.innerHTML = "✓";
+        dot2.className = completedDot;
+        dot2.innerHTML = "✓";
+        dot3.className = activeDot;
+        dot3.innerHTML = "3";
+        line1.className = "h-1 flex-1 mx-2 rounded transition-all bg-emerald-600";
+        line2.className = "h-1 flex-1 mx-2 rounded transition-all bg-emerald-600";
+      } else if (activeStep === 4) {
+        dot1.className = completedDot;
+        dot1.innerHTML = "✓";
+        dot2.className = completedDot;
+        dot2.innerHTML = "✓";
+        dot3.className = completedDot;
+        dot3.innerHTML = "✓";
+        line1.className = "h-1 flex-1 mx-2 rounded transition-all bg-emerald-600";
+        line2.className = "h-1 flex-1 mx-2 rounded transition-all bg-emerald-600";
+      }
+    }
+
+    // Field-level clean validation
+    function validateStep(step) {
+      const errors = [];
+      const banner = document.getElementById('validation-banner');
+      const errorList = document.getElementById('validation-errors');
+      
+      banner.classList.add('hidden');
+      errorList.innerHTML = '';
+
+      if (step === 1) {
+        const age = parseInt(document.getElementById('input-current-age').value) || 0;
+        const target = parseInt(document.getElementById('input-target-age').value) || 0;
+        const filing = document.getElementById('input-filing-status').value;
+        const state = document.getElementById('input-state').value;
+
+        if (age >= target) {
+          errors.push("Current Age must be strictly less than your Target Retirement Age.");
+        }
+        if (!filing) {
+          errors.push("Please select your Tax Filing Status.");
+        }
+        if (!state) {
+          errors.push("Please select your Current US State.");
+        }
+      }
+
+      if (step === 3) {
+        const spend = parseFloat(spendInput.value) || 0;
+        if (spend <= 0) {
+          errors.push("Monthly retirement spending must be greater than $0.");
+        }
+      }
+
+      if (errors.length > 0) {
+        errors.forEach(err => {
+          const li = document.createElement('li');
+          li.innerText = err;
+          errorList.appendChild(li);
+        });
+        banner.classList.remove('hidden');
+        document.getElementById('calculator-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return false;
+      }
+      return true;
+    }
+
+    // Curated decision engine mapping
+    function getSimulatedProfile() {
+      const currentAge = parseInt(document.getElementById('input-current-age').value) || 30;
+      const targetRetirementAge = parseInt(document.getElementById('input-target-age').value) || 65;
+      const filingStatus = document.getElementById('input-filing-status').value || '';
+      const currentState = document.getElementById('input-state').value || '';
+      const legacyPriority = document.getElementById('input-legacy-priority').value || 'High';
+      const healthcarePriority = document.getElementById('input-healthcare-priority').value || 'High';
+      const taxOptimizationPriority = document.getElementById('input-tax-priority').value || 'High';
+      
+      const flexNode = document.querySelector('input[name="input-location-flexibility"]:checked');
+      const locationFlexibility = flexNode ? flexNode.value : 'stay_us';
+
+      return {
+        identity: { currentAge, targetRetirementAge, filingStatus, currentState },
+        goals: { legacyPriority, healthcarePriority, taxOptimizationPriority, locationFlexibility }
+      };
+    }
+
+    function recommendStories(profile) {
+      const legacyPriority = profile.goals.legacyPriority;
+      const healthcarePriority = profile.goals.healthcarePriority;
+      const locationFlexibility = profile.goals.locationFlexibility;
+      const age = profile.identity.currentAge;
+
+      // Local rule calculation logic
+      let matchedStory = StoryLibrary.find(s => s.id === 'bill-vs-tom'); // default fallback
+
+      if (legacyPriority === 'High') {
+        matchedStory = StoryLibrary.find(s => s.id === 'bill-vs-tom');
+      } else if (healthcarePriority === 'High') {
+        matchedStory = StoryLibrary.find(s => s.id === 'couple-paid-too-much');
+      } else if (locationFlexibility === 'overseas') {
+        matchedStory = StoryLibrary.find(s => s.id === 'portugal-five-years');
+      } else if (locationFlexibility === 'stay_us') {
+        matchedStory = StoryLibrary.find(s => s.id === 'state-line-saved-250k');
+      } else if (age > 55) {
+        matchedStory = StoryLibrary.find(s => s.id === 'million-dollar-rmd');
+      }
+
+      return matchedStory;
+    }
+
+    // Refresh live profile metrics card & contextual cards
+    function updateLiveSummary() {
+      const age = document.getElementById('input-current-age').value;
+      const target = document.getElementById('input-target-age').value;
+      const filing = document.getElementById('input-filing-status').value || '--';
+      const state = document.getElementById('input-state').value || '--';
+      const spend = parseFloat(spendInput.value) || 0;
+      
+      const traditional = parseFloat(document.getElementById('input-traditional').value) || 0;
+      const roth = parseFloat(document.getElementById('input-roth').value) || 0;
+      const brokerage = parseFloat(document.getElementById('input-brokerage').value) || 0;
+      const cash = parseFloat(document.getElementById('input-cash').value) || 0;
+      const hsa = parseFloat(document.getElementById('input-hsa').value) || 0;
+      const plan529 = parseFloat(document.getElementById('input-529').value) || 0;
+      const totalAssets = traditional + roth + brokerage + cash + hsa + plan529;
+
+      const legacyP = document.getElementById('input-legacy-priority').value;
+      const healthP = document.getElementById('input-healthcare-priority').value;
+      const familyP = document.getElementById('input-family-priority').value;
+      const taxP = document.getElementById('input-tax-priority').value;
+
+      const priorities = [
+        { name: 'Legacy', val: legacyP },
+        { name: 'Healthcare', val: healthP },
+        { name: 'Family', val: familyP },
+        { name: 'Tax Optimizations', val: taxP }
+      ];
+
+      const scores = { 'High': 3, 'Medium': 2, 'Low': 1, 'None': 0 };
+      priorities.sort((a, b) => scores[b.val] - scores[a.val]);
+      const primaryPriorityStr = (priorities[0].val !== 'None') ? `${priorities[0].name} (${priorities[0].val})` : 'Not Specified';
+
+      // Update Desktop Summary Card
+      document.getElementById('summary-card-age').innerText = `${age} yrs`;
+      document.getElementById('summary-card-retire').innerText = `${target} yrs`;
+      document.getElementById('summary-card-filing').innerText = filing !== '' ? filing.replace('Filing ', '') : '--';
+      document.getElementById('summary-card-state').innerText = state;
+      document.getElementById('summary-card-annual-spend').innerText = spend > 0 ? `$${(spend * 12).toLocaleString()}` : '--';
+      document.getElementById('summary-card-assets').innerText = `$${totalAssets.toLocaleString()}`;
+      document.getElementById('summary-card-priority').innerText = primaryPriorityStr;
+
+      // Update Mobile Sticky Drawer
+      document.getElementById('mobile-sticky-assets').innerText = `$${totalAssets.toLocaleString()}`;
+      document.getElementById('mobile-sticky-spend').innerText = `$${spend.toLocaleString()}`;
+      document.getElementById('mobile-sticky-step').innerText = `Step ${currentStep} of 3`;
+
+      // Contextual Single Recommendation Update (Problem 1/4 alternative)
+      const contextualCard = document.getElementById('contextual-insight-card');
+      const filingSelected = document.getElementById('input-filing-status').value !== '';
+      const stateSelected = document.getElementById('input-state').value !== '';
+
+      if (currentStep > 1 || filingSelected || stateSelected) {
+        contextualCard.classList.remove('hidden');
+        
+        // Match a highly relevant baseline story contextually
+        const profile = getSimulatedProfile();
+        const bestStory = recommendStories(profile);
+
+        document.getElementById('contextual-badge').innerText = bestStory.category.toUpperCase();
+        document.getElementById('contextual-title').innerText = bestStory.title;
+        document.getElementById('contextual-desc').innerText = bestStory.description;
+      } else {
+        contextualCard.classList.add('hidden');
+      }
+    }
+
+    // Calculate aggregated wealth score baseline and show preview screen
+    function calculateAndShowScore() {
+      if (!validateStep(3)) return;
+
+      const age = parseInt(ageInput.value);
+      const target = parseInt(targetInput.value);
+      const traditional = parseFloat(document.getElementById('input-traditional').value) || 0;
+      const roth = parseFloat(document.getElementById('input-roth').value) || 0;
+      const brokerage = parseFloat(document.getElementById('input-brokerage').value) || 0;
+      const cash = parseFloat(document.getElementById('input-cash').value) || 0;
+      const hsa = parseFloat(document.getElementById('input-hsa').value) || 0;
+      const plan529 = parseFloat(document.getElementById('input-529').value) || 0;
+      
+      const totalAssets = traditional + roth + brokerage + cash + hsa + plan529;
+      const spend = parseFloat(spendInput.value);
+
+      document.getElementById('summary-age').innerText = `${age} years old`;
+      document.getElementById('summary-retire').innerText = `${target}`;
+      document.getElementById('summary-savings').innerText = `$${totalAssets.toLocaleString()}`;
+      document.getElementById('summary-spend').innerText = `$${spend.toLocaleString()}/mo`;
+
+      const yearsToRetire = Math.max(1, target - age);
+      const estimatedChances = (totalAssets + (yearsToRetire * 12 * 400)) / (spend * 12 * 22);
+      const finalScore = Math.min(100, Math.max(12, Math.round(estimatedChances * 100)));
+
+      goToStep(4);
+      document.getElementById('score-display').innerText = `${finalScore}%`;
+
+      // Render gauge circle animation
+      const circumference = 2 * Math.PI * 66;
+      const offset = circumference * (1 - finalScore / 100);
+      
+      setTimeout(() => {
+        document.getElementById('gauge-ring').style.strokeDashoffset = offset;
+      }, 50);
+    }
+
+    // Save profile baseline object to localStorage and redirect forward
+    function saveAndProceed() {
+      const currentAge = parseInt(document.getElementById('input-current-age').value) || 30;
+      const targetRetirementAge = parseInt(document.getElementById('input-target-age').value) || 65;
+      const maritalStatus = document.getElementById('input-marital-status').value;
+      const filingStatus = document.getElementById('input-filing-status').value;
+      const currentState = document.getElementById('input-state').value;
+      const childrenCount = parseInt(document.getElementById('input-children-count').value) || 0;
+      
+      const childrenAges = [];
+      document.querySelectorAll('.child-age-input').forEach(inp => {
+        childrenAges.push(parseInt(inp.value) || 0);
+      });
+
+      const traditionalBalance = parseFloat(document.getElementById('input-traditional').value) || 0;
+      const rothBalance = parseFloat(document.getElementById('input-roth').value) || 0;
+      const brokerageBalance = parseFloat(document.getElementById('input-brokerage').value) || 0;
+      const cashReserve = parseFloat(document.getElementById('input-cash').value) || 0;
+      const hsaBalance = parseFloat(document.getElementById('input-hsa').value) || 0;
+      const plan529Balance = parseFloat(document.getElementById('input-529').value) || 0;
+      const homeEquity = parseFloat(document.getElementById('input-home-equity').value) || 0;
+      const mortgageBalance = parseFloat(document.getElementById('input-mortgage').value) || 0;
+
+      const currentSavings = traditionalBalance + rothBalance + brokerageBalance + cashReserve + hsaBalance + plan529Balance;
+
+      const currentW2Income = parseFloat(document.getElementById('input-w2-income').value) || 0;
+      const pensionIncome = parseFloat(document.getElementById('input-pension-income').value) || 0;
+      const socialSecurityIncome = parseFloat(document.getElementById('input-social-security').value) || 0;
+      const rentalIncome = parseFloat(document.getElementById('input-rental-income').value) || 0;
+
+      const monthlyRetirementSpending = parseFloat(spendInput.value) || 4000;
+      const legacyPriority = document.getElementById('input-legacy-priority').value;
+      const healthcarePriority = document.getElementById('input-healthcare-priority').value;
+      const familyProximityPriority = document.getElementById('input-family-priority').value;
+      const taxOptimizationPriority = document.getElementById('input-tax-priority').value;
+
+      const flexNode = document.querySelector('input[name="input-location-flexibility"]:checked');
+      const locationFlexibility = flexNode ? flexNode.value : 'stay_us';
+
+      const RetirementProfile = {
+        identity: {
+          currentAge,
+          targetRetirementAge,
+          maritalStatus,
+          filingStatus,
+          currentState,
+          childrenCount,
+          childrenAges
+        },
+        finances: {
+          currentSavings,
+          traditionalBalance,
+          rothBalance,
+          brokerageBalance,
+          cashReserve,
+          hsaBalance,
+          plan529Balance,
+          homeEquity,
+          mortgageBalance
+        },
+        income: {
+          currentW2Income,
+          pensionIncome,
+          socialSecurityIncome,
+          rentalIncome
+        },
+        goals: {
+          monthlyRetirementSpending,
+          legacyPriority,
+          healthcarePriority,
+          familyProximityPriority,
+          taxOptimizationPriority,
+          locationFlexibility
+        },
+        journey: {
+          currentPhase: "gateway",
+          nextPage: "Retirement_diagnostic.html",
+          completedPages: ["Gateway.html"],
+          completionPct: 10
+        },
+        timestamps: {
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
+        }
+      };
+
+      localStorage.setItem("RetirementProfile", JSON.stringify(RetirementProfile));
+      window.location.href = "Retirement_diagnostic.html";
+    }
+
+    // Modal Configuration for Onboarding deep dives
+    const modalContents = {
+      'why-it-happens': `
+        <h4 class="text-emerald-400 font-bold text-base mb-2">Compounding Taxes & Structuring Drags</h4>
+        <p class="mb-3">Many investors assume that building a high pre-tax savings pool is sufficient for retirement security. However, compounding tax drag can severely deplete the lifespan of standard tax-deferred accounts (Traditional IRAs, 401ks).</p>
+        <p class="mb-3">As you transition out of your active earning window, every dollar withdrawn is hit with ordinary income tax. Furthermore, once you reach age 73, <strong>Required Minimum Distributions (RMDs)</strong> legally force you to liquidate and tax-convert your accounts, potentially pushing you into higher tax brackets during retirement.</p>
+        <p class="mb-3">Our <strong>Tax Blueprint</strong> models systematic <strong>Roth Conversions</strong> during your "Bridge Years" to permanently insulate your compounding wealth from tax drag.</p>
+      `,
+      'healthcare': `
+        <h4 class="text-emerald-400 font-bold text-base mb-2">The Hidden Pre-Medicare Surcharges</h4>
+        <p class="mb-3">Out-of-pocket medical overhead is the single largest surprise expense reported by early retirees. If you retire before age 65, you must bridge the healthcare gap before Medicare eligibility begins.</p>
+        <p class="mb-3">Using the <strong>ACA Marketplace</strong>, you can secure high-value premium subsidies, but only if you systematically structure and optimize your reported Modified Adjusted Gross Income (MAGI).</p>
+        <p class="mb-3">Post-65, Medicare Part B and D surcharges (IRMAA) can quietly spike your monthly premiums if your RMD distributions push you over income thresholds. Our healthcare model calculates these variables to ensure absolute coverage preservation.</p>
+      `,
+      'location': `
+        <h4 class="text-emerald-400 font-bold text-base mb-2">Arbitrage Your Cost of Living</h4>
+        <p class="mb-3">Where you choose to establish your retirement anchor dictates your tax rates, medical outlays, and asset purchasing power. Moving across state or national borders can instantly shrink your gap.</p>
+        <div class="grid grid-cols-2 gap-3 mt-4 text-xs">
+          <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-700/50">
+            <span class="text-emerald-400 font-bold block mb-1">🇺🇸 Domestic Arbitrage</span>
+            Compare states with zero income tax and retirement-friendly asset exclusions using the US Matcher.
+          </div>
+          <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-700/50">
+            <span class="text-emerald-400 font-bold block mb-1">🌎 Global Expatriation</span>
+            Dramatically lower spending overhead while maintaining world-class medical coverage in cities like Lisbon or Bangkok.
+          </div>
+        </div>
+      `
+    };
+
+    function openExplainModal(key) {
+      const modal = document.getElementById('explain-modal');
+      const title = document.getElementById('modal-title');
+      const body = document.getElementById('modal-body');
+      
+      const details = modalContents[key];
+      if (details) {
+        if (key === 'why-it-happens') title.innerText = "Why Most People Have a Gap";
+        else if (key === 'healthcare') title.innerText = "Underestimated Healthcare Surcharges";
+        else if (key === 'location') title.innerText = "Retirement Geographic Arbitrage";
+        
+        body.innerHTML = details;
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.querySelector('.bg-slate-800').classList.remove('scale-95');
+      }
+    }
+
+    function closeExplainModal() {
+      const modal = document.getElementById('explain-modal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.querySelector('.bg-slate-800').classList.add('scale-95');
+    }
+  </script>
+</body>
+</html>
