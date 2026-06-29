@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    /*Google analytics*/
+    <!-- Google analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-9JMJJ5CJR4');
-</script>
+      gtag('config', 'G-9JMJJ5CJR4');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <a href="#"><title>Independent Wealth Building Engine | WealthLanding</title></a>
+    <title>Independent Wealth Building Engine | WealthLanding</title>
     <meta name="description" content="Access institutional-grade blueprints, retirement simulators, and city matcher tools to optimize your early exit strategies.">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -41,227 +41,244 @@
             line-height: 1.5;
         }
         
-.content-section {
-    background: #ffffff;
-    border: 1px solid #E2E8F0;
-    border-radius: 16px;
-    padding: 2.5rem;
-    margin: 3rem 0;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
-}
+        .content-section {
+            background: #ffffff;
+            border: 1px solid #E2E8F0;
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+        }
 
-.section-kicker {
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #02B17D;
-    margin-bottom: 0.5rem;
-}
+        .section-kicker {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #02B17D;
+            margin-bottom: 0.5rem;
+        }
 
-.section-title {
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: #0B132B;
-    margin-bottom: 1rem;
-}
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #0B132B;
+            margin-bottom: 1rem;
+        }
 
-.section-subtitle {
-    color: #64748B;
-    max-width: 760px;
-    margin-bottom: 2rem;
-}
-    /* GLOBAL HEADER POSITIONING AND HIGH STACKING INDEX Context */
-    .global-header {
-      background-color: #0B132B; 
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.85rem 2.25rem; /* Slightly tightened padding */
-      border-bottom: 1px solid #1E293B;
-      width: 100%;
-      box-sizing: border-box;
-      position: relative; /* ◄ Establish containing block for the absolute mega dropdown */
-      z-index: 1001;      /* ◄ Override the 100 z-index sticky topnav bar context */
-    }
+        .section-subtitle {
+            color: #64748B;
+            max-width: 760px;
+            margin-bottom: 2rem;
+        }
 
-    /* FORCED LIST ITEM ROW PACKING TO PREVENT VERTICAL STACKING BLOCKS */
-    .top-nav-links {
-      display: flex !important;
-      flex-direction: row !important;
-      align-items: center;
-      gap:1.25rem; /* Adjusted gap */
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
+        /* GLOBAL HEADER POSITIONING AND HIGH STACKING INDEX Context */
+        .global-header {
+          background-color: #0B132B; 
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0.85rem 2.25rem; /* Slightly tightened padding */
+          border-bottom: 1px solid #1E293B;
+          width: 100%;
+          box-sizing: border-box;
+          position: relative; /* ◄ Establish containing block for the absolute mega dropdown */
+          z-index: 1001;      /* ◄ Override the 100 z-index sticky topnav bar context */
+        }
 
-    .top-nav-links a {
-      color: #94A3B8;
-      text-decoration: none;
-      font-size: 0.95rem; /* ◄ Adjusted from 1.425rem (10% smaller) */
-      font-weight: 500;
-      transition: color 0.2s;
-      white-space: nowrap;
-    }
+        /* FORCED LIST ITEM ROW PACKING TO PREVENT VERTICAL STACKING BLOCKS */
+        .top-nav-links {
+          display: flex !important;
+          flex-direction: row !important;
+          align-items: center;
+          gap:1.25rem; /* Adjusted gap */
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+        }
 
-    .top-nav-links a:hover, .top-nav-links a.active {
-      color: white;
-    }
+        .top-nav-links a {
+          color: #94A3B8;
+          text-decoration: none;
+          font-size: 0.95rem; /* ◄ Adjusted from 1.425rem (10% smaller) */
+          font-weight: 500;
+          transition: color 0.2s;
+          white-space: nowrap;
+        }
 
-    .logo {
-      font-size: 1.45rem; /* ◄ Adjusted from 2rem (10% smaller) */
-      font-weight: 800;
-      color: white;
-      text-decoration: none;
-      letter-spacing: -0.04em;
-    }
+        .top-nav-links a:hover, .top-nav-links a.active {
+          color: white;
+        }
 
-    .logo span {
-      color: #02B17D; 
-    }
+        .logo {
+          font-size: 1.45rem; /* ◄ Adjusted from 2rem (10% smaller) */
+          font-weight: 800;
+          color: white;
+          text-decoration: none;
+          letter-spacing: -0.04em;
+        }
 
-    .search-container {
-      position: relative;
-      max-width: 400px; /* Adjusted container width */
-      width: 100%;
-    }
+        .logo span {
+          color: #02B17D; 
+        }
 
-    .search-input {
-      width: 100%;
-      background-color: #1E293B;
-      border: 1px solid #334155;
-      color: white;
-      padding: 0.65rem 1.25rem 0.65rem 3rem; /* Adjusted padding */
-      border-radius: 8px;
-      font-size: 0.9rem; /* ◄ Adjusted from 1.3125rem (10% smaller) */
-    }
+        .search-container {
+          position: relative;
+          max-width: 400px; /* Adjusted container width */
+          width: 100%;
+        }
 
-    /* CORRECT HORIZONTAL TOP NAV FLEX MATRIX */
-    .topnav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: #0f172a;
-      display: flex;
-      align-items: center;
-      padding: 0 38px;
-      height: 70px; /* Adjusted height */
-      box-shadow: 0 2px 8px rgba(0,0,0,.18);
-    }
-    
-    .topnav-links {
-      display: flex;
-      flex-direction: row;
-      gap: 4px;
-      align-items: center;
-      width: 100%;
-      position: relative;
-    }
-    
-    .topnav-link {
-      color: #94a3b8;
-      text-decoration: none;
-      font-size: 18.9px; /* ◄ Adjusted from 21px (10% smaller) */
-      font-weight: 555;
-      padding: 8px 18px;
-      border-radius: 8px;
-      transition: background .15s, color .15s;
-      white-space: nowrap;
-    }
-    
-    .topnav-link:hover {
-      background: rgba(255,255,255,.08);
-      color: #fff;
-    }
-    
-    .topnav-link.active {
-      background: rgba(96,165,250,.15);
-      color: #60a5fa;
-    }
-    
-    .topnav-divider {
-      width: 1px;
-      height: 32px; /* Adjusted divider */
-      background: rgba(255,255,255,.1);
-      margin: 0 10px;
-    }
+        .search-input {
+          width: 100%;
+          background-color: #1E293B;
+          border: 1px solid #334155;
+          color: white;
+          padding: 0.65rem 1.25rem 0.65rem 3rem; /* Adjusted padding */
+          border-radius: 8px;
+          font-size: 0.9rem; /* ◄ Adjusted from 1.3125rem (10% smaller) */
+        }
 
-    /* VIEWPONT-CENTERED FLUID MEGA DROPDOWN BOX */
-    .mega-dropdown {
-      position: absolute;
-      top: 100%;
-      left: 50%;                     
-      transform: translateX(-50%) translateY(12px); 
-      width: 95vw;                   
-      max-width: 1240px; /* Adjusted width */
-      background: white;
-      border: 1px solid var(--border); 
-      border-radius: 1rem;
-      box-shadow: 0 22px 30px -5px rgba(0, 0, 0, 0.16), 0 12px 12px -5px rgba(0, 0, 0, 0.05);
-      padding: 3.25rem; /* Adjusted padding */
-      display: grid !important;      
-      grid-template-columns: 1.1fr 2.9fr; 
-      gap: 3.5rem;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
-      z-index: 2000; 
-      box-sizing: border-box;
-    }
+        /* CORRECT HORIZONTAL TOP NAV FLEX MATRIX */
+        .topnav {
+          position: sticky;
+          top: 0;
+          z-index: 100;
+          background: #0f172a;
+          display: flex;
+          align-items: center;
+          padding: 0 38px;
+          height: 70px; /* Adjusted height */
+          box-shadow: 0 2px 8px rgba(0,0,0,.18);
+        }
+        
+        .topnav-links {
+          display: flex;
+          flex-direction: row;
+          gap: 4px;
+          align-items: center;
+          width: 100%;
+          position: relative;
+        }
+        
+        .topnav-link {
+          color: #94a3b8;
+          text-decoration: none;
+          font-size: 18.9px; /* ◄ Adjusted from 21px (10% smaller) */
+          font-weight: 555;
+          padding: 8px 18px;
+          border-radius: 8px;
+          transition: background .15s, color .15s;
+          white-space: nowrap;
+        }
+        
+        .topnav-link:hover {
+          background: rgba(255,255,255,.08);
+          color: #fff;
+        }
+        
+        .topnav-link.active {
+          background: rgba(96,165,250,.15);
+          color: #60a5fa;
+        }
+        
+        .topnav-divider {
+          width: 1px;
+          height: 32px; /* Adjusted divider */
+          background: rgba(255,255,255,.1);
+          margin: 0 10px;
+        }
 
-    /* Keep centering properties intact on hover triggers */
-    .dropdown-trigger:hover .mega-dropdown {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(-50%) translateY(0);
-    }
-  
-    /* RIGHT COLUMN LINKS SUB-GRID */
-    .links-matrix {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem 1.75rem; /* Adjusted spacing */
-    }
+        /* VIEWPONT-CENTERED FLUID MEGA DROPDOWN BOX */
+        .mega-dropdown {
+          position: absolute;
+          top: 100%;
+          left: 50%;                     
+          transform: translateX(-50%) translateY(12px); 
+          width: 95vw;                   
+          max-width: 1240px; /* Adjusted width */
+          background: white;
+          border: 1px solid var(--border); 
+          border-radius: 1rem;
+          box-shadow: 0 22px 30px -5px rgba(0, 0, 0, 0.16), 0 12px 12px -5px rgba(0, 0, 0, 0.05);
+          padding: 3.25rem; /* Adjusted padding */
+          display: grid !important;      
+          grid-template-columns: 1.1fr 2.9fr; 
+          gap: 3.5rem;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+          z-index: 2000; 
+          box-sizing: border-box;
+        }
 
-    .dropdown-column h4 {
-      color: var(--text); 
-      font-size: 1.215rem; /* ◄ Adjusted from 1.35rem (10% smaller) */
-      font-weight: 700;
-      margin-top: 0;
-      margin-bottom: 1.15rem;
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-    }
+        /* Keep centering properties intact on hover triggers */
+        .dropdown-trigger:hover .mega-dropdown {
+          opacity: 1;
+          visibility: visible;
+          transform: translateX(-50%) translateY(0);
+        }
+      
+        /* RIGHT COLUMN LINKS SUB-GRID */
+        .links-matrix {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2.5rem 1.75rem; /* Adjusted spacing */
+        }
 
-    .dropdown-column ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.85rem; /* Adjusted spacing */
-    }
+        .dropdown-column h4 {
+          color: var(--text); 
+          font-size: 1.215rem; /* ◄ Adjusted from 1.35rem (10% smaller) */
+          font-weight: 700;
+          margin-top: 0;
+          margin-bottom: 1.15rem;
+          display: flex;
+          align-items: center;
+          gap: 0.65rem;
+        }
 
-    .dropdown-column ul a {
-      color: var(--muted) !important; 
-      font-size: 0.95 rem; /* ◄ Adjusted from 1.275rem (10% smaller) */
-      font-weight: 500;
-      padding: 0;
-    }
+        .dropdown-column ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0.85rem; /* Adjusted spacing */
+        }
 
-    .dropdown-column ul a:hover {
-      color: var(--emerald) !important; 
-    }
+        .dropdown-column ul a {
+          color: var(--muted) !important; 
+          font-size: 0.95rem; /* ◄ Adjusted from 1.275rem (10% smaller) */
+          font-weight: 500;
+          padding: 0;
+        }
 
-    /* Let dropdown anchor align to .global-header container for perfect center horizontal align */
-    .dropdown-trigger {
-      position: static;
-    }
+        .dropdown-column ul a:hover {
+          color: var(--emerald) !important; 
+        }
 
+        /* Let dropdown anchor align to .global-header container for perfect center horizontal align */
+        .dropdown-trigger {
+          position: static;
+        }
 
+        /* Layout Container Architecture */
+        .app-frame {
+            display: flex;
+            width: 100%;
+            align-items: flex-start;
+        }
+
+        /* Sidebar Styling */
+        .left-sidebar {
+            width: var(--sidebar-width);
+            flex-shrink: 0;
+            background-color: var(--bg-card);
+            border-right: 1px solid var(--border-light);
+            padding: 2.5rem 1.5rem;
+            min-height: calc(100vh - 61px); /* Match baseline height minus header height */
+            box-sizing: border-box;
+        }
 
         .sidebar-group-title {
             font-size: 0.75rem;
@@ -307,9 +324,10 @@
         /* 4. Main Activity Workspace (Right Panel) */
         .main-workspace {
             flex: 1;
-            margin-left: var(--sidebar-width);
             padding: 3rem 4rem;
             max-width: 1300px;
+            min-width: 0; /* Prevents layout blowouts inside flex containers */
+            box-sizing: border-box;
         }
 
         /* Main Elements & Typography styling */
@@ -411,117 +429,119 @@
             color: #64748B;
             cursor: not-allowed;
         }
-          /* Retirement hub display when user click on retirement life stage */
+        
+        /* Retirement hub display when user click on retirement life stage */
         .retirement-hub {
-    margin-top: 4rem;
-}
+            margin-top: 4rem;
+        }
 
-.retirement-header {
-    margin-bottom: 2rem;
-}
+        .retirement-header {
+            margin-bottom: 2rem;
+        }
 
-.retirement-header h2 {
-    font-size: 2rem;
-    color: #0B132B;
-}
+        .retirement-header h2 {
+            font-size: 2rem;
+            color: #0B132B;
+        }
 
-.retirement-header p {
-    color: #64748B;
-    max-width: 700px;
-}
+        .retirement-header p {
+            color: #64748B;
+            max-width: 700px;
+        }
 
-.journey-card {
-    background: white;
-    border: 1px solid #E2E8F0;
-    border-radius: 12px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
+        .journey-card {
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
 
-.path-badge {
-    display: inline-block;
-    background: #DCFCE7;
-    color: #166534;
-    padding: 0.35rem 0.75rem;
-    border-radius: 999px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
+        .path-badge {
+            display: inline-block;
+            background: #DCFCE7;
+            color: #166534;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
 
-.btn-primary {
-    display: inline-block;
-    background: #02B17D;
-    color: white;
-    padding: 0.85rem 1.25rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-}
+        .btn-primary {
+            display: inline-block;
+            background: #02B17D;
+            color: white;
+            padding: 0.85rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-.tool-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-}
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
 
-.tool-card {
-    border: 1px solid #E2E8F0;
-    border-radius: 10px;
-    padding: 1.25rem;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.2s ease;
-}
+        .tool-card {
+            border: 1px solid #E2E8F0;
+            border-radius: 10px;
+            padding: 1.25rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+        }
 
-.tool-card:hover {
-    border-color: #02B17D;
-    transform: translateY(-2px);
-}
+        .tool-card:hover {
+            border-color: #02B17D;
+            transform: translateY(-2px);
+        }
 
-.tool-icon {
-    font-size: 1.5rem;
-}
+        .tool-icon {
+            font-size: 1.5rem;
+        }
 
-.retirement-roadmap {
-    background: #F8FAFC;
-    border-radius: 12px;
-    padding: 2rem;
-}
+        .retirement-roadmap {
+            background: #F8FAFC;
+            border-radius: 12px;
+            padding: 2rem;
+        }
 
-.roadmap-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
+        .roadmap-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
 
-.step {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-}
+        .step {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
 
-.step-number {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #E2E8F0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-}
+        .step-number {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #E2E8F0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
 
-.completed .step-number {
-    background: #02B17D;
-    color: white;
-}
+        .completed .step-number {
+            background: #02B17D;
+            color: white;
+        }
 
-.coming-soon {
-    opacity: 0.6;
-}
-  /* Masterclass Sequence Row */
+        .coming-soon {
+            opacity: 0.6;
+        }
+
+        /* Masterclass Sequence Row */
         .masterclass {
             background-color: var(--bg-light);
             padding: 4rem 2rem;
@@ -551,7 +571,8 @@
             border-radius: 4px;
             text-transform: uppercase;
         }
-  /* Tool Dashboard Table */
+
+        /* Tool Dashboard Table */
         .table-responsive {
             overflow-x: auto;
             margin-top: 1rem;
@@ -579,18 +600,18 @@
             background-color: var(--bg-light);
         }
 
-       table a {
-    color: #2563EB;
-    text-decoration: none;
-    font-weight: 600;
-}
+        table a {
+            color: #2563EB;
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-table a:hover {
-    color: #1D4ED8;
-    text-decoration: underline;
-}
+        table a:hover {
+            color: #1D4ED8;
+            text-decoration: underline;
+        }
 
-         /* FAQ Block */
+        /* FAQ Block */
         .faq-block {
             max-width: 800px;
             margin: 0 auto 6rem auto;
@@ -619,19 +640,26 @@ table a:hover {
             border-top: 1px solid #334155;
         }
     
-
-   
         /* Responsive Setup Rules */
         @media (max-width: 1024px) {
-            .left-sidebar { display: none; }
-            .main-workspace { margin-left: 0; padding: 2rem; }
-            .top-nav-links { display: none; }
+            .app-frame {
+                flex-direction: column;
+            }
+            .left-sidebar { 
+                display: none; 
+            }
+            .main-workspace { 
+                padding: 2rem; 
+            }
+            .top-nav-links { 
+                display: none; 
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Global Directory Header -->
+  <!-- Top Global Directory Header -->
   <header class="global-header">
     <a href="/" class="logo">Wealth<span>Landing</span></a>
     <nav aria-label="Global Main Directory">
@@ -866,9 +894,9 @@ table a:hover {
                   <li><a href="#">Transition Workspace</a></li>
                 </ul>
               </div>
-          <div class="dropdown-column">
+              <div class="dropdown-column">
                 <h4>✈️ Location Arbitrage</h4>
-               <ul>
+                <ul>
                   <li><a href="UScitymatcher.html">US City Matcher Tool</a></li>
                   <li><a href="RetiringOverseas.html">Overseas Matcher Tool</a></li>
                   <li><a href="#">Geographic Cost Indexes</a></li>
@@ -997,7 +1025,7 @@ table a:hover {
     </div>
   </header>
 
-    <div class="app-frame">
+  <div class="app-frame">
 
         <aside class="left-sidebar" aria-label="Contextual Tool Directory">
             <div class="sidebar-group-title">Wealth Simulators</div>
@@ -1021,8 +1049,8 @@ table a:hover {
                 <li><a href="/Retirement-simulator/cities/shanghai.html"> Retirement in Shanghai</a></li>
                 <li><a href="/Retirement-simulator/cities/singapore.html"> Retirement in Singapore</a></li>
                 <li><a href="/Retirement-simulator/cities/sidney.html"> Retirement in Sidney</a></li>
-                 <li><a href="/Retirement-simulator/cities/tokyo.html"> Retirement in Tokyo</a></li>
-                 <li><a href="/Retirement-simulator/cities/zurich.html"> Retirement in Zurich</a></li>
+                <li><a href="/Retirement-simulator/cities/tokyo.html"> Retirement in Tokyo</a></li>
+                <li><a href="/Retirement-simulator/cities/zurich.html"> Retirement in Zurich</a></li>
             </ul>
 
             <div class="sidebar-group-title">External Tool Audits</div>
@@ -1041,7 +1069,8 @@ table a:hover {
                      alt="The Wealth Horizon Roadmap: From Accumulation to Early Exit Execution" 
                      class="infographic-img">
             </div>
-   <!-- Section 2: Choose Your Strategic Pillar -->
+
+            <!-- Section 2: Choose Your Strategic Pillar -->
             <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--brand-navy); margin-bottom: 1.5rem;">Select Your Core Strategy Module</h2>
             <section class="grid-layout" aria-label="Strategic Modules">
                 <div class="data-card">
@@ -1063,164 +1092,125 @@ table a:hover {
                         <h3>I have a family to build for</h3>
                         <p>Fund educational trajectories efficiently, establish generational wealth frameworks, and secure structural protection for your household</p>
                     </div>
-                     <span class="action-btn action-btn-secondary">Coming soon</span>
+                    <span class="action-btn action-btn-secondary">Coming soon</span>
                 </div>
-                     <div class="data-card featured">
-    <div>
-        <h3>Design My Retirement</h3>
-        <p>
-            Discover tax, healthcare, location,
-            and legacy strategies.
-        </p>
-    </div>
-
-    <button class="action-btn action-btn-primary"
-            onclick="toggleRetirementJourney()">
-        Explore Retirement Planning
-    </button>
-</div>
-                
-                 <!--   <a href="/Retirement-simulator/citymatcher.html" class="action-btn action-btn-primary">I am preparing for retirement.</a>
-                    <a href="/Retirement-simulator/citymatcher.html" class="action-btn action-btn-primary">I am already retired.</a>-->
-             
+                <div class="data-card featured">
+                    <div>
+                        <h3>Design My Retirement</h3>
+                        <p>Discover tax, healthcare, location, and legacy strategies.</p>
+                    </div>
+                    <button class="action-btn action-btn-primary" onclick="toggleRetirementJourney()">
+                        Explore Retirement Planning
+                    </button>
+                </div>
             </section>
-                <!-- Retirement Journey-->
-<div id="retirementJourney"
-     style="display:none; margin-top:40px;">
-  <section class="retirement-hub">
 
-    <div class="retirement-header">
-        <h2>Retirement Planning System</h2>
-        <p>
-            Navigate retirement planning through a structured framework
-            covering tax optimization, location strategy, healthcare planning,
-            and legacy considerations.
-        </p>
-    </div>
+            <!-- Retirement Journey-->
+            <div id="retirementJourney" style="display:none; margin-top:40px;">
+                <section class="retirement-hub">
+                    <div class="retirement-header">
+                        <h2>Retirement Planning System</h2>
+                        <p>
+                            Navigate retirement planning through a structured framework
+                            covering tax optimization, location strategy, healthcare planning,
+                            and legacy considerations.
+                        </p>
+                    </div>
 
-    <!-- Beginner Path -->
+                    <!-- Beginner Path -->
+                    <div class="journey-card beginner-path">
+                        <div class="path-badge">Recommended Starting Point</div>
+                        <h3>Not Sure Where To Start?</h3>
+                        <p>
+                            Answer a few questions and we'll identify your biggest retirement
+                            opportunity and recommend your next planning step.
+                        </p>
+                        <a href="Retirement-simulator/Gateway.html" class="btn-primary">
+                           Start Retirement Scenario Exploration
+                        </a>
+                    </div>
 
-    <div class="journey-card beginner-path">
-        <div class="path-badge">Recommended Starting Point</div>
+                    <!-- Power User Path -->
+                    <div class="journey-card advanced-path">
+                        <h3>Already Know What You're Looking For?</h3>
+                        <div class="tool-grid">
+                            <a href="Retirement-simulator/OptimizeRoth.html" class="tool-card">
+                                <span class="tool-icon">💰</span>
+                                <h4>Tax Blueprint</h4>
+                                <p>Roth conversions, RMDs, ACA & IRMAA planning.</p>
+                            </a>
+                            <a href="Retirement-simulator/UScitymatcher.html" class="tool-card">
+                                <span class="tool-icon">🇺🇸</span>
+                                <h4>US City Matcher</h4>
+                                <p>Compare retirement-friendly cities.</p>
+                            </a>
+                            <a href="Retirement-simulator/RetiringOverseas.html" class="tool-card">
+                                <span class="tool-icon">🌎</span>
+                                <h4>Overseas Explorer</h4>
+                                <p>Evaluate international retirement options.</p>
+                            </a>
+                            <a href="Retirement-simulator/cost_for_65+.html" class="tool-card">
+                                <span class="tool-icon">🏥</span>
+                                <h4>Healthcare Planner</h4>
+                                <p>Estimate retirement healthcare costs.</p>
+                            </a>
+                        </div>
+                    </div>
 
-        <h3>Not Sure Where To Start?</h3>
-
-        <p>
-            Answer a few questions and we'll identify your biggest retirement
-            opportunity and recommend your next planning step.
-        </p>
-
-        <a href="Retirement-simulator/Gateway.html"
-           class="btn-primary">
-           Start Retirement Scenario Exploration
-        </a>
-    </div>
-
-    <!-- Power User Path -->
-
-    <div class="journey-card advanced-path">
-
-        <h3>Already Know What You're Looking For?</h3>
-
-        <div class="tool-grid">
-
-            <a href="Retirement-simulator/OptimizeRoth.html"
-               class="tool-card">
-                <span class="tool-icon">💰</span>
-                <h4>Tax Blueprint</h4>
-                <p>Roth conversions, RMDs, ACA & IRMAA planning.</p>
-            </a>
-
-            <a href="Retirement-simulator/UScitymatcher.html"
-               class="tool-card">
-                <span class="tool-icon">🇺🇸</span>
-                <h4>US City Matcher</h4>
-                <p>Compare retirement-friendly cities.</p>
-            </a>
-
-            <a href="Retirement-simulator/RetiringOverseas.html"
-               class="tool-card">
-                <span class="tool-icon">🌎</span>
-                <h4>Overseas Explorer</h4>
-                <p>Evaluate international retirement options.</p>
-            </a>
-
-            <a href="Retirement-simulator/cost_for_65+.html"
-               class="tool-card">
-                <span class="tool-icon">🏥</span>
-                <h4>Healthcare Planner</h4>
-                <p>Estimate retirement healthcare costs.</p>
-            </a>
-
-        </div>
-    </div>
-
-    <!-- Retirement Journey Roadmap -->
-
-    <div class="retirement-roadmap">
-
-        <h3>Your Retirement Journey</h3>
-
-        <div class="roadmap-steps">
-
-            <div class="step completed">
-                <span class="step-number">1</span>
-                <div>
-                    <strong>Retirement Readiness</strong>
-                    <p>Identify your biggest opportunity.</p>
-                </div>
+                    <!-- Retirement Journey Roadmap -->
+                    <div class="retirement-roadmap">
+                        <h3>Your Retirement Journey</h3>
+                        <div class="roadmap-steps">
+                            <div class="step completed">
+                                <span class="step-number">1</span>
+                                <div>
+                                    <strong>Retirement Readiness</strong>
+                                    <p>Identify your biggest opportunity.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">2</span>
+                                <div>
+                                    <strong>Tax Blueprint</strong>
+                                    <p>Optimize Roth conversion strategy.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">3</span>
+                                <div>
+                                    <strong>Location Strategy</strong>
+                                    <p>Compare US and overseas options.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">4</span>
+                                <div>
+                                    <strong>Healthcare Strategy</strong>
+                                    <p>Model healthcare costs and risks.</p>
+                                </div>
+                            </div>
+                            <div class="step coming-soon">
+                                <span class="step-number">5</span>
+                                <div>
+                                    <strong>Retirement Master Plan</strong>
+                                    <p>Generated after completing the diagnostic and tools.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-
-            <div class="step">
-                <span class="step-number">2</span>
-                <div>
-                    <strong>Tax Blueprint</strong>
-                    <p>Optimize Roth conversion strategy.</p>
-                </div>
-            </div>
-
-            <div class="step">
-                <span class="step-number">3</span>
-                <div>
-                    <strong>Location Strategy</strong>
-                    <p>Compare US and overseas options.</p>
-                </div>
-            </div>
-
-            <div class="step">
-                <span class="step-number">4</span>
-                <div>
-                    <strong>Healthcare Strategy</strong>
-                    <p>Model healthcare costs and risks.</p>
-                </div>
-            </div>
-
-            <div class="step coming-soon">
-                <span class="step-number">5</span>
-                <div>
-                    <strong>Retirement Master Plan</strong>
-                    <p>Generated after completing the diagnostic and tools.</p>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-</div>
             
-           <!-- Section 3: Deep Dive — Early Retirement Masterclass -->
+            <!-- Section 3: Deep Dive — Early Retirement Masterclass -->
             <section class="content-section">
-    <div class="section-kicker">Learn the Concepts</div>
-    <h2 class="section-title">Early Retirement Masterclass</h2>
-    <p class="section-subtitle">
-        Build the knowledge behind the tools: freedom number, withdrawal strategy,
-        and healthcare bridge planning.
-    </p>
+                <div class="section-kicker">Learn the Concepts</div>
+                <h2 class="section-title">Early Retirement Masterclass</h2>
+                <p class="section-subtitle">
+                    Build the knowledge behind the tools: freedom number, withdrawal strategy,
+                    and healthcare bridge planning.
+                </p>
 
-    <div class="step-row">
-
+                <div class="step-row">
                     <div class="step-item">
                         <span class="step-badge">Step 1</span>
                         <h3>Calculate Your Freedom Number</h3>
@@ -1240,43 +1230,43 @@ table a:hover {
             </section>
 
             <!-- Section 4: Curated Toolkit Dashboard -->
-          <section class="content-section">
-    <div class="section-kicker">Verification Tools</div>
-    <h2 class="section-title">Vetted Vitals & Verification Tools</h2>
- 
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Financial Utility</th>
-                            <th>Vetted Resource</th>
-                            <th>What You Will Learn</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Growth Projections</strong></td>
-                            <td><a href="https://www.investor.gov/free-financial-planning-tools" target="_blank" rel="noopener noreferrer">Investor.gov Compound Engine</a></td>
-                            <td>Visualize your long-term compounding growth curve without advisor fees.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Fee Impact Analysis</strong></td>
-                            <td><a href="https://tools.finra.org/fund_analyzer/" target="_blank" rel="noopener noreferrer">FINRA Fund Analyzer</a></td>
-                            <td>Uncover how underlying mutual fund expense ratios quietly erode your long-term returns.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Target Projections</strong></td>
-                            <td><a href="https://www.investor.gov/free-financial-planning-tools" target="_blank" rel="noopener noreferrer">Investor.gov Savings Calculator</a></td>
-                            <td>Back-calculate the exact monthly savings allocation required to reach your goals.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        
-</section>
+            <section class="content-section">
+                <div class="section-kicker">Verification Tools</div>
+                <h2 class="section-title">Vetted Vitals & Verification Tools</h2>
+             
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Financial Utility</th>
+                                <th>Vetted Resource</th>
+                                <th>What You Will Learn</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Growth Projections</strong></td>
+                                <td><a href="https://www.investor.gov/free-financial-planning-tools" target="_blank" rel="noopener noreferrer">Investor.gov Compound Engine</a></td>
+                                <td>Visualize your long-term compounding growth curve without advisor fees.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fee Impact Analysis</strong></td>
+                                <td><a href="https://tools.finra.org/fund_analyzer/" target="_blank" rel="noopener noreferrer">FINRA Fund Analyzer</a></td>
+                                <td>Uncover how underlying mutual fund expense ratios quietly erode your long-term returns.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Target Projections</strong></td>
+                                <td><a href="https://www.investor.gov/free-financial-planning-tools" target="_blank" rel="noopener noreferrer">Investor.gov Savings Calculator</a></td>
+                                <td>Back-calculate the exact monthly savings allocation required to reach your goals.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
             <!-- Section 5: AI & SEO Optimization Block (FAQ) -->
-            <h2 class="section-title">Frequently Asked Questions</h2>
             <section class="faq-block">
+                <h2 class="section-title">Frequently Asked Questions</h2>
                 <div class="faq-item">
                     <h3>Do I really need a financial advisor to retire early?</h3>
                     <p>No. While wealth managers provide value for complex estate litigation or high-net-worth tax shelter structures, the vast majority of personal financial growth relies on a high personal savings rate, low-fee index tracking funds, and disciplined asset allocation—all of which you can manage independently using structured blueprints.</p>
@@ -1286,8 +1276,8 @@ table a:hover {
                     <p>Sequence of Returns Risk. Experiencing a severe stock market downturn during the initial 3 to 5 years of your retirement phase can permanently damage your portfolio's longevity. Managing this requires a multi-year cash or short-term bond runway to avoid being forced to sell your equities at a market bottom.</p>
                 </div>
             </section>
-        </div>
-    </main>
+        </main>
+    </div>
 
     <!-- Footer Segment -->
     <footer>
@@ -1296,20 +1286,19 @@ table a:hover {
         </div>
     </footer>
 
-    </div>
-<!--Google search script-->
+    <!-- Google search script -->
     <script async src="https://cse.google.com/cse.js?cx=40edcbb80dea44bf1"></script>
-            <script>
-function toggleRetirementJourney() {
-    const section = document.getElementById('retirementJourney');
+    <script>
+        function toggleRetirementJourney() {
+            const section = document.getElementById('retirementJourney');
 
-    if (section.style.display === 'none' || section.style.display === '') {
-        section.style.display = 'block';
-        section.scrollIntoView({ behavior: 'smooth' });
-    } else {
-        section.style.display = 'none';
-    }
-}
-</script>
+            if (section.style.display === 'none' || section.style.display === '') {
+                section.style.display = 'block';
+                section.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                section.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
