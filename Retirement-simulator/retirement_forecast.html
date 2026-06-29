@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9JMJJ5CJR4');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Personalized Retirement Story | WealthLanding</title>
+  
+  <!-- Web Font Imports: Unified families for Inter (Sans) and Playfair Display (Serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Bind Tailwind's default font tokens to our strict three-style layout architecture
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --navy: #0B132B;
+      --navy-light: #1E293B;
+      --mint: #02B17D;
+      --mint-dark: #019367;
+      --bg: #F8FAFC;
+      --card: #FFFFFF;
+      --border: #E2E8F0;
+      --text: #1E293B;
+      --muted: #64748B;
+      --blue: #2563EB;
+      --blue-dark: #1D4ED8;
+      --amber: #D97706;
+      --red: #DC2626;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+
+      /* Phase Dynamic Color Palette */
+      --prep-clr: #EFF6FF;
+      --prep-brd: #BFDBFE;
+      --prep-txt: #1E40AF;
+      
+      --bridge-clr: #ECFDF5;
+      --bridge-brd: #A7F3D0;
+      --bridge-txt: #065F46;
+      
+      --medi-clr: #F0FDFA;
+      --medi-brd: #99F6E4;
+      --medi-txt: #0F766E;
+      
+      --rmd-clr: #FFF7ED;
+      --rmd-brd: #FED7AA;
+      --rmd-txt: #9A3412;
+      
+      --care-clr: #FDF4FF;
+      --care-brd: #E9D5FF;
+      --care-txt: #6B21A8;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* Rule headings explicitly bound to Playfair Display */
+    h1, h2, h3, .font-editorial {
+      font-family: 'Playfair Display', Georgia, serif !important;
+    }
+
+    /* GLOBAL HEADER POSITIONING */
+    .global-header {
+      background-color: var(--navy); 
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 2.25rem;
+      border-bottom: 1px solid #1E293B;
+      width: 100%;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 1001;
+    }
+
+    .top-nav-links {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center;
+      gap: 1.25rem;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-nav-links a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .top-nav-links a:hover, .top-nav-links a.active {
+      color: white;
+    }
+
+    .logo {
+      font-weight: 800;
+      color: white;
+      text-decoration: none;
+      letter-spacing: -0.04em;
+    }
+
+    .logo span {
+      color: var(--mint); 
+    }
+
+    .search-container {
+      position: relative;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .search-input {
+      width: 100%;
+      background-color: #1E293B;
+      border: 1px solid #334155;
+      color: white;
+      padding: 0.65rem 1.25rem 0.65rem 3rem;
+      border-radius: 8px;
+    }
+
+    /* VIEWPORT-CENTERED FLUID MEGA DROPDOWN BOX */
+    .mega-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 50%;                     
+      transform: translateX(-50%) translateY(12px); 
+      width: 95vw;                   
+      max-width: 1240px;
+      background: white;
+      border: 1px solid var(--border); 
+      border-radius: 1rem;
+      box-shadow: 0 22px 30px -5px rgba(0, 0, 0, 0.16), 0 12px 12px -5px rgba(0, 0, 0, 0.05);
+      padding: 2.5rem;
+      display: grid !important;      
+      grid-template-columns: 1.1fr 2.9fr; 
+      gap: 3.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+      z-index: 2000; 
+      box-sizing: border-box;
+    }
+
+    .dropdown-trigger:hover .mega-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+  
+    .links-matrix {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem 1.75rem;
+    }
+
+    .dropdown-column h4 {
+      color: var(--text); 
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .dropdown-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .dropdown-column ul a {
+      color: var(--muted) !important; 
+      font-weight: 500;
+      padding: 0;
+    }
+
+    .dropdown-column ul a:hover {
+      color: var(--mint) !important; 
+    }
+
+    .dropdown-trigger {
+      position: relative;
+    }
+
+    /* STORY TIMELINE GRAPHICAL CONNECTOR */
+    .timeline-visual {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      margin: 40px 0 24px;
+      padding: 0 10px;
+    }
+
+    .timeline-visual::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--border);
+      z-index: 1;
+    }
+
+    .timeline-node {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      background: var(--card);
+      padding: 0 8px;
+    }
+
+    .node-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: var(--border);
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin: 0 auto 10px;
+      border: 4px solid var(--card);
+    }
+
+    .timeline-node.active .node-dot {
+      background: var(--mint);
+      color: white;
+    }
+
+    .node-label {
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    /* CHRONOLOGICAL EDITORIAL PHASE CARDS */
+    .phase-block-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 32px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .phase-block-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .phase-block-card.prep-theme { background: var(--prep-clr); border-color: var(--prep-brd); }
+    .phase-block-card.prep-theme .phase-badge { background: #DBEAFE; color: var(--prep-txt); }
+
+    .phase-block-card.bridge-theme { background: var(--bridge-clr); border-color: var(--bridge-brd); }
+    .phase-block-card.bridge-theme .phase-badge { background: #D1FAE5; color: var(--bridge-txt); }
+
+    .phase-block-card.medi-theme { background: var(--medi-clr); border-color: var(--medi-brd); }
+    .phase-block-card.medi-theme .phase-badge { background: #CCFBF1; color: var(--medi-txt); }
+
+    .phase-block-card.rmd-theme { background: var(--rmd-clr); border-color: var(--rmd-brd); }
+    .phase-block-card.rmd-theme .phase-badge { background: #FFEDD5; color: var(--rmd-txt); }
+
+    .phase-block-card.care-theme { background: var(--care-clr); border-color: var(--care-brd); }
+    .phase-block-card.care-theme .phase-badge { background: #FAE8FF; color: var(--care-txt); }
+
+    .phase-meta-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .phase-badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 14px;
+    }
+
+    .phase-desc {
+      color: var(--navy-light);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .decisions-box {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+
+    .decisions-box h4 {
+      margin: 0 0 12px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .decisions-box ul {
+      margin: 0;
+      padding-left: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .decisions-box li {
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    @media (max-width: 950px) {
+      .phase-block-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .timeline-visual {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="font-sans">
+
+  <!-- Top Global Navigation Header -->
+  <header class="global-header text-sm">
+    <a href="/" class="logo text-2xl">Wealth<span>Landing</span></a>
+    <nav aria-label="Global Main Directory">
+      <ul class="top-nav-links">
+        
+        <!-- DROP-DOWN 1: OVERVIEW -->
+        <li class="dropdown-trigger">
+          <a href="RetirementHub.html" class="active font-bold text-white text-sm">Overview <span class="text-sm opacity-70">▼</span></a>
+          <div class="mega-dropdown text-left text-slate-800">
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100">
+              <div class="space-y-3">
+                <h2 class="text-2xl font-black tracking-tight text-slate-900 font-serif">Overview</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Your primary workspace baseline dashboard. Track targets, access planning workflows, and monitor active signals.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="RetirementHub.html" class="text-slate-900 font-bold text-sm inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Go to Master Hub <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-sm text-slate-400 mt-1">Review onboarding scores and map your baseline variables.</p>
+              </div>
+            </div>
+            <div class="links-matrix">
+              <div class="dropdown-column">
+                <h4 class="text-base">🚀 Start Here</h4>
+                <ul>
+                  <li><a href="Gateway.html">Financial Diagnostic</a></li>
+                  <li><a href="RetirementHub.html">Wealth Score Tracker</a></li>
+                  <li><a href="/">Personal Dashboard</a></li>
+                  <li><a href="Retirement_Master_Plan.html">My Custom Roadmap</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4 class="text-base">🌟 Popular Journeys</h4>
+                <ul>
+                  <li><a href="Happy_retirement.html">Build My First Million</a></li>
+                  <li><a href="CelebratingRetirement.html">Early Retirement Strategy</a></li>
+                  <li><a href="bill-and-tom-story.html">Family Legacy Structures</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4 class="text-base">⏱️ Progress Framework</h4>
+                <ul>
+                  <li><a href="#">Latest Estimators</a></li>
+                  <li><a href="#">Core Strategic Guides</a></li>
+                  <li><a href="Retirement_Master_Plan.html">The Forecast Module</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 2: BUILD WEALTH -->
+        <li class="dropdown-trigger">
+          <a href="#" class="active font-bold text-white text-sm">Build Wealth <span class="text-sm opacity-70">▼</span></a>
+          <div class="mega-dropdown text-left text-slate-800">
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100">
+              <div class="space-y-3">
+                <h2 class="text-2xl font-black tracking-tight text-slate-900 font-serif">Build Wealth</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Optimized cash flow architectures, active career negotiation parameters, and systematic credit rewards optimization.
+                </p>
+              </div>
+            </div>
+            <div class="links-matrix">
+              <div class="dropdown-column">
+                <h4 class="text-base">💼 Income Optimization</h4>
+                <ul>
+                  <li><a href="#">Salary Negotiation Rules</a></li>
+                  <li><a href="#">Career ROI Strategy</a></li>
+                  <li><a href="#">Side Business Design</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4 class="text-base">💵 Cash Flow & Credit</h4>
+                <ul>
+                  <li><a href="#">Budget Optimization</a></li>
+                  <li><a href="#">High-Yield Savings & Banking</a></li>
+                  <li><a href="#">Emergency Reserves Audit</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4 class="text-base">🛡️ Taxes & Tools</h4>
+                <ul>
+                  <li><a href="#">Tax Bracket Minimization</a></li>
+                  <li><a href="#">HSA & FSA Maximizers</a></li>
+                  <li><a href="#">Credit Card Rewards Optimizer</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 3: GROW WEALTH -->
+        <li class="dropdown-trigger">
+          <a href="#" class="active font-bold text-white text-sm">Grow Wealth <span class="text-sm opacity-70">▼</span></a>
+          <div class="mega-dropdown text-left text-slate-800">
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100">
+              <div class="space-y-3">
+                <h2 class="text-2xl font-black tracking-tight text-slate-900 font-serif">Grow Wealth</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Harness compounding index allocations, explore tax-insulated Roth conversions, and evaluate cash-producing real estate.
+                </p>
+              </div>
+            </div>
+            <div class="links-matrix">
+              <div class="dropdown-column">
+                <h4 class="text-base">📈 Asset Allocation</h4>
+                <ul>
+                  <li><a href="#">Index Investing & ETFs</a></li>
+                  <li><a href="#">Portfolio Optimization</a></li>
+                  <li><a href="CelebratingRetirement.html">Roth Conversions & Tax-Loss</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4 class="text-base">🏡 Real Estate</h4>
+                <ul>
+                  <li><a href="#">Rental Property Sourcing</a></li>
+                  <li><a href="#">REIT & Index Allocation</a></li>
+                  <li><a href="#">House Hacking Blueprint</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4 class="text-base">⚙️ Interactive Tools</h4>
+                <ul>
+                  <li><a href="CelebratingRetirement.html">Retirement Strategy Engine</a></li>
+                  <li><a href="#">Generational Wealth Map</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 4: DESIGN YOUR LIFE -->
+        <li class="dropdown-trigger">
+          <a href="Happy_retirement.html" class="active font-bold text-white text-sm">Design Your Life <span class="text-sm opacity-70">▼</span></a>
+          <div class="mega-dropdown text-left text-slate-800">
+            <div class="flex flex-col justify-between pr-6 border-r border-slate-100">
+              <div class="space-y-3">
+                <h2 class="text-2xl font-black tracking-tight text-slate-900 font-serif">Design Your Life</h2>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">
+                  Map your life transition, compare domestic US states against overseas tax shelters, and design lifestyle pathways.
+                </p>
+              </div>
+            </div>
+            <div class="links-matrix">
+              <div class="dropdown-column">
+                <h4 class="text-base">🗺️ Retirement Planning</h4>
+                <ul>
+                  <li><a href="RetirementHub.html">Retirement Blueprint Map</a></li>
+                  <li><a href="Retirement_Master_Plan.html">The Master Plan Module</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4 class="text-base">✈️ Location Arbitrage</h4>
+                <ul>
+                  <li><a href="UScitymatcher.html">US City Matcher Tool</a></li>
+                  <li><a href="RetiringOverseas.html">Overseas Matcher Tool</a></li>
+                </ul> 
+              </div>
+              <div class="dropdown-column">
+                <h4 class="text-base">⚙️ Interactive Tools</h4>
+                <ul>
+                  <li><a href="#">Odyssey Journey Simulator</a></li>
+                  <li><a href="#">Lifestyle Comparison Engine</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+    <div class="search-container text-sm">
+      <form action="https://www.google.com/search" method="get" target="_blank">
+        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none z-10">🔍</span>
+        <input type="hidden" name="sitesearch" value="wealthlanding.com">
+        <input type="search" name="q" class="search-input" placeholder="Search systems, tools..." aria-label="Search WealthLanding">
+      </form>
+    </div>
+  </header>
+
+  <!-- MASTER VIEW BLOCKS GRID layout with sticky Blueprint Panel on the right -->
+  <div class="max-w-[1240px] mx-auto px-6 py-12 flex flex-col lg:flex-row gap-8 items-start">
+    
+    <!-- LEFT SIDE: EDITORIAL & TIMELINE FLOW -->
+    <main class="w-full lg:flex-1 space-y-12">
+
+      <!-- EDITORIAL HERO HEADER (RESTORED FROM MASTER PLAN) -->
+      <section class="bg-gradient-to-br from-[#0B132B] to-[#1E293B] text-white rounded-3xl p-12 text-center relative overflow-hidden shadow-xl border border-slate-800 !py-12">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(2,177,125,0.08),transparent_50%)]"></div>
+        <div class="relative z-10 space-y-4">
+          <span class="inline-block bg-emerald-500/15 border border-emerald-500/35 text-emerald-300 font-bold text-sm uppercase tracking-widest px-4 py-1.5 rounded-full">
+            The Master Plan
+          </span>
+          <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-white leading-tight font-serif">
+            Your Retirement Story
+          </h1>
+          <p class="text-slate-300 max-w-xl mx-auto text-base">
+            Based on what you shared, this is the retirement your current decisions are likely to create.
+          </p>
+        </div>
+      </section>
+
+      <!-- EXECUTIVE SUMMARY -->
+      <section class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm text-left space-y-4 !py-8">
+        <span class="text-emerald-600 font-bold text-sm uppercase tracking-widest block">Executive Summary</span>
+        <h2 class="text-2xl font-black text-slate-900 tracking-tight font-serif">The Master Narrative</h2>
+        <p id="narrativeSummary" class="text-slate-700 text-lg leading-relaxed font-normal">
+          Loading your personalized retirement summary...
+        </p>
+      </section>
+
+      <!-- YOUR RETIREMENT IDENTITY -->
+      <section class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm text-left space-y-6 !py-8">
+        <span class="text-emerald-600 font-bold text-sm uppercase tracking-widest block">Your Retirement Identity</span>
+        <h2 class="text-2xl font-black text-slate-900 tracking-tight font-serif">Profile Baselines</h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+          <!-- Card 1 -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 flex flex-col justify-between">
+            <span class="font-bold text-slate-400 uppercase tracking-widest block">Current Age</span>
+            <div id="idCurrentAge" class="text-lg font-bold text-slate-900 font-serif mt-1">—</div>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 flex flex-col justify-between">
+            <span class="font-bold text-slate-400 uppercase tracking-widest block">Target Retirement</span>
+            <div id="idRetireAge" class="text-lg font-bold text-slate-900 font-serif mt-1">—</div>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 flex flex-col justify-between">
+            <span class="font-bold text-slate-400 uppercase tracking-widest block">Retirement Window</span>
+            <div id="idWindow" class="text-lg font-bold text-slate-900 font-serif mt-1">—</div>
+          </div>
+          <!-- Card 4 -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 flex flex-col justify-between">
+            <span class="font-bold text-slate-400 uppercase tracking-widest block">Filing State</span>
+            <div id="idFilingState" class="text-lg font-bold text-slate-900 font-serif mt-1">—</div>
+          </div>
+          <!-- Card 5 -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 flex flex-col justify-between">
+            <span class="font-bold text-slate-400 uppercase tracking-widest block">Investable Assets</span>
+            <div id="idInvestable" class="text-lg font-bold text-slate-900 font-serif mt-1">—</div>
+          </div>
+          <!-- Card 6 -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 flex flex-col justify-between">
+            <span class="font-bold text-slate-400 uppercase tracking-widest block">Primary Priority</span>
+            <div id="idPriority" class="text-lg font-bold text-slate-900 font-serif mt-1">—</div>
+          </div>
+          <!-- Card 7 -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 flex flex-col justify-between">
+            <span class="font-bold text-slate-400 uppercase tracking-widest block">Expected Location</span>
+            <div id="idLocation" class="text-lg font-bold text-slate-900 font-serif mt-1">—</div>
+          </div>
+          <!-- Card 8 -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 flex flex-col justify-between border-l-4 border-l-emerald-500">
+            <span class="font-bold text-slate-400 uppercase tracking-widest block">Forecast Confidence</span>
+            <div id="idConfidence" class="text-lg font-bold text-emerald-600 font-serif mt-1">—</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- YOUR RETIREMENT TIMELINE (NARRATIVE GRAPHIC) -->
+      <section class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm text-left space-y-6 !py-8">
+        <span class="text-emerald-600 font-bold text-sm uppercase tracking-widest block">Your Retirement Timeline</span>
+        <h2 class="text-2xl font-black text-slate-900 tracking-tight font-serif">The Chronological Journey</h2>
+        
+        <div class="timeline-visual text-sm">
+          <div class="timeline-node active">
+            <div id="node-today-age" class="node-dot">--</div>
+            <div class="node-label">Today</div>
+          </div>
+          <div class="timeline-node active">
+            <div id="node-retire-age" class="node-dot">--</div>
+            <div class="node-label">Retire</div>
+          </div>
+          <div class="timeline-node">
+            <div class="node-dot">65</div>
+            <div class="node-label">Medicare</div>
+          </div>
+          <div class="timeline-node">
+            <div class="node-dot">67</div>
+            <div class="node-label">Social Security</div>
+          </div>
+          <div class="timeline-node">
+            <div class="node-dot">73</div>
+            <div class="node-label">RMDs</div>
+          </div>
+          <div class="timeline-node">
+            <div class="node-dot">90</div>
+            <div class="node-label">Estate End</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KEY DECISIONS BY RETIREMENT PHASE (EDITORIAL CARDS) -->
+      <section class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm text-left space-y-8 !py-8">
+        <div class="space-y-2">
+          <span class="text-emerald-600 font-bold text-sm uppercase tracking-widest block">Chronological Execution</span>
+          <h2 class="text-2xl font-black text-slate-900 tracking-tight font-serif">Key Decisions By Retirement Phase</h2>
+          <p class="text-slate-500 text-sm">Every stage of your retirement timeline carries specific strategic priorities. Below is your sequential blueprint map.</p>
+        </div>
+
+        <div class="phase-stack space-y-6">
+          
+          <!-- PHASE 1: PREPARATION YEARS -->
+          <div class="phase-block-card prep-theme">
+            <div class="phase-meta-side">
+              <span id="lblPrepSpan" class="phase-badge text-sm">30 → 65</span>
+              <h3 class="text-2xl font-bold font-serif">Preparation Years</h3>
+              <p class="phase-desc text-slate-600 text-base mt-2">These are your active working years. Your focus should rest entirely on maximizing accumulation channels and asset location sequencing.</p>
+            </div>
+            <div class="phase-content-side space-y-4">
+              <div class="decisions-box text-sm">
+                <h4 class="font-bold">Key Decisions</h4>
+                <ul class="list-disc pl-4 text-slate-950 space-y-1">
+                  <li>Retirement timeline margins</li>
+                  <li>Portfolio structural locations</li>
+                  <li>Traditional vs. Roth contributions</li>
+                </ul>
+              </div>
+              <div class="text-sm bg-white/60 p-3 rounded-lg border border-blue-200/50">
+                <span class="font-bold text-blue-800">Why this matters:</span> Large Traditional deferrals create massive silent future tax liabilities.
+              </div>
+            </div>
+          </div>
+
+          <!-- PHASE 2: RETIREMENT BRIDGE YEARS -->
+          <div class="phase-block-card bridge-theme">
+            <div class="phase-meta-side">
+              <span id="lblBridgeSpan" class="phase-badge text-sm">65 → 65</span>
+              <h3 class="text-2xl font-bold font-serif">Retirement Bridge Years</h3>
+              <p class="phase-desc text-slate-600 text-base mt-2">The period between stepping away from work and the beginning of Medicare. Managing your visible income bracket is critical.</p>
+            </div>
+            <div class="phase-content-side space-y-4">
+              <div class="decisions-box text-sm">
+                <h4 class="font-bold">Key Decisions</h4>
+                <ul class="list-disc pl-4 text-slate-950 space-y-1">
+                  <li>Roth conversion windows</li>
+                  <li>ACA healthcare subsidy bridging</li>
+                  <li>Geographic arbitrage adjustments</li>
+                </ul>
+              </div>
+              <div class="text-sm bg-white/60 p-3 rounded-lg border border-emerald-200/50">
+                <span class="font-bold text-emerald-800">Why this matters:</span> Like Tom, choosing to leave your assets unoptimized risks millions in structural leakage.
+              </div>
+            </div>
+          </div>
+
+          <!-- PHASE 3: MEDICARE YEARS -->
+          <div class="phase-block-card medi-theme">
+            <div class="phase-meta-side">
+              <span class="phase-badge text-sm">Age 65 → Age 73</span>
+              <h3 class="text-2xl font-bold font-serif">Medicare Years</h3>
+              <p class="phase-desc text-slate-600 text-base mt-2">Healthcare decisions become structural. Managing modified income limits avoids high premium surcharges.</p>
+            </div>
+            <div class="phase-content-side space-y-4">
+              <div class="decisions-box text-sm">
+                <h4 class="font-bold">Key Decisions</h4>
+                <ul class="list-disc pl-4 text-slate-950 space-y-1">
+                  <li>Medicare premium matching (IRMAA)</li>
+                  <li>Social Security filing timelines</li>
+                  <li>Income bracket stabilization</li>
+                </ul>
+              </div>
+              <div class="text-sm bg-white/60 p-3 rounded-lg border border-teal-200/50">
+                <span class="font-bold text-teal-800">Why this matters:</span> Missing key subsidy brackets triggers major healthcare surcharges.
+              </div>
+            </div>
+          </div>
+
+          <!-- PHASE 4: RMD YEARS -->
+          <div class="phase-block-card rmd-theme">
+            <div class="phase-meta-side">
+              <span class="phase-badge text-sm">Age 73+</span>
+              <h3 class="text-2xl font-bold font-serif">RMD Years</h3>
+              <p class="phase-desc text-slate-600 text-base mt-2">Forced asset liquidations begin. Tax management becomes critical as the government mandates minimum withdrawals.</p>
+            </div>
+            <div class="phase-content-side space-y-4">
+              <div class="decisions-box text-sm">
+                <h4 class="font-bold">Key Decisions</h4>
+                <ul class="list-disc pl-4 text-slate-950 space-y-1">
+                  <li>Required minimum distributions (RMDs)</li>
+                  <li>Withdrawal sequencing order</li>
+                  <li>Strategic legacy transfers</li>
+                </ul>
+              </div>
+              <div class="text-sm bg-white/60 p-3 rounded-lg border border-orange-200/50">
+                <span class="font-bold text-orange-800">Why this matters:</span> RMD spikes can trigger unexpected taxation on Social Security and Medicare.
+              </div>
+            </div>
+          </div>
+
+          <!-- PHASE 5: LEGACY / CARE YEARS -->
+          <div class="phase-block-card care-theme">
+            <div class="phase-meta-side">
+              <span class="phase-badge text-sm">Age 80+</span>
+              <h3 class="text-2xl font-bold font-serif">Legacy / Care Years</h3>
+              <p class="phase-desc text-slate-600 text-base mt-2">The final chapters. Focus shifts to estate efficiency, medical planning, and family proximity support models.</p>
+            </div>
+            <div class="phase-content-side space-y-4">
+              <div class="decisions-box text-sm">
+                <h4 class="font-bold">Key Decisions</h4>
+                <ul class="list-disc pl-4 text-slate-950 space-y-1">
+                  <li>Long-term care funding</li>
+                  <li>Family proximity logistics</li>
+                  <li>Generation transition vehicles</li>
+                </ul>
+              </div>
+              <div class="text-sm bg-white/60 p-3 rounded-lg border border-purple-200/50">
+                <span class="font-bold text-purple-800">Why this matters:</span> Early structuring prevents estate capital erosion during transition.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- UNDERSTANDING YOUR FORECAST -->
+      <section class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm text-left space-y-6 !py-8">
+        <div class="space-y-2">
+          <span class="text-emerald-600 font-bold text-sm uppercase tracking-widest block">Understanding Your Forecast</span>
+          <h2 class="text-2xl font-black text-slate-900 tracking-tight font-serif">Personalized Case Studies</h2>
+          <p class="text-slate-500 text-sm">We've selected these targeted case studies matching your portfolio metrics to explain how your baseline projections behave.</p>
+        </div>
+
+        <div id="decision-explainers-container" class="space-y-4">
+          <!-- Rendered dynamically based on profile factors -->
+        </div>
+      </section>
+
+      <!-- BOTTOM SECTION: FINAL CTA -->
+      <section class="bg-slate-900 text-white rounded-2xl p-8 border border-slate-800 text-left relative overflow-hidden !py-12">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(2,177,125,0.06),transparent_40%)]"></div>
+        <div class="relative z-10 max-w-xl space-y-6 text-base">
+          <span class="text-emerald-400 font-bold text-sm uppercase tracking-widest bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20 inline-block">
+            Choose Your Destination
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white font-serif leading-tight">
+            This is one possible future.
+          </h2>
+          <p class="text-slate-300 leading-relaxed">
+            These projections assume you continue with your current strategy. If you want a different retirement, the next step is to explore alternative paths.
+          </p>
+          <div class="pt-2">
+            <button onclick="window.location.href='odyssey-exploration.html'" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black px-8 py-3.5 rounded-lg text-sm transition-colors shadow-lg tracking-wide uppercase font-sans">
+              Explore Different Futures →
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- RIGHT SIDEBAR: PERSISTENT RETIREMENT BLUEPRINT Progress PANEL -->
+    <aside class="w-full lg:w-[320px] shrink-0 lg:sticky lg:top-6 space-y-6 text-sm">
+      
+      <div class="bg-slate-950 text-white rounded-2xl p-6 border border-slate-800 shadow-xl space-y-6">
+        
+        <!-- Header -->
+        <div class="border-b border-slate-900 pb-4 text-left">
+          <span class="uppercase tracking-widest font-extrabold text-emerald-400 block">YOUR RETIREMENT BLUEPRINT</span>
+          <h3 class="text-lg font-black mt-1 text-slate-100 font-serif leading-tight">Current Mission:</h3>
+          <p class="text-slate-400 mt-0.5">Understand Your Current Future</p>
+        </div>
+
+        <!-- Progress Tracker -->
+        <div class="space-y-2 text-left text-sm">
+          <div class="flex justify-between font-bold text-slate-400">
+            <span>Overall Progress</span>
+            <span class="text-emerald-400">18%</span>
+          </div>
+          <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden">
+            <div class="bg-emerald-500 h-full" style="width: 18%;"></div>
+          </div>
+        </div>
+
+        <!-- Navigation Map -->
+        <div class="space-y-4 pt-2 text-left">
+          <!-- Step 1 -->
+          <div class="flex items-start gap-3">
+            <div class="w-5 h-5 rounded-full bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-emerald-400 font-bold shrink-0">✓</div>
+            <div>
+              <p class="font-bold text-slate-200">Retirement Interview</p>
+              <p class="text-slate-500">Completed Baseline Metrics</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex items-start gap-3">
+            <div class="w-5 h-5 rounded-full bg-blue-500/20 border border-blue-500/50 flex items-center justify-center text-blue-400 font-bold shrink-0">→</div>
+            <div>
+              <p class="font-bold text-slate-200">Explore Retirement Paths</p>
+              <p class="text-slate-400">Active: Forecast Evaluation</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex items-start gap-3 text-slate-500 opacity-50">
+            <div class="w-5 h-5 rounded-full border border-slate-800 flex items-center justify-center font-bold shrink-0">□</div>
+            <div>
+              <p class="font-bold text-slate-300">Build Transition Plan</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="flex items-start gap-3 text-slate-500 opacity-50">
+            <div class="w-5 h-5 rounded-full border border-slate-800 flex items-center justify-center font-bold shrink-0">□</div>
+            <div>
+              <p class="font-bold text-slate-300">Optimize Strategy</p>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="flex items-start gap-3 text-slate-500 opacity-50">
+            <div class="w-5 h-5 rounded-full border border-slate-800 flex items-center justify-center font-bold shrink-0">□</div>
+            <div>
+              <p class="font-bold text-slate-300">Final Blueprint</p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-slate-900">
+
+        <!-- Snapshot -->
+        <div class="space-y-2.5 text-left">
+          <span class="text-slate-400 uppercase tracking-widest font-bold block">Current Snapshot</span>
+          <div class="flex justify-between border-b border-slate-900 pb-1.5">
+            <span class="text-slate-400">Retire Age:</span>
+            <span id="side-retire" class="font-bold text-slate-200">--</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-900 pb-1.5">
+            <span class="text-slate-400">Investable Assets:</span>
+            <span id="side-assets" class="font-bold text-emerald-400">--</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-900 pb-1.5">
+            <span class="text-slate-400">Target Spend:</span>
+            <span id="side-spend" class="font-bold text-slate-200">--</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slate-400">Primary Priority:</span>
+            <span id="side-priority" class="font-bold text-emerald-400 truncate max-w-[140px] text-right">--</span>
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <button onclick="window.location.href='odyssey-exploration.html'" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black py-3 rounded-lg text-sm transition-colors shadow-lg tracking-wide uppercase font-sans">
+            Explore Paths →
+          </button>
+        </div>
+
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- PERSISTENT RECOVERY CONTROLLER & SIMULATION ENGINE -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // 1. Recover User Parameters from localStorage.RetirementProfile
+      let profile = {};
+      try {
+        profile = JSON.parse(localStorage.getItem('RetirementProfile')) || {};
+      } catch (e) {
+        profile = {};
+      }
+
+      // Unpack deep variables or use flat local fallbacks
+      const currentAgeStr = profile.identity?.currentAge || localStorage.getItem('wl_current_age') || "45";
+      const retireAgeStr = profile.identity?.retireAge || localStorage.getItem('wl_target_age') || "65";
+      const savingsStr = profile.financials?.savings || localStorage.getItem('wl_savings') || "380000";
+      const spendStr = profile.financials?.spend || localStorage.getItem('wl_spend') || "6000";
+      const filingStateStr = profile.identity?.filingState || localStorage.getItem('wl_filing_state') || "FL";
+      const expectedLocationStr = profile.identity?.expectedLocation || localStorage.getItem('wl_geoPreference') || "static";
+      const priorityStr = profile.identity?.priority || localStorage.getItem('wl_primaryConcern') || "taxes";
+
+      const ageNum = parseInt(currentAgeStr);
+      const retireNum = parseInt(retireAgeStr);
+      const savingsNum = parseInt(savingsStr) || 0;
+      const spendNum = parseInt(spendStr);
+
+      const yearsToRetire = Math.max(1, retireNum - ageNum);
+
+      // Hydrate Sidebar & Identity Grid Fields
+      document.getElementById('side-retire').innerText = `Age ${retireNum}`;
+      document.getElementById('side-assets').innerText = `$${savingsNum.toLocaleString()}`;
+      document.getElementById('side-spend').innerText = `$${(spendNum * 12).toLocaleString()}/yr`;
+      document.getElementById('side-priority').innerText = formatPriorityText(priorityStr);
+
+      document.getElementById('idCurrentAge').innerText = `${ageNum} yrs`;
+      document.getElementById('idRetireAge').innerText = `Age ${retireNum}`;
+      document.getElementById('idWindow').innerText = `${yearsToRetire} Years`;
+      document.getElementById('idFilingState').innerText = filingStateStr;
+      document.getElementById('idInvestable').innerText = `$${savingsNum.toLocaleString()}`;
+      document.getElementById('idPriority').innerText = formatPriorityText(priorityStr);
+      document.getElementById('idLocation').innerText = expectedLocationStr === 'static' ? 'Domestic Fixed' : 'Arbitrage Flex';
+
+      // Timeline Ages
+      document.getElementById('node-today-age').innerText = ageNum;
+      document.getElementById('node-retire-age').innerText = retireNum;
+      document.getElementById('lblPrepSpan').innerText = `${ageNum} → ${retireNum}`;
+      document.getElementById('lblBridgeSpan').innerText = `${retireNum} → 65`;
+
+      // 2. RUN SILENT BASELINE PROJECTION ENGINE
+      const inflationRate = 0.025;
+      const growthRate = 0.065;
+      const taxRatePretax = 0.22;
+
+      let currentBalance = savingsNum;
+      let totalSpent = 0;
+      let totalTaxPaid = 0;
+      let peakWealth = savingsNum;
+      let portfolioDryAge = null;
+      let timeline = [];
+
+      for (let y = ageNum; y <= 90; y++) {
+        let tax = 0;
+        let withdrawal = 0;
+        let contribution = 0;
+        
+        let growth = currentBalance * growthRate;
+        currentBalance += growth;
+
+        if (currentBalance > peakWealth) {
+          peakWealth = currentBalance;
+        }
+
+        if (y < retireNum) {
+          contribution = 12000; 
+          currentBalance += contribution;
+          tax = 8500; 
+        } else {
+          let annualNeeds = spendNum * 12 * Math.pow(1 + inflationRate, y - retireNum);
+          withdrawal = annualNeeds;
+          
+          if (y >= 67) {
+            let ssBenefit = 24000 * Math.pow(1 + inflationRate, y - 67);
+            withdrawal = Math.max(0, annualNeeds - ssBenefit);
+          }
+
+          if (y >= 73) {
+            let rmdBase = currentBalance * 0.8;
+            let divisor = Math.max(1, 27.4 - (y - 73));
+            let rmdAmount = rmdBase / divisor;
+            tax = rmdAmount * taxRatePretax;
+          } else {
+            tax = withdrawal * 0.12;
+          }
+
+          currentBalance -= (withdrawal + tax);
+          totalSpent += withdrawal;
+        }
+
+        totalTaxPaid += tax;
+
+        if (currentBalance < 0) {
+          currentBalance = 0;
+          if (portfolioDryAge === null) {
+            portfolioDryAge = y;
+          }
+        }
+
+        timeline.push({
+          age: y,
+          balance: currentBalance,
+          withdrawal: withdrawal,
+          tax: tax,
+          contribution: contribution
+        });
+      }
+
+      // Determine confidence based on survival
+      let confidence = 95;
+      if (portfolioDryAge !== null) {
+        let yearsSurv = portfolioDryAge - retireNum;
+        confidence = Math.max(15, Math.round((yearsSurv / (90 - retireNum)) * 100));
+      }
+
+      document.getElementById('idConfidence').innerText = `${confidence}%`;
+
+      // Save baseline silently back to RetirementProfile inside localStorage
+      profile.baselineForecast = {
+        projectedRetirementAge: retireNum,
+        projectedEstate: currentBalance,
+        totalLifetimeSpending: totalSpent,
+        estimatedLifetimeTaxes: totalTaxPaid,
+        confidence: confidence,
+        timeline: timeline,
+        assumptions: {
+          inflationRate: inflationRate,
+          growthRate: growthRate,
+          taxRatePretax: taxRatePretax
+        },
+        createdAt: new Date().toISOString()
+      };
+      localStorage.setItem('RetirementProfile', JSON.stringify(profile));
+
+      // 3. GENERATE DYNAMIC EXECUTIVE STORY SUMMARY
+      const stabilityTerm = confidence >= 80 ? "stable and highly secure" : (confidence >= 50 ? "moderately balanced" : "stretched and high-deficit");
+      document.getElementById('narrativeSummary').innerHTML = `
+        Based on your current profile, you are age <strong>${ageNum}</strong> and targeting retirement at age <strong>${retireNum}</strong>. If you continue with your current savings of <strong>$${savingsNum.toLocaleString()}</strong>, your annual target spending, and investment assumptions, your retirement story appears to follow a <strong>${stabilityTerm}</strong> trajectory. Taxes during your RMD stages are projected to reach <strong>$${Math.round(totalTaxPaid).toLocaleString()}</strong> in cumulative drag, leaving an inheritance estate remainder of <strong>$${Math.round(currentBalance).toLocaleString()}</strong>. This is not a recommendation. It is your current future.
+      `;
+
+      // 4. HYDRATE DECISION EXPLAINERS ACCORDING TO LOCAL RULES
+      const explainersContainer = document.getElementById('decision-explainers-container');
+      explainersContainer.innerHTML = "";
+
+      const explainerBank = {
+        irs_owner: {
+          title: "The IRS Co-owner",
+          category: "Traditional Portfolio Drag",
+          story: "Most of your retirement balances remain tax-deferred. The government hasn't forgotten about these taxes—the bill has simply been postponed.",
+          reason: "Because your traditional accounts hold deferred tax liabilities.",
+          url: "bill-and-tom-story.html"
+        },
+        bill_tom: {
+          title: "Bill vs Tom",
+          category: "Asset Location Case Study",
+          story: "Bill left $5.1 million while Tom left $3.3 million despite retiring on the same day with identical nest eggs. Discover how gradual Roth conversions insulated Bill's estate.",
+          reason: "Because your large portfolio and legacy priorities expose your wealth to structural estate transfer drag.",
+          url: "bill-and-tom-story.html"
+        },
+        health_mismatch: {
+          title: "The Couple Who Paid $80,000 Too Much",
+          category: "Timing & Subsidies",
+          story: "Learn how retiring before Medicare age forces you to navigate early retirement ACA tax brackets, where a small mistake can trigger massive medical premiums.",
+          reason: "Because your target retirement age of before 65 requires managing health insurance bridge years.",
+          url: "CelebratingRetirement.html"
+        },
+        rmd_shock: {
+          title: "The Million Dollar RMD",
+          category: "Tax Optimization",
+          story: "Forced distributions at age 73 spike your ordinary income bracket, driving unexpected taxation on Social Security and Medicare surcharges.",
+          reason: "Because high future pre-tax accumulation pools will compound tax-deferred until distribution age.",
+          url: "CelebratingRetirement.html"
+        },
+        travel_worth: {
+          title: "A Move Worth $500,000",
+          category: "Geographic Arbitrage",
+          story: "Learn how moving states or cities can dramatically extend your portfolio's survival by shifting structural overhead models.",
+          reason: "Because your target expected location includes high geographic flexibility.",
+          url: "CelebratingRetirement.html"
+        },
+        default_chapters: {
+          title: "Your Retirement Has Chapters",
+          category: "Timeline Mapping",
+          story: "Understand how your cashflow demands, taxes, and income streams move in separate historical waves rather than standard static years.",
+          reason: "Baseline snapshot configuration.",
+          url: "CelebratingRetirement.html"
+        }
+      };
+
+      let explainersAttached = 0;
+
+      // Rule-based matching triggers
+      if (savingsNum > 100000) {
+        appendExplainerCard(explainerBank.irs_owner);
+        explainersAttached++;
+      }
+      if (savingsNum > 300000 || priorityStr === "family") {
+        appendExplainerCard(explainerBank.bill_tom);
+        explainersAttached++;
+      }
+      if (retireNum < 65) {
+        appendExplainerCard(explainerBank.health_mismatch);
+        explainersAttached++;
+      }
+      if (savingsNum > 250000) {
+        appendExplainerCard(explainerBank.rmd_shock);
+        explainersAttached++;
+      }
+      if (expectedLocationStr !== "static") {
+        appendExplainerCard(explainerBank.travel_worth);
+        explainersAttached++;
+      }
+
+      if (explainersAttached === 0) {
+        appendExplainerCard(explainerBank.default_chapters);
+      }
+
+      function appendExplainerCard(data) {
+        const card = document.createElement('div');
+        card.className = "bg-white border border-slate-200 rounded-xl p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-left shadow-sm text-sm";
+        card.innerHTML = `
+          <div class="space-y-1.5 flex-1">
+            <span class="text-sm font-bold text-slate-400 uppercase tracking-widest block font-sans">${data.category}</span>
+            <h3 class="text-lg font-extrabold text-slate-900 font-serif">${data.title}</h3>
+            <p class="text-slate-600 text-sm leading-relaxed max-w-xl font-sans">${data.story}</p>
+            <p class="text-sm text-blue-600 font-semibold font-sans">🔍 Target Fit: ${data.reason}</p>
+          </div>
+          <button onclick="window.location.href='${data.url}'" class="bg-slate-900 hover:bg-slate-800 text-white font-bold px-4 py-2.5 rounded-lg text-sm transition-colors shrink-0 uppercase tracking-wider font-sans">
+            Read Case Study →
+          </button>
+        `;
+        explainersContainer.appendChild(card);
+      }
+
+      function formatPriorityText(val) {
+        const map = {
+          taxes: "Tax Mitigation",
+          healthcare: "Healthcare Preservation",
+          family: "Family Legacy",
+          overseas: "Overseas Expatriate",
+          timeline: "Timeline Acceleration"
+        };
+        return map[val] || "Comprehensive Plan";
+      }
+    });
+  </script>
+</body>
+</html>
