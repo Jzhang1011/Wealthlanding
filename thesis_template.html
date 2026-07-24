@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9JMJJ5CJR4');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WealthLanding — Investment Thesis</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#0B132B;--navy2:#111c38;--emerald:#02B17D;--border:#e2e8f0;--text:#0f172a;--muted:#64748b}
+    *{box-sizing:border-box}
+    body{font-family:Inter,sans-serif;margin:0;background:#f8fafc;color:var(--text)}
+    .font-serif{font-family:"Playfair Display",serif}
+    .legacyglobal-header{position:sticky;top:0;z-index:1000;background:var(--navy);color:white;border-bottom:1px solid #1e293b}
+    .legacyheader-row{height:72px;max-width:1440px;margin:auto;padding:0 34px;display:flex;align-items:center;gap:28px}
+    .legacylogo{font-size:23px;font-weight:800;color:white;text-decoration:none;letter-spacing:-.04em;white-space:nowrap}
+    .legacylogo span{color:var(--emerald)}
+    .legacytop-nav-links{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0;flex:1}
+    .legacynav-item{position:static}
+    .legacynav-link{display:block;color:#a7b4c7;text-decoration:none;font-size:15px;font-weight:600;padding:12px 13px;border-radius:8px;white-space:nowrap}
+    .legacynav-link:hover,.legacynav-link.active{background:rgba(255,255,255,.08);color:white}
+    .legacysearch-form{width:260px;position:relative}
+    .legacysearch-input{width:100%;background:#18243d;border:1px solid #334155;color:white;padding:10px 14px 10px 38px;border-radius:9px;font-size:13px;outline:none}
+    .legacysearch-input:focus{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,.15)}
+    .legacysearch-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:#94a3b8;font-size:14px}
+    .legacymega-dropdown{position:absolute;top:72px;left:50%;transform:translateX(-50%) translateY(10px);width:min(1180px,94vw);background:white;border:1px solid var(--border);border-radius:18px;box-shadow:0 24px 60px rgba(15,23,42,.18);padding:30px;display:grid;grid-template-columns:1.05fr 2.95fr;gap:34px;opacity:0;visibility:hidden;transition:.2s ease;z-index:2000}
+    .legacynav-item:hover .legacymega-dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+    .legacymega-feature{background:linear-gradient(145deg,#ecfdf5,#f8fafc);border:1px solid #d1fae5;border-radius:15px;padding:24px}
+    .legacymega-kicker{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#059669;font-weight:800}
+    .legacymega-feature h3{font-family:"Playfair Display",serif;margin:9px 0 8px;font-size:23px;color:#0f172a}
+    .legacymega-feature p{font-size:13px;line-height:1.65;color:#64748b;margin:0 0 18px}
+    .legacymega-feature a{font-size:12px;font-weight:700;color:#047857;text-decoration:none}
+    .legacylinks-matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+    .legacydropdown-column h4{font-size:13px;color:#0f172a;margin:0 0 13px;font-weight:800}
+    .legacydropdown-column ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+    .legacydropdown-column a{font-size:12px;color:#64748b;text-decoration:none;line-height:1.4}
+    .legacydropdown-column a:hover{color:#059669}
+    .legacymobile-button{display:none;margin-left:auto;background:#18243d;color:white;border:1px solid #334155;border-radius:8px;padding:8px 10px}
+    .eyebrow{font-size:10px;letter-spacing:.17em;text-transform:uppercase;font-weight:800;color:#059669}
+    .card{background:white;border:1px solid rgba(226,232,240,.9);border-radius:18px;box-shadow:0 8px 30px rgba(15,23,42,.035)}
+    .status-pill{display:inline-flex;align-items:center;gap:7px;background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;border-radius:999px;padding:7px 11px;font-size:11px;font-weight:800}
+    .dot{width:7px;height:7px;border-radius:50%;background:#10b981;box-shadow:0 0 0 4px rgba(16,185,129,.11)}
+    .metric-bar{height:7px;background:#e2e8f0;border-radius:999px;overflow:hidden}
+    .metric-fill{height:100%;background:linear-gradient(90deg,#059669,#34d399);border-radius:999px}
+    .opportunity-card{transition:.2s ease}
+    .opportunity-card:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(15,23,42,.08)}
+    .rank-badge{width:30px;height:30px;border-radius:10px;background:#0f172a;color:white;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+    .tag{font-size:9px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;border-radius:999px;padding:5px 8px}
+    .tag-green{background:#ecfdf5;color:#047857}.tag-blue{background:#eff6ff;color:#1d4ed8}.tag-amber{background:#fffbeb;color:#b45309}
+    .timeline-line{position:absolute;left:14px;top:21px;bottom:15px;border-left:2px solid #d1fae5}
+    footer{border-top:1px solid #e2e8f0;background:white}
+    @media(max-width:1000px){.legacysearch-form{display:none}.legacyheader-row{padding:0 18px}.legacytop-nav-links{display:none}.legacymobile-button{display:block}.legacymega-dropdown{display:none}}
+      /* GLOBAL HEADER POSITIONING AND HIGH STACKING INDEX Context */
+    .global-header {
+      background-color: #030712; 
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 2.5rem; 
+      border-bottom: 1px solid #1f2937;
+      width: 100%;
+      box-sizing: border-box;
+      position: relative; 
+      z-index: 1001;      
+    }
+
+    /* FORCED LIST ITEM ROW PACKING TO PREVENT VERTICAL STACKING BLOCKS */
+    .top-nav-links {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center;
+      gap: 1.5rem; 
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-nav-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.95rem; 
+      font-weight: 500;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .top-nav-links a:hover, .top-nav-links a.active {
+      color: white;
+    }
+
+    .logo {
+      font-size: 1.55rem; 
+      font-weight: 800;
+      color: white;
+      text-decoration: none;
+      letter-spacing: -0.04em;
+    }
+
+    .logo span {
+      color: #10b981; 
+    }
+
+    .search-container {
+      position: relative;
+      max-width: 420px; 
+      width: 100%;
+    }
+
+    .search-input {
+      width: 100%;
+      background-color: #1f2937;
+      border: 1px solid #374151;
+      color: white;
+      padding: 0.7rem 1.4rem 0.7rem 3.2rem; 
+      border-radius: 8px;
+      font-size: 0.9rem; 
+    }
+
+    /* CORRECT HORIZONTAL TOP NAV FLEX MATRIX */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #030712;
+      display: flex;
+      align-items: center;
+      padding: 0 44px;
+      height: 76px; 
+      box-shadow: 0 2px 10px rgba(0,0,0,.2);
+    }
+    
+    .topnav-links {
+      display: flex;
+      flex-direction: row;
+      gap: 6px;
+      align-items: center;
+      width: 100%;
+      position: relative;
+    }
+    
+    .topnav-link {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 20px; 
+      font-weight: 550;
+      padding: 9px 20px;
+      border-radius: 8px;
+      transition: background .15s, color .15s;
+      white-space: nowrap;
+    }
+    
+    .topnav-link:hover {
+      background: rgba(255,255,255,.08);
+      color: #fff;
+    }
+    
+    .topnav-link.active {
+      background: rgba(59,130,246,.15);
+      color: #60a5fa;
+    }
+    
+    .topnav-divider {
+      width: 1px;
+      height: 36px; 
+      background: rgba(255,255,255,.1);
+      margin: 0 12px;
+    }
+
+    /* VIEWPORT-CENTERED FLUID MEGA DROPDOWN BOX */
+    .mega-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 50%;                     
+      transform: translateX(-50%) translateY(12px); 
+      width: 95vw;                   
+      max-width: 1380px; 
+      background: white;
+      border: 1px solid #e2e8f0; 
+      border-radius: 1.2rem;
+      box-shadow: 0 25px 35px -5px rgba(0, 0, 0, 0.12), 0 12px 20px -5px rgba(0, 0, 0, 0.04);
+      padding: 3.5rem; 
+      display: grid !important;      
+      grid-template-columns: 1.1fr 2.9fr; 
+      gap: 4rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+      z-index: 2000; 
+      box-sizing: border-box;
+    }
+
+    /* Keep centering properties intact on hover triggers */
+    .dropdown-trigger:hover .mega-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+  
+    /* RIGHT COLUMN LINKS SUB-GRID */
+    .links-matrix {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem 2rem; 
+    }
+
+    .dropdown-column h4 {
+      color: var(--text); 
+      font-size: 1.15rem; 
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .dropdown-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem; 
+    }
+
+    .dropdown-column ul a {
+      color: var(--muted) !important; 
+      font-size: 0.95rem; 
+      font-weight: 500;
+      padding: 0;
+    }
+
+    .dropdown-column ul a:hover {
+      color: var(--emerald) !important; 
+    }
+
+    .dropdown-trigger {
+      position: static;
+    }
+
+/* Navigation integration helpers */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:1200px){.global-header{padding:.9rem 1rem}.top-nav-links{gap:.55rem}.top-nav-links a{font-size:.78rem}.mega-dropdown{padding:2rem;gap:2rem}.search-container{display:none}}
+@media(max-width:900px){.global-header{overflow-x:auto}.top-nav-links{min-width:max-content}.global-header form{display:none}}
+
+  </style>
+</head>
+<body data-thesis="jpy">
+<header class="global-header">
+    <a href="/" class="logo">Wealth<span>Landing</span></a>
+    <nav aria-label="Global Main Directory">
+      <ul class="top-nav-links">
+        
+        <!-- DROP-DOWN 1: OVERVIEW -->
+        <li class="dropdown-trigger">
+          <a href="#" class="font-semibold text-slate-300 hover:text-white flex items-center gap-1">Overview <span class="text-[12px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-8 border-r border-slate-100 text-left">
+              <div class="space-y-4">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Overview</h2>
+                <p class="text-slate-500 text-base leading-relaxed font-medium">
+                  Your primary workspace baseline dashboard. Track targets, access planning workflows, and monitor active signals.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" onclick="goToStep(1)" class="text-slate-900 font-bold text-base inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Start Diagnostic Tool <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-sm text-slate-400 mt-1">Review onboarding scores and map your baseline variables.</p>
+              </div>
+            </div>
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>🚀 Start Here</h4>
+                <ul>
+                  <li><a href="#" onclick="goToStep(1)">Financial Diagnostic</a></li>
+                  <li><a href="#" onclick="goToStep(3)">Wealth Score Tracker</a></li>
+                  <li><a href="/">Personal Dashboard</a></li>
+                  <li><a href="#">My Custom Roadmap</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🌟 Popular Journeys</h4>
+                <ul>
+                  <li><a href="#">Build My First Million</a></li>
+                  <li><a href="#">Early Retirement Strategy</a></li>
+                  <li><a href="#">Family Legacy Structures</a></li>
+                  <li><a href="#">Retirement Odyssey Hub</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>⏱️ Progress Framework</h4>
+                <ul>
+                  <li><a href="#">Latest Estimators</a></li>
+                  <li><a href="#">Core Strategic Guides</a></li>
+                  <li><a href="Retirement_Master_Plan.html">Resume Master Plan</a></li>
+                  <li><a href="#">Resume Transition Plan</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 2: BUILD WEALTH -->
+        <li class="dropdown-trigger">
+          <a href="#" class="font-semibold text-slate-300 hover:text-white flex items-center gap-1">Build Wealth <span class="text-[12px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-8 border-r border-slate-100 text-left">
+              <div class="space-y-4">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Build Wealth</h2>
+                <p class="text-slate-500 text-base leading-relaxed font-medium">
+                  Optimized cash flow architectures, active career negotiation parameters, and systematic credit rewards optimization.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" class="text-slate-900 font-bold text-base inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Explore Cash Flow Tactics <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-sm text-slate-400 mt-1">Discover strategic frameworks to accelerate personal savings rates.</p>
+              </div>
+            </div>
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>💼 Income Optimization</h4>
+                <ul>
+                  <li><a href="#">Salary Negotiation Rules</a></li>
+                  <li><a href="#">Career ROI Strategy</a></li>
+                  <li><a href="#">Side Business Design</a></li>
+                  <li><a href="#">Active Entrepreneurship</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>💵 Cash Flow & Credit</h4>
+                <ul>
+                  <li><a href="#">Budget Optimization</a></li>
+                  <li><a href="#">High-Yield Savings & Banking</a></li>
+                  <li><a href="#">Emergency Reserves Audit</a></li>
+                  <li><a href="#">Travel Hacking Protocols</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🛡️ Taxes & Tools</h4>
+                <ul>
+                  <li><a href="#">Tax Bracket Minimization</a></li>
+                  <li><a href="#">HSA & FSA Maximizers</a></li>
+                  <li><a href="#">Credit Card Rewards Optimizer</a></li>
+                  <li><a href="#">Dynamic Cash Flow Planner</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 3: GROW WEALTH -->
+        <li class="dropdown-trigger">
+          <a href="#" class="active font-semibold text-white flex items-center gap-1">Grow Wealth <span class="text-[12px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-8 border-r border-slate-100 text-left">
+              <div class="space-y-4">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Grow Wealth</h2>
+                <p class="text-slate-500 text-base leading-relaxed font-medium">Build long-term wealth through disciplined investing, independent research, and productive assets.</p>
+              </div>
+              <div class="pt-8">
+                <a href="#action-center" class="text-slate-900 font-bold text-base inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">Explore Investment Dashboard <span class="transition-transform group-hover:translate-x-1">→</span></a>
+                <p class="text-sm text-slate-400 mt-1">Evaluate active theses, opportunities, risks, and decision points.</p>
+              </div>
+            </div>
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>📈 Investment Strategies</h4>
+                <ul>
+                  <li><a href="#">Index Investing</a></li>
+                  <li><a href="#">Portfolio Design</a></li>
+                  <li><a href="#">Asset Allocation</a></li>
+                  <li><a href="OptimizeRoth.html">Roth Conversion Strategy</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🔬 Investment Research</h4>
+                <ul>
+                  <li><a href="#">Investment Dashboard</a></li>
+                  <li><a href="#">Thesis Library</a></li>
+                  <li><a href="#">Company Research</a></li>
+                  <li><a href="#">Market Regime Monitor</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🏡 Alternative Assets</h4>
+                <ul>
+                  <li><a href="#">Real Estate</a></li>
+                  <li><a href="#">REITs</a></li>
+                  <li><a href="#">Commodities</a></li>
+                  <li><a href="#">Private Markets</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>⚙️ Interactive Tools</h4>
+                <ul>
+                  <li><a href="#">Portfolio Simulator</a></li>
+                  <li><a href="#">Position Sizing</a></li>
+                  <li><a href="#">Investment Watchlist</a></li>
+                  <li><a href="#">Real Estate Analyzer</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 4: PROTECT WEALTH -->
+        <li class="dropdown-trigger">
+          <a href="#" class="font-semibold text-slate-300 hover:text-white flex items-center gap-1">Protect Wealth <span class="text-[12px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-8 border-r border-slate-100 text-left">
+              <div class="space-y-4">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Protect Wealth</h2>
+                <p class="text-slate-500 text-base leading-relaxed font-medium">
+                  Shield your net worth from sequence risk, structural tax drag, medical surcharges, and asset litigation.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" class="text-slate-900 font-bold text-base inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Audit Asset Protections <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-sm text-slate-400 mt-1">Review legal structures and risk metrics.</p>
+              </div>
+            </div>
+
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>🏥 Health & Insurance</h4>
+                <ul>
+                  <li><a href="cost_for_65+.html">Medicare Optimization</a></li>
+                  <li><a href="#">Global Medical Coverage</a></li>
+                  <li><a href="#">ACA Subsidy Bridge Math</a></li>
+                  <li><a href="#">Umbrella & Disability Policies</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🛡️ Estate basics & Trusts</h4>
+                <ul>
+                  <li><a href="#">Asset Protection Basics</a></li>
+                  <li><a href="#">Irrevocable Trust Vehicles</a></li>
+                  <li><a href="#">Beneficiary Nominations</a></li>
+                  <li><a href="#">Digital Cybersecurity Audits</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>📉 Risk Management</h4>
+                <ul>
+                  <li><a href="#">Sequence of Returns Risks</a></li>
+                  <li><a href="#">Inflation Protection Plans</a></li>
+                  <li><a href="cost_for_65+.html">Interactive Healthcare Planner</a></li>
+                  <li><a href="#">LTC Surcharge Analyzer</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 5: DESIGN YOUR LIFE -->
+        <li class="dropdown-trigger">
+          <a href="#" class="font-semibold text-slate-300 hover:text-white flex items-center gap-1">Design Your Life <span class="text-[12px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-8 border-r border-slate-100 text-left">
+              <div class="space-y-4">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Design Your Life</h2>
+                <p class="text-slate-500 text-base leading-relaxed font-medium">
+                  Map your life transition, compare domestic US states against overseas tax shelters, and design lifestyle pathways.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" class="text-slate-900 font-bold text-base inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Design Life Roadmap <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-sm text-slate-400 mt-1">Harness geographic arbitrage scenarios.</p>
+              </div>
+            </div>
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>🗺️ Retirement Planning</h4>
+                <ul>
+                  <li><a href="RetirementHub.html">Retirement Blueprint Map</a></li>
+                  <li><a href="Retirement_Master_Plan.html">The Master Plan Module</a></li>
+                  <li><a href="#">Transition Workspace</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>✈️ Location Arbitrage</h4>
+                <ul>
+                  <li><a href="UScitymatcher.html">US City Matcher Tool</a></li>
+                  <li><a href="RetiringOverseas.html">Overseas Matcher Tool</a></li>
+                  <li><a href="#">Geographic Cost Indexes</a></li>
+                  <li><a href="#">Digital Nomad Infrastructure</a></li>
+                </ul> 
+              </div>
+              <div class="dropdown-column">
+                <h4>⚙️ Interactive Tools</h4>
+                <ul>
+                  <li><a href="#">Odyssey Journey Simulator</a></li>
+                  <li><a href="#">Lifestyle Comparison Engine</a></li>
+                  <li><a href="#">Retirement Profile Explorer</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 6: LEGACY -->
+        <li class="dropdown-trigger">
+          <a href="#" class="font-semibold text-slate-300 hover:text-white flex items-center gap-1">Legacy <span class="text-[12px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-8 border-r border-slate-100 text-left">
+              <div class="space-y-4">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Legacy</h2>
+                <p class="text-slate-500 text-base leading-relaxed font-medium">
+                  Equip descendants with early wealth vehicles, optimize trust structures, and evaluate giving parameters.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" class="text-slate-900 font-bold text-base inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Build Estate Roadmap <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-sm text-slate-400 mt-1">Pass wealth and knowledge forward cleanly.</p>
+              </div>
+            </div>
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>👶 Children & Family</h4>
+                <ul>
+                  <li><a href="#">529 College Funding Models</a></li>
+                  <li><a href="#">Custodial Roth IRAs</a></li>
+                  <li><a href="#">Building Wealth Early</a></li>
+                  <li><a href="#">Youth Financial Education</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🏰 Estate & Governance</h4>
+                <ul>
+                  <li><a href="#">Trust Structures Blueprint</a></li>
+                  <li><a href="#">Roth IRA Inheritances</a></li>
+                  <li><a href="#">Estate Tax Surcharges</a></li>
+                  <li><a href="#">Charitable Giving & DAFs</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>🛠️ Interactive Tools</h4>
+                <ul>
+                  <li><a href="#">Legacy Planner</a></li>
+                  <li><a href="#">Education Funding Calculator</a></li>
+                  <li><a href="#">Generational Wealth Map</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DROP-DOWN 7: KNOWLEDGE LIBRARY -->
+        <li class="dropdown-trigger">
+          <a href="#" class="font-semibold text-slate-300 hover:text-white flex items-center gap-1">Knowledge <span class="text-[12px] opacity-70">▼</span></a>
+          <div class="mega-dropdown">
+            <div class="flex flex-col justify-between pr-8 border-r border-slate-100 text-left">
+              <div class="space-y-4">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Knowledge Library</h2>
+                <p class="text-slate-500 text-base leading-relaxed font-medium">
+                  Access our searchable, vetted concepts base. Avoid generalized advisor speak—review strict, logical formulas.
+                </p>
+              </div>
+              <div class="pt-8">
+                <a href="#" class="text-slate-900 font-bold text-base inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors group">
+                  Search All Knowledge Base <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <p class="text-sm text-slate-400 mt-1">Vetted research, calculators, and detailed case studies.</p>
+              </div>
+            </div>
+            <div class="links-matrix text-left">
+              <div class="dropdown-column">
+                <h4>💡 By Decision</h4>
+                <ul>
+                  <li><a href="#">Should I retire early?</a></li>
+                  <li><a href="#">Should I buy a rental property?</a></li>
+                  <li><a href="#">Should I convert to a Roth IRA?</a></li>
+                  <li><a href="#">Should I move overseas?</a></li>
+                  <li><a href="#">Should I delay Social Security?</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>⏳ By Life Stage & Topic</h4>
+                <ul>
+                  <li><a href="#">Planning in your 20s & 30s</a></li>
+                  <li><a href="#">Acceleration in your 40s & 50s</a></li>
+                  <li><a href="#">Distribution Models at 60+</a></li>
+                  <li><a href="#">Taxes, Investing & Healthcare</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>📚 Vetted Collections</h4>
+                <ul>
+                  <li><a href="#">Vetted Case Studies</a></li>
+                  <li><a href="#">Systematic Research Papers</a></li>
+                  <li><a href="CelebratingRetirement.html">Real Client Journeys</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+    <form class="w-full max-w-[240px] relative" action="https://www.google.com/search" method="get" target="_blank" role="search" onsubmit="return wlSubmitSearch(this)">
+      <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-base">🔍</span>
+      <label for="wl-site-search" class="sr-only">Search WealthLanding</label>
+      <input id="wl-site-search" name="q" type="search" class="w-full bg-slate-800 border border-slate-700 text-white pl-10 pr-4 py-2 rounded-md text-sm focus:outline-none focus:border-emerald-500 transition-all" placeholder="Search WealthLanding" aria-label="Search WealthLanding">
+    </form>
+  </header>
+
+<main class="max-w-6xl mx-auto px-5 md:px-7 py-8 md:py-11 space-y-7">
+  <section class="card p-6 md:p-8 grid lg:grid-cols-12 gap-8 items-center">
+    <div class="lg:col-span-8">
+      <div class="flex flex-wrap items-center gap-3 mb-4"><span class="eyebrow">Investment Outlook</span><span class="status-pill"><span class="dot"></span><span id="thesis-status-text">Thesis Intact</span></span><span class="text-[10px] text-slate-400 font-semibold"><span id="review-date-text">Reviewed July 23, 2026</span></span></div>
+      <h1 class="font-serif text-3xl md:text-5xl font-bold tracking-tight text-slate-950 leading-tight"><span id="hero-title">Investment thesis review and actionable opportunity set.</span></h1>
+      <p class="mt-4 text-sm md:text-base text-slate-500 leading-7 max-w-3xl"><span id="hero-summary">Loading the latest thesis decision, supporting evidence, and opportunity set.</span></p>
+    </div>
+    <div class="lg:col-span-4 bg-slate-950 rounded-2xl p-5 text-white">
+      <div class="text-[10px] uppercase tracking-[.16em] text-slate-400 font-bold">Current Decision</div>
+      <div class="mt-2 text-xl font-bold"><span id="decision-action-text">Hold supported opportunities</span></div>
+      <p class="text-xs text-slate-400 leading-5 mt-2"><span id="decision-summary-text">Loading the current decision summary.</span></p>
+      <div class="mt-5 pt-4 border-t border-slate-800 flex justify-between text-xs"><span class="text-slate-400">Material change</span><span id="material-change-text" class="font-bold text-emerald-400">No</span></div>
+    </div>
+  </section>
+
+  <section class="grid lg:grid-cols-12 gap-6">
+    <div class="lg:col-span-4 card p-5">
+      <div class="flex items-end justify-between"><div><div class="eyebrow">Thesis Health</div><div class="mt-2 text-4xl font-extrabold"><span id="health-score">82</span><span class="text-base text-slate-400">/100</span></div></div><span id="health-trend" class="tag tag-green">Stable</span></div>
+      <div class="metric-bar mt-5"><div id="health-bar" class="metric-fill" style="width:82%"></div></div>
+      <p id="health-reason" class="mt-4 text-xs text-slate-500 leading-5">No core assumption materially changed during the review period.</p>
+    </div>
+    <div class="lg:col-span-8 card p-5">
+      <div class="flex items-center justify-between mb-4"><div><div class="eyebrow">Structural Scorecard</div><h2 class="font-serif text-xl font-bold mt-1">What is still carrying the thesis</h2></div><span class="text-[10px] text-slate-400">5 = strongest support</span></div>
+      <div class="grid md:grid-cols-3 gap-x-6 gap-y-4 text-xs"><div id="scorecard-container" class="contents"></div></div>
+    </div>
+  </section>
+
+  <section id="action-center" class="space-y-4">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-3"><div><div class="eyebrow">Action Center</div><h2 class="font-serif text-2xl md:text-3xl font-bold mt-1">Top opportunities still supported</h2></div><p class="text-xs text-slate-400 max-w-md">These are research priorities, not personalized recommendations.</p></div>
+    <div id="opportunities-container" class="grid lg:grid-cols-3 gap-5"></div>
+  </section>
+
+  <section class="grid lg:grid-cols-12 gap-6">
+    <div class="lg:col-span-7 card p-5 md:p-6">
+      <div class="eyebrow">Evidence & Decision Points</div><h2 class="font-serif text-2xl font-bold mt-1">What could change the conclusion</h2>
+      <div class="relative mt-6 pl-10 space-y-6"><div class="timeline-line"></div><div id="decision-points-container"></div></div>
+    </div>
+    <div class="lg:col-span-5 space-y-5">
+      <div class="card p-5"><div class="eyebrow">Watch Closely</div><ul id="watch-items-container" class="mt-4 space-y-3 text-xs text-slate-600"></ul></div>
+      <div id="avoid-container" class="card p-5"><div class="eyebrow">Avoid for Now</div></div>
+      <div class="card p-5 bg-slate-950 text-white border-slate-900"><div class="text-[10px] uppercase tracking-[.16em] text-emerald-400 font-bold">Go Deeper</div><h3 class="font-serif text-xl font-bold mt-2">Understand the thesis before acting.</h3><p class="text-xs text-slate-400 mt-2 leading-5">Explore the evidence, assumptions, and full research history.</p><a href="#" class="inline-block mt-4 text-xs font-bold text-emerald-400 no-underline">Open full thesis →</a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="py-8"><div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-3 text-[10px] text-slate-400"><span>© 2026 WealthLanding</span><span>Educational research—not personalized investment advice.</span></div></footer>
+<script>
+function wlSubmitSearch(form) {
+  const input = form.querySelector('input[name="q"]');
+  const term = input.value.trim();
+  if (!term) return false;
+  input.value = `site:wealthlanding.com ${term}`;
+  setTimeout(() => { input.value = term; }, 0);
+  return true;
+}
+
+</script>
+
+<script id="embedded-latest-json" type="application/json">{"schema_version": "2.0", "review_id": "DEMO-001-2026-01-01", "thesis": {"id": "DEMO-001", "version": "1.0", "name": "Investment Thesis", "slug": "demo", "category": "investment-research", "horizon": "Long term"}, "review": {"date": "2026-01-01", "period_start": "2025-12-18", "period_end": "2026-01-01", "cadence": "biweekly"}, "status": "intact", "thesis_health": {"current": 75, "previous": 75, "change": 0, "trend": "stable", "reason_code": "NO_ASSUMPTION_CHANGE", "reason": "External thesis data has not loaded yet."}, "material_change": false, "decision": {"action": "monitor", "summary": "Connect this template to a valid thesis JSON file."}, "key_developments": [], "scorecard": [{"driver_id": "D1", "driver": "Connect thesis data", "score": 3, "trend": "stable"}], "assumptions_changed": [], "action_center": {"overall_action": "monitor_only", "opportunities": [], "watch_items": ["Confirm the JSON path"], "avoid": []}, "risks": [], "next_decision_points": [], "research_questions": [], "sources": [], "publication": {"status": "draft", "generated_by": "Template", "approved_by": null, "approved_date": null}}</script>
+<script>
+const THESIS_CONFIG = {
+  // CHANGE ONLY THIS VALUE when you want a different default thesis.
+  // Example: "jpy", "ai", "luxury", "housing"
+  defaultThesis: document.body.dataset.thesis || 'jpy',
+
+  // Recommended folder: /data/latest/jpy.json, /data/latest/ai.json, etc.
+  dataBasePath: './data/latest',
+  fileExtension: '.json'
+};
+
+const STATUS_LABELS = {strengthening:'Thesis Strengthening', intact:'Thesis Intact', weakening:'Thesis Weakening', invalidated:'Thesis Invalidated'};
+const ACTION_LABELS = {no_change:'No change', monitor:'Monitor', investigate:'Investigate', reassess:'Reassess', reduce_exposure:'Reduce exposure', exit_thesis:'Exit thesis', hold_supported:'Hold supported opportunities', research_more:'Research more', monitor_only:'Monitor only', reduce_risk:'Reduce risk', no_action:'No action'};
+const STATUS_CLASSES = {new:'tag-blue', still_supported:'tag-green', watch:'tag-amber', weakening:'tag-amber', no_longer_supported:'tag-amber'};
+
+function titleCase(value='') { return String(value).replaceAll('_',' ').replace(/\b\w/g, c => c.toUpperCase()); }
+function formatDate(value) { if (!value) return 'Date unavailable'; const d = new Date(value + 'T00:00:00'); return d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}); }
+function escapeHtml(value='') { return String(value).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])); }
+function heroTitle(data) {
+  const name = data?.thesis?.name || 'Investment thesis';
+  if (data.status === 'strengthening') return `${name} is strengthening and expanding its opportunity set.`;
+  if (data.status === 'weakening') return `${name} is weakening and requires greater selectivity.`;
+  if (data.status === 'invalidated') return `${name} no longer supports its prior investment conclusion.`;
+  return `${name} remains intact and continues to support selective opportunities.`;
+}
+function normalizeData(data) {
+  data.scorecard = Array.isArray(data.scorecard) ? data.scorecard : [];
+  data.next_decision_points = Array.isArray(data.next_decision_points) ? data.next_decision_points : [];
+  data.action_center = data.action_center || {};
+  data.action_center.opportunities = Array.isArray(data.action_center.opportunities) ? data.action_center.opportunities : [];
+  data.action_center.watch_items = Array.isArray(data.action_center.watch_items) ? data.action_center.watch_items : [];
+  data.action_center.avoid = Array.isArray(data.action_center.avoid) ? data.action_center.avoid : [];
+  return data;
+}
+function renderDashboard(rawData) {
+  const data = normalizeData(rawData);
+  document.title = `WealthLanding — ${data.thesis.name}`;
+  document.getElementById('thesis-status-text').textContent = STATUS_LABELS[data.status] || titleCase(data.status);
+  document.getElementById('review-date-text').textContent = `Reviewed ${formatDate(data.review.date)}`;
+  document.getElementById('hero-title').textContent = heroTitle(data);
+  document.getElementById('hero-summary').textContent = data.decision.summary;
+  document.getElementById('decision-action-text').textContent = ACTION_LABELS[data.action_center.overall_action] || titleCase(data.action_center.overall_action);
+  document.getElementById('decision-summary-text').textContent = data.decision.summary;
+  const material = document.getElementById('material-change-text');
+  material.textContent = data.material_change ? 'Yes' : 'No';
+  material.className = `font-bold ${data.material_change ? 'text-amber-400' : 'text-emerald-400'}`;
+  document.getElementById('health-score').textContent = data.thesis_health.current;
+  document.getElementById('health-bar').style.width = `${data.thesis_health.current}%`;
+  document.getElementById('health-reason').textContent = data.thesis_health.reason;
+  const trend = document.getElementById('health-trend');
+  trend.textContent = titleCase(data.thesis_health.trend);
+  trend.className = `tag ${data.thesis_health.trend === 'weakening' ? 'tag-amber' : data.thesis_health.trend === 'improving' ? 'tag-blue' : 'tag-green'}`;
+
+  document.getElementById('scorecard-container').innerHTML = data.scorecard.length ? data.scorecard.map(item => `
+    <div><div class="flex justify-between mb-2"><span>${escapeHtml(item.driver)}</span><b>${item.score}/5</b></div><div class="metric-bar"><div class="metric-fill" style="width:${item.score*20}%"></div></div></div>`).join('') : '<p class="text-xs text-slate-500">No scorecard items available.</p>';
+
+  document.getElementById('opportunities-container').innerHTML = data.action_center.opportunities.length ? data.action_center.opportunities.slice(0,3).map(op => `
+    <article class="card opportunity-card p-5">
+      <div class="flex items-start justify-between"><div class="rank-badge">${op.rank}</div><span class="tag ${STATUS_CLASSES[op.status] || 'tag-blue'}">${titleCase(op.status)}</span></div>
+      <div class="mt-5"><div class="flex items-center gap-2"><h3 class="text-xl font-extrabold">${escapeHtml(op.name)}</h3>${op.ticker ? `<span class="text-[10px] text-slate-400">${escapeHtml(op.ticker)}</span>`:''}</div><p class="text-xs text-slate-500 mt-2 leading-5">${escapeHtml(op.why_now?.[0] || '')}</p></div>
+      <div class="mt-5 pt-4 border-t border-slate-100"><div class="text-[9px] uppercase tracking-widest text-slate-400 font-bold mb-2">Why it still works</div><ul class="space-y-2 text-xs text-slate-600">${(op.why_now || []).map(x=>`<li>✓ ${escapeHtml(x)}</li>`).join('')}</ul></div>
+      <div class="mt-4 bg-amber-50 rounded-xl p-3 text-[11px] text-amber-800"><b>Watch:</b> ${escapeHtml((op.watch_items || []).join(', ') || 'No watch items listed')}.</div>
+    </article>`).join('') : '<div class="card p-6 text-sm text-slate-500 md:col-span-3">No supported opportunities were published in this review.</div>';
+
+  document.getElementById('decision-points-container').innerHTML = data.next_decision_points.length ? data.next_decision_points.map((point,i)=>`
+    <div class="relative ${i ? 'mt-6' : ''}"><span class="absolute -left-10 top-0 w-7 h-7 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center text-[10px] font-bold text-emerald-700">${i+1}</span><h3 class="text-sm font-bold">${escapeHtml(point.event)}</h3><p class="text-xs text-slate-500 mt-1 leading-5">${escapeHtml(point.expected_outcome)} · ${titleCase(point.potential_impact)} impact${point.date ? ` · ${formatDate(point.date)}`:''}</p></div>`).join('') : '<p class="text-xs text-slate-500">No upcoming decision points listed.</p>';
+
+  document.getElementById('watch-items-container').innerHTML = data.action_center.watch_items.length ? data.action_center.watch_items.map((item,i)=>`<li class="flex justify-between gap-3"><span>${escapeHtml(item)}</span><span class="tag ${i===0?'tag-amber':'tag-blue'}">${i===0?'High Impact':'Monitor'}</span></li>`).join('') : '<li class="text-slate-500">No watch items listed.</li>';
+  document.getElementById('avoid-container').innerHTML = `<div class="eyebrow">Avoid for Now</div>` + (data.action_center.avoid.length ? data.action_center.avoid.map(item=>`<div class="mt-3"><h3 class="font-bold">${escapeHtml(item.name)}</h3><p class="text-xs text-slate-500 mt-2 leading-5">${escapeHtml(item.reason)}</p></div>`).join('') : '<p class="text-xs text-slate-500 mt-3">No explicit avoid items in this review.</p>');
+}
+
+function resolveDataUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const explicitDataUrl = params.get('data');
+  if (explicitDataUrl) return explicitDataUrl;
+  const thesis = params.get('thesis') || THESIS_CONFIG.defaultThesis;
+  return `${THESIS_CONFIG.dataBasePath}/${encodeURIComponent(thesis)}${THESIS_CONFIG.fileExtension}`;
+}
+
+async function loadLatest() {
+  const fallback = JSON.parse(document.getElementById('embedded-latest-json').textContent);
+  const dataUrl = resolveDataUrl();
+  try {
+    const response = await fetch(dataUrl, {cache:'no-store'});
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    renderDashboard(await response.json());
+  } catch (error) {
+    console.warn(`Could not load ${dataUrl}; using embedded preview fallback.`, error);
+    renderDashboard(fallback);
+    const notice = document.createElement('div');
+    notice.style.cssText = 'position:fixed;right:16px;bottom:16px;z-index:5000;background:#0f172a;color:white;padding:10px 14px;border-radius:10px;font:12px Inter,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.2)';
+    notice.textContent = `Preview mode: could not load ${dataUrl}`;
+    document.body.appendChild(notice);
+  }
+}
+document.addEventListener('DOMContentLoaded', loadLatest);
+</script>
+
+</body>
+</html>
