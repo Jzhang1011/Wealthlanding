@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9JMJJ5CJR4');</script>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Calculators & Tools | WealthLanding</title>
+  <meta name="description" content="Free financial calculators for debt, compounding, rewards, and retirement.">
+  <link rel="canonical" href="https://www.wealthlanding.com/tools/">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={safelist:['bg-navy-900'],theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:{brand:{500:'#22c55e',600:'#16a34a'},navy:{800:'#1e293b',900:'#0f172a'}}}}}</script>
+  <style>.tool-card{background:#fff;border-radius:1rem;border:1px solid #e2e8f0;transition:.3s;display:flex;flex-direction:column;height:100%}.tool-card:hover{transform:translateY(-4px);box-shadow:0 10px 15px -3px rgba(0,0,0,.1)}.filter-btn.active{background:#1e293b;color:#fff;border-color:#1e293b}.tool-card.hidden-tool{opacity:0;pointer-events:none;position:absolute;visibility:hidden}</style>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-50">
+  <div class="bg-navy-900 hidden"></div><div id="global-header-target"></div>
+  <main class="flex-grow py-12">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-navy-900 mb-4">Find the Right Calculator</h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Run your numbers, optimize strategy, and build your wealth roadmap.</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-3 mb-12">
+        <button class="filter-btn active px-6 py-2 rounded-full border border-gray-300 bg-white font-medium" data-filter="all">All Tools</button>
+        <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 bg-white font-medium" data-filter="debt">Debt</button>
+        <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 bg-white font-medium" data-filter="investing">Investing</button>
+        <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 bg-white font-medium" data-filter="spending">Spending</button>
+        <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 bg-white font-medium" data-filter="retirement">Retirement</button>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative" id="tool-grid">
+        <a href="/tools/debt_payoff_calculator.html" class="tool-card p-6 group" data-category="debt"><div class="flex justify-between mb-4"><div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center"><i class="fa-solid fa-fire"></i></div><span class="text-xs font-bold uppercase text-gray-400 bg-gray-100 px-2 py-1 rounded">Debt</span></div><h3 class="text-xl font-bold text-navy-900 mb-2 group-hover:text-brand-600">Debt Payoff Calculator</h3><p class="text-gray-600 text-sm flex-grow mb-6">Compare Snowball and Avalanche methods.</p><div class="text-brand-600 font-semibold text-sm">Launch Tool →</div></a>
+        <a href="/tools/compound_interest_calculator.html" class="tool-card p-6 group" data-category="investing"><div class="flex justify-between mb-4"><div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center"><i class="fa-solid fa-chart-line"></i></div><span class="text-xs font-bold uppercase text-gray-400 bg-gray-100 px-2 py-1 rounded">Investing</span></div><h3 class="text-xl font-bold text-navy-900 mb-2 group-hover:text-brand-600">Compound Interest</h3><p class="text-gray-600 text-sm flex-grow mb-6">Model how early investments multiply.</p><div class="text-brand-600 font-semibold text-sm">Launch Tool →</div></a>
+        <a href="/tools/credit-card/" class="tool-card p-6 group" data-category="spending"><div class="flex justify-between mb-4"><div class="w-12 h-12 rounded-xl bg-emerald-100 text-brand-600 flex items-center justify-center"><i class="fa-solid fa-credit-card"></i></div><span class="text-xs font-bold uppercase text-gray-400 bg-gray-100 px-2 py-1 rounded">Spending</span></div><h3 class="text-xl font-bold text-navy-900 mb-2 group-hover:text-brand-600">Credit Card Rewards</h3><p class="text-gray-600 text-sm flex-grow mb-6">Route spending to the best rewards card.</p><div class="text-brand-600 font-semibold text-sm">Launch Tool →</div></a>
+        <a href="/investment/real_estate_vs_stocks_model.html" class="tool-card p-6 group" data-category="investing"><div class="flex justify-between mb-4"><div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center"><i class="fa-solid fa-house"></i></div><span class="text-xs font-bold uppercase text-gray-400 bg-gray-100 px-2 py-1 rounded">Investing</span></div><h3 class="text-xl font-bold text-navy-900 mb-2 group-hover:text-brand-600">Real Estate vs Index Funds</h3><p class="text-gray-600 text-sm flex-grow mb-6">Compare ownership vs diversified equity.</p><div class="text-brand-600 font-semibold text-sm">Launch Tool →</div></a>
+        <a href="/Retirement-simulator/OptimizeRoth.html" class="tool-card p-6 group" data-category="retirement"><div class="flex justify-between mb-4"><div class="w-12 h-12 rounded-xl bg-green-100 text-green-600 flex items-center justify-center"><i class="fa-solid fa-umbrella-beach"></i></div><span class="text-xs font-bold uppercase text-gray-400 bg-gray-100 px-2 py-1 rounded">Retirement</span></div><h3 class="text-xl font-bold text-navy-900 mb-2 group-hover:text-brand-600">Roth Strategy Optimizer</h3><p class="text-gray-600 text-sm flex-grow mb-6">Test conversion windows and outcomes.</p><div class="text-brand-600 font-semibold text-sm">Launch Tool →</div></a>
+        <a href="/Retirement-simulator/overseas_retirement_hub.html" class="tool-card p-6 group" data-category="retirement"><div class="flex justify-between mb-4"><div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center"><i class="fa-solid fa-globe"></i></div><span class="text-xs font-bold uppercase text-gray-400 bg-gray-100 px-2 py-1 rounded">Retirement</span></div><h3 class="text-xl font-bold text-navy-900 mb-2 group-hover:text-brand-600">Overseas Retirement Hub</h3><p class="text-gray-600 text-sm flex-grow mb-6">Lifestyle and cost directory abroad.</p><div class="text-brand-600 font-semibold text-sm">Launch Tool →</div></a>
+        <a href="/Retirement-simulator/UScitymatcher.html" class="tool-card p-6 group" data-category="retirement"><div class="flex justify-between mb-4"><div class="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center"><i class="fa-solid fa-map-location-dot"></i></div><span class="text-xs font-bold uppercase text-gray-400 bg-gray-100 px-2 py-1 rounded">Retirement</span></div><h3 class="text-xl font-bold text-navy-900 mb-2 group-hover:text-brand-600">U.S. City Matcher</h3><p class="text-gray-600 text-sm flex-grow mb-6">Match preferences to U.S. cities.</p><div class="text-brand-600 font-semibold text-sm">Launch Tool →</div></a>
+        <div class="tool-card p-6 border-dashed border-2 opacity-80" data-category="budgeting"><h3 class="text-xl font-bold text-gray-600 mb-2">Burn Rate Calculator</h3><p class="text-gray-500 text-sm mb-6">Emergency fund target from essential expenses.</p><div class="text-gray-400 font-semibold text-sm">Coming Soon</div></div>
+      </div>
+      <p class="mt-10 text-center text-sm text-slate-500">Also explore the <a class="text-brand-600 font-semibold" href="/retirement/">Retirement lab</a> and <a class="text-brand-600 font-semibold" href="/learn/">Learn hubs</a>.</p>
+    </div>
+  </main>
+  <script>document.addEventListener('DOMContentLoaded',()=>{const btns=[...document.querySelectorAll('.filter-btn')],cards=[...document.querySelectorAll('.tool-card')];btns.forEach(btn=>btn.addEventListener('click',()=>{btns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;cards.forEach(c=>{(f==='all'||c.dataset.category===f)?c.classList.remove('hidden-tool'):c.classList.add('hidden-tool');});});});</script>
+  <wealthlanding-footer></wealthlanding-footer>
+  <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+  <script src="/components/footer.js"></script>
+  <script src="/components/header.js"></script>
+</body>
+</html>
