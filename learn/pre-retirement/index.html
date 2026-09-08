@@ -2,31 +2,206 @@
 <html lang="en">
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9JMJJ5CJR4');</script>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9JMJJ5CJR4');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pre-Retirement (55+) | WealthLanding</title>
-  <meta name="description" content="Pre-retirement hub linking into the WealthLanding retirement lab.">
+  <meta name="description" content="Pre-retirement hub for ages 55+: design lifestyle, location, healthcare, Roth strategy, and legacy using the live WealthLanding Retirement Lab and related tools.">
   <link rel="canonical" href="https://www.wealthlanding.com/learn/pre-retirement/">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={safelist:['bg-navy-900'],theme:{extend:{colors:{brand:{500:'#22c55e',600:'#16a34a'},navy:{900:'#0f172a'}}}}}</script>
+  <script>
+    tailwind.config = {
+      safelist: ['bg-navy-900'],
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#22c55e', 600: '#16a34a', 900: '#14532d' },
+            navy: { 800: '#1e293b', 900: '#0f172a' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>body{font-family:'Inter',sans-serif}</style>
 </head>
-<body class="min-h-screen flex flex-col antialiased bg-slate-50">
-  <div class="bg-navy-900 hidden"></div><div id="global-header-target"></div>
+<body class="min-h-screen flex flex-col antialiased bg-slate-50 text-slate-700">
+  <div class="bg-navy-900 hidden"></div>
+  <div id="global-header-target"></div>
   <main class="flex-grow">
-    <section class="bg-navy-900 text-white pt-14 pb-16 px-4 text-center">
-      <div class="inline-block bg-brand-500/20 text-brand-400 font-semibold px-3 py-1 rounded-full text-sm mb-5 border border-brand-500/30">Pre-Retirement · 55+</div>
-      <h1 class="text-3xl md:text-5xl font-bold mb-4">Pre-Retirement Hub</h1>
-      <p class="text-lg text-slate-300 max-w-2xl mx-auto">Use the live Retirement Lab for gateway onboarding, location strategy, healthcare, and Roth optimization.</p>
+    <section class="bg-navy-900 text-white pt-14 pb-16 px-4">
+      <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-block bg-brand-500/20 text-brand-400 font-semibold px-3 py-1 rounded-full text-sm mb-5 border border-brand-500/30">Pre-Retirement · 55+</div>
+        <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">Pre-Retirement Hub</h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">For people designing the next chapter — lifestyle, location, healthcare, Roth timing, and legacy — with deep links into the live Retirement Lab.</p>
+      </div>
     </section>
-    <section class="max-w-6xl mx-auto px-4 -mt-8 pb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <a href="/retirement/" class="bg-white rounded-xl border p-6 shadow-sm"><span class="text-xs font-bold text-brand-600 uppercase">Recommended</span><h2 class="text-xl font-bold text-navy-900 mt-1 mb-2">Retirement hub</h2><p class="text-sm text-slate-600">Canonical entry to the retirement pillar.</p></a>
-      <a href="/Retirement-simulator/Retirement_Gateway.html" class="bg-white rounded-xl border p-6"><h2 class="text-xl font-bold text-navy-900 mb-2">Retirement Gateway</h2><p class="text-sm text-slate-600">Begin the connected journey.</p></a>
-      <a href="/Retirement-simulator/building-your-retirement.html" class="bg-white rounded-xl border p-6"><h2 class="text-xl font-bold text-navy-900 mb-2">My Retirement Blueprint</h2><p class="text-sm text-slate-600">Continue designing lifestyle and finances.</p></a>
-      <a href="/Retirement-simulator/overseas_retirement_hub.html" class="bg-white rounded-xl border p-6"><h2 class="text-xl font-bold text-navy-900 mb-2">Overseas retirement hub</h2><p class="text-sm text-slate-600">Compare lifestyle and cost across cities.</p></a>
-      <a href="/Retirement-simulator/OptimizeRoth.html" class="bg-white rounded-xl border p-6"><h2 class="text-xl font-bold text-navy-900 mb-2">Optimize Roth</h2><p class="text-sm text-slate-600">Test conversion windows and outcomes.</p></a>
-      <a href="/blogs/happy_retirement.html" class="bg-white rounded-xl border p-6"><h2 class="text-xl font-bold text-navy-900 mb-2">Happy Retirement stories</h2><p class="text-sm text-slate-600">Editorial case studies from Insights.</p></a>
+
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 -mt-8 relative z-10">
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 md:p-8">
+        <h2 class="text-xl font-bold text-navy-900 mb-3">Who this is for</h2>
+        <p class="text-slate-600 leading-relaxed mb-4">Ages roughly <strong>55+</strong> (and anyone within a decade of leaving full-time work): you need more than a savings rate — you need a coherent plan for where you’ll live, how healthcare works, when to convert Roth dollars, and what “enough” looks like.</p>
+        <p class="text-slate-600 leading-relaxed">Unlike thinner stage hubs, Pre-Retirement already has a <strong>live lab</strong> under <code class="bg-slate-100 px-1 rounded text-sm">/retirement/</code> and <code class="bg-slate-100 px-1 rounded text-sm">/Retirement-simulator/</code>. Standalone Learn lesson modules for this stage are still partial; use the lab pages below as the primary curriculum.</p>
+      </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 pt-10 pb-4">
+      <h2 class="text-2xl font-bold text-navy-900 mb-2">Top priorities before you retire</h2>
+      <p class="text-slate-600 mb-6">Sequence matters: clarify lifestyle first, then test money, healthcare, and tax moves against that picture.</p>
+      <ol class="space-y-4">
+        <li class="bg-white rounded-xl border border-slate-200 p-5 flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-500 text-white font-bold flex items-center justify-center text-sm">1</span>
+          <div>
+            <h3 class="font-bold text-navy-900">Start with a guided gateway</h3>
+            <p class="text-sm text-slate-600 mt-1">Use onboarding to capture preferences before diving into calculators out of order.</p>
+          </div>
+        </li>
+        <li class="bg-white rounded-xl border border-slate-200 p-5 flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-500 text-white font-bold flex items-center justify-center text-sm">2</span>
+          <div>
+            <h3 class="font-bold text-navy-900">Build a retirement blueprint</h3>
+            <p class="text-sm text-slate-600 mt-1">Translate lifestyle choices into a working financial design you can revisit.</p>
+          </div>
+        </li>
+        <li class="bg-white rounded-xl border border-slate-200 p-5 flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-500 text-white font-bold flex items-center justify-center text-sm">3</span>
+          <div>
+            <h3 class="font-bold text-navy-900">Decide location intentionally</h3>
+            <p class="text-sm text-slate-600 mt-1">Domestic vs overseas tradeoffs affect cost, healthcare access, and taxes.</p>
+          </div>
+        </li>
+        <li class="bg-white rounded-xl border border-slate-200 p-5 flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-500 text-white font-bold flex items-center justify-center text-sm">4</span>
+          <div>
+            <h3 class="font-bold text-navy-900">Plan healthcare transitions</h3>
+            <p class="text-sm text-slate-600 mt-1">Bridge years before Medicare (and international options) need explicit strategy.</p>
+          </div>
+        </li>
+        <li class="bg-white rounded-xl border border-slate-200 p-5 flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-500 text-white font-bold flex items-center justify-center text-sm">5</span>
+          <div>
+            <h3 class="font-bold text-navy-900">Optimize Roth and withdrawal timing</h3>
+            <p class="text-sm text-slate-600 mt-1">Conversion windows and RMD awareness can change lifetime tax drag.</p>
+          </div>
+        </li>
+        <li class="bg-white rounded-xl border border-slate-200 p-5 flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-500 text-white font-bold flex items-center justify-center text-sm">6</span>
+          <div>
+            <h3 class="font-bold text-navy-900">Learn from real retirement stories</h3>
+            <p class="text-sm text-slate-600 mt-1">Case studies help stress-test assumptions that spreadsheets miss.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-6">
+      <h2 class="text-2xl font-bold text-navy-900 mb-2">Live Retirement Lab &amp; related pages</h2>
+      <p class="text-slate-600 mb-6">Canonical lab entry plus gateway, blueprint, overseas, Roth, and Happy Retirement insights — all existing files.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="/retirement/" class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition p-6 flex flex-col">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-1">Recommended</span>
+          <h3 class="text-lg font-bold text-navy-900 mb-2">Retirement hub</h3>
+          <p class="text-sm text-slate-600 flex-grow mb-4">Canonical entry to the retirement pillar.</p>
+          <span class="text-brand-600 font-semibold text-sm">Open hub <i class="fa-solid fa-arrow-right ml-1"></i></span>
+        </a>
+        <a href="/Retirement-simulator/Retirement_Gateway.html" class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition p-6 flex flex-col">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-1">Live lab</span>
+          <h3 class="text-lg font-bold text-navy-900 mb-2">Retirement Gateway</h3>
+          <p class="text-sm text-slate-600 flex-grow mb-4">Begin the connected onboarding journey.</p>
+          <span class="text-brand-600 font-semibold text-sm">Start gateway <i class="fa-solid fa-arrow-right ml-1"></i></span>
+        </a>
+        <a href="/Retirement-simulator/building-your-retirement.html" class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition p-6 flex flex-col">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-1">Live lab</span>
+          <h3 class="text-lg font-bold text-navy-900 mb-2">My Retirement Blueprint</h3>
+          <p class="text-sm text-slate-600 flex-grow mb-4">Continue designing lifestyle and finances.</p>
+          <span class="text-brand-600 font-semibold text-sm">Open blueprint <i class="fa-solid fa-arrow-right ml-1"></i></span>
+        </a>
+        <a href="/Retirement-simulator/overseas_retirement_hub.html" class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition p-6 flex flex-col">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-1">Live lab</span>
+          <h3 class="text-lg font-bold text-navy-900 mb-2">Overseas retirement hub</h3>
+          <p class="text-sm text-slate-600 flex-grow mb-4">Compare lifestyle and cost across cities.</p>
+          <span class="text-brand-600 font-semibold text-sm">Compare cities <i class="fa-solid fa-arrow-right ml-1"></i></span>
+        </a>
+        <a href="/Retirement-simulator/OptimizeRoth.html" class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition p-6 flex flex-col">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-1">Live tool</span>
+          <h3 class="text-lg font-bold text-navy-900 mb-2">Optimize Roth</h3>
+          <p class="text-sm text-slate-600 flex-grow mb-4">Test conversion windows and outcomes.</p>
+          <span class="text-brand-600 font-semibold text-sm">Run optimizer <i class="fa-solid fa-arrow-right ml-1"></i></span>
+        </a>
+        <a href="/Retirement-simulator/healthcare_transition_strategy.html" class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition p-6 flex flex-col">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-1">Live lab</span>
+          <h3 class="text-lg font-bold text-navy-900 mb-2">Healthcare transition</h3>
+          <p class="text-sm text-slate-600 flex-grow mb-4">Strategy for coverage shifts into retirement.</p>
+          <span class="text-brand-600 font-semibold text-sm">Open strategy <i class="fa-solid fa-arrow-right ml-1"></i></span>
+        </a>
+        <a href="/blogs/happy_retirement.html" class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition p-6 flex flex-col">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-1">Insights</span>
+          <h3 class="text-lg font-bold text-navy-900 mb-2">Happy Retirement stories</h3>
+          <p class="text-sm text-slate-600 flex-grow mb-4">Editorial case studies from Insights.</p>
+          <span class="text-brand-600 font-semibold text-sm">Read stories <i class="fa-solid fa-arrow-right ml-1"></i></span>
+        </a>
+        <a href="/blogs/Happy_retirement/1m_rmd_letter.html" class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition p-6 flex flex-col">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-1">Insights</span>
+          <h3 class="text-lg font-bold text-navy-900 mb-2">RMD tax cascade</h3>
+          <p class="text-sm text-slate-600 flex-grow mb-4">Why large RMDs can surprise late portfolios.</p>
+          <span class="text-brand-600 font-semibold text-sm">Read letter <i class="fa-solid fa-arrow-right ml-1"></i></span>
+        </a>
+        <a href="/tools/" class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition p-6 flex flex-col">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-1">Practice</span>
+          <h3 class="text-lg font-bold text-navy-900 mb-2">Tools &amp; calculators</h3>
+          <p class="text-sm text-slate-600 flex-grow mb-4">Complement the lab with standalone calculators.</p>
+          <span class="text-brand-600 font-semibold text-sm">Browse tools <i class="fa-solid fa-arrow-right ml-1"></i></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 py-6">
+      <div class="p-5 rounded-xl bg-amber-50 border border-amber-200 text-sm text-amber-900">
+        <strong>Partial Learn curriculum:</strong> Dedicated <code class="bg-amber-100 px-1 rounded">/learn/pre-retirement/</code> lesson modules beyond this hub are limited. The live Retirement Lab is the primary educational surface — we only link pages that already exist there (and related blogs/tools).
+      </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+      <h2 class="text-2xl font-bold text-navy-900 mb-6">FAQ</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-slate-200 p-5 group">
+          <summary class="font-semibold text-navy-900 cursor-pointer list-none flex justify-between items-center">Who is Pre-Retirement for?<i class="fa-solid fa-chevron-down text-slate-400 text-sm group-open:rotate-180 transition"></i></summary>
+          <p class="text-sm text-slate-600 mt-3 leading-relaxed">Primarily ages 55+, plus anyone within about a decade of leaving full-time work who needs lifestyle, location, healthcare, and tax sequencing — not just a savings rate.</p>
+        </details>
+        <details class="bg-white rounded-xl border border-slate-200 p-5 group">
+          <summary class="font-semibold text-navy-900 cursor-pointer list-none flex justify-between items-center">Where should I start in the Retirement Lab?<i class="fa-solid fa-chevron-down text-slate-400 text-sm group-open:rotate-180 transition"></i></summary>
+          <p class="text-sm text-slate-600 mt-3 leading-relaxed">Begin at the <a href="/retirement/" class="text-brand-600 font-semibold underline">retirement hub</a>, then continue into the <a href="/Retirement-simulator/Retirement_Gateway.html" class="text-brand-600 font-semibold underline">Retirement Gateway</a> for guided onboarding.</p>
+        </details>
+        <details class="bg-white rounded-xl border border-slate-200 p-5 group">
+          <summary class="font-semibold text-navy-900 cursor-pointer list-none flex justify-between items-center">Can I model retiring overseas?<i class="fa-solid fa-chevron-down text-slate-400 text-sm group-open:rotate-180 transition"></i></summary>
+          <p class="text-sm text-slate-600 mt-3 leading-relaxed">Yes — use the <a href="/Retirement-simulator/overseas_retirement_hub.html" class="text-brand-600 font-semibold underline">overseas retirement hub</a> to compare cities and lifestyle cost.</p>
+        </details>
+        <details class="bg-white rounded-xl border border-slate-200 p-5 group">
+          <summary class="font-semibold text-navy-900 cursor-pointer list-none flex justify-between items-center">How is this different from Peak?<i class="fa-solid fa-chevron-down text-slate-400 text-sm group-open:rotate-180 transition"></i></summary>
+          <p class="text-sm text-slate-600 mt-3 leading-relaxed">Peak (40–55) emphasizes tax coordination while still earning. Pre-Retirement emphasizes executing lifestyle, healthcare, location, and withdrawal design — with a thicker live lab already available.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 pb-16">
+      <div class="bg-navy-900 text-white rounded-2xl p-8 md:p-10">
+        <h2 class="text-xl font-bold mb-3">Continue exploring</h2>
+        <p class="text-slate-300 mb-6 max-w-2xl">Return to Learn, open the lab, practice with tools, or read Happy Retirement stories.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/learn/" class="inline-flex items-center bg-brand-500 hover:bg-brand-600 text-white font-semibold px-4 py-2 rounded-lg text-sm transition">All life stages</a>
+          <a href="/retirement/" class="inline-flex items-center bg-white/10 hover:bg-white/20 text-white font-semibold px-4 py-2 rounded-lg text-sm transition border border-white/20">Retirement lab</a>
+          <a href="/tools/" class="inline-flex items-center bg-white/10 hover:bg-white/20 text-white font-semibold px-4 py-2 rounded-lg text-sm transition border border-white/20">Tools</a>
+          <a href="/blogs/" class="inline-flex items-center bg-white/10 hover:bg-white/20 text-white font-semibold px-4 py-2 rounded-lg text-sm transition border border-white/20">Blogs</a>
+          <a href="/learn/peak/" class="inline-flex items-center bg-white/10 hover:bg-white/20 text-white font-semibold px-4 py-2 rounded-lg text-sm transition border border-white/20">Earlier: Peak</a>
+        </div>
+      </div>
     </section>
   </main>
   <wealthlanding-footer></wealthlanding-footer>
