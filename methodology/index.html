@@ -20,15 +20,15 @@
         extend: {
           fontFamily: { sans: ['Inter', 'sans-serif'] },
           colors: {
-            brand: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#22c55e', 600: '#16a34a', 900: '#14532d' },
+            brand: { 50: '#f0fdf4', 100: '#dcfce7', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 900: '#14532d' },
             navy: { 800: '#1e293b', 900: '#0f172a' }
           }
         }
       }
     }
   </script>
-  <title>Methodology | WealthLanding</title>
-  <meta name="description" content="How WealthLanding models assumptions in calculators and guides.">
+  <title>Methodology | How WealthLanding Builds Content &amp; Tools</title>
+  <meta name="description" content="How WealthLanding structures life-stage education, case studies, and calculators — assumptions, update cadence, and limitations. Education only, not advice.">
   <link rel="canonical" href="https://www.wealthlanding.com/methodology/">
   <style>body{font-family:'Inter',sans-serif;background:#f8fafc;color:#334155}</style>
 </head>
@@ -36,16 +36,89 @@
   <div class="bg-navy-900 hidden"></div>
   <div id="global-header-target"></div>
   <main class="flex-grow">
-    <section class="bg-navy-900 text-white py-12 px-4">
+    <section class="bg-navy-900 text-white pt-14 pb-16 px-4">
       <div class="max-w-3xl mx-auto">
-        <h1 class="text-3xl md:text-4xl font-bold">Methodology</h1>
+        <div class="inline-block bg-brand-500/20 text-brand-400 font-semibold px-3 py-1 rounded-full text-sm mb-5 border border-brand-500/30">Methodology</div>
+        <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">How we build guides and tools</h1>
+        <p class="text-lg text-slate-300 max-w-2xl">Transparent structure, illustrative models, and clear limits — so you can judge the work for yourself.</p>
       </div>
     </section>
-    <section class="max-w-3xl mx-auto px-4 py-12">
-      <p class="text-slate-600 leading-relaxed mb-4">Our tools use transparent, documented assumptions (contribution rates, expected returns ranges, tax brackets, withdrawal rules, and cost-of-living inputs). Where a model simplifies reality, we say so on the page.</p>
-      <p class="text-slate-600 leading-relaxed mb-4">Phase 1 of the site IA focuses on navigation and hub structure. Deeper methodology notes for each calculator will expand alongside content migration.</p>
-      <p class="text-slate-600 leading-relaxed">If you spot an error in inputs or formulas, please tell us so we can correct it quickly.</p>
-      <p class="mt-8 text-xs text-slate-500 border-t border-slate-200 pt-4">Disclaimer: WealthLanding provides educational information only. Nothing on this site is investment, tax, or legal advice.</p>
+
+    <section class="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-10">
+      <div>
+        <h2 class="text-xl font-bold text-navy-900 mb-3">Life-stage curriculum</h2>
+        <p class="text-slate-600 leading-relaxed mb-4">Content is organized around common money milestones — early career, building years, peak earning/coordination years, and pre-retirement — rather than a single one-size-fits-all checklist. Each hub links to modules and tools that match the decisions people typically face in that chapter.</p>
+        <p class="text-slate-600 leading-relaxed">We prioritize sequencing (cash flow and risk basics before complex optimization) and plain language. Start in <a href="/learn/" class="text-brand-600 font-semibold hover:underline">Learn</a>.</p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold text-navy-900 mb-3">Illustrative case studies</h2>
+        <p class="text-slate-600 leading-relaxed">Stories and scenarios on the blog and in labs are <strong class="font-semibold text-slate-800">illustrative</strong>. Names, ages, balances, and locations may be composite or hypothetical. They show how trade-offs work under stated assumptions — not a recommendation that your household should copy a path. See <a href="/blogs/" class="text-brand-600 font-semibold hover:underline">Blog &amp; Insights</a>.</p>
+      </div>
+
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+        <h2 class="text-xl font-bold text-navy-900 mb-3">Calculators as models</h2>
+        <p class="text-slate-600 leading-relaxed mb-4">Our calculators and retirement labs are <strong class="font-semibold text-slate-800">educational models</strong>. They help you see sensitivity — what happens if returns, spending, or timing change — not to produce a personalized financial plan.</p>
+        <ul class="space-y-2 text-slate-600 text-sm list-disc list-inside">
+          <li>Inputs are user-controlled; defaults are labeled as starting points.</li>
+          <li>Outputs depend on simplified formulas (e.g., constant growth rates, stylized tax brackets, or fixed withdrawal rules).</li>
+          <li>Where a page simplifies reality, we aim to say so near the tool.</li>
+        </ul>
+        <p class="mt-4 text-sm text-slate-600">Explore <a href="/tools/" class="text-brand-600 font-semibold hover:underline">Tools &amp; Calculators</a> and the <a href="/retirement/" class="text-brand-600 font-semibold hover:underline">Retirement Lab</a>.</p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold text-navy-900 mb-3">Sources and assumptions (high level)</h2>
+        <p class="text-slate-600 leading-relaxed mb-4">Where we cite public figures — contribution limits, Social Security concepts, cost-of-living ranges, or historical return ranges — we treat them as educational context that can change. Tool pages typically document key assumptions such as:</p>
+        <ul class="space-y-2 text-slate-600 list-disc list-inside mb-4">
+          <li>Contribution rates, expected-return ranges, or inflation placeholders</li>
+          <li>Tax or benefit rules shown in simplified form</li>
+          <li>Lifestyle or city cost inputs used for comparison, not quotes</li>
+        </ul>
+        <p class="text-slate-600 leading-relaxed">We do not claim that any modeled path is suitable for your situation. Verify numbers against primary sources and licensed professionals when decisions matter.</p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold text-navy-900 mb-3">Update cadence</h2>
+        <p class="text-slate-600 leading-relaxed">We revise hubs, articles, and tools as the site expands and when we catch errors or outdated references. Tax rules, benefit formulas, and market context change; treat page dates and on-page notes as the best available snapshot, and re-check before acting. Corrections are welcome via the footer newsletter form.</p>
+      </div>
+
+      <div class="bg-slate-50 rounded-xl border border-slate-200 p-6">
+        <h2 class="text-xl font-bold text-navy-900 mb-3">Limitations</h2>
+        <ul class="space-y-3 text-slate-600">
+          <li class="flex gap-3"><i class="fa-solid fa-circle-info text-brand-600 mt-1"></i><span>Models omit many real-world frictions: fees, taxes at the household level, sequence-of-returns risk detail, health events, and behavioral gaps.</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-circle-info text-brand-600 mt-1"></i><span>Education on WealthLanding is <strong class="font-semibold text-slate-800">not</strong> personalized advice and does not create an advisor–client relationship.</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-circle-info text-brand-600 mt-1"></i><span>Past or hypothetical returns in examples are not guarantees of future results.</span></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold text-navy-900 mb-4">FAQ</h2>
+        <div class="space-y-4">
+          <div class="bg-white rounded-xl border border-slate-200 p-5">
+            <h3 class="font-bold text-navy-900 mb-2">Is WealthLanding giving me financial advice?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">No. Content and tools are for general education. They are not personalized investment, tax, or legal advice. Decisions remain yours, ideally with a licensed professional when needed.</p>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-5">
+            <h3 class="font-bold text-navy-900 mb-2">Are calculator results a plan I can follow?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">No. Results are illustrative under the inputs and formulas shown. Change assumptions and the output changes. Use them to learn trade-offs, not as a prescription.</p>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-5">
+            <h3 class="font-bold text-navy-900 mb-2">Where do your numbers come from?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Defaults and examples use transparent, high-level assumptions documented on or near each tool. Public rules and ranges can change; always verify against primary sources before acting.</p>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-5">
+            <h3 class="font-bold text-navy-900 mb-2">How often is content updated?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">We update as we expand the curriculum and when we find errors or outdated references. There is no fixed calendar promise; treat each page as a living educational resource.</p>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-5">
+            <h3 class="font-bold text-navy-900 mb-2">Can I suggest a correction?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Yes. Use the newsletter form in the site footer and mention the page URL and what looks wrong. We appreciate careful feedback on formulas and assumptions.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-xs text-slate-500 border-t border-slate-200 pt-4">Disclaimer: WealthLanding provides educational information only. Nothing on this site is investment, tax, or legal advice.</p>
     </section>
   </main>
   <wealthlanding-footer></wealthlanding-footer>
