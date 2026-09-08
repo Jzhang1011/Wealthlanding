@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /family/
 
 Sitemap: https://www.wealthlanding.com/sitemap.xml
