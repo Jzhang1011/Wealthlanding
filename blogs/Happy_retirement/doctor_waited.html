@@ -33,9 +33,27 @@
     @media(max-width:960px){.navlinks{display:none}.search{display:none}.menu{display:block;margin-left:auto}.heroin{grid-template-columns:1fr;padding-top:48px}.herofigure{max-width:720px}.floatcard{left:18px}.layout{grid-template-columns:1fr;gap:35px}.sidebar{position:static}.summarygrid{grid-template-columns:1fr}.summaryitem{border-right:0;border-bottom:1px solid var(--line)}.summaryitem:last-child{border-bottom:0}.cards{grid-template-columns:1fr}.cta{grid-template-columns:1fr}.cta .button{justify-self:start}}
     @media(max-width:620px){.hero h1{font-size:42px}.dek{font-size:19px}.heroimage{min-height:410px;border-radius:22px}.floatcard{left:12px;top:12px}.layout{padding-top:75px}.story p{font-size:17px}.story h2{font-size:29px}.pullquote{font-size:23px}.domino,.comparetop,.track{grid-template-columns:1fr}.track:before{display:none}.node{text-align:left;display:grid;grid-template-columns:45px 1fr;gap:12px;align-items:center}.node i{margin:0}.path:first-child{border-right:0;border-bottom:1px solid var(--line)}.saving{align-items:flex-start;flex-direction:column}.footin{flex-direction:column}}
   </style>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    safelist: ['bg-navy-900'],
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50: '#f0fdf4', 100: '#dcfce7', 500: '#22c55e', 600: '#16a34a', 700: '#15803d'
+          },
+          navy: { 800: '#1e293b', 900: '#0f172a' }
+        }
+      }
+    }
+  }
+</script>
 </head>
 <body>
- <div id="global-header-target"></div>
+ <div class="bg-navy-900 hidden"></div>
+<div id="global-header-target"></div>
 <section class="hero"><div class="heroin"><div><div class="eyebrow"><span class="dot"></span>Case study 03 · Roth timing</div><h1>The Doctor Who Waited Too Long</h1><p class="dek">He spent his career deferring taxes. The expensive mistake was assuming that later would always be better.</p><div class="meta"><span>◷ 6 minute read</span><span>Updated August 2026</span><span>Illustrative case study</span></div></div><div class="herofigure"><div class="heroimage"><img src="https://images.unsplash.com/photo-1758691461530-b215ed4ede6a?auto=format&fit=crop&w=1600&q=85" alt="Senior doctor seated in a medical office"><div class="photoquote">“The mistake wasn’t investing. The mistake was waiting.”</div></div><div style="font-size:10px;color:#718196;margin-top:8px;text-align:right">Photo: Vitaly Gariev / Unsplash</div><div class="floatcard"><small>Missed planning window</small><strong>13 years</strong><span>From retirement to first RMD</span></div></div></div></section>
 <div class="summary"><div class="summarygrid"><div class="summaryitem"><small>Starting position</small><strong><em>$6.6M</em> in traditional accounts</strong></div><div class="summaryitem"><small>Hidden constraint</small><strong>Forced income after age 73</strong></div><div class="summaryitem"><small>Modeled difference</small><strong><em>Nearly $900K</em> in lifetime taxes</strong></div></div></div>
 <main class="layout"><article class="story"><p class="lead dropcap">Dr. Ravi Patel had spent thirty-five years making careful decisions. He invested consistently, avoided debt, maximized every retirement account, and never tried to time the market.</p><p>His accountant congratulated him every year: <em>“You’ve deferred an incredible amount of tax.”</em> To Dr. Patel, that sounded like winning.</p>
@@ -48,10 +66,14 @@
 <h2 id="ending">The decision he wished he had made</h2><p>Dr. Patel spent his career learning how to avoid unnecessary taxes. In retirement, he discovered a different skill mattered more: choosing taxes deliberately before they were chosen for him.</p><p>This does not mean every retiree should convert aggressively. It means the years between retirement and forced distributions deserve to be modeled rather than ignored.</p><div class="cta"><div><h3>Find your potential Roth conversion window</h3><p>Compare conversion amounts, future RMDs, Medicare thresholds, and lifetime tax impact within your broader retirement plan.</p></div><a class="button" href="/Retirement-simulator/OptimizeRoth.html">Run my Roth analysis →</a></div></article>
 <aside class="sidebar"><div class="sidecard"><div class="progress"><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div><h3>Case study 3 of 4</h3><div class="toc"><a href="#retirement">The retirement</a><a href="#rmd">The first RMD</a><a href="#dominoes">The domino effects</a><a href="#comparison">Two modeled paths</a><a href="#ending">The decision</a></div></div><div class="sidecard why"><h3>Why this story matters</h3><p>Your highest-leverage tax years may appear after work income ends but before Social Security and required distributions fully begin.</p><a class="sidebutton" href="/Retirement-simulator/Retirement_Gateway.html">Explore my timeline</a><p class="disclaimer">Educational illustration only. Outcomes depend on tax law, investment returns, account mix, filing status, Medicare rules, and personal circumstances.</p></div></aside></main>
 <section class="related" id="related"><div class="relatedin"><h2>Continue the tax-planning series</h2><div class="cards"><a class="card" href="./silent_partner.html"><small>Case study 02</small><h3>The IRS Was His Silent Business Partner</h3><p>Why the balance on a traditional account statement is not the same as after-tax wealth.</p><span class="arrow">Read the case study →</span></a><a class="card" href="./1m_rmd_letter.html"><small>Case study 04</small><h3>The Letter That Quietly Cost Over $1 Million</h3><p>How one required distribution can trigger a wider tax and healthcare cascade.</p><span class="arrow">Read the case study →</span></a><a class="card" href="/Retirement-simulator/OptimizeRoth.html"><small>Apply the lesson</small><h3>Model Your Own Roth Strategy</h3><p>Move from a hypothetical story to your timeline, balances, and planning assumptions.</p><span class="arrow">Open the optimizer →</span></a></div></div></section>
-<footer><div class="footin"><span>© 2026 WealthLanding</span><span>Financial education designed to make complex decisions visible.</span></div></footer>
 <script>
 const form=document.querySelector('.search form');
 form.addEventListener('submit',e=>{const input=form.querySelector('input[aria-label]'); if(!input.value.trim()){e.preventDefault();input.focus();return;} const hidden=form.querySelector('input[type=hidden]'); hidden.disabled=true; input.value='site:wealthlanding.com '+input.value.trim();});
 </script>
-    <script src="/components/header.js"></script> 
+    
+    <wealthlanding-footer></wealthlanding-footer>
+    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+    <script src="/components/footer.js"></script>
+
+<script src="/components/header.js"></script> 
 </body></html>

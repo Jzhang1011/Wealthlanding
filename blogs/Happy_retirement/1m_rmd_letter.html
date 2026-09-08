@@ -55,10 +55,28 @@
     @media(max-width:960px){.navlinks{display:none}.search{display:none}.menu{display:block;margin-left:auto}.heroin{grid-template-columns:1fr;padding-top:48px}.herofigure{max-width:720px}.floatcard{left:18px}.layout{grid-template-columns:1fr;gap:35px}.sidebar{position:static}.summarygrid{grid-template-columns:1fr}.summaryitem{border-right:0;border-bottom:1px solid var(--line)}.summaryitem:last-child{border-bottom:0}.cards{grid-template-columns:1fr}.cta{grid-template-columns:1fr}.cta .button{justify-self:start}}
     @media(max-width:620px){.hero h1{font-size:40px}.dek{font-size:19px}.heroimage{min-height:410px;border-radius:22px}.floatcard{left:12px;top:12px}.layout{padding-top:75px}.story p{font-size:17px}.story h2{font-size:29px}.pullquote{font-size:23px}.impact-grid{grid-template-columns:1fr}.footin{flex-direction:column}}
   </style>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    safelist: ['bg-navy-900'],
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50: '#f0fdf4', 100: '#dcfce7', 500: '#22c55e', 600: '#16a34a', 700: '#15803d'
+          },
+          navy: { 800: '#1e293b', 900: '#0f172a' }
+        }
+      }
+    }
+  }
+</script>
 </head>
 <body>
 
- <div id="global-header-target"></div>
+ <div class="bg-navy-900 hidden"></div>
+<div id="global-header-target"></div>
 
 <!-- Breadcrumb 
 <div class="crumb">
@@ -290,13 +308,6 @@
   </div>
 </section>
 
-<footer>
-  <div class="footin">
-    <span>© 2026 WealthLanding</span>
-    <span>Financial education designed to make complex decisions visible.</span>
-  </div>
-</footer>
-
 <script>
   // Search form handler
   const form = document.querySelector('.search form');
@@ -310,7 +321,12 @@
     });
   }
 </script>
-    <script src="/components/header.js"></script> 
+    
+    <wealthlanding-footer></wealthlanding-footer>
+    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+    <script src="/components/footer.js"></script>
+
+<script src="/components/header.js"></script> 
 </body>
   
 </html>
