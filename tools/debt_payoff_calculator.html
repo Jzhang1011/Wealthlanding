@@ -280,7 +280,8 @@
             document.getElementById('res-snowball-months').innerText = formatTime(snowballRes.months);
             document.getElementById('res-snowball-interest').innerText = formatter.format(snowballRes.totalInterest);
             
-            document.getElementById('res-avalanche-months').innerText = formatter.format(avalancheRes.totalInterest);
+            document.getElementById('res-avalanche-months').innerText = formatTime(avalancheRes.months);
+            document.getElementById('res-avalanche-interest').innerText = formatter.format(avalancheRes.totalInterest);
 
             // Show results and scroll
             const resultsSection = document.getElementById('debt-results-container');
