@@ -58,3 +58,15 @@ class WealthLandingFooter extends HTMLElement {
 if (!customElements.get('wealthlanding-footer')) {
   customElements.define('wealthlanding-footer', WealthLandingFooter);
 }
+
+/* Overseas hub: retarget legacy Topic/cities CTAs to guides/* on the hub page only */
+(function () {
+  try {
+    var path = (location && location.pathname) || '';
+    if (path.indexOf('overseas_retirement_hub') === -1) return;
+    var s = document.createElement('script');
+    s.src = '/Retirement-simulator/guides/retarget-hub-links.js';
+    s.async = true;
+    document.head.appendChild(s);
+  } catch (e) {}
+})();
