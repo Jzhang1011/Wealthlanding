@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9JMJJ5CJR4');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      safelist: ['bg-navy-900'],
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#22c55e', 600: '#16a34a', 900: '#14532d' },
+            navy: { 800: '#1e293b', 900: '#0f172a' }
+          }
+        }
+      }
+    }
+  </script>
+  <title>About WealthLanding | WealthLanding</title>
+  <meta name="description" content="About WealthLanding — educational financial independence site.">
+  <link rel="canonical" href="https://www.wealthlanding.com/about/">
+  <style>body{font-family:'Inter',sans-serif;background:#f8fafc;color:#334155}</style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+  <div class="bg-navy-900 hidden"></div>
+  <div id="global-header-target"></div>
+  <main class="flex-grow">
+    <section class="bg-navy-900 text-white py-12 px-4">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-3xl md:text-4xl font-bold">About WealthLanding</h1>
+      </div>
+    </section>
+    <section class="max-w-3xl mx-auto px-4 py-12">
+      <p class="text-slate-600 leading-relaxed mb-4">WealthLanding is an independent financial education site. We publish life-stage playbooks, calculators, and a retirement lab so people can run their own numbers with clear assumptions.</p>
+      <p class="text-slate-600 leading-relaxed mb-4">We are not a broker-dealer, RIA, bank, or tax firm. Content is educational — not personalized advice. Always verify decisions with a licensed professional when your situation warrants it.</p>
+      <p class="text-slate-600 leading-relaxed">Questions or corrections: reach us through the newsletter form in the site footer.</p>
+      <p class="mt-8 text-xs text-slate-500 border-t border-slate-200 pt-4">Disclaimer: WealthLanding provides educational information only. Nothing on this site is investment, tax, or legal advice.</p>
+    </section>
+  </main>
+  <wealthlanding-footer></wealthlanding-footer>
+  <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+  <script src="/components/footer.js"></script>
+  <script src="/components/header.js"></script>
+</body>
+</html>
