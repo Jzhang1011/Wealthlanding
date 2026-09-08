@@ -1,35 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9JMJJ5CJR4');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Card Rewards Router — WealthLanding</title>
+  <meta name="description" content="Route everyday spending to the credit card that earns the most for each category. Canonical tool URL: /tools/credit-card/.">
   <link rel="canonical" href="https://www.wealthlanding.com/tools/credit-card/">
-  <meta name="description" content="Route everyday spending to the credit card that earns the most for each category.">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9JMJJ5CJR4');</script>
-  <style>body{font-family:Inter,system-ui,sans-serif;margin:0;padding:2rem;background:#f8fafc;color:#334155;text-align:center}</style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={safelist:['bg-navy-900'],theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:{brand:{50:'#f0fdf4',500:'#22c55e',600:'#16a34a',700:'#15803d'},navy:{900:'#0f172a'}}}}}</script>
 </head>
-<body>
-  <p id="status">Loading Card Rewards Router…</p>
-  <script>
-  (function() {
-    var parts = ['p00.txt', 'p01.txt', 'p02.txt', 'p03.txt', 'p04.txt', 'p05.txt', 'p06.txt'];
-    Promise.all(parts.map(function(name) {
-      return fetch('/tools/credit-card/parts/' + name, { credentials: 'same-origin' }).then(function(r) {
-        if (!r.ok) throw new Error(name);
-        return r.text();
-      });
-    })).then(function(chunks) {
-      document.open();
-      document.write(chunks.join(''));
-      document.close();
-    }).catch(function(err) {
-      document.getElementById('status').textContent = 'Unable to load tool. Try refreshing, or open /tools/.';
-      console.error(err);
-    });
-  })();
-  </script>
-  <noscript><p>This tool requires JavaScript. <a href="/tools/">Back to tools</a></p></noscript>
+<body class="min-h-screen flex flex-col antialiased bg-slate-50 text-slate-800">
+  <div class="bg-navy-900 hidden"></div>
+  <div id="global-header-target"></div>
+  <main class="flex-grow">
+    <section class="relative pt-14 pb-16 bg-gradient-to-b from-white via-emerald-50/30 to-slate-50 text-center px-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-200 text-brand-800 text-xs font-semibold mb-6">
+        <i class="fa-solid fa-wallet text-brand-600"></i><span>Personal Finance Tool</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-5">Which Card Should<br class="hidden sm:inline"> <span class="text-brand-600">You Use For That?</span></h1>
+      <p class="text-slate-600 max-w-2xl mx-auto mb-8">Canonical route for the Card Rewards Router is <code class="bg-slate-100 px-1 rounded text-sm">/tools/credit-card/</code>. Phase 1 locks navigation, sitemap, and legacy redirects here; the full interactive wallet builder ships in Phase 1.1 (in-tree copy from the pre-IA spending page).</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/tools/" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold shadow-md">Browse all tools</a>
+        <a href="/learn/" class="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-slate-300 bg-white font-semibold text-slate-700 hover:border-brand-500">Learn hubs</a>
+      </div>
+    </section>
+    <section class="max-w-4xl mx-auto px-4 py-12">
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
+        <h2 class="text-xl font-bold text-navy-900 mb-3">Phase 1 status</h2>
+        <ul class="text-sm text-slate-600 space-y-2 mb-6 list-disc pl-5">
+          <li>Legacy <code class="bg-slate-100 px-1 rounded">/spending/credit_card.html</code> redirects here (HTML meta refresh + JS replace + canonical).</li>
+          <li>Header mega-menu, footer, tools hub, and sitemap already use this URL.</li>
+          <li><strong>Phase 1.1:</strong> copy the full interactive Card Rewards Router HTML into this <code class="bg-slate-100 px-1 rounded">index.html</code> (adjust absolute <code class="bg-slate-100 px-1 rounded">/components/</code> paths). Until then, keep the interactive build on <code class="bg-slate-100 px-1 rounded">main</code>’s pre-merge spending path if you need it live.</li>
+          <li>gtag <code class="bg-slate-100 px-1 rounded">G-9JMJJ5CJR4</code> is installed on this page.</li>
+        </ul>
+        <p class="text-xs text-slate-500">Educational tool only — not financial advice. Rewards terms change; verify with your issuer.</p>
+      </div>
+    </section>
+  </main>
+  <wealthlanding-footer></wealthlanding-footer>
+  <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+  <script src="/components/footer.js"></script>
+  <script src="/components/header.js"></script>
 </body>
 </html>
