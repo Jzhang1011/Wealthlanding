@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9JMJJ5CJR4');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WealthLanding Blogs</title>
+  <link rel="canonical" href="https://www.wealthlanding.com/blogs/">
+  
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --emerald: #02B17D;
+      --navy: #0B132B;
+    }
+    
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    .story-card {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      background: #ffffff;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .story-card:hover h3 {
+      color: var(--emerald);
+    }
+
+    .story-image-wrapper {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background-color: #e2e8f0;
+      margin-bottom: 0.85rem;
+      position: relative;
+    }
+    
+    .story-image-wrapper img {
+      transition: transform 0.5s ease;
+    }
+    
+    .story-card:hover .story-image-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .category-header {
+      border-bottom: 3px solid #0f172a;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .category-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #0f172a;
+    }
+  </style>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={safelist:['bg-navy-900'],theme:{extend:{colors:{brand:{500:'#22c55e',600:'#16a34a'},navy:{900:'#0f172a'}}}}}</script>
+</head>
+<body class="antialiased">
+
+  <div class="bg-navy-900 hidden"></div>
+  <div id="global-header-target"></div>
+
+  <main class="w-full">
+    
+    <section class="bg-slate-50 border-b border-slate-200/80 py-10 sm:py-12 px-4 sm:px-6">
+      <div class="max-w-[1200px] mx-auto text-center flex flex-col items-center space-y-4">
+        <h1 class="text-4xl sm:text-5xl font-black tracking-tight text-slate-900 uppercase">
+          WealthLanding Blog
+        </h1>
+        <p class="text-slate-600 text-sm sm:text-base max-w-2xl font-normal px-2">
+          Insights on retirement strategies, market movements, and generational wealth planning from our expert editorial team.
+        </p>
+      </div>
+    </section>
+
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      
+      <div class="mb-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div class="aspect-video overflow-hidden bg-slate-100">
+            <img 
+              src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1200&q=80" 
+              alt="Retiree reviewing RMD paperwork" 
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            >
+          </div>
+          <div class="space-y-4">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Latest Blog</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight hover:text-emerald-700 transition-colors">
+              <a href="Happy_retirement/1m_rmd_letter.html">The One-Million-Dollar Tax Cascade: How RMDs Silently Drain Retirement Portfolios</a>
+            </h2>
+            <p class="text-slate-600 text-base leading-relaxed">
+              It looked like ordinary annual paperwork. It quietly triggered a six-part tax, IRMAA Medicare premium surcharge, and capital gains rate bump. Read our core case study.
+            </p>
+            <div class="text-sm font-medium text-slate-500 pt-2 uppercase tracking-wide">
+              June 17, 2026
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="mb-14">
+        <div class="category-header">
+          <h2 class="category-title">Happy Retirement</h2>
+          <a href="happy_retirement.html" class="text-sm font-bold text-emerald-700 hover:underline">Read More →</a>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <a href="Happy_retirement/doctor_waited.html" class="story-card">
+            <div class="story-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1758691461530-b215ed4ede6a?auto=format&fit=crop&w=800&q=80" alt="Doctor Case Study" class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 leading-snug mb-2">The Doctor Who Waited Too Long</h3>
+            <p class="text-slate-600 text-sm line-clamp-3 mb-4">The One-Million-Dollar Tax Cascade: How RMDs Silently Drain Retirement Portfolios.</p>
+            <div class="mt-auto text-[11px] font-bold text-slate-400 tracking-wide uppercase">June 17, 2026</div>
+          </a>
+
+          <a href="Happy_retirement/1m_rmd_letter.html" class="story-card">
+            <div class="story-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1200&q=80" alt="Healthcare Strategy" class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 leading-snug mb-2">The One-Million_Dollar Tax Cascade.</h3>
+            <p class="text-slate-600 text-sm line-clamp-3 mb-4">It looked like ordinary annual paperwork. It quietly triggered a six-part tax, IRMAA Medicare premium surcharge, and capital gains rate bump</p>
+            <div class="mt-auto text-[11px] font-bold text-slate-400 tracking-wide uppercase">November 30, 2025</div>
+          </a>
+
+           <a href="Happy_retirement/silent_partner.html" class="story-card">
+            <div class="story-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1600&q=85" alt="Retired engineer reviewing financial documents">
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 leading-snug mb-2">I’ve never seen my retirement account shown like that</h3>
+            <p class="text-slate-600 text-sm line-clamp-3 mb-4">It looked like ordinary annual paperwork. It quietly triggered a six-part tax, IRMAA Medicare premium surcharge, and capital gains rate bump</p>
+            <div class="mt-auto text-[11px] font-bold text-slate-400 tracking-wide uppercase">November 30, 2025</div>
+          </a>
+        </div>
+      </section>
+
+      <section class="mb-14 bg-slate-50 -mx-4 sm:-mx-6 px-4 sm:px-6 py-10 border-y border-slate-200">
+        <div class="max-w-[1200px] mx-auto">
+          <div class="category-header border-slate-900">
+            <h2 class="category-title">Chart of the Month</h2>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <a href="/Retirement-simulator/overseas_retirement_hub.html" class="story-card bg-transparent">
+              <div class="story-image-wrapper shadow-lg border border-slate-200">
+                <img src="/asset/Overseas.png" alt="2 Million USD Global Retirement Lifestyle list" class="w-full h-full object-cover">
+              </div>
+            </a>
+            <div>
+              <h3 class="text-2xl font-bold text-slate-900 leading-snug mb-3">
+                <a href="/Retirement-simulator/overseas_retirement_hub.html" class="hover:text-emerald-700 transition-colors"> Global Overseas Retirement-Lifestyle & Cost Directory</a>
+              </h3>
+              <p class="text-slate-600 text-base leading-relaxed mb-4">
+Based on the 4% Withdrawal Rule, a $2 Million USD Nest Egg generates approximately $80,000 USD/Year (~$6,700/Month). Explore how your budget performs across 18 world-class cities categorized by cost efficiency.
+              </p>
+              <div class="text-xs font-bold text-slate-500 tracking-wide uppercase">June 17, 2026</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-14">
+        <div class="category-header">
+          <h2 class="category-title">Investment</h2>
+          <a href="market_investment.html" class="text-sm font-bold text-emerald-700 hover:underline">Read More →</a>
+        </div>
+        
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <a href="investment/JPY_090126.html" class="story-card">
+            <div class="story-image-wrapper">
+              <img src="https://www.japantimes.co.jp/japantimes/uploads/images/2026/02/20/524834.jpg?auto=format&fit=crop&w=600&q=80" alt="AI" class="w-full h-full object-cover aspect-video sm:aspect-[4/3]">
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 leading-snug mb-2">Market and Investment</h3>
+            <p class="text-slate-600 text-sm line-clamp-3 mb-4">The yen has been fascinating lately, and I think the market is finally reaching an important turning point. </p>
+            <div class="mt-auto text-[11px] font-bold text-slate-400 tracking-wide uppercase">August 28, 2028</div>
+          </a>
+          <a href="investment/mRNA_090326.html" class="story-card">
+            <div class="story-image-wrapper">
+              <img src="https://www.news-medical.net/image-handler/ts/20181112091027/ri/673/picture/2018/11/By_Designua.jpg?auto=format&fit=crop&w=600&q=80" alt="AI" class="w-full h-full object-cover aspect-video sm:aspect-[4/3]">
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 leading-snug mb-2">Market and Investment</h3>
+            <p class="text-slate-600 text-sm line-clamp-3 mb-4">Programability is not predicatbilty: the math of mRNA pipeline velocity. </p>
+            <div class="mt-auto text-[11px] font-bold text-slate-400 tracking-wide uppercase">September 3, 2028</div>
+          </a>
+        </div>
+      </section>
+
+      <section class="mb-14">
+        <div class="category-header">
+          <h2 class="category-title">Budget and Spending</h2>
+          <a href="budget_spending/roth_conversions_pre_medicare.html" class="text-sm font-bold text-emerald-700 hover:underline">Read More →</a>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <a href="budget_spending/roth_conversions_pre_medicare.html" class="story-card">
+            <div class="story-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Calculator tax" class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 leading-snug mb-2">Roth Conversions: Compressing Tax Liabilities Pre-Medicare</h3>
+            <p class="text-slate-600 text-sm line-clamp-3 mb-4">Timing your tax conversions during lower-income gap years keeps your lifetime tax liabilities minimized and guards against structural Medicare surcharges.</p>
+            <div class="mt-auto text-[11px] font-bold text-slate-400 tracking-wide uppercase">January 29, 2026</div>
+          </a>
+
+          <a href="budget_spending/aca_early_retirement_subsidies.html" class="story-card">
+            <div class="story-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80" alt="Healthcare spending" class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 leading-snug mb-2">Navigating Early Retirement ACA Premium Tax Subsidies</h3>
+            <p class="text-slate-600 text-sm line-clamp-3 mb-4">Learn the mechanical frameworks required to monitor your Modified Adjusted Gross Income (MAGI) to secure maximum health insurance savings.</p>
+            <div class="mt-auto text-[11px] font-bold text-slate-400 tracking-wide uppercase">January 04, 2026</div>
+          </a>
+        </div>
+      </section>
+
+      <section class="mb-14">
+        <div class="category-header">
+          <h2 class="category-title">Real Estate</h2>
+          <a href="real_estate/secure_act_inherited_iras.html" class="text-sm font-bold text-emerald-700 hover:underline">Read More →</a>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <a href="Happy_retirement/silent_partner.html" class="story-card">
+            <div class="story-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1600&q=85" alt="Silent Partner" class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 leading-snug mb-2">The IRS Was His Silent Business Partner</h3>
+            <p class="text-slate-600 text-sm line-clamp-3 mb-4">He spent forty years accumulating $4 million in retirement savings. He thought the whole balance belonged to his family.</p>
+            <div class="mt-auto text-[11px] font-bold text-slate-400 tracking-wide uppercase">June 17, 2026</div>
+          </a>
+
+          <a href="real_estate/secure_act_inherited_iras.html" class="story-card">
+            <div class="story-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80" alt="Estate Planning" class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 leading-snug mb-2">The SECURE Act 2.0 & Inherited IRAs: 10-Year Rule Mechanics</h3>
+            <p class="text-slate-600 text-sm line-clamp-3 mb-4">How the elimination of the Stretch IRA alters generational wealth transfers and how beneficiaries can structure multi-year distributions.</p>
+            <div class="mt-auto text-[11px] font-bold text-slate-400 tracking-wide uppercase">December 18, 2025</div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <wealthlanding-footer></wealthlanding-footer>
+  <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+  <script src="/components/footer.js"></script>
+  <script src="/components/header.js"></script> 
+</body>
+</html>
