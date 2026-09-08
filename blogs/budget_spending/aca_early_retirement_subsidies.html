@@ -16,9 +16,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>@import url('/blogs/case_study.css');</style>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    safelist: ['bg-navy-900'],
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50: '#f0fdf4', 100: '#dcfce7', 500: '#22c55e', 600: '#16a34a', 700: '#15803d'
+          },
+          navy: { 800: '#1e293b', 900: '#0f172a' }
+        }
+      }
+    }
+  }
+</script>
 </head>
 <body>
 
+<div class="bg-navy-900 hidden"></div>
 <div id="global-header-target"></div>
 <section class="hero"><div class="heroin"><div><div class="eyebrow"><span class="dot"></span>Budget &amp; spending · Healthcare</div>
 <h1>Navigating Early Retirement ACA Premium Tax Subsidies</h1><p class="dek">Learn the mechanical frameworks required to monitor Modified Adjusted Gross Income (MAGI) so you can pursue maximum health insurance savings before Medicare.</p>
@@ -104,8 +122,11 @@
 <span class="arrow">Back to hub →</span></a></div>
 </div>
 </section>
-<footer><div class="footin"><span>© 2026 WealthLanding</span><span>Financial education designed to make complex decisions visible.</span></div>
-</footer>
+
+    <wealthlanding-footer></wealthlanding-footer>
+    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+    <script src="/components/footer.js"></script>
+
 <script src="/components/header.js"></script>
 
 </body></html>
