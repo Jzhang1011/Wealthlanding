@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core -->
   <url><loc>https://www.wealthlanding.com/</loc></url>
   <url><loc>https://www.wealthlanding.com/learn/</loc></url>
   <url><loc>https://www.wealthlanding.com/learn/early-career/</loc></url>
@@ -16,12 +17,16 @@
   <url><loc>https://www.wealthlanding.com/methodology/</loc></url>
   <url><loc>https://www.wealthlanding.com/privacy/</loc></url>
   <url><loc>https://www.wealthlanding.com/terms/</loc></url>
+
+  <!-- Early-career playbook -->
   <url><loc>https://www.wealthlanding.com/life_stage/18_25/playbook_hub.html</loc></url>
   <url><loc>https://www.wealthlanding.com/life_stage/18_25/step_1.html</loc></url>
   <url><loc>https://www.wealthlanding.com/life_stage/18_25/step_2.html</loc></url>
   <url><loc>https://www.wealthlanding.com/life_stage/18_25/step_3.html</loc></url>
   <url><loc>https://www.wealthlanding.com/life_stage/18_25/step_4.html</loc></url>
   <url><loc>https://www.wealthlanding.com/life_stage/18_25/step_5.html</loc></url>
+
+  <!-- Retirement lab (public hub tools) -->
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/Retirement_Gateway.html</loc></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/building-your-retirement.html</loc></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/OptimizeRoth.html</loc></url>
@@ -33,23 +38,46 @@
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/odyssey-exploration.html</loc></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/retirement_profiles.html</loc></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/retirement_feasibility_engine.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/auckland.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/bangkok.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/barcelona.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/da_nang.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/hong_kong.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/kuala_lumpur.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/lisbon.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/merida.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/rome.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/seoul.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/shanghai.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/singapore.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/tokyo.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/zurich.html</loc></url>
+
+  <!-- Overseas city guides (canonical) -->
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/auckland.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/bangkok.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/barcelona.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/da_nang.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/hong_kong.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/kuala_lumpur.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/lisbon.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/london.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/los_angeles.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/merida.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/rome.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/seoul.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/shanghai.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/singapore.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/sydney.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/tokyo.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/vancouver.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/zurich.html</loc></url>
+
+  <!-- Insights / blogs -->
   <url><loc>https://www.wealthlanding.com/blogs/happy_retirement.html</loc></url>
   <url><loc>https://www.wealthlanding.com/blogs/18_25.html</loc></url>
   <url><loc>https://www.wealthlanding.com/blogs/market_investment.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/blogs/Happy_retirement/doctor_waited.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/blogs/Happy_retirement/1m_rmd_letter.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/blogs/Happy_retirement/silent_partner.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/blogs/Happy_retirement/how-to-avoid-RMD-taxes.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/blogs/18_25/paycheck.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/blogs/18_25/everyday_cost.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/blogs/18_25/FSA_HSA.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/blogs/18_25/gig_economy_tax.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/blogs/budget_spending/roth_conversions_pre_medicare.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/blogs/budget_spending/aca_early_retirement_subsidies.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/blogs/investment/JPY_090126.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/blogs/investment/mRNA_090326.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/blogs/real_estate/secure_act_inherited_iras.html</loc></url>
+
+  <!-- Featured investing models -->
   <url><loc>https://www.wealthlanding.com/investment/index.html</loc></url>
   <url><loc>https://www.wealthlanding.com/investment/real_estate_vs_stocks_model.html</loc></url>
 </urlset>
