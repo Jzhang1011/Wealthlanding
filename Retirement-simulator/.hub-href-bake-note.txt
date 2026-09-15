@@ -1,1 +1,1 @@
-{{file:/tmp/hub_new.html}}
+Baking hub: 15 cities/ -> guides/ hrefs. Payload staged at /tmp/cu_attempt_push.json (44k) and /tmp/cu_attempt_full.json (92k).
