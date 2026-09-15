@@ -1,0 +1,2 @@
+Pending: bake 15 overseas hub card hrefs from cities/ to guides/ in overseas_retirement_hub.html.
+Verified guides exist on main for: bangkok, lisbon, kuala_lumpur, da_nang, merida, tokyo, seoul, barcelona, shanghai, rome, sydney, auckland, zurich, hong_kong, singapore.
