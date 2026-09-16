@@ -129,6 +129,38 @@ class WealthLandingFooter extends HTMLElement {
           border: 0;
           cursor: pointer;
         }
+        wealthlanding-footer footer.wl-site-footer .wl-kit-fields {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+        wealthlanding-footer footer.wl-site-footer .wl-kit-input {
+          width: 100%;
+          border-radius: 0.25rem;
+          padding: 0.5rem 0.75rem;
+          color: #0f172a;
+          font-size: 0.875rem;
+          border: 1px solid #cbd5e1;
+          box-sizing: border-box;
+        }
+        wealthlanding-footer footer.wl-site-footer .wl-kit-submit {
+          border-radius: 0.25rem;
+          background: #16a34a;
+          color: #fff;
+          font-size: 0.875rem;
+          font-weight: 600;
+          padding: 0.5rem 0.75rem;
+          border: 0;
+          cursor: pointer;
+          width: 100%;
+        }
+        wealthlanding-footer footer.wl-site-footer .wl-kit-submit:hover {
+          background: #15803d;
+        }
+        wealthlanding-footer footer.wl-site-footer .formkit-alert:empty {
+          display: none;
+        }
+
       `;
       document.head.appendChild(style);
     }
@@ -166,13 +198,21 @@ class WealthLandingFooter extends HTMLElement {
             <div>
               <h4 class="text-white font-bold mb-4">Join Newsletter</h4>
               <p class="wl-muted text-sm text-slate-400 mb-3">Get practical wealth education in your inbox.</p>
-              <div class="wl-kit-slot" data-kit-slot></div>
-              <noscript>
-                <form action="https://app.kit.com/forms/9874203/subscriptions" method="post" class="wl-noscript-form flex flex-col gap-2">
-                  <input type="email" name="email_address" required placeholder="Email Address" class="rounded px-3 py-2 text-slate-900 text-sm" />
-                  <button type="submit" class="rounded bg-brand-600 text-white text-sm font-semibold py-2">Subscribe</button>
+              <div class="wl-kit-slot" data-kit-slot>
+                <form action="https://app.kit.com/forms/9874203/subscriptions" method="post" class="seva-form formkit-form wl-kit-form" data-sv-form="9874203" data-uid="2b35717445" data-format="inline" data-version="5">
+                  <div data-style="clean">
+                    <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+                    <div data-element="fields" class="seva-fields formkit-fields wl-kit-fields">
+                      <div class="formkit-field">
+                        <input class="formkit-input wl-kit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required type="email" />
+                      </div>
+                      <button data-element="submit" class="formkit-submit wl-kit-submit" type="submit">
+                        <span>Subscribe</span>
+                      </button>
+                    </div>
+                  </div>
                 </form>
-              </noscript>
+              </div>
             </div>
           </div>
           <div class="wl-bottom border-t border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
@@ -186,14 +226,14 @@ class WealthLandingFooter extends HTMLElement {
       </footer>
     `;
 
-    // Kit embed must be appended via DOM APIs — <script> tags inside innerHTML do not execute.
-    const kitSlot = this.querySelector('[data-kit-slot]');
-    if (kitSlot && !kitSlot.querySelector('script[data-uid="2b35717445"]')) {
-      const kit = document.createElement('script');
-      kit.async = true;
-      kit.setAttribute('data-uid', '2b35717445');
-      kit.src = 'https://wealthlanding.kit.com/2b35717445/index.js';
-      kitSlot.appendChild(kit);
+    // Kit JS embed URL currently 404s (wealthlanding.kit.com/.../index.js).
+    // Use the HTML form (same form id 9874203 / uid 2b35717445) so the email field always shows.
+    if (!document.getElementById('wl-ckjs')) {
+      const ck = document.createElement('script');
+      ck.id = 'wl-ckjs';
+      ck.src = 'https://f.convertkit.com/ckjs/ck.5.js';
+      ck.async = true;
+      document.head.appendChild(ck);
     }
   }
 }
