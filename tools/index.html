@@ -43,8 +43,7 @@
   </main>
   <script>document.addEventListener('DOMContentLoaded',()=>{const btns=[...document.querySelectorAll('.filter-btn')],cards=[...document.querySelectorAll('.tool-card')];btns.forEach(btn=>btn.addEventListener('click',()=>{btns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;cards.forEach(c=>{(f==='all'||c.dataset.category===f)?c.classList.remove('hidden-tool'):c.classList.add('hidden-tool');});});});</script>
   <wealthlanding-footer></wealthlanding-footer>
-  <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-  <script src="/components/footer.js"></script>
+<script src="/components/footer.js"></script>
   <script src="/components/header.js"></script>
 </body>
 </html>
