@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "title": "Bitcoin Liquidity & Infrastructure Dashboard",
+    "description": "Illustrative placeholder metrics for reading Bitcoin through liquidity, scarce-asset demand, and power-to-AI infrastructure — not a live market feed.",
+    "as_of": "2026-09-15",
+    "illustrative": true,
+    "source_note": "All figures are round illustrative placeholders for educational framing. They are not live API quotes, not trading signals, and not investment advice.",
+    "disclaimer": "Educational research only. Not individualized financial advice. Numbers may lag or be stylized for teaching the framework."
+  },
+  "buckets": [
+    {
+      "id": "macro-liquidity",
+      "label": "Macro liquidity",
+      "framing": "Higher rates = near-term headwind for BTC. Don't fight the liquidity math.",
+      "metric_ids": ["fed-funds-rate", "10y-real-yield", "30y-treasury-yield"]
+    },
+    {
+      "id": "scarce-asset",
+      "label": "Scarce-asset / debasement",
+      "framing": "Institutional flows despite elevated real rates make the monetary-infrastructure thesis more interesting.",
+      "metric_ids": ["btc-etf-net-flows", "btc-vs-gold"]
+    },
+    {
+      "id": "btc-infrastructure",
+      "label": "Bitcoin infrastructure",
+      "framing": "Stop treating miners as leveraged BTC proxies. Ask how much the power portfolio earns per MW after converting mining → AI compute.",
+      "metric_ids": ["ai-revenue-per-mw"]
+    }
+  ],
+  "metrics": [
+    {
+      "id": "fed-funds-rate",
+      "bucket": "macro-liquidity",
+      "label": "Fed funds rate",
+      "value": 4.25,
+      "display": "4.25",
+      "unit": "%",
+      "why_it_matters": "Policy rate sets the opportunity cost of holding non-yielding scarce assets.",
+      "status": "Headwind",
+      "status_kind": "liquidity",
+      "illustrative": true,
+      "as_of": "2026-09-15",
+      "source_note": "Illustrative placeholder — not a live Fed quote."
+    },
+    {
+      "id": "10y-real-yield",
+      "bucket": "macro-liquidity",
+      "label": "10-year real yield",
+      "value": 1.9,
+      "display": "1.9",
+      "unit": "%",
+      "why_it_matters": "Real yields compete directly with BTC as a long-duration scarce claim.",
+      "status": "Headwind",
+      "status_kind": "liquidity",
+      "illustrative": true,
+      "as_of": "2026-09-15",
+      "source_note": "Illustrative placeholder — stylized TIPS-style real yield."
+    },
+    {
+      "id": "30y-treasury-yield",
+      "bucket": "macro-liquidity",
+      "label": "30-year Treasury yield",
+      "value": 4.6,
+      "display": "4.6",
+      "unit": "%",
+      "why_it_matters": "Long-end yields anchor discount rates and risk appetite across risk assets.",
+      "status": "Neutral",
+      "status_kind": "liquidity",
+      "illustrative": true,
+      "as_of": "2026-09-15",
+      "source_note": "Illustrative placeholder — not a live Treasury quote."
+    },
+    {
+      "id": "btc-etf-net-flows",
+      "bucket": "scarce-asset",
+      "label": "BTC ETF net flows",
+      "value": 1.2,
+      "display": "+1.2",
+      "unit": "$B / 30d",
+      "why_it_matters": "Spot ETF flows show whether institutions keep adding despite elevated real rates.",
+      "status": "Confirming",
+      "status_kind": "scarce",
+      "illustrative": true,
+      "as_of": "2026-09-15",
+      "source_note": "Illustrative 30-day net-flow placeholder — not a live ETF tape."
+    },
+    {
+      "id": "btc-vs-gold",
+      "bucket": "scarce-asset",
+      "label": "BTC vs. gold performance",
+      "value": 18,
+      "display": "+18",
+      "unit": "% YTD relative",
+      "why_it_matters": "Relative performance vs. gold tests the scarce-asset / debasement framing.",
+      "status": "Mixed",
+      "status_kind": "scarce",
+      "illustrative": true,
+      "as_of": "2026-09-15",
+      "source_note": "Illustrative YTD relative-return placeholder — not live prices."
+    },
+    {
+      "id": "ai-revenue-per-mw",
+      "bucket": "btc-infrastructure",
+      "label": "AI revenue per MW (ex-miners)",
+      "value": 1.5,
+      "display": "~1.5",
+      "unit": "$M / MW / yr",
+      "why_it_matters": "Shows what former mining power portfolios may earn after pivoting to AI compute.",
+      "status": "Confirming",
+      "status_kind": "infra",
+      "illustrative": true,
+      "as_of": "2026-09-15",
+      "source_note": "Illustrative industry-style placeholder — company disclosures vary widely."
+    }
+  ]
+}
