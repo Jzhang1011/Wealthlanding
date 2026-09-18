@@ -18,6 +18,10 @@
 "slug": "waste",
 "file": "themes/waste.json"
 },
+  {
+"slug": "waste",
+"file": "themes/bitcoin.json"
+},
 {
 "slug": "aging",
 "file": "themes/aging.json"
