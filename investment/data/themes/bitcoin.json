@@ -1,0 +1,538 @@
+{
+  "schema_version": "4.2",
+  "review_id": "bitcoin-2026-09-18",
+  "thesis": {
+    "id": "BTC-001",
+    "name": "Bitcoin & Monetary Hard-Asset Layer",
+    "slug": "bitcoin",
+    "category": "macro-currency",
+    "horizon": "5-15 years"
+  },
+  "video": {
+    "embed_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "title": "Bitcoin Macro Architecture and Monetary Settlement Layer"
+  },
+  "review": {
+    "date": "2026-09-18",
+    "period_start": null,
+    "period_end": "2026-09-18",
+    "cadence": "weekly",
+    "previous_review_id": "bitcoin-2026-08-21"
+  },
+  "status": "intact",
+  "thesis_health": {
+    "current": 81,
+    "previous": 83,
+    "change": -2,
+    "trend": "stable",
+    "reason_code": "FED_HIKE_RATE_ADJUSTMENT",
+    "reason": "FOMC 25 bps hike to 3.75%-4.00% raises cost of capital but reinforces market rail cash yields."
+  },
+  "material_change": true,
+  "scenario_model": {
+    "current_scenario": "fair",
+    "confidence": 0.68,
+    "scenarios": [
+      {
+        "id": "bull",
+        "probability": 0.25,
+        "description": "Sovereign debasement accelerates as terminal rate hike cycle ends; spot BTC surpasses $125k; institutional ETF inflows reaccelerate.",
+        "entry_conditions": ["Spot BTC breaks $88,000", "Fed pauses hikes in November 2026"],
+        "exit_conditions": ["Severe macro liquidity crunch", "Regulatory ban on institutional custody"]
+      },
+      {
+        "id": "fair",
+        "probability": 0.55,
+        "description": "Fed maintains 3.75%-4.25% higher-for-longer policy; spot BTC consolidates between $72k-$88k; regulated rails and custodians expand high-margin fee capture.",
+        "entry_conditions": ["Spot BTC holds $74,000 support", "Fed funds stabilized near 4.00%"],
+        "exit_conditions": ["Sustained drop below $58,000 cost of production"]
+      },
+      {
+        "id": "bear",
+        "probability": 0.20,
+        "description": "Persistent inflation forces Fed funds above 4.75%; liquidity withdrawal drives spot BTC below $58k; pure-play miner margins collapse.",
+        "entry_conditions": ["Fed raises rates 50+ bps in Q4", "Spot BTC breaks below $65,000"],
+        "exit_conditions": ["Global central bank coordinated quantitative easing"]
+      }
+    ]
+  },
+  "decision": {
+    "state": "active_buy",
+    "previous_state": "valuation_review",
+    "changed": true,
+    "summary": "Accumulate monopolistic regulated derivatives exchange (CME) and high-yield infrastructure custodians (COIN) dislocated by Fed rate hike volatility.",
+    "cta": "buy_below_attractive_threshold",
+    "reason_codes": ["RATE_VOLATILITY_EXPANSION", "REGULATED_MOAT_DOMINANCE"],
+    "required_actions": [
+      "Accumulate CME below $265.00 for resilient cash return and volume expansion",
+      "Accumulate COIN below $168.00 targeting 15%+ margin of safety",
+      "Monitor MSTR on watchlist pending mNAV premium compression"
+    ]
+  },
+  "developments": [
+    {
+      "id": "BTC-D1",
+      "date": "2026-09-16",
+      "title": "FOMC Raises Fed Funds Rate 25 bps to 3.75%-4.00%",
+      "fact": "Federal Reserve unanimously votes 12-0 to raise policy rate by 25 bps, marking first rate increase since 2023 with year-end projection at 4.10%.",
+      "assumption_ids": ["BTC-A2", "BTC-A5"],
+      "direction": "mixed_positive",
+      "materiality": "high",
+      "durability": "medium",
+      "interpretation": "Elevates discount rate on speculative tech while boosting interest yields on exchange collateral and stablecoin fiat reserves.",
+      "source_ids": ["SRC-FOMC-20260916"]
+    },
+    {
+      "id": "BTC-D2",
+      "date": "2026-09-18",
+      "title": "Spot Bitcoin Defends $76,000 Base Rebounding to $80,736",
+      "fact": "Bitcoin absorbed immediate post-hike dip to $75,586 and rebounded above $80,700, remaining up 19.9% month-over-month.",
+      "assumption_ids": ["BTC-A1", "BTC-A3"],
+      "direction": "positive",
+      "materiality": "high",
+      "durability": "high",
+      "interpretation": "Confirms structural buyer demand and monetary inelasticity above fundamental cost support levels.",
+      "source_ids": ["SRC-MARKET-20260918"]
+    },
+    {
+      "id": "BTC-D3",
+      "date": "2026-09-12",
+      "title": "Strategy Bitcoin Purchases Decelerate to 520 BTC as Cash Reserves Reach $1.4B",
+      "fact": "Strategy expanded holdings to 847,363 BTC with a $35M buy (520 BTC at $67,068 average), while boosting USD cash reserves to $1.4B.",
+      "assumption_ids": ["BTC-A5"],
+      "direction": "neutral",
+      "materiality": "medium",
+      "durability": "medium",
+      "interpretation": "Reflects tighter debt market conditions and prudent capital preservation amidst higher borrowing costs.",
+      "source_ids": ["SRC-SEC-MSTR-2026"]
+    },
+    {
+      "id": "BTC-D4",
+      "date": "2026-09-15",
+      "title": "CME Group Digital Asset Volume and Open Interest Reach All-Time Highs",
+      "fact": "CME recorded over 34,200 open contracts across institutional BTC/ETH futures while sustaining operating margins above 58%.",
+      "assumption_ids": ["BTC-A4"],
+      "direction": "positive",
+      "materiality": "high",
+      "durability": "high",
+      "interpretation": "Institutional rotation favors regulated, cleared financial infrastructure over unhedged balance sheet speculation.",
+      "source_ids": ["SRC-CME-Q22026"]
+    },
+    {
+      "id": "BTC-D5",
+      "date": "2026-09-10",
+      "title": "Coinbase Q2 Subscription Revenue Climbs to 48% of Net Revenue",
+      "fact": "Coinbase generated $555M in subscription and services revenue out of $1.20B total, driven by stablecoin reserve yields and institutional custody.",
+      "assumption_ids": ["BTC-A4", "BTC-A6"],
+      "direction": "positive",
+      "materiality": "medium",
+      "durability": "high",
+      "interpretation": "Fed rate hike at 3.75%-4.00% supports stablecoin interest income, dampening spot transaction cyclicality.",
+      "source_ids": ["SRC-COIN-10Q-2026"]
+    },
+    {
+      "id": "BTC-D6",
+      "date": "2026-09-08",
+      "title": "IREN Ltd Energizes 2.8 GW Power Pipeline with HPC Expansion",
+      "fact": "IREN reported 35 EH/s hash rate capacity while contracting multi-hundred megawatt data center facilities for AI cloud workloads at <$0.038/kWh.",
+      "assumption_ids": ["BTC-A6"],
+      "direction": "positive",
+      "materiality": "high",
+      "durability": "high",
+      "interpretation": "Dual-revenue compute model insulates infrastructure operators from standalone Bitcoin mining difficulty shocks.",
+      "source_ids": ["SRC-IREN-PR-2026"]
+    },
+    {
+      "id": "BTC-D7",
+      "date": "2026-09-16",
+      "title": "Senate Delays CLARITY Act Floor Vote",
+      "fact": "Digital asset market structure legislation stalled in Senate negotiations ahead of mid-term election calendar.",
+      "assumption_ids": ["BTC-A4"],
+      "direction": "mixed_positive",
+      "materiality": "medium",
+      "durability": "medium",
+      "interpretation": "Extends compliance advantage for regulated incumbents (CME, registered broker-dealers) over unregulated platforms.",
+      "source_ids": ["SRC-CONGRESS-2026"]
+    }
+  ],
+  "scorecard": [
+    {
+      "assumption_id": "BTC-A1",
+      "name": "Sovereign Debt Debasement & Monetary Scarcity Demand",
+      "score": 5,
+      "previous_score": 5,
+      "change": 0,
+      "trend": "stable",
+      "assessment": "Global sovereign fiscal trajectories sustain inelastic long-term institutional demand for programmatic monetary scarcity."
+    },
+    {
+      "assumption_id": "BTC-A2",
+      "name": "Macro Liquidity & Cost of Capital Transmission",
+      "score": 3,
+      "previous_score": 4,
+      "change": -1,
+      "trend": "weakening",
+      "assessment": "The 25 bps FOMC rate hike to 3.75%-4.00% and hawkish dot plot lift hurdle rates and tighten speculative debt availability."
+    },
+    {
+      "assumption_id": "BTC-A3",
+      "name": "Network Security & Hash Rate Resilience",
+      "score": 4,
+      "previous_score": 4,
+      "change": 0,
+      "trend": "stable",
+      "assessment": "Global network hash rate exceeds 680 EH/s, confirming institutional mining security and ASIC fleet efficiency."
+    },
+    {
+      "assumption_id": "BTC-A4",
+      "name": "Institutional Market Rails & Regulated Custody Moats",
+      "score": 5,
+      "previous_score": 5,
+      "change": 0,
+      "trend": "improving",
+      "assessment": "CME and regulated onshore custodians absorb surging volumes with zero principal inventory drawdown risk."
+    },
+    {
+      "assumption_id": "BTC-A5",
+      "name": "Corporate Treasury Balance Sheet Accretion",
+      "score": 3,
+      "previous_score": 3,
+      "change": 0,
+      "trend": "stable",
+      "assessment": "Convertible debt arbitrage yields narrow under 4.00% benchmark rates; companies prioritize equity ATM and cash cushions."
+    },
+    {
+      "assumption_id": "BTC-A6",
+      "name": "Energy Arbitrage & Dual HPC Colocation Economics",
+      "score": 4,
+      "previous_score": 3,
+      "change": 1,
+      "trend": "improving",
+      "assessment": "Miners successfully monetize large-scale power interconnections into AI compute hosting, elevating earnings baselines."
+    }
+  ],
+  "assumptions_changed": ["BTC-A2", "BTC-A6"],
+  "catalysts": [
+    {
+      "name": "FOMC November 2026 Rate Decision",
+      "assumption_ids": ["BTC-A2"],
+      "state": "active",
+      "expected_date": "2026-11-04",
+      "confirmation_test": "Pause in rate hiking cycle or dovish guidance easing real yields.",
+      "failure_test": "Additional 25 bps hike to 4.25% with signals of sustained 2027 tightening."
+    },
+    {
+      "name": "CME Group Q3 2026 Earnings",
+      "assumption_ids": ["BTC-A4"],
+      "state": "active",
+      "expected_date": "2026-10-28",
+      "confirmation_test": "Digital asset contract ADV up > 25% YoY; operating margin > 58%.",
+      "failure_test": "Deceleration in institutional trading volume or market share loss."
+    },
+    {
+      "name": "Coinbase Q3 2026 Earnings Release",
+      "assumption_ids": ["BTC-A4", "BTC-A6"],
+      "state": "pending",
+      "expected_date": "2026-10-30",
+      "confirmation_test": "Subscription & services revenue exceeds $575M on 3.75%-4.00% fed funds float.",
+      "failure_test": "Severe compression in retail trading volume driving wider GAAP net loss."
+    }
+  ],
+  "opportunities": [
+    {
+      "rank": 1,
+      "opportunity_id": "BTC-OP-1",
+      "group": "institutional-rails",
+      "name": "CME Group Inc.",
+      "ticker": "CME",
+      "asset_type": "company",
+      "independent_return_engines": [
+        "Interest rate futures & options clearing volume",
+        "Crypto derivatives institutional market dominance",
+        "Proprietary market data subscriptions"
+      ],
+      "catalyst": "Q3 2026 earnings release and volume records",
+      "valuation_status": "moderately_undervalued",
+      "main_risk": "Broad market liquidity contraction reducing trading velocity",
+      "next_action": "Accumulate below $265.00 entry zone",
+      "company_review": {
+        "status": "selected",
+        "company_slug": "cme-group",
+        "reason": "Monopolistic infrastructure rail capturing rate and crypto volatility with 58% operating margin and zero direct crypto balance sheet risk.",
+        "priority": "P0",
+        "trigger_rules": ["rank_top_3", "valuation_required"],
+        "company_packet_required": true,
+        "rank_slot": "top1",
+        "company_json_path": "/investment/data/companies/bitcoin/top1.json",
+        "detail_url": "/investment/company.html?thesis=bitcoin&rank=1"
+      }
+    },
+    {
+      "rank": 2,
+      "opportunity_id": "BTC-OP-2",
+      "group": "custody-exchange",
+      "name": "Coinbase Global, Inc.",
+      "ticker": "COIN",
+      "asset_type": "company",
+      "independent_return_engines": [
+        "Stablecoin interest yield sharing (Fed funds 3.75%-4.00%)",
+        "Institutional qualified custody fees",
+        "Base L2 sequencer cash generation"
+      ],
+      "catalyst": "US perpetual futures derivatives expansion",
+      "valuation_status": "moderately_undervalued",
+      "main_risk": "Cyclical downturn in retail transaction fee capture",
+      "next_action": "Scale into positions below $168.00 attractive threshold",
+      "company_review": {
+        "status": "selected",
+        "company_slug": "coinbase",
+        "reason": "Subscription and services revenue shields business from spot dips, with strong leverage to risk-free interest yields.",
+        "priority": "P0",
+        "trigger_rules": ["rank_top_3", "valuation_required"],
+        "company_packet_required": true,
+        "rank_slot": "top2",
+        "company_json_path": "/investment/data/companies/bitcoin/top2.json",
+        "detail_url": "/investment/company.html?thesis=bitcoin&rank=2"
+      }
+    },
+    {
+      "rank": 3,
+      "opportunity_id": "BTC-OP-3",
+      "group": "compute-power",
+      "name": "IREN Ltd",
+      "ticker": "IREN",
+      "asset_type": "company",
+      "independent_return_engines": [
+        "Low-cost sub-$0.038/kWh renewable mining fleet",
+        "2.8 GW high-voltage energized grid interconnection",
+        "AI cloud colocation contracted cash flows"
+      ],
+      "catalyst": "Next-gen GPU cluster delivery and energization",
+      "valuation_status": "modestly_undervalued",
+      "main_risk": "Grid interconnect execution delays and GPU capex escalation",
+      "next_action": "Buy below $41.00 margin of safety threshold",
+      "company_review": {
+        "status": "selected",
+        "company_slug": "iren-ltd",
+        "reason": "Best-in-class power monetization bridging Bitcoin hash production with high-margin AI data center hosting.",
+        "priority": "P0",
+        "trigger_rules": ["rank_top_3", "valuation_required"],
+        "company_packet_required": true,
+        "rank_slot": "top3",
+        "company_json_path": "/investment/data/companies/bitcoin/top3.json",
+        "detail_url": "/investment/company.html?thesis=bitcoin&rank=3"
+      }
+    },
+    {
+      "rank": 4,
+      "opportunity_id": "BTC-OP-4",
+      "group": "balance-sheet-treasury",
+      "name": "Strategy",
+      "ticker": "MSTR",
+      "asset_type": "company",
+      "independent_return_engines": [
+        "Leveraged Bitcoin treasury accretion",
+        "ATM premium equity issuance",
+        "Enterprise software cash flows"
+      ],
+      "catalyst": "Next multi-hundred BTC filing and convertible issuance",
+      "valuation_status": "overvalued",
+      "main_risk": "Significant compression of mNAV premium under higher discount rates",
+      "next_action": "Place on watchlist; await mNAV premium compression below 1.15x",
+      "company_review": {
+        "status": "rejected",
+        "company_slug": "strategy",
+        "reason": "Refused from Top 3 due to excessive mNAV premium (>1.6x) and refinancing vulnerability in a 4.00% fed funds environment.",
+        "priority": "P2",
+        "trigger_rules": ["valuation_rejected"],
+        "company_packet_required": false,
+        "rank_slot": null,
+        "company_json_path": null,
+        "detail_url": null
+      }
+    },
+    {
+      "rank": 5,
+      "opportunity_id": "BTC-OP-5",
+      "group": "asset-management",
+      "name": "BlackRock Inc.",
+      "ticker": "BLK",
+      "asset_type": "company",
+      "independent_return_engines": ["IBIT ETF management fees", "Global private wealth allocations"],
+      "catalyst": "Institutional model portfolio inclusion",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Crypto fee revenue diluted within massive multi-trillion AUM base",
+      "next_action": "Monitor institutional adoption metrics"
+    },
+    {
+      "rank": 6,
+      "opportunity_id": "BTC-OP-6",
+      "group": "retail-fintech",
+      "name": "Robinhood Markets, Inc.",
+      "ticker": "HOOD",
+      "asset_type": "company",
+      "independent_return_engines": ["Crypto transaction volume", "Securities lending", "Cash sweep yield"],
+      "catalyst": "International crypto expansion and web3 wallet scaling",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Retail sentiment contraction during rate hike cycles",
+      "next_action": "Await technical consolidation"
+    },
+    {
+      "rank": 7,
+      "opportunity_id": "BTC-OP-7",
+      "group": "pure-mining",
+      "name": "CleanSpark, Inc.",
+      "ticker": "CLSK",
+      "asset_type": "company",
+      "independent_return_engines": ["Low-cost Georgia mining fleet", "Owned power infrastructure"],
+      "catalyst": "Hash rate expansion past 30 EH/s",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Network difficulty increases compressing mining gross margins",
+      "next_action": "Continue secondary screening"
+    },
+    {
+      "rank": 8,
+      "opportunity_id": "BTC-OP-8",
+      "group": "pure-mining",
+      "name": "Marathon Digital Holdings",
+      "ticker": "MARA",
+      "asset_type": "company",
+      "independent_return_engines": ["Global mining footprint", "Stranded energy capture"],
+      "catalyst": "International immersion cooling deployment",
+      "valuation_status": "overvalued",
+      "main_risk": "Elevated fleet production cost curve relative to low-cost peers",
+      "next_action": "Avoid until operational cost parity achieved"
+    },
+    {
+      "rank": 9,
+      "opportunity_id": "BTC-OP-9",
+      "group": "pure-mining",
+      "name": "Riot Platforms, Inc.",
+      "ticker": "RIOT",
+      "asset_type": "company",
+      "independent_return_engines": ["ERCOT grid demand-response credits", "Corsicana facility scale"],
+      "catalyst": "Completion of 1 GW Corsicana phase buildout",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Texas heat wave power price volatility and ERCOT regulatory scrutiny",
+      "next_action": "Monitor quarterly power credit realizations"
+    },
+    {
+      "rank": 10,
+      "opportunity_id": "BTC-OP-10",
+      "group": "security-tech",
+      "name": "Institutional MPC & Custody Solutions",
+      "ticker": "TECH-CUST",
+      "asset_type": "technology",
+      "independent_return_engines": ["Hardware security modules", "MPC cryptographic key management"],
+      "catalyst": "Tier-1 bank commercial custody deployments",
+      "valuation_status": "under_review",
+      "main_risk": "In-house proprietary software displacement",
+      "next_action": "Screen emerging pure-play vendors"
+    }
+  ],
+  "ranked_company_reviews": [
+    {
+      "rank": 1,
+      "slot": "top1",
+      "company_name": "CME Group Inc.",
+      "company_slug": "cme-group",
+      "ticker": "CME",
+      "selection_reason": "Market-leading institutional derivative rail immune to balance sheet drawdowns and directly benefiting from Fed rate hike volatility.",
+      "company_json_path": "/investment/data/companies/bitcoin/top1.json",
+      "detail_url": "/investment/company.html?thesis=bitcoin&rank=1",
+      "analysis_status": "complete"
+    },
+    {
+      "rank": 2,
+      "slot": "top2",
+      "company_name": "Coinbase Global, Inc.",
+      "company_slug": "coinbase",
+      "ticker": "COIN",
+      "selection_reason": "High-margin subscription and custody franchise capitalizing on 3.75%-4.00% benchmark interest rates on stablecoin reserves.",
+      "company_json_path": "/investment/data/companies/bitcoin/top2.json",
+      "detail_url": "/investment/company.html?thesis=bitcoin&rank=2",
+      "analysis_status": "complete"
+    },
+    {
+      "rank": 3,
+      "slot": "top3",
+      "company_name": "IREN Ltd",
+      "company_slug": "iren-ltd",
+      "ticker": "IREN",
+      "selection_reason": "Dual-threat infrastructure leader with 2.8 GW of energized low-cost power combining Bitcoin mining with high-margin AI data center hosting.",
+      "company_json_path": "/investment/data/companies/bitcoin/top3.json",
+      "detail_url": "/investment/company.html?thesis=bitcoin&rank=3",
+      "analysis_status": "complete"
+    }
+  ],
+  "risks": [
+    {
+      "name": "Sustained Fed Tightening to 4.25%+",
+      "trigger": "FOMC dots shifting higher at November 2026 meeting",
+      "assumption_ids": ["BTC-A2"]
+    },
+    {
+      "name": "US Senate Digital Asset Legislative Gridlock",
+      "trigger": "CLARITY Act remains indefinitely stalled in committee",
+      "assumption_ids": ["BTC-A4"]
+    },
+    {
+      "name": "Treasury mNAV Multiple Compression",
+      "trigger": "Rising bond yields trigger liquidation of corporate convertible structures",
+      "assumption_ids": ["BTC-A5"]
+    },
+    {
+      "name": "Power Grid Interconnect Moratoriums",
+      "trigger": "Regional transmission operators restrict new large-load electrical connections",
+      "assumption_ids": ["BTC-A6"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "SRC-FOMC-20260916",
+      "name": "Federal Reserve FOMC Monetary Policy Statement & Projections",
+      "date": "2026-09-16",
+      "type": "authoritative_demographic_source"
+    },
+    {
+      "id": "SRC-MARKET-20260918",
+      "name": "Tier 1 Digital Asset Spot Pricing & Exchange Data",
+      "date": "2026-09-18",
+      "type": "authoritative_demographic_source"
+    },
+    {
+      "id": "SRC-CME-Q22026",
+      "name": "CME Group Inc. Form 10-Q & Institutional Volume Report",
+      "date": "2026-08-05",
+      "type": "company_primary_source"
+    },
+    {
+      "id": "SRC-COIN-10Q-2026",
+      "name": "Coinbase Global, Inc. Form 10-Q Quarterly Report",
+      "date": "2026-07-30",
+      "type": "company_primary_source"
+    },
+    {
+      "id": "SRC-IREN-PR-2026",
+      "name": "IREN Ltd Operational Update & SEC Form 6-K",
+      "date": "2026-09-08",
+      "type": "company_primary_source"
+    },
+    {
+      "id": "SRC-SEC-MSTR-2026",
+      "name": "Strategy Form 8-K Current Report on Treasury Holdings",
+      "date": "2026-06-22",
+      "type": "company_primary_source"
+    }
+  ],
+  "publication": {
+    "status": "published",
+    "headline": "Bitcoin Thesis Rebalanced: Monetizing Higher Rates via Market Rails as Warsh Fed Lifts Target to 4.00%",
+    "summary": "Following the FOMC's 25 bps rate hike on September 16, spot Bitcoin holds firm above $76,000 while market rails (CME) and stablecoin cash custodians (COIN) emerge as premier risk-adjusted entries over leveraged balance sheet proxies.",
+    "page_url": "/investment/theme.html?theme=bitcoin",
+    "show_on_homepage": true,
+    "featured": true,
+    "generated_by": "WealthLanding AI Engine",
+    "generated_at": "2026-09-18T11:45:00Z"
+  }
+}
