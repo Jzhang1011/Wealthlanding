@@ -1,158 +1,180 @@
 {
   "schema_version": "4.2",
-  "review_id": "PNR-2026-08-25",
+  "review_id": "WTS-2026-09-18",
   "ranking": {
     "theme_slug": "water",
     "rank": 3,
     "slot": "top3",
-    "selected_company_slug": "pentair-plc",
+    "selected_company_slug": "watts-water",
     "previous_company_slug": null,
     "comparison_status": "active_lead",
-    "selected_at": "2026-08-25"
+    "selected_at": "2026-09-18"
   },
   "company": {
-    "id": "PNR",
-    "name": "Pentair plc",
-    "slug": "pentair-plc",
-    "ticker": "PNR",
+    "id": "WTS",
+    "name": "Watts Water Technologies, Inc.",
+    "slug": "watts-water",
+    "ticker": "WTS",
     "exchange": "NYSE",
     "reporting_currency": "USD",
     "trading_currency": "USD",
-    "theme_dependencies": ["water"]
+    "theme_dependencies": [
+      "water"
+    ]
   },
   "review": {
-    "date": "2026-08-25",
+    "date": "2026-09-18",
     "previous_review_id": null
   },
   "market_data": {
-    "current_price": 84.00,
-    "price_date": "2026-08-25",
-    "price_timestamp": "2026-08-25T11:32:00Z",
-    "price_source": "NYSE",
+    "current_price": 204.60,
+    "price_date": "2026-09-18",
+    "price_timestamp": "2026-09-18T15:00:00Z",
+    "price_source": "NYSE Consolidated Real-Time Price",
     "share_basis": "common_share"
   },
   "investment_thesis": {
-    "summary": "Pentair provides highly defensive industrial Flow and Water Solutions, currently masked by a cyclical destocking event in its consumer-facing Pool segment.",
+    "summary": "Watts Water Technologies commands an unassailable moat in commercial and residential plumbing safety, backflow prevention, and hydronic heating systems, reinforced by municipal plumbing codes, high return on invested capital (>18%), and a fortress net-cash balance sheet.",
     "return_engines": [
-      "Engine 1: Margin expansion via the 80/20 Transformation Program",
-      "Engine 2: Resilient commercial filtration and municipal flow technology demand",
-      "Engine 3: Eventual normalization of residential pool aftermarket demand"
+      "Engine 1: Non-discretionary replacement driven by municipal health and safety plumbing codes (backflow preventers and pressure valves)",
+      "Engine 2: Commercial demand for energy-efficient hydronic heating and smart connected water quality control",
+      "Engine 3: Balance sheet optionality with pristine net cash enabling accretive bolt-on acquisitions and dividend compounding"
     ],
     "market_implied_assumptions": [
-      "Pool segment destocking will create a permanent drag on earnings",
-      "Overall organic growth will remain suppressed"
+      "Market prices in modest 3-5% organic growth due to concerns over commercial real estate construction",
+      "Steady mid-to-high teen operating margin durability"
     ],
     "why_price_may_differ_from_value": [
-      "The market is heavily discounting the 42% plunge in Pool revenue without fully crediting the massive 400-500 bps margin expansion in the commercial/industrial segments."
+      "Over 65-70% of Watts Water revenue is driven by non-discretionary repair and replacement rather than new construction",
+      "High barriers created by local building code specifications ensure strong pricing power that outpaces inflation"
     ]
   },
   "operating_scenarios": {
     "bull": {
       "probability": 0.25,
       "conditions": [
-        "Pool channel inventory normalizes rapidly by early 2027",
-        "Transformation program yields maximum structural margin gains"
+        "Commercial retrofit demand accelerates organic growth to 6-8%",
+        "Operating margins expand past 19% via favorable mix of smart connected valves"
       ],
       "financial_assumptions": {
-        "normalized_eps_reference": 5.20,
-        "valuation_multiple": 22.0
+        "normalized_eps_reference": 11.20,
+        "valuation_multiple": 23.0
       },
       "failure_conditions": [
-        "Prolonged housing recession crushes aftermarket demand"
+        "Organic revenue growth decelerates below 3%",
+        "Operating margins slip below 17%"
       ]
     },
     "fair": {
-      "probability": 0.55,
+      "probability": 0.60,
       "conditions": [
-        "Gradual recovery in consumer discretionary segments",
-        "Stable mid-single-digit growth in Flow tech"
+        "Organic revenue growth maintains 3-5% steady replacement cadence",
+        "Operating margins hold firmly at 17.5-18.0%",
+        "Return on invested capital remains comfortably above 18%"
       ],
       "financial_assumptions": {
-        "normalized_eps_reference": 4.70,
-        "valuation_multiple": 19.0
+        "normalized_eps_reference": 9.80,
+        "valuation_multiple": 21.0
       },
       "failure_conditions": [
-        "Execution failure in the 80/20 restructuring rollout"
+        "Commercial institutional renovation activity contracts sharply",
+        "Cost inflation across bronze and stainless steel castings"
       ]
     },
     "bear": {
-      "probability": 0.20,
+      "probability": 0.15,
       "conditions": [
-        "Pool segment weakness becomes structural due to changing consumer habits",
-        "Industrial segments suffer from broader macro slow-down"
+        "Severe non-residential commercial construction slump leads to volume declines of 4-6%",
+        "Operating margins compress to 15.0% on negative operating leverage"
       ],
       "financial_assumptions": {
-        "normalized_eps_reference": 4.00,
-        "valuation_multiple": 14.0
+        "normalized_eps_reference": 8.10,
+        "valuation_multiple": 16.5
       },
       "failure_conditions": [
-        "Significant loss of pricing power"
+        "Loss of regulatory code mandating proprietary backflow configurations"
       ]
     }
   },
   "valuation": {
     "bull": {
-      "value_per_share": 114.4,
+      "value_per_share": 257.6,
       "method": "Forward normalized EPS multiple",
-      "assumptions": ["$5.20 EPS at 22x P/E"]
+      "assumptions": [
+        "$11.20 normalized forward EPS at 23.0x target P/E"
+      ]
     },
     "fair": {
-      "value_per_share": 89.3,
+      "value_per_share": 205.8,
       "method": "Forward normalized EPS multiple",
-      "assumptions": ["$4.70 EPS at 19x P/E"]
+      "assumptions": [
+        "$9.80 normalized forward EPS at 21.0x target P/E"
+      ]
     },
     "bear": {
-      "value_per_share": 56.0,
-      "method": "Trough cyclical multiple",
-      "assumptions": ["$4.00 EPS at 14x P/E"]
+      "value_per_share": 133.65,
+      "method": "Trough normalized EPS multiple",
+      "assumptions": [
+        "$8.10 normalized trough EPS at 16.5x trough P/E"
+      ]
     },
-    "probability_weighted_value": 88.92,
-    "net_cash_per_share": -15.50,
-    "upside_to_fair_value_pct": 6.3,
-    "downside_to_bear_value_pct": -33.3,
-    "confidence": "medium",
-    "explanation": "Valuation creates a margin of safety against the current cyclical low in the pool segment."
+    "probability_weighted_value": 207.93,
+    "net_cash_per_share": 6.45,
+    "upside_to_fair_value_pct": 0.59,
+    "downside_to_bear_value_pct": -34.68,
+    "confidence": "high",
+    "explanation": "Scenario-weighted EPS valuation cross-checked with a 10-year discounted cash flow analysis reflecting zero financial debt and conservative 8.5% cost of equity."
   },
   "entry_zones": {
-    "strong_buy_below": 62.51,
-    "attractive_below": 75.90,
-    "fair_value_low": 80.37,
-    "fair_value_high": 93.76,
-    "expensive_above": 98.23
+    "strong_buy_below": 145.55,
+    "attractive_below": 176.74,
+    "fair_value_low": 187.14,
+    "fair_value_high": 218.33,
+    "expensive_above": 228.72
   },
   "valuation_status": "fairly_valued",
   "current_zone": "fair_value",
   "catalysts": [
     {
-      "name": "Q3 2026 Earnings",
-      "timing": "2026-10-22",
-      "expected_effect": "Provide clarity on the completion timeline for channel destocking"
+      "name": "Q3 2026 Earnings Release",
+      "timing": "2026-Q3",
+      "expected_effect": "Validate pricing resilience across commercial drainage and backflow product lines."
+    },
+    {
+      "name": "Accretive Bolt-On Capital Deployment",
+      "timing": "2026-Q4",
+      "expected_effect": "Deployment of balance sheet net cash into European or North American flow control niches."
     }
   ],
   "risks": [
-    "Residential housing market weakness",
-    "Prolonged destocking cycle",
-    "Inflationary input costs"
+    "Downturn in broader commercial office and institutional construction starts",
+    "Raw material input volatility in specialty metal foundries (copper, bronze)",
+    "Foreign currency headwinds across European drainage operations"
   ],
   "invalidation_conditions": [
-    "Pool segment revenues fail to recover by mid-2027",
-    "Flow technology margins compress unexpectedly"
+    "Sustained organic volume contraction >5% over multiple quarters",
+    "Structural decline in operating margins below 14%"
   ],
   "decision": {
     "state": "watchlist",
-    "cta": "hold_and_monitor",
-    "summary": "Pentair offers an intriguing turnaround story as commercial strength offsets residential weakness. Wait for a slight pullback into the $75 zone before initiating large positions.",
-    "next_catalyst": "Q3 2026 Earnings",
-    "next_decision_date": "2026-10-22",
+    "cta": "buy_below_attractive_threshold",
+    "summary": "Watts Water is a pristine balance-sheet compounder with superior code-mandated moats. Shares at $204.60 reflect fair value; look to accumulate positions below the attractive threshold of $176.74.",
+    "next_catalyst": "Q3 2026 Earnings Release",
+    "next_decision_date": "2026-10-29",
     "required_actions": [
-      "Set alerts for price drops into the mid-$70s",
-      "Monitor channel checks for pool equipment inventory levels"
+      "Set buy limits at $176.74 to establish position with 15%+ margin of safety",
+      "Monitor non-residential replacement indicators and input metal pricing"
     ]
   },
   "sources": [
     {
-      "name": "Pentair Q2 2026 Earnings Release",
-      "date": "2026-07-28",
+      "name": "Watts Water Technologies SEC Form 10-K & 10-Q Filings",
+      "date": "2026-08-03",
+      "type": "company_primary_source"
+    },
+    {
+      "name": "Watts Water Q2 2026 Earnings Presentation",
+      "date": "2026-07-31",
       "type": "company_primary_source"
     }
   ],
