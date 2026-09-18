@@ -1,290 +1,335 @@
 {
   "schema_version": "4.2",
-  "review_id": "AGING-2026-08-06",
+  "review_id": "AGING-2026-09-18",
   "thesis": {
     "id": "AGING-001",
-    "name": "Aging Economy",
+    "name": "Aging Economy & Healthcare Infrastructure",
     "slug": "aging",
     "category": "structural-demographic-demand",
     "horizon": "5-15 years"
   },
   "video": {
-    "embed_url": "https://www.youtube.com/embed/tKbmqK2I_7Y?si=M8IIqh6k7OA0H645",
-    "title": "Aging Demographics Overview"
+    "embed_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "title": "Aging Economy Structural Demographics and Capital Allocation"
   },
   "review": {
-    "date": "2026-08-06",
-    "period_start": null,
-    "period_end": "2026-08-06",
+    "date": "2026-09-18",
+    "period_start": "2026-09-04",
+    "period_end": "2026-09-18",
     "cadence": "weekly",
-    "previous_review_id": null
+    "previous_review_id": "AGING-2026-09-04"
   },
   "status": "intact",
   "thesis_health": {
-    "current": 78,
-    "previous": null,
-    "change": null,
-    "trend": "stable",
-    "reason_code": "INITIAL_BASELINE_STRUCTURAL_DEMAND_CONFIRMED",
-    "reason": "Demographic demand, aging-in-place adoption and labor-productivity needs remain durable, while reimbursement, affordability, workforce costs and valuation create material dispersion."
+    "current": 83,
+    "previous": 82,
+    "change": 1,
+    "trend": "improving",
+    "reason_code": "STRUCTURAL_DEMAND_CONFIRMED",
+    "reason": "Post-acute rehabilitation volume and chronic medtech resupply confirm sustained unit economics against stable labor costs."
   },
   "material_change": false,
   "scenario_model": {
     "current_scenario": "fair",
-    "confidence": 0.76,
+    "confidence": 0.65,
     "scenarios": [
       {
         "id": "bull",
-        "probability": 0.3,
-        "description": "Utilization expands while technology, reimbursement, occupancy gains and productivity improvements allow leading companies to compound earnings and cash flow.",
+        "probability": 0.25,
+        "description": "Medicare Advantage reimbursement rates expand >4%; clinical wage inflation falls below 2.5%; elective and post-acute volumes grow >8%.",
         "entry_conditions": [
-          "Utilization, reimbursement, productivity and outcomes improve together",
-          "Labor-saving technology produces measurable customer returns",
-          "Company valuations remain supported by per-share cash-flow growth"
+          "CMS Medicare Advantage rate benchmark increase > 4.0%",
+          "Hospital wage index annualized growth < 2.5%"
         ],
         "exit_conditions": [
-          "Reimbursement falls materially behind labor costs",
-          "Quality deterioration accompanies utilization growth"
+          "Widespread payer prior-authorization denials",
+          "Multiple compression across healthcare providers"
         ]
       },
       {
         "id": "fair",
-        "probability": 0.55,
-        "description": "Aging demand remains durable, but labor, reimbursement, affordability, regulation and valuation constrain returns and create wide company-level dispersion.",
+        "probability": 0.60,
+        "description": "CMS reimbursement updates track 2.5% to 3.2%; nursing wage growth stabilizes at 3.0% to 3.8%; organic procedural volume expands 4.5% to 6.5%.",
         "entry_conditions": [
-          "Demographic and utilization growth continue",
-          "Funding remains adequate but uneven",
-          "Operating performance varies substantially by business model"
+          "Inpatient prospective payment updates meet or exceed 3.0%",
+          "Contract agency labor stabilizes below 2.0% of operating expenses"
         ],
         "exit_conditions": [
-          "Broad productivity and reimbursement improvements support a bull transition",
-          "Multiple assumptions deteriorate enough to support a bear transition"
+          "Operating margins deteriorate > 150 bps",
+          "Organic discharge growth decelerates below 2.0%"
         ]
       },
       {
         "id": "bear",
         "probability": 0.15,
-        "description": "Funding pressure, labor shortages, quality failures, affordability constraints or therapeutic disruption materially weaken current business models.",
+        "description": "Persistent clinical staffing shortages drive contract agency spikes; severe Medicare Advantage denials; private-pay senior housing rent ceilings hit.",
         "entry_conditions": [
-          "Reimbursement consistently trails operating costs",
-          "Demand growth fails to create sustainable cash flow",
-          "Quality, regulatory or affordability failures spread"
+          "Contract labor spikes above 5% of payroll",
+          "Reimbursement cuts across federal fee-for-service schedules"
         ],
         "exit_conditions": [
-          "Provider margins and outcomes stabilize",
-          "Technology demonstrably offsets labor scarcity"
+          "Systemic provider restructuring or covenant breaches"
         ]
       }
     ]
   },
   "decision": {
     "state": "valuation_review",
-    "previous_state": "monitor",
-    "changed": true,
-    "summary": "Maintain the aging theme and monitor ResMed, Stryker and Welltower using company-specific valuation thresholds.",
-    "cta": "monitor_ranked_companies_and_entry_zones",
+    "previous_state": "valuation_review",
+    "changed": false,
+    "summary": "Core structural demand remains pristine. Focus capital allocation strictly on cash-generative medtech and post-acute operators trading within margin of safety, while rejecting high-multiple REITs.",
+    "cta": "buy_below_attractive_threshold",
     "reason_codes": [
       "STRUCTURAL_DEMAND_CONFIRMED",
-      "LABOR_PRODUCTIVITY_CATALYST",
-      "REIMBURSEMENT_CONSTRAINT",
       "VALUATION_DISPERSION"
     ],
     "required_actions": [
-      "Review ResMed fiscal 2026 results after release",
-      "Monitor Stryker cyber recovery and orthopedic procedure growth",
-      "Monitor Welltower occupancy, acquisition integration and valuation",
-      "Review CMS calendar-year 2027 reimbursement proposals"
+      "Accumulate ResMed (RMD) on pullbacks below $205",
+      "Build Encompass Health (EHC) position below $92",
+      "Monitor Stryker (SYK) for entry below $335",
+      "Keep Welltower (WELL) on valuation hold pending multiple normalization"
     ]
   },
   "developments": [
     {
       "id": "AGING-D1",
-      "date": "2026-08-06",
-      "title": "Global aging continues to expand the structural demand base",
-      "fact": "The global population aged 60 and older is projected to rise from approximately 1.1 billion in 2023 to 1.4 billion by 2030.",
-      "assumption_ids": ["AGING-A1", "AGING-A4", "AGING-A5"],
+      "date": "2026-09-15",
+      "title": "ResMed Reports Robust FY2026 Performance with 59.1% Gross Margin",
+      "fact": "ResMed global revenue grew 9% YoY to $5.12B with Q4 gross margin expanding 140 bps to 59.1% and free cash flow conversion exceeding 95%.",
+      "assumption_ids": [
+        "AGING-A3",
+        "AGING-A4",
+        "AGING-A5"
+      ],
       "direction": "positive",
       "materiality": "high",
       "durability": "high",
-      "interpretation": "Confirms long-duration demand but does not guarantee attractive provider economics.",
-      "source_ids": ["SRC-WHO-AGING-2026"]
+      "interpretation": "Validates durable pricing power and software-driven compliance workflows that generate non-cyclical consumables cash flow.",
+      "source_ids": [
+        "SRC-RMD-10K-2026"
+      ]
     },
     {
       "id": "AGING-D2",
-      "date": "2026-08-06",
-      "title": "Care labor scarcity supports productivity demand",
-      "fact": "Home-health and personal-care aide employment is projected to grow 17% from 2024 through 2034, with approximately 765800 openings annually.",
-      "assumption_ids": ["AGING-A3", "AGING-A4"],
-      "direction": "mixed_positive",
+      "date": "2026-09-12",
+      "title": "Encompass Health Same-Store Discharges Grow 5.2% in Q2 2026",
+      "fact": "EHC delivered 6.8% revenue growth to $1.34B and raised 2026 revenue guidance to $5.35B-$5.45B, keeping agency labor below 1.2% of salaries.",
+      "assumption_ids": [
+        "AGING-A1",
+        "AGING-A2",
+        "AGING-A5"
+      ],
+      "direction": "positive",
       "materiality": "high",
       "durability": "high",
-      "interpretation": "Supports automation and workflow technology while increasing wage and staffing pressure for operators.",
-      "source_ids": ["SRC-BLS-HOME-HEALTH-2026"]
+      "interpretation": "Confirms post-acute inpatient rehabilitation demand elasticity remains high while labor operational control preserves operating margins.",
+      "source_ids": [
+        "SRC-EHC-10Q-2026"
+      ]
     },
     {
       "id": "AGING-D3",
-      "date": "2025-11-28",
-      "title": "Calendar-year 2026 home-health reimbursement remains constrained",
-      "fact": "CMS implemented a permanent negative 1.023% behavioral adjustment to the national standardized 30-day home-health payment rate.",
-      "assumption_ids": ["AGING-A2", "AGING-A4"],
-      "direction": "negative",
+      "date": "2026-08-01",
+      "title": "CMS Finalizes FY2027 Inpatient Rehabilitation Facility Rate Increase of 3.0%",
+      "fact": "CMS established a net 3.0% market basket payment update for IRFs effective October 1, 2026, injecting an estimated $285M aggregate industry increase.",
+      "assumption_ids": [
+        "AGING-A2",
+        "AGING-A6"
+      ],
+      "direction": "positive",
       "materiality": "medium",
-      "durability": "medium",
-      "interpretation": "Aging-in-place demand does not automatically produce favorable provider margins.",
-      "source_ids": ["SRC-CMS-HH-2026"]
+      "durability": "high",
+      "interpretation": "Eliminates near-term reimbursement downside risk and guarantees positive spread over anticipated wage inflation of 2.8%-3.2%.",
+      "source_ids": [
+        "SRC-CMS-IRF-2027"
+      ]
     },
     {
       "id": "AGING-D4",
-      "date": "2026-07-27",
-      "title": "Senior-housing occupancy and operating leverage strengthened",
-      "fact": "Welltower reported 20.5% seniors-housing operating same-store NOI growth, 330 basis points of occupancy growth and 5.2% RevPOR growth.",
-      "assumption_ids": ["AGING-A1", "AGING-A2", "AGING-A6"],
+      "date": "2026-08-28",
+      "title": "Stryker Orthopedic Volume Expands 9.0% Driven by Mako Installed Base",
+      "fact": "Stryker MedSurg & Orthopaedics delivered 9.0% organic sales growth with knee procedure growth exceeding 10.4% and international robotics expanding 14%.",
+      "assumption_ids": [
+        "AGING-A1",
+        "AGING-A4",
+        "AGING-A5"
+      ],
       "direction": "positive",
       "materiality": "high",
-      "durability": "medium_high",
-      "interpretation": "Senior-housing fundamentals are strong, although current valuation embeds substantial continued execution.",
-      "source_ids": ["SRC-WELL-Q2-2026"]
+      "durability": "high",
+      "interpretation": "Robotic surgical workflow integration establishes deep switching moats and predictable procedural implant utilization.",
+      "source_ids": [
+        "SRC-SYK-10Q-2026"
+      ]
     },
     {
       "id": "AGING-D5",
-      "date": "2026-04-30",
-      "title": "Home respiratory and sleep-care economics improved",
-      "fact": "ResMed reported 11% revenue growth, 21% non-GAAP EPS growth, 290 basis points of gross-margin expansion and 554 million dollars of quarterly operating cash flow.",
-      "assumption_ids": ["AGING-A3", "AGING-A4", "AGING-A5"],
-      "direction": "positive",
-      "materiality": "high",
-      "durability": "medium_high",
-      "interpretation": "Connected home-care devices and recurring consumables provide scalable aging-related return engines.",
-      "source_ids": ["SRC-RMD-Q3FY26"]
+      "date": "2026-09-08",
+      "title": "Welltower Senior Housing Occupancy Reaches 86.8% at Premium Valuation",
+      "fact": "Welltower reported 21.4% same-store SHO NOI growth and 86.8% occupancy, while trading at >31.5x normalized FFO and >2.4x NAV.",
+      "assumption_ids": [
+        "AGING-A1",
+        "AGING-A5"
+      ],
+      "direction": "mixed_positive",
+      "materiality": "medium",
+      "durability": "medium",
+      "interpretation": "Operational tailwinds are proven, but extreme valuation multiples provide no margin of safety for investment capital.",
+      "source_ids": [
+        "SRC-WELL-Q2-2026"
+      ]
     },
     {
       "id": "AGING-D6",
-      "date": "2026-07-30",
-      "title": "Orthopedic and procedure demand remained strong",
-      "fact": "Stryker reported 9.0% organic sales growth, 8.6% Orthopaedics growth and 17.9% adjusted EPS growth.",
-      "assumption_ids": ["AGING-A1", "AGING-A3", "AGING-A5"],
+      "date": "2026-07-20",
+      "title": "Proposed CMS CY2027 Home Health Rule Imposes -1.8% Permanent Adjustment",
+      "fact": "CMS proposed a 2.7% market basket update offset by a 1.8% permanent behavioral rate cut, constraining net aggregate updates for home health to ~0.9%.",
+      "assumption_ids": [
+        "AGING-A2",
+        "AGING-A6"
+      ],
+      "direction": "negative",
+      "materiality": "medium",
+      "durability": "medium",
+      "interpretation": "Broadens the competitive and economic moat of inpatient rehabilitation facilities relative to margin-squeezed home health agencies.",
+      "source_ids": [
+        "SRC-CMS-HH-2027"
+      ]
+    },
+    {
+      "id": "AGING-D7",
+      "date": "2026-06-15",
+      "title": "Longitudinal Real-World Sleep Apnea Study Shows GLP-1 Adherence Synergies",
+      "fact": "Clinical registry tracking 15,000 patients demonstrated that GLP-1 usage increased sleep apnea diagnosis rates by 11% and improved PAP adherence by 4.2%.",
+      "assumption_ids": [
+        "AGING-A5"
+      ],
       "direction": "positive",
       "materiality": "high",
-      "durability": "medium_high",
-      "interpretation": "Mobility procedures, implants, robotics and hospital-productivity demand remain supported.",
-      "source_ids": ["SRC-SYK-Q2-2026"]
+      "durability": "high",
+      "interpretation": "Rebuts structural obsolescence fears for respiratory medtech, validating co-therapy compliance and market expansion.",
+      "source_ids": [
+        "SRC-SLEEP-REG-2026"
+      ]
     }
   ],
   "scorecard": [
     {
       "assumption_id": "AGING-A1",
-      "name": "Older populations increase demand for care and support",
+      "name": "Demographic & Utilization Demand",
       "score": 5,
-      "previous_score": null,
-      "change": null,
+      "previous_score": 5,
+      "change": 0,
       "trend": "stable",
-      "assessment": "Strong demographic, utilization, senior-housing and procedure evidence."
+      "assessment": "Accelerating growth in the 75+ age cohort supports non-elective procedure and rehabilitation volume."
     },
     {
       "assumption_id": "AGING-A2",
-      "name": "Funding and reimbursement remain adequate",
-      "score": 3,
-      "previous_score": null,
-      "change": null,
+      "name": "Funding, Reimbursement & Pricing Power",
+      "score": 4,
+      "previous_score": 4,
+      "change": 0,
       "trend": "stable",
-      "assessment": "Funding is adequate in selected categories, but home-health adjustments and affordability constrain operators."
+      "assessment": "Finalized CMS IRF update of +3.0% locks in positive spread over labor inflation; Medicare Advantage scrutiny remains active."
     },
     {
       "assumption_id": "AGING-A3",
-      "name": "Labor scarcity increases productivity demand",
-      "score": 5,
-      "previous_score": null,
-      "change": null,
-      "trend": "improving",
-      "assessment": "Workforce projections strongly support automation, robotics and workflow investment."
+      "name": "Labor Scarcity & Productivity Demand",
+      "score": 3,
+      "previous_score": 3,
+      "change": 0,
+      "trend": "stable",
+      "assessment": "Contract labor has subsided to historical lows (<1.5%), but baseline clinical nursing wage growth of 3.0%-3.5% requires productivity tools."
     },
     {
       "assumption_id": "AGING-A4",
-      "name": "Home and community settings gain share",
+      "name": "Decentralized & Tech-Enabled Delivery",
       "score": 4,
-      "previous_score": null,
-      "change": null,
+      "previous_score": 4,
+      "change": 0,
       "trend": "improving",
-      "assessment": "Connected devices and home-based care are growing, although reimbursement economics are uneven."
+      "assessment": "Cloud compliance platforms and robotic-assisted surgical ecosystems entrench provider stickiness and expand operating margins."
     },
     {
       "assumption_id": "AGING-A5",
-      "name": "Chronic-disease management remains a durable need",
-      "score": 4,
-      "previous_score": null,
-      "change": null,
+      "name": "Chronic Demand & Mission-Critical Need",
+      "score": 5,
+      "previous_score": 5,
+      "change": 0,
       "trend": "stable",
-      "assessment": "Sleep, mobility, rehabilitation, diagnostics and recurring care remain supported."
+      "assessment": "Joint wear, stroke neurological deficits, and sleep-disordered breathing represent non-discretionary care with strong recurring demand."
     },
     {
       "assumption_id": "AGING-A6",
-      "name": "Leading providers maintain quality and trust",
-      "score": 3,
-      "previous_score": null,
-      "change": null,
+      "name": "Provider Quality, Moats & Regulatory Trust",
+      "score": 4,
+      "previous_score": 4,
+      "change": 0,
       "trend": "stable",
-      "assessment": "Strong operators exist, but quality, regulatory, cyber and execution risks remain material."
+      "assessment": "Certificate-of-need barriers, specialized hospital accreditation, and proprietary medtech patents insulate incumbents from capital disruption."
     }
   ],
   "assumptions_changed": [],
   "catalysts": [
     {
-      "name": "ResMed fiscal 2026 results",
-      "assumption_ids": ["AGING-A3", "AGING-A4", "AGING-A5"],
-      "state": "pending",
-      "expected_date": "2026-08-06",
-      "confirmation_test": "Sustained device and mask growth with resilient margins and cash conversion",
-      "failure_test": "Demand deceleration or material margin reversal"
-    },
-    {
-      "name": "Stryker cyber recovery and procedure momentum",
-      "assumption_ids": ["AGING-A1", "AGING-A3", "AGING-A5"],
+      "name": "CMS FY2027 IRF PPS Implementation",
+      "assumption_ids": [
+        "AGING-A2"
+      ],
       "state": "active",
-      "expected_date": "2026-10-31",
-      "confirmation_test": "Organic growth and margin improvement continue without recurring disruption",
-      "failure_test": "Operational disruption, lost share or guidance reduction"
+      "expected_date": "2026-10-01",
+      "confirmation_test": "Net reimbursement yield increases by >= 2.8% on Q4 billing cohorts.",
+      "failure_test": "Billing realization falls below 2.0% due to administrative offsets."
     },
     {
-      "name": "Welltower occupancy and integration",
-      "assumption_ids": ["AGING-A1", "AGING-A2", "AGING-A6"],
-      "state": "active",
-      "expected_date": "2026-10-31",
-      "confirmation_test": "Occupancy, RevPOR and per-share FFO continue to grow while leverage remains controlled",
-      "failure_test": "Acquisition integration problems, affordability pressure or weaker per-share returns"
-    },
-    {
-      "name": "Calendar-year 2027 Medicare rules",
-      "assumption_ids": ["AGING-A2", "AGING-A4"],
+      "name": "Q3 2026 Post-Acute & Medtech Earnings Cycle",
+      "assumption_ids": [
+        "AGING-A1",
+        "AGING-A3"
+      ],
       "state": "pending",
-      "expected_date": "2026-11-30",
-      "confirmation_test": "Payment updates support access and sustainable provider economics",
-      "failure_test": "Further material reimbursement pressure without offsetting productivity"
+      "expected_date": "2026-10-25",
+      "confirmation_test": "Same-store discharge growth > 4.5% and organic medtech sales growth > 8.0%.",
+      "failure_test": "Organic discharge growth decelerates below 2.0% or agency labor spikes."
+    },
+    {
+      "name": "CY2027 Home Health Final Rule Issuance",
+      "assumption_ids": [
+        "AGING-A2",
+        "AGING-A6"
+      ],
+      "state": "pending",
+      "expected_date": "2026-11-01",
+      "confirmation_test": "Net market basket update confirmed between 1.0% and 1.8%.",
+      "failure_test": "Draconian retroactive clawbacks exceeding 3.5%."
     }
   ],
   "opportunities": [
     {
       "rank": 1,
-      "opportunity_id": "AGING-OP-RMD",
-      "group": "diagnostics-monitoring-home-care",
-      "name": "ResMed",
+      "opportunity_id": "AGING-OP-1",
+      "group": "respiratory-chronic-medtech",
+      "name": "ResMed Inc.",
       "ticker": "RMD",
       "asset_type": "company",
       "independent_return_engines": [
-        "Sleep-device adoption",
-        "Recurring masks and accessories",
-        "Home-care digitization",
-        "Margin expansion"
+        "Global PAP diagnosed prevalence expansion",
+        "Connected cloud-monitoring mask resupply recurring revenue",
+        "Out-of-hospital SaaS healthcare management platforms"
       ],
-      "catalyst": "Fiscal 2026 results and portfolio simplification",
+      "catalyst": "Q1 FY2027 earnings release on October 22, 2026",
       "valuation_status": "moderately_undervalued",
-      "main_risk": "Therapeutic disruption, competitive pressure or post-divestiture execution",
-      "next_action": "Monitor fiscal 2026 results and seek entry below 220 dollars",
+      "main_risk": "Supply chain component cost inflation or competitive device launches",
+      "next_action": "Accumulate positions on pullbacks below $205.00",
       "company_review": {
         "status": "selected",
         "company_slug": "resmed",
-        "reason": "Best combination of aging-in-place exposure, recurring revenue, cash generation, balance-sheet strength and valuation support.",
+        "reason": "100-pt score of 89; dominant global market share, 59% gross margin, and >95% FCF conversion.",
         "priority": "P0",
-        "trigger_rules": ["rank_top_3", "valuation_required", "multiple_return_engines", "named_company_central"],
+        "trigger_rules": [
+          "rank_top_3",
+          "valuation_required"
+        ],
         "company_packet_required": true,
         "rank_slot": "top1",
         "company_json_path": "/investment/data/companies/aging/top1.json",
@@ -293,27 +338,29 @@
     },
     {
       "rank": 2,
-      "opportunity_id": "AGING-OP-SYK",
-      "group": "mobility-orthopedics-productivity",
-      "name": "Stryker",
-      "ticker": "SYK",
+      "opportunity_id": "AGING-OP-2",
+      "group": "inpatient-rehabilitation",
+      "name": "Encompass Health Corp.",
+      "ticker": "EHC",
       "asset_type": "company",
       "independent_return_engines": [
-        "Orthopedic procedure growth",
-        "Implant innovation",
-        "Robotic-platform adoption",
-        "Hospital-productivity products"
+        "De novo inpatient rehabilitation hospital capacity additions",
+        "Same-store stroke and neurological discharge volume",
+        "Near-zero reliance on premium agency labor (<1.2%)"
       ],
-      "catalyst": "Second-half cyber recovery and Mako adoption",
-      "valuation_status": "fairly_valued",
-      "main_risk": "Premium valuation, acquisition execution and operational disruption",
-      "next_action": "Hold on watchlist and seek entry below 315 dollars",
+      "catalyst": "Implementation of +3.0% CMS IRF PPS update on October 1, 2026",
+      "valuation_status": "moderately_undervalued",
+      "main_risk": "Medicare Advantage pre-authorization denial friction",
+      "next_action": "Add to position below $92.00",
       "company_review": {
         "status": "selected",
-        "company_slug": "stryker",
-        "reason": "High-quality mobility and medical-productivity exposure with durable organic growth, offset by a premium valuation.",
+        "company_slug": "encompass-health",
+        "reason": "100-pt score of 86; pure-play inpatient rehabilitation leader with expanding operating leverage.",
         "priority": "P0",
-        "trigger_rules": ["rank_top_3", "valuation_required", "multiple_return_engines"],
+        "trigger_rules": [
+          "rank_top_3",
+          "valuation_required"
+        ],
         "company_packet_required": true,
         "rank_slot": "top2",
         "company_json_path": "/investment/data/companies/aging/top2.json",
@@ -322,27 +369,29 @@
     },
     {
       "rank": 3,
-      "opportunity_id": "AGING-OP-WELL",
-      "group": "senior-housing",
-      "name": "Welltower",
-      "ticker": "WELL",
+      "opportunity_id": "AGING-OP-3",
+      "group": "orthopedic-surgical-robotics",
+      "name": "Stryker Corp.",
+      "ticker": "SYK",
       "asset_type": "company",
       "independent_return_engines": [
-        "Occupancy recovery",
-        "Revenue per occupied room growth",
-        "Property-level operating leverage",
-        "Capital deployment"
+        "Mako robotic platform ecosystem and procedural lock-in",
+        "Elective orthopedic reconstruction demographic volume",
+        "Specialized surgical instrument replacement cycle"
       ],
-      "catalyst": "Acquisition integration and continued seniors-housing NOI growth",
-      "valuation_status": "overvalued",
-      "main_risk": "Current price embeds unusually strong growth, integration and capital-allocation outcomes",
-      "next_action": "Monitor and await price below 220 dollars",
+      "catalyst": "Q3 2026 earnings release on October 29, 2026",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Hospital capital equipment spending freezes",
+      "next_action": "Set scale-in buy orders below $335.00",
       "company_review": {
         "status": "selected",
-        "company_slug": "welltower",
-        "reason": "Direct demographic exposure and exceptional operating momentum, but weaker valuation support than the higher-ranked companies.",
+        "company_slug": "stryker",
+        "reason": "100-pt score of 85; exceptional wide-moat orthopedic robotics franchise.",
         "priority": "P0",
-        "trigger_rules": ["rank_top_3", "valuation_required", "major_catalyst", "named_company_central"],
+        "trigger_rules": [
+          "rank_top_3",
+          "valuation_required"
+        ],
         "company_packet_required": true,
         "rank_slot": "top3",
         "company_json_path": "/investment/data/companies/aging/top3.json",
@@ -351,21 +400,25 @@
     },
     {
       "rank": 4,
-      "opportunity_id": "AGING-OP-WORKFLOW",
-      "group": "productivity-tools",
-      "name": "Care-workflow software and automation",
-      "ticker": null,
-      "asset_type": "technology",
-      "independent_return_engines": ["Labor savings", "Workflow standardization", "Recurring software"],
-      "catalyst": "Provider labor shortages",
-      "valuation_status": "not_reviewed",
-      "main_risk": "Technology adoption without measurable productivity",
-      "next_action": "Identify pure-play companies with documented customer ROI",
+      "opportunity_id": "AGING-OP-4",
+      "group": "senior-housing-reits",
+      "name": "Welltower Inc.",
+      "ticker": "WELL",
+      "asset_type": "company",
+      "independent_return_engines": [
+        "Senior Housing Operating (SHO) occupancy recovery past 88%",
+        "Above-inflation private-pay rent growth",
+        "Accretive acquisition pipeline"
+      ],
+      "catalyst": "Q3 2026 operational update in late October 2026",
+      "valuation_status": "overvalued",
+      "main_risk": "Affordability limits and multiple compression from >31x FFO",
+      "next_action": "Maintain valuation hold; do not initiate new capital",
       "company_review": {
-        "status": "none",
-        "company_slug": "",
-        "reason": "Not a named operating company.",
-        "priority": "P1",
+        "status": "rejected",
+        "company_slug": "welltower",
+        "reason": "100-pt score of 78; extraordinary operational quality eliminated by prohibitive valuation multiple (>31x FFO).",
+        "priority": "P2",
         "trigger_rules": [],
         "company_packet_required": false,
         "rank_slot": null,
@@ -375,37 +428,121 @@
     },
     {
       "rank": 5,
-      "opportunity_id": "AGING-OP-DIAGNOSTICS",
-      "group": "diagnostics-monitoring",
-      "name": "Diagnostics and remote monitoring",
+      "opportunity_id": "AGING-OP-5",
+      "group": "care-workflow-tech",
+      "name": "Clinical Workforce & Workflow Automation",
+      "ticker": null,
+      "asset_type": "technology",
+      "independent_return_engines": [
+        "Administrative nursing documentation reduction",
+        "Automated clinical scheduling",
+        "Telemetry-enabled acute care offloading"
+      ],
+      "catalyst": "Enterprise health system IT budget reviews in Q4 2026",
+      "valuation_status": "under_review",
+      "main_risk": "Prolonged hospital enterprise sales cycles",
+      "next_action": "Screen pure-play SaaS operators with demonstrable ROI",
+      "company_review": null
+    },
+    {
+      "rank": 6,
+      "opportunity_id": "AGING-OP-6",
+      "group": "cardiovascular-medtech",
+      "name": "Structural Heart & Cardiac Rhythm",
+      "ticker": "BSX",
+      "asset_type": "sector",
+      "independent_return_engines": [
+        "Minimally invasive pulsed field ablation (PFA) adoption",
+        "Left atrial appendage closure volume",
+        "Aging cardiovascular disease burden"
+      ],
+      "catalyst": "Clinical trial readouts at upcoming cardiology congresses",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Electrophysiology reimbursement adjustments",
+      "next_action": "Evaluate Boston Scientific entry valuation targets",
+      "company_review": null
+    },
+    {
+      "rank": 7,
+      "opportunity_id": "AGING-OP-7",
+      "group": "decentralized-care",
+      "name": "Home-Based Post-Acute Care",
       "ticker": null,
       "asset_type": "sector",
-      "independent_return_engines": ["Recurring tests", "Earlier intervention", "Home monitoring"],
-      "catalyst": "Care migration to lower-cost settings",
-      "valuation_status": "not_reviewed",
-      "main_risk": "Weak reimbursement or fragmented adoption",
-      "next_action": "Compare reimbursement, retention and cash conversion",
-      "company_review": {
-        "status": "none",
-        "company_slug": "",
-        "reason": "Sector opportunity rather than a named company.",
-        "priority": "P1",
-        "trigger_rules": [],
-        "company_packet_required": false,
-        "rank_slot": null,
-        "company_json_path": null,
-        "detail_url": null
-      }
+      "independent_return_engines": [
+        "Lower cost alternative to skilled nursing facilities",
+        "Chronic condition remote management",
+        "Direct-to-home palliative therapies"
+      ],
+      "catalyst": "Release of CY2027 CMS Home Health final rule in November 2026",
+      "valuation_status": "under_review",
+      "main_risk": "Permanent behavioral rate clawbacks by CMS",
+      "next_action": "Await regulatory rate finalization before screening providers",
+      "company_review": null
+    },
+    {
+      "rank": 8,
+      "opportunity_id": "AGING-OP-8",
+      "group": "senior-housing-reits",
+      "name": "Ventas Inc.",
+      "ticker": "VTR",
+      "asset_type": "company",
+      "independent_return_engines": [
+        "SHOP portfolio occupancy expansion",
+        "Outpatient medical building steady cash flows",
+        "Senior living rate growth"
+      ],
+      "catalyst": "Q3 2026 earnings release in November 2026",
+      "valuation_status": "overvalued",
+      "main_risk": "Elevated financial leverage and debt refinancing costs",
+      "next_action": "Monitor operational margin trends without committing capital",
+      "company_review": null
+    },
+    {
+      "rank": 9,
+      "opportunity_id": "AGING-OP-9",
+      "group": "ophthalmic-surgery",
+      "name": "Surgical Ophthalmology & Vision Care",
+      "ticker": null,
+      "asset_type": "sector",
+      "independent_return_engines": [
+        "Cataract surgery demographic compounding",
+        "Premium intraocular lens adoption",
+        "Glaucoma micro-stent penetration"
+      ],
+      "catalyst": "Ophthalmology annual meeting commercial updates in Q4 2026",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Discretionary out-of-pocket premium lens spending sensitivity",
+      "next_action": "Track premium lens adoption rates across surgical centers",
+      "company_review": null
+    },
+    {
+      "rank": 10,
+      "opportunity_id": "AGING-OP-10",
+      "group": "labor-tech",
+      "name": "Clinical Labor Platforms",
+      "ticker": null,
+      "asset_type": "technology",
+      "independent_return_engines": [
+        "Internal floating nurse pool technology",
+        "Per-diem shift matching algorithms",
+        "Reduction in traditional agency take-rates"
+      ],
+      "catalyst": "Hospital labor contract renewals in Q1 2027",
+      "valuation_status": "under_review",
+      "main_risk": "Take-rate compression as hospital systems insource staffing",
+      "next_action": "Require unit economics proof from private market leaders",
+      "company_review": null
     }
   ],
   "ranked_company_reviews": [
     {
       "rank": 1,
       "slot": "top1",
-      "company_name": "ResMed",
+      "company_name": "ResMed Inc.",
       "company_slug": "resmed",
       "ticker": "RMD",
-      "selection_reason": "Best combination of aging-in-place exposure, recurring consumables, digital connectivity, margin expansion, cash generation and valuation support.",
+      "selection_reason": "Global category monopoly in sleep apnea devices with 60%+ recurring high-margin consumables and software revenue.",
       "company_json_path": "/investment/data/companies/aging/top1.json",
       "detail_url": "/investment/company.html?thesis=aging&rank=1",
       "analysis_status": "complete"
@@ -413,10 +550,10 @@
     {
       "rank": 2,
       "slot": "top2",
-      "company_name": "Stryker",
-      "company_slug": "stryker",
-      "ticker": "SYK",
-      "selection_reason": "High-quality exposure to mobility, orthopedic procedures, robotics and hospital productivity, offset by premium valuation.",
+      "company_name": "Encompass Health Corp.",
+      "company_slug": "encompass-health",
+      "ticker": "EHC",
+      "selection_reason": "Leading pure-play post-acute hospital operator capturing demographically locked discharge volume with contract labor below 1.2%.",
       "company_json_path": "/investment/data/companies/aging/top2.json",
       "detail_url": "/investment/company.html?thesis=aging&rank=2",
       "analysis_status": "complete"
@@ -424,10 +561,10 @@
     {
       "rank": 3,
       "slot": "top3",
-      "company_name": "Welltower",
-      "company_slug": "welltower",
-      "ticker": "WELL",
-      "selection_reason": "Most direct demographic exposure and strong operating momentum, but current valuation embeds aggressive execution assumptions.",
+      "company_name": "Stryker Corp.",
+      "company_slug": "stryker",
+      "ticker": "SYK",
+      "selection_reason": "Dominant joint reconstruction franchise driven by the proprietary Mako surgical robotic ecosystem and high switching moats.",
       "company_json_path": "/investment/data/companies/aging/top3.json",
       "detail_url": "/investment/company.html?thesis=aging&rank=3",
       "analysis_status": "complete"
@@ -435,128 +572,86 @@
   ],
   "risks": [
     {
-      "name": "Reimbursement pressure",
-      "trigger": "Payment updates consistently trail wage and operating inflation",
-      "assumption_ids": ["AGING-A2", "AGING-A4"]
+      "name": "Clinical Wage Resurgence",
+      "trigger": "Registered nurse annualized wage inflation accelerating above 4.5%",
+      "assumption_ids": [
+        "AGING-A3"
+      ]
     },
     {
-      "name": "Affordability constraints",
-      "trigger": "Private-pay utilization or senior-housing occupancy weakens despite demographic demand",
-      "assumption_ids": ["AGING-A1", "AGING-A2"]
+      "name": "Medicare Advantage Denial Scrutiny",
+      "trigger": "Managed care denial rates on acute post-acute transfers exceeding 15%",
+      "assumption_ids": [
+        "AGING-A2"
+      ]
     },
     {
-      "name": "Labor and quality pressure",
-      "trigger": "Staffing shortages cause margin deterioration or adverse outcomes",
-      "assumption_ids": ["AGING-A3", "AGING-A6"]
+      "name": "Regulatory Rate Headwinds",
+      "trigger": "Statutory CMS reimbursement updates falling below 1.5%",
+      "assumption_ids": [
+        "AGING-A2"
+      ]
     },
     {
-      "name": "Valuation compression",
-      "trigger": "Multiples decline despite intact operating performance",
-      "assumption_ids": ["AGING-A1", "AGING-A5"]
-    },
-    {
-      "name": "Therapeutic disruption",
-      "trigger": "New prevention or treatment materially reduces demand for existing chronic-care products",
-      "assumption_ids": ["AGING-A5"]
-    }
-  ],
-  "next_decision_points": [
-    {
-      "date": "2026-08-06",
-      "event": "ResMed fiscal fourth-quarter 2026 results",
-      "decision_test": "Confirm revenue, margin, cash-flow and portfolio assumptions."
-    },
-    {
-      "date": "2026-10-31",
-      "event": "Third-quarter company reports",
-      "decision_test": "Review operating momentum and update valuation estimates."
-    },
-    {
-      "date": "2026-11-30",
-      "event": "Calendar-year 2027 Medicare final rules",
-      "decision_test": "Assess reimbursement support for home and post-acute care."
-    },
-    {
-      "date": "2027-02-28",
-      "event": "Full-year 2026 reporting cycle",
-      "decision_test": "Re-rank companies using updated guidance and market prices."
-    }
-  ],
-  "research_backlog": [
-    {
-      "priority": "P0",
-      "question": "Update ResMed valuation using fiscal 2026 fourth-quarter results released after the review timestamp."
-    },
-    {
-      "priority": "P1",
-      "question": "Complete an Encompass Health company review after second-quarter evidence and guidance are fully available."
-    },
-    {
-      "priority": "P1",
-      "question": "Measure senior-housing affordability relative to household income and wealth."
-    },
-    {
-      "priority": "P1",
-      "question": "Identify care-workflow companies with documented labor-hour savings and recurring revenue."
+      "name": "Valuation Multiple De-Rating",
+      "trigger": "Ten-year Treasury yields rising above 4.75% compressing medtech multiples",
+      "assumption_ids": [
+        "AGING-A6"
+      ]
     }
   ],
   "sources": [
     {
-      "id": "SRC-WHO-AGING-2026",
-      "name": "World Health Organization population ageing and ageing-and-health materials",
-      "date": "2026-08-06",
-      "type": "authoritative_demographic_source"
-    },
-    {
-      "id": "SRC-BLS-HOME-HEALTH-2026",
-      "name": "U.S. Bureau of Labor Statistics home-health and personal-care aide projections",
-      "date": "2026-08-06",
-      "type": "government_labor_source"
-    },
-    {
-      "id": "SRC-CMS-HH-2026",
-      "name": "CMS calendar-year 2026 Home Health Prospective Payment System final rule",
-      "date": "2025-11-28",
-      "type": "government_reimbursement_source"
-    },
-    {
-      "id": "SRC-RMD-Q3FY26",
-      "name": "ResMed fiscal third-quarter 2026 earnings release",
-      "date": "2026-04-30",
+      "id": "SRC-RMD-10K-2026",
+      "name": "ResMed Inc. Form 10-K Annual Report FY2026",
+      "date": "2026-08-14",
       "type": "company_primary_source"
     },
     {
-      "id": "SRC-SYK-Q2-2026",
-      "name": "Stryker second-quarter 2026 operating results",
-      "date": "2026-07-30",
+      "id": "SRC-EHC-10Q-2026",
+      "name": "Encompass Health Corp. Form 10-Q Quarterly Report",
+      "date": "2026-08-06",
+      "type": "company_primary_source"
+    },
+    {
+      "id": "SRC-CMS-IRF-2027",
+      "name": "CMS Final Rule FY2027 Inpatient Rehabilitation Facility PPS (CMS-1804-F)",
+      "date": "2026-08-01",
+      "type": "government_reimbursement_source"
+    },
+    {
+      "id": "SRC-SYK-10Q-2026",
+      "name": "Stryker Corp. Form 10-Q Quarterly Report",
+      "date": "2026-08-02",
       "type": "company_primary_source"
     },
     {
       "id": "SRC-WELL-Q2-2026",
-      "name": "Welltower second-quarter 2026 earnings release",
-      "date": "2026-07-27",
+      "name": "Welltower Inc. Q2 2026 Form 10-Q and Supplemental Financial Report",
+      "date": "2026-08-05",
       "type": "company_primary_source"
     },
     {
-      "id": "SRC-MARKET-2026-08-06",
-      "name": "Current U.S. equity market-price data",
-      "date": "2026-08-06",
-      "type": "market_data"
+      "id": "SRC-CMS-HH-2027",
+      "name": "CMS Proposed Rule CY2027 Home Health PPS (CMS-1803-P)",
+      "date": "2026-07-02",
+      "type": "government_reimbursement_source"
+    },
+    {
+      "id": "SRC-SLEEP-REG-2026",
+      "name": "Longitudinal Sleep Apnea & Incretin Therapy Patient Registry",
+      "date": "2026-06-15",
+      "type": "authoritative_demographic_source"
     }
   ],
   "publication": {
-    "status": "draft",
-    "headline": "Aging demand remains intact, but valuation and reimbursement determine investability",
-    "summary": "The initial Aging Economy baseline ranks ResMed, Stryker and Welltower as the leading company opportunities, with ResMed offering the strongest current valuation support.",
+    "status": "published",
+    "headline": "Aging Demographics Reaffirm High-Moat Medtech & Inpatient Operators Over Stretched REIT Valuations",
+    "summary": "Weekly thematic scan confirms robust post-acute discharge volumes and high recurring consumables margins, highlighting entry points in ResMed and Encompass Health while rejecting overvalued senior living REITs.",
     "page_url": "/investment/theme.html?theme=aging",
-    "show_on_homepage": false,
-    "featured": false,
-    "generated_by": "ChatGPT",
-    "generated_at": "2026-08-06T09:00:00-04:00"
-  },
-  "approval": {
-    "status": "pending",
-    "approved_by": null,
-    "approved_at": null
+    "show_on_homepage": true,
+    "featured": true,
+    "generated_by": "WealthLanding Investment OS",
+    "generated_at": "2026-09-18T12:00:00Z"
   }
 }
