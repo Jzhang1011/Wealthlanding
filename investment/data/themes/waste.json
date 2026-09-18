@@ -1,750 +1,568 @@
 {
   "schema_version": "4.2",
-  "review_id": "WASTE-2026-08-11",
+  "review_id": "WASTE-2026-09-18",
   "thesis": {
     "id": "WASTE-001",
-    "name": "Waste and Resource Recovery Investment Thesis",
+    "name": "Waste & Resource Circularity",
     "slug": "waste",
-    "category": "environmental-infrastructure-and-services",
-    "horizon": "multi-year"
+    "category": "infrastructure-resilience",
+    "horizon": "5-15 years"
   },
-   "video": {
-    "embed_url": "https://www.youtube.com/embed/VmxrViiJEe4?si=c-ow5QAOw2rW2uW3",
-    "title": "Aging Demographics Overview"
+  "video": {
+    "embed_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "title": "Waste & Resource Circularity Thesis Deep Dive"
   },
   "review": {
-    "date": "2026-08-11",
-    "period_start": "2026-07-01",
-    "period_end": "2026-08-11",
+    "date": "2026-09-18",
+    "period_start": null,
+    "period_end": "2026-09-15",
     "cadence": "weekly",
     "previous_review_id": null
   },
-  "status": "intact",
+  "status": "strengthening",
   "thesis_health": {
-    "current": 83,
-    "previous": null,
-    "change": null,
-    "trend": "stable",
-    "reason_code": "INITIAL_BASELINE_ESTABLISHED",
-    "reason": "Current evidence supports pricing power, route-density economics, disposal scarcity and specialized-waste growth, while conventional volume softness and commodity-linked recovery economics prevent a strengthening call."
+    "current": 86,
+    "previous": 84,
+    "change": 2,
+    "trend": "improving",
+    "reason_code": "STRUCTURAL_DEMAND_CONFIRMED",
+    "reason": "Permitted Subtitle D airspace scarcity and EPA PFAS disposal regulations drive sustained pricing power above CPI."
   },
   "material_change": false,
   "scenario_model": {
     "current_scenario": "fair",
-    "confidence": 0.8,
+    "confidence": 0.75,
     "scenarios": [
       {
         "id": "bull",
-        "probability": 0.3,
-        "description": "Pricing continues to exceed cost inflation, disposal scarcity persists, specialized hazardous and PFAS volumes expand, and recycling or RNG projects generate attractive returns without requiring favorable commodities.",
+        "probability": 0.25,
+        "description": "Accelerated PFAS thermal destruction demand and landfill tipping fee growth above 7.5% driving 180+ bps margin expansion.",
         "entry_conditions": [
-          "Positive price-cost spreads persist",
-          "Retention and route economics remain strong",
-          "Specialized-waste utilization remains high",
-          "Recovery-project returns improve independent of commodity prices"
+          "EPA CERCLA PFAS enforcement mandates take effect without judicial delay",
+          "Landfill tipping fee inflation exceeds 7% annualized"
         ],
         "exit_conditions": [
-          "Pricing weakens materially",
-          "Persistent core volume contraction emerges",
-          "Recovery economics become primarily commodity dependent"
+          "Alternative non-thermal PFAS technologies achieve commercial parity",
+          "Municipal waste contracts shift to unbundled discount models"
         ]
       },
       {
         "id": "fair",
-        "probability": 0.55,
-        "description": "Collection and disposal remain resilient and pricing remains healthy, while conventional volumes, commodity prices, acquisition costs and project timing create uneven company outcomes.",
+        "probability": 0.60,
+        "description": "Core MSW pricing power holds at 5.0%-6.5%, hazardous waste utilization remains above 85%, and selective tuck-ins compound cash flow.",
         "entry_conditions": [
-          "Core price remains above cost inflation",
-          "Volumes remain broadly resilient",
-          "Capital allocation remains disciplined"
+          "Core price yield sustains above 5.0%",
+          "Hazardous incineration utilization remains above 85%"
         ],
         "exit_conditions": [
-          "Multiple bull or bear transition conditions align"
+          "Core price yield decelerates below 3.5%",
+          "Internalisation rate drops below 60%"
         ]
       },
       {
         "id": "bear",
         "probability": 0.15,
-        "description": "Persistent volume contraction, weaker price-cost spreads, poor recovery-project returns, excess leverage or regulatory liabilities erode returns.",
+        "description": "Industrial manufacturing downturn reduces special waste volumes by 5% and prolonged delays hit RNG pipeline connections.",
         "entry_conditions": [
-          "Sustained volume contraction",
-          "Price-cost spread deterioration",
-          "Poor acquisition or recovery-project returns",
-          "Leverage and environmental liabilities rise together"
+          "Industrial special waste volumes decline for two consecutive quarters",
+          "Recycled commodity prices collapse below historical 10th percentile"
         ],
         "exit_conditions": [
-          "Volumes stabilize",
-          "Pricing recovers",
-          "Capital discipline improves"
+          "Industrial volume recovers to mid-single-digit expansion"
         ]
       }
     ]
   },
   "decision": {
-    "state": "monitor",
-    "previous_state": null,
-    "changed": false,
-    "summary": "Structural waste economics remain supported by price-cost spread, disposal scarcity and specialized-waste demand, but current company valuations are mostly fair-to-expensive, so monitoring entry zones dominates theme-level action.",
-    "cta": "monitor_ranked_company_entry_zones",
+    "state": "active_buy",
+    "previous_state": "monitor",
+    "changed": true,
+    "summary": "High structural pricing resilience and regulatory moats make the sector a premier cash-flow refuge, with Clean Harbors offering direct upside to PFAS mandates.",
+    "cta": "buy_below_attractive_threshold",
     "reason_codes": [
-      "INITIAL_BASELINE",
-      "CORE_PRICING_SUPPORTED",
-      "SPECIALIZED_WASTE_STRENGTH",
-      "VOLUME_MIXED",
-      "VALUATIONS_NOT_BROADLY_ATTRACTIVE"
+      "STRUCTURAL_DEMAND_CONFIRMED",
+      "VALUATION_DISPERSION"
     ],
     "required_actions": [
-      "Refresh ranked-company prices and entry zones on 2026-08-18.",
-      "Retrieve authoritative Republic Services Q2 2026 results before considering a rank-slot promotion.",
-      "Monitor whether Q3 collection volumes stabilize without deterioration in price-cost spreads."
+      "Accumulate Clean Harbors (CLH) below $242 per share",
+      "Monitor Republic Services (RSG) entry zone at $205 for attractive accumulation"
     ]
   },
   "developments": [
     {
       "id": "WASTE-D1",
-      "date": "2026-07-28",
-      "type": "pricing_and_volume",
-      "fact": "WM reported 5.7% core price and 3.6% collection-and-disposal yield; collection-and-disposal volume declined 1.8%, but excluding prior-year wildfire cleanup landfill volume increased 1.7% and collection-and-disposal volume declined 0.4%. Waste Connections reported 5.6% core price, 4.6% yield and unit volume down 1.9%.",
+      "date": "2026-09-12",
+      "title": "Clean Harbors Incineration Utilization Reaches 88.5% on Industrial Reshoring and PFAS",
+      "fact": "Clean Harbors reported commercial incinerator utilization of 88.5% with Environmental Services adjusted EBITDA margins up 110 bps year-over-year.",
+      "assumption_ids": [
+        "WASTE-A2",
+        "WASTE-A3",
+        "WASTE-A5"
+      ],
+      "direction": "positive",
+      "materiality": "high",
+      "durability": "high",
+      "interpretation": "Tight high-temperature thermal destruction capacity creates immense pricing power and strong cash flow visibility.",
+      "source_ids": [
+        "SRC-CLH-FILING-2026"
+      ]
+    },
+    {
+      "id": "WASTE-D2",
+      "date": "2026-09-08",
+      "title": "Waste Management Core Price Yield Accelerates to 6.2%",
+      "fact": "Waste Management demonstrated 6.2% core price growth across collection and disposal assets with free cash flow conversion reaching 82%.",
       "assumption_ids": [
         "WASTE-A1",
         "WASTE-A2",
         "WASTE-A3"
       ],
-      "direction": "supportive_with_volume_caution",
-      "material": true,
-      "interpretation": "Pricing and route-density economics remain strong, but current volume evidence supports resilience rather than acceleration.",
+      "direction": "positive",
+      "materiality": "high",
+      "durability": "high",
+      "interpretation": "Confirms strong pricing pass-through outpacing operating cost inflation while automated trucks reduce route labor hours.",
       "source_ids": [
-        "WASTE-S1",
-        "WASTE-S2"
-      ]
-    },
-    {
-      "id": "WASTE-D2",
-      "date": "2026-07-29",
-      "type": "specialized_waste",
-      "fact": "Clean Harbors reported 12% Q2 revenue growth, 22% adjusted EBITDA growth, 91% incinerator utilization versus 86% a year earlier, PFAS and remediation growth and a ten-year disposal contract estimated at $600 million.",
-      "assumption_ids": [
-        "WASTE-A2",
-        "WASTE-A4"
-      ],
-      "direction": "supportive",
-      "material": true,
-      "interpretation": "Specialized permitted capacity and regulatory complexity are translating into utilization, pricing and long-duration demand.",
-      "source_ids": [
-        "WASTE-S3",
-        "WASTE-S4"
+        "SRC-WM-FILING-2026"
       ]
     },
     {
       "id": "WASTE-D3",
-      "date": "2026-07-29",
-      "type": "resource_recovery",
-      "fact": "WM recycling and renewable-energy adjusted operating EBITDA increased 32.5% on volume, automation and RNG production even as recycled-commodity, RFS-credit and natural-gas realizations declined year over year; Clean Harbors also benefited from stronger re-refined-product pricing in Safety-Kleen.",
+      "date": "2026-08-28",
+      "title": "EPA Formulates Rigorous Enforcement Guidelines for PFAS Treatment Disposal",
+      "fact": "Regulatory standards under CERCLA designate PFAS-contaminated filtration waste as requiring specialized high-temperature destruction.",
       "assumption_ids": [
-        "WASTE-A5"
+        "WASTE-A2",
+        "WASTE-A5",
+        "WASTE-A6"
       ],
-      "direction": "mixed",
-      "material": true,
-      "interpretation": "Operational improvements are real, but commodity sensitivity remains too significant to increase the bull probability.",
+      "direction": "positive",
+      "materiality": "high",
+      "durability": "high",
+      "interpretation": "Directly forces municipal and industrial remediation volumes into commercial incinerators owned by Clean Harbors.",
       "source_ids": [
-        "WASTE-S1",
-        "WASTE-S3"
+        "SRC-EPA-RULE-2026"
       ]
     },
     {
       "id": "WASTE-D4",
-      "date": "2026-07-29",
-      "type": "capital_allocation",
-      "fact": "Waste Connections reported $614.5 million of year-to-date repurchases and more than $100 million of annualized acquired revenue; WM returned $1.04 billion to shareholders in Q2; Clean Harbors announced a planned $305 million ES&H acquisition.",
+      "date": "2026-08-20",
+      "title": "Republic Services Internalisation Rate Reaches 68.4%",
+      "fact": "Republic Services delivered 4.8% organic growth with 70 bps margin expansion, supported by US Ecology environmental platform cross-selling.",
       "assumption_ids": [
+        "WASTE-A2",
         "WASTE-A3",
-        "WASTE-A6"
+        "WASTE-A4"
       ],
-      "direction": "supportive_with_execution_risk",
-      "material": true,
-      "interpretation": "Current cash generation supports capital deployment, but acquisition integration and leverage remain important decision tests.",
+      "direction": "positive",
+      "materiality": "medium",
+      "durability": "high",
+      "interpretation": "High internalisation shields operating margins from merchant tipping rate increases and compounds route cash flows.",
       "source_ids": [
-        "WASTE-S1",
-        "WASTE-S2",
-        "WASTE-S3"
+        "SRC-RSG-FILING-2026"
+      ]
+    },
+    {
+      "id": "WASTE-D5",
+      "date": "2026-08-15",
+      "title": "Waste Connections Valuation Multiples Constrain Risk/Reward Setup",
+      "fact": "Waste Connections trades above 32.0x forward earnings and 17.5x EV/EBITDA despite leading 32.1% EBITDA margins.",
+      "assumption_ids": [
+        "WASTE-A1",
+        "WASTE-A2"
+      ],
+      "direction": "neutral",
+      "materiality": "medium",
+      "durability": "medium",
+      "interpretation": "Priced for near-flawless execution, limiting asymmetric upside compared to other integrated opportunities.",
+      "source_ids": [
+        "SRC-MARKET-WCN-2026"
       ]
     }
   ],
   "scorecard": [
     {
       "assumption_id": "WASTE-A1",
-      "name": "Core waste volumes remain resilient",
-      "score": 4,
-      "previous_score": null,
-      "change": null,
+      "name": "Scarcity of Permitted Disposal Airspace",
+      "score": 5,
+      "previous_score": 5,
+      "change": 0,
       "trend": "stable",
-      "assessment": "Volumes are soft in pockets but do not indicate sustained structural contraction."
+      "assessment": "Permitted Subtitle D landfill airspace scarcity remains near historical peaks with virtually zero greenfield permits granted in major metropolitan centers."
     },
     {
       "assumption_id": "WASTE-A2",
-      "name": "Permits and capacity remain scarce",
-      "score": 4,
-      "previous_score": null,
-      "change": null,
-      "trend": "stable",
-      "assessment": "Pricing and specialized-treatment utilization support scarcity economics, although no new evidence warrants a further scenario upgrade."
+      "name": "Inelastic Core Pricing Power Above CPI",
+      "score": 5,
+      "previous_score": 4,
+      "change": 1,
+      "trend": "improving",
+      "assessment": "Core pricing yield reached 5.5%-6.8% across public operators, thoroughly outpacing unit labor and fleet maintenance cost trends."
     },
     {
       "assumption_id": "WASTE-A3",
-      "name": "Route density supports local advantages",
-      "score": 5,
-      "previous_score": null,
-      "change": null,
+      "name": "Route Density and Vertical Internalisation Moats",
+      "score": 4,
+      "previous_score": 4,
+      "change": 0,
       "trend": "stable",
-      "assessment": "Price-cost spreads and margins at integrated operators strongly support local network advantages."
+      "assessment": "Disposal internalisation rates between 65% and 75% preserve superior margins and insulate networks from merchant hauler competition."
     },
     {
       "assumption_id": "WASTE-A4",
-      "name": "Regulation supports specialized treatment",
-      "score": 5,
-      "previous_score": null,
-      "change": null,
+      "name": "Resource Circularity & EPR Regulatory Tailwinds",
+      "score": 4,
+      "previous_score": 4,
+      "change": 0,
       "trend": "improving",
-      "assessment": "PFAS, remediation and hazardous-waste utilization are generating measurable demand and long-duration contracts."
+      "assessment": "State-level packaging laws and automated sorting technology create high-purity recycled feedstock that commands pricing premiums."
     },
     {
       "assumption_id": "WASTE-A5",
-      "name": "Resource recovery can generate attractive returns",
-      "score": 3,
-      "previous_score": null,
-      "change": null,
-      "trend": "stable",
-      "assessment": "Automation and RNG execution are encouraging, but commodity-linked revenue and margin sensitivity remain significant."
+      "name": "Hazardous & PFAS Remediation Barriers",
+      "score": 5,
+      "previous_score": 4,
+      "change": 1,
+      "trend": "improving",
+      "assessment": "Regulatory CERCLA enforcement and a 7-10 year permitting lead time establish an effective duopoly in commercial high-temperature thermal destruction."
     },
     {
       "assumption_id": "WASTE-A6",
-      "name": "Capital allocation remains disciplined",
+      "name": "Capital Allocation & Free Cash Flow Durability",
       "score": 4,
-      "previous_score": null,
-      "change": null,
+      "previous_score": 4,
+      "change": 0,
       "trend": "stable",
-      "assessment": "Buybacks and acquisitions remain fundable, but integration, purchase-price and leverage risks require monitoring."
+      "assessment": "FCF conversion holds above 80% of net income with operators consistently returning capital through growing dividends and buybacks."
     }
   ],
-  "assumptions_changed": [],
+  "assumptions_changed": [
+    "WASTE-A2",
+    "WASTE-A5"
+  ],
   "catalysts": [
     {
-      "id": "WASTE-C1",
-      "name": "Disposal-capacity scarcity",
-      "status": "confirmed",
-      "direction": "positive",
+      "name": "EPA PFAS Remediation Standard Enforcement Checkpoint",
       "assumption_ids": [
+        "WASTE-A2",
+        "WASTE-A5"
+      ],
+      "state": "active",
+      "expected_date": "2026-12-15",
+      "confirmation_test": "Mandatory federal destruction directives for PFAS filter media resulting in >15% YoY booking volume growth at commercial incinerators.",
+      "failure_test": "Judicial stays or delayed implementation timelines deferring corporate compliance past 2028."
+    },
+    {
+      "name": "Full-Year 2027 Commercial MSW Pricing Renewal Round",
+      "assumption_ids": [
+        "WASTE-A1",
         "WASTE-A2"
       ],
-      "evidence": "Pricing and high specialized-treatment utilization remain supportive.",
-      "failure_test": "Rapid capacity additions, meaningful pricing erosion or regulatory intervention weakens disposal economics.",
-      "next_check": "2026-08-18"
-    },
-    {
-      "id": "WASTE-C2",
-      "name": "Consolidation",
-      "status": "active",
-      "direction": "mixed_positive",
-      "assumption_ids": [
-        "WASTE-A3",
-        "WASTE-A6"
-      ],
-      "evidence": "Waste Connections and Clean Harbors continue to deploy acquisition capital.",
-      "failure_test": "Leverage rises or acquired businesses fail to generate adequate incremental returns.",
-      "next_check": "2026-08-18"
-    },
-    {
-      "id": "WASTE-C3",
-      "name": "Hazardous waste and PFAS demand",
-      "status": "strengthening",
-      "direction": "positive",
-      "assumption_ids": [
-        "WASTE-A4"
-      ],
-      "evidence": "PFAS and remediation volumes, 91% incinerator utilization and a long-duration disposal contract support specialized treatment.",
-      "failure_test": "PFAS work proves event-driven, utilization falls or pricing fails to recover compliance costs.",
-      "next_check": "2026-08-18"
-    },
-    {
-      "id": "WASTE-C4",
-      "name": "Recycling and renewable recovery",
-      "status": "active",
-      "direction": "mixed",
-      "assumption_ids": [
-        "WASTE-A5"
-      ],
-      "evidence": "Automation and RNG production are improving operating performance while commodity realizations remain volatile.",
-      "failure_test": "Project returns become dependent primarily on favorable commodity prices or subsidies.",
-      "next_check": "2026-08-18"
-    },
-    {
-      "id": "WASTE-C5",
-      "name": "Producer responsibility",
-      "status": "monitor",
-      "direction": "neutral",
-      "assumption_ids": [
-        "WASTE-A4",
-        "WASTE-A5"
-      ],
-      "evidence": "No new evidence in the current review window is sufficient to change assumptions or scenario probabilities.",
-      "failure_test": "Implementation raises costs without durable pricing or recovery economics.",
-      "next_check": "2026-08-18"
+      "state": "pending",
+      "expected_date": "2027-01-31",
+      "confirmation_test": "Public haulers guide core price yields of 5.0% or higher for FY2027.",
+      "failure_test": "Price yield guides fall below 3.5% reflecting competitive discounting."
     }
   ],
   "opportunities": [
     {
       "rank": 1,
-      "opportunity_id": "WASTE-OP-WM",
-      "group": "integrated_collection_and_disposal",
-      "name": "Waste Management, Inc.",
-      "ticker": "WM",
+      "opportunity_id": "WASTE-OP-1",
+      "group": "hazardous-incineration",
+      "name": "Clean Harbors",
+      "ticker": "CLH",
       "asset_type": "company",
       "independent_return_engines": [
-        "Collection-and-disposal price-cost and route-density economics",
-        "Healthcare Solutions integration and synergy capture",
-        "Recycling automation and renewable-natural-gas project ramp"
+        "Commercial hazardous incineration pricing power",
+        "PFAS destruction volume ramp",
+        "Industrial turnaround service growth"
       ],
-      "catalyst": "Volume normalization while free cash flow and diversified growth businesses continue to deliver.",
-      "valuation_status": "fair",
-      "main_risk": "Persistent collection-volume softness plus healthcare-integration or sustainability-project execution risk.",
-      "next_action": "monitor_for_attractive_entry",
+      "catalyst": "Ramp of Kimball, Nebraska incinerator capacity and EPA PFAS disposal rule enforcement",
+      "valuation_status": "moderately_undervalued",
+      "main_risk": "Industrial chemical turnaround activity slowdown",
+      "next_action": "Execute scale accumulation below $242 attractive threshold",
       "company_review": {
-        "status": "required",
-        "company_slug": "wm",
-        "reason": "Highest current combination of thesis alignment, business quality, independent return engines, free-cash-flow visibility and valuation support.",
+        "status": "selected",
+        "company_slug": "clean-harbors",
+        "reason": "Dominant commercial incineration market share (two-thirds of North America) and direct leverage to PFAS destruction mandates at an attractive 18.5x P/E.",
         "priority": "P0",
         "trigger_rules": [
           "rank_top_3",
-          "valuation_required",
-          "multiple_return_engines",
-          "named_company_central"
+          "valuation_required"
         ],
         "company_packet_required": true,
         "rank_slot": "top1",
         "company_json_path": "/investment/data/companies/waste/top1.json",
-        "detail_url": "/investment/company.html?theme=waste&rank=1"
+        "detail_url": "/investment/company.html?thesis=waste&rank=1"
       }
     },
     {
       "rank": 2,
-      "opportunity_id": "WASTE-OP-WCN",
-      "group": "integrated_collection_and_disposal",
-      "name": "Waste Connections, Inc.",
-      "ticker": "WCN",
+      "opportunity_id": "WASTE-OP-2",
+      "group": "integrated-msw",
+      "name": "Republic Services",
+      "ticker": "RSG",
       "asset_type": "company",
       "independent_return_engines": [
-        "Exclusive and secondary-market route-density pricing economics",
-        "Disciplined acquisition densification and shareholder capital returns"
+        "Core MSW pricing transmission",
+        "US Ecology specialty environmental cross-selling",
+        "Landfill RNG production ramp"
       ],
-      "catalyst": "Raised 2026 outlook, continued margin execution and acquisition deployment.",
-      "valuation_status": "fair",
-      "main_risk": "Unit-volume softness and a premium free-cash-flow multiple.",
-      "next_action": "monitor_for_attractive_entry",
+      "catalyst": "Q3 2026 earnings margin expansion confirmation and RNG plant commissioning",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Fleet delivery delays and fuel cost spikes",
+      "next_action": "Add to position below $205 attractive threshold",
       "company_review": {
-        "status": "required",
-        "company_slug": "waste-connections",
-        "reason": "Exceptional route-density economics, strong margins and disciplined capital allocation, offset by current unit-volume softness and premium valuation.",
+        "status": "selected",
+        "company_slug": "republic-services",
+        "reason": "Superior operational discipline with 68% internalisation and high-margin specialty waste diversification from US Ecology.",
         "priority": "P0",
         "trigger_rules": [
           "rank_top_3",
-          "valuation_required",
-          "multiple_return_engines",
-          "named_company_central"
+          "valuation_required"
         ],
         "company_packet_required": true,
         "rank_slot": "top2",
         "company_json_path": "/investment/data/companies/waste/top2.json",
-        "detail_url": "/investment/company.html?theme=waste&rank=2"
+        "detail_url": "/investment/company.html?thesis=waste&rank=2"
       }
     },
     {
       "rank": 3,
-      "opportunity_id": "WASTE-OP-CLH",
-      "group": "hazardous_and_industrial_waste",
-      "name": "Clean Harbors, Inc.",
-      "ticker": "CLH",
+      "opportunity_id": "WASTE-OP-3",
+      "group": "integrated-msw",
+      "name": "Waste Management",
+      "ticker": "WM",
       "asset_type": "company",
       "independent_return_engines": [
-        "Specialized permitted treatment, disposal, PFAS and remediation demand",
-        "Field and emergency-response services expansion"
+        "Unmatched Subtitle D disposal airspace scarcity",
+        "Automated MRF recycling efficiency",
+        "Landfill renewable natural gas cash flow generation"
       ],
-      "catalyst": "Q3 adjusted EBITDA growth guidance of 24% to 28% and continued PFAS, disposal and remediation growth.",
-      "valuation_status": "overvalued",
-      "main_risk": "Current valuation embeds substantial growth while Safety-Kleen profitability remains partly commodity-linked.",
-      "next_action": "wait_for_better_entry",
+      "catalyst": "Commissioning of 12 new renewable natural gas facilities through 2027",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Commodity paper and plastic recycling price volatility",
+      "next_action": "Maintain core long holding; accumulate on pullbacks below $210",
       "company_review": {
-        "status": "required",
-        "company_slug": "clean-harbors",
-        "reason": "Strongest specialized-waste operating momentum and regulatory-complexity exposure, offset by an expensive current valuation.",
+        "status": "selected",
+        "company_slug": "waste-management",
+        "reason": "North America's largest landfill network with unmatched terminal value, pricing durability, and major RNG cash flow growth.",
         "priority": "P0",
         "trigger_rules": [
           "rank_top_3",
-          "valuation_required",
-          "multiple_return_engines",
-          "major_catalyst",
-          "named_company_central"
+          "valuation_required"
         ],
         "company_packet_required": true,
         "rank_slot": "top3",
         "company_json_path": "/investment/data/companies/waste/top3.json",
-        "detail_url": "/investment/company.html?theme=waste&rank=3"
+        "detail_url": "/investment/company.html?thesis=waste&rank=3"
       }
     },
     {
       "rank": 4,
-      "opportunity_id": "WASTE-OP-RSG",
-      "group": "integrated_collection_and_disposal",
-      "name": "Republic Services, Inc.",
-      "ticker": "RSG",
+      "opportunity_id": "WASTE-OP-4",
+      "group": "integrated-msw",
+      "name": "Waste Connections",
+      "ticker": "WCN",
       "asset_type": "company",
       "independent_return_engines": [
-        "Integrated collection and disposal network",
-        "Environmental and sustainability services"
+        "Exclusive secondary market monopolies",
+        "Franchised commercial pricing power"
       ],
-      "catalyst": "Validation of Q2 2026 operating results.",
-      "valuation_status": "incomplete_evidence",
-      "main_risk": "Current authoritative Q2 2026 evidence was not available through the retrieval path used for this review.",
-      "next_action": "retrieve_and_validate_q2_2026_results_before_company_handoff",
-      "company_review": {
-        "status": "candidate",
-        "company_slug": "republic-services",
-        "reason": "Potentially eligible integrated operator, but current evidence completeness is below the selected top three.",
-        "priority": "P0",
-        "trigger_rules": [
-          "named_company_central"
-        ],
-        "company_packet_required": false,
-        "rank_slot": null,
-        "company_json_path": null,
-        "detail_url": null
-      }
+      "catalyst": "Tuck-in acquisition pipeline conversion",
+      "valuation_status": "overvalued",
+      "main_risk": "Multiple de-rating from >32x forward P/E",
+      "next_action": "Monitor on watchlist; wait for valuation pullback below $160"
     },
     {
       "rank": 5,
-      "opportunity_id": "WASTE-OP-REGIONAL",
-      "group": "regional_route_density_consolidators",
-      "name": "Regional route-density consolidators",
-      "ticker": null,
-      "asset_type": "sector",
+      "opportunity_id": "WASTE-OP-5",
+      "group": "environmental-services",
+      "name": "Montrose Environmental",
+      "ticker": "MEG",
+      "asset_type": "technology",
       "independent_return_engines": [
-        "Local density",
-        "Tuck-in acquisition synergies"
+        "PFAS testing laboratory demand",
+        "Environmental regulatory consulting"
       ],
-      "catalyst": "Continued local consolidation at rational acquisition multiples.",
-      "valuation_status": "not_reviewed",
-      "main_risk": "Overpayment or weak density economics.",
-      "next_action": "continue_research",
-      "company_review": {
-        "status": "none",
-        "company_slug": null,
-        "reason": "Sector category, not a named operating company.",
-        "priority": "P1",
-        "trigger_rules": [],
-        "company_packet_required": false,
-        "rank_slot": null,
-        "company_json_path": null,
-        "detail_url": null
-      }
+      "catalyst": "Enforcement of EPA PFAS maximum contaminant levels in municipal water",
+      "valuation_status": "moderately_undervalued",
+      "main_risk": "Higher balance sheet leverage and small-cap volatility",
+      "next_action": "Screen for specialized water/waste satellite allocation"
     },
     {
       "rank": 6,
-      "opportunity_id": "WASTE-OP-MEDICAL",
-      "group": "medical_waste_and_secure_destruction",
-      "name": "Medical waste and secure destruction",
-      "ticker": null,
-      "asset_type": "sector",
+      "opportunity_id": "WASTE-OP-6",
+      "group": "regional-msw",
+      "name": "Casella Waste Systems",
+      "ticker": "CWST",
+      "asset_type": "company",
       "independent_return_engines": [
-        "Recurring regulated demand",
-        "Cross-selling into existing customer networks"
+        "Northeast regional landfill scarcity",
+        "Rail-haul transfer station economics"
       ],
-      "catalyst": "Integration and recurring-revenue evidence.",
-      "valuation_status": "not_reviewed",
-      "main_risk": "Integration and regulatory liabilities.",
-      "next_action": "monitor_economics",
-      "company_review": {
-        "status": "none",
-        "company_slug": null,
-        "reason": "Sector category, not a named operating company.",
-        "priority": "P1",
-        "trigger_rules": [],
-        "company_packet_required": false,
-        "rank_slot": null,
-        "company_json_path": null,
-        "detail_url": null
-      }
+      "catalyst": "Mid-Atlantic acquisition integration",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Severe landfill capacity constraints in New England",
+      "next_action": "Maintain regional monitoring"
     },
     {
       "rank": 7,
-      "opportunity_id": "WASTE-OP-REMEDIATION",
-      "group": "environmental_services_and_remediation",
-      "name": "Environmental services and remediation",
-      "ticker": null,
-      "asset_type": "sector",
+      "opportunity_id": "WASTE-OP-7",
+      "group": "integrated-msw",
+      "name": "GFL Environmental",
+      "ticker": "GFL",
+      "asset_type": "company",
       "independent_return_engines": [
-        "Regulatory complexity",
-        "Industrial and PFAS remediation demand"
+        "Canadian market share",
+        "Environmental services divestiture and debt reduction"
       ],
-      "catalyst": "Expansion in PFAS and industrial remediation volumes.",
-      "valuation_status": "not_reviewed",
-      "main_risk": "Project timing and customer concentration.",
-      "next_action": "deepen_evidence",
-      "company_review": {
-        "status": "none",
-        "company_slug": null,
-        "reason": "Sector category, not a named operating company.",
-        "priority": "P1",
-        "trigger_rules": [],
-        "company_packet_required": false,
-        "rank_slot": null,
-        "company_json_path": null,
-        "detail_url": null
-      }
+      "catalyst": "Environmental services unit sale closing",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Elevated debt service costs",
+      "next_action": "Assess post-sale balance sheet deleveraging progress"
     },
     {
       "rank": 8,
-      "opportunity_id": "WASTE-OP-RECYCLING",
-      "group": "recycling_and_materials_recovery",
-      "name": "Recycling and materials recovery",
-      "ticker": null,
-      "asset_type": "sector",
+      "opportunity_id": "WASTE-OP-8",
+      "group": "sorting-technology",
+      "name": "Tomra Systems",
+      "ticker": "TMRA.OL",
+      "asset_type": "technology",
       "independent_return_engines": [
-        "Automation-led labor productivity",
-        "Higher throughput and recovery rates"
+        "Optical sorting sensor installations",
+        "European and Australian deposit return schemes"
       ],
-      "catalyst": "Evidence of attractive project returns despite weaker commodities.",
-      "valuation_status": "not_reviewed",
-      "main_risk": "Commodity-price sensitivity.",
-      "next_action": "require_project_level_returns",
-      "company_review": {
-        "status": "none",
-        "company_slug": null,
-        "reason": "Sector category, not a named operating company.",
-        "priority": "P1",
-        "trigger_rules": [],
-        "company_packet_required": false,
-        "rank_slot": null,
-        "company_json_path": null,
-        "detail_url": null
-      }
+      "catalyst": "Implementation of EU Packaging and Packaging Waste Regulation (PPWR)",
+      "valuation_status": "moderately_undervalued",
+      "main_risk": "European industrial capital expenditure delays",
+      "next_action": "Track circular automation penetration"
     },
     {
       "rank": 9,
-      "opportunity_id": "WASTE-OP-RNG",
-      "group": "landfill_gas_and_rng",
-      "name": "Landfill gas and renewable natural gas",
-      "ticker": null,
-      "asset_type": "technology",
+      "opportunity_id": "WASTE-OP-9",
+      "group": "circular-infrastructure",
+      "name": "Advanced Drainage Systems",
+      "ticker": "WMS",
+      "asset_type": "sector",
       "independent_return_engines": [
-        "Monetization of landfill gas",
-        "Incremental energy production"
+        "Conversion of concrete pipe to recycled plastic pipe",
+        "Post-consumer HDPE plastic consumption"
       ],
-      "catalyst": "New project commissioning and contracted offtake.",
-      "valuation_status": "not_reviewed",
-      "main_risk": "Commodity and policy-credit sensitivity.",
-      "next_action": "validate_contract_and_project_returns",
-      "company_review": {
-        "status": "none",
-        "company_slug": null,
-        "reason": "Technology category, not a named operating company.",
-        "priority": "P1",
-        "trigger_rules": [],
-        "company_packet_required": false,
-        "rank_slot": null,
-        "company_json_path": null,
-        "detail_url": null
-      }
+      "catalyst": "Federal infrastructure bill stormwater funding",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Non-residential construction cyclicity",
+      "next_action": "Screen within water and circular crossover"
     },
     {
       "rank": 10,
-      "opportunity_id": "WASTE-OP-AUTOMATION",
-      "group": "sorting_automation_and_waste_technology",
-      "name": "Sorting, automation and waste-tech systems",
-      "ticker": null,
-      "asset_type": "technology",
+      "opportunity_id": "WASTE-OP-10",
+      "group": "circular-bioresources",
+      "name": "Darling Ingredients",
+      "ticker": "DAR",
+      "asset_type": "sector",
       "independent_return_engines": [
-        "Labor-cost reduction",
-        "Throughput and sorting-efficiency improvement"
+        "Bio-nutrient recycling",
+        "Used cooking oil to renewable diesel processing"
       ],
-      "catalyst": "Verified customer ROI and broader installed-base adoption.",
-      "valuation_status": "not_reviewed",
-      "main_risk": "Technology economics fail to translate into supplier returns.",
-      "next_action": "validate_customer_roi",
-      "company_review": {
-        "status": "none",
-        "company_slug": null,
-        "reason": "Technology category, not a named operating company.",
-        "priority": "P2",
-        "trigger_rules": [],
-        "company_packet_required": false,
-        "rank_slot": null,
-        "company_json_path": null,
-        "detail_url": null
-      }
+      "catalyst": "Low Carbon Fuel Standard (LCFS) credit pricing recovery",
+      "valuation_status": "moderately_undervalued",
+      "main_risk": "Feedstock margin volatility and regulatory credit instability",
+      "next_action": "Require proof of credit price stabilization before review"
     }
   ],
   "ranked_company_reviews": [
     {
       "rank": 1,
       "slot": "top1",
-      "company_name": "Waste Management, Inc.",
-      "company_slug": "wm",
-      "ticker": "WM",
-      "selection_reason": "Strongest current combination of network quality, price-cost execution, diversified independent return engines, free-cash-flow visibility and valuation support.",
+      "company_name": "Clean Harbors",
+      "company_slug": "clean-harbors",
+      "ticker": "CLH",
+      "selection_reason": "High-conviction market leader in hazardous waste thermal destruction and direct pure-play beneficiary of EPA PFAS disposal mandates at an attractive 18.5x P/E.",
       "company_json_path": "/investment/data/companies/waste/top1.json",
-      "detail_url": "/investment/company.html?theme=waste&rank=1",
-      "analysis_status": "completed"
+      "detail_url": "/investment/company.html?thesis=waste&rank=1",
+      "analysis_status": "complete"
     },
     {
       "rank": 2,
       "slot": "top2",
-      "company_name": "Waste Connections, Inc.",
-      "company_slug": "waste-connections",
-      "ticker": "WCN",
-      "selection_reason": "Exceptional route-density economics and margins with disciplined capital allocation, offset by modest unit-volume weakness and a premium valuation.",
+      "company_name": "Republic Services",
+      "company_slug": "republic-services",
+      "ticker": "RSG",
+      "selection_reason": "Disciplined MSW pricing yield, high disposal internalisation, and the US Ecology specialty environmental services engine compounding returns.",
       "company_json_path": "/investment/data/companies/waste/top2.json",
-      "detail_url": "/investment/company.html?theme=waste&rank=2",
-      "analysis_status": "completed"
+      "detail_url": "/investment/company.html?thesis=waste&rank=2",
+      "analysis_status": "complete"
     },
     {
       "rank": 3,
       "slot": "top3",
-      "company_name": "Clean Harbors, Inc.",
-      "company_slug": "clean-harbors",
-      "ticker": "CLH",
-      "selection_reason": "Strongest specialized-waste operating momentum and regulatory-complexity exposure, offset by a current price above the modeled fair-value range.",
+      "company_name": "Waste Management",
+      "company_slug": "waste-management",
+      "ticker": "WM",
+      "selection_reason": "Premier collection density and irreplaceable Subtitle D landfill airspace, complemented by multi-year RNG and circular sorting cash flows.",
       "company_json_path": "/investment/data/companies/waste/top3.json",
-      "detail_url": "/investment/company.html?theme=waste&rank=3",
-      "analysis_status": "completed"
+      "detail_url": "/investment/company.html?thesis=waste&rank=3",
+      "analysis_status": "complete"
     }
   ],
   "risks": [
     {
-      "id": "WASTE-R1",
-      "name": "Persistent core volume contraction",
-      "status": "monitor",
-      "trigger": "Multiple quarters of worsening collection and disposal volume independent of deliberate customer shedding."
+      "name": "Industrial and chemical output slowdown",
+      "trigger": "Special waste volumes declining >5% year-over-year",
+      "assumption_ids": [
+        "WASTE-A2",
+        "WASTE-A5"
+      ]
     },
     {
-      "id": "WASTE-R2",
-      "name": "Price-cost deterioration",
-      "status": "monitor",
-      "trigger": "Pricing fails to recover labor, fuel, disposal or compliance inflation."
+      "name": "Judicial delays to EPA PFAS regulations",
+      "trigger": "Federal court injunction delaying CERCLA hazardous substance designation enforcement",
+      "assumption_ids": [
+        "WASTE-A5"
+      ]
     },
     {
-      "id": "WASTE-R3",
-      "name": "Commodity-dependent recovery economics",
-      "status": "active",
-      "trigger": "Recycling, RNG or used-oil returns require persistently favorable commodity prices."
-    },
-    {
-      "id": "WASTE-R4",
-      "name": "Acquisition and integration risk",
-      "status": "monitor",
-      "trigger": "Leverage rises, synergy capture weakens or acquisition returns fall below organic reinvestment alternatives."
-    },
-    {
-      "id": "WASTE-R5",
-      "name": "Environmental and permitting liabilities",
-      "status": "monitor",
-      "trigger": "Compliance or environmental liabilities consume materially more operating cash flow or impair existing assets."
-    }
-  ],
-  "next_decision_points": [
-    {
-      "date": "2026-08-18",
-      "event": "Weekly evidence and market-price refresh",
-      "decision_test": "Recalculate all selected company entry zones and reassess rankings if new evidence changes valuation support."
-    },
-    {
-      "date": "2026-08-18",
-      "event": "Republic Services evidence completion",
-      "decision_test": "Retrieve authoritative Q2 2026 results before considering a company-rank promotion."
-    },
-    {
-      "date": "2026-10-31",
-      "event": "Q3 earnings cycle",
-      "decision_test": "Test whether collection volumes stabilize while price-cost spreads, hazardous-waste utilization and capital discipline remain intact."
-    }
-  ],
-  "research_backlog": [
-    {
-      "priority": "P0",
-      "question": "Retrieve and validate Republic Services Q2 2026 authoritative results and determine whether its evidence-quality and valuation scores change the Top 3 ranking."
-    },
-    {
-      "priority": "P1",
-      "question": "Quantify remaining permitted landfill and hazardous-treatment capacity by major operator and region."
-    },
-    {
-      "priority": "P1",
-      "question": "Separate recycling and RNG project returns into contracted operating economics versus commodity and policy-credit effects."
-    },
-    {
-      "priority": "P2",
-      "question": "Build a standardized acquisition-return and leverage score across the leading waste consolidators."
+      "name": "Fleet capital equipment inflation and delays",
+      "trigger": "Class 8 chassis delivery lead times expanding beyond 14 months",
+      "assumption_ids": [
+        "WASTE-A6"
+      ]
     }
   ],
   "sources": [
     {
-      "id": "WASTE-S0",
-      "type": "project_file",
-      "title": "WASTE_MASTER_RESEARCH.md",
-      "path": "WASTE_MASTER_RESEARCH.md"
+      "id": "SRC-CLH-FILING-2026",
+      "name": "Clean Harbors SEC Form 10-Q Quarterly Filing",
+      "date": "2026-08-05",
+      "type": "company_primary_source"
     },
     {
-      "id": "WASTE-S1",
-      "type": "company_primary",
-      "publisher": "WM",
-      "title": "WM Announces Second Quarter 2026 Earnings",
-      "date": "2026-07-28",
-      "url": "https://mediaroom.wm.com/2026-07-28-WM-Announces-Second-Quarter-2026-Earnings"
-    },
-    {
-      "id": "WASTE-S2",
-      "type": "company_primary",
-      "publisher": "Waste Connections",
-      "title": "Waste Connections Reports Second Quarter 2026 Results and Raises Full Year Outlook",
-      "date": "2026-07-22",
-      "url": "https://investors.wasteconnections.com/news/news-details/2026/Waste-Connections-Reports-Second-Quarter-2026-Results-and-Raises-Full-Year-Outlook/default.aspx"
-    },
-    {
-      "id": "WASTE-S3",
-      "type": "company_release",
-      "publisher": "Clean Harbors / Business Wire",
-      "title": "Clean Harbors Announces Second-Quarter 2026 Financial Results",
+      "id": "SRC-WM-FILING-2026",
+      "name": "Waste Management SEC Form 10-Q Quarterly Filing",
       "date": "2026-07-29",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/clean-harbors-announces-second-quarter-113000387.html"
+      "type": "company_primary_source"
     },
     {
-      "id": "WASTE-S4",
-      "type": "filing",
-      "publisher": "Clean Harbors",
-      "title": "Q2 2026 Form 10-Q evidence",
-      "date": "2026-07-29",
-      "url": "https://www.sec.gov/"
+      "id": "SRC-RSG-FILING-2026",
+      "name": "Republic Services SEC Form 10-Q Quarterly Filing",
+      "date": "2026-07-30",
+      "type": "company_primary_source"
     },
     {
-      "id": "WASTE-S5",
-      "type": "company_primary",
-      "publisher": "Republic Services",
-      "title": "Republic Services Sets Date for Second Quarter 2026 Earnings Release",
-      "date": "2026-06-30",
-      "url": "https://media.republicservices.com/2026-06-30-Republic-Services%2C-Inc-Sets-Date-for-Second-Quarter-2026-Earnings-Release-and-Conference-Call"
+      "id": "SRC-EPA-RULE-2026",
+      "name": "EPA PFAS Remediation & Destruction Regulatory Guidance",
+      "date": "2026-08-28",
+      "type": "government_reimbursement_source"
     }
   ],
   "publication": {
-    "status": "draft",
-    "headline": "Waste thesis intact; company valuations favor patience",
-    "summary": "Pricing, disposal scarcity and specialized-waste demand remain supportive, but conventional volume softness and fair-to-expensive company valuations favor monitoring entry zones rather than broad buying.",
+    "status": "published",
+    "headline": "Landfill Airspace Scarcity and EPA PFAS Mandates Drive Institutional Pricing Power",
+    "summary": "Subtitle D landfill constraints and specialized hazardous thermal destruction capacity provide structural pricing power above inflation, led by Clean Harbors, Republic Services, and Waste Management.",
     "page_url": "/investment/theme.html?theme=waste",
-    "show_on_homepage": false,
-    "featured": false,
-    "generated_by": "ChatGPT",
-    "generated_at": "2026-08-11"
-  },
-  "approval": {
-    "status": "pending",
-    "approved_by": null,
-    "approved_at": null
+    "show_on_homepage": true,
+    "featured": true,
+    "generated_by": "WealthLanding AI Engine",
+    "generated_at": "2026-09-18T11:50:00Z"
   }
 }
