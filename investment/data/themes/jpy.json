@@ -1,153 +1,566 @@
-{
+
+  {
   "schema_version": "4.2",
-  "review_id": "jpy-2026-08-19",
+  "review_id": "jpy-2026-09-18",
   "thesis": {
     "id": "jpy-001",
     "name": "JPY Structural Recovery & Double-Dip Strategy",
     "slug": "jpy",
     "category": "macro-currency",
-    "horizon": "5-15 years"
+    "horizon": "3-7 years"
   },
   "video": {
     "embed_url": "https://www.youtube.com/embed/4SdZuZalSpc?si=U-Pp_3xJr4oorl6z",
     "title": "JPY Structural Recovery & Double-Dip Strategy Overview"
   },
   "review": {
-    "date": "2026-08-19",
-    "period_start": "2026-08-12",
-    "period_end": "2026-08-19",
+    "date": "2026-09-18",
+    "period_start": "2026-09-02",
+    "period_end": "2026-09-18",
     "cadence": "weekly",
-    "previous_review_id": "jpy-2026-08-12"
+    "previous_review_id": "jpy-2026-09-02"
   },
   "status": "strengthening",
   "thesis_health": {
     "current": 88,
-    "previous": 84,
-    "change": 4,
+    "previous": 86,
+    "change": 2,
     "trend": "improving",
     "reason_code": "STRUCTURAL_DEMAND_CONFIRMED",
-    "reason": "BOJ policy rate reaching 1.00% alongside massive financial earnings beats validates domestic NIM expansion."
+    "reason": "BOJ hikes benchmark rate to 31-year high of 1.25% while FOMC lifts to 3.75%-4.00%, preserving bilateral spread cushion."
   },
-  "material_change": true,
+  "material_change": false,
   "scenario_model": {
-    "current_scenario": "bull",
-    "confidence": 0.80,
+    "current_scenario": "fair",
+    "confidence": 0.76,
     "scenarios": [
       {
         "id": "bull",
-        "probability": 0.80,
-        "description": "BOJ terminal rate normalizes between 1.50% to 2.00%. TSE corporate governance reforms drive unprecedented share buybacks. Megabanks see multi-year NIM expansion.",
-        "entry_conditions": ["BOJ rate > 0.75%", "TSE structural reforms intact"],
-        "exit_conditions": ["BOJ cuts rates below 0.50%"]
+        "probability": 0.30,
+        "description": "BOJ accelerates tightening past 1.50% into 2027 while Fed pauses; Shunto wage rounds remain above 4.5%; Prime Market buyback announcements exceed ¥16 trillion annualized; mega-bank domestic NIM surges >35 bps.",
+        "entry_conditions": [
+          "BOJ quarterly rate hikes confirmed",
+          "Domestic loan repricing beta under 10%",
+          "TSE sub-1.0x P/B compliance surpasses 85%"
+        ],
+        "exit_conditions": [
+          "Disorderly JPY spike below 120/USD",
+          "Global systemic trade contraction"
+        ]
       },
       {
         "id": "fair",
-        "probability": 0.15,
-        "description": "BOJ pauses tightening at 1.00%. Governance reforms progress slowly, limiting ROE expansion purely to domestic financials without broad Topix lift.",
-        "entry_conditions": ["BOJ pauses at 1.00%", "Macro softening"],
-        "exit_conditions": ["Severe domestic recession"]
+        "probability": 0.55,
+        "description": "BOJ maintains 1.25% with gradual glide path to 1.50%; FOMC at 3.75%-4.00% preserves 250-275 bps spread, keeping USD/JPY in the 148-158 corridor; mega-banks and non-life insurers sustain 10.5%-11.5% ROE alongside steady buybacks.",
+        "entry_conditions": [
+          "BOJ short-term rate anchored at 1.25%",
+          "Fed funds target at 3.75%-4.00%",
+          "Domestic NIM expands 20-25 bps on sticky deposits"
+        ],
+        "exit_conditions": [
+          "BOJ returns to rate cuts",
+          "Domestic commercial credit costs exceed 50 bps"
+        ]
       },
       {
         "id": "bear",
-        "probability": 0.05,
-        "description": "Global recession forces BOJ to revert to zero bound. Domestic inflation collapses, and corporate governance reforms are abandoned.",
-        "entry_conditions": ["Global recession", "JPY safe-haven surge under 120/USD"],
-        "exit_conditions": ["Economic stabilization"]
+        "probability": 0.15,
+        "description": "Severe global recession forces synchronized central bank easing; aggressive risk-off carry unwind collapses USD/JPY below 125, compressing multinational translation profits while domestic SME insolvencies climb.",
+        "entry_conditions": [
+          "Global demand shock",
+          "Violent FX carry trade liquidation"
+        ],
+        "exit_conditions": [
+          "Reintroduction of zero-interest-rate policy",
+          "Widespread reversal of corporate buyback commitments"
+        ]
       }
     ]
   },
   "decision": {
     "state": "active_buy",
-    "previous_state": "monitor",
-    "changed": true,
-    "summary": "Deploy capital into Tier-1 Japanese financials and select high-IP compounders capturing NIM expansion and cross-shareholding unwinds.",
+    "previous_state": "active_buy",
+    "changed": false,
+    "summary": "The double-dip thesis is reinforced: the BOJ's September 18 hike to 1.25% unlocks incremental domestic NIM expansion, while the Fed's 25 bps hike to 3.75%-4.00% protects overseas lending margins and shields exporters from translation shock. Maintain active buy on MUFG and SMFG.",
     "cta": "buy_below_attractive_threshold",
-    "reason_codes": ["STRUCTURAL_DEMAND_CONFIRMED", "VALUATION_DISPERSION"],
+    "reason_codes": [
+      "STRUCTURAL_DEMAND_CONFIRMED",
+      "VALUATION_DISPERSION"
+    ],
     "required_actions": [
-      "Initiate or add to MUFG and Tokio Marine below attractive thresholds.",
-      "Monitor Nintendo holiday volume guidance for capital return triggers."
+      "Accumulate MUFG below attractive entry limit of ¥1,850/share",
+      "Monitor corporate loan yield resets following the September 24 effective date for the 1.25% rate",
+      "Audit Q2 cross-holding liquidation volume for SMFG and Tokio Marine in November"
     ]
   },
   "developments": [
     {
       "id": "jpy-D1",
-      "date": "2026-07-31",
-      "title": "Bank of Japan Reaches 1.00% Policy Rate",
-      "fact": "BOJ raises policy rate to 1.00% and executes $85B FX intervention, though JPY hovers around 159/USD.",
-      "assumption_ids": ["jpy-A1", "jpy-A4"],
+      "date": "2026-09-18",
+      "title": "Bank of Japan Raises Policy Rate to 31-Year High of 1.25%",
+      "fact": "The BOJ Policy Board voted 7-2 on September 18, 2026, to raise the uncollateralized overnight call rate by 25 bps from 1.00% to 1.25% (effective September 24), citing core CPI near 2% and persistent wage-price transmission.",
+      "assumption_ids": ["jpy-A1", "jpy-A2", "jpy-A5"],
       "direction": "positive",
       "materiality": "high",
       "durability": "high",
-      "interpretation": "Confirms structural end to ZIRP, establishing a durable yield floor for domestic financials.",
-      "source_ids": ["SRC-TRADINGECONOMICS-2026", "SRC-MORGANSTANLEY-2026"]
+      "interpretation": "Directly expands domestic loan asset yields across floating corporate and retail portfolios while domestic deposit costs remain pinned near zero.",
+      "source_ids": ["SRC-BOJ-2026-09-18"]
     },
     {
       "id": "jpy-D2",
-      "date": "2026-06-18",
-      "title": "MUFG Posts 39.67% EPS Beat on Expanding Lending Margins",
-      "fact": "MUFG reported Q1 2026 EPS of ¥54.28 vs consensus ¥38.87, driven by BOJ normalization and widened spreads.",
-      "assumption_ids": ["jpy-A1", "jpy-A6"],
+      "date": "2026-09-16",
+      "title": "FOMC Raises Federal Funds Rate to 3.75%-4.00%, Preserving 250-275 bps Yield Spread",
+      "fact": "The Federal Reserve lifted the target range for the federal funds rate by 25 bps to 3.75%-4.00% on September 16, 2026, keeping the short-term US-Japan rate differential wide at ~260 bps.",
+      "assumption_ids": ["jpy-A6", "jpy-A7"],
       "direction": "positive",
       "materiality": "high",
       "durability": "high",
-      "interpretation": "Direct empirical evidence that domestic banking profit pools are rapidly compounding from rate hikes.",
-      "source_ids": ["SRC-ENABLX-2026"]
+      "interpretation": "Prevents disruptive yen appreciation below 135/USD, sustaining translated foreign cash flows for Japanese exporters and bolstering USD asset returns at mega-banks.",
+      "source_ids": ["SRC-FRB-2026-09-16"]
+    },
+    {
+      "id": "jpy-D3",
+      "date": "2026-08-03",
+      "title": "Japanese Mega-Banks Deliver Record Combined FY Net Income of ¥5.26 Trillion",
+      "fact": "MUFG, SMFG, and Mizuho reported aggregate full-year net profit of ¥5.26 trillion (+34% YoY), with MUFG ROE reaching 11.3% and SMFG achieving 10.4%.",
+      "assumption_ids": ["jpy-A1", "jpy-A2", "jpy-A6"],
+      "direction": "positive",
+      "materiality": "high",
+      "durability": "high",
+      "interpretation": "Confirms the asymmetric operating leverage of massive deposit bases during an active central bank tightening regime.",
+      "source_ids": ["SRC-BANK-2026-FY"]
+    },
+    {
+      "id": "jpy-D4",
+      "date": "2026-07-01",
+      "title": "SMFG Executes Accelerated ¥180B Buyback and Advances Strategic Unwinding",
+      "fact": "SMFG completed ¥108.5B of share repurchases through June 30, 2026, targeting full completion of its ¥180B authorization while reducing strategic equity holdings toward <14% of CET1 by 2027.",
+      "assumption_ids": ["jpy-A3", "jpy-A4", "jpy-A6"],
+      "direction": "positive",
+      "materiality": "high",
+      "durability": "high",
+      "interpretation": "Demonstrates structural capital recycling where cross-shareholding divestments are directly converted into EPS-accretive share cancellations.",
+      "source_ids": ["SRC-SMFG-6K-2026-07"]
+    },
+    {
+      "id": "jpy-D5",
+      "date": "2026-08-15",
+      "title": "Tokio Marine Pledges Accelerated Complete Unwinding of ¥3.4T Cross-Holdings",
+      "fact": "Tokio Marine Holdings committed to liquidating its entire ¥3.4 trillion strategic equity portfolio to zero within 4-5 years, deploying proceeds into annual buybacks of ¥150-¥200B while reinvesting float into higher-yielding JGBs.",
+      "assumption_ids": ["jpy-A2", "jpy-A3", "jpy-A4"],
+      "direction": "positive",
+      "materiality": "high",
+      "durability": "high",
+      "interpretation": "Replaces volatile corporate equity holdings with recurring 1.25%+ fixed-income yields, funding consistent share retirement.",
+      "source_ids": ["SRC-TM-2026"]
+    },
+    {
+      "id": "jpy-D6",
+      "date": "2026-08-30",
+      "title": "Tokyo Stock Exchange Prime Market P/B Compliance Reaches 78%",
+      "fact": "78% of Prime Market listed companies trading below 1.0x book value have published capital efficiency roadmaps, expanding average TOPIX payout ratios to 41.5%.",
+      "assumption_ids": ["jpy-A3", "jpy-A4", "jpy-A5"],
+      "direction": "positive",
+      "materiality": "medium",
+      "durability": "high",
+      "interpretation": "Confirms governance reform is an institutionalized, systemic transformation across corporate Japan.",
+      "source_ids": ["SRC-TSE-2026-08"]
+    },
+    {
+      "id": "jpy-D7",
+      "date": "2026-09-05",
+      "title": "Valuation Dislocation Restricts Premium Automation and Tech Exporters",
+      "fact": "Keyence trades at 34.5x forward EPS amid softening global capex cycles, underscoring the necessity of valuation discipline in routing capital exclusively to sub-1.0x P/B financials.",
+      "assumption_ids": ["jpy-A4", "jpy-A6"],
+      "direction": "mixed_positive",
+      "materiality": "medium",
+      "durability": "medium",
+      "interpretation": "Validates the portfolio strategy of prioritizing discounted financial compounders over multiple-stretched exporters.",
+      "source_ids": ["SRC-VAL-2026"]
     }
   ],
   "scorecard": [
     {
       "assumption_id": "jpy-A1",
-      "name": "BOJ Monetary Policy Normalization",
+      "name": "Monetary Policy Normalization & Yield Curve Shift",
       "score": 5,
-      "previous_score": 4,
-      "change": 1,
+      "previous_score": 5,
+      "change": 0,
       "trend": "improving",
-      "assessment": "Policy rate formally reached 1.00%, immediately transmitting to megabank bottom lines."
+      "assessment": "Policy rate raised to 1.25% on September 18, 2026; 10-year JGB yield firmly anchored above 1.20% as NIRP era is definitively closed."
     },
     {
       "assumption_id": "jpy-A2",
-      "name": "Corporate Governance & TSE Reform",
+      "name": "Domestic Banking NIM & Cash Flow Leverage",
+      "score": 5,
+      "previous_score": 5,
+      "change": 0,
+      "trend": "improving",
+      "assessment": "Deposit beta remains under 8% while commercial loan yields adjust upward with the 1.25% benchmark; combined net profits tracking above ¥5.26T."
+    },
+    {
+      "assumption_id": "jpy-A3",
+      "name": "TSE Governance Revolution & P/B Target Compliance",
+      "score": 5,
+      "previous_score": 5,
+      "change": 0,
+      "trend": "stable",
+      "assessment": "78% compliance across Prime Market companies; strategic cross-shareholdings are being dissolved on legally committed timetables."
+    },
+    {
+      "assumption_id": "jpy-A4",
+      "name": "Capital Return Acceleration (Buybacks & Dividend Resets)",
       "score": 4,
       "previous_score": 4,
       "change": 0,
       "trend": "improving",
-      "assessment": "Aggressive unwinding of cross-shareholdings by Tier-1 institutions confirms compliance."
+      "assessment": "Market-wide buybacks tracking >¥12 trillion annually; dividend payout ratios expanding toward 40%-50% benchmarks."
+    },
+    {
+      "assumption_id": "jpy-A5",
+      "name": "Wage-Price Virtuous Cycle & Domestic Reflation",
+      "score": 4,
+      "previous_score": 4,
+      "change": 0,
+      "trend": "stable",
+      "assessment": "Sustained nominal wage growth of 4.7% supports stable core inflation near 2.0%, avoiding domestic purchasing power collapse."
+    },
+    {
+      "assumption_id": "jpy-A6",
+      "name": "Global Cash Flow Moats vs Foreign Exchange Translation",
+      "score": 4,
+      "previous_score": 4,
+      "change": 0,
+      "trend": "stable",
+      "assessment": "USD/JPY supported at 155-157 range prevents near-term export earnings erosion, though multiple discipline remains critical."
+    },
+    {
+      "assumption_id": "jpy-A7",
+      "name": "Bilateral Policy Differential & Carry Trade Cushion",
+      "score": 5,
+      "previous_score": 4,
+      "change": 1,
+      "trend": "improving",
+      "assessment": "Fed hike to 3.75%-4.00% and BOJ hike to 1.25% maintain a 250-275 bps spread, avoiding a disorderly carry trade collapse."
     }
   ],
-  "assumptions_changed": ["jpy-A1"],
+  "assumptions_changed": [
+    {
+      "assumption_id": "jpy-A7",
+      "previous_score": 4,
+      "new_score": 5,
+      "reason": "Empirical confirmation of FOMC rate hike to 3.75%-4.00% alongside BOJ hike to 1.25% establishes a predictable bilateral spread corridor."
+    }
+  ],
   "catalysts": [
     {
-      "name": "BOJ September Monetary Policy Meeting",
-      "assumption_ids": ["jpy-A1"],
+      "name": "BOJ Rate Transmission Effective Date",
+      "assumption_ids": ["jpy-A1", "jpy-A2"],
+      "state": "active",
+      "expected_date": "2026-09-24",
+      "confirmation_test": "Commercial banks announce upward repricing of short-term prime lending rates to match the 1.25% call rate.",
+      "failure_test": "Competitive pressure forces banks to absorb funding costs without passing rates to commercial borrowers."
+    },
+    {
+      "name": "BOJ Summary of Opinions Release",
+      "assumption_ids": ["jpy-A1", "jpy-A7"],
       "state": "pending",
-      "expected_date": "2026-09-18",
-      "confirmation_test": "Forward guidance affirming terminal rate above 1.00%.",
-      "failure_test": "Guidance signaling an indefinite pause or cut."
+      "expected_date": "2026-09-30",
+      "confirmation_test": "Summary reflects majority commitment toward a 1.50% terminal rate by early 2027.",
+      "failure_test": "Dovish dissent expands or forward guidance halts further normalization."
+    },
+    {
+      "name": "Mega-Bank Q2 FY2026 Interim Earnings & Buybacks",
+      "assumption_ids": ["jpy-A2", "jpy-A4"],
+      "state": "pending",
+      "expected_date": "2026-11-13",
+      "confirmation_test": "MUFG and SMFG raise full-year net profit guidance and authorize secondary buyback tranches.",
+      "failure_test": "Credit loss provisions rise above 40 bps of total loans."
+    },
+    {
+      "name": "Tokyo Stock Exchange Governance Audit Report",
+      "assumption_ids": ["jpy-A3", "jpy-A4"],
+      "state": "developing",
+      "expected_date": "2026-12-15",
+      "confirmation_test": "Prime Market P/B > 1.0x roadmap compliance rate crosses 85%.",
+      "failure_test": "Corporate disclosure pace decelerates significantly."
     }
   ],
   "opportunities": [
     {
       "rank": 1,
       "opportunity_id": "jpy-OP-1",
-      "group": "domestic-financials",
+      "group": "mega-banking",
       "name": "Mitsubishi UFJ Financial Group",
       "ticker": "8306.T",
       "asset_type": "company",
-      "independent_return_engines": ["NIM expansion", "Domestic loan repricing", "Global wholesale"],
-      "catalyst": "Q2 Earnings confirming sequential margin expansion",
+      "independent_return_engines": [
+        "Domestic deposit margin expansion (+¥70B pre-tax per 25 bps hike) on ¥220T deposit base",
+        "Strategic equity income and countercyclical dividends from Morgan Stanley alliance",
+        "Accretive share buybacks (>¥400B annually) and progressive dividend growth"
+      ],
+      "catalyst": "Commercial prime lending rate upward repricing taking effect September 24, 2026",
       "valuation_status": "moderately_undervalued",
-      "main_risk": "BOJ rate normalization pause",
-      "next_action": "Buy below attractive zone",
+      "main_risk": "Domestic SME credit costs if borrowing rates rise too quickly",
+      "next_action": "Accumulate below attractive entry limit of ¥1,850/share",
       "company_review": {
         "status": "selected",
         "company_slug": "mufg",
-        "reason": "Direct operational beneficiary of the BOJ's historic departure from ZIRP with proven EPS acceleration.",
+        "reason": "Dominant ¥220T domestic deposit franchise capturing prime NIM expansion; ROE reached 11.3%; 0.98x P/B valuation provides deep margin of safety.",
         "priority": "P0",
         "trigger_rules": ["rank_top_3", "valuation_required"],
         "company_packet_required": true,
         "rank_slot": "top1",
         "company_json_path": "/investment/data/companies/jpy/top1.json",
         "detail_url": "/investment/company.html?thesis=jpy&rank=1"
+      }
+    },
+    {
+      "rank": 2,
+      "opportunity_id": "jpy-OP-2",
+      "group": "mega-banking",
+      "name": "Sumitomo Mitsui Financial Group",
+      "ticker": "8316.T",
+      "asset_type": "company",
+      "independent_return_engines": [
+        "High-torque corporate loan spread repricing",
+        "Strategic equity portfolio liquidation funding continuous share retirements",
+        "Olive digital retail platform locking in zero-beta deposits and recurring fees"
+      ],
+      "catalyst": "Q2 FY2026 earnings release and follow-on buyback authorization in November 2026",
+      "valuation_status": "moderately_undervalued",
+      "main_risk": "Intense corporate lending competition compressing loan margins",
+      "next_action": "Buy below attractive threshold of ¥3,600/share",
+      "company_review": {
+        "status": "selected",
+        "company_slug": "smfg",
+        "reason": "Highest corporate loan sensitivity to rising benchmark rates; 10.4% ROE; ¥180B share buyback program; trades at 0.94x P/B.",
+        "priority": "P0",
+        "trigger_rules": ["rank_top_3", "valuation_required"],
+        "company_packet_required": true,
+        "rank_slot": "top2",
+        "company_json_path": "/investment/data/companies/jpy/top2.json",
+        "detail_url": "/investment/company.html?theme=jpy&rank=2"
+      }
+    },
+    {
+      "rank": 3,
+      "opportunity_id": "jpy-OP-3",
+      "group": "non-life-insurance",
+      "name": "Tokio Marine Holdings",
+      "ticker": "8766.T",
+      "asset_type": "company",
+      "independent_return_engines": [
+        "Reinvestment yield expansion on domestic fixed-income float as JGB yields rise",
+        "Complete liquidation of ¥3.4T cross-shareholdings converted to annual buybacks",
+        "Disciplined premium rate increases across domestic property and casualty lines"
+      ],
+      "catalyst": "FSA governance compliance disclosure and mid-year buyback program update",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Severe domestic typhoon catastrophe losses or international reinsurance volatility",
+      "next_action": "Accumulate in attractive zone below ¥5,600/share",
+      "company_review": {
+        "status": "selected",
+        "company_slug": "tokio-marine",
+        "reason": "Premier corporate governance compounder eliminating ¥3.4T of cross-holdings directly into buybacks while capturing higher JGB reinvestment yields.",
+        "priority": "P0",
+        "trigger_rules": ["rank_top_3", "valuation_required"],
+        "company_packet_required": true,
+        "rank_slot": "top3",
+        "company_json_path": "/investment/data/companies/jpy/top3.json",
+        "detail_url": "/investment/company.html?theme=jpy&rank=3"
+      }
+    },
+    {
+      "rank": 4,
+      "opportunity_id": "jpy-OP-4",
+      "group": "factory-automation",
+      "name": "Keyence Corporation",
+      "ticker": "6861.T",
+      "asset_type": "company",
+      "independent_return_engines": [
+        "Machine vision sensor demand driven by global factory automation",
+        "50%+ operating margin cash generation",
+        "¥2.5T net cash balance sheet capital deployment"
+      ],
+      "catalyst": "Global industrial capex recovery checkpoint in Q4 2026",
+      "valuation_status": "overvalued",
+      "main_risk": "Multiple compression from 34.5x forward P/E amid softening European and Chinese demand",
+      "next_action": "Maintain on watchlist; initiate only below ¥52,000/share",
+      "company_review": {
+        "status": "monitored",
+        "company_slug": "keyence",
+        "reason": "World-class operating moat disqualified from Top 3 on strict valuation discipline (34.5x forward P/E).",
+        "priority": "P2",
+        "trigger_rules": ["valuation_review"],
+        "company_packet_required": false,
+        "rank_slot": null,
+        "company_json_path": null,
+        "detail_url": null
+      }
+    },
+    {
+      "rank": 5,
+      "opportunity_id": "jpy-OP-5",
+      "group": "consumer-ip",
+      "name": "Nintendo Co., Ltd.",
+      "ticker": "7974.T",
+      "asset_type": "company",
+      "independent_return_engines": [
+        "Next-generation hardware platform cycle",
+        "Expanding entertainment IP licensing and theme park royalty streams",
+        "¥1.8T net cash fortress funding dividends and tech development"
+      ],
+      "catalyst": "Formal unveiling of next-generation hardware console",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Hardware cycle transition risk and software release cadence",
+      "next_action": "Monitor for post-announcement entry window",
+      "company_review": {
+        "status": "monitored",
+        "company_slug": "nintendo",
+        "reason": "Top global IP champion, awaiting hardware launch unit economics.",
+        "priority": "P2",
+        "trigger_rules": [],
+        "company_packet_required": false,
+        "rank_slot": null,
+        "company_json_path": null,
+        "detail_url": null
+      }
+    },
+    {
+      "rank": 6,
+      "opportunity_id": "jpy-OP-6",
+      "group": "advanced-materials",
+      "name": "Shin-Etsu Chemical",
+      "ticker": "4063.T",
+      "asset_type": "company",
+      "independent_return_engines": [
+        "Global 300mm silicon wafer duopoly power",
+        "Infrastructure PVC cash flow generation",
+        "Systematic share cancellation programs"
+      ],
+      "catalyst": "Semiconductor logic and memory wafer utilization recovery",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Housing construction deceleration dampening US PVC demand",
+      "next_action": "Monitor semiconductor wafer inventory cycles",
+      "company_review": {
+        "status": "monitored",
+        "company_slug": "shin-etsu",
+        "reason": "High-quality market monopoly trading near fair value (18.2x forward P/E).",
+        "priority": "P2",
+        "trigger_rules": [],
+        "company_packet_required": false,
+        "rank_slot": null,
+        "company_json_path": null,
+        "detail_url": null
+      }
+    },
+    {
+      "rank": 7,
+      "opportunity_id": "jpy-OP-7",
+      "group": "sector-etf",
+      "name": "TOPIX Banks Exchange Traded Fund",
+      "ticker": "1615.T",
+      "asset_type": "sector",
+      "independent_return_engines": [
+        "Broad Japanese banking sector rate sensitivity",
+        "Regional bank deposit margin repricing"
+      ],
+      "catalyst": "BOJ policy normalization trajectory",
+      "valuation_status": "moderately_undervalued",
+      "main_risk": "Regional bank unrealized securities portfolio losses",
+      "next_action": "Use as passive sector allocation surrogate",
+      "company_review": {
+        "status": "monitored",
+        "company_slug": "topix-banks",
+        "reason": "Sector ETF for institutional macro allocation.",
+        "priority": "P3",
+        "trigger_rules": [],
+        "company_packet_required": false,
+        "rank_slot": null,
+        "company_json_path": null,
+        "detail_url": null
+      }
+    },
+    {
+      "rank": 8,
+      "opportunity_id": "jpy-OP-8",
+      "group": "non-life-insurance",
+      "name": "Japanese Non-Life Insurance Sector (MS&AD / Sompo)",
+      "ticker": "8725.T",
+      "asset_type": "sector",
+      "independent_return_engines": [
+        "Industry-wide exit of strategic cross-shareholdings into buybacks",
+        "Domestic bond portfolio reinvestment yields"
+      ],
+      "catalyst": "FSA policy inspection updates",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Antitrust compliance oversight and rate caps",
+      "next_action": "Track second-tier insurer capital allocations",
+      "company_review": {
+        "status": "monitored",
+        "company_slug": "japan-nonlife",
+        "reason": "Strong sector peer group, slightly trailing Tokio Marine's underwriting quality.",
+        "priority": "P3",
+        "trigger_rules": [],
+        "company_packet_required": false,
+        "rank_slot": null,
+        "company_json_path": null,
+        "detail_url": null
+      }
+    },
+    {
+      "rank": 9,
+      "opportunity_id": "jpy-OP-9",
+      "group": "factory-automation",
+      "name": "Industrial Robotics (Fanuc / Yaskawa Electric)",
+      "ticker": "6954.T",
+      "asset_type": "sector",
+      "independent_return_engines": [
+        "Labor shortage automation demand across Asia and the US",
+        "EV, battery, and AI server manufacturing robotics"
+      ],
+      "catalyst": "China machinery order recovery metrics",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Prolonged industrial capex deceleration in European automotive and manufacturing",
+      "next_action": "Screen for inventory clearance in machine tools",
+      "company_review": {
+        "status": "monitored",
+        "company_slug": "japan-robotics",
+        "reason": "Cyclical capex exposure trading at high multiples.",
+        "priority": "P3",
+        "trigger_rules": [],
+        "company_packet_required": false,
+        "rank_slot": null,
+        "company_json_path": null,
+        "detail_url": null
+      }
+    },
+    {
+      "rank": 10,
+      "opportunity_id": "jpy-OP-10",
+      "group": "regional-banking",
+      "name": "Concordia Financial Group",
+      "ticker": "7186.T",
+      "asset_type": "company",
+      "independent_return_engines": [
+        "Kanagawa and Tokyo metropolitan commercial lending expansion",
+        "Regional banking consolidation M&A synergies"
+      ],
+      "catalyst": "BOJ rate transmission to prefectural borrowers",
+      "valuation_status": "moderately_undervalued",
+      "main_risk": "Local small business credit quality deterioration",
+      "next_action": "Monitor regional credit loss trends",
+      "company_review": {
+        "status": "monitored",
+        "company_slug": "concordia",
+        "reason": "Top regional bank candidate, but mega-banks offer superior risk-adjusted liquidity and capital returns.",
+        "priority": "P3",
+        "trigger_rules": [],
+        "company_packet_required": false,
+        "rank_slot": null,
+        "company_json_path": null,
+        "detail_url": null
       }
     }
   ],
@@ -158,63 +571,103 @@
       "company_name": "Mitsubishi UFJ Financial Group",
       "company_slug": "mufg",
       "ticker": "8306.T",
-      "selection_reason": "High-conviction rationale based on Q1 39% EPS beat directly tied to NIM expansion.",
+      "selection_reason": "Dominant ¥220T domestic deposit franchise capturing prime NIM expansion; ROE reached 11.3%; 0.98x P/B valuation provides deep margin of safety.",
       "company_json_path": "/investment/data/companies/jpy/top1.json",
-      "detail_url": "/investment/company.html?thesis=jpy&rank=1",
+      "detail_url": "/investment/company.html?theme=jpy&rank=1",
       "analysis_status": "complete"
     },
     {
       "rank": 2,
       "slot": "top2",
-      "company_name": "Tokio Marine Holdings",
-      "company_slug": "tokio-marine",
-      "ticker": "8766.T",
-      "selection_reason": "Aggressive cross-shareholding unwind and highly profitable specialty insurance pool.",
+      "company_name": "Sumitomo Mitsui Financial Group",
+      "company_slug": "smfg",
+      "ticker": "8316.T",
+      "selection_reason": "High corporate loan sensitivity to rising benchmark rates, 10.4% ROE, aggressive ¥180B share buyback program, trading at 0.94x P/B.",
       "company_json_path": "/investment/data/companies/jpy/top2.json",
-      "detail_url": "/investment/company.html?thesis=jpy&rank=2",
+      "detail_url": "/investment/company.html?theme=jpy&rank=2",
       "analysis_status": "complete"
     },
     {
       "rank": 3,
       "slot": "top3",
-      "company_name": "Nintendo",
-      "company_slug": "nintendo",
-      "ticker": "7974.T",
-      "selection_reason": "Global cash generation via 90% YoY digital growth and massive balance sheet awaiting TSE-mandated distribution.",
+      "company_name": "Tokio Marine Holdings",
+      "company_slug": "tokio-marine",
+      "ticker": "8766.T",
+      "selection_reason": "Leading non-life insurer eliminating ¥3.4T of cross-shareholdings directly into buybacks while reinvesting float at expanding domestic yields.",
       "company_json_path": "/investment/data/companies/jpy/top3.json",
-      "detail_url": "/investment/company.html?thesis=jpy&rank=3",
+      "detail_url": "/investment/company.html?theme=jpy&rank=3",
       "analysis_status": "complete"
     }
   ],
   "risks": [
     {
-      "name": "US Economic Resilience blocking JPY recovery",
-      "trigger": "Fed Funds rate remains structurally elevated",
-      "assumption_ids": ["jpy-A4"]
+      "name": "Bilateral Spread Compression Shock",
+      "trigger": "Aggressive emergency Fed rate cuts narrowing the US-Japan spread faster than domestic bank NIM can compensate",
+      "assumption_ids": ["jpy-A6", "jpy-A7"]
+    },
+    {
+      "name": "BOJ Tightening Pause",
+      "trigger": "Political resistance following cabinet appointments freezing policy rates at 1.25%",
+      "assumption_ids": ["jpy-A1", "jpy-A2"]
+    },
+    {
+      "name": "Domestic SME Credit Quality Impairment",
+      "trigger": "Commercial non-performing loans exceeding 1.50% of gross loan books",
+      "assumption_ids": ["jpy-A2"]
     }
   ],
   "sources": [
     {
-      "id": "SRC-TRADINGECONOMICS-2026",
-      "name": "Trading Economics Japan Interest Rate",
-      "date": "2026-08-18",
+      "id": "SRC-BOJ-2026-09-18",
+      "name": "Bank of Japan Monetary Policy Decision Statement",
+      "date": "2026-09-18",
       "type": "authoritative_demographic_source"
     },
     {
-      "id": "SRC-ENABLX-2026",
-      "name": "MUFG Q1 2026 Earnings Release",
-      "date": "2026-06-18",
+      "id": "SRC-FRB-2026-09-16",
+      "name": "Federal Reserve FOMC Policy Statement and Implementation Note",
+      "date": "2026-09-16",
+      "type": "authoritative_demographic_source"
+    },
+    {
+      "id": "SRC-BANK-2026-FY",
+      "name": "Japanese Mega-Banks FY2025/2026 Primary Earnings Releases",
+      "date": "2026-08-03",
       "type": "company_primary_source"
+    },
+    {
+      "id": "SRC-SMFG-6K-2026-07",
+      "name": "Sumitomo Mitsui Financial Group SEC Form 6-K Share Repurchase Notice",
+      "date": "2026-07-01",
+      "type": "company_primary_source"
+    },
+    {
+      "id": "SRC-TM-2026",
+      "name": "Tokio Marine Holdings Strategic Plan and Cross-Shareholding Divestment Schedule",
+      "date": "2026-08-15",
+      "type": "company_primary_source"
+    },
+    {
+      "id": "SRC-TSE-2026-08",
+      "name": "Tokyo Stock Exchange Action on P/B Below 1.0x Progress Report",
+      "date": "2026-08-30",
+      "type": "authoritative_demographic_source"
+    },
+    {
+      "id": "SRC-VAL-2026",
+      "name": "WealthLanding Equity Valuation and Multiple Dislocation Research",
+      "date": "2026-09-05",
+      "type": "authoritative_demographic_source"
     }
   ],
   "publication": {
     "status": "published",
-    "headline": "BOJ Rate Hikes Ignite Japanese Megabank Earnings Outperformance",
-    "summary": "With the BOJ policy rate reaching 1.00%, domestic financials are posting massive earnings beats. Simultaneously, structural governance reforms are unlocking trapped capital across Japan's industrial base.",
+    "headline": "BOJ Hikes Benchmark Rate to 31-Year High of 1.25% as Fed Tightening Secures Double-Dip Thesis",
+    "summary": "The Bank of Japan lifted its policy rate to 1.25% on September 18, accelerating domestic bank net interest margin expansion. Concurrently, the Federal Reserve's rate hike to 3.75%-4.00% preserves a wide yield differential, sheltering Japanese exporters from translation drag while corporate governance buybacks surge.",
     "page_url": "/investment/theme.html?theme=jpy",
     "show_on_homepage": true,
     "featured": true,
     "generated_by": "WealthLanding AI Engine",
-    "generated_at": "2026-08-19T10:49:51Z"
+    "generated_at": "2026-09-18T15:00:00Z"
   }
 }
