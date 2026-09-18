@@ -1,6 +1,6 @@
 {
   "schema_version": "4.2",
-  "review_id": "water-2026-08-25",
+  "review_id": "water-2026-09-18",
   "thesis": {
     "id": "water-001",
     "name": "Water Security & Infrastructure",
@@ -9,147 +9,521 @@
     "horizon": "5-15 years"
   },
   "video": {
-    "embed_url": "https://www.youtube.com/embed/water_sec",
-    "title": "Water Security Theme Overview"
+    "embed_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "title": "Water Security and Secular Infrastructure Overview"
   },
   "review": {
-    "date": "2026-08-25",
-    "period_start": "2026-08-11",
-    "period_end": "2026-08-25",
+    "date": "2026-09-18",
+    "period_start": "2026-08-21",
+    "period_end": "2026-09-18",
     "cadence": "weekly",
-    "previous_review_id": "water-2026-08-18"
+    "previous_review_id": "water-2026-08-21"
   },
   "status": "strengthening",
   "thesis_health": {
-    "current": 85,
-    "previous": 82,
-    "change": 3,
+    "current": 86,
+    "previous": 84,
+    "change": 2,
     "trend": "improving",
     "reason_code": "STRUCTURAL_DEMAND_CONFIRMED",
-    "reason": "AI data center cooling and industrial contracts have emerged as massive parallel growth engines to utility CapEx."
+    "reason": "Regulatory compliance mandates and federal infrastructure funding continue to drive secular municipal and industrial water spending."
   },
-  "material_change": true,
+  "material_change": false,
   "scenario_model": {
     "current_scenario": "fair",
-    "confidence": 0.80,
+    "confidence": 0.65,
     "scenarios": [
       {
         "id": "bull",
-        "probability": 0.30,
-        "description": "Utilities accelerate capital deployment; AI data center cooling drives massive industrial backlog.",
-        "entry_conditions": ["Federal funding disbursed rapidly", "Hyperscaler CapEx pivots heavily to water cooling"],
-        "exit_conditions": ["Federal funding rescinded"]
+        "probability": 0.25,
+        "description": "Accelerated federal SRF disbursements combine with rapid municipal adoption of PFAS filtration mandates, driving organic volume growth >8% and operating margin expansion >150 bps.",
+        "entry_conditions": [
+          "EPA funding throughput accelerates into state accounts",
+          "Industrial closed-loop recycling capex surges"
+        ],
+        "exit_conditions": [
+          "Valuation multiples reach extreme historical deciles across entire universe"
+        ]
       },
       {
         "id": "fair",
-        "probability": 0.55,
-        "description": "Consistent mid-single-digit organic growth with steady AMI deployments and EPA compliance.",
-        "entry_conditions": ["Normalized municipal budgets", "Steady rate hikes approved"],
-        "exit_conditions": ["Supply chain component shortages"]
+        "probability": 0.60,
+        "description": "Steady 4-6% organic revenue expansion supported by municipal non-discretionary replacement cycles and water utility rate hike approvals.",
+        "entry_conditions": [
+          "Steady municipal replacement capex",
+          "Backlogs normalize at healthy elevated levels"
+        ],
+        "exit_conditions": [
+          "Organic growth slows below 2%"
+        ]
       },
       {
         "id": "bear",
         "probability": 0.15,
-        "description": "Municipal budget crises and severe regulatory delays destroy the CapEx cycle.",
-        "entry_conditions": ["Recessionary local tax receipts", "EPA rules structurally blocked in court"],
-        "exit_conditions": ["Policy reversal mandates immediate compliance"]
+        "description": "Municipal budget execution freezes driven by sustained high municipal debt borrowing costs, combined with judicial pauses on federal PFAS cleanup enforcement timelines.",
+        "entry_conditions": [
+          "Municipal funding deficits worsen",
+          "Federal regulation challenged or delayed in appellate courts"
+        ],
+        "exit_conditions": [
+          "Widespread municipal project cancellations"
+        ]
       }
     ]
   },
   "decision": {
-    "state": "active_buy",
+    "state": "valuation_review",
     "previous_state": "monitor",
     "changed": true,
-    "summary": "Industrial demand is highly robust, masking transient consumer softness. Accumulate top-tier infrastructure compounders.",
-    "cta": "monitor_ranked_companies_and_entry_zones",
-    "reason_codes": ["STRUCTURAL_DEMAND_CONFIRMED", "VALUATION_DISPERSION"],
+    "summary": "Core structural thesis strengthens on regulatory clarity, but valuation dispersion across tier-1 names requires strict entry discipline.",
+    "cta": "buy_below_attractive_threshold",
+    "reason_codes": [
+      "STRUCTURAL_DEMAND_CONFIRMED",
+      "VALUATION_DISPERSION"
+    ],
     "required_actions": [
-      "Accumulate XYL on dips near $118",
-      "Monitor PNR for clearance of pool destocking"
+      "Maintain active bids on PNR below $89.00",
+      "Monitor XYL for pullbacks toward fair value entry threshold",
+      "Keep BMI on valuation watchlist until multiple compresses below 32x"
     ]
   },
   "developments": [
     {
       "id": "water-D1",
-      "date": "2026-07-28",
-      "title": "Xylem Posts 41% Order Growth Driven by Data Centers",
-      "fact": "Xylem reported Q2 orders grew 41% organically, including an $850M Dow contract and a >300% surge in data center orders.",
-      "assumption_ids": ["water-A1", "water-A2"],
+      "date": "2026-09-10",
+      "title": "Pentair Reports Sustained Industrial Filtration Strength and Margin Expansion",
+      "fact": "Pentair delivered Q2 sales growth supported by resilient Flow solutions, expanding segment margins by 120 bps year-over-year to 24.2% while converting >100% of adjusted net income into free cash flow.",
+      "assumption_ids": [
+        "water-A1",
+        "water-A2",
+        "water-A5"
+      ],
       "direction": "positive",
       "materiality": "high",
       "durability": "high",
-      "interpretation": "Validates that mission-critical industrial water and AI infrastructure are creating new, highly durable profit pools.",
-      "source_ids": ["SRC-FILING-2026-XYL"]
+      "interpretation": "Confirms robust operating leverage and pricing durability in non-discretionary water handling and filtration segments.",
+      "source_ids": [
+        "SRC-PNR-10Q-2026"
+      ]
+    },
+    {
+      "id": "water-D2",
+      "date": "2026-09-08",
+      "title": "Xylem Expands Large-Scale Treatment Backlog and Synergies",
+      "fact": "Xylem recorded mid-single-digit organic growth with integration cost synergies from Evoqua tracking ahead of schedule at an annualized run-rate exceeding $160 million.",
+      "assumption_ids": [
+        "water-A1",
+        "water-A3",
+        "water-A5"
+      ],
+      "direction": "positive",
+      "materiality": "high",
+      "durability": "high",
+      "interpretation": "Validates enterprise cross-sell synergies and secular utility capex targeting water transport and filtration.",
+      "source_ids": [
+        "SRC-XYL-10Q-2026"
+      ]
+    },
+    {
+      "id": "water-D3",
+      "date": "2026-09-05",
+      "title": "EPA Finalizes State Revolving Fund Allocation Tranches for PFAS Remediation",
+      "fact": "EPA published guidance obligating state drinking water agencies to commit dedicated Bipartisan Infrastructure Law tranches for emerging contaminant mitigation by late 2026.",
+      "assumption_ids": [
+        "water-A2",
+        "water-A4",
+        "water-A6"
+      ],
+      "direction": "positive",
+      "materiality": "high",
+      "durability": "high",
+      "interpretation": "Underwrites multi-year capital funding streams specifically channeled toward municipal filtration systems and media suppliers.",
+      "source_ids": [
+        "SRC-EPA-SRF-2026"
+      ]
     },
     {
       "id": "water-D4",
-      "date": "2026-07-20",
-      "title": "EPA Extends PFAS Compliance Window",
-      "fact": "The EPA proposed rules extending the PFOA/PFOS 4.0 ppt MCL compliance deadline to 2031, granting utilities two extra years.",
-      "assumption_ids": ["water-A1"],
-      "direction": "mixed_positive",
+      "date": "2026-08-30",
+      "title": "Watts Water Technologies Sustains High Return on Capital via Commercial Safety",
+      "fact": "Watts Water delivered 17.8% operating margins and a trailing ROIC above 18% with zero net debt, driven by non-residential plumbing code enforcement.",
+      "assumption_ids": [
+        "water-A3",
+        "water-A5",
+        "water-A6"
+      ],
+      "direction": "positive",
       "materiality": "medium",
       "durability": "high",
-      "interpretation": "Provides utility funding relief without removing the structural multi-billion dollar remediation mandate.",
-      "source_ids": ["SRC-GOV-EPA-2026"]
+      "interpretation": "Demonstrates resilience of regulatory-mandated backflow prevention and commercial water safety hardware.",
+      "source_ids": [
+        "SRC-WTS-10Q-2026"
+      ]
+    },
+    {
+      "id": "water-D5",
+      "date": "2026-08-25",
+      "title": "Badger Meter Multiple Expands Beyond Reasonable Margin of Safety",
+      "fact": "Badger Meter traded up past 44x forward EPS following 20%+ revenue growth in smart utility metering, yielding a FCF yield below 2%.",
+      "assumption_ids": [
+        "water-A4",
+        "water-A6"
+      ],
+      "direction": "mixed_positive",
+      "materiality": "high",
+      "durability": "medium",
+      "interpretation": "Operational execution is superb, but extreme valuation limits upside and introduces multiple contraction risk, precluding Top 3 portfolio entry.",
+      "source_ids": [
+        "SRC-BMI-SEC-2026"
+      ]
+    },
+    {
+      "id": "water-D6",
+      "date": "2026-08-22",
+      "title": "Municipal Water Utility Rate Cases Approve High Capital Replacement Riders",
+      "fact": "State public utility commissions approved water utility rate cases authorizing capex recovery riders averaging 8.5-9.5% ROE.",
+      "assumption_ids": [
+        "water-A1",
+        "water-A2"
+      ],
+      "direction": "positive",
+      "materiality": "medium",
+      "durability": "high",
+      "interpretation": "Ensures that regulated water utilities have balance sheet capacity to fund multi-year pipe, valve, and digital meter replacements.",
+      "source_ids": [
+        "SRC-REG-PUC-2026"
+      ]
+    },
+    {
+      "id": "water-D7",
+      "date": "2026-08-20",
+      "title": "Commercial Industrial Wastewater Recycling Paybacks Contract Sub-3 Years",
+      "fact": "Industrial water reuse systems reached sub-3-year payback periods due to rising municipal water tariff hikes and effluent discharge surcharges.",
+      "assumption_ids": [
+        "water-A3",
+        "water-A5"
+      ],
+      "direction": "positive",
+      "materiality": "medium",
+      "durability": "high",
+      "interpretation": "Accelerates non-subsidized private capital investment into onsite industrial treatment units.",
+      "source_ids": [
+        "SRC-IND-WATER-2026"
+      ]
     }
   ],
   "scorecard": [
     {
+      "assumption_id": "water-A1",
+      "name": "Structural Water Scarcity & Aging Infrastructure",
+      "score": 5,
+      "previous_score": 5,
+      "change": 0,
+      "trend": "stable",
+      "assessment": "Over 2 trillion gallons of treated drinking water lost annually in US main distribution lines ensures multi-decade replacement demand."
+    },
+    {
       "assumption_id": "water-A2",
-      "name": "Industrial & AI Water Intensity",
+      "name": "Regulatory & Environmental Mandates (PFAS/MCLs)",
       "score": 5,
       "previous_score": 4,
       "change": 1,
       "trend": "improving",
-      "assessment": "Data center water management demand has inflected sharply upward due to thermal limits of high-density AI racks."
+      "assessment": "EPA maximum contaminant level enforcement schedules provide binding statutory mandates driving utility compliance spending."
+    },
+    {
+      "assumption_id": "water-A3",
+      "name": "Industrial Water Re-Use & Operational Efficiency",
+      "score": 4,
+      "previous_score": 4,
+      "change": 0,
+      "trend": "stable",
+      "assessment": "Mission-critical manufacturing corridors and data center cooling requirements create high demand for closed-loop treatment."
+    },
+    {
+      "assumption_id": "water-A4",
+      "name": "Smart Utility Infrastructure & AMI Transition",
+      "score": 5,
+      "previous_score": 5,
+      "change": 0,
+      "trend": "stable",
+      "assessment": "Utility conversion from manual/drive-by to cellular smart meters represents an irreversible efficiency upgrade."
+    },
+    {
+      "assumption_id": "water-A5",
+      "name": "Inelastic Replacement Cycles & Consumable Moats",
+      "score": 4,
+      "previous_score": 4,
+      "change": 0,
+      "trend": "stable",
+      "assessment": "Municipal utility budgets prioritize core water delivery and public health, keeping equipment replacement rates highly defensive."
+    },
+    {
+      "assumption_id": "water-A6",
+      "name": "Provider Valuation Discipline & Cash Flow Return",
+      "score": 3,
+      "previous_score": 3,
+      "change": 0,
+      "trend": "stable",
+      "assessment": "High sector quality has led to elevated valuations across pure plays, requiring rigorous selectivity to protect margin of safety."
     }
   ],
-  "assumptions_changed": [],
+  "assumptions_changed": [
+    {
+      "assumption_id": "water-A2",
+      "previous_score": 4,
+      "new_score": 5,
+      "rationale": "Binding federal SRF allocation rules for emerging contaminants formalize municipal budget commitments."
+    }
+  ],
   "catalysts": [
     {
-      "name": "Q3 2026 Municipal Budget Finalization",
-      "assumption_ids": ["water-A1"],
+      "name": "EPA PFAS Statutory Testing Deadline",
+      "assumption_ids": [
+        "water-A2"
+      ],
+      "state": "active",
+      "expected_date": "2026-11-15",
+      "confirmation_test": "Issuance of initial municipal compliance audit results requiring filtration retrofits.",
+      "failure_test": "Regulatory deferral or injunction on enforcement."
+    },
+    {
+      "name": "Federal SRF Tranche 4 Disbursement",
+      "assumption_ids": [
+        "water-A1",
+        "water-A2"
+      ],
       "state": "pending",
-      "expected_date": "2026-10-31",
-      "confirmation_test": "State revolving funds deployed to municipal water works.",
-      "failure_test": "Budget freezes or diversions from utility accounts."
+      "expected_date": "2027-01-30",
+      "confirmation_test": "Over $3B in clean water revolving funds released to state project boards.",
+      "failure_test": "Legislative clawback or administrative slowdown."
     }
   ],
   "opportunities": [
     {
       "rank": 1,
       "opportunity_id": "water-OP-1",
-      "group": "infrastructure-tech",
-      "name": "Xylem Inc.",
-      "ticker": "XYL",
+      "group": "filtration-flow-control",
+      "name": "Pentair plc",
+      "ticker": "PNR",
       "asset_type": "company",
-      "independent_return_engines": ["Industrial & Datacenter Cooling", "Municipal AMI Software", "Advanced Filtration"],
-      "catalyst": "Q3 Earnings and backlog conversion",
+      "independent_return_engines": [
+        "Industrial water filtration expansion",
+        "Commercial flow systems pricing",
+        "Margin expansion and cash conversion",
+        "Disciplined share repurchases"
+      ],
+      "catalyst": "Q3 2026 earnings margin leverage validation",
       "valuation_status": "moderately_undervalued",
-      "main_risk": "Supply chain component delays",
-      "next_action": "Buy below attractive threshold",
+      "main_risk": "Discretionary consumer spending slowdown in residential pool systems",
+      "next_action": "Maintain buy bid below attractive threshold",
       "company_review": {
         "status": "selected",
-        "company_slug": "xylem-inc",
-        "reason": "Top tier 85+ score, dominant market share, and explosive industrial order growth.",
+        "company_slug": "pentair",
+        "reason": "Top score in cash conversion, return on capital, and attractive forward valuation multiple.",
         "priority": "P0",
-        "trigger_rules": ["rank_top_3", "valuation_required"],
+        "trigger_rules": [
+          "rank_top_3",
+          "valuation_required"
+        ],
         "company_packet_required": true,
         "rank_slot": "top1",
         "company_json_path": "/investment/data/companies/water/top1.json",
         "detail_url": "/investment/company.html?thesis=water&rank=1"
       }
+    },
+    {
+      "rank": 2,
+      "opportunity_id": "water-OP-2",
+      "group": "utility-treatment-infrastructure",
+      "name": "Xylem Inc.",
+      "ticker": "XYL",
+      "asset_type": "company",
+      "independent_return_engines": [
+        "Municipal wastewater transport and treatment",
+        "Evoqua industrial cross-selling synergies",
+        "Advanced smart metering and telemetry",
+        "Global emerging market water projects"
+      ],
+      "catalyst": "Synergy realization updates and utility backlog expansion",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Integration delays or cyclical non-residential construction slowdown",
+      "next_action": "Accumulate on pullbacks into fair value lower band",
+      "company_review": {
+        "status": "selected",
+        "company_slug": "xylem",
+        "reason": "Premier scale and market dominance in municipal water infrastructure and PFAS remediation.",
+        "priority": "P0",
+        "trigger_rules": [
+          "rank_top_3",
+          "valuation_required"
+        ],
+        "company_packet_required": true,
+        "rank_slot": "top2",
+        "company_json_path": "/investment/data/companies/water/top2.json",
+        "detail_url": "/investment/company.html?thesis=water&rank=2"
+      }
+    },
+    {
+      "rank": 3,
+      "opportunity_id": "water-OP-3",
+      "group": "commercial-safety-hydronics",
+      "name": "Watts Water Technologies, Inc.",
+      "ticker": "WTS",
+      "asset_type": "company",
+      "independent_return_engines": [
+        "Mission-critical backflow prevention codes",
+        "Commercial hydronic heating and drainage",
+        "Pristine net-cash balance sheet optionality",
+        "Bolt-on accretive M&A"
+      ],
+      "catalyst": "Non-residential plumbing code adoption and accretive bolt-on deals",
+      "valuation_status": "moderately_undervalued",
+      "main_risk": "Slowdown in commercial institutional real estate construction",
+      "next_action": "Scale position below attractive entry zone",
+      "company_review": {
+        "status": "selected",
+        "company_slug": "watts-water",
+        "reason": "High ROIC, zero leverage, and durable competitive moat in commercial water safety.",
+        "priority": "P0",
+        "trigger_rules": [
+          "rank_top_3",
+          "valuation_required"
+        ],
+        "company_packet_required": true,
+        "rank_slot": "top3",
+        "company_json_path": "/investment/data/companies/water/top3.json",
+        "detail_url": "/investment/company.html?thesis=water&rank=3"
+      }
+    },
+    {
+      "rank": 4,
+      "opportunity_id": "water-OP-4",
+      "group": "smart-metering",
+      "name": "Badger Meter, Inc.",
+      "ticker": "BMI",
+      "asset_type": "company",
+      "independent_return_engines": [
+        "Cellular AMI replacement cycles",
+        "BEACON SaaS recurring software revenue"
+      ],
+      "catalyst": "Quarterly record utility smart meter deployments",
+      "valuation_status": "overvalued",
+      "main_risk": "Multiple compression due to 44x forward P/E multiple",
+      "next_action": "Monitor on watchlist; wait for significant market pullback",
+      "company_review": null
+    },
+    {
+      "rank": 5,
+      "opportunity_id": "water-OP-5",
+      "group": "regulated-utilities",
+      "name": "American Water Works Company, Inc.",
+      "ticker": "AWK",
+      "asset_type": "company",
+      "independent_return_engines": [
+        "Rate-base compounding via authorized capex",
+        "Municipal water system consolidation"
+      ],
+      "catalyst": "State rate case final determination orders",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Elevated long-term interest rates raising financing costs",
+      "next_action": "Monitor regulated utility rate approvals",
+      "company_review": null
+    },
+    {
+      "rank": 6,
+      "opportunity_id": "water-OP-6",
+      "group": "industrial-consumables",
+      "name": "Ecolab Inc.",
+      "ticker": "ECL",
+      "asset_type": "company",
+      "independent_return_engines": [
+        "Industrial water treatment chemicals",
+        "Digital monitoring and cooling tower water recycling"
+      ],
+      "catalyst": "Institutional operating margin recovery toward 20%",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Raw material chemical input inflation",
+      "next_action": "Track margin progression and industrial volume growth",
+      "company_review": null
+    },
+    {
+      "rank": 7,
+      "opportunity_id": "water-OP-7",
+      "group": "stormwater-piping",
+      "name": "Advanced Drainage Systems, Inc.",
+      "ticker": "WMS",
+      "asset_type": "company",
+      "independent_return_engines": [
+        "Thermoplastic pipe conversion against concrete",
+        "Stormwater detention and retention systems"
+      ],
+      "catalyst": "Civil infrastructure project contract awards",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Non-residential construction cyclical slowing",
+      "next_action": "Monitor HDPE resin input pricing and volume trends",
+      "company_review": null
+    },
+    {
+      "rank": 8,
+      "opportunity_id": "water-OP-8",
+      "group": "technology-analytics",
+      "name": "In-Pipe Acoustic Sensing & Non-Revenue Water SaaS",
+      "ticker": "TECH-SENS",
+      "asset_type": "technology",
+      "independent_return_engines": [
+        "Leak detection analytics preventing water loss",
+        "Predictive pipe structural health modeling"
+      ],
+      "catalyst": "Municipal utility contract rollouts",
+      "valuation_status": "under_review",
+      "main_risk": "Lengthy municipal trial sales cycles",
+      "next_action": "Screen emerging privately held and public vendors",
+      "company_review": null
+    },
+    {
+      "rank": 9,
+      "opportunity_id": "water-OP-9",
+      "group": "filtration-media",
+      "name": "Specialized Membrane & PFAS Media Filtration",
+      "ticker": "SEC-MEMB",
+      "asset_type": "sector",
+      "independent_return_engines": [
+        "Granular activated carbon exchange cycles",
+        "Reverse osmosis and ceramic membrane upgrades"
+      ],
+      "catalyst": "State environmental department compliance inspections",
+      "valuation_status": "fairly_valued",
+      "main_risk": "Thermal regeneration capacity bottlenecks",
+      "next_action": "Evaluate subsector supply chain bottlenecks",
+      "company_review": null
+    },
+    {
+      "rank": 10,
+      "opportunity_id": "water-OP-10",
+      "group": "civil-contractors",
+      "name": "Municipal Water Infrastructure EPC Contractors",
+      "ticker": "SEC-EPC",
+      "asset_type": "sector",
+      "independent_return_engines": [
+        "Treatment plant physical construction and retrofits",
+        "Underground pipeline installation contracts"
+      ],
+      "catalyst": "Bipartisan Infrastructure Law grant project commencements",
+      "valuation_status": "under_review",
+      "main_risk": "Fixed-price project cost overruns and labor shortages",
+      "next_action": "Avoid low-margin project contractors; prioritize equipment OEMs",
+      "company_review": null
     }
   ],
   "ranked_company_reviews": [
     {
       "rank": 1,
       "slot": "top1",
-      "company_name": "Xylem Inc.",
-      "company_slug": "xylem-inc",
-      "ticker": "XYL",
-      "selection_reason": "Category monopoly in applied water with a massive, high-visibility industrial order backlog.",
+      "company_name": "Pentair plc",
+      "company_slug": "pentair",
+      "ticker": "PNR",
+      "selection_reason": "Top-tier operational cash flow, robust margin expansion to 24%+, and an attractive forward valuation multiple providing double-digit margin of safety.",
       "company_json_path": "/investment/data/companies/water/top1.json",
       "detail_url": "/investment/company.html?thesis=water&rank=1",
       "analysis_status": "complete"
@@ -157,10 +531,10 @@
     {
       "rank": 2,
       "slot": "top2",
-      "company_name": "Badger Meter",
-      "company_slug": "badger-meter",
-      "ticker": "BMI",
-      "selection_reason": "Flawless balance sheet executing a high-margin transition to SaaS digital metering.",
+      "company_name": "Xylem Inc.",
+      "company_slug": "xylem",
+      "ticker": "XYL",
+      "selection_reason": "Global category leader in water transport, advanced treatment, and PFAS solutions with substantial post-Evoqua synergy realization.",
       "company_json_path": "/investment/data/companies/water/top2.json",
       "detail_url": "/investment/company.html?thesis=water&rank=2",
       "analysis_status": "complete"
@@ -168,10 +542,10 @@
     {
       "rank": 3,
       "slot": "top3",
-      "company_name": "Pentair plc",
-      "company_slug": "pentair-plc",
-      "ticker": "PNR",
-      "selection_reason": "Compelling valuation dislocation masking exceptional industrial filtration margin expansion.",
+      "company_name": "Watts Water Technologies, Inc.",
+      "company_slug": "watts-water",
+      "ticker": "WTS",
+      "selection_reason": "Unrivaled moat in commercial water safety and backflow prevention codes, supported by an 18%+ ROIC and zero net debt.",
       "company_json_path": "/investment/data/companies/water/top3.json",
       "detail_url": "/investment/company.html?thesis=water&rank=3",
       "analysis_status": "complete"
@@ -179,33 +553,80 @@
   ],
   "risks": [
     {
-      "name": "Utility CapEx Freeze",
-      "trigger": "Rising interest rates choke municipal debt issuance",
-      "assumption_ids": ["water-A1", "water-A3"]
+      "name": "Municipal debt issuance slowdown due to interest rates",
+      "trigger": "US municipal bond yields rising >75 bps above historical averages",
+      "assumption_ids": [
+        "water-A1",
+        "water-A5"
+      ]
+    },
+    {
+      "name": "Appellate court delay of EPA PFAS regulations",
+      "trigger": "Judicial stay granted on federal drinking water MCL enforcement",
+      "assumption_ids": [
+        "water-A2"
+      ]
+    },
+    {
+      "name": "Valuation contraction in high-multiple equipment makers",
+      "trigger": "Broad industrial equity multiple derating",
+      "assumption_ids": [
+        "water-A6"
+      ]
     }
   ],
   "sources": [
     {
-      "id": "SRC-FILING-2026-XYL",
-      "name": "Xylem Q2 2026 Earnings Release",
+      "id": "SRC-PNR-10Q-2026",
+      "name": "Pentair plc SEC Form 10-Q Quarterly Filing",
+      "date": "2026-08-01",
+      "type": "company_primary_source"
+    },
+    {
+      "id": "SRC-XYL-10Q-2026",
+      "name": "Xylem Inc. SEC Form 10-Q Quarterly Filing",
+      "date": "2026-08-05",
+      "type": "company_primary_source"
+    },
+    {
+      "id": "SRC-WTS-10Q-2026",
+      "name": "Watts Water Technologies SEC Form 10-Q Quarterly Filing",
+      "date": "2026-08-03",
+      "type": "company_primary_source"
+    },
+    {
+      "id": "SRC-EPA-SRF-2026",
+      "name": "US Environmental Protection Agency - SRF Policy Memorandum",
+      "date": "2026-09-05",
+      "type": "government_reimbursement_source"
+    },
+    {
+      "id": "SRC-BMI-SEC-2026",
+      "name": "Badger Meter, Inc. SEC Form 10-Q Quarterly Filing",
       "date": "2026-07-28",
       "type": "company_primary_source"
     },
     {
-      "id": "SRC-GOV-EPA-2026",
-      "name": "EPA PFAS Extension Rule",
-      "date": "2026-07-20",
+      "id": "SRC-REG-PUC-2026",
+      "name": "National Association of Regulatory Utility Commissioners Rate Case Tracker",
+      "date": "2026-08-22",
       "type": "government_reimbursement_source"
+    },
+    {
+      "id": "SRC-IND-WATER-2026",
+      "name": "Industrial Water Technology Cost & Payback Assessment",
+      "date": "2026-08-20",
+      "type": "authoritative_demographic_source"
     }
   ],
   "publication": {
     "status": "published",
-    "headline": "Datacenters Ignite the Water Security Super-Cycle",
-    "summary": "Explosive industrial demand and rigid utility compliance mandates are driving massive backlog growth for top-tier water infrastructure leaders.",
+    "headline": "Water Infrastructure Review: PFAS Mandates Drive Backlog as Valuation Discipline Guides Entry",
+    "summary": "Municipal compliance deadlines and federal clean water funding continue to power secular backlogs across water equipment providers. Pentair, Xylem, and Watts Water emerge as the top institutional selections balancing quality and valuation.",
     "page_url": "/investment/theme.html?theme=water",
     "show_on_homepage": true,
     "featured": true,
     "generated_by": "WealthLanding AI Engine",
-    "generated_at": "2026-08-25T11:32:00Z"
+    "generated_at": "2026-09-18T15:45:00Z"
   }
 }
