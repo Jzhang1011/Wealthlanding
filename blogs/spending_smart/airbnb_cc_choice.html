@@ -47,7 +47,7 @@ title: "The $2,400 Mountain Blizzard: Why the Best Card Isn't Always the One wit
 
   <!-- Interactive Flashcard -->
   <div class="flashcard-container my-8">
-    <div class="flashcard bg-slate-900 text-white p-6 rounded-2xl border border-slate-800 shadow-lg cursor-pointer transition-all hover:border-slate-700" onclick="this.classList.toggle('flipped')">
+    <div class="flashcard bg-slate-900 text-white p-6 rounded-2xl border border-slate-800 shadow-lg cursor-pointer transition-all hover:border-slate-700" onclick="const b = this.querySelector('.flashcard-back'); b.classList.toggle('hidden');">
       <div class="flashcard-front">
         <span class="text-xs uppercase tracking-wider text-indigo-400 font-bold block mb-2">Active Recall • Concept Check</span>
         <h4 class="text-lg font-semibold mb-2">What is the critical difference between Trip Cancellation Insurance and standard purchase protection?</h4>
