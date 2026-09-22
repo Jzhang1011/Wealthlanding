@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9JMJJ5CJR4');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bitcoin Liquidity & Infrastructure Dashboard | WealthLanding</title>
+  <meta name="description" content="Educational Bitcoin dashboard: macro liquidity, scarce-asset demand, and miner power pivoting to AI — illustrative metrics, not live trading signals.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#0f172a;--muted:#64748b;--green:#10b981;--line:#e2e8f0;--night:#030712}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,sans-serif;background:#f8fafc;color:var(--ink)}
+    .serif{font-family:'Playfair Display',serif}
+    .wrap{max-width:1240px;margin:auto;padding:0 28px}
+    .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:#059669}
+    .card{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 10px 34px rgba(15,23,42,.05)}
+    .prose-wl p{color:#475569;line-height:1.75;margin:0 0 1rem}
+    .prose-wl h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;margin:1.75rem 0 .75rem}
+    .prose-wl ul{margin:.5rem 0 1.25rem;padding-left:1.15rem;color:#475569}
+    .prose-wl li{margin:.35rem 0;line-height:1.65}
+    .chip{display:inline-flex;align-items:center;border-radius:999px;padding:5px 10px;font-size:11px;font-weight:800}
+    .chip-headwind{background:#fff1f2;color:#be123c}
+    .chip-neutral{background:#f1f5f9;color:#475569}
+    .chip-tailwind{background:#ecfdf5;color:#047857}
+    .chip-confirming{background:#ecfdf5;color:#047857}
+    .chip-mixed{background:#fffbeb;color:#b45309}
+    .chip-falsifying{background:#fff1f2;color:#be123c}
+    .bucket-tag{display:inline-flex;border-radius:999px;padding:4px 9px;font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;background:#f1f5f9;color:#64748b}
+    .metric-value{font-size:2.15rem;font-weight:900;letter-spacing:-.02em;line-height:1.1}
+    .illust-banner{background:#fffbeb;border:1px solid #fde68a;color:#92400e;border-radius:14px;padding:12px 16px;font-size:13px;font-weight:600}
+    @media(max-width:850px){.wrap{padding:0 18px}.metric-value{font-size:1.75rem}}
+  </style>
+</head>
+<body>
+  <div id="global-header-target"></div>
+
+  <section class="bg-slate-950 text-white py-16 md:py-20">
+    <div class="wrap">
+      <a href="./index.html" class="text-sm font-bold text-slate-400 hover:text-emerald-400 transition">← Investment Decision Center</a>
+      <div class="eyebrow mt-6 text-emerald-400">Featured dashboard · Educational framework</div>
+      <h1 class="serif text-4xl md:text-5xl lg:text-6xl font-bold mt-4 leading-tight max-w-4xl">
+        Is Bitcoin a liquidity trade,<br>
+        <span class="text-emerald-400">a monetary infrastructure bet,</span><br>
+        or both?
+      </h1>
+      <p class="text-slate-400 text-lg mt-5 max-w-3xl leading-relaxed">
+        This board separates three questions that get mashed together in market chatter:
+        whether liquidity is working, whether scarce-asset demand is confirming, and whether
+        Bitcoin-adjacent power is becoming real infrastructure.
+      </p>
+      <p class="text-slate-500 text-sm mt-4 max-w-3xl">
+        Curious-adult framing — explain the machine, not a buy/sell call. Metrics below are
+        clearly labeled illustrative placeholders.
+      </p>
+    </div>
+  </section>
+
+  <main>
+    <section class="py-12 md:py-14" id="dashboard">
+      <div class="wrap">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+          <div>
+            <div class="eyebrow">Six-metric centerpiece</div>
+            <h2 class="serif text-3xl md:text-4xl font-bold mt-2">Liquidity · Scarce asset · Infrastructure</h2>
+          </div>
+          <div id="as-of-label" class="text-xs font-bold text-slate-400 uppercase tracking-wider">Loading…</div>
+        </div>
+
+        <div id="illust-banner" class="illust-banner mb-8">
+          Loading dashboard data…
+        </div>
+
+        <div id="bucket-framing" class="grid md:grid-cols-3 gap-4 mb-8"></div>
+        <div id="metrics-grid" class="grid md:grid-cols-2 xl:grid-cols-3 gap-5"></div>
+      </div>
+    </section>
+
+    <section class="py-12 bg-white border-y border-slate-200" id="how-to-read">
+      <div class="wrap">
+        <div class="eyebrow">How to read this board</div>
+        <h2 class="serif text-3xl md:text-4xl font-bold mt-2">Three buckets, three falsifiers</h2>
+        <div class="grid lg:grid-cols-3 gap-6 mt-8">
+          <article class="card p-6">
+            <div class="bucket-tag">Bucket A</div>
+            <h3 class="text-xl font-extrabold mt-3">Macro liquidity</h3>
+            <p class="text-sm text-slate-500 mt-3 leading-6">
+              Fed funds, 10-year real yield, and the 30-year Treasury answer whether the
+              liquidity thesis is working. Higher rates are a near-term headwind for BTC —
+              don’t fight the liquidity math.
+            </p>
+          </article>
+          <article class="card p-6">
+            <div class="bucket-tag">Bucket B</div>
+            <h3 class="text-xl font-extrabold mt-3">Scarce-asset / debasement</h3>
+            <p class="text-sm text-slate-500 mt-3 leading-6">
+              ETF net flows and BTC vs. gold test demand independent of short-term liquidity.
+              Institutional flows despite elevated real rates make the monetary-infrastructure
+              thesis more interesting.
+            </p>
+          </article>
+          <article class="card p-6">
+            <div class="bucket-tag">Bucket C</div>
+            <h3 class="text-xl font-extrabold mt-3">Bitcoin infrastructure</h3>
+            <p class="text-sm text-slate-500 mt-3 leading-6">
+              AI revenue per MW for former Bitcoin miners reframes the power portfolio:
+              stop treating miners as leveraged BTC proxies; ask what the watts earn after
+              converting mining capacity into AI compute.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-14" id="essay">
+      <div class="wrap max-w-3xl prose-wl">
+        <div class="eyebrow">Framework essay</div>
+        <h2 class="serif text-3xl md:text-4xl font-bold mt-2 mb-6">Reading Bitcoin without the hype machine</h2>
+
+        <h3>1. BTC itself</h3>
+        <p>
+          Start with the asset on its own terms: a scarce, programmable claim with a fixed
+          issuance schedule and a global settlement network. Price alone does not tell you
+          which story is driving the tape. Liquidity regimes change the opportunity cost of
+          holding a non-yielding asset; institutional wrappers change who can hold it; and
+          narrative cycles change how loudly those facts get amplified.
+        </p>
+        <p>
+          A useful habit is to ask which bucket is moving. If real yields are rising and ETF
+          flows are still positive, you are watching two different machines at once — not a
+          single “risk-on” switch. If both liquidity and scarce-asset demand weaken together,
+          the board is saying something simpler: the near-term setup is harder.
+        </p>
+
+        <h3>2. Bitcoin as monetary infrastructure</h3>
+        <p>
+          The infrastructure framing is not “number go up.” It is whether Bitcoin is becoming
+          easier to custody, allocate, and settle inside ordinary financial plumbing —
+          regulated funds, clearer custody rails, and balance-sheet familiarity. Spot ETF
+          flows are one window into that process; they are not proof of permanence.
+        </p>
+        <p>
+          Compare BTC to gold carefully. Gold already has centuries of institutional muscle
+          memory. BTC’s relative performance can confirm or challenge the scarce-asset story,
+          but it can also simply reflect different liquidity betas. Treat relative charts as
+          a question mark, not a verdict.
+        </p>
+
+        <h3>3. Bitcoin miners / power → AI</h3>
+        <p>
+          Miners sit on power interconnects, land, and cooling — inputs that AI data centers
+          also want. That overlap invites a category error: treating every miner equity as a
+          high-beta Bitcoin warrant. A cleaner question is operational: after a site pivots
+          from hashing to compute, how much revenue (and margin) does each megawatt produce?
+        </p>
+        <p>
+          “AI revenue per MW” is deliberately crude. Company mix, contract length, utilization,
+          and capex intensity differ wildly. Use it as a lens for separating power-platform
+          businesses from pure hash-rate levers — not as a single valuation multiple.
+        </p>
+
+        <h3>Falsifiers</h3>
+        <ul>
+          <li><strong>Bucket A (liquidity):</strong> Sustained rate cuts and falling real yields without any BTC response would falsify a simple “liquidity dominates” reading — or force you to look for offsetting supply/flow shocks.</li>
+          <li><strong>Bucket B (scarce asset):</strong> Persistent ETF outflows while real yields fall, or multi-quarter underperformance vs. gold during clear monetary stress, would weaken the debasement / institutional-adoption framing.</li>
+          <li><strong>Bucket C (infrastructure):</strong> Miner AI conversions that stall on power contracts, utilization, or disclosed $/MW economics would falsify the “power portfolio earns like compute” story.</li>
+        </ul>
+
+        <h3>What to watch next</h3>
+        <ul>
+          <li>Path of real yields and the long end — not just the next Fed meeting headline.</li>
+          <li>Whether spot ETF net flows stay positive when rates stay restrictive.</li>
+          <li>Miner disclosures that separate AI/colocation revenue and MW economics from hash-rate narratives.</li>
+          <li>Any structural change in custody, settlement, or institutional access that changes who can hold BTC — independent of weekly price noise.</li>
+        </ul>
+
+        <div class="card p-6 mt-10 bg-slate-50 border-slate-200">
+          <div class="eyebrow">Back to decisions</div>
+          <p class="text-slate-600 text-sm mt-2 mb-4">
+            This page is a reading framework. Company and theme decisions still live in the
+            Investment Decision Center.
+          </p>
+          <a href="./index.html" class="inline-flex font-extrabold text-emerald-700 text-sm hover:text-emerald-800">
+            ← Return to Investment Decision Center
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-10 bg-amber-50 border-y border-amber-100">
+      <div class="wrap">
+        <p class="text-sm text-amber-900 leading-6 max-w-3xl">
+          <strong>Educational disclaimer:</strong> WealthLanding content is for learning and
+          research framing only. It is not individualized investment, tax, or legal advice,
+          and it is not a recommendation to buy, sell, or hold any asset. Illustrative metrics
+          on this page are placeholders for teaching the framework — not live market data.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <wealthlanding-footer></wealthlanding-footer>
+  <script src="/components/footer.js"></script>
+  <script src="/components/header.js"></script>
+
+  <script>
+    const FALLBACK = {
+      meta: {
+        title: "Bitcoin Liquidity & Infrastructure Dashboard",
+        as_of: "2026-09-15",
+        illustrative: true,
+        source_note: "Inline fallback — illustrative placeholders only. Not a live market feed."
+      },
+      buckets: [
+        { id: "macro-liquidity", label: "Macro liquidity", framing: "Higher rates = near-term headwind for BTC. Don't fight the liquidity math.", metric_ids: ["fed-funds-rate", "10y-real-yield", "30y-treasury-yield"] },
+        { id: "scarce-asset", label: "Scarce-asset / debasement", framing: "Institutional flows despite elevated real rates make the monetary-infrastructure thesis more interesting.", metric_ids: ["btc-etf-net-flows", "btc-vs-gold"] },
+        { id: "btc-infrastructure", label: "Bitcoin infrastructure", framing: "Stop treating miners as leveraged BTC proxies. Ask how much the power portfolio earns per MW after converting mining → AI compute.", metric_ids: ["ai-revenue-per-mw"] }
+      ],
+      metrics: [
+        { id: "fed-funds-rate", bucket: "macro-liquidity", label: "Fed funds rate", display: "4.25", unit: "%", why_it_matters: "Policy rate sets the opportunity cost of holding non-yielding scarce assets.", status: "Headwind", illustrative: true, as_of: "2026-09-15", source_note: "Illustrative placeholder — not a live Fed quote." },
+        { id: "10y-real-yield", bucket: "macro-liquidity", label: "10-year real yield", display: "1.9", unit: "%", why_it_matters: "Real yields compete directly with BTC as a long-duration scarce claim.", status: "Headwind", illustrative: true, as_of: "2026-09-15", source_note: "Illustrative placeholder — stylized TIPS-style real yield." },
+        { id: "30y-treasury-yield", bucket: "macro-liquidity", label: "30-year Treasury yield", display: "4.6", unit: "%", why_it_matters: "Long-end yields anchor discount rates and risk appetite across risk assets.", status: "Neutral", illustrative: true, as_of: "2026-09-15", source_note: "Illustrative placeholder — not a live Treasury quote." },
+        { id: "btc-etf-net-flows", bucket: "scarce-asset", label: "BTC ETF net flows", display: "+1.2", unit: "$B / 30d", why_it_matters: "Spot ETF flows show whether institutions keep adding despite elevated real rates.", status: "Confirming", illustrative: true, as_of: "2026-09-15", source_note: "Illustrative 30-day net-flow placeholder — not a live ETF tape." },
+        { id: "btc-vs-gold", bucket: "scarce-asset", label: "BTC vs. gold performance", display: "+18", unit: "% YTD relative", why_it_matters: "Relative performance vs. gold tests the scarce-asset / debasement framing.", status: "Mixed", illustrative: true, as_of: "2026-09-15", source_note: "Illustrative YTD relative-return placeholder — not live prices." },
+        { id: "ai-revenue-per-mw", bucket: "btc-infrastructure", label: "AI revenue per MW (ex-miners)", display: "~1.5", unit: "$M / MW / yr", why_it_matters: "Shows what former mining power portfolios may earn after pivoting to AI compute.", status: "Confirming", illustrative: true, as_of: "2026-09-15", source_note: "Illustrative industry-style placeholder — company disclosures vary widely." }
+      ]
+    };
+
+    const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+    const bucketLabel = {
+      'macro-liquidity': 'Macro liquidity',
+      'scarce-asset': 'Scarce-asset',
+      'btc-infrastructure': 'Infrastructure'
+    };
+
+    function chipClass(status) {
+      const s = String(status || '').toLowerCase();
+      if (s === 'headwind') return 'chip-headwind';
+      if (s === 'tailwind') return 'chip-tailwind';
+      if (s === 'neutral') return 'chip-neutral';
+      if (s === 'confirming') return 'chip-confirming';
+      if (s === 'mixed') return 'chip-mixed';
+      if (s === 'falsifying') return 'chip-falsifying';
+      return 'chip-neutral';
+    }
+
+    function render(data) {
+      const meta = data.meta || {};
+      const metrics = Array.isArray(data.metrics) ? data.metrics : [];
+      const buckets = Array.isArray(data.buckets) ? data.buckets : [];
+
+      document.getElementById('as-of-label').textContent =
+        `Illustrative · as of ${meta.as_of || '—'}`;
+
+      document.getElementById('illust-banner').innerHTML =
+        `<strong>Illustrative placeholders</strong> — ${esc(meta.source_note || 'Not a live API feed.')}` +
+        (meta.illustrative === false ? '' : ' All sample numbers are labeled illustrative.');
+
+      document.getElementById('bucket-framing').innerHTML = buckets.map(b => `
+        <div class="card p-5">
+          <div class="bucket-tag">${esc(b.label)}</div>
+          <p class="text-sm text-slate-600 mt-3 leading-6">${esc(b.framing)}</p>
+        </div>
+      `).join('');
+
+      document.getElementById('metrics-grid').innerHTML = metrics.map(m => `
+        <article class="card p-6 flex flex-col">
+          <div class="flex justify-between items-start gap-3">
+            <div class="bucket-tag">${esc(bucketLabel[m.bucket] || m.bucket || 'Metric')}</div>
+            <span class="chip ${chipClass(m.status)}">${esc(m.status || '—')}</span>
+          </div>
+          <div class="text-xs uppercase tracking-wider font-extrabold text-slate-400 mt-4">${esc(m.label)}</div>
+          <div class="metric-value mt-2 text-slate-900">${esc(m.display ?? m.value)}<span class="text-base font-bold text-slate-400 ml-1">${esc(m.unit || '')}</span></div>
+          <p class="text-sm text-slate-500 mt-4 leading-6 flex-1">${esc(m.why_it_matters)}</p>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 font-semibold">
+            ${m.illustrative !== false ? 'Illustrative placeholder' : 'Data'} · as of ${esc(m.as_of || meta.as_of || '—')}
+          </div>
+        </article>
+      `).join('');
+    }
+
+    async function load() {
+      try {
+        const res = await fetch('./data/bitcoin-dashboard.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        render(data);
+      } catch (err) {
+        console.warn('bitcoin-dashboard.json fetch failed; using inline FALLBACK', err);
+        render(FALLBACK);
+      }
+    }
+
+    load();
+  </script>
+</body>
+</html>
