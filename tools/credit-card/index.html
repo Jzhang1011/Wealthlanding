@@ -1,1 +1,22 @@
-@/workspace/credit-card-index-patched.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Rewards Router — WealthLanding</title>
+  <style>body{font-family:system-ui,sans-serif;padding:2rem;color:#334155}</style>
+</head>
+<body>
+  <p>Loading credit card router…</p>
+  <script>
+    // Emergency restore: last good monolithic page from before the bad placeholder merge.
+    // Fetched client-side so localStorage wallet state stays on wealthlanding.com.
+    fetch('https://cdn.jsdelivr.net/gh/Jzhang1011/Wealthlanding@ad885706da4fff0d4bc4b2388cab4ead4b5bf833/tools/credit-card/index.html')
+      .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.text(); })
+      .then(function(html){ document.open(); document.write(html); document.close(); })
+      .catch(function(err){
+        document.body.innerHTML = '<p>Could not load the credit card router.</p><p style="color:#64748b;font-size:14px">' + String(err) + '</p><p><a href="https://cdn.jsdelivr.net/gh/Jzhang1011/Wealthlanding@ad885706da4fff0d4bc4b2388cab4ead4b5bf833/tools/credit-card/index.html">Open backup copy</a></p>';
+      });
+  </script>
+</body>
+</html>
