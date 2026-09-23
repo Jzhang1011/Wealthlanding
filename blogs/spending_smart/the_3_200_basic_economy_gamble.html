@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Saving $300 on non-changeable basic economy tickets felt like disciplined budgeting. Then a fever 36 hours before boarding showed who actually carried the risk.">
+  <title>The $3,200 Basic Economy Gamble — WealthLanding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --navy: #071a2f;
+      --navy2: #0d2946;
+      --ink: #122033;
+      --muted: #607086;
+      --line: #dfe7ef;
+      --paper: #ffffff;
+      --mist: #f3f7fa;
+      --blue: #2563eb;
+      --teal: #00a67e;
+      --amber: #e99a16;
+      --rose: #dc5268;
+      --shadow: 0 18px 60px rgba(18, 32, 51, 0.10);
+      --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-head: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Media Format Sticky Toggle Bar */
+    .sticky-toggle {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 12px 16px;
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(13, 41, 70, 0.06);
+    }
+
+    .toggle-btn {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      color: #334155;
+      border-radius: 999px;
+      padding: 8px 18px;
+      font: 700 13px/1 var(--font-body);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .toggle-btn:hover {
+      border-color: #cbd5e1;
+      background: #f8fafc;
+    }
+
+    .toggle-btn.active {
+      background: var(--navy);
+      color: #ffffff;
+      border-color: var(--navy);
+      box-shadow: 0 2px 8px rgba(7, 26, 47, 0.15);
+    }
+
+    /* Media Container Panels */
+    .media-container {
+      display: none;
+      margin: 0 0 32px;
+      border-radius: 20px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      padding: 24px;
+    }
+
+    .media-container.active {
+      display: block;
+      animation: fadeIn 0.25s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .video-wrapper {
+      aspect-ratio: 16/9;
+      width: 100%;
+      background: #0f172a;
+      border-radius: 14px;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      color: #94a3b8;
+      font-size: 14px;
+      position: relative;
+    }
+
+    .audio-wrapper {
+      background: var(--mist);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .audio-play-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--navy);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 13px;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .shot-list, .script {
+      margin: 16px 0 0;
+      list-style: none;
+    }
+
+    .shot-list li, .script p {
+      margin: 0 0 10px;
+      color: #3d5067;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .tc, .spk {
+      display: inline-block;
+      min-width: 54px;
+      font-weight: 800;
+      color: var(--rose);
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #fff2f4 0%, #f9fafb 50%, #eff7fa 100%);
+      border-bottom: 1px solid var(--line);
+      position: relative;
+    }
+
+    .heroin {
+      max-width: 1180px;
+      margin: auto;
+      padding: 72px 24px 60px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 9px;
+      align-items: center;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid #d7e1ea;
+      color: #596b80;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--rose);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font: 800 clamp(38px, 4.6vw, 64px)/1.04 var(--font-head);
+      letter-spacing: -0.055em;
+      margin: 22px 0 20px;
+      max-width: 760px;
+      color: var(--navy);
+    }
+
+    .dek {
+      font-size: 21px;
+      line-height: 1.5;
+      color: #44566d;
+      max-width: 640px;
+      margin: 0 0 26px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      color: #718196;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .meta span {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .meta span:after {
+      content: "•";
+      margin-left: 12px;
+      color: #cbd5e1;
+    }
+
+    .meta span:last-child:after {
+      content: "";
+    }
+
+    .herofigure {
+      position: relative;
+    }
+
+    .heroimage {
+      min-height: 480px;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      position: relative;
+      background: #cbd5e1;
+    }
+
+    .heroimage img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      object-fit: cover;
+      display: block;
+    }
+
+    .heroimage:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(7, 26, 47, 0.85) 100%);
+    }
+
+    .photoquote {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      color: #ffffff;
+      z-index: 2;
+      font: 700 20px/1.35 var(--font-head);
+      letter-spacing: -0.01em;
+    }
+
+    .photocredit {
+      font-size: 10px;
+      color: #718196;
+      margin-top: 8px;
+      text-align: right;
+    }
+
+    .floatcard {
+      position: absolute;
+      left: -34px;
+      top: 36px;
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 18px 22px;
+      box-shadow: 0 16px 40px rgba(14, 42, 70, 0.16);
+      width: 200px;
+      z-index: 3;
+      border: 1px solid rgba(223, 231, 239, 0.7);
+    }
+
+    .floatcard small {
+      display: block;
+      color: #77879a;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      font-size: 10px;
+    }
+
+    .floatcard strong {
+      display: block;
+      font: 800 30px/1.1 var(--font-head);
+      color: var(--rose);
+      margin-top: 6px;
+    }
+
+    .floatcard span {
+      color: #5f7187;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .summary {
+      max-width: 1180px;
+      margin: -1px auto 0;
+      padding: 0 24px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .summarygrid {
+      transform: translateY(34px);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 14px 38px rgba(13, 41, 70, 0.08);
+      overflow: hidden;
+    }
+
+    .summaryitem {
+      padding: 24px 28px;
+      border-right: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .summaryitem:last-child {
+      border: 0;
+    }
+
+    .summaryitem small {
+      display: block;
+      color: #7a899a;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .summaryitem strong {
+      display: block;
+      margin-top: 6px;
+      font: 800 20px/1.25 var(--font-head);
+      color: var(--navy);
+    }
+
+    .summaryitem em {
+      font-style: normal;
+      color: var(--rose);
+    }
+
+    .layout {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 98px 24px 80px;
+      display: grid;
+      grid-template-columns: minmax(0, 740px) 320px;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .story p {
+      font-size: 18px;
+      line-height: 1.85;
+      color: #3d5067;
+      margin: 0 0 26px;
+    }
+
+    .story h2 {
+      font: 800 33px/1.18 var(--font-head);
+      letter-spacing: -0.035em;
+      margin: 54px 0 18px;
+      color: var(--navy);
+    }
+
+    .lead {
+      font-size: 21px !important;
+      line-height: 1.65 !important;
+      color: #22354c !important;
+    }
+
+    .dropcap:first-letter {
+      float: left;
+      font: 800 76px/0.78 var(--font-head);
+      padding: 10px 12px 4px 0;
+      color: var(--navy);
+    }
+
+    .pullquote {
+      margin: 44px 0;
+      padding: 12px 0 12px 28px;
+      border-left: 4px solid var(--rose);
+      font: 700 27px/1.45 var(--font-head);
+      letter-spacing: -0.025em;
+      color: #24374f;
+    }
+
+    /* Comparison Table */
+    .households {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+      margin: 28px 0 34px;
+    }
+
+    .households th, .households td {
+      border-top: 1px solid var(--line);
+      text-align: left;
+      padding: 14px 14px 14px 0;
+      vertical-align: top;
+      color: #3d5067;
+    }
+
+    .households th {
+      font-weight: 800;
+      font-family: var(--font-head);
+      color: var(--navy);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Waterfall Step Cascade */
+    .waterfall-box {
+      margin: 38px 0;
+      background: var(--mist);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+    }
+
+    .waterfall-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .waterfall-head h3 {
+      font: 800 22px var(--font-head);
+      color: var(--navy);
+      margin: 0;
+    }
+
+    .waterfall-head span {
+      color: #748499;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .waterfall-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .wf-step {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(13, 41, 70, 0.03);
+    }
+
+    .wf-step .left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .wf-step .num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #f0f4f8;
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 12px;
+      display: grid;
+      place-items: center;
+    }
+
+    .wf-step .title {
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--navy);
+    }
+
+    .wf-step .tag {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      font-family: ui-monospace, monospace;
+    }
+
+    .wf-arrow {
+      text-align: center;
+      color: var(--rose);
+      font-size: 14px;
+      font-weight: 800;
+      margin: -4px 0;
+    }
+
+    .wf-step.final {
+      background: #fff0f2;
+      border-color: #f1b2bc;
+    }
+
+    .wf-step.final .num {
+      background: var(--rose);
+      color: #ffffff;
+    }
+
+    .wf-step.final .title {
+      color: #9e1c31;
+    }
+
+    .wf-step.final .tag {
+      color: var(--rose);
+      font-weight: 800;
+    }
+
+    /* 4-Item Impact Grid */
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 34px 0;
+    }
+
+    .impact-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow: 0 6px 20px rgba(13, 41, 70, 0.045);
+    }
+
+    .impact-card small {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #748598;
+      display: block;
+    }
+
+    .impact-card strong {
+      font: 800 20px/1.25 var(--font-head);
+      color: var(--navy);
+      display: block;
+      margin: 6px 0 6px;
+    }
+
+    .impact-card p {
+      font-size: 13px;
+      color: #607086;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* Insight Banner */
+    .insight {
+      margin: 44px 0;
+      padding: 32px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #fff0f2 0%, #fff8f9 100%);
+      border: 1px solid #f8c2cb;
+      position: relative;
+    }
+
+    .insight:before {
+      content: "INSIGHT";
+      position: absolute;
+      right: 25px;
+      top: 22px;
+      font: 800 10px var(--font-head);
+      letter-spacing: 0.14em;
+      color: var(--rose);
+    }
+
+    .insight h3 {
+      font: 800 24px var(--font-head);
+      margin: 0 0 12px;
+      color: #5c1825;
+    }
+
+    .insight p {
+      font-size: 19px;
+      line-height: 1.6;
+      color: #4c222b;
+      margin: 0;
+    }
+
+    /* Bottom CTA Panel */
+    .cta {
+      margin-top: 48px;
+      padding: 34px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--navy), var(--navy2));
+      color: #ffffff;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .cta h3 {
+      font: 800 24px var(--font-head);
+      margin: 0 0 8px;
+    }
+
+    .cta p {
+      color: #b9c8d7;
+      font-size: 14px;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: #38d7ad;
+      color: #072136;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 13px;
+      padding: 14px 22px;
+      white-space: nowrap;
+      transition: transform 0.15s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 24px;
+    }
+
+    .sidecard {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      background: #ffffff;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 28px rgba(13, 41, 70, 0.055);
+    }
+
+    .sidecard h3 {
+      font: 800 18px var(--font-head);
+      color: var(--navy);
+      margin: 0 0 16px;
+    }
+
+    .progress {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .progress span {
+      height: 5px;
+      flex: 1;
+      background: #e3eaf0;
+      border-radius: 99px;
+    }
+
+    .progress span.on {
+      background: var(--rose);
+    }
+
+    .toc a {
+      display: block;
+      text-decoration: none;
+      padding: 10px 0;
+      border-bottom: 1px solid #edf1f4;
+      color: #5c6e83;
+      font-size: 13px;
+      font-weight: 700;
+      transition: color 0.15s ease;
+    }
+
+    .toc a:hover {
+      color: var(--rose);
+    }
+
+    .toc a:last-child {
+      border: 0;
+    }
+
+    .why {
+      background: #f4f8fb;
+    }
+
+    .why p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #607086;
+      margin-bottom: 18px;
+    }
+
+    .sidebutton {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 999px;
+      background: var(--navy);
+      color: #ffffff;
+      padding: 13px 16px;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .disclaimer {
+      font-size: 11px !important;
+      color: #8593a2 !important;
+      line-height: 1.55 !important;
+      margin-top: 14px !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* Related Stories Section */
+    .related {
+      background: #f3f7fa;
+      border-top: 1px solid var(--line);
+      padding: 70px 24px;
+    }
+
+    .relatedin {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .related h2 {
+      font: 800 32px var(--font-head);
+      color: var(--navy);
+      margin: 0 0 28px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .card small {
+      color: #718197;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      font-size: 10px;
+    }
+
+    .card h3 {
+      font: 800 18px/1.35 var(--font-head);
+      margin: 10px 0 8px;
+      color: var(--navy);
+    }
+
+    .card p {
+      font-size: 13px;
+      line-height: 1.55;
+      color: #6d7e91;
+      margin: 0;
+    }
+
+    .card .arrow {
+      display: block;
+      margin-top: 18px;
+      font-weight: 800;
+      color: var(--blue);
+      font-size: 13px;
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 960px) {
+      .heroin {
+        grid-template-columns: 1fr;
+        padding-top: 48px;
+      }
+      .herofigure {
+        max-width: 720px;
+      }
+      .floatcard {
+        left: 18px;
+        top: 20px;
+      }
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .sidebar {
+        position: static;
+      }
+      .summarygrid {
+        grid-template-columns: 1fr;
+        transform: translateY(20px);
+      }
+      .summaryitem {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .summaryitem:last-child {
+        border-bottom: 0;
+      }
+      .cards {
+        grid-template-columns: 1fr;
+      }
+      .cta {
+        grid-template-columns: 1fr;
+      }
+      .cta .button {
+        justify-self: start;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero h1 { font-size: 38px; }
+      .dek { font-size: 18px; }
+      .heroimage { min-height: 390px; border-radius: 22px; }
+      .floatcard { left: 12px; top: 12px; width: 170px; padding: 14px 16px; }
+      .layout { padding-top: 75px; }
+      .story p { font-size: 17px; }
+      .story h2 { font-size: 28px; }
+      .pullquote { font-size: 22px; }
+      .impact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sticky-toggle" aria-label="Format navigation">
+    <button class="toggle-btn active" id="btn-read" type="button">Read Article</button>
+    <button class="toggle-btn" id="btn-watch" type="button">Watch Summary</button>
+    <button class="toggle-btn" id="btn-listen" type="button">Listen to Deep Dive</button>
+  </div>
+
+  <section class="hero">
+    <div class="heroin">
+      <div>
+        <div class="eyebrow"><span class="dot"></span>Flight Strategy · The Fare Class Trap</div>
+        <h1>The $3,200 Basic Economy Gamble</h1>
+        <p class="dek">Saving $300 on non-changeable tickets felt like disciplined budgeting. Then a fever 36 hours before boarding showed who actually carried the risk.</p>
+        <div class="meta">
+          <span>6 minute read</span>
+          <span>Updated September 2026</span>
+          <span>Illustrative case study</span>
+        </div>
+      </div>
+      <div class="herofigure">
+        <div class="heroimage">
+          <img src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=1600&q=85" alt="Rainy international airport tarmac and boarding gate">
+          <div class="photoquote">“A $300 discount is an expensive trade if the airline owns your dates.”</div>
+        </div>
+        <div class="photocredit">Photo: Unsplash</div>
+        <div class="floatcard">
+          <small>Sunk booking cost</small>
+          <strong>$3,200</strong>
+          <span>Use-it-or-lose-it</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="summary">
+    <div class="summarygrid">
+      <div class="summaryitem">
+        <small>Initial catalyst</small>
+        <strong>Basic Economy restriction ($300 saved)</strong>
+      </div>
+      <div class="summaryitem">
+        <small>Cascade event</small>
+        <strong>Strep diagnosis 36h before takeoff</strong>
+      </div>
+      <div class="summaryitem">
+        <small>Total forfeiture</small>
+        <strong><em>$3,200 lost</em> ($0 airline recovery)</strong>
+      </div>
+    </div>
+  </div>
+
+  <main class="layout">
+    <article class="story">
+      
+      <!-- Video Summary Panel -->
+      <div id="video-container" class="media-container">
+        <div class="video-wrapper">
+          <div style="text-align: center; padding: 24px;">
+            <svg style="width: 48px; height: 48px; margin: 0 auto 12px; display: block; fill: #38d7ad;" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <strong>Interactive Video Briefing: The Fare Class Paradox</strong>
+            <p style="font-size: 12px; margin-top: 4px; color: #94a3b8;">High-definition executive motion summary (1:45)</p>
+          </div>
+        </div>
+        <ol class="shot-list">
+          <li><span class="tc">0:00</span> Mark and Elena book summer flights to Lisbon for a family of four, clicking Basic Economy to trim $300.</li>
+          <li><span class="tc">0:24</span> The fine print was clear: zero flight changes, zero refunds, zero trip credit upon cancellation.</li>
+          <li><span class="tc">0:48</span> At 36 hours prior to departure, their six-year-old tests positive for severe strep throat with a 103°F fever.</li>
+          <li><span class="tc">1:12</span> Standard Main Cabin would have allowed a flight credit minus fees; Basic Economy caused total forfeiture.</li>
+          <li><span class="tc">1:35</span> Asymmetric risk: saving 9% on ticket cost exposed 100% of the entire vacation budget.</li>
+        </ol>
+      </div>
+
+      <!-- Audio Deep Dive Panel -->
+      <div id="audio-container" class="media-container">
+        <div class="audio-wrapper">
+          <button class="audio-play-pill" type="button">
+            <svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            Play Episode (6:12)
+          </button>
+          <div>
+            <strong style="display: block; font-size: 14px; color: var(--navy);">The Anatomy of Asymmetric Pricing</strong>
+            <span style="font-size: 12px; color: #64748b;">Flight Policy Analysis Desk</span>
+          </div>
+        </div>
+        <div class="script">
+          <p><span class="spk">Host</span> It’s the final checkout page. You see the basic fare at $725 and the main cabin fare at $800 per seat. Across four seats, that’s $300.</p>
+          <p><span class="spk">Strategist</span> It feels like a quick win. But you aren’t buying cheaper fuel; you are selling an option back to the airline for pennies on the dollar.</p>
+          <p><span class="spk">Host</span> And when pediatrician visits strike 36 hours before boarding, you discover who actually carries the volatility.</p>
+          <p><span class="spk">Strategist</span> Exactly. The airline sells you non-refundable tickets precisely because human schedules break. When it breaks, they keep the cash and resell the seat.</p>
+        </div>
+      </div>
+
+      <!-- Narrative Content -->
+      <p class="lead dropcap">When Mark and Elena sat down to book their family’s transatlantic holiday, the checkout screen presented an apparently effortless win: a neat banner promising $75 off each ticket by selecting Basic Economy.</p>
+
+      <p>Across four round-trip seats between Boston and Lisbon, that totaled $300 in immediate savings. With hotel reservations, train passes, and museum entries already tallied up, trimming 9% off the flight invoice seemed like textbook household financial discipline.</p>
+
+      <p>They clicked the discounted fare class, ignored the grey warning box about changes, and paid the $3,200 transaction balance.</p>
+
+      <div class="pullquote">Saving $300 feels like financial discipline until you realize you just sold your schedule insurance to the carrier for 9 cents on the dollar.</div>
+
+      <h2 id="illusion">The Anatomy of an Asymmetric Discount</h2>
+
+      <p>Airlines did not invent Basic Economy to be generous. It was engineered to achieve two distinct revenue outcomes: undercut budget carriers on aggregator search engines, and strip away ticket flexibility so customers absorb 100% of operational variance.</p>
+
+      <p>When you purchase standard main cabin airfare, the airline bundles two distinct products: transportation from Point A to Point B, and a call option that permits you to retain travel credit if an illness or emergency arises. Basic Economy strips away the call option while discounting the price by only a tiny fraction of its actuarial value.</p>
+
+      <div class="waterfall-box">
+        <div class="waterfall-head">
+          <h3>The cancellation cascade</h3>
+          <span>5-step breakdown</span>
+        </div>
+        <div class="waterfall-flow">
+          <div class="wf-step">
+            <div class="left"><div class="num">1</div><div class="title">Four Basic Economy Seats</div></div>
+            <div class="tag">$3,200 charged</div>
+          </div>
+          <div class="wf-arrow">↓</div>
+          <div class="wf-step">
+            <div class="left"><div class="num">2</div><div class="title">Child develops strep fever</div></div>
+            <div class="tag">36h before takeoff</div>
+          </div>
+          <div class="wf-arrow">↓</div>
+          <div class="wf-step">
+            <div class="left"><div class="num">3</div><div class="title">Customer service contact</div></div>
+            <div class="tag">Zero change policy</div>
+          </div>
+          <div class="wf-arrow">↓</div>
+          <div class="wf-step">
+            <div class="left"><div class="num">4</div><div class="title">Non-refundable clause enforced</div></div>
+            <div class="tag">$0 credit issued</div>
+          </div>
+          <div class="wf-arrow">↓</div>
+          <div class="wf-step final">
+            <div class="left"><div class="num">5</div><div class="title">Full trip forfeiture</div></div>
+            <div class="tag">$3,200 total loss</div>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="hours-out">Thirty-Six Hours to Boarding</h2>
+
+      <p>On Tuesday morning, two days before departure, their youngest child woke up with a 103°F fever and a swollen throat. By afternoon, the pediatric clinic confirmed acute streptococcal pharyngitis. The pediatrician signed a firm medical directive: no air travel for at least four days.</p>
+
+      <p>Elena called airline customer care, expecting that a certified doctor’s note would permit rescheduling to the following week or generate a credit voucher.</p>
+
+      <p>The agent was empathetic, but contractually bound: Basic Economy tickets bought under this fare code carried a strict <em>no-change, no-credit, non-refundable</em> restriction. Even with documented illness, the airline’s rules barred flight credit or itinerary alterations.</p>
+
+      <table class="households">
+        <thead>
+          <tr>
+            <th>Fare Class</th>
+            <th>Checkout Price</th>
+            <th>Cancellation Outcome</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Basic Economy</strong></td>
+            <td>$3,200 ($800/seat)</td>
+            <td>100% loss. No travel voucher, zero credit, no standby or date shifts allowed.</td>
+          </tr>
+          <tr>
+            <td><strong>Standard Main Cabin</strong></td>
+            <td>$3,500 ($875/seat)</td>
+            <td>$3,500 reusable flight credit retained for up to 12 months with no change fee.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="impact-grid">
+        <div class="impact-card">
+          <small>Asymmetric Risk</small>
+          <strong>The 9% Tradeoff</strong>
+          <p>Saving $300 upfront meant risking $3,200 in total capital. A 10x penalty for a normal childhood illness.</p>
+        </div>
+        <div class="impact-card">
+          <small>Contractual Terms</small>
+          <strong>No Medical Grace</strong>
+          <p>Modern algorithmic fare structures strictly exclude medical exemptions unless third-party trip insurance covers it.</p>
+        </div>
+        <div class="impact-card">
+          <small>The Airline Gain</small>
+          <strong>Double Monetization</strong>
+          <p>The airline kept the full $3,200 and subsequently released the empty seats to last-minute business flyers at peak rates.</p>
+        </div>
+        <div class="impact-card">
+          <small>Credit Card Buffer</small>
+          <strong>Card Exclusions</strong>
+          <p>Many secondary credit card trip cancellation protections exclude basic restrictive fares when voluntarily abandoned.</p>
+        </div>
+      </div>
+
+      <div class="insight">
+        <h3>A discount is only cheap if the trip is certain</h3>
+        <p>If an event is non-negotiable and outside your control—like childhood illness or winter blizzards—saving money by waiving date flexibility is one of the most expensive bets you can make.</p>
+      </div>
+
+      <h2 id="conclusion">Strategic Takeaway</h2>
+
+      <p>When booking travel, flexibility is not a luxury upgrade; it is risk mitigation. Before you accept a fare tier that strips away cancellation and rebooking rights, ask yourself: <em>If someone gets sick or an emergency happens tomorrow, am I comfortable setting this entire sum on fire?</em></p>
+
+      <p>If the answer is no, paying the modest flexibility spread is not an indulgence—it is the cheapest insurance policy you will ever purchase.</p>
+
+      <div class="cta">
+        <div>
+          <h3>Audit your next itinerary before checkout</h3>
+          <p>Evaluate cancellation restrictions, credit card coverage layers, and fare class clauses before buying.</p>
+        </div>
+        <a class="button" href="#">Review Travel Calculator →</a>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="sidecard">
+        <div class="progress">
+          <span class="on"></span>
+          <span class="on"></span>
+          <span></span>
+          <span></span>
+        </div>
+        <h3>Flight Strategy</h3>
+        <div class="toc">
+          <a href="#illusion">The Asymmetric Discount</a>
+          <a href="#hours-out">Thirty-Six Hours to Boarding</a>
+          <a href="#conclusion">Strategic Takeaway</a>
+        </div>
+      </div>
+
+      <div class="sidecard why">
+        <h3>Why this story matters</h3>
+        <p>A $300 flight discount created a $3,200 loss. The upfront savings were prominent; the contract risk was invisible until the fever hit.</p>
+        <a class="sidebutton" href="#">Run fare comparison</a>
+        <p class="disclaimer">Educational case study only. Fare rules, cancelation clauses, and airline policies depend on specific carrier contracts of carriage and jurisdiction.</p>
+      </div>
+    </aside>
+  </main>
+
+  <section class="related" id="related">
+    <div class="relatedin">
+      <h2>Continue Reading</h2>
+      <div class="cards">
+        <a class="card" href="#">
+          <small>Case Study</small>
+          <h3>The $2,400 Mountain Blizzard</h3>
+          <p>A non-refundable cabin looked like a points decision until the storm struck.</p>
+          <span class="arrow">Read story →</span>
+        </a>
+        <a class="card" href="#">
+          <small>Rental Strategy</small>
+          <h3>Primary vs Secondary Rental Coverage</h3>
+          <p>The airport counter waiver is only expensive if your credit card isn't primary.</p>
+          <span class="arrow">Read analysis →</span>
+        </a>
+        <a class="card" href="#">
+          <small>Card Architecture</small>
+          <h3>Credit Card Trip Protection Limits</h3>
+          <p>Discover which premium cards reimburse illness cancellations on basic tickets.</p>
+          <span class="arrow">Review guide →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function() {
+      const btnRead = document.getElementById('btn-read');
+      const btnWatch = document.getElementById('btn-watch');
+      const btnListen = document.getElementById('btn-listen');
+      const vidBox = document.getElementById('video-container');
+      const audBox = document.getElementById('audio-container');
+
+      function resetTabs() {
+        btnRead.classList.remove('active');
+        btnWatch.classList.remove('active');
+        btnListen.classList.remove('active');
+        if (vidBox) vidBox.classList.remove('active');
+        if (audBox) audBox.classList.remove('active');
+      }
+
+      btnRead.addEventListener('click', function() {
+        resetTabs();
+        btnRead.classList.add('active');
+      });
+
+      btnWatch.addEventListener('click', function() {
+        resetTabs();
+        btnWatch.classList.add('active');
+        if (vidBox) vidBox.classList.add('active');
+      });
+
+      btnListen.addEventListener('click', function() {
+        resetTabs();
+        btnListen.classList.add('active');
+        if (audBox) audBox.classList.add('active');
+      });
+    })();
+  </script>
+</body>
+</html>
