@@ -1,3 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A $29 cash-back rebate looked responsible. A six-hour delay made the other card the one that paid for the night.">
+  <title>The Checkout Screen That Almost Left Them on a Terminal Bench — WealthLanding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <!-- data-keep:head-css -->
+  <link rel="stylesheet" href="/blogs/wl-article.css">
+  <!-- /data-keep:head-css -->
+</head>
+<body>
+  <div id="global-header-target"></div>
+
+  <!-- data-keep:media-nav -->
+  <div class="sticky-toggle" aria-label="Choose format">
+    <button class="toggle-btn active" id="btn-read" type="button">Read Article</button>
+    <button class="toggle-btn" id="btn-watch" type="button">Watch Summary</button>
+    <button class="toggle-btn" id="btn-listen" type="button">Listen to Deep Dive</button>
+  </div>
+  <!-- /data-keep:media-nav -->
+
+  <section class="hero">
+    <div class="heroin">
+      <div>
+        <div class="eyebrow"><span class="dot"></span>Smart Spending · Case 09</div>
+        <h1>The Checkout Screen That Almost Left Them on a Terminal Bench</h1>
+        <p class="dek">A $29 cash-back rebate looked responsible. A six-hour delay made the other card the one that paid for the night.</p>
+        <div class="meta">
+          <span>7 minute read</span>
+          <span>Updated Sep 23, 2026</span>
+          <span>Illustrative case study</span>
+        </div>
+      </div>
+      <div class="herofigure">
+        <div class="heroimage">
+          <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1600&q=80" alt="Snow-covered mountains, the kind of trip a cancelled connection never reaches">
+          <div class="photoquote">Twenty-nine dollars felt smart until the runway closed.</div>
+        </div>
+        <div style="font-size:10px;color:#718196;margin-top:8px;text-align:right">Photo: Unsplash</div>
+        <div class="floatcard">
+          <small>Illustrative claim</small>
+          <strong>$1,420</strong>
+          <span>vs a $29 rebate</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
 <div class="summarygrid">
   <div class="stat-cell">
     <p class="stat-label">Tickets Booked</p>
@@ -180,3 +232,40 @@
     </article>
   </div>
 </section>
+
+   <wealthlanding-footer></wealthlanding-footer>
+  <script src="/components/footer.js"></script>
+  <script src="/components/header.js"></script>
+  <!-- data-keep:toggle-js -->
+  <script>
+    document.getElementById('btn-read').addEventListener('click', function() {
+      this.classList.add('active');
+      document.getElementById('btn-watch').classList.remove('active');
+      document.getElementById('btn-listen').classList.remove('active');
+      var vid = document.getElementById('video-container');
+      var aud = document.getElementById('audio-container');
+      if (vid) vid.classList.remove('active');
+      if (aud) aud.classList.remove('active');
+    });
+    document.getElementById('btn-watch').addEventListener('click', function() {
+      this.classList.add('active');
+      document.getElementById('btn-read').classList.remove('active');
+      document.getElementById('btn-listen').classList.remove('active');
+      var vid = document.getElementById('video-container');
+      var aud = document.getElementById('audio-container');
+      if (vid) vid.classList.add('active');
+      if (aud) aud.classList.remove('active');
+    });
+    document.getElementById('btn-listen').addEventListener('click', function() {
+      this.classList.add('active');
+      document.getElementById('btn-read').classList.remove('active');
+      document.getElementById('btn-watch').classList.remove('active');
+      var vid = document.getElementById('video-container');
+      var aud = document.getElementById('audio-container');
+      if (aud) aud.classList.add('active');
+      if (vid) vid.classList.remove('active');
+    });
+  </script>
+  <!-- /data-keep:toggle-js -->
+</body>
+</html>
