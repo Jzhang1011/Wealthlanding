@@ -1,178 +1,72 @@
-.sticky-toggle{position:sticky;top:0;z-index:50;display:flex;justify-content:center;flex-wrap:wrap;gap:8px;padding:12px 16px;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 8px 24px rgba(13,41,70,.06)}
-.toggle-btn{appearance:none;border:1px solid var(--line);background:#fff;color:#334155;border-radius:999px;padding:8px 16px;font:700 13px/1 "DM Sans",system-ui,sans-serif;cursor:pointer}
-.toggle-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-.media-container{display:none;margin:0 0 28px}
-.media-container.active{display:block}
-.video-wrapper{aspect-ratio:16/9;width:100%;background:#0f172a;border-radius:18px;overflow:hidden}
-.video-wrapper iframe,.audio-wrapper iframe{width:100%;height:100%;border:0;display:block}
-.audio-wrapper{background:var(--mist);border:1px solid var(--line);border-radius:18px;overflow:hidden;min-height:102px}
-.shot-list,.script{margin:12px 0 0;padding:0;list-style:none}
-.shot-list li,.script p{margin:0 0 10px;color:#3d5067;font-size:15px}
-.tc,.spk{display:inline-block;min-width:52px;font-weight:800;color:var(--rose);font-size:12px}
-
-.hero{background:linear-gradient(135deg,#fff0f2 0%,#f8fafb 52%,#eef6f8 100%);border-bottom:1px solid var(--line)}
-.heroin{max-width:1180px;margin:auto;padding:68px 24px 56px;display:grid;grid-template-columns:1.04fr .96fr;gap:58px;align-items:center}
-.eyebrow{display:inline-flex;gap:9px;align-items:center;padding:7px 11px;border-radius:999px;background:white;border:1px solid #d7e1ea;color:#596b80;font-size:11px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
-.dot{width:8px;height:8px;background:var(--rose);border-radius:50%}
-.hero h1{font:800 clamp(40px,4.8vw,68px)/1.02 "Manrope";letter-spacing:-.055em;margin:22px 0 20px;max-width:760px}
-.dek{font-size:22px;line-height:1.48;color:#44566d;max-width:650px;margin:0 0 24px}
-.meta{display:flex;flex-wrap:wrap;gap:10px 18px;color:#718196;font-size:13px;font-weight:600}
-.meta span{display:flex;align-items:center;gap:7px}
-.herofigure{position:relative}
-.heroimage{min-height:470px;border-radius:30px;overflow:hidden;box-shadow:var(--shadow);position:relative;background:#ccd8e1}
-.heroimage img{width:100%;height:100%;position:absolute;object-fit:cover}
-.heroimage:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(7,26,47,.76) 100%)}
-.photoquote{position:absolute;left:28px;right:28px;bottom:27px;color:white;z-index:2;font:700 20px/1.35 "Manrope"}
-.floatcard{position:absolute;left:-38px;top:36px;background:white;border-radius:18px;padding:18px 20px;box-shadow:0 14px 40px rgba(14,42,70,.18);width:190px}
-.floatcard small{display:block;color:#77879a;font-weight:800;text-transform:uppercase;letter-spacing:.09em;font-size:10px}
-.floatcard strong{display:block;font:800 28px/1.1 "Manrope";color:var(--rose);margin-top:6px}
-.floatcard span{color:#5f7187;font-size:12px;font-weight:600}
-
-.summary{max-width:1180px;margin:-1px auto 0;padding:0 24px;position:relative}
-.summarygrid{transform:translateY(34px);display:grid;grid-template-columns:repeat(3,1fr);background:white;border:1px solid var(--line);border-radius:22px;box-shadow:0 13px 35px rgba(13,41,70,.09);overflow:hidden}
-.summaryitem{padding:22px 25px;border-right:1px solid var(--line)}
-.summaryitem:last-child{border:0}
-.summaryitem small{display:block;color:#7a899a;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-.summaryitem strong{display:block;margin-top:6px;font:800 20px/1.25 "Manrope"}
-.summaryitem em{font-style:normal;color:var(--rose)}
-
-.layout{max-width:1180px;margin:0 auto;padding:92px 24px 80px;display:grid;grid-template-columns:minmax(0,740px) 320px;gap:72px;align-items:start}
-.story p{font-size:18px;line-height:1.85;color:#3d5067;margin:0 0 26px}
-.story h2{font:800 34px/1.17 "Manrope";letter-spacing:-.035em;margin:58px 0 18px}
-.lead{font-size:22px!important;line-height:1.65!important;color:#263a52!important}
-.dropcap:first-letter{float:left;font:800 76px/.78 "Manrope";padding:12px 12px 4px 0;color:var(--navy)}
-.pullquote{margin:42px 0;padding:10px 0 10px 28px;border-left:4px solid var(--rose);font:700 28px/1.45 "Manrope";letter-spacing:-.025em;color:#24374f}
-.households{width:100%;border-collapse:collapse;font-size:15px;margin:0 0 1.4rem}
-.households th,.households td{border-top:1px solid var(--line);text-align:left;padding:8px 8px 8px 0;vertical-align:top;color:#3d5067}
-
-.waterfall-box{margin:36px 0;background:var(--mist);border:1px solid var(--line);border-radius:24px;padding:26px}
-.waterfall-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
-.waterfall-head h3{font:800 22px "Manrope";margin:0}
-.waterfall-head span{color:#748499;font-size:12px;font-weight:700}
-.waterfall-flow{display:flex;flex-direction:column;gap:10px}
-.wf-step{background:white;border:1px solid var(--line);border-radius:14px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 12px rgba(13,41,70,.03)}
-.wf-step .left{display:flex;align-items:center;gap:12px}
-.wf-step .num{width:28px;height:28px;border-radius:50%;background:#f0f4f8;color:var(--navy);font-weight:800;font-size:12px;display:grid;place-items:center}
-.wf-step .title{font-weight:800;font-size:15px;color:var(--navy)}
-.wf-step .tag{font-size:12px;font-weight:700;color:var(--muted);font-family:ui-monospace,monospace}
-.wf-arrow{text-align:center;color:var(--rose);font-size:14px;font-weight:800;margin:-4px 0}
-.wf-step.final{background:#fff0f2;border-color:#f1b2bc}
-.wf-step.final .num{background:var(--rose);color:white}
-.wf-step.final .title{color:#9e1c31}
-.wf-step.final .tag{color:var(--rose);font-weight:800}
-
-.impact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:32px 0}
-.impact-card{padding:20px;border:1px solid var(--line);border-radius:18px;background:white;box-shadow:0 6px 20px rgba(13,41,70,.045)}
-.impact-card small{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:#748598;display:block}
-.impact-card strong{font:800 20px/1.2 "Manrope";color:var(--navy);display:block;margin:6px 0 4px}
-.impact-card p{font-size:13px;color:#607086;margin:0}
-
-.insight{margin:42px 0;padding:32px;border-radius:24px;background:linear-gradient(135deg,#fff0f2,#fff8f9);border:1px solid #f8c2cb;position:relative}
-.insight:before{content:"INSIGHT";position:absolute;right:25px;top:20px;font:800 10px "Manrope";letter-spacing:.14em;color:var(--rose)}
-.insight h3{font:800 25px "Manrope";margin:0 0 12px}
-.insight p{font-size:19px;line-height:1.6;color:#4c222b;margin:0}
-.cta{margin-top:45px;padding:32px;border-radius:24px;background:linear-gradient(135deg,var(--navy),var(--navy2));color:white;display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center}
-.cta h3{font:800 25px "Manrope";margin:0 0 8px}
-.cta p{color:#b9c8d7;font-size:14px;line-height:1.55;margin:0}
-.button{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:#38d7ad;color:#072136;text-decoration:none;font-weight:800;font-size:13px;padding:14px 20px;white-space:nowrap}
-
-.sidebar{position:sticky;top:24px}
-.sidecard{border:1px solid var(--line);border-radius:22px;padding:22px;background:white;margin-bottom:18px;box-shadow:0 8px 28px rgba(13,41,70,.055)}
-.sidecard h3{font:800 18px "Manrope";margin:0 0 15px}
-.progress{display:flex;align-items:center;gap:8px;margin-bottom:18px}
-.progress span{height:5px;flex:1;background:#e3eaf0;border-radius:99px}
-.progress span.on{background:var(--rose)}
-.toc a{display:block;text-decoration:none;padding:10px 0;border-bottom:1px solid #edf1f4;color:#5c6e83;font-size:13px;font-weight:700}
-.toc a:last-child{border:0}
-.why{background:#f4f8fb}
-.why p{font-size:14px;line-height:1.65;color:#607086}
-.sidebutton{display:block;text-align:center;text-decoration:none;border-radius:999px;background:var(--navy);color:white;padding:13px 16px;font-weight:800;font-size:12px}
-.disclaimer{font-size:11px!important;color:#8593a2!important;line-height:1.55!important;margin-top:12px!important}
-
-.related{background:#f3f7fa;border-top:1px solid var(--line);padding:70px 24px}
-.relatedin{max-width:1180px;margin:auto}
-.related h2{font:800 32px "Manrope";margin:0 0 25px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:white;border:1px solid var(--line);border-radius:20px;padding:22px;text-decoration:none;transition:.2s}
-.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
-.card small{color:#718197;font-weight:800;text-transform:uppercase;letter-spacing:.09em;font-size:10px}
-.card h3{font:800 18px/1.35 "Manrope";margin:10px 0 8px}
-.card p{font-size:13px;line-height:1.55;color:#6d7e91;margin:0}
-.card .arrow{display:block;margin-top:17px;font-weight:800;color:var(--blue)}
-
-@media(max-width:960px){.heroin{grid-template-columns:1fr;padding-top:48px}.herofigure{max-width:720px}.floatcard{left:18px}.layout{grid-template-columns:1fr;gap:35px}.sidebar{position:static}.summarygrid{grid-template-columns:1fr}.summaryitem{border-right:0;border-bottom:1px solid var(--line)}.summaryitem:last-child{border-bottom:0}.cards{grid-template-columns:1fr}.cta{grid-template-columns:1fr}.cta .button{justify-self:start}}
-@media(max-width:620px){.hero h1{font-size:40px}.dek{font-size:19px}.heroimage{min-height:410px;border-radius:22px}.floatcard{left:12px;top:12px}.layout{padding-top:75px}.story p{font-size:17px}.story h2{font-size:29px}.pullquote{font-size:23px}.impact-grid{grid-template-columns:1fr}}
-
-
-  <p class="lead dropcap">The boarding pass printout was creased into quarters when Sandy reached Gate B32 in Denver. Outside the terminal glass, blowing snow swept across the tarmac sideways, burying the baggage carts in gray drifts.</p><p>Sandy and her family had booked a low-fare United flight for an annual winter ski getaway. When she ran the numbers three months earlier, her instinct was simple: charge the $900 flight total to a 2% flat cashback card and pocket eighteen dollars. Instead, she had opened the WealthLanding credit card router to double-check her wallet. The tool returned the Chase Sapphire Reserve®. Sandy hesitated. On everyday retail purchases, the card ranked low in terms of baseline cash back. She nearly ignored it. She booked the tickets on the travel card anyway.</p>
-  <div class="pullquote">A two percent rebate is immediate. An embedded policy protects the entire weekend.</div>
+<p class="lead dropcap">The checkout screen sat open on the kitchen counter while snow fell outside the living room window. Sandy was booking three United Airlines tickets into Colorado for the family’s annual February ski trip.</p><p>Her mouse hovered over a straightforward choice. Her favorite no-annual-fee card returned a predictable 2% cash back. On a $1,450 booking, that was $29 deposited directly into her checking account. It felt responsible, clean, and mathematically optimal. But before clicking submit, she opened the WealthLanding Credit Card Router to compare the transaction across her portfolio.</p>
+  <div class="pullquote">She almost traded a five-hundred-dollar safety net per family member for twenty-nine dollars in cash back.</div>
 
   <h2 id="unseen">What Sandy didn't see</h2>
-  <p>Credit card comparison sites habitually rank products by welcome bonuses and cash rebates. Sandy assumed that higher cashback percentages always meant optimal value. The carrier announcement board proved otherwise.</p><p>At 8:15 PM, the gate agent picked up the microphone: the outbound flight was scrubbed until 11:30 the following morning. The airline offered neither hotel vouchers nor meal scrip for weather disruptions. A standard cashback card would have left the family paying out-of-pocket for rooms, cabs, and emergency supplies. But the card Sandy used carries six-hour trip delay reimbursement. By charging the common-carrier fare to the card, every traveling family member was covered up to $500 for reasonable, necessary expenses.</p>
+  <p>The router showed an unexpected sorting order. For direct flight purchases, her Chase Sapphire Reserve ranked noticeably lower on pure net cash-back return than her unencumbered flat-rate cards. If reward yield were the only column on the spreadsheet, the premium travel card looked like the wrong pick.</p><p>What the headline rebate percentage hid was embedded policy language. Buried in the 48-page Guide to Benefits was a clause on common carrier delay reimbursement: when travel on a covered carrier is delayed six hours or requires an overnight stay, cardholders and immediate family members qualify for up to $500 per person in unreimbursed expenses. Sandy swapped the payment method to the Sapphire card and closed the laptop.</p>
 
   <div class="waterfall-box">
     <div class="waterfall-head">
-      <h3>The coverage waterfall</h3>
+      <h3>The booking waterfall</h3>
       <span>6-Step Chain Reaction</span>
     </div>
     <div class="waterfall-flow">
-      <div class="wf-step"><div class="left"><div class="num">1</div><div class="title">Router chooses insurance over top-tier cashback</div></div><div class="tag">Chase Sapphire Reserve®</div></div>
+      <div class="wf-step"><div class="left"><div class="num">1</div><div class="title">Card selection at airline checkout</div></div><div class="tag">Chose policy over 2% cash</div></div>
       <div class="wf-arrow">↓</div>
-      <div class="wf-step"><div class="left"><div class="num">2</div><div class="title">Winter storm forces flight cancellation</div></div><div class="tag">Denver tarmac halted</div></div>
+      <div class="wf-step"><div class="left"><div class="num">2</div><div class="title">Rocky mountain blizzard grounds flight</div></div><div class="tag">United 1482 cancelled</div></div>
       <div class="wf-arrow">↓</div>
-      <div class="wf-step"><div class="left"><div class="num">3</div><div class="title">Six-hour delay threshold surpassed</div></div><div class="tag">Covered overnight stay</div></div>
+      <div class="wf-step"><div class="left"><div class="num">3</div><div class="title">Rebooking pushes departure to next morning</div></div><div class="tag">14-hour overnight delay</div></div>
       <div class="wf-arrow">↓</div>
-      <div class="wf-step"><div class="left"><div class="num">4</div><div class="title">Auto-protection activates per ticket</div></div><div class="tag">$500 max per traveler</div></div>
+      <div class="wf-step"><div class="left"><div class="num">4</div><div class="title">Trip delay benefit clock trips at 6 hours</div></div><div class="tag">Automatic coverage activates</div></div>
       <div class="wf-arrow">↓</div>
-      <div class="wf-step"><div class="left"><div class="num">5</div><div class="title">Emergency essentials and meal claimed</div></div><div class="tag">Receipts itemized</div></div>
+      <div class="wf-step"><div class="left"><div class="num">5</div><div class="title">Emergency lodging, meal, and gear expenses</div></div><div class="tag">Kept all itemized slips</div></div>
       <div class="wf-arrow">↓</div>
-      <div class="wf-step final"><div class="left"><div class="num">6</div><div class="title">$1,500 total claim reimbursed in full</div></div><div class="tag">Outweighed 2% cashback</div></div>
+      <div class="wf-step final"><div class="left"><div class="num">6</div><div class="title">Claims administrator reimburses out-of-pocket costs</div></div><div class="tag">$1,420 statement credit</div></div>
     </div>
   </div>
 
   <h2 id="twenty-years">Twenty-four hours later</h2>
-  <p>The morning after the stranding, Sandy sat at breakfast with an itemized claims folder. Instead of pacing the terminal carpet, the three of them had checked into a downtown hotel, bought winter layers, and had dinner.</p><table class="households"><thead><tr><th>Household card choice</th><th>Immediate rebate</th><th>Disruption outcome</th></tr></thead><tbody><tr><td>Sandy (protection-first)</td><td>$9 earned in baseline points</td><td>$1,500 in meals, lodging, and winter essentials reimbursed.</td></tr><tr><td>Family on 2% cash card</td><td>$18 flat cash rebate</td><td>Paid $1,100 out of pocket for hotel rooms and winter gear.</td></tr><tr><td>Skiers using debit card</td><td>$0 return</td><td>Terminal bench stay with airline weather liability waived.</td></tr></tbody></table>
+  <p>The connecting flight into Eagle County never boarded. By 5:30 PM, the departure monitors across Terminal B in Denver flashed red. United announced that severe crosswinds had closed the runway until daylight. The rebooking agent printed new boarding passes for 8:15 AM the next morning and handed over three $15 airport meal vouchers. Airline customer service vouchers do not cover a mountain hotel or cold-weather gear when luggage is checked through.</p><p>Instead of camping on terminal benches, Sandy pulled up her card benefits portal. The table below illustrates how different booking strategies perform when severe weather derails an itinerary.</p><table class="households"><thead><tr><th>Strategy</th><th>Reward earned</th><th>Delay exposure</th></tr></thead><tbody><tr><td>Sandy (Premium travel card)</td><td>Lower headline cash rate</td><td>Covered up to $500 per traveler for delay-related essentials.</td></tr><tr><td>The 2% cash-back card</td><td>$29 deposited to bank</td><td>Zero trip delay coverage; all overnight lodging paid out of pocket.</td></tr><tr><td>Third-party travel portal</td><td>Third-party reward points</td><td>Often requires navigating multiple claims desks between broker and carrier.</td></tr></tbody></table>
 
   <div class="impact-grid">
-    <div class="impact-card"><small>Trip delay coverage</small><strong>6-Hour trigger</strong><p>Covers unreimbursed food, room charges, and essentials when flights are delayed past six hours.</p></div>
-    <div class="impact-card"><small>Luggage protection</small><strong>Baggage delay</strong><p>Reimburses clothing and toiletries if equipment or bags arrive late to your destination resort.</p></div>
-    <div class="impact-card"><small>Cashback lens</small><strong>Rebate trade-off</strong><p>A 1% point gap on a $900 plane ticket equals $9. One airport incident erases that difference.</p></div>
-    <div class="impact-card"><small>Family coverage</small><strong>Per-person limits</strong><p>Eligible dependents traveling on the same itinerary each access the policy maximum.</p></div>
+    <div class="impact-card"><small>Overnight stay</small><strong>Hotel & transport</strong><p>A warm downtown hotel and ground rides totaled $380, fully covered by cardholder benefits.</p></div>
+    <div class="impact-card"><small>Dinner in town</small><strong>Family meal</strong><p>A relaxed sit-down dinner near Union Station replaced airport food court lines.</p></div>
+    <div class="impact-card"><small>Weather gear</small><strong>Warm designer jacket</strong><p>With ski bags checked through, a proper winter coat ensured her daughter stayed warm.</p></div>
+    <div class="impact-card"><small>Winter skin care</small><strong>La Mer skin care</strong><p>Sub-zero cabin air called for essential hydration creams, claimed under toiletry provisions.</p></div>
   </div>
 
-  <p>Sandy slipped the receipt into the side pocket of her new down parka. <em>"The 2% cashback would have bought two airport coffees."</em></p><p><em>"Points pay for the seat,"</em> her partner said. <em>"The terms on page twenty pay for the trip."</em></p>
+  <p>Sandy’s husband looked at the dinner receipt and smiled nervously. <em>"Are you certain we are allowed to submit this?"</em></p><p><em>"The benefits guide explicitly lists lodging, meals, and necessary personal items,"</em> Sandy said. <em>"Save the paper receipt."</em></p>
 
   <div class="insight">
-    <h3>Cashback is arithmetic. Coverage is risk management.</h3>
-    <p>Credit card cashback is still an important consideration for daily groceries and gas. But when booking long-distance transit, peace of mind with card benefits outweighs baseline cashback margins.</p>
+    <h3>One card choice. Six layers of protection.</h3>
+    <p>Credit card cash back is still an important consideration on recurring monthly bills. But on complex family travel, having the peace of mind that comes with robust built-in card protections far outweighs an extra percentage point of cash.</p>
   </div>
 
-  <h2 id="conclusion">The overnight lesson</h2>
-  <p>Before buying airline tickets, do not look only at the cashback percentage in the grid. Check the delay triggers, the per-ticket caps, and the baggage policies attached to the card profile.</p><p>For the full breakdown of how Sandy filed her documentation and received check reimbursement, view the step-by-step account: <a href="https://www.wealthlanding.com/tools/credit-card.html" style="color:var(--blue);font-weight:700">Sandy’s flight was delayed and she has to get on a different flight the next day. She and her family traveling with her got compensated up to 500 dollars each person which they used to buy a designer jacket, la mer skin care and enjoyed a good meal at a local restaurant</a>.</p>
+  <h2 id="conclusion">The lesson</h2>
+  <p>Review the benefits guide before clicking buy. Cash back pays pennies at checkout, but primary delay and interruption insurance protects thousands of dollars when travel plans unravel.</p><p>If you find yourself stranded overnight, see how Sandy handled her delay: <a href="/blogs/Smart_spending/sandy_flight_delay_reimbursement.html">Sandy’s flight was delayed and she had to get on a different flight the next day</a>.</p>
 
   <div class="cta">
     <div>
-      <h3>Route your next trip through the card router</h3>
-      <p>Compare built-in delay policies, primary auto insurance, and baseline reward structures before you book.</p>
+      <h3>Route your purchases to the right card</h3>
+      <p>Model whether points, cash back, or embedded travel protections offer the highest total value for your upcoming family trips.</p>
     </div>
-    <a class="button" href="https://www.wealthlanding.com/tools/credit-card.html">Find your best card →</a>
+    <a class="button" href="[https://www.wealthlanding.com/tools/credit-card.html](https://www.wealthlanding.com/tools/credit-card.html)">Find the best card to use →</a>
   </div>
 </article>
 
 <aside class="sidebar">
   <div class="sidecard">
-    <div class="progress"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
-    <h3>Case study 8 of 8</h3>
+    <div class="progress"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+    <h3>Case study 9 of 12</h3>
     <div class="toc">
       <a href="#unseen">What Sandy didn't see</a>
       <a href="#twenty-years">Twenty-four hours later</a>
-      <a href="#conclusion">The overnight lesson</a>
+      <a href="#conclusion">The lesson</a>
     </div>
   </div>
   <div class="sidecard why">
     <h3>Why this story matters</h3>
-    <p>A 2% rebate pays pocket money. Built-in travel delay protection safeguards the family balance sheet against flight cancellations.</p>
-    <a class="sidebutton" href="https://www.wealthlanding.com/tools/credit-card.html">Launch credit card router</a>
-    <p class="disclaimer">Educational illustration only. Credit card terms, delay minimums, and insurance exclusions vary by issuer and account agreement.</p>
+    <p>A credit card is not just a payment vehicle. It is a secondary insurance contract that cushions unexpected travel disasters.</p>
+    <a class="sidebutton" href="[https://www.wealthlanding.com/tools/credit-card.html](https://www.wealthlanding.com/tools/credit-card.html)">Optimize my wallet</a>
+    <p class="disclaimer">Educational illustration only. Lifetime costs depend on tax legislation, Medicare tiers, asset growth rates, and individual retirement timelines.</p>
   </div>
 </aside>
