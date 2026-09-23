@@ -74,3 +74,44 @@ title: "The $2,400 Mountain Blizzard: Why the Best Card Isn't Always the One wit
     <p class="disclaimer">Educational illustration only. Travel perks, airline status qualification metrics, baggage policies, and standby prioritization vary by carrier and ticket class.</p>
   </div>
 </aside>
+<script>
+  (function() {
+    const tripsEl = document.getElementById('calc-trips');
+    const fareDiffEl = document.getElementById('calc-fare-diff');
+    const bagsEl = document.getElementById('calc-bags');
+    const resFareSavedEl = document.getElementById('res-fare-saved');
+    const resFeesWaivedEl = document.getElementById('res-fees-waived');
+    const resNetOutcomeEl = document.getElementById('res-net-outcome');
+
+    function updateCalculator() {
+      const trips = parseInt(tripsEl.value, 10);
+      const fareDiff = parseInt(fareDiffEl.value, 10);
+      const checksBags = bagsEl.value === 'yes';
+
+      const fareSavings = trips * fareDiff;
+      
+      const bagFeeSavings = checksBags ? (trips * 70) : 0;
+      const seatFeeSavings = trips * 25;
+      const emergencyStandbyValue = 50; 
+      const totalFeesWaived = bagFeeSavings + seatFeeSavings + emergencyStandbyValue;
+
+      const netBenefit = totalFeesWaived - fareSavings;
+
+      resFareSavedEl.textContent = '$' + fareSavings;
+      resFeesWaivedEl.textContent = '$' + totalFeesWaived;
+
+      if (netBenefit >= 0) {
+        resNetOutcomeEl.textContent = '+$' + netBenefit + '/yr';
+        resNetOutcomeEl.className = 'text-2xl font-bold font-mono text-emerald-400';
+      } else {
+        resNetOutcomeEl.textContent = '-$' + Math.abs(netBenefit) + '/yr';
+        resNetOutcomeEl.className = 'text-2xl font-bold font-mono text-amber-400';
+      }
+    }
+
+    tripsEl.addEventListener('change', updateCalculator);
+    fareDiffEl.addEventListener('change', updateCalculator);
+    bagsEl.addEventListener('change', updateCalculator);
+    updateCalculator();
+  })();
+</script>
