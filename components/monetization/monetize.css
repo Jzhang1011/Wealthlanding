@@ -1,0 +1,60 @@
+/* Shared monetization toolkit — extends city-page .leadbox / .ad look */
+.wl-monetize { display: flex; flex-direction: column; gap: 0; }
+.wl-monetize .wl-msg {
+  margin-top: 10px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.wl-monetize .wl-msg.ok { color: #17633d; }
+.wl-monetize .wl-msg.err { color: #9b0d18; }
+.wl-monetize .leadbox .wl-msg.ok,
+.wl-monetize .leadbox .wl-msg.err { color: #e8edf7; }
+.wl-monetize .leadbox .wl-msg.ok { color: #b8f0c8; }
+.wl-monetize .leadbox .wl-msg.err { color: #ffc9ce; }
+.wl-monetize .wl-field { margin: 8px 0 0; }
+.wl-monetize .wl-field label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+  opacity: 0.9;
+}
+.wl-monetize .leadbox input,
+.wl-monetize .leadbox select,
+.wl-monetize .ad input,
+.wl-monetize .ad select {
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: 12px;
+  margin: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+.wl-monetize .ad input,
+.wl-monetize .ad select {
+  border: 1px solid #d8deea;
+  background: #fff;
+}
+.wl-monetize .wl-actions { margin-top: 10px; }
+.wl-monetize .wl-actions button,
+.wl-monetize .wl-actions .btn {
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+}
+.wl-monetize .wl-actions button:disabled { opacity: 0.65; cursor: wait; }
+.wl-monetize .wl-disclosure {
+  font-size: 0.72rem;
+  color: #6b7a93;
+  line-height: 1.4;
+  margin: 4px 0 14px;
+}
+.wl-monetize .wl-coming-soon {
+  font-size: 0.84rem;
+  margin-top: 8px;
+  color: #5a6a84;
+}
+.wl-monetize .ad .wl-notify-form { margin-top: 10px; }

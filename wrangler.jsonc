@@ -2,8 +2,19 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "wealthlanding",
   "compatibility_date": "2026-09-22",
+  "main": "workers/monetize.js",
   "assets": {
     "directory": "./",
-    "not_found_handling": "404-page"
-  }
+    "not_found_handling": "404-page",
+    "binding": "ASSETS"
+  },
+  // Create this dataset once in the Cloudflare dashboard:
+  // Workers & Pages → wealthlanding → Settings → Analytics Engine
+  // Dataset name must match below (wl_interest). Free tier is enough for click beacons.
+  "analytics_engine_datasets": [
+    {
+      "binding": "INTEREST",
+      "dataset": "wl_interest"
+    }
+  ]
 }

@@ -1,0 +1,115 @@
+{
+  "kitFormAction": "https://app.kit.com/forms/9874203/subscriptions",
+  "kitFormId": "9874203",
+  "disclosure": "Some links and referrals may be compensated. This does not change our editorial standards. WealthLanding is educational, not tax, legal, or insurance advice.",
+  "offers": [
+    {
+      "id": "budget-calculator",
+      "type": "lead-capture",
+      "enabled": true,
+      "heading": "Free {city} retirement toolkit",
+      "text": "{city} Retirement Budget Calculator + Roth Conversion Scenario Sheet",
+      "buttonLabel": "Get the calculator",
+      "interest": "calculator",
+      "style": "leadbox"
+    },
+    {
+      "id": "health-insurance",
+      "type": "outbound",
+      "enabled": true,
+      "label": "Sponsored placement",
+      "heading": "International Health Insurance",
+      "text": "Compare global medical plans for retirees living in or near {city}.",
+      "buttonLabel": "Compare plans",
+      "interest": "health-insurance",
+      "destination": "",
+      "style": "ad"
+    },
+    {
+      "id": "advisor-referral",
+      "type": "referral-request",
+      "enabled": true,
+      "label": "Advisor referral",
+      "heading": "Cross-border tax review",
+      "text": "Best for Roth conversions, local tax residency, and state domicile exits related to {city}.",
+      "buttonLabel": "Request a referral",
+      "interest": "advisor-referral",
+      "style": "ad",
+      "topics": [
+        "Roth conversion",
+        "Local tax residency",
+        "State domicile exit",
+        "Other"
+      ]
+    }
+  ],
+  "cityOverrides": {
+    "Barcelona": {
+      "health-insurance": {
+        "heading": "Spain Health Insurance",
+        "text": "Compare private medical plans that may support long-stay visa applications."
+      },
+      "advisor-referral": {
+        "heading": "Spain/U.S. tax review",
+        "text": "Best for Roth conversions, Spanish residency, wealth tax, and U.S. state domicile exits."
+      }
+    },
+    "Auckland": {
+      "advisor-referral": {
+        "heading": "U.S.-New Zealand tax review",
+        "text": "Best for Roth conversions, New Zealand tax residency, state domicile exits, and estate planning."
+      }
+    },
+    "Sydney": {
+      "advisor-referral": {
+        "heading": "U.S.-Australia tax review",
+        "text": "Best for Roth conversions, Australian tax residency, state domicile exits, and estate planning."
+      }
+    },
+    "Rome": {
+      "advisor-referral": {
+        "heading": "U.S.-Italy tax review",
+        "text": "Best for Roth conversions, Italian tax residency, state domicile exits, and estate planning."
+      }
+    },
+    "Merida": {
+      "advisor-referral": {
+        "heading": "U.S.–Mexico tax review",
+        "text": "Best for Roth conversions, state domicile exits, and Mexico tax residency review."
+      }
+    },
+    "Lisbon": {
+      "budget-calculator": {
+        "heading": "Get the Portugal retirement checklist",
+        "text": "Relocation checklist and Roth conversion planner for retiring in or near {city}.",
+        "buttonLabel": "Send me the checklist"
+      },
+      "advisor-referral": {
+        "heading": "Cross-border tax advisor",
+        "text": "Ideal for U.S.–Portugal CPA needs, Roth conversion modeling, and state residency exit planning."
+      },
+      "health-insurance": {
+        "heading": "Private health insurance quote",
+        "text": "Route to brokers by age, visa type, pre-existing conditions, and region near {city}."
+      }
+    },
+    "Kuala Lumpur": {
+      "budget-calculator": {
+        "heading": "Get the KL retirement checklist",
+        "text": "Printable 60–90 day test-stay plan for {city}.",
+        "buttonLabel": "Send me the checklist"
+      }
+    },
+    "Zurich": {
+      "budget-calculator": {
+        "heading": "Get the Zurich retirement checklist",
+        "text": "Printable 60–90 day test-stay plan for {city}.",
+        "buttonLabel": "Send me the checklist"
+      },
+      "advisor-referral": {
+        "heading": "Cross-border tax review",
+        "text": "U.S.–Swiss tax advisors for Roth, pension, estate, and wealth-tax planning."
+      }
+    }
+  }
+}
