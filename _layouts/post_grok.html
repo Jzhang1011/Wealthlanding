@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9JMJJ5CJR4');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  {% if page.full_bleed %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/blogs/wl-article.css">
+  {% else %}
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --royal: #2563eb;
+      --emerald: #02B17D;
+      --navy: #0B132B;
+    }
+    body { margin: 0; font-family: Inter, system-ui, sans-serif; background: #fff; color: #0F172A; }
+    .media-container { display: none; }
+    .media-container.active { display: block; }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  {% endif %}
+</head>
+<body>
+  <div id="global-header-target"></div>
+  <div class="sticky-toggle" aria-label="Choose format">
+    <button class="toggle-btn active" id="btn-read" type="button">Read Article</button>
+    <button class="toggle-btn" id="btn-watch" type="button">Watch Summary</button>
+    <button class="toggle-btn" id="btn-listen" type="button">Listen to Deep Dive</button>
+  </div>
+  {% if page.full_bleed %}
+  {{ content }}
+  {% else %}
+  <div class="article-container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    {{ content }}
+  </div>
+  {% endif %}
+  <script>
+    document.getElementById('btn-read').addEventListener('click', function() {
+      this.classList.add('active');
+      document.getElementById('btn-watch').classList.remove('active');
+      document.getElementById('btn-listen').classList.remove('active');
+      var vid = document.getElementById('video-container');
+      var aud = document.getElementById('audio-container');
+      if (vid) vid.classList.remove('active');
+      if (aud) aud.classList.remove('active');
+    });
+    document.getElementById('btn-watch').addEventListener('click', function() {
+      this.classList.add('active');
+      document.getElementById('btn-read').classList.remove('active');
+      document.getElementById('btn-listen').classList.remove('active');
+      var vid = document.getElementById('video-container');
+      var aud = document.getElementById('audio-container');
+      if (vid) vid.classList.add('active');
+      if (aud) aud.classList.remove('active');
+    });
+    document.getElementById('btn-listen').addEventListener('click', function() {
+      this.classList.add('active');
+      document.getElementById('btn-read').classList.remove('active');
+      document.getElementById('btn-watch').classList.remove('active');
+      var vid = document.getElementById('video-container');
+      var aud = document.getElementById('audio-container');
+      if (aud) aud.classList.add('active');
+      if (vid) vid.classList.remove('active');
+    });
+  </script>
+  <wealthlanding-footer></wealthlanding-footer>
+  <script src="/components/footer.js"></script>
+  <script src="/components/header.js"></script>
+</body>
+</html>
