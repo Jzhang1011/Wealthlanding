@@ -242,7 +242,7 @@ if (!customElements.get('wealthlanding-footer')) {
   customElements.define('wealthlanding-footer', WealthLandingFooter);
 }
 
-/* Overseas hub: retarget legacy Topic/cities CTAs to guides/* on the hub page only */
+/* Overseas hub: retarget legacy Topic/guides CTAs to canonical pages (cities/* deep dives; guides/* for London/LA/Vancouver) on the hub page only */
 (function () {
   try {
     var path = (location && location.pathname) || '';
