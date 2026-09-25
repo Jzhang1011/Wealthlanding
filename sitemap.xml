@@ -39,25 +39,25 @@
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/retirement_profiles.html</loc></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/retirement_feasibility_engine.html</loc></url>
 
-  <!-- Overseas city guides (canonical) -->
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/auckland.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/bangkok.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/barcelona.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/da_nang.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/hong_kong.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/kuala_lumpur.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/lisbon.html</loc></url>
+  <!-- Overseas city guides (canonical deep dives in cities/; London/LA/Vancouver still in guides/) -->
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/auckland.html</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/bangkok.html</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/barcelona.html</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/da_nang.html</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/hong_kong.html</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/kuala_lumpur.html</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/lisbon.html</loc><lastmod>2026-09-25</lastmod></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/london.html</loc></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/los_angeles.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/merida.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/rome.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/seoul.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/shanghai.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/singapore.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/sydney.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/tokyo.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/merida.html</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/rome.html</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/seoul.html</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/shanghai.html</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/singapore.html</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/sydney.html</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/tokyo.html</loc><lastmod>2026-09-25</lastmod></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/vancouver.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/zurich.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/zurich.html</loc><lastmod>2026-09-25</lastmod></url>
 
   <!-- Insights / blogs -->
   <url><loc>https://www.wealthlanding.com/blogs/happy_retirement.html</loc></url>
