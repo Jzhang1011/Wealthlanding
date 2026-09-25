@@ -1,0 +1,329 @@
+{
+  "_about": "City summary box data for /Retirement-simulator/cities/<slug>.html. Keyed by the cities/ filename slug. Content restored verbatim from the former guides/<slug>.html pages (origin/main 6dc6010). Rendered by /components/city-summary/city-summary.js. Omit a field rather than inventing it.",
+  "healthcareLink": {
+    "href": "/Retirement-simulator/healthcare_international_comparison.html",
+    "text": "International healthcare strategy"
+  },
+  "cities": {
+    "auckland": {
+      "city": "Auckland",
+      "country": "New Zealand",
+      "countryCode": "NZ",
+      "tier": "Tier 4",
+      "badgeLabel": "Anglophone",
+      "whoFor": "Anglophone Pacific lifestyle seekers who can fund NZ-level housing and healthcare premiums.",
+      "monthlyRange": "$5,100–$7,100",
+      "rangeLabel": "Labeled illustrative · USD",
+      "costNote": "Educational snapshots for the $2M / 4% overseas directory — not live quotes or advice. Visa/tax rules change; verify with official sources.",
+      "healthcare": "Public care for eligible residents; do not assume U.S. Medicare travels with you.",
+      "visa": "Residence categories have age/income/investment criteria that change — verify with Immigration NZ.",
+      "disclaimer": "Educational only — not immigration, tax, investment, or legal advice."
+    },
+    "bangkok": {
+      "city": "Bangkok",
+      "country": "Thailand",
+      "countryCode": "TH",
+      "tier": "Tier 1",
+      "badgeLabel": "High cost-effectiveness",
+      "tagline": "Comfortable Southeast Asia hub with frequent travel options",
+      "whoFor": "Retirees who want strong value for money, private healthcare access, and an easy base for regional SE Asia travel.",
+      "fit": [
+        "Budget-conscious urban retirees",
+        "Snowbirds testing SE Asia",
+        "Private healthcare + travel hub seekers"
+      ],
+      "mismatch": [
+        "Quiet small-town preferences",
+        "Anyone needing U.S. Medicare for routine care"
+      ],
+      "monthlyRange": "$2,000–$3,000",
+      "rangeLabel": "Labeled illustrative · couple-style spend · USD",
+      "costNote": "Educational snapshots aligned with the overseas hub $2M / 4% directory — not live quotes or personalized advice. Visa and tax rules change; confirm with official sources and licensed professionals.",
+      "healthcare": "Private hospitals are widely used by expats. Traditional Medicare does not cover routine care abroad — budget international private insurance and evacuation options.",
+      "visa": "Thailand long-stay and retirement-oriented pathways change over time (income proofs, stay lengths, program names). Treat this as directional research only — confirm with official Thai sources or qualified counsel.",
+      "disclaimer": "WealthLanding provides educational information only. Nothing here is immigration, tax, investment, or legal advice."
+    },
+    "barcelona": {
+      "city": "Barcelona",
+      "country": "Spain",
+      "countryCode": "ES",
+      "tier": "Tier 2",
+      "badgeLabel": "Mediterranean",
+      "tagline": "Mediterranean lifestyle with EU access and walkable neighborhoods",
+      "whoFor": "Retirees drawn to coastal European living, café culture, and Spain’s non-lucrative / residency pathways — without assuming Barcelona is the cheapest Spanish city.",
+      "fit": [
+        "Europe-oriented walkability seekers",
+        "Climate + culture balance",
+        "Regional EU weekend travelers"
+      ],
+      "mismatch": [
+        "Ultra-low-budget targets",
+        "Tourist-center noise intolerance"
+      ],
+      "monthlyRange": "$3,500–$4,500",
+      "rangeLabel": "Labeled illustrative · couple-style spend · USD",
+      "costNote": "Educational snapshots aligned with the overseas hub $2M / 4% directory — not live quotes or personalized advice. Visa and tax rules change; confirm with official sources and licensed professionals.",
+      "healthcare": "Spain’s public system access depends on residency; private care is common during transitions. Plan coverage before moving; do not rely on U.S. Medicare abroad.",
+      "visa": "Non-lucrative and other residency routes typically require income proofs, insurance, and documentation that evolve. Verify with Spanish consulates; not immigration advice.",
+      "disclaimer": "WealthLanding provides educational information only. Nothing here is immigration, tax, investment, or legal advice."
+    },
+    "da_nang": {
+      "city": "Da Nang",
+      "country": "Vietnam",
+      "countryCode": "VN",
+      "tier": "Tier 1",
+      "badgeLabel": "High cost-effectiveness",
+      "tagline": "Affordable beachside living with regional SE Asia access",
+      "whoFor": "Retirees who want beach access, low monthly burn, and a quieter alternative to Bangkok or Chiang Mai.",
+      "fit": [
+        "Budget-conscious coastal retirees",
+        "Snowbirds testing Vietnam",
+        "Expat communities near the beach"
+      ],
+      "mismatch": [
+        "Need for extensive English everywhere",
+        "Anyone relying on U.S. Medicare for routine care"
+      ],
+      "monthlyRange": "$1,550–$2,500",
+      "rangeLabel": "Labeled illustrative · couple-style spend · USD",
+      "costNote": "Educational snapshots aligned with the overseas hub $2M / 4% directory — not live quotes or personalized advice. Visa and tax rules change; confirm with official sources and licensed professionals.",
+      "healthcare": "Private clinics and hospitals serve many expats in major coastal cities. Traditional Medicare does not cover routine care abroad — budget international private insurance and evacuation options.",
+      "visa": "Vietnam long-stay options change (visa exemptions, e-visas, temporary residence). Treat this as directional research only — confirm with official Vietnamese sources or qualified counsel.",
+      "disclaimer": "WealthLanding provides educational information only. Nothing here is immigration, tax, investment, or legal advice."
+    },
+    "hong_kong": {
+      "city": "Hong Kong",
+      "country": "Hong Kong SAR",
+      "countryCode": "HK",
+      "tier": "Tier 5",
+      "badgeLabel": "Extreme cost",
+      "tagline": "Ultra-dense financial hub with world-class transit",
+      "whoFor": "Retirees prioritizing English-friendly services, dense transit, and Asia connectivity — with budgets that can absorb extreme housing costs.",
+      "fit": [
+        "Finance/Asia travel hubs",
+        "Transit-first urbanists",
+        "High housing budgets"
+      ],
+      "mismatch": [
+        "Space-seeking suburban lifestyles",
+        "Cost-arbitrage seekers"
+      ],
+      "monthlyRange": "$8,000–$10,000",
+      "rangeLabel": "Labeled illustrative · couple-style spend · USD",
+      "costNote": "Educational snapshots aligned with the overseas hub $2M / 4% directory — not live quotes or personalized advice. Visa and tax rules change; confirm with official sources and licensed professionals.",
+      "healthcare": "Strong private hospital network; public queues vary. International insurance is common for expats. U.S. Medicare does not cover routine care in Hong Kong.",
+      "visa": "Long-stay pathways (investment, employment-adjacent, other) change and are documentation-heavy. Confirm with official HKSAR sources or counsel; educational only.",
+      "disclaimer": "WealthLanding provides educational information only. Nothing here is immigration, tax, investment, or legal advice."
+    },
+    "kuala_lumpur": {
+      "city": "Kuala Lumpur",
+      "country": "Malaysia",
+      "countryCode": "MY",
+      "tier": "Tier 1",
+      "badgeLabel": "Medical hub",
+      "whoFor": "SE Asia value with condo-modern living and private hospital depth.",
+      "monthlyRange": "$2,500–$3,500",
+      "rangeLabel": "Labeled illustrative · USD",
+      "costNote": "Educational snapshots for the $2M / 4% overseas directory — not live quotes or advice. Visa/tax rules change; verify with official sources.",
+      "healthcare": "Regional medical hub; plan private insurance — Medicare generally will not cover routine care overseas.",
+      "visa": "Long-stay programs and income/deposit thresholds change — confirm with official sources.",
+      "disclaimer": "Educational only — not immigration, tax, investment, or legal advice."
+    },
+    "lisbon": {
+      "city": "Lisbon",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "tier": "Tier 1",
+      "badgeLabel": "Europe access",
+      "tagline": "European coastal lifestyle with mild weather and strong private healthcare",
+      "whoFor": "Retirees who want EU-adjacent lifestyle and walkable neighborhoods — without assuming Portugal is the cheapest option.",
+      "fit": [
+        "Europe-oriented retirees",
+        "Climate + walkability seekers",
+        "Regional weekend travelers"
+      ],
+      "mismatch": [
+        "Ultra-low-budget early retirees",
+        "Assuming old NHR tax rules still apply unchanged"
+      ],
+      "monthlyRange": "$3,000–$4,000",
+      "rangeLabel": "Labeled illustrative · couple-style spend · USD",
+      "costNote": "Educational snapshots aligned with the overseas hub $2M / 4% directory — not live quotes or personalized advice. Visa and tax rules change; confirm with official sources and licensed professionals.",
+      "healthcare": "Private care is common for foreign residents; public access depends on residency. Plan coverage before moving; do not rely on U.S. Medicare abroad.",
+      "visa": "Residency pathways often hinge on passive income, remote work, or other criteria that change (historically including D7-style routes). Tax regimes evolve — verify with official Portuguese authorities; not immigration advice.",
+      "disclaimer": "WealthLanding provides educational information only. Nothing here is immigration, tax, investment, or legal advice."
+    },
+    "merida": {
+      "city": "Merida",
+      "country": "Mexico",
+      "countryCode": "MX",
+      "tier": "Tier 1",
+      "badgeLabel": "High cost-effectiveness",
+      "tagline": "Safe colonial-city lifestyle with Yucatán value",
+      "whoFor": "Retirees who want a Spanish-speaking Americas base with colonial architecture, lower costs than U.S. Sun Belt peers, and an established expat scene.",
+      "fit": [
+        "U.S./Canada snowbirds",
+        "Colonial-home renovators",
+        "Warm-climate budget stretchers"
+      ],
+      "mismatch": [
+        "Cool-climate preferences",
+        "Anyone assuming temporary tourist stays equal residency"
+      ],
+      "monthlyRange": "$1,950–$2,900",
+      "rangeLabel": "Labeled illustrative · couple-style spend · USD",
+      "costNote": "Educational snapshots aligned with the overseas hub $2M / 4% directory — not live quotes or personalized advice. Visa and tax rules change; confirm with official sources and licensed professionals.",
+      "healthcare": "Private hospitals and clinics are commonly used by foreign residents. Do not rely on U.S. Medicare for routine care in Mexico — plan private coverage and local provider shortlists.",
+      "visa": "Mexico temporary/permanent residency pathways often hinge on income or assets proofs that change. Confirm with Mexican consulates or licensed counsel; not immigration advice.",
+      "disclaimer": "WealthLanding provides educational information only. Nothing here is immigration, tax, investment, or legal advice."
+    },
+    "rome": {
+      "city": "Rome",
+      "country": "Italy",
+      "countryCode": "IT",
+      "tier": "Tier 2",
+      "badgeLabel": "Culture hub",
+      "tagline": "Historic Mediterranean base with walkable neighborhoods and EU travel",
+      "whoFor": "Retirees who prioritize culture, food, and European train access over pure cost arbitrage — and can navigate Italian bureaucracy.",
+      "fit": [
+        "Culture and food-first retirees",
+        "Walkable historic neighborhoods",
+        "Regional EU travelers"
+      ],
+      "mismatch": [
+        "Low-friction paperwork seekers",
+        "Ultra-low SE Asia budgets"
+      ],
+      "monthlyRange": "$3,800–$6,200",
+      "rangeLabel": "Labeled illustrative · couple-style spend · USD",
+      "costNote": "Educational snapshots aligned with the overseas hub $2M / 4% directory — not live quotes or personalized advice. Visa and tax rules change; confirm with official sources and licensed professionals.",
+      "healthcare": "Strong public/private hospital depth in the capital; access depends on legal status and insurance. Plan private cover for visa transitions; Medicare does not substitute.",
+      "visa": "Italy's elective residence and related pathways typically require passive income, housing, and insurance proofs. Rules are discretionary and change — confirm with consulates or counsel; not legal advice.",
+      "disclaimer": "WealthLanding provides educational information only. Nothing here is immigration, tax, investment, or legal advice."
+    },
+    "seoul": {
+      "city": "Seoul",
+      "country": "South Korea",
+      "countryCode": "KR",
+      "tier": "Tier 2",
+      "badgeLabel": "Balanced",
+      "tagline": "High-tech capital with exceptional healthcare depth",
+      "whoFor": "Retirees who want world-class transit, food culture, and medical infrastructure — and can absorb Tier 2 urban costs.",
+      "fit": [
+        "Healthcare-first planners",
+        "Transit-oriented urbanists",
+        "Northeast Asia travelers"
+      ],
+      "mismatch": [
+        "Ultra-low-budget early retirees",
+        "Those needing quiet small-town living"
+      ],
+      "monthlyRange": "$3,500–$5,000",
+      "rangeLabel": "Labeled illustrative · couple-style spend · USD",
+      "costNote": "Educational snapshots aligned with the overseas hub $2M / 4% directory — not live quotes or personalized advice. Visa and tax rules change; confirm with official sources and licensed professionals.",
+      "healthcare": "Korea is widely regarded for advanced care and medical tourism. Eligibility for national insurance depends on residency status; newcomers often start with private cover. Medicare does not replace local planning.",
+      "visa": "Long-term stay is not a simple tourist extension. Retirement-oriented or family routes change — use official Korean Immigration guidance or counsel; not legal advice.",
+      "disclaimer": "WealthLanding provides educational information only. Nothing here is immigration, tax, investment, or legal advice."
+    },
+    "shanghai": {
+      "city": "Shanghai",
+      "country": "China",
+      "countryCode": "CN",
+      "tier": "Tier 2",
+      "badgeLabel": "Cosmopolitan",
+      "tagline": "Global metropole with dense transit and international services",
+      "whoFor": "Retirees comfortable with a large Chinese megacity, international neighborhoods, and higher complexity around visas and digital payments.",
+      "fit": [
+        "Cosmopolitan urban retirees",
+        "Northeast Asia travel hubs",
+        "Expat-service seekers"
+      ],
+      "mismatch": [
+        "Low-bureaucracy preferences",
+        "Anyone needing simple tourist-style long stays"
+      ],
+      "monthlyRange": "$3,250–$5,000",
+      "rangeLabel": "Labeled illustrative · couple-style spend · USD",
+      "costNote": "Educational snapshots aligned with the overseas hub $2M / 4% directory — not live quotes or personalized advice. Visa and tax rules change; confirm with official sources and licensed professionals.",
+      "healthcare": "International and private hospitals serve many foreigners; public access depends on status. Budget private insurance — Medicare does not cover routine care abroad.",
+      "visa": "China long-stay categories (family, work-adjacent, other) change frequently and are paperwork-heavy. Confirm with official PRC sources or counsel; educational only.",
+      "disclaimer": "WealthLanding provides educational information only. Nothing here is immigration, tax, investment, or legal advice."
+    },
+    "singapore": {
+      "city": "Singapore",
+      "country": "Singapore",
+      "countryCode": "SG",
+      "tier": "Tier 5",
+      "badgeLabel": "Extreme cost",
+      "tagline": "Asia's premier safety and wealth base with SE Asia connectivity",
+      "whoFor": "Retirees who want exceptional safety, English-speaking services, and a SE Asia hub — and can fund Tier 5 housing and dining.",
+      "fit": [
+        "Safety and rule-of-law seekers",
+        "SE Asia travel hubs",
+        "High-service urban living"
+      ],
+      "mismatch": [
+        "Budget stretchers",
+        "Those seeking sprawling homes"
+      ],
+      "monthlyRange": "$8,100–$10,500",
+      "rangeLabel": "Labeled illustrative · couple-style spend · USD",
+      "costNote": "Educational snapshots aligned with the overseas hub $2M / 4% directory — not live quotes or personalized advice. Visa and tax rules change; confirm with official sources and licensed professionals.",
+      "healthcare": "Excellent public and private care; eligibility and fees depend on residency status. Budget private insurance; do not rely on U.S. Medicare abroad.",
+      "visa": "Long-stay and retirement-adjacent schemes (including historical schemes that change or close) require careful official verification. Not immigration advice.",
+      "disclaimer": "WealthLanding provides educational information only. Nothing here is immigration, tax, investment, or legal advice."
+    },
+    "sydney": {
+      "city": "Sydney",
+      "country": "Australia",
+      "countryCode": "AU",
+      "tier": "Tier 4",
+      "badgeLabel": "High cost",
+      "tagline": "Harbor and coastal English-speaking base with outdoor lifestyle",
+      "whoFor": "Retirees who want English-speaking Oceania living, beaches, and strong rule of law — and can fund Tier 4 housing and dining.",
+      "fit": [
+        "English-first coastal lifestyles",
+        "Outdoor and harbor living",
+        "Family ties to Australia"
+      ],
+      "mismatch": [
+        "Budget-first early retirees",
+        "Anyone assuming easy permanent residency"
+      ],
+      "monthlyRange": "$6,000–$8,000",
+      "rangeLabel": "Labeled illustrative · couple-style spend · USD",
+      "costNote": "Educational snapshots aligned with the overseas hub $2M / 4% directory — not live quotes or personalized advice. Visa and tax rules change; confirm with official sources and licensed professionals.",
+      "healthcare": "Australia's public system is residency-based; newcomers often need private cover and reciprocal-care planning. Do not assume Medicare USA coverage applies.",
+      "visa": "Australian stay options for retirees are limited and criteria-driven (and change). Use official Home Affairs guidance or counsel; not immigration advice.",
+      "disclaimer": "WealthLanding provides educational information only. Nothing here is immigration, tax, investment, or legal advice."
+    },
+    "tokyo": {
+      "city": "Tokyo",
+      "country": "Japan",
+      "countryCode": "JP",
+      "tier": "Tier 2",
+      "badgeLabel": "Transit",
+      "whoFor": "Retirees drawn to safety, transit, and food culture who can tolerate higher costs than SE Asia.",
+      "monthlyRange": "$4,000–$5,500",
+      "rangeLabel": "Labeled illustrative · USD",
+      "costNote": "Educational snapshots for the $2M / 4% overseas directory — not live quotes or advice. Visa/tax rules change; verify with official sources.",
+      "healthcare": "Strong national system for eligible residents; newcomers often start with private cover.",
+      "visa": "Long-term stay is not a simple tourist extension — use official Immigration guidance; not legal advice.",
+      "disclaimer": "Educational only — not immigration, tax, investment, or legal advice."
+    },
+    "zurich": {
+      "city": "Zurich",
+      "country": "Switzerland",
+      "countryCode": "CH",
+      "tier": "Tier 5",
+      "badgeLabel": "Premium",
+      "whoFor": "High-net-worth retirees prioritizing safety, infrastructure, and healthcare over cost arbitrage.",
+      "monthlyRange": "$8,100–$11,000",
+      "rangeLabel": "Labeled illustrative · USD",
+      "costNote": "Educational snapshots for the $2M / 4% overseas directory — not live quotes or advice. Visa/tax rules change; verify with official sources.",
+      "healthcare": "Insurance-based high-quality care with meaningful premiums; Medicare does not replace Swiss coverage.",
+      "visa": "Swiss residence for non-EU nationals is selective and paperwork-heavy — use official guidance; not legal advice.",
+      "disclaimer": "Educational only — not immigration, tax, investment, or legal advice."
+    }
+  }
+}

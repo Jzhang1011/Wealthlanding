@@ -431,3 +431,18 @@
     boot();
   }
 })();
+
+/* City summary box: on overseas city deep dives (/Retirement-simulator/cities/<slug>.html),
+ * load the shared renderer. Content lives in /components/city-summary/cities.json. */
+(function () {
+  try {
+    var path = (window.location && window.location.pathname) || '';
+    var at = path.indexOf('/Retirement-simulator/cities/');
+    if (at === -1 || document.getElementById('wl-city-summary-js')) return;
+    var s = document.createElement('script');
+    s.id = 'wl-city-summary-js';
+    s.src = path.slice(0, at) + '/components/city-summary/city-summary.js';
+    s.async = true;
+    document.head.appendChild(s);
+  } catch (e) { /* never break the page */ }
+})();
