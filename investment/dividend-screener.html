@@ -245,7 +245,7 @@
       $('results-head').innerHTML = COLUMNS.map(function (c) {
         var arrow = '';
         if (c.sortable !== false && c.key === state.sortKey) {
-          arrow = ' <span class="arrow">' + (state.dir < 0 ? '▼' : '▲') + '</span>';
+          arrow = ' <span class="arrow">' + (state.sortDir < 0 ? '▼' : '▲') + '</span>';
         }
         var attrs = c.sortable === false ? '' : ' data-sort="' + c.key + '" title="Click to sort"';
         return '<th' + attrs + '>' + c.label + arrow + '</th>';
@@ -295,10 +295,8 @@
       });
     }
 
-    function init() {
-      buildFilters();
-      buildHead();
-      fetch('./data/dividend-stocks.json')
+    function loadData(attempt) {
+      fetch('./data/dividend-stocks.json', { cache: 'no-store' })
         .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
         .then(function (json) {
           state.data = json.records || [];
@@ -308,9 +306,17 @@
           render();
         })
         .catch(function () {
+          // One retry: the CDN can serve a stale edge right after deploy.
+          if (!attempt) { setTimeout(function () { loadData(1); }, 1500); return; }
           $('results-body').innerHTML = '<tr><td colspan="8" style="text-align:center" class="py-8 text-slate-400">Could not load dividend data. Please refresh the page.</td></tr>';
           $('asof-pill').textContent = 'Data unavailable';
         });
+    }
+
+    function init() {
+      buildFilters();
+      buildHead();
+      loadData(0);
     }
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
