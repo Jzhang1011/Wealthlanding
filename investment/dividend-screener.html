@@ -295,8 +295,10 @@
       });
     }
 
+    var DATA_URL = './data/dividend-stocks.json?v=20260928b'; // version param busts stale CDN/browser caches
+
     function loadData(attempt) {
-      fetch('./data/dividend-stocks.json', { cache: 'no-store' })
+      fetch(DATA_URL, { cache: 'no-store' })
         .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
         .then(function (json) {
           state.data = json.records || [];
@@ -305,10 +307,11 @@
           $('universe-pill').textContent = state.data.length + ' US dividend stocks screened';
           render();
         })
-        .catch(function () {
+        .catch(function (err) {
           // One retry: the CDN can serve a stale edge right after deploy.
           if (!attempt) { setTimeout(function () { loadData(1); }, 1500); return; }
-          $('results-body').innerHTML = '<tr><td colspan="8" style="text-align:center" class="py-8 text-slate-400">Could not load dividend data. Please refresh the page.</td></tr>';
+          var detail = (err && err.message) ? ' (' + err.message + ')' : '';
+          $('results-body').innerHTML = '<tr><td colspan="8" style="text-align:center" class="py-8 text-slate-400">Could not load dividend data' + detail + '. Please refresh the page.</td></tr>';
           $('asof-pill').textContent = 'Data unavailable';
         });
     }
