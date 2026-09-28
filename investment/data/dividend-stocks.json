@@ -1,0 +1,715 @@
+{
+  "asOf": "2026-09-28",
+  "records": [
+    {
+      "divGrowth5yPct": 10.2,
+      "divYears": 23,
+      "estimated": true,
+      "estimatedFields": [
+        "fcfTtmBln"
+      ],
+      "fcfTtmBln": 67.0,
+      "name": "Microsoft Corporation",
+      "payoutRatioPct": 21.8,
+      "price": 508.17,
+      "sector": "Technology",
+      "ticker": "MSFT",
+      "yieldPct": 0.77
+    },
+    {
+      "divGrowth5yPct": 4.5,
+      "divYears": 14,
+      "estimated": true,
+      "estimatedFields": [
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 136.7,
+      "name": "Apple Inc.",
+      "payoutRatioPct": 14.5,
+      "price": 342.3,
+      "sector": "Technology",
+      "ticker": "AAPL",
+      "yieldPct": 0.32
+    },
+    {
+      "divGrowth5yPct": 12.7,
+      "divYears": 15,
+      "estimated": false,
+      "estimatedFields": [],
+      "fcfTtmBln": 39.4,
+      "name": "Broadcom Inc.",
+      "payoutRatioPct": 33.2,
+      "price": 351.65,
+      "sector": "Technology",
+      "ticker": "AVGO",
+      "yieldPct": 0.74
+    },
+    {
+      "divGrowth5yPct": 2.6,
+      "divYears": 13,
+      "estimated": true,
+      "estimatedFields": [
+        "divYears"
+      ],
+      "fcfTtmBln": 12.8,
+      "name": "Cisco Systems, Inc.",
+      "payoutRatioPct": 50.5,
+      "price": 106.35,
+      "sector": "Technology",
+      "ticker": "CSCO",
+      "yieldPct": 1.58
+    },
+    {
+      "divGrowth5yPct": 6.5,
+      "divYears": 23,
+      "estimated": true,
+      "estimatedFields": [
+        "payoutRatioPct",
+        "fcfTtmBln",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 6.5,
+      "name": "Texas Instruments Incorporated",
+      "notes": "TTM GAAP EPS $5.48; dividend not fully covered by GAAP earnings or FCF in FY2024-25, but no cut \u2014 payout uses Sep 17, 2026 raised $1.52/q.",
+      "payoutRatioPct": 111.0,
+      "price": 275.4,
+      "sector": "Technology",
+      "ticker": "TXN",
+      "yieldPct": 2.21
+    },
+    {
+      "divGrowth5yPct": 2.0,
+      "divYears": 20,
+      "estimated": true,
+      "estimatedFields": [
+        "fcfTtmBln",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 21.5,
+      "name": "Verizon Communications Inc.",
+      "payoutRatioPct": 73.7,
+      "price": 47.01,
+      "sector": "Communication Services",
+      "ticker": "VZ",
+      "yieldPct": 6.02
+    },
+    {
+      "divGrowth5yPct": 7.6,
+      "divYears": 18,
+      "estimated": false,
+      "estimatedFields": [],
+      "fcfTtmBln": 17.8,
+      "name": "Comcast Corporation",
+      "payoutRatioPct": 42.7,
+      "price": 21.845,
+      "sector": "Communication Services",
+      "ticker": "CMCSA",
+      "yieldPct": 6.04
+    },
+    {
+      "divGrowth5yPct": 3.1,
+      "divYears": 2,
+      "estimated": true,
+      "estimatedFields": [
+        "payoutRatioPct",
+        "fcfTtmBln",
+        "divYears",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 2.7,
+      "name": "Omnicom Group Inc.",
+      "notes": "TTM GAAP payout distorted by one-time Interpublic merger charges; on forward adjusted EPS (~$10.59) payout is ~30%.",
+      "payoutRatioPct": 276.4,
+      "price": 75.2,
+      "sector": "Communication Services",
+      "ticker": "OMC",
+      "yieldPct": 4.26
+    },
+    {
+      "divGrowth5yPct": 5.25,
+      "divYears": 64,
+      "estimated": false,
+      "estimatedFields": [],
+      "fcfTtmBln": 22.2,
+      "name": "Johnson & Johnson",
+      "payoutRatioPct": 62.11,
+      "price": 271.22,
+      "sector": "Health Care",
+      "ticker": "JNJ",
+      "yieldPct": 1.98
+    },
+    {
+      "divGrowth5yPct": 7.0,
+      "divYears": 54,
+      "estimated": true,
+      "estimatedFields": [
+        "payoutRatioPct",
+        "fcfTtmBln",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 7.4,
+      "name": "Abbott Laboratories",
+      "payoutRatioPct": 67.5,
+      "price": 100.585,
+      "sector": "Health Care",
+      "ticker": "ABT",
+      "yieldPct": 2.51
+    },
+    {
+      "divGrowth5yPct": 6.8,
+      "divYears": 53,
+      "estimated": true,
+      "estimatedFields": [
+        "fcfTtmBln"
+      ],
+      "fcfTtmBln": 18.2,
+      "name": "AbbVie Inc.",
+      "notes": "payoutRatioPct 195.48 is GAAP; on adjusted non-GAAP earnings the ratio is ~49%.",
+      "payoutRatioPct": 195.48,
+      "price": 264.45,
+      "sector": "Health Care",
+      "ticker": "ABBV",
+      "yieldPct": 2.62
+    },
+    {
+      "divGrowth5yPct": 4.13,
+      "divYears": 49,
+      "estimated": true,
+      "estimatedFields": [
+        "fcfTtmBln"
+      ],
+      "fcfTtmBln": 6.1,
+      "name": "Medtronic plc",
+      "notes": "MDT is an Irish plc but trades as NYSE ordinary shares (S&P 500 constituent), not an ADR.",
+      "payoutRatioPct": 70.94,
+      "price": 88.64,
+      "sector": "Health Care",
+      "ticker": "MDT",
+      "yieldPct": 3.25
+    },
+    {
+      "divGrowth5yPct": 15.3,
+      "divYears": 11,
+      "estimated": true,
+      "estimatedFields": [
+        "fcfTtmBln",
+        "divYears",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 18.2,
+      "name": "Eli Lilly and Company",
+      "notes": "fcfTtmBln sources conflict ($18.2B vs $13.6B); using $18.2B as the more consistently reported figure.",
+      "payoutRatioPct": 23.22,
+      "price": 1187.17,
+      "sector": "Health Care",
+      "ticker": "LLY",
+      "yieldPct": 0.58
+    },
+    {
+      "divGrowth5yPct": 8.27,
+      "divYears": 14,
+      "estimated": true,
+      "estimatedFields": [
+        "fcfTtmBln"
+      ],
+      "fcfTtmBln": 10.2,
+      "name": "Amgen Inc.",
+      "notes": "fcfTtmBln derived from SEC filings for the 12 months to Jun 30, 2026.",
+      "payoutRatioPct": 62.65,
+      "price": 414.2,
+      "sector": "Health Care",
+      "ticker": "AMGN",
+      "yieldPct": 2.43
+    },
+    {
+      "divGrowth5yPct": 5.25,
+      "divYears": 70,
+      "estimated": true,
+      "estimatedFields": [
+        "payoutRatioPct",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 15.7,
+      "name": "The Procter & Gamble Company",
+      "notes": "payoutRatioPct set at midpoint of reported 64-66% range.",
+      "payoutRatioPct": 65.0,
+      "price": 147.72,
+      "sector": "Consumer Staples",
+      "ticker": "PG",
+      "yieldPct": 2.95
+    },
+    {
+      "divGrowth5yPct": 4.5,
+      "divYears": 64,
+      "estimated": true,
+      "estimatedFields": [
+        "payoutRatioPct",
+        "fcfTtmBln",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 14.3,
+      "name": "The Coca-Cola Company",
+      "payoutRatioPct": 64.7,
+      "price": 87.47,
+      "sector": "Consumer Staples",
+      "ticker": "KO",
+      "yieldPct": 2.42
+    },
+    {
+      "divGrowth5yPct": 5.8,
+      "divYears": 54,
+      "estimated": true,
+      "estimatedFields": [
+        "payoutRatioPct",
+        "fcfTtmBln",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 9.3,
+      "name": "PepsiCo, Inc.",
+      "payoutRatioPct": 77.59,
+      "price": 127.68,
+      "sector": "Consumer Staples",
+      "ticker": "PEP",
+      "yieldPct": 4.64
+    },
+    {
+      "divGrowth5yPct": 3.3,
+      "divYears": 63,
+      "estimated": true,
+      "estimatedFields": [
+        "payoutRatioPct"
+      ],
+      "fcfTtmBln": 3.9,
+      "name": "Colgate-Palmolive Co",
+      "payoutRatioPct": 82.3,
+      "price": 86.06,
+      "sector": "Consumer Staples",
+      "ticker": "CL",
+      "yieldPct": 2.5
+    },
+    {
+      "divGrowth5yPct": 3.4,
+      "divYears": 54,
+      "estimated": true,
+      "estimatedFields": [
+        "payoutRatioPct"
+      ],
+      "fcfTtmBln": 1.8,
+      "name": "Kimberly-Clark Corp",
+      "payoutRatioPct": 87.1,
+      "price": 98.43,
+      "sector": "Consumer Staples",
+      "ticker": "KMB",
+      "yieldPct": 5.2
+    },
+    {
+      "divGrowth5yPct": 7.4,
+      "divYears": 50,
+      "estimated": true,
+      "estimatedFields": [
+        "payoutRatioPct"
+      ],
+      "fcfTtmBln": 7.8,
+      "name": "McDonald's Corp",
+      "payoutRatioPct": 63.0,
+      "price": 236.5,
+      "sector": "Consumer Discretionary",
+      "ticker": "MCD",
+      "yieldPct": 3.3
+    },
+    {
+      "divGrowth5yPct": 10.5,
+      "divYears": 64,
+      "estimated": true,
+      "estimatedFields": [
+        "payoutRatioPct",
+        "divYears",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 7.0,
+      "name": "Lowe's Companies Inc",
+      "payoutRatioPct": 42.2,
+      "price": 189.28,
+      "sector": "Consumer Discretionary",
+      "ticker": "LOW",
+      "yieldPct": 2.6
+    },
+    {
+      "divGrowth5yPct": 8.9,
+      "divYears": 16,
+      "estimated": false,
+      "estimatedFields": [],
+      "fcfTtmBln": 15.1,
+      "name": "Home Depot Inc",
+      "payoutRatioPct": 65.2,
+      "price": 293.2,
+      "sector": "Consumer Discretionary",
+      "ticker": "HD",
+      "yieldPct": 3.2
+    },
+    {
+      "divGrowth5yPct": 9.3,
+      "divYears": 55,
+      "estimated": true,
+      "estimatedFields": [
+        "payoutRatioPct"
+      ],
+      "fcfTtmBln": 4.5,
+      "name": "Target Corp",
+      "payoutRatioPct": 57.1,
+      "price": 157.45,
+      "sector": "Consumer Discretionary",
+      "ticker": "TGT",
+      "yieldPct": 2.9
+    },
+    {
+      "divGrowth5yPct": 6.6,
+      "divYears": 15,
+      "estimated": true,
+      "estimatedFields": [
+        "payoutRatioPct",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 3.6,
+      "name": "Starbucks Corp",
+      "payoutRatioPct": 82.9,
+      "price": 94.86,
+      "sector": "Consumer Discretionary",
+      "ticker": "SBUX",
+      "yieldPct": 2.6
+    },
+    {
+      "divGrowth5yPct": 1.1,
+      "divYears": 68,
+      "estimated": true,
+      "estimatedFields": [
+        "payoutRatioPct",
+        "fcfTtmBln",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 3.5,
+      "name": "Emerson Electric Co.",
+      "payoutRatioPct": 48.6,
+      "price": 158.52,
+      "sector": "Industrials",
+      "ticker": "EMR",
+      "yieldPct": 1.4
+    },
+    {
+      "divGrowth5yPct": 7.1,
+      "divYears": 55,
+      "estimated": true,
+      "estimatedFields": [
+        "payoutRatioPct",
+        "fcfTtmBln"
+      ],
+      "fcfTtmBln": 2.9,
+      "name": "Illinois Tool Works Inc.",
+      "payoutRatioPct": 61.4,
+      "price": 274.29,
+      "sector": "Industrials",
+      "ticker": "ITW",
+      "yieldPct": 2.51
+    },
+    {
+      "divGrowth5yPct": 8.2,
+      "divYears": 32,
+      "estimated": true,
+      "estimatedFields": [
+        "payoutRatioPct",
+        "fcfTtmBln"
+      ],
+      "fcfTtmBln": 9.0,
+      "name": "Caterpillar Inc.",
+      "payoutRatioPct": 29.1,
+      "price": 821.22,
+      "sector": "Industrials",
+      "ticker": "CAT",
+      "yieldPct": 0.79
+    },
+    {
+      "divGrowth5yPct": 4.8,
+      "divYears": 23,
+      "estimated": true,
+      "estimatedFields": [
+        "fcfTtmBln",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 5.6,
+      "name": "Lockheed Martin Corporation",
+      "payoutRatioPct": 50.9,
+      "price": 521.36,
+      "sector": "Industrials",
+      "ticker": "LMT",
+      "yieldPct": 2.65
+    },
+    {
+      "divGrowth5yPct": 6.5,
+      "divYears": 20,
+      "estimated": true,
+      "estimatedFields": [
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 6.5,
+      "name": "Union Pacific Corporation",
+      "payoutRatioPct": 46.0,
+      "price": 274.87,
+      "sector": "Industrials",
+      "ticker": "UNP",
+      "yieldPct": 2.07
+    },
+    {
+      "divGrowth5yPct": 10.6,
+      "divYears": 15,
+      "estimated": true,
+      "estimatedFields": [
+        "fcfTtmBln",
+        "divGrowth5yPct"
+      ],
+      "fcfNote": "Banks report operating cash flow including balance-sheet flows; FCF is not a meaningful dividend-coverage metric for banks \u2014 use payout ratio instead.",
+      "fcfTtmBln": -237.0,
+      "name": "JPMorgan Chase & Co.",
+      "payoutRatioPct": 25.7,
+      "price": 340.61,
+      "sector": "Financials",
+      "ticker": "JPM",
+      "yieldPct": 1.94
+    },
+    {
+      "divGrowth5yPct": 3.8,
+      "divYears": 40,
+      "estimated": true,
+      "estimatedFields": [
+        "fcfTtmBln",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 2.0,
+      "name": "T. Rowe Price Group, Inc.",
+      "payoutRatioPct": 52.2,
+      "price": 104.99,
+      "sector": "Financials",
+      "ticker": "TROW",
+      "yieldPct": 4.95
+    },
+    {
+      "divGrowth5yPct": 14.0,
+      "divYears": 44,
+      "estimated": true,
+      "estimatedFields": [
+        "fcfTtmBln",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 4.7,
+      "name": "Aflac Incorporated",
+      "payoutRatioPct": 26.2,
+      "price": 114.12,
+      "sector": "Financials",
+      "ticker": "AFL",
+      "yieldPct": 2.14
+    },
+    {
+      "divGrowth5yPct": 9.1,
+      "divYears": 13,
+      "estimated": true,
+      "estimatedFields": [
+        "fcfTtmBln",
+        "divYears"
+      ],
+      "fcfNote": "Banks report operating cash flow including balance-sheet flows; FCF is not a meaningful dividend-coverage metric for banks \u2014 use payout ratio instead.",
+      "fcfTtmBln": 94.7,
+      "name": "Bank of America Corporation",
+      "payoutRatioPct": 29.4,
+      "price": 56.43,
+      "sector": "Financials",
+      "ticker": "BAC",
+      "yieldPct": 2.27
+    },
+    {
+      "divGrowth5yPct": 3.4,
+      "divYears": 46,
+      "estimated": true,
+      "estimatedFields": [
+        "payoutRatioPct",
+        "divYears",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 0.2,
+      "name": "Franklin Resources, Inc.",
+      "payoutRatioPct": 89.8,
+      "price": 33.02,
+      "sector": "Financials",
+      "ticker": "BEN",
+      "yieldPct": 4.0
+    },
+    {
+      "divGrowth5yPct": 3.2,
+      "divYears": 43,
+      "estimated": true,
+      "estimatedFields": [
+        "fcfTtmBln",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 29.3,
+      "name": "Exxon Mobil Corporation",
+      "payoutRatioPct": 53.02,
+      "price": 160.59,
+      "sector": "Energy",
+      "ticker": "XOM",
+      "yieldPct": 2.57
+    },
+    {
+      "divGrowth5yPct": 5.8,
+      "divYears": 39,
+      "estimated": true,
+      "estimatedFields": [
+        "fcfTtmBln",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 30.0,
+      "name": "Chevron Corporation",
+      "payoutRatioPct": 68.26,
+      "price": 204.39,
+      "sector": "Energy",
+      "ticker": "CVX",
+      "yieldPct": 3.48
+    },
+    {
+      "divGrowth5yPct": 18.8,
+      "divYears": 8,
+      "estimated": true,
+      "estimatedFields": [
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 6.6,
+      "name": "EOG Resources, Inc.",
+      "payoutRatioPct": 31.75,
+      "price": 140.26,
+      "sector": "Energy",
+      "ticker": "EOG",
+      "yieldPct": 2.91
+    },
+    {
+      "divGrowth5yPct": 13.9,
+      "divYears": 9,
+      "estimated": true,
+      "estimatedFields": [
+        "fcfTtmBln",
+        "divYears",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 19.6,
+      "name": "ConocoPhillips",
+      "payoutRatioPct": 44.44,
+      "price": 127.3,
+      "sector": "Energy",
+      "ticker": "COP",
+      "yieldPct": 2.64
+    },
+    {
+      "divGrowth5yPct": 10.1,
+      "divYears": 31,
+      "estimated": true,
+      "estimatedFields": [
+        "fcfTtmBln"
+      ],
+      "fcfTtmBln": -17.8,
+      "name": "NextEra Energy, Inc.",
+      "payoutRatioPct": 55.96,
+      "price": 76.08,
+      "sector": "Utilities",
+      "ticker": "NEE",
+      "yieldPct": 3.28
+    },
+    {
+      "divGrowth5yPct": 2.0,
+      "divYears": 20,
+      "estimated": false,
+      "estimatedFields": [],
+      "fcfTtmBln": -4.3,
+      "name": "Duke Energy Corporation",
+      "payoutRatioPct": 65.17,
+      "price": 113.35,
+      "sector": "Utilities",
+      "ticker": "DUK",
+      "yieldPct": 3.83
+    },
+    {
+      "divGrowth5yPct": 2.9,
+      "divYears": 25,
+      "estimated": true,
+      "estimatedFields": [
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": -4.2,
+      "name": "Southern Company",
+      "payoutRatioPct": 72.9,
+      "price": 82.88,
+      "sector": "Utilities",
+      "ticker": "SO",
+      "yieldPct": 3.67
+    },
+    {
+      "divGrowth5yPct": 2.7,
+      "divYears": 52,
+      "estimated": true,
+      "estimatedFields": [
+        "payoutRatioPct",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": -0.9,
+      "name": "Consolidated Edison, Inc.",
+      "payoutRatioPct": 63.0,
+      "price": 103.1,
+      "sector": "Utilities",
+      "ticker": "ED",
+      "yieldPct": 3.44
+    },
+    {
+      "divGrowth5yPct": 9.3,
+      "divYears": 33,
+      "estimated": true,
+      "estimatedFields": [
+        "payoutRatioPct",
+        "fcfTtmBln",
+        "divGrowth5yPct"
+      ],
+      "fcfTtmBln": 5.0,
+      "name": "Linde plc",
+      "notes": "Linde is an Irish plc but trades as NYSE ordinary shares (S&P 500 constituent), not an ADR.",
+      "payoutRatioPct": 43.8,
+      "price": 472.69,
+      "sector": "Materials",
+      "ticker": "LIN",
+      "yieldPct": 1.35
+    },
+    {
+      "divGrowth5yPct": 12.0,
+      "divYears": 48,
+      "estimated": false,
+      "estimatedFields": [],
+      "fcfTtmBln": 3.2,
+      "name": "Sherwin-Williams Co",
+      "payoutRatioPct": 29.5,
+      "price": 328.72,
+      "sector": "Materials",
+      "ticker": "SHW",
+      "yieldPct": 1.0
+    },
+    {
+      "divGrowth5yPct": 6.6,
+      "divYears": 44,
+      "estimated": true,
+      "estimatedFields": [
+        "payoutRatioPct"
+      ],
+      "fcfTtmBln": -0.3,
+      "name": "Air Products and Chemicals Inc",
+      "payoutRatioPct": 55.7,
+      "price": 281.76,
+      "sector": "Materials",
+      "ticker": "APD",
+      "yieldPct": 2.6
+    }
+  ],
+  "universe": "US common-stock dividend payers"
+}

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-9JMJJ5CJR4');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dividend Stock Screener | WealthLanding</title>
+  <meta name="description" content="Screen US dividend-paying stocks by yield, payout ratio, free cash flow, dividend history, and dividend growth. Free educational tool from WealthLanding.">
+  <link rel="canonical" href="https://www.wealthlanding.com/investment/dividend-screener.html">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#0f172a; --green:#10b981; --green-dark:#059669; --line:#e2e8f0; --night:#030712; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:'Inter',sans-serif; background:#f8fafc; color:var(--ink); }
+    .serif { font-family:'Playfair Display',serif; }
+    .wrap { max-width:1180px; margin:auto; padding:0 28px; }
+    .eyebrow { font-size:11px; letter-spacing:.16em; text-transform:uppercase; font-weight:800; color:var(--green-dark); }
+    .card { background:#fff; border:1px solid var(--line); border-radius:20px; box-shadow:0 10px 30px rgba(15,23,42,.04); }
+    .pill { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700; color:#065f46; background:#ecfdf5; border:1px solid #a7f3d0; border-radius:999px; padding:6px 12px; }
+    /* sliders */
+    input[type=range].wl-range { -webkit-appearance:none; appearance:none; width:100%; height:8px; border-radius:999px; background:linear-gradient(to right, var(--green) 0%, var(--green) var(--fill,50%), #e2e8f0 var(--fill,50%), #e2e8f0 100%); outline:none; cursor:pointer; }
+    input[type=range].wl-range::-webkit-slider-thumb { -webkit-appearance:none; width:22px; height:22px; border-radius:50%; background:#fff; border:3px solid var(--green); box-shadow:0 2px 6px rgba(0,0,0,.18); }
+    input[type=range].wl-range::-moz-range-thumb { width:16px; height:16px; border-radius:50%; background:#fff; border:3px solid var(--green); box-shadow:0 2px 6px rgba(0,0,0,.18); }
+    .filter-num { font-variant-numeric:tabular-nums; }
+    /* results table */
+    .wl-table-wrap { overflow-x:auto; border-radius:14px; border:1px solid var(--line); }
+    table.wl-table { width:100%; border-collapse:collapse; font-size:13.5px; min-width:860px; }
+    table.wl-table thead th { position:sticky; top:0; background:#0f172a; color:#e2e8f0; text-align:right; font-weight:700; font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; padding:12px 14px; white-space:nowrap; cursor:pointer; user-select:none; }
+    table.wl-table thead th:first-child, table.wl-table thead th:nth-child(2) { text-align:left; }
+    table.wl-table thead th .arrow { color:var(--green); }
+    table.wl-table tbody td { padding:11px 14px; border-top:1px solid var(--line); text-align:right; font-variant-numeric:tabular-nums; }
+    table.wl-table tbody td:first-child, table.wl-table tbody td:nth-child(2) { text-align:left; }
+    table.wl-table tbody tr:nth-child(even) { background:#f8fafc; }
+    table.wl-table tbody tr:hover { background:#ecfdf5; }
+    .ticker { font-weight:800; color:var(--ink); }
+    .co-name { color:#64748b; font-size:12px; }
+    .est-mark { color:#b45309; font-size:11px; font-weight:700; }
+    .btn-reset { border:1px solid var(--line); background:#fff; border-radius:999px; padding:9px 18px; font-size:13px; font-weight:700; color:#334155; cursor:pointer; transition:.2s; }
+    .btn-reset:hover { border-color:var(--green); color:var(--green-dark); }
+    .note-card { border-left:4px solid var(--green); }
+    @media(max-width:640px){ .wrap{ padding:0 16px; } }
+  </style>
+</head>
+<body>
+  <div id="global-header-target"></div>
+
+  <main class="wrap py-10 space-y-8">
+
+    <!-- HERO -->
+    <section>
+      <div class="eyebrow">Investment Tools · Dividends</div>
+      <h1 class="serif text-4xl md:text-5xl font-bold mt-2">Dividend Stock Screener</h1>
+      <p class="text-slate-500 mt-4 max-w-3xl leading-7">
+        Five filters, one question: which US dividend payers combine a meaningful yield with the
+        cash flow and track record to keep paying it? Drag the sliders — the table updates instantly.
+      </p>
+      <div class="flex flex-wrap gap-3 mt-5">
+        <span class="pill" id="asof-pill">Data as of …</span>
+        <span class="pill" id="universe-pill">… stocks screened</span>
+      </div>
+    </section>
+
+    <!-- WHAT THE FILTERS MEAN -->
+    <section>
+      <h2 class="serif text-2xl font-bold mb-4">What the five filters mean</h2>
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <div class="card p-5">
+          <div class="text-xs font-extrabold uppercase tracking-wider text-emerald-700 mb-1">Filter 1 · Income</div>
+          <h3 class="font-bold">Dividend yield ≥ x%</h3>
+          <p class="text-sm text-slate-500 mt-2 leading-6">Annual dividends divided by share price. Your starting income rate — set the minimum you're willing to accept.</p>
+        </div>
+        <div class="card p-5">
+          <div class="text-xs font-extrabold uppercase tracking-wider text-emerald-700 mb-1">Filter 2 · Safety</div>
+          <h3 class="font-bold">Payout ratio &lt; y%</h3>
+          <p class="text-sm text-slate-500 mt-2 leading-6">Share of earnings paid out as dividends. Lower leaves a cushion — high ratios crack first in a downturn.</p>
+        </div>
+        <div class="card p-5">
+          <div class="text-xs font-extrabold uppercase tracking-wider text-emerald-700 mb-1">Filter 3 · Cash reality</div>
+          <h3 class="font-bold">Free cash flow &gt; $aB</h3>
+          <p class="text-sm text-slate-500 mt-2 leading-6">Dividends are paid in cash, not accounting earnings. FCF is the money actually left after running the business.</p>
+        </div>
+        <div class="card p-5">
+          <div class="text-xs font-extrabold uppercase tracking-wider text-emerald-700 mb-1">Filter 4 · Track record</div>
+          <h3 class="font-bold">Dividend raises &gt; b years</h3>
+          <p class="text-sm text-slate-500 mt-2 leading-6">Consecutive years of annual dividend increases. 25+ years earns the "Dividend Aristocrat" title — proof across recessions.</p>
+        </div>
+        <div class="card p-5">
+          <div class="text-xs font-extrabold uppercase tracking-wider text-emerald-700 mb-1">Filter 5 · Growth</div>
+          <h3 class="font-bold">Dividend growth ≥ c%</h3>
+          <p class="text-sm text-slate-500 mt-2 leading-6">5-year annualized growth of the dividend per share. This is what keeps your income ahead of inflation.</p>
+        </div>
+        <div class="card p-5 note-card">
+          <div class="text-xs font-extrabold uppercase tracking-wider text-emerald-700 mb-1">How to use it</div>
+          <h3 class="font-bold">Start strict, loosen slowly</h3>
+          <p class="text-sm text-slate-500 mt-2 leading-6">Begin with the defaults, then relax one filter at a time to see which constraint is doing the work. Click any column header to sort.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREENER CONTROLS -->
+    <section class="card p-6 md:p-8">
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+        <h2 class="serif text-2xl font-bold">Set your filters</h2>
+        <button class="btn-reset" id="reset-btn">Reset to defaults</button>
+      </div>
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-7" id="filters"></div>
+      <div class="mt-7 pt-5 border-t border-slate-200 flex items-center justify-between">
+        <p class="text-sm text-slate-500"><span class="font-extrabold text-emerald-700 text-lg filter-num" id="match-count">–</span> <span id="match-label">stocks pass all five filters</span></p>
+        <p class="text-xs text-slate-400 hidden sm:block">Table updates as you drag</p>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="card p-6 md:p-8">
+      <h2 class="serif text-2xl font-bold mb-4">Results</h2>
+      <div class="wl-table-wrap">
+        <table class="wl-table" id="results-table">
+          <thead><tr id="results-head"></tr></thead>
+          <tbody id="results-body">
+            <tr><td colspan="8" style="text-align:center" class="text-slate-400 py-8">Loading dividend data…</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-slate-400 mt-4"><span class="est-mark">†</span> estimate — figure could not be verified from a primary source. Figures are trailing-twelve-month unless noted.</p>
+    </section>
+
+    <!-- READING GUIDE + DISCLAIMER -->
+    <section class="grid md:grid-cols-2 gap-4">
+      <div class="card p-6">
+        <h3 class="font-bold text-lg mb-2">Reading the results</h3>
+        <ul class="text-sm text-slate-500 leading-7 list-disc pl-5">
+          <li><strong class="text-slate-700">Yield vs. safety:</strong> the highest yield on the list isn't the best stock — check its payout ratio and FCF first.</li>
+          <li><strong class="text-slate-700">Payout ratio under 60%</strong> is traditionally comfortable; utilities and telecoms often run higher by design.</li>
+          <li><strong class="text-slate-700">FCF first:</strong> a company can report earnings while burning cash. Dividends need cash.</li>
+          <li><strong class="text-slate-700">Growth compounds:</strong> a 3% yield growing at 8% beats a 5% yield growing at 1% within a decade.</li>
+          <li><strong class="text-slate-700">FCF is sector-sensitive:</strong> banks' cash-flow statements don't work like industrials', and utilities often show negative FCF while building infrastructure — a strict FCF filter will screen most of them out. That's the filter working, not the companies failing.</li>
+        </ul>
+      </div>
+      <div class="card p-6">
+        <h3 class="font-bold text-lg mb-2">Before you invest</h3>
+        <p class="text-sm text-slate-500 leading-7">
+          This is an <strong class="text-slate-700">educational screening tool</strong>, not investment advice.
+          Data is a point-in-time snapshot — yields move with prices daily. Always verify current figures
+          in a company's filings or your broker before investing, and consider diversification:
+          no single dividend stock should dominate a portfolio.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <wealthlanding-footer></wealthlanding-footer>
+  <script src="/components/footer.js"></script>
+  <script src="/components/header.js"></script>
+
+  <script>
+  (function () {
+    'use strict';
+
+    var FILTERS = [
+      { key: 'yieldPct',       label: 'Dividend yield',            unit: '%',  op: '>=', min: 0,  max: 8,  step: 0.25, def: 2.5, fmt: function (v) { return '≥ ' + v.toFixed(2) + '%'; } },
+      { key: 'payoutRatioPct', label: 'Payout ratio',              unit: '%',  op: '<',  min: 10, max: 100, step: 5,    def: 75,  fmt: function (v) { return '< ' + v + '%'; } },
+      { key: 'fcfTtmBln',      label: 'Free cash flow (TTM)',      unit: '$B', op: '>',  min: 0,  max: 30,  step: 1,    def: 1,   fmt: function (v) { return '> $' + v + 'B'; } },
+      { key: 'divYears',       label: 'Consecutive dividend raises', unit: 'yrs', op: '>', min: 0, max: 60,  step: 1,   def: 10,  fmt: function (v) { return '> ' + v + ' yrs'; } },
+      { key: 'divGrowth5yPct', label: 'Dividend growth (5-yr)',    unit: '%',  op: '>=', min: 0,  max: 15,  step: 0.5,  def: 5,   fmt: function (v) { return '≥ ' + v.toFixed(1) + '%'; } }
+    ];
+
+    var COLUMNS = [
+      { key: 'ticker',         label: 'Company',   sortable: false },
+      { key: 'sector',         label: 'Sector',    sortable: false },
+      { key: 'price',          label: 'Price',     fmt: function (v) { return '$' + v.toFixed(2); } },
+      { key: 'yieldPct',       label: 'Yield',     fmt: function (v) { return v.toFixed(2) + '%'; } },
+      { key: 'payoutRatioPct', label: 'Payout',    fmt: function (v) { return v.toFixed(0) + '%'; } },
+      { key: 'fcfTtmBln',      label: 'FCF $B',    fmt: function (v) { return '$' + v.toFixed(1) + 'B'; } },
+      { key: 'divYears',       label: 'Div yrs',   fmt: function (v) { return v; } },
+      { key: 'divGrowth5yPct', label: 'Growth 5y', fmt: function (v) { return v.toFixed(1) + '%'; } }
+    ];
+
+    var state = { data: [], asOf: '', sortKey: 'yieldPct', sortDir: -1, values: {} };
+    FILTERS.forEach(function (f) { state.values[f.key] = f.def; });
+
+    function $(id) { return document.getElementById(id); }
+
+    function paintRange(el) {
+      var pct = ((el.value - el.min) / (el.max - el.min)) * 100;
+      el.style.setProperty('--fill', pct + '%');
+    }
+
+    function buildFilters() {
+      var host = $('filters');
+      host.innerHTML = FILTERS.map(function (f, i) {
+        return '' +
+          '<div>' +
+            '<div class="flex items-baseline justify-between mb-2">' +
+              '<label for="f' + i + '" class="text-sm font-bold text-slate-700">' + f.label + '</label>' +
+              '<span class="text-emerald-700 font-extrabold filter-num" id="fval' + i + '">' + f.fmt(f.def) + '</span>' +
+            '</div>' +
+            '<input type="range" class="wl-range" id="f' + i + '" min="' + f.min + '" max="' + f.max + '" step="' + f.step + '" value="' + f.def + '" aria-label="' + f.label + '">' +
+            '<div class="flex justify-between text-[11px] text-slate-400 mt-1"><span>' + f.min + f.unit + '</span><span>' + f.max + f.unit + '</span></div>' +
+          '</div>';
+      }).join('');
+
+      FILTERS.forEach(function (f, i) {
+        var el = $('f' + i);
+        paintRange(el);
+        el.addEventListener('input', function () {
+          var v = parseFloat(el.value);
+          state.values[f.key] = v;
+          $('fval' + i).textContent = f.fmt(v);
+          paintRange(el);
+          render();
+        });
+      });
+
+      $('reset-btn').addEventListener('click', function () {
+        FILTERS.forEach(function (f, i) {
+          state.values[f.key] = f.def;
+          var el = $('f' + i);
+          el.value = f.def;
+          $('fval' + i).textContent = f.fmt(f.def);
+          paintRange(el);
+        });
+        render();
+      });
+    }
+
+    function passes(s) {
+      var v = state.values;
+      if (s.yieldPct == null || s.yieldPct < v.yieldPct) return false;
+      if (s.payoutRatioPct == null || !(s.payoutRatioPct < v.payoutRatioPct)) return false;
+      if (s.fcfTtmBln == null || !(s.fcfTtmBln > v.fcfTtmBln)) return false;
+      if (s.divYears == null || !(s.divYears > v.divYears)) return false;
+      if (s.divGrowth5yPct == null || s.divGrowth5yPct < v.divGrowth5yPct) return false;
+      return true;
+    }
+
+    function buildHead() {
+      $('results-head').innerHTML = COLUMNS.map(function (c) {
+        var arrow = '';
+        if (c.sortable !== false && c.key === state.sortKey) {
+          arrow = ' <span class="arrow">' + (state.dir < 0 ? '▼' : '▲') + '</span>';
+        }
+        var attrs = c.sortable === false ? '' : ' data-sort="' + c.key + '" title="Click to sort"';
+        return '<th' + attrs + '>' + c.label + arrow + '</th>';
+      }).join('');
+      Array.prototype.forEach.call($('results-head').querySelectorAll('th[data-sort]'), function (th) {
+        th.addEventListener('click', function () {
+          var k = th.getAttribute('data-sort');
+          if (state.sortKey === k) { state.sortDir *= -1; }
+          else { state.sortKey = k; state.sortDir = (k === 'ticker' || k === 'sector') ? 1 : -1; }
+          render();
+        });
+      });
+    }
+
+    function render() {
+      buildHead();
+      var rows = state.data.filter(passes).sort(function (a, b) {
+        var k = state.sortKey, d = state.sortDir;
+        var av = a[k], bv = b[k];
+        if (av == null) return 1; if (bv == null) return -1;
+        return (av < bv ? -1 : av > bv ? 1 : 0) * d;
+      });
+
+      $('match-count').textContent = rows.length;
+      $('match-label').textContent = rows.length === 1 ? 'stock passes all five filters' : 'stocks pass all five filters';
+
+      var body = $('results-body');
+      if (!rows.length) {
+        body.innerHTML = '<tr><td colspan="8" style="text-align:center" class="py-8 text-slate-400">No stocks pass all five filters — try loosening one.</td></tr>';
+        return;
+      }
+      body.innerHTML = rows.map(function (s) {
+        var tds = COLUMNS.map(function (c) {
+          if (c.key === 'ticker') {
+            return '<td><span class="ticker">' + esc(s.ticker) + '</span><br><span class="co-name">' + esc(s.name) + (s.estimated ? ' <span class="est-mark" title="One or more figures estimated">†</span>' : '') + '</span></td>';
+          }
+          var v = s[c.key];
+          return '<td>' + (v == null ? '—' : c.fmt(v)) + '</td>';
+        }).join('');
+        return '<tr>' + tds + '</tr>';
+      }).join('');
+    }
+
+    function esc(str) {
+      return String(str == null ? '' : str).replace(/[&<>"']/g, function (m) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m];
+      });
+    }
+
+    function init() {
+      buildFilters();
+      buildHead();
+      fetch('./data/dividend-stocks.json')
+        .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+        .then(function (json) {
+          state.data = json.records || [];
+          state.asOf = json.asOf || '';
+          $('asof-pill').textContent = 'Data as of ' + state.asOf;
+          $('universe-pill').textContent = state.data.length + ' US dividend stocks screened';
+          render();
+        })
+        .catch(function () {
+          $('results-body').innerHTML = '<tr><td colspan="8" style="text-align:center" class="py-8 text-slate-400">Could not load dividend data. Please refresh the page.</td></tr>';
+          $('asof-pill').textContent = 'Data unavailable';
+        });
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+  })();
+  </script>
+</body>
+</html>
