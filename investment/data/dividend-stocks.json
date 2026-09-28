@@ -14,7 +14,10 @@
       "price": 508.17,
       "sector": "Technology",
       "ticker": "MSFT",
-      "yieldPct": 0.77
+      "yieldPct": 0.77,
+      "evGrowth5yPct": 13.2,
+      "evBln": 3852.2,
+      "evNote": "Now: MC $3832.8B (Finnhub, price $506.54 on 9/28/2026; cross-checked vs $3.83T ABN), debt $40.294B, cash $20.935B (FY2026 10-K, 6/30/2026). 2021: price $270.57 (9/30/2021 close), shares 7.510B, debt $58.146B, cash $14.224B (FY2021 10-K). Period ~5.0 yrs."
     },
     {
       "divGrowth5yPct": 4.5,
@@ -29,27 +32,38 @@
       "price": 342.3,
       "sector": "Technology",
       "ticker": "AAPL",
-      "yieldPct": 0.32
+      "yieldPct": 0.32,
+      "evGrowth5yPct": 16.3,
+      "evBln": 5022.4,
+      "evNote": "Now: MC $4977.6B (Finnhub, price $340.81 on 9/28/2026; cross-checked vs $4.98T ABN), debt $84.344B, cash $39.544B (Q3 FY2026 10-Q, 6/27/2026). 2021: price $138.02 (9/30/2021 close), shares 16.4268B, debt $124.719B (incl. $6.0B commercial paper), cash $34.940B (FY2021 10-K). Period ~5.0 yrs."
     },
     {
       "divGrowth5yPct": 12.7,
       "divYears": 15,
-      "estimated": false,
-      "estimatedFields": [],
+      "estimated": true,
+      "estimatedFields": [
+        "evBln",
+        "evGrowth5yPct"
+      ],
       "fcfTtmBln": 39.4,
       "name": "Broadcom Inc.",
       "payoutRatioPct": 33.2,
       "price": 351.65,
       "sector": "Technology",
       "ticker": "AVGO",
-      "yieldPct": 0.74
+      "yieldPct": 0.74,
+      "evGrowth5yPct": 48.3,
+      "evBln": 1719.6,
+      "evNote": "Now: MC $1684.2B (Finnhub, price $348.43 on 9/28/2026; cross-checked vs $1.7T Motley Fool/CompaniesMarketCap), debt $59.419B (carrying; $61.079B principal), cash $23.975B (Q3 FY2026 10-Q, 8/2/2026). 2021: MC ~$212.2B INTERPOLATED (marketcaphistory.com: $204.14B 8/27/2021, $225.67B 11/26/2021); debt $39.730B, cash $12.163B from FY2021 10-K (10/31/2021), closest to mid-2021 per fallback. Period ~5.0 yrs."
     },
     {
       "divGrowth5yPct": 2.6,
       "divYears": 13,
       "estimated": true,
       "estimatedFields": [
-        "divYears"
+        "divYears",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 12.8,
       "name": "Cisco Systems, Inc.",
@@ -57,7 +71,10 @@
       "price": 106.35,
       "sector": "Technology",
       "ticker": "CSCO",
-      "yieldPct": 1.58
+      "yieldPct": 1.58,
+      "evGrowth5yPct": 12.1,
+      "evBln": 441.3,
+      "evNote": "Current: price $106.28 (finnhub 9/28/26) x 3.9426B shares (FY26 10-K basic) = mcap $419.0B; total debt $29.533B (10.161 ST + 19.372 LT), cash & eq $7.218B (FY26 10-K, 7/25/26). 2021: price $58.60 (10-K filing date, early 9/21) x 4.2177B shares = $247.2B; debt $11.526B, cash $9.175B - FY2021 10-K (7/31/21), closest to mid-2021. Excludes short-term investments ($8.7B now / $15.3B then); incl. them EV would be 432.6 / 234.2."
     },
     {
       "divGrowth5yPct": 6.5,
@@ -66,7 +83,9 @@
       "estimatedFields": [
         "payoutRatioPct",
         "fcfTtmBln",
-        "divGrowth5yPct"
+        "divGrowth5yPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 6.5,
       "name": "Texas Instruments Incorporated",
@@ -75,7 +94,10 @@
       "price": 275.4,
       "sector": "Technology",
       "ticker": "TXN",
-      "yieldPct": 2.21
+      "yieldPct": 2.21,
+      "evGrowth5yPct": 8.3,
+      "evBln": 263.7,
+      "evNote": "Current: price $274.975 (finnhub 9/28/26) x ~0.938B shares (implied from financecharts mcap) = mcap $257.8B; LT debt $12.903B, cash $7.001B incl. short-term investments (Q2 2026 10-Q; cash & eq alone $3.66B, ST inv $3.34B). 2021: financecharts 9/29/21 row on Q2 2021 10-Q basis: mcap $178.244B, LT debt $5.752B, cash $7.390B incl. ST investments. Financecharts basis omits ~$1.1B ST debt; debt/cash definitions applied consistently both periods."
     },
     {
       "divGrowth5yPct": 2.0,
@@ -83,7 +105,9 @@
       "estimated": true,
       "estimatedFields": [
         "fcfTtmBln",
-        "divGrowth5yPct"
+        "divGrowth5yPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 21.5,
       "name": "Verizon Communications Inc.",
@@ -91,20 +115,29 @@
       "price": 47.01,
       "sector": "Communication Services",
       "ticker": "VZ",
-      "yieldPct": 6.02
+      "yieldPct": 6.02,
+      "evGrowth5yPct": -0.8,
+      "evBln": 357.6,
+      "evNote": "Current: price $46.71 (finnhub 9/28/26) x 4.155B shares (Q2 2026 10-Q) = mcap $194.1B; total debt $165.231B (21.783 ST + 143.448 LT), cash $1.752B - Verizon official Q2 2026 filings. 2021: financecharts 9/29/21 mcap $225.14B; Q2 2021 10-Q: total debt $151.917B (7.023 ST + 144.894 LT), cash $4.657B. financecharts EV rows ($345.3B current, $365.4B 2021) exclude ST debt; mine uses official total debt."
     },
     {
       "divGrowth5yPct": 7.6,
       "divYears": 18,
-      "estimated": false,
-      "estimatedFields": [],
+      "estimated": true,
+      "estimatedFields": [
+        "evBln",
+        "evGrowth5yPct"
+      ],
       "fcfTtmBln": 17.8,
       "name": "Comcast Corporation",
       "payoutRatioPct": 42.7,
       "price": 21.845,
       "sector": "Communication Services",
       "ticker": "CMCSA",
-      "yieldPct": 6.04
+      "yieldPct": 6.04,
+      "evGrowth5yPct": -14.7,
+      "evBln": 153.2,
+      "evNote": "financecharts EV rows (single internally-consistent source): now 09/25/2026: price $21.91, MC $76.609B, LTD debt $84.264B, STD debt $0.00, cash $7.661B = $153.212B; 09/28/2021: MC $251.288B + debt $100.344B - cash $12.378B = $339.254B. Debt/cash from most recent 10-Q at each price date. Caveat: financecharts excludes current portion of LT debt ($6.117B at Q2 2026 per 10-Q), so stockanalysis EV ($160.5B, incl. total debt $90.381B + MC $77.75B) is ~$7B higher; relative CAGR impact is small. Period 4.99y treated as 5.0."
     },
     {
       "divGrowth5yPct": 3.1,
@@ -114,7 +147,9 @@
         "payoutRatioPct",
         "fcfTtmBln",
         "divYears",
-        "divGrowth5yPct"
+        "divGrowth5yPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 2.7,
       "name": "Omnicom Group Inc.",
@@ -123,20 +158,29 @@
       "price": 75.2,
       "sector": "Communication Services",
       "ticker": "OMC",
-      "yieldPct": 4.26
+      "yieldPct": 4.26,
+      "evGrowth5yPct": 10.6,
+      "evBln": 28.0,
+      "evNote": "financecharts EV rows: now latest row 09/17/2026: price $78.60, MC $21.38B, LTD debt $9.953B, STD $0.049B, cash $3.336B = $28.046B (Finnhub ~Sep-28 price $75.35 would imply ~$27.2B); 09/24/2021: MC $16.023B + LTD $5.301B + STD $0.0093B - cash $4.388B = $16.945B. Note: Omnicom acquired IPG in 2025, so 2026 debt/cash reflect the post-acquisition balance sheet. Period 4.98y treated as 5.0."
     },
     {
       "divGrowth5yPct": 5.25,
       "divYears": 64,
-      "estimated": false,
-      "estimatedFields": [],
+      "estimated": true,
+      "estimatedFields": [
+        "evBln",
+        "evGrowth5yPct"
+      ],
       "fcfTtmBln": 22.2,
       "name": "Johnson & Johnson",
       "payoutRatioPct": 62.11,
       "price": 271.22,
       "sector": "Health Care",
       "ticker": "JNJ",
-      "yieldPct": 1.98
+      "yieldPct": 1.98,
+      "evGrowth5yPct": 9.4,
+      "evBln": 681.1,
+      "evNote": "financecharts EV rows: now 09/25/2026: price $271.22, MC $654.651B, LTD debt $37.344B, STD debt $9.9B, cash $20.758B = $681.137B (cross-check: stockanalysis EV $681.9B); 09/28/2021: MC $428.594B + LTD $30.31B + STD $0.6B - cash $25.306B = $434.198B. Debt/cash from most recent 10-Q at each price date. Period 4.99y treated as 5.0."
     },
     {
       "divGrowth5yPct": 7.0,
@@ -145,7 +189,9 @@
       "estimatedFields": [
         "payoutRatioPct",
         "fcfTtmBln",
-        "divGrowth5yPct"
+        "divGrowth5yPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 7.4,
       "name": "Abbott Laboratories",
@@ -153,14 +199,19 @@
       "price": 100.585,
       "sector": "Health Care",
       "ticker": "ABT",
-      "yieldPct": 2.51
+      "yieldPct": 2.51,
+      "evGrowth5yPct": -2.6,
+      "evBln": 204.1,
+      "evNote": "Base price $124.37 is MarketBeat's raw 'five years ago' quote (~Sep 21, 2021), not an exact Sep-2021 month-end close; base debt $18.50B = ST borrowings $0.20B + current LT portion $0.76B + LT debt $17.55B from Q2 2021 10-Q."
     },
     {
       "divGrowth5yPct": 6.8,
       "divYears": 53,
       "estimated": true,
       "estimatedFields": [
-        "fcfTtmBln"
+        "fcfTtmBln",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 18.2,
       "name": "AbbVie Inc.",
@@ -169,14 +220,19 @@
       "price": 264.45,
       "sector": "Health Care",
       "ticker": "ABBV",
-      "yieldPct": 2.62
+      "yieldPct": 2.62,
+      "evGrowth5yPct": 15.0,
+      "evBln": 532.6,
+      "evNote": "Base price $107.34 is MarketBeat's raw 'five years ago' quote (~Sep 25, 2021); base debt $82.14B = ST borrowings $0.02B + current LT portion $7.88B + LT debt $74.24B from Q2 2021 10-Q."
     },
     {
       "divGrowth5yPct": 4.13,
       "divYears": 49,
       "estimated": true,
       "estimatedFields": [
-        "fcfTtmBln"
+        "fcfTtmBln",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 6.1,
       "name": "Medtronic plc",
@@ -185,7 +241,10 @@
       "price": 88.64,
       "sector": "Health Care",
       "ticker": "MDT",
-      "yieldPct": 3.25
+      "yieldPct": 3.25,
+      "evGrowth5yPct": -6.3,
+      "evBln": 140.2,
+      "evNote": "Irish plc, FY ends April: uses fiscal Q1 2027 (ended 2026-07-31) and fiscal Q1 2022 (ended 2021-07-30) 10-Qs. Base price $126.00 is MarketBeat's raw 'five years ago' quote (~Sep 25, 2021). Cash is cash & equivalents only ($1.69B now, $3.00B base) \u2014 excludes $7.13B short-term investments; base debt $25.96B = current debt obligations $0.01B + LT debt $25.96B."
     },
     {
       "divGrowth5yPct": 15.3,
@@ -203,7 +262,10 @@
       "price": 1187.17,
       "sector": "Health Care",
       "ticker": "LLY",
-      "yieldPct": 0.58
+      "yieldPct": 0.58,
+      "evGrowth5yPct": 38.9,
+      "evBln": 1108.1,
+      "evNote": "Diluted WASO 893.7M (Q2'26 10-Q) / 910.4M (Q2'21 10-Q); prices 9/28/26 & 9/30/21"
     },
     {
       "divGrowth5yPct": 8.27,
@@ -219,7 +281,10 @@
       "price": 414.2,
       "sector": "Health Care",
       "ticker": "AMGN",
-      "yieldPct": 2.43
+      "yieldPct": 2.43,
+      "evGrowth5yPct": 15.5,
+      "evBln": 269.6,
+      "evNote": "Diluted WASO 544M (Q2'26) / 576M (Q2'21); prices 9/28/26 & 9/30/21; cash excl. marketable securities"
     },
     {
       "divGrowth5yPct": 5.25,
@@ -236,7 +301,10 @@
       "price": 147.72,
       "sector": "Consumer Staples",
       "ticker": "PG",
-      "yieldPct": 2.95
+      "yieldPct": 2.95,
+      "evGrowth5yPct": 2.3,
+      "evBln": 383.2,
+      "evNote": "FY2026/FY2021 10-K (fiscal yr ends June); diluted WASO 2,422.5M / 2,601.0M; prices 9/28/26 & 9/30/21"
     },
     {
       "divGrowth5yPct": 4.5,
@@ -253,7 +321,10 @@
       "price": 87.47,
       "sector": "Consumer Staples",
       "ticker": "KO",
-      "yieldPct": 2.42
+      "yieldPct": 2.42,
+      "evGrowth5yPct": 9.6,
+      "evBln": 403.8,
+      "evNote": "Now: Sep 28 2026 price $87.37 x 4.30B sh ($375.89B mkt cap, x-checked ~$378B Sep 25-28) + $44.26B debt (incl. $6.52B current maturities, Q2 2026 10-Q) - $16.37B cash = $403.78B. Then: financecharts daily EV 09/30/2021 = $226.49B mkt cap + $39.80B LTD + $1.87B STD - $13.04B cash (Q2 2021 10-Q); provider debt convention may exclude current maturities."
     },
     {
       "divGrowth5yPct": 5.8,
@@ -262,7 +333,9 @@
       "estimatedFields": [
         "payoutRatioPct",
         "fcfTtmBln",
-        "divGrowth5yPct"
+        "divGrowth5yPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 9.3,
       "name": "PepsiCo, Inc.",
@@ -270,14 +343,19 @@
       "price": 127.68,
       "sector": "Consumer Staples",
       "ticker": "PEP",
-      "yieldPct": 4.64
+      "yieldPct": 4.64,
+      "evGrowth5yPct": -2.6,
+      "evBln": 217.7,
+      "evNote": "Now: Sep 28 2026 price $128.37 x 1.36B sh ($175.21B mkt cap, x-checked $175.6B Sep 25) + $53.21B debt - $10.72B cash (Q2 2026) = $217.70B. Then: financecharts daily EV 08/13/2021 (latest date on Q2 2021 10-Q balance sheet) = $216.33B + $38.03B LTD + $0 STD - $5.78B cash; STD shown as $0 so short-term borrowings/current maturities appear excluded - approximate."
     },
     {
       "divGrowth5yPct": 3.3,
       "divYears": 63,
       "estimated": true,
       "estimatedFields": [
-        "payoutRatioPct"
+        "payoutRatioPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 3.9,
       "name": "Colgate-Palmolive Co",
@@ -285,14 +363,19 @@
       "price": 86.06,
       "sector": "Consumer Staples",
       "ticker": "CL",
-      "yieldPct": 2.5
+      "yieldPct": 2.5,
+      "evGrowth5yPct": 0.9,
+      "evBln": 75.2,
+      "evNote": "Now: Sep 28 2026 price $86.27 x 797.17M sh ($68.77B mkt cap, x-checked $68.9B Sep 25) + $7.86B debt - $1.45B cash (Q2 2026) = $75.18B. Then: financecharts daily EV 09/29/2021 (latest date on Q2 2021 10-Q balance sheet) = $65.02B + $7.95B LTD + $5M STD - $1.01B cash; provider debt convention may exclude separately-reported current maturities."
     },
     {
       "divGrowth5yPct": 3.4,
       "divYears": 54,
       "estimated": true,
       "estimatedFields": [
-        "payoutRatioPct"
+        "payoutRatioPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 1.8,
       "name": "Kimberly-Clark Corp",
@@ -300,7 +383,10 @@
       "price": 98.43,
       "sector": "Consumer Staples",
       "ticker": "KMB",
-      "yieldPct": 5.2
+      "yieldPct": 5.2,
+      "evGrowth5yPct": -6.5,
+      "evBln": 38.3,
+      "evNote": "now: Q2 2026 10-Q (debt $6,517M, cash $956M) + Sep 25 2026 close $98.43 (~$32.7B mkt cap, cross-checked Finnhub/MarketBeat); then: Q2 2021 10-Q (debt $9,084M, cash $306M) + ~Sep 2021 price ~$133 x ~337.5M shares (~$44.9B mkt cap); 5.0-year CAGR"
     },
     {
       "divGrowth5yPct": 7.4,
@@ -315,7 +401,10 @@
       "price": 236.5,
       "sector": "Consumer Discretionary",
       "ticker": "MCD",
-      "yieldPct": 3.3
+      "yieldPct": 3.3,
+      "evGrowth5yPct": -0.8,
+      "evBln": 206.4,
+      "evNote": "now: Q2 2026 10-Q (LT debt $39.9B, no current maturities, cash $0.8B) + Sep 28 2026 mkt cap $167.4B (finnhub, cross-checked vs companiesmarketcap); then: Q2 2021 10-Q (debt $35.4B incl $0.5B current maturities, cash $3.0B) + Sep 28 2021 mkt cap $182.0B; exactly 5.0y gap; negative CAGR reflects ~22% YTD 2026 share decline"
     },
     {
       "divGrowth5yPct": 10.5,
@@ -324,7 +413,9 @@
       "estimatedFields": [
         "payoutRatioPct",
         "divYears",
-        "divGrowth5yPct"
+        "divGrowth5yPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 7.0,
       "name": "Lowe's Companies Inc",
@@ -332,20 +423,29 @@
       "price": 189.28,
       "sector": "Consumer Discretionary",
       "ticker": "LOW",
-      "yieldPct": 2.6
+      "yieldPct": 2.6,
+      "evGrowth5yPct": -3.1,
+      "evBln": 140.5,
+      "evNote": "now: Q2 2026 10-Q (ended 7/31/26, debt $37.556B, cash $3.172B) + 9/25/26 close $189.28, mkt cap $106.2B (stockanalysis; valueinvesting.io shows matching $140.5B EV); then: Q2 2021 10-Q (ended 7/30/21, debt $24.311B incl. $1.0B short-term borrowings, cash $4.835B) + 9/26/21 close $207.87 x 699M shares (from 10-Q); period exactly 5.0 years"
     },
     {
       "divGrowth5yPct": 8.9,
       "divYears": 16,
-      "estimated": false,
-      "estimatedFields": [],
+      "estimated": true,
+      "estimatedFields": [
+        "evBln",
+        "evGrowth5yPct"
+      ],
       "fcfTtmBln": 15.1,
       "name": "Home Depot Inc",
       "payoutRatioPct": 65.2,
       "price": 293.2,
       "sector": "Consumer Discretionary",
       "ticker": "HD",
-      "yieldPct": 3.2
+      "yieldPct": 3.2,
+      "evGrowth5yPct": -2.2,
+      "evBln": 343.3,
+      "evNote": "now: Q2 2026 10-Q (8/2/26): debt $52.9B, cash $2.1B; market cap $292.5B at $293.24 (late Sep 2026, cross-checked Finnhub/Forbes/companiesmarketcap). then: Q2 2021 10-Q (8/1/21): debt $36.2B, cash $4.6B; market cap $351.6B = 1.056B shares x ~$333 Sep 2021 price (Trefis 9/1/21 reference, estimated). Period ~5.0y."
     },
     {
       "divGrowth5yPct": 9.3,
@@ -360,7 +460,10 @@
       "price": 157.45,
       "sector": "Consumer Discretionary",
       "ticker": "TGT",
-      "yieldPct": 2.9
+      "yieldPct": 2.9,
+      "evGrowth5yPct": -7.4,
+      "evBln": 81.5,
+      "evNote": "now: Q2 2026 10-Q (Aug 1, 2026) debt $15.36B + cash $5.41B, Sep 25 2026 close $157.45 x 454.29M shares (cross-checked $71.5B w/ Finnhub/MarketBeat); then: Q2 2021 10-Q (Jul 31, 2021) debt $12.78B + cash $7.37B, Sep 28 2021 close $233.44 x 489.65M shares (cross-checked vs stockchase $234.19)"
     },
     {
       "divGrowth5yPct": 6.6,
@@ -368,7 +471,9 @@
       "estimated": true,
       "estimatedFields": [
         "payoutRatioPct",
-        "divGrowth5yPct"
+        "divGrowth5yPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 3.6,
       "name": "Starbucks Corp",
@@ -376,7 +481,10 @@
       "price": 94.86,
       "sector": "Consumer Discretionary",
       "ticker": "SBUX",
-      "yieldPct": 2.6
+      "yieldPct": 2.6,
+      "evGrowth5yPct": -3.5,
+      "evBln": 118.5,
+      "evNote": "now: Q3 FY2026 10-Q (Jun 28, 2026) debt 13.28B + cash 3.45B, Sep 28, 2026 price $95.35 x 1139.8M shares = 108.7B mcap (x-checked ~108.7B companiesmarketcap); then: Q3 FY2021 10-Q (Jun 27, 2021) debt 14.62B + cash 4.75B, Jun 25, 2021 price ~$112.5 est. from Wiener Borse EUR close 94.27 x EUR/USD 1.1938 x 1179.0M shares; CAGR uses actual 5.25-yr gap, not 5.0"
     },
     {
       "divGrowth5yPct": 1.1,
@@ -385,7 +493,9 @@
       "estimatedFields": [
         "payoutRatioPct",
         "fcfTtmBln",
-        "divGrowth5yPct"
+        "divGrowth5yPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 3.5,
       "name": "Emerson Electric Co.",
@@ -393,7 +503,10 @@
       "price": 158.52,
       "sector": "Industrials",
       "ticker": "EMR",
-      "yieldPct": 1.4
+      "yieldPct": 1.4,
+      "evGrowth5yPct": 10.3,
+      "evBln": 99.2,
+      "evNote": "now: Q3 FY2026 10-Q (quarter ended Jun 30, 2026; debt $13.113B, cash $2.180B) + $158.23 Sep 25, 2026 close, 557.8M shares per that 10-Q; then: Q3 FY2021 10-Q (Jun 30, 2021; debt $7.313B, cash $2.860B) + $94.20 Sep 30, 2021 close, 597.8M shares per that 10-Q; share counts ~3 mo earlier than prices, period treated as 5.0y"
     },
     {
       "divGrowth5yPct": 7.1,
@@ -401,7 +514,9 @@
       "estimated": true,
       "estimatedFields": [
         "payoutRatioPct",
-        "fcfTtmBln"
+        "fcfTtmBln",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 2.9,
       "name": "Illinois Tool Works Inc.",
@@ -409,7 +524,10 @@
       "price": 274.29,
       "sector": "Industrials",
       "ticker": "ITW",
-      "yieldPct": 2.51
+      "yieldPct": 2.51,
+      "evGrowth5yPct": 6.4,
+      "evBln": 87.0,
+      "evNote": "now: Q2 2026 10-Q (debt $9.694B, cash $0.839B) + Sep 25 2026 close $274.32 x 284.8M shares ($78.13B mkt cap, matches Finnhub $78,126M); then: Q2 2021 10-Q (debt $7.648B, cash $2.058B, 315.0M shares) + Sep 30 2021 close $184.69; 5.0y CAGR; minor date mismatches so estimated=true"
     },
     {
       "divGrowth5yPct": 8.2,
@@ -417,7 +535,9 @@
       "estimated": true,
       "estimatedFields": [
         "payoutRatioPct",
-        "fcfTtmBln"
+        "fcfTtmBln",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 9.0,
       "name": "Caterpillar Inc.",
@@ -425,7 +545,10 @@
       "price": 821.22,
       "sector": "Industrials",
       "ticker": "CAT",
-      "yieldPct": 0.79
+      "yieldPct": 0.79,
+      "evGrowth5yPct": 26.3,
+      "evBln": 416.1,
+      "evNote": "now: Q2 2026 10-Q (debt $45.1B, cash $6.7B) + Sep 25 2026 mkt cap $377.7B (finhacker/finnhub agree); then: Q2 2021 10-Q (debt $37.6B, cash $10.8B) + Sep 30 2021 close ~$189.8 (unadjusted est. from dividend-adjusted series) x 540.9M shares"
     },
     {
       "divGrowth5yPct": 4.8,
@@ -433,7 +556,9 @@
       "estimated": true,
       "estimatedFields": [
         "fcfTtmBln",
-        "divGrowth5yPct"
+        "divGrowth5yPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 5.6,
       "name": "Lockheed Martin Corporation",
@@ -441,14 +566,19 @@
       "price": 521.36,
       "sector": "Industrials",
       "ticker": "LMT",
-      "yieldPct": 2.65
+      "yieldPct": 2.65,
+      "evGrowth5yPct": 3.6,
+      "evBln": 136.7,
+      "evNote": "Estimated: debt/cash from quarterly filings; share price and share count from mismatched dates."
     },
     {
       "divGrowth5yPct": 6.5,
       "divYears": 20,
       "estimated": true,
       "estimatedFields": [
-        "divGrowth5yPct"
+        "divGrowth5yPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 6.5,
       "name": "Union Pacific Corporation",
@@ -456,7 +586,10 @@
       "price": 274.87,
       "sector": "Industrials",
       "ticker": "UNP",
-      "yieldPct": 2.07
+      "yieldPct": 2.07,
+      "evGrowth5yPct": 2.4,
+      "evBln": 190.9,
+      "evNote": "Estimated: debt/cash from quarterly filings; share price and share count from mismatched dates."
     },
     {
       "divGrowth5yPct": 10.6,
@@ -464,7 +597,9 @@
       "estimated": true,
       "estimatedFields": [
         "fcfTtmBln",
-        "divGrowth5yPct"
+        "divGrowth5yPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfNote": "Banks report operating cash flow including balance-sheet flows; FCF is not a meaningful dividend-coverage metric for banks \u2014 use payout ratio instead.",
       "fcfTtmBln": -237.0,
@@ -473,7 +608,10 @@
       "price": 340.61,
       "sector": "Financials",
       "ticker": "JPM",
-      "yieldPct": 1.94
+      "yieldPct": 1.94,
+      "evGrowth5yPct": 13.5,
+      "evBln": 718.1,
+      "evNote": "Bank: standard EV is distorted by deposits; growth shown is 5-yr market-cap CAGR. Bank: EV includes deposits; market-cap CAGR 13.5% is the cleaner growth metric. Estimated: price/share-count pairing approximate."
     },
     {
       "divGrowth5yPct": 3.8,
@@ -489,7 +627,10 @@
       "price": 104.99,
       "sector": "Financials",
       "ticker": "TROW",
-      "yieldPct": 4.95
+      "yieldPct": 4.95,
+      "evGrowth5yPct": -14.2,
+      "evBln": 19.2,
+      "evNote": "EV = MC + debt - cash; debt = $0 (TROW files no debt concepts on EDGAR). EV < market cap due to net-cash balance sheet. Q2 2021 -> Q2 2026, exactly 5.0y."
     },
     {
       "divGrowth5yPct": 14.0,
@@ -505,7 +646,10 @@
       "price": 114.12,
       "sector": "Financials",
       "ticker": "AFL",
-      "yieldPct": 2.14
+      "yieldPct": 2.14,
+      "evGrowth5yPct": 9.1,
+      "evBln": 59.8,
+      "evNote": "EV = MC + notes-payable debt - cash from 10-Qs. Caveat: stockanalysis uses a broader debt scope (adds ~$8.4B securities-lending/repo liabilities). Q2 2021 -> Q2 2026, exactly 5.0y."
     },
     {
       "divGrowth5yPct": 9.1,
@@ -522,7 +666,10 @@
       "price": 56.43,
       "sector": "Financials",
       "ticker": "BAC",
-      "yieldPct": 2.27
+      "yieldPct": 2.27,
+      "evGrowth5yPct": 2.6,
+      "evBln": 564.7,
+      "evNote": "Bank: standard EV is distorted by deposits; growth shown is 5-yr market-cap CAGR. Bank: EV includes deposits/funding, so standard EV is distorted; market-cap CAGR 2.6% is the cleaner growth metric. EV computed as MC + (LT debt + ST borrowings) - cash from 10-Qs. Q2 2021 -> Q2 2026, exactly 5.0y."
     },
     {
       "divGrowth5yPct": 3.4,
@@ -531,7 +678,9 @@
       "estimatedFields": [
         "payoutRatioPct",
         "divYears",
-        "divGrowth5yPct"
+        "divGrowth5yPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 0.2,
       "name": "Franklin Resources, Inc.",
@@ -539,7 +688,10 @@
       "price": 33.02,
       "sector": "Financials",
       "ticker": "BEN",
-      "yieldPct": 4.0
+      "yieldPct": 4.0,
+      "evGrowth5yPct": 0.3,
+      "evBln": 15.4,
+      "evNote": "Franklin Resources (FY ends Sept 30; June quarter = fiscal Q3). Negative net debt both periods, so EV < market cap as expected for an asset manager. Estimated: 10-Q share counts paired with Sept 25, 2026 price. Exactly 5.0y."
     },
     {
       "divGrowth5yPct": 3.2,
@@ -547,7 +699,9 @@
       "estimated": true,
       "estimatedFields": [
         "fcfTtmBln",
-        "divGrowth5yPct"
+        "divGrowth5yPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 29.3,
       "name": "Exxon Mobil Corporation",
@@ -555,7 +709,10 @@
       "price": 160.59,
       "sector": "Energy",
       "ticker": "XOM",
-      "yieldPct": 2.57
+      "yieldPct": 2.57,
+      "evGrowth5yPct": 16.4,
+      "evBln": 692.1,
+      "evNote": "From Q2 2026 and Q2 2021 10-Q balance sheets (cash, ST debt, LT debt). Estimated: 10-Q share counts paired with Sept 25, 2026 price. Exactly 5.0y."
     },
     {
       "divGrowth5yPct": 5.8,
@@ -563,7 +720,9 @@
       "estimated": true,
       "estimatedFields": [
         "fcfTtmBln",
-        "divGrowth5yPct"
+        "divGrowth5yPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 30.0,
       "name": "Chevron Corporation",
@@ -571,14 +730,19 @@
       "price": 204.39,
       "sector": "Energy",
       "ticker": "CVX",
-      "yieldPct": 3.48
+      "yieldPct": 3.48,
+      "evGrowth5yPct": 12.7,
+      "evBln": 432.4,
+      "evNote": "From Q2 2026 and Q2 2021 10-Q balance sheets (cash, borrowings, LT debt). Estimated: 10-Q share counts paired with Sept 25, 2026 price. Exactly 5.0y."
     },
     {
       "divGrowth5yPct": 18.8,
       "divYears": 8,
       "estimated": true,
       "estimatedFields": [
-        "divGrowth5yPct"
+        "divGrowth5yPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 6.6,
       "name": "EOG Resources, Inc.",
@@ -586,7 +750,10 @@
       "price": 140.26,
       "sector": "Energy",
       "ticker": "EOG",
-      "yieldPct": 2.91
+      "yieldPct": 2.91,
+      "evGrowth5yPct": 12.6,
+      "evBln": 75.8,
+      "evNote": "Now: Sep-25-2026 market cap $72.469B + Q2-2026 total debt $8.25B \u2212 cash $4.907B. Base: financecharts 08/25/2021 snapshot $41.335B (Q2-2021 balance sheet). CAGR over actual 5.09y gap."
     },
     {
       "divGrowth5yPct": 13.9,
@@ -595,7 +762,9 @@
       "estimatedFields": [
         "fcfTtmBln",
         "divYears",
-        "divGrowth5yPct"
+        "divGrowth5yPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 19.6,
       "name": "ConocoPhillips",
@@ -603,14 +772,19 @@
       "price": 127.3,
       "sector": "Energy",
       "ticker": "COP",
-      "yieldPct": 2.64
+      "yieldPct": 2.64,
+      "evGrowth5yPct": 14.7,
+      "evBln": 165.7,
+      "evNote": "Now: Sep-25-2026 market cap $150.601B + Q2-2026 LT debt $22.828B \u2212 cash $7.692B. Base: financecharts 08/23/2021 snapshot $82.211B (Q2-2021 balance sheet). CAGR over actual 5.10y gap."
     },
     {
       "divGrowth5yPct": 10.1,
       "divYears": 31,
       "estimated": true,
       "estimatedFields": [
-        "fcfTtmBln"
+        "fcfTtmBln",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": -17.8,
       "name": "NextEra Energy, Inc.",
@@ -618,27 +792,38 @@
       "price": 76.08,
       "sector": "Utilities",
       "ticker": "NEE",
-      "yieldPct": 3.28
+      "yieldPct": 3.28,
+      "evGrowth5yPct": 6.1,
+      "evBln": 266.1,
+      "evNote": "Now: Sep-25-2026 market cap $158.733B + Q2-2026 total debt $110.197B \u2212 cash $2.87B (cash figure conflicted across sources). Base: financecharts 07/09/2021 snapshot $195.046B (Q2-2021 balance sheet). CAGR over actual 5.22y gap."
     },
     {
       "divGrowth5yPct": 2.0,
       "divYears": 20,
-      "estimated": false,
-      "estimatedFields": [],
+      "estimated": true,
+      "estimatedFields": [
+        "evBln",
+        "evGrowth5yPct"
+      ],
       "fcfTtmBln": -4.3,
       "name": "Duke Energy Corporation",
       "payoutRatioPct": 65.17,
       "price": 113.35,
       "sector": "Utilities",
       "ticker": "DUK",
-      "yieldPct": 3.83
+      "yieldPct": 3.83,
+      "evGrowth5yPct": 4.3,
+      "evBln": 178.9,
+      "evNote": "Now: market cap $88.379B (Sep 28, 2026) + Q2-2026 debt $91.238B \u2212 cash $0.673B. Base: Dec-2021 close $104.90 \u00d7 769M shares + FY2021 debt $66.224B \u2212 cash $0.341B. Finance leases excluded from debt. CAGR over actual 4.742y gap (Dec 31, 2021 \u2192 Sep 28, 2026)."
     },
     {
       "divGrowth5yPct": 2.9,
       "divYears": 25,
       "estimated": true,
       "estimatedFields": [
-        "divGrowth5yPct"
+        "divGrowth5yPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": -4.2,
       "name": "Southern Company",
@@ -646,7 +831,10 @@
       "price": 82.88,
       "sector": "Utilities",
       "ticker": "SO",
-      "yieldPct": 3.67
+      "yieldPct": 3.67,
+      "evGrowth5yPct": 6.5,
+      "evBln": 167.9,
+      "evNote": "Now: market cap $95.342B (Sep 28, 2026) + Q2-2026 debt $75.582B \u2212 cash $2.98B. Base: Dec-2021 close $68.58 \u00d7 1,062M shares + FY2021 debt $53.502B \u2212 cash $1.798B. Finance leases excluded. CAGR over actual 4.742y gap."
     },
     {
       "divGrowth5yPct": 2.7,
@@ -654,7 +842,9 @@
       "estimated": true,
       "estimatedFields": [
         "payoutRatioPct",
-        "divGrowth5yPct"
+        "divGrowth5yPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": -0.9,
       "name": "Consolidated Edison, Inc.",
@@ -662,7 +852,10 @@
       "price": 103.1,
       "sector": "Utilities",
       "ticker": "ED",
-      "yieldPct": 3.44
+      "yieldPct": 3.44,
+      "evGrowth5yPct": 4.1,
+      "evBln": 64.3,
+      "evNote": "Now: market cap $37.995B (Sep 28, 2026) + Q2-2026 debt $27.814B \u2212 cash $1.47B. Base: Dec-2021 close $85.32 \u00d7 349M shares + FY2021 debt $24.590B \u2212 cash $1.146B. Finance leases excluded. CAGR over actual 4.742y gap."
     },
     {
       "divGrowth5yPct": 9.3,
@@ -671,7 +864,9 @@
       "estimatedFields": [
         "payoutRatioPct",
         "fcfTtmBln",
-        "divGrowth5yPct"
+        "divGrowth5yPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": 5.0,
       "name": "Linde plc",
@@ -680,27 +875,38 @@
       "price": 472.69,
       "sector": "Materials",
       "ticker": "LIN",
-      "yieldPct": 1.35
+      "yieldPct": 1.35,
+      "evGrowth5yPct": 9.2,
+      "evBln": 240.7,
+      "evNote": "Now: EV $240.7B (market cap $217.60B + debt $28.01B \u2212 cash $4.90B). Base Jun 30, 2021: price $269.27 \u00d7 516.41M shares + total debt $15.49B \u2212 cash $3.14B. Growth is 5.25-yr CAGR (Jun 30, 2021 \u2192 Sep 28, 2026)."
     },
     {
       "divGrowth5yPct": 12.0,
       "divYears": 48,
-      "estimated": false,
-      "estimatedFields": [],
+      "estimated": true,
+      "estimatedFields": [
+        "evBln",
+        "evGrowth5yPct"
+      ],
       "fcfTtmBln": 3.2,
       "name": "Sherwin-Williams Co",
       "payoutRatioPct": 29.5,
       "price": 328.72,
       "sector": "Materials",
       "ticker": "SHW",
-      "yieldPct": 1.0
+      "yieldPct": 1.0,
+      "evGrowth5yPct": 3.5,
+      "evBln": 94.2,
+      "evNote": "Now: EV $94.2B. Base Jun 30, 2021: price $259.89 (post 3-for-1 split) \u00d7 268M shares + total debt $9.05B \u2212 cash $0.22B. Growth is 5.25-yr CAGR."
     },
     {
       "divGrowth5yPct": 6.6,
       "divYears": 44,
       "estimated": true,
       "estimatedFields": [
-        "payoutRatioPct"
+        "payoutRatioPct",
+        "evBln",
+        "evGrowth5yPct"
       ],
       "fcfTtmBln": -0.3,
       "name": "Air Products and Chemicals Inc",
@@ -708,7 +914,10 @@
       "price": 281.76,
       "sector": "Materials",
       "ticker": "APD",
-      "yieldPct": 2.6
+      "yieldPct": 2.6,
+      "evGrowth5yPct": 5.7,
+      "evBln": 80.0,
+      "evNote": "Now: EV $80.0B. Base Jun 30, 2021 (fiscal Q3): price $253.66 \u00d7 223M shares + total debt $7.67B \u2212 cash $4.29B (excludes $1.52B short-term investments). Growth is 5.25-yr CAGR."
     }
   ],
   "universe": "US common-stock dividend payers"
