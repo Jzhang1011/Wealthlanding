@@ -1176,8 +1176,7 @@
 <!-- ... rest of your webpage content ... -->
     <wealthlanding-footer></wealthlanding-footer>
     
-   <!-- ConvertKit Script -->
-    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+    <!-- ConvertKit Script (removed: footer form now uses our own relay, nothing on this page needs ck.js) -->
 
     <!-- MODULAR FOOTER -->
     
@@ -1185,5 +1184,40 @@
 
     <!-- Global Header Injection Loader -->
     <script src="/components/header.js"></script>
+
+    <script>
+    /* Wire the "Stay Connected" Join box to the signup relay (it was decorative). */
+    (function () {
+      function init() {
+        var input = document.querySelector('input[placeholder="Your email..."]');
+        var wrap = input && input.closest('div.flex');
+        var btn = wrap && wrap.querySelector('button');
+        if (!input || !btn || btn.dataset.wlWired) return;
+        btn.dataset.wlWired = '1';
+        function note(text, ok) {
+          var n = wrap.parentNode.querySelector('.wl-join-note');
+          if (!n) { n = document.createElement('p'); n.className = 'wl-join-note text-xs mt-2'; wrap.parentNode.appendChild(n); }
+          n.style.color = ok ? '#34d399' : '#f87171';
+          n.textContent = text;
+        }
+        btn.addEventListener('click', function () {
+          var email = (input.value || '').trim();
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { note('Please enter a valid email address.', false); return; }
+          btn.disabled = true;
+          note('Joining…', true);
+          fetch('https://api.wealthlanding.com/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({ email: email, source: 'overseas-hub-newsletter' })
+          }).then(function (r) { return r.json().catch(function () { return {}; }); }).then(function (d) {
+            if (d && d.ok) { wrap.innerHTML = '<p class="text-xs" style="color:#34d399">✓ You\'re on the list!</p>'; }
+            else { throw new Error('subscribe_failed'); }
+          }).catch(function () { note('Something went wrong — please try again.', false); btn.disabled = false; });
+        });
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+      else init();
+    })();
+    </script>
 </body>
 </html>

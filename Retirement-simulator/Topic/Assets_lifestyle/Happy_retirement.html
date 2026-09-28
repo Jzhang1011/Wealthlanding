@@ -727,6 +727,40 @@
       }
     }
   </script>
-  <script src="/components/header.js"></script> 
+  <script src="/components/header.js"></script>
+  <script>
+  /* Wire the reader-digest Subscribe box to the signup relay (it was decorative). */
+  (function () {
+    function init() {
+      var input = document.querySelector('input[placeholder="Enter your email address"]');
+      var wrap = input && input.closest('div.mt-5');
+      var btn = wrap && wrap.querySelector('button');
+      if (!input || !btn || btn.dataset.wlWired) return;
+      btn.dataset.wlWired = '1';
+      function note(text, ok) {
+        var n = wrap.parentNode.querySelector('.wl-sub-note');
+        if (!n) { n = document.createElement('p'); n.className = 'wl-sub-note text-xs mt-3'; wrap.parentNode.appendChild(n); }
+        n.style.color = ok ? '#34d399' : '#f87171';
+        n.textContent = text;
+      }
+      btn.addEventListener('click', function () {
+        var email = (input.value || '').trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { note('Please enter a valid email address.', false); return; }
+        btn.disabled = true;
+        note('Subscribing…', true);
+        fetch('https://api.wealthlanding.com/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ email: email, source: 'happy-retirement-digest' })
+        }).then(function (r) { return r.json().catch(function () { return {}; }); }).then(function (d) {
+          if (d && d.ok) { wrap.innerHTML = '<p class="text-xs" style="color:#34d399">✓ You\'re on the list!</p>'; }
+          else { throw new Error('subscribe_failed'); }
+        }).catch(function () { note('Something went wrong — please try again.', false); btn.disabled = false; });
+      });
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+  })();
+  </script>
 </body>
 </html>

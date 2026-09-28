@@ -226,15 +226,55 @@ class WealthLandingFooter extends HTMLElement {
       </footer>
     `;
 
-    // Kit JS embed URL currently 404s (wealthlanding.kit.com/.../index.js).
-    // Use the HTML form (same form id 9874203 / uid 2b35717445) so the email field always shows.
-    if (!document.getElementById('wl-ckjs')) {
-      const ck = document.createElement('script');
-      ck.id = 'wl-ckjs';
-      ck.src = 'https://f.convertkit.com/ckjs/ck.5.js';
-      ck.async = true;
-      document.head.appendChild(ck);
-    }
+    // Route the footer newsletter form through our own worker relay
+    // (POST https://api.wealthlanding.com/api/subscribe) instead of letting it
+    // POST directly to app.kit.com, which ad/tracker blockers silently kill.
+    // We deliberately do NOT load Kit's ck.5.js embed script anymore.
+    (function () {
+      var slot = this.querySelector('[data-kit-slot]');
+      var form = slot && slot.querySelector('.wl-kit-form');
+      if (!form || form.dataset.wlRelay) return;
+      form.dataset.wlRelay = '1';
+      form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        var input = form.querySelector('input[name="email_address"]');
+        var email = input && input.value ? input.value.trim() : '';
+        var btn = form.querySelector('[data-element="submit"]');
+        var note = slot.querySelector('.wl-kit-note');
+        if (!note) {
+          note = document.createElement('p');
+          note.className = 'wl-kit-note text-xs mt-2';
+          slot.appendChild(note);
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          note.style.color = '#f87171';
+          note.textContent = 'Please enter a valid email address.';
+          return;
+        }
+        if (btn) btn.disabled = true;
+        note.style.color = '#94a3b8';
+        note.textContent = 'Subscribing…';
+        fetch('https://api.wealthlanding.com/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ email: email, source: 'footer-newsletter' })
+        })
+          .then(function (res) { return res.json().catch(function () { return {}; }); })
+          .then(function (data) {
+            if (data && data.ok) {
+              slot.innerHTML = '<p class="text-sm" style="color:#34d399">✓ You\'re on the list!</p>';
+            } else {
+              throw new Error((data && data.error) || 'subscribe_failed');
+            }
+          })
+          .catch(function () {
+            note.style.color = '#f87171';
+            note.textContent = 'Something went wrong — please try again.';
+            if (btn) btn.disabled = false;
+          });
+      }, true);
+    }).call(this);
   }
 }
 
