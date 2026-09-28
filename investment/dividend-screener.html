@@ -174,7 +174,7 @@
 
     var COLUMNS = [
       { key: 'ticker',         label: 'Company',   sortable: false },
-      { key: 'sector',         label: 'Sector',    sortable: false },
+      { key: 'sector',         label: 'Sector',    sortable: false, fmt: function (v) { return esc(v); } },
       { key: 'price',          label: 'Price',     fmt: function (v) { return '$' + v.toFixed(2); } },
       { key: 'yieldPct',       label: 'Yield',     fmt: function (v) { return v.toFixed(2) + '%'; } },
       { key: 'payoutRatioPct', label: 'Payout',    fmt: function (v) { return v.toFixed(0) + '%'; } },
