@@ -90,34 +90,39 @@
     }
   }
 
+  // Subscriptions go through our own worker (POST /api/subscribe), which relays
+  // to the Kit API server-side. Direct browser -> app.kit.com posts are eaten
+  // by ad/tracker blockers, so we never POST to Kit from the client.
   function submitToKit(config, fields) {
-    var body = new URLSearchParams();
-    body.set('email_address', fields.email);
-    if (fields.first_name) body.set('first_name', fields.first_name);
-    // Kit custom fields (create matching keys in Kit: city, interest, topic, source)
-    body.set('fields[city]', fields.city || '');
-    body.set('fields[interest]', fields.interest || '');
-    if (fields.topic) body.set('fields[topic]', fields.topic);
-    body.set('fields[source]', fields.source || 'city-monetize');
-
-    return fetch(config.kitFormAction, {
+    return fetch('/api/subscribe', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json',
         Accept: 'application/json'
       },
-      body: body.toString(),
-      mode: 'cors'
+      body: JSON.stringify({
+        email: fields.email,
+        first_name: fields.first_name || '',
+        city: fields.city || '',
+        interest: fields.interest || '',
+        topic: fields.topic || '',
+        source: fields.source || 'city-monetize'
+      })
     }).then(function (res) {
-      // Kit often returns 200 JSON; some browsers see opaque failures on CORS
-      if (res.ok || res.type === 'opaque') return { ok: true };
-      return res.json().catch(function () { return {}; }).then(function (data) {
-        if (data && (data.subscription || data.status === 'success')) return { ok: true };
-        var err =
-          (data && (data.message || (data.errors && data.errors[0]))) ||
-          'Something went wrong. Please try again.';
-        return { ok: false, error: String(err) };
-      });
+      return res
+        .json()
+        .catch(function () {
+          return {};
+        })
+        .then(function (data) {
+          if (res.ok && data && data.ok) return { ok: true };
+          var err =
+            (data && data.error === 'invalid_email'
+              ? 'Please enter a valid email.'
+              : null) ||
+            'Something went wrong. Please try again.';
+          return { ok: false, error: String(err) };
+        });
     });
   }
 
@@ -169,8 +174,8 @@
           }
         })
         .catch(function () {
-          // CORS may block reading the response even when Kit accepted the POST.
-          setMsg(box, 'Thanks — if that email is new, you are on the list.', true);
+          // Never claim success when the request failed.
+          setMsg(box, 'Could not subscribe. Please check your connection and try again.', false);
         })
         .finally(function () {
           btn.disabled = false;
@@ -277,7 +282,7 @@
             }
           })
           .catch(function () {
-            setMsg(notifyForm, 'Thanks — we will notify you when this is ready.', true);
+            setMsg(notifyForm, 'Could not subscribe. Please check your connection and try again.', false);
           })
           .finally(function () {
             go.disabled = false;
@@ -367,7 +372,8 @@
           }
         })
         .catch(function () {
-          setMsg(box, 'Request received — we will follow up by email.', true);
+          // Never claim the request was received when it actually failed.
+          setMsg(box, 'Could not send your request. Please check your connection and try again.', false);
         })
         .finally(function () {
           btn.disabled = false;

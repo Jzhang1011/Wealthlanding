@@ -4,12 +4,19 @@
  * Routes:
  *   GET  /go/:offerId?city=...  → 302 to offer destination (or soft fallback)
  *   POST /api/interest          → log anonymous interest beacon
+ *   POST /api/subscribe         → relay newsletter/referral signup to Kit API v4
  *   everything else             → env.ASSETS
  *
  * Analytics Engine binding: INTEREST (dataset wl_interest)
  * Dataset must exist in the Cloudflare dashboard (Workers > Analytics Engine).
  * If the binding is missing, tracking no-ops and redirects still work when a
  * destination URL is present in offers.json.
+ *
+ * Secret: KIT_API_KEY (Kit v4 API key, Settings → Developers in Kit).
+ * Set via `wrangler secret put KIT_API_KEY` or the Cloudflare dashboard
+ * (Worker → Settings → Variables → Secrets). Subscriptions are relayed
+ * server-side because direct browser → app.kit.com POSTs are blocked by
+ * ad/tracker blockers for a large share of visitors.
  */
 
 const OFFERS_PATH = '/components/monetization/offers.json';
@@ -138,6 +145,103 @@ async function handleInterest(request, env) {
   return json({ ok: true }, 200, corsHeaders(request));
 }
 
+const KIT_API_BASE = 'https://api.kit.com/v4';
+
+function kitFormId(config) {
+  try {
+    const m = String((config && config.kitFormAction) || '').match(/\/forms\/(\d+)\//);
+    if (m) return m[1];
+  } catch {
+    /* fall through to default */
+  }
+  return '9874203';
+}
+
+function isValidEmail(value) {
+  return typeof value === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+}
+
+async function handleSubscribe(request, env) {
+  if (request.method === 'OPTIONS') {
+    return new Response(null, { status: 204, headers: corsHeaders(request) });
+  }
+  if (request.method !== 'POST') {
+    return json({ ok: false, error: 'method_not_allowed' }, 405, corsHeaders(request));
+  }
+  if (!env.KIT_API_KEY) {
+    return json({ ok: false, error: 'subscribe_unavailable' }, 503, corsHeaders(request));
+  }
+
+  let payload = {};
+  try {
+    payload = await request.json();
+  } catch {
+    payload = {};
+  }
+
+  const email = String(payload.email || '').trim();
+  if (!isValidEmail(email)) {
+    return json({ ok: false, error: 'invalid_email' }, 400, corsHeaders(request));
+  }
+  const firstName = String(payload.first_name || payload.name || '').trim();
+  const fields = {};
+  for (const key of ['city', 'interest', 'topic', 'source']) {
+    if (payload[key]) fields[key] = String(payload[key]).slice(0, 200);
+  }
+
+  const config = await loadOffers(env, request);
+  const formId = kitFormId(config);
+  const kitHeaders = {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+    'X-Kit-Api-Key': env.KIT_API_KEY
+  };
+
+  try {
+    // 1. Upsert the subscriber with custom fields.
+    const subscriberBody = { email_address: email, fields };
+    if (firstName) subscriberBody.first_name = firstName;
+    const upsert = await fetch(KIT_API_BASE + '/subscribers', {
+      method: 'POST',
+      headers: kitHeaders,
+      body: JSON.stringify(subscriberBody)
+    });
+    if (!upsert.ok) {
+      const detail = await upsert.text().catch(() => '');
+      console.error('[wl-worker] kit subscriber upsert failed', upsert.status, detail.slice(0, 200));
+      return json({ ok: false, error: 'subscribe_failed' }, 502, corsHeaders(request));
+    }
+
+    // 2. Add to the form (respects the form's double opt-in setting).
+    const add = await fetch(KIT_API_BASE + '/forms/' + formId + '/subscribers', {
+      method: 'POST',
+      headers: kitHeaders,
+      body: JSON.stringify({ email_address: email })
+    });
+    if (!add.ok) {
+      const detail = await add.text().catch(() => '');
+      console.error('[wl-worker] kit form subscribe failed', add.status, detail.slice(0, 200));
+      return json({ ok: false, error: 'subscribe_failed' }, 502, corsHeaders(request));
+    }
+
+    writeInterest(env, {
+      offer: 'subscribe',
+      city: fields.city || '',
+      action: 'subscribe',
+      interest: fields.interest || '',
+      topic: fields.topic || '',
+      referrer: request.headers.get('Referer') || '',
+      path: '/api/subscribe',
+      destination: ''
+    });
+
+    return json({ ok: true }, 200, corsHeaders(request));
+  } catch (err) {
+    console.error('[wl-worker] subscribe error', err);
+    return json({ ok: false, error: 'subscribe_failed' }, 502, corsHeaders(request));
+  }
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -146,6 +250,10 @@ export default {
     try {
       if (pathname === '/api/interest' || pathname === '/api/interest/') {
         return await handleInterest(request, env);
+      }
+
+      if (pathname === '/api/subscribe' || pathname === '/api/subscribe/') {
+        return await handleSubscribe(request, env);
       }
 
       const goMatch = pathname.match(/^\/go\/([^/]+)\/?$/);
