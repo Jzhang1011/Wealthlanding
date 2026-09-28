@@ -69,16 +69,21 @@
     msg.className = 'wl-msg ' + (ok ? 'ok' : 'err');
   }
 
+  // Public API host: the Cloudflare worker serving /api/* (same-origin /api/*
+  // on www.wealthlanding.com is served by the static host and 405s, so the
+  // client talks to the worker's custom domain instead).
+  var API_BASE = 'https://api.wealthlanding.com';
+
   function beaconInterest(payload) {
     try {
       var body = JSON.stringify(payload);
       if (navigator.sendBeacon) {
         navigator.sendBeacon(
-          '/api/interest',
+          API_BASE + '/api/interest',
           new Blob([body], { type: 'application/json' })
         );
       } else {
-        fetch('/api/interest', {
+        fetch(API_BASE + '/api/interest', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: body,
@@ -90,11 +95,11 @@
     }
   }
 
-  // Subscriptions go through our own worker (POST /api/subscribe), which relays
-  // to the Kit API server-side. Direct browser -> app.kit.com posts are eaten
+  // Subscriptions go through our own worker (POST https://api.wealthlanding.com/api/subscribe),
+  // which relays to the Kit API server-side. Direct browser -> app.kit.com posts are eaten
   // by ad/tracker blockers, so we never POST to Kit from the client.
   function submitToKit(config, fields) {
-    return fetch('/api/subscribe', {
+    return fetch(API_BASE + '/api/subscribe', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
