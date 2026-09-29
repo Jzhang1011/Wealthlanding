@@ -37,9 +37,14 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             transform: translateY(-2px);
         }
-        .quiz-option { cursor: pointer; border: 2px solid #e2e8f0; }
+        .quiz-option { cursor: pointer; border: 2px solid #e2e8f0; background: #fff; width: 100%; text-align: left; }
         .quiz-option:hover { border-color: #fbbf24; }
         .quiz-option.selected { border-color: #f59e0b; background-color: #fffbeb; }
+        .quiz-option:focus-visible { outline: 2px solid #d97706; outline-offset: 2px; }
+        /* Sticky category nav sits below the 80px sticky site header */
+        #theme-ontrack, #theme-investing, #theme-housing, #theme-family, #theme-taxes, #theme-work,
+        #questions, #tools-for-this-stage, #quiz-container, #playbook-steps { scroll-margin-top: 150px; }
+        .catnav-scroll { scrollbar-width: thin; }
     </style>
 <script type="application/ld+json">
 {
@@ -51,7 +56,7 @@
       "name": "Am I behind? How much should I have saved by 30 / 35 / 40?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Fidelity's rule of thumb: 1× your salary saved by 30, 3× by 40. But that's retirement accounts only — add home equity, subtract debt, and don't treat it as a grade. If you're behind, raising your savings rate now matters far more than the number."
+        "text": "A common Fidelity benchmark is about 1× salary saved by 30 and 3× by 40, in retirement accounts only. It is a compass, not a grade. Home equity and debt change the picture: someone at 2× with no debt is in better shape than 3× with $80k on credit cards. If you are behind, raising the savings rate matters more than the multiple. See what a higher savings rate compounds to by 40."
       }
     },
     {
@@ -59,7 +64,7 @@
       "name": "What percentage of my income should I be saving?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "15% of gross income is the minimum target; 20%+ if you're catching up. Can't do 15% today? Start at your full 401(k) match and add 1% every quarter — you'll barely feel it."
+        "text": "A common planning benchmark is 15% of gross income, including the employer match. If you are catching up, 20% or more may be a useful target. If 15% is not possible, start with the full employer match and consider increasing your contribution gradually — for example, 1% more each quarter, timed to raises, so you barely feel it."
       }
     },
     {
@@ -67,7 +72,7 @@
       "name": "I'm 35 and still living paycheck to paycheck on a good salary — what am I doing wrong?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It's almost never an income problem — it's a systems problem: no automatic savings, and lifestyle rising with every raise. Fix it with automation on payday, then split every future raise 50/50 between saving and spending."
+        "text": "It's almost never an income problem — it's a systems problem: no automatic savings, and lifestyle rising with every raise. Fix it on payday: auto-transfer savings the day money lands, then split every future raise 50/50 between saving and spending. If debt is eating the paycheck, list every balance and rate first — you can't automate your way out of 22% APR."
       }
     },
     {
@@ -75,7 +80,7 @@
       "name": "Roth or traditional 401(k) — which one do I pick?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "If your tax rate now is lower than you expect in retirement, favor Roth; if higher, favor traditional. Most 30s earners do well with a pre-tax 401(k) plus a Roth IRA."
+        "text": "If your tax rate now is lower than you expect in retirement, favor Roth; if higher, favor traditional. Early-career earners in lower brackets often favor Roth, while peak earners often favor pre-tax. A common middle path for 30s earners: pre-tax 401(k) plus a Roth IRA. Check the current IRS contribution limits before deciding how much goes where."
       }
     },
     {
@@ -83,7 +88,7 @@
       "name": "What order do I fund things — 401(k), IRA, HSA?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Follow the waterfall: 401(k) to the match → HSA → Roth IRA → max the 401(k) → taxable brokerage. Each step unlocks only after the previous one is full."
+        "text": "Follow the waterfall: 401(k) to the full employer match, then HSA if you're eligible, then Roth IRA, then back to max the 401(k), then a taxable brokerage. Each step unlocks only after the previous one is full. The match is a 50–100% instant return — nothing else in the sequence beats it."
       }
     },
     {
@@ -91,7 +96,7 @@
       "name": "Should I pay off debt or invest?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Match first, always. Then kill debt above ~7% before investing more; below ~5%, invest while paying on schedule; split the 5–7% middle. The interest rate is the referee."
+        "text": "Take the full 401(k) match first. After that, the tradeoff depends on the debt rate, tax benefits, liquidity needs, and your investment horizon. A common rule of thumb is to prioritize higher-rate debt while continuing scheduled payments on lower-rate debt. The 5–7% range is a judgment call, not a law. Compare payoff strategies with the debt payoff calculator before deciding what to do with extra cash."
       }
     },
     {
@@ -99,7 +104,7 @@
       "name": "What do I actually invest in?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Low-cost total-market index funds. You don't need to pick stocks or time anything — your contribution rate matters far more than your fund choice."
+        "text": "Low-cost total-market index funds in your 401(k), IRA, and HSA. You don't need to pick stocks, time the market, or hold a dozen funds — one broad U.S. total-market fund plus an international fund covers most people. Your contribution rate matters far more than your fund choice: 15% in a boring index fund beats 5% in a brilliant stock pick."
       }
     },
     {
@@ -107,7 +112,7 @@
       "name": "I have cash sitting around — lump sum in or dollar-cost average?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Investing it all at once has won roughly two-thirds of the time historically. DCA over a few months is fine if it keeps you invested — sitting in cash waiting for “the right time” is the real mistake."
+        "text": "Investing it all at once has won roughly two-thirds of the time historically — markets rise more often than they fall. But dollar-cost averaging over 3–6 months is a reasonable choice if a sudden drop would make you panic-sell. The best strategy is the one you'll actually stick with; sitting in cash waiting for “the right time” is the real mistake."
       }
     },
     {
@@ -115,7 +120,7 @@
       "name": "Should I roll over my old 401(k) from a past job?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — into your new 401(k) or a rollover IRA via direct trustee-to-trustee transfer. Never cash out: income tax plus a 10% penalty if you're under 59½."
+        "text": "Usually yes — into your new 401(k) or a rollover IRA, via direct trustee-to-trustee transfer so nothing is withheld. Never cash out: you'll owe income tax plus a 10% penalty if you're under 59½. One exception: if you plan backdoor Roth conversions, keeping pre-tax money in a 401(k) avoids the pro-rata tax rule."
       }
     },
     {
@@ -123,7 +128,7 @@
       "name": "Should I rent or buy? Is renting throwing money away?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Neither is throwing money away — it's math. If 5% of the home's price per year (taxes, maintenance, cost of capital) exceeds rent on a comparable place, renting and investing the difference usually wins. Run your own numbers."
+        "text": "Neither is throwing money away — it's math. A useful rule of thumb: the unrecoverable costs of owning run about 5% of the home's price per year (taxes, maintenance, insurance, cost of capital). If that exceeds rent on a comparable place, renting and investing the difference usually wins. The longer you stay, the more buying's math improves."
       }
     },
     {
@@ -131,7 +136,7 @@
       "name": "How much house can I actually afford?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The 28/36 rule: housing costs at or below 28% of gross monthly income, all debt payments at or below 36%. And buy below what the bank approves — that's their limit, not yours."
+        "text": "A common ceiling is 28% of gross monthly income for the housing payment and 36% for all debt payments. That is the 28/36 rule, not a lender's maximum. Lenders may approve more — that's their risk limit, not your budget. Include taxes, insurance, HOA, and a maintenance reserve, and keep 3–6 months of expenses in cash after closing."
       }
     },
     {
@@ -139,7 +144,7 @@
       "name": "Should I wait for interest rates to drop before buying?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can refinance a rate, but you can't refinance a purchase price. Buy when the payment fits and you'll stay 5+ years; refinance later if rates fall."
+        "text": "You can refinance a rate, but you can't refinance a purchase price. Buy when the monthly payment fits your budget and you expect to stay 5+ years; refinance later if rates fall. Waiting has a cost too — rents and prices don't pause while you watch the Fed. Waiting has a cost too — rents and prices don't pause while you watch the Fed."
       }
     },
     {
@@ -147,7 +152,7 @@
       "name": "Should I pause retirement saving to save for a down payment faster?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Never drop below the full 401(k) match — that's free money you'd never get back. Pausing only the above-match contributions for a defined 12–18 month sprint is the compromise."
+        "text": "Never drop below the full 401(k) match — that's free money you'd never get back, plus lost compounding. Pausing only the above-match contributions for a defined 12–18 month sprint is the compromise most people can live with. Set the restart date in advance so “temporary” doesn't become permanent. Set the restart date in advance so “temporary” doesn't become permanent."
       }
     },
     {
@@ -155,7 +160,7 @@
       "name": "20% down or buy sooner with PMI?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "20% avoids PMI and proves affordability — but don't drain your emergency fund to get there. Buying sooner with PMI can make sense if prices are rising fast and you'll reach 20% equity within a few years."
+        "text": "20% down avoids PMI and proves you can afford the payment — but don't drain your emergency fund to get there. Buying sooner with PMI can make sense if prices in your area are rising faster than you can save and you'll reach 20% equity within a few years, when PMI can be removed."
       }
     },
     {
@@ -163,7 +168,7 @@
       "name": "How much life insurance do I need — and term or whole?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "10× gross income in 20–30 year term life; skip whole life. A healthy 35-year-old pays roughly $25–$40/month per $1M of coverage."
+        "text": "For many households still dependent on employment income, term insurance can provide straightforward protection during the years that income matters most. Permanent insurance serves different planning purposes and should be evaluated separately. A rough starting point is 10–12× gross income in 20–30 year term — but that's a rule of thumb; subtract existing assets and adjust for debts, kids, and mortgage."
       }
     },
     {
@@ -171,7 +176,7 @@
       "name": "Do I really need a will? What happens if I die without one?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Without one, the state decides who gets your assets and who raises your kids. A basic will plus named beneficiaries on every account covers most people."
+        "text": "Yes. Without one, state law decides who gets your assets and who raises your kids — a slow, public process your family doesn't need. A basic will plus named beneficiaries on every account (retirement, bank, insurance) covers most people. If you have minor children, the will also names their guardian — that's the part that matters most."
       }
     },
     {
@@ -179,7 +184,7 @@
       "name": "When do I start a 529, and how much goes in?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "After your own retirement is on track — you can borrow for college, not for retirement. Then: capture any state tax deduction, automate monthly contributions, and use an age-based portfolio."
+        "text": "After your own retirement is on track — you can borrow for college, not for retirement. Then: capture any state tax deduction, automate monthly contributions, and use an age-based portfolio that gets conservative as college approaches. Grandparents can contribute too, which keeps your budget intact. Grandparents can contribute too, which keeps your budget intact."
       }
     },
     {
@@ -187,7 +192,7 @@
       "name": "How do we handle money as a couple — combine or separate?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Combined, separate, or hybrid (joint bills + personal accounts) all work. What matters is a monthly 20-minute money date — surprises cause fights, not systems."
+        "text": "Combined, separate, or hybrid (joint bills + personal accounts) all work — the research doesn't crown a winner. What matters is a monthly 20-minute money date: review spending, upcoming bills, and goals. Surprises cause fights, not systems. Agree in advance on a threshold above which purchases get discussed. Agree in advance on a threshold above which purchases get discussed."
       }
     },
     {
@@ -195,7 +200,7 @@
       "name": "How do I legally pay less in taxes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Max pre-tax accounts (401(k), HSA) in high-earning years, use Roth when your rate is low, and harvest losses in taxable accounts. Taxes are your biggest lifetime expense — planning beats stock-picking."
+        "text": "Max pre-tax accounts (401(k), HSA) in high-earning years, use Roth when your rate is low, and harvest losses in taxable accounts. The HSA is triple tax-advantaged if you have a high-deductible plan. Taxes are often your biggest lifetime expense — planning beats stock-picking. Check current IRS limits each year rather than relying on last year's numbers."
       }
     },
     {
@@ -203,7 +208,7 @@
       "name": "What is an HSA and should I actually use one?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "If you have a high-deductible health plan: yes. Triple tax-advantaged — deductible in, tax-free growth, tax-free out for medical. Let it compound; pay medical bills from cash."
+        "text": "If you have a high-deductible health plan: usually yes. It's triple tax-advantaged — deductible going in, tax-free growth, tax-free withdrawals for medical costs. Let it compound by paying medical bills from cash and saving receipts. Check the current IRS contribution limits for individual vs. family coverage. Check the current IRS contribution limits for individual vs. family coverage."
       }
     },
     {
@@ -211,7 +216,7 @@
       "name": "What's a backdoor / mega backdoor Roth — and do I qualify?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Backdoor Roth: nondeductible IRA contribution → convert; no income limit on conversions. Mega backdoor needs a 401(k) allowing after-tax contributions plus in-service rollovers — ask HR."
+        "text": "Backdoor Roth: make a nondeductible IRA contribution, then convert — there's no income limit on conversions, but the pro-rata rule applies if you hold pre-tax IRA money. Mega backdoor needs a 401(k) that allows after-tax contributions plus in-service rollovers — ask HR. Both are advanced moves; get the basic waterfall right first."
       }
     },
     {
@@ -219,7 +224,7 @@
       "name": "How do I stop lifestyle inflation as my pay rises?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The raise splitter: save half of every raise, spend half. Your lifestyle still rises — your savings rate just rises faster."
+        "text": "The raise splitter: save half of every raise, spend half. Your lifestyle still rises — your savings rate just rises faster. Automate it: bump your 401(k) contribution the same week the raise hits, before the new paycheck feels normal. What you never see, you never miss. What you never see, you never miss."
       }
     },
     {
@@ -227,7 +232,7 @@
       "name": "New car or keep the old one — cash or finance?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The 20/4/10 rule: 20% down, a loan of 4 years max, total car costs under 10% of gross income. A $600/mo payment invested at 8% for 10 years is roughly $110,000 you'll never see."
+        "text": "The 20/4/10 rule: 20% down, a loan of 4 years max, total car costs under 10% of gross income. A $600/mo payment invested at 8% for 10 years is roughly $110,000 you'll never see — run that math before signing. If the car you want breaks the rule, it's a want, not a need; buy it with eyes open."
       }
     },
     {
@@ -235,7 +240,7 @@
       "name": "Higher salary vs. better benefits and 401(k) — how do I compare offers?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Compare total comp: add the 401(k) match, HSA seed money, insurance premiums, and PTO value to the salary. A 6% match on $120k is $7,200 a year — the “lower” offer with great benefits often wins."
+        "text": "Compare total comp: add the 401(k) match, HSA seed money, insurance premiums, and PTO value to the salary. A 6% match on $120k is $7,200 a year — the “lower” offer with great benefits often wins. Also weigh vesting schedules: a match you forfeit by leaving in year one isn't really yours."
       }
     },
     {
@@ -243,12 +248,11 @@
       "name": "How do I know if I'm underpaid?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Benchmark your role and market on levels.fyi, Glassdoor, or BLS data. 10–15% below market is a conversation with your manager; 20%+ is a job search. Closing that gap is usually the highest-ROI financial move available."
+        "text": "Benchmark your role on levels.fyi, Glassdoor, or BLS data — total comp, not just salary. 10–15% below market is a conversation with your manager (bring the data); 20%+ is usually a job search. Closing that gap is often the highest-ROI financial move available — a $15k raise compounds for decades."
       }
     }
   ]
-}
-</script>
+}</script>
 </head>
 <body class="min-h-screen flex flex-col">
 
@@ -261,13 +265,14 @@
                 <div class="inline-block bg-brand-500/20 text-brand-400 font-semibold px-3 py-1 rounded-full text-sm mb-6 border border-brand-500/30">
                     &#127963;&#65039; Building (25&ndash;40)
                 </div>
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">The Money Questions<br>Everyone Asks in Their 30s<br><span class="text-brand-500">&mdash; Answered.</span></h1>
-                <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto">Real questions, direct answers, no jargon. Each answer links into the full step-by-step curriculum when you want to go deeper.</p>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">The Money Questions<br>Everyone Asks from 25 to 40<br><span class="text-brand-500">&mdash; Answered.</span></h1>
+                <p class="text-lg md:text-xl text-slate-300 mb-4 max-w-2xl mx-auto">Real questions, direct answers, no jargon. Each answer links into the full step-by-step curriculum when you want to go deeper.</p>
+                <p class="text-xs text-slate-400 mb-10 max-w-xl mx-auto">General education for U.S. earners age 25&ndash;40. Not a recommendation for your accounts, taxes, or insurance.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="#questions" class="inline-flex items-center justify-center bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-1">
                         Browse the Questions
                     </a>
-                    <a href="/tools/" class="inline-flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 px-8 rounded-lg text-lg border border-slate-700 transition-colors">
+                    <a href="#tools-for-this-stage" class="inline-flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 px-8 rounded-lg text-lg border border-slate-700 transition-colors">
                         Try the Calculators
                     </a>
                 </div>
@@ -275,317 +280,346 @@
         </div>
 
         <!-- QUIZ -->
-        <div class="max-w-4xl mx-auto -mt-12 relative z-10 px-4 mb-16">
+        <div id="quiz-container" class="max-w-4xl mx-auto -mt-12 relative z-10 px-4 mb-16 w-full">
             <div class="bg-white rounded-xl shadow-xl border border-gray-100 p-8 text-center">
-                <h3 class="text-xl font-bold text-navy-900 mb-2">Not sure where to begin?</h3>
-                <p class="text-gray-500 mb-6">Take the 2-step focus quiz to find your starting line.</p>
-                <div id="quiz-container">
-                    <div id="quiz-step-1" class="space-y-4">
-                        <p class="font-medium text-left">What is your #1 focus right now?</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-                            <div class="quiz-option rounded-lg p-4 transition-colors" onclick="handleQuiz('invest')">
-                                <i class="fa-solid fa-chart-line text-brand-500 text-xl mb-2"></i><h4 class="font-bold">Growing my investments</h4>
-                            </div>
-                            <div class="quiz-option rounded-lg p-4 transition-colors" onclick="handleQuiz('home')">
-                                <i class="fa-solid fa-house text-brand-500 text-xl mb-2"></i><h4 class="font-bold">Buying a home &mdash; or deciding if I should</h4>
-                            </div>
-                            <div class="quiz-option rounded-lg p-4 transition-colors" onclick="handleQuiz('protect')">
-                                <i class="fa-solid fa-shield-halved text-brand-500 text-xl mb-2"></i><h4 class="font-bold">Protecting my family and income</h4>
-                            </div>
-                            <div class="quiz-option rounded-lg p-4 transition-colors" onclick="handleQuiz('tax')">
-                                <i class="fa-solid fa-receipt text-brand-500 text-xl mb-2"></i><h4 class="font-bold">Paying less in taxes</h4>
-                            </div>
-                            <div class="quiz-option rounded-lg p-4 transition-colors md:col-span-2" onclick="handleQuiz('spend')">
-                                <i class="fa-solid fa-money-bill-trend-up text-brand-500 text-xl mb-2"></i><h4 class="font-bold">My spending keeps rising with my raises</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="quiz-result" class="hidden text-center py-6">
-                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-100 text-brand-600 mb-4">
-                            <i class="fa-solid fa-check text-2xl"></i>
-                        </div>
-                        <h4 class="text-2xl font-bold text-navy-900 mb-2">We recommend starting at <span id="quiz-rec-step" class="text-brand-500">Step X</span></h4>
-                        <p class="text-gray-600 mb-6 max-w-md mx-auto" id="quiz-rec-desc">Description goes here.</p>
-                        <button id="quiz-rec-btn" class="bg-navy-900 hover:bg-navy-800 text-white font-semibold py-2 px-6 rounded-lg transition-colors">Go to Step</button>
-                        <button onclick="resetQuiz()" class="block w-full mt-4 text-sm text-gray-400 hover:text-gray-600">Retake quiz</button>
-                    </div>
+                <h2 class="text-xl font-bold text-navy-900 mb-2">Pick your focus. We&rsquo;ll point you at the step.</h2>
+                <p class="text-gray-500 mb-6">One tap &mdash; we&rsquo;ll point you at the right step of the playbook.</p>
+                <div id="quiz-step-1" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left" role="group" aria-label="Choose your focus">
+                    <button type="button" class="quiz-option rounded-lg p-4 transition-colors" onclick="handleQuiz('invest')">
+                        <i class="fa-solid fa-chart-line text-brand-500 text-xl mb-2"></i><span class="font-bold block">Growing my investments</span>
+                    </button>
+                    <button type="button" class="quiz-option rounded-lg p-4 transition-colors" onclick="handleQuiz('home')">
+                        <i class="fa-solid fa-house text-brand-500 text-xl mb-2"></i><span class="font-bold block">Buying a home &mdash; or deciding if I should</span>
+                    </button>
+                    <button type="button" class="quiz-option rounded-lg p-4 transition-colors" onclick="handleQuiz('protect')">
+                        <i class="fa-solid fa-shield-halved text-brand-500 text-xl mb-2"></i><span class="font-bold block">Protecting my family and income</span>
+                    </button>
+                    <button type="button" class="quiz-option rounded-lg p-4 transition-colors" onclick="handleQuiz('tax')">
+                        <i class="fa-solid fa-receipt text-brand-500 text-xl mb-2"></i><span class="font-bold block">Paying less in taxes</span>
+                    </button>
+                    <button type="button" class="quiz-option rounded-lg p-4 transition-colors md:col-span-2" onclick="handleQuiz('spend')">
+                        <i class="fa-solid fa-money-bill-trend-up text-brand-500 text-xl mb-2"></i><span class="font-bold block">My spending keeps rising with my raises</span>
+                    </button>
                 </div>
+                <div id="quiz-result" class="hidden text-center py-6">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-100 text-brand-600 mb-4">
+                        <i class="fa-solid fa-check text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy-900 mb-2">We recommend starting at <span id="quiz-rec-step" class="text-brand-500"></span></h3>
+                    <p class="text-gray-600 mb-4 max-w-md mx-auto" id="quiz-rec-desc"></p>
+                    <p class="text-sm text-gray-500 mb-6 max-w-md mx-auto bg-gray-50 border border-gray-200 rounded-lg p-4"><strong class="text-navy-900 block mb-1">Why start here?</strong><span id="quiz-rec-why"></span></p>
+                    <a id="quiz-rec-btn" href="#" class="inline-block bg-navy-900 hover:bg-navy-800 text-white font-semibold py-2 px-6 rounded-lg transition-colors">Go to this step &rarr;</a>
+                    <button type="button" onclick="resetQuiz()" class="block w-full mt-4 text-sm text-gray-400 hover:text-gray-600">Retake quiz</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5-STEP PLAYBOOK -->
+        <div id="playbook-steps" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 w-full">
+            <h2 class="text-3xl font-bold text-navy-900 mb-4 text-center">Your 5-step money playbook</h2>
+            <p class="text-gray-500 text-center mb-10 max-w-2xl mx-auto">The mental model first &mdash; then the questions below.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                <a href="step_1.html" class="pillar-card p-5 flex flex-col group">
+                    <div class="text-xs font-bold text-brand-600 tracking-wider mb-2">01</div>
+                    <h3 class="font-bold text-navy-900 mb-1">Investing</h3>
+                    <p class="text-gray-600 text-sm flex-grow">Build your investing engine</p>
+                </a>
+                <a href="step_2.html" class="pillar-card p-5 flex flex-col group">
+                    <div class="text-xs font-bold text-brand-600 tracking-wider mb-2">02</div>
+                    <h3 class="font-bold text-navy-900 mb-1">Housing</h3>
+                    <p class="text-gray-600 text-sm flex-grow">Rent or buy intentionally</p>
+                </a>
+                <a href="step_3.html" class="pillar-card p-5 flex flex-col group">
+                    <div class="text-xs font-bold text-brand-600 tracking-wider mb-2">03</div>
+                    <h3 class="font-bold text-navy-900 mb-1">Protection</h3>
+                    <p class="text-gray-600 text-sm flex-grow">Protect your income and family</p>
+                </a>
+                <a href="step_4.html" class="pillar-card p-5 flex flex-col group">
+                    <div class="text-xs font-bold text-brand-600 tracking-wider mb-2">04</div>
+                    <h3 class="font-bold text-navy-900 mb-1">Taxes</h3>
+                    <p class="text-gray-600 text-sm flex-grow">Use the tax code deliberately</p>
+                </a>
+                <a href="step_5.html" class="pillar-card p-5 flex flex-col group">
+                    <div class="text-xs font-bold text-brand-600 tracking-wider mb-2">05</div>
+                    <h3 class="font-bold text-navy-900 mb-1">Lifestyle</h3>
+                    <p class="text-gray-600 text-sm flex-grow">Keep raises from disappearing</p>
+                </a>
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-6">Not sure which step applies to you? <a href="#quiz-container" class="text-brand-600 font-semibold hover:text-brand-700">Pick your focus above</a>.</p>
+        </div>
+
+        <!-- STICKY CATEGORY NAV -->
+        <div class="sticky top-[80px] z-40 bg-white/95 backdrop-blur border-y border-gray-200">
+            <div class="max-w-4xl mx-auto px-4">
+                <nav class="catnav-scroll flex gap-2 overflow-x-auto whitespace-nowrap py-3 text-sm font-semibold" aria-label="Question categories">
+                    <a href="#theme-ontrack" class="px-3 py-1.5 rounded-full text-navy-900 hover:bg-brand-50 hover:text-brand-700 shrink-0">On track</a>
+                    <a href="#theme-investing" class="px-3 py-1.5 rounded-full text-navy-900 hover:bg-brand-50 hover:text-brand-700 shrink-0">Investing</a>
+                    <a href="#theme-housing" class="px-3 py-1.5 rounded-full text-navy-900 hover:bg-brand-50 hover:text-brand-700 shrink-0">Housing</a>
+                    <a href="#theme-family" class="px-3 py-1.5 rounded-full text-navy-900 hover:bg-brand-50 hover:text-brand-700 shrink-0">Family</a>
+                    <a href="#theme-taxes" class="px-3 py-1.5 rounded-full text-navy-900 hover:bg-brand-50 hover:text-brand-700 shrink-0">Taxes</a>
+                    <a href="#theme-work" class="px-3 py-1.5 rounded-full text-navy-900 hover:bg-brand-50 hover:text-brand-700 shrink-0">Work</a>
+                    <span class="text-gray-300 px-1 shrink-0" aria-hidden="true">|</span>
+                    <a href="#questions" class="px-3 py-1.5 rounded-full text-brand-700 hover:bg-brand-50 shrink-0">Browse the Questions &rarr;</a>
+                    <a href="#tools-for-this-stage" class="px-3 py-1.5 rounded-full text-brand-700 hover:bg-brand-50 shrink-0">Try the Calculators &rarr;</a>
+                </nav>
             </div>
         </div>
 
         <!-- QUESTIONS, ANSWERED -->
-        <div id="questions" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 scroll-mt-24">
+        <div id="questions" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-4 w-full">
             <h2 class="text-3xl font-bold text-navy-900 mb-4 text-center">Questions, answered</h2>
             <p class="text-gray-500 text-center mb-10 max-w-2xl mx-auto">The 25 questions people actually ask in their building years &mdash; with the direct answer first, and a link into the full curriculum when you want more.</p>
-                <div class="flex flex-wrap justify-center gap-3 mb-12">
-                    <a href="#theme-ontrack" class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-semibold text-navy-900 hover:border-brand-500 hover:text-brand-600 transition-colors">📊 Am I on track?</a>
-                    <a href="#theme-investing" class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-semibold text-navy-900 hover:border-brand-500 hover:text-brand-600 transition-colors">📈 Investing</a>
-                    <a href="#theme-housing" class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-semibold text-navy-900 hover:border-brand-500 hover:text-brand-600 transition-colors">🏠 Housing</a>
-                    <a href="#theme-family" class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-semibold text-navy-900 hover:border-brand-500 hover:text-brand-600 transition-colors">🛡️ Family &amp; protection</a>
-                    <a href="#theme-taxes" class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-semibold text-navy-900 hover:border-brand-500 hover:text-brand-600 transition-colors">🧾 Taxes</a>
-                    <a href="#theme-work" class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-semibold text-navy-900 hover:border-brand-500 hover:text-brand-600 transition-colors">💼 Work &amp; lifestyle</a>
-                </div>
-                <section id="theme-ontrack" class="mb-14 scroll-mt-24">
+                <section id="theme-ontrack" class="mb-14">
                     <h3 class="text-2xl font-bold text-navy-900 mb-6 flex items-center gap-3"><span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-brand-100 text-brand-600 text-xl">📊</span> Am I on track?</h3>
                     <div class="space-y-5">
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">Am I behind? How much should I have saved by 30 / 35 / 40?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">Fidelity's rule of thumb: 1&times; your salary saved by 30, 3&times; by 40. But that's retirement accounts only &mdash; add home equity, subtract debt, and don't treat it as a grade. If you're behind, raising your savings rate now matters far more than the number.</p>
-                            <a href="step_1.html#behind" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <p class="text-gray-600 mb-3 leading-relaxed">A common <a href="https://www.fidelity.com/viewpoints/retirement/how-much-do-i-need-to-retire" class="text-brand-700 underline font-medium" rel="noopener">Fidelity</a> benchmark is about 1&times; salary saved by 30 and 3&times; by 40, in retirement accounts only. It is a compass, not a grade. Home equity and debt change the picture: someone at 2&times; with no debt is in better shape than 3&times; with $80k on credit cards. If you are behind, raising the savings rate matters more than the multiple. <a href="/tools/compound_interest_calculator.html" class="text-brand-700 underline font-medium">See what a higher savings rate compounds to by 40</a>.</p>
+                            <a href="topics/am-i-behind.html" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Explore the decision → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">What percentage of my income should I be saving?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">15% of gross income is the minimum target; 20%+ if you're catching up. Can't do 15% today? Start at your full 401(k) match and add 1% every quarter &mdash; you'll barely feel it.</p>
-                            <a href="step_1.html#framework" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <p class="text-gray-600 mb-3 leading-relaxed">A common planning benchmark is 15% of gross income, including the employer match. If you are catching up, 20% or more may be a useful target. If 15% is not possible, start with the full employer match and consider increasing your contribution gradually — for example, 1% more each quarter, timed to raises, so you barely feel it.</p>
+                            <a href="step_1.html#savings-rate" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">See the framework → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                            <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">I'm 35 and still living paycheck to paycheck on a good salary &mdash; what am I doing wrong?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">It's almost never an income problem &mdash; it's a systems problem: no automatic savings, and lifestyle rising with every raise. Fix it with automation on payday, then split every future raise 50/50 between saving and spending.</p>
-                            <a href="step_5.html#framework" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">I'm 35 and still living paycheck to paycheck on a good salary — what am I doing wrong?</h4>
+                            <p class="text-gray-600 mb-3 leading-relaxed">It's almost never an income problem — it's a systems problem: no automatic savings, and lifestyle rising with every raise. Fix it on payday: auto-transfer savings the day money lands, then split every future raise 50/50 between saving and spending. If debt is eating the paycheck, list every balance and rate first — you can't automate your way out of 22% APR.</p>
+                            <a href="step_5.html#paycheck" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">See the framework → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                     </div>
                 </section>
-                <section id="theme-investing" class="mb-14 scroll-mt-24">
+                <section id="theme-investing" class="mb-14">
                     <h3 class="text-2xl font-bold text-navy-900 mb-6 flex items-center gap-3"><span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-brand-100 text-brand-600 text-xl">📈</span> Investing</h3>
                     <div class="space-y-5">
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                            <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">Roth or traditional 401(k) &mdash; which one do I pick?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">If your tax rate now is lower than you expect in retirement, favor Roth; if higher, favor traditional. Most 30s earners do well with a pre-tax 401(k) plus a Roth IRA.</p>
-                            <a href="step_4.html#framework" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">Roth or traditional 401(k) — which one do I pick?</h4>
+                            <p class="text-gray-600 mb-3 leading-relaxed">If your tax rate now is lower than you expect in retirement, favor Roth; if higher, favor traditional. Early-career earners in lower brackets often favor Roth, while peak earners often favor pre-tax. A common middle path for 30s earners: pre-tax 401(k) plus a Roth IRA. Check the current IRS contribution limits before deciding how much goes where.</p>
+                            <a href="step_4.html#framework" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Explore the decision → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                            <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">What order do I fund things &mdash; 401(k), IRA, HSA?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">Follow the waterfall: 401(k) to the match &rarr; HSA &rarr; Roth IRA &rarr; max the 401(k) &rarr; taxable brokerage. Each step unlocks only after the previous one is full.</p>
-                            <a href="step_1.html#framework" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">What order do I fund things — 401(k), IRA, HSA?</h4>
+                            <p class="text-gray-600 mb-3 leading-relaxed">Follow the waterfall: 401(k) to the full employer match, then HSA if you're eligible, then Roth IRA, then back to max the 401(k), then a taxable brokerage. Each step unlocks only after the previous one is full. The match is a 50–100% instant return — nothing else in the sequence beats it.</p>
+                            <a href="step_1.html#framework" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">See the framework → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">Should I pay off debt or invest?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">Match first, always. Then kill debt above ~7% before investing more; below ~5%, invest while paying on schedule; split the 5&ndash;7% middle. The interest rate is the referee.</p>
-                            <a href="step_1.html#debt-vs-invest" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <p class="text-gray-600 mb-3 leading-relaxed">Take the full 401(k) match first. After that, the tradeoff depends on the debt rate, tax benefits, liquidity needs, and your investment horizon. A common rule of thumb is to prioritize higher-rate debt while continuing scheduled payments on lower-rate debt. The 5–7% range is a judgment call, not a law. <a href="/tools/debt_payoff_calculator.html" class="text-brand-700 underline font-medium">Compare payoff strategies with the debt payoff calculator</a> before deciding what to do with extra cash.</p>
+                            <a href="topics/debt-vs-investing.html" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Explore the decision → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">What do I actually invest in?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">Low-cost total-market index funds. You don't need to pick stocks or time anything &mdash; your contribution rate matters far more than your fund choice.</p>
-                            <a href="step_1.html#framework" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <p class="text-gray-600 mb-3 leading-relaxed">Low-cost total-market index funds in your 401(k), IRA, and HSA. You don't need to pick stocks, time the market, or hold a dozen funds — one broad U.S. total-market fund plus an international fund covers most people. Your contribution rate matters far more than your fund choice: 15% in a boring index fund beats 5% in a brilliant stock pick.</p>
+                            <a href="step_1.html#what-to-buy" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">See the framework → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                            <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">I have cash sitting around &mdash; lump sum in or dollar-cost average?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">Investing it all at once has won roughly two-thirds of the time historically. DCA over a few months is fine if it keeps you invested &mdash; sitting in cash waiting for &ldquo;the right time&rdquo; is the real mistake.</p>
-                            <a href="step_1.html#lump-sum" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">I have cash sitting around — lump sum in or dollar-cost average?</h4>
+                            <p class="text-gray-600 mb-3 leading-relaxed">Investing it all at once has won roughly two-thirds of the time historically — markets rise more often than they fall. But dollar-cost averaging over 3–6 months is a reasonable choice if a sudden drop would make you panic-sell. The best strategy is the one you'll actually stick with; sitting in cash waiting for “the right time” is the real mistake.</p>
+                            <a href="step_1.html#lump-sum" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">See the worked example → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">Should I roll over my old 401(k) from a past job?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">Yes &mdash; into your new 401(k) or a rollover IRA via direct trustee-to-trustee transfer. Never cash out: income tax plus a 10% penalty if you're under 59&frac12;.</p>
-                            <a href="step_1.html#rollover" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <p class="text-gray-600 mb-3 leading-relaxed">Usually yes — into your new 401(k) or a rollover IRA, via direct trustee-to-trustee transfer so nothing is withheld. Never cash out: you'll owe income tax plus a 10% penalty if you're under 59½. One exception: if you plan backdoor Roth conversions, keeping pre-tax money in a 401(k) avoids the pro-rata tax rule.</p>
+                            <a href="step_1.html#rollover" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">See the framework → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                     </div>
                 </section>
-                <section id="theme-housing" class="mb-14 scroll-mt-24">
+                <section id="theme-housing" class="mb-14">
                     <h3 class="text-2xl font-bold text-navy-900 mb-6 flex items-center gap-3"><span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-brand-100 text-brand-600 text-xl">🏠</span> Housing</h3>
                     <div class="space-y-5">
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">Should I rent or buy? Is renting throwing money away?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">Neither is throwing money away &mdash; it's math. If 5% of the home's price per year (taxes, maintenance, cost of capital) exceeds rent on a comparable place, renting and investing the difference usually wins. Run your own numbers.</p>
-                            <a href="step_2.html#framework" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <p class="text-gray-600 mb-3 leading-relaxed">Neither is throwing money away — it's math. A useful rule of thumb: the unrecoverable costs of owning run about 5% of the home's price per year (taxes, maintenance, insurance, cost of capital). If that exceeds rent on a comparable place, renting and investing the difference usually wins. The longer you stay, the more buying's math improves.</p>
+                            <a href="topics/rent-vs-buy.html" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Understand the tradeoffs → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">How much house can I actually afford?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">The 28/36 rule: housing costs at or below 28% of gross monthly income, all debt payments at or below 36%. And buy below what the bank approves &mdash; that's their limit, not yours.</p>
-                            <a href="step_2.html#framework" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <p class="text-gray-600 mb-3 leading-relaxed">A common ceiling is 28% of gross monthly income for the housing payment and 36% for all debt payments. That is the 28/36 rule, not a lender's maximum. Lenders may approve more — that's their risk limit, not your budget. Include taxes, insurance, HOA, and a maintenance reserve, and keep 3–6 months of expenses in cash after closing.</p>
+                            <a href="topics/how-much-house.html" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Run the numbers → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">Should I wait for interest rates to drop before buying?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">You can refinance a rate, but you can't refinance a purchase price. Buy when the payment fits and you'll stay 5+ years; refinance later if rates fall.</p>
-                            <a href="step_2.html#rates" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <p class="text-gray-600 mb-3 leading-relaxed">You can refinance a rate, but you can't refinance a purchase price. Buy when the monthly payment fits your budget and you expect to stay 5+ years; refinance later if rates fall. Waiting has a cost too — rents and prices don't pause while you watch the Fed. Waiting has a cost too &mdash; rents and prices don't pause while you watch the Fed.</p>
+                            <a href="step_2.html#rates" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">See the framework → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">Should I pause retirement saving to save for a down payment faster?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">Never drop below the full 401(k) match &mdash; that's free money you'd never get back. Pausing only the above-match contributions for a defined 12&ndash;18 month sprint is the compromise.</p>
-                            <a href="step_2.html#pause-retirement" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <p class="text-gray-600 mb-3 leading-relaxed">Never drop below the full 401(k) match — that's free money you'd never get back, plus lost compounding. Pausing only the above-match contributions for a defined 12–18 month sprint is the compromise most people can live with. Set the restart date in advance so “temporary” doesn't become permanent. Set the restart date in advance so &ldquo;temporary&rdquo; doesn't become permanent.</p>
+                            <a href="step_2.html#pause-retirement" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Understand the tradeoffs → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">20% down or buy sooner with PMI?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">20% avoids PMI and proves affordability &mdash; but don't drain your emergency fund to get there. Buying sooner with PMI can make sense if prices are rising fast and you'll reach 20% equity within a few years.</p>
-                            <a href="step_2.html#framework" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <p class="text-gray-600 mb-3 leading-relaxed">20% down avoids PMI and proves you can afford the payment — but don't drain your emergency fund to get there. Buying sooner with PMI can make sense if prices in your area are rising faster than you can save and you'll reach 20% equity within a few years, when PMI can be removed.</p>
+                            <a href="step_2.html#down-payment" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">See the worked example → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                     </div>
                 </section>
-                <section id="theme-family" class="mb-14 scroll-mt-24">
-                    <h3 class="text-2xl font-bold text-navy-900 mb-6 flex items-center gap-3"><span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-brand-100 text-brand-600 text-xl">🛡️</span> Family &amp; protection</h3>
+                <section id="theme-family" class="mb-14">
+                    <h3 class="text-2xl font-bold text-navy-900 mb-6 flex items-center gap-3"><span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-brand-100 text-brand-600 text-xl">🛡️</span> Family & protection</h3>
                     <div class="space-y-5">
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                            <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">How much life insurance do I need &mdash; and term or whole?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">10&times; gross income in 20&ndash;30 year term life; skip whole life. A healthy 35-year-old pays roughly $25&ndash;$40/month per $1M of coverage.</p>
-                            <a href="step_3.html#framework" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">How much life insurance do I need — and term or whole?</h4>
+                            <p class="text-gray-600 mb-3 leading-relaxed">For many households still dependent on employment income, term insurance can provide straightforward protection during the years that income matters most. Permanent insurance serves different planning purposes and should be evaluated separately. A rough starting point is 10–12&times; gross income in 20–30 year term — but that's a rule of thumb; subtract existing assets and adjust for debts, kids, and mortgage.</p>
+                            <a href="topics/life-insurance.html" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Explore the decision → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">Do I really need a will? What happens if I die without one?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">Yes. Without one, the state decides who gets your assets and who raises your kids. A basic will plus named beneficiaries on every account covers most people.</p>
-                            <a href="step_3.html#framework" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <p class="text-gray-600 mb-3 leading-relaxed">Yes. Without one, state law decides who gets your assets and who raises your kids — a slow, public process your family doesn't need. A basic will plus named beneficiaries on every account (retirement, bank, insurance) covers most people. If you have minor children, the will also names their guardian — that's the part that matters most.</p>
+                            <a href="step_3.html#will" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">See the framework → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">When do I start a 529, and how much goes in?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">After your own retirement is on track &mdash; you can borrow for college, not for retirement. Then: capture any state tax deduction, automate monthly contributions, and use an age-based portfolio.</p>
-                            <a href="step_3.html#529" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <p class="text-gray-600 mb-3 leading-relaxed">After your own retirement is on track — you can borrow for college, not for retirement. Then: capture any state tax deduction, automate monthly contributions, and use an age-based portfolio that gets conservative as college approaches. Grandparents can contribute too, which keeps your budget intact. Grandparents can contribute too, which keeps your budget intact.</p>
+                            <a href="step_3.html#529" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">See the framework → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                            <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">How do we handle money as a couple &mdash; combine or separate?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">Combined, separate, or hybrid (joint bills + personal accounts) all work. What matters is a monthly 20-minute money date &mdash; surprises cause fights, not systems.</p>
-                            <a href="step_3.html#couples" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">How do we handle money as a couple — combine or separate?</h4>
+                            <p class="text-gray-600 mb-3 leading-relaxed">Combined, separate, or hybrid (joint bills + personal accounts) all work — the research doesn't crown a winner. What matters is a monthly 20-minute money date: review spending, upcoming bills, and goals. Surprises cause fights, not systems. Agree in advance on a threshold above which purchases get discussed. Agree in advance on a threshold above which purchases get discussed.</p>
+                            <a href="step_3.html#couples" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">See the framework → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                     </div>
                 </section>
-                <section id="theme-taxes" class="mb-14 scroll-mt-24">
+                <section id="theme-taxes" class="mb-14">
                     <h3 class="text-2xl font-bold text-navy-900 mb-6 flex items-center gap-3"><span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-brand-100 text-brand-600 text-xl">🧾</span> Taxes</h3>
                     <div class="space-y-5">
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">How do I legally pay less in taxes?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">Max pre-tax accounts (401(k), HSA) in high-earning years, use Roth when your rate is low, and harvest losses in taxable accounts. Taxes are your biggest lifetime expense &mdash; planning beats stock-picking.</p>
-                            <a href="step_4.html#framework" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <p class="text-gray-600 mb-3 leading-relaxed">Max pre-tax accounts (401(k), HSA) in high-earning years, use Roth when your rate is low, and harvest losses in taxable accounts. The HSA is triple tax-advantaged if you have a high-deductible plan. Taxes are often your biggest lifetime expense — planning beats stock-picking. Check current IRS limits each year rather than relying on last year's numbers.</p>
+                            <a href="step_4.html#framework" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">See the framework → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">What is an HSA and should I actually use one?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">If you have a high-deductible health plan: yes. Triple tax-advantaged &mdash; deductible in, tax-free growth, tax-free out for medical. Let it compound; pay medical bills from cash.</p>
-                            <a href="step_4.html#framework" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <p class="text-gray-600 mb-3 leading-relaxed">If you have a high-deductible health plan: usually yes. It's triple tax-advantaged — deductible going in, tax-free growth, tax-free withdrawals for medical costs. Let it compound by paying medical bills from cash and saving receipts. Check the current IRS contribution limits for individual vs. family coverage. Check the current IRS contribution limits for individual vs. family coverage.</p>
+                            <a href="step_4.html#hsa" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">See the framework → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                            <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">What's a backdoor / mega backdoor Roth &mdash; and do I qualify?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">Backdoor Roth: nondeductible IRA contribution &rarr; convert; no income limit on conversions. Mega backdoor needs a 401(k) allowing after-tax contributions plus in-service rollovers &mdash; ask HR.</p>
-                            <a href="step_4.html#mega-backdoor" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">What's a backdoor / mega backdoor Roth — and do I qualify?</h4>
+                            <p class="text-gray-600 mb-3 leading-relaxed">Backdoor Roth: make a nondeductible IRA contribution, then convert — there's no income limit on conversions, but the pro-rata rule applies if you hold pre-tax IRA money. Mega backdoor needs a 401(k) that allows after-tax contributions plus in-service rollovers — ask HR. Both are advanced moves; get the basic waterfall right first.</p>
+                            <a href="step_4.html#mega-backdoor" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">See the framework → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                     </div>
                 </section>
-                <section id="theme-work" class="mb-14 scroll-mt-24">
-                    <h3 class="text-2xl font-bold text-navy-900 mb-6 flex items-center gap-3"><span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-brand-100 text-brand-600 text-xl">💼</span> Work &amp; lifestyle</h3>
+                <section id="theme-work" class="mb-14">
+                    <h3 class="text-2xl font-bold text-navy-900 mb-6 flex items-center gap-3"><span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-brand-100 text-brand-600 text-xl">💼</span> Work & lifestyle</h3>
                     <div class="space-y-5">
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">How do I stop lifestyle inflation as my pay rises?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">The raise splitter: save half of every raise, spend half. Your lifestyle still rises &mdash; your savings rate just rises faster.</p>
-                            <a href="step_5.html#framework" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <p class="text-gray-600 mb-3 leading-relaxed">The raise splitter: save half of every raise, spend half. Your lifestyle still rises — your savings rate just rises faster. Automate it: bump your 401(k) contribution the same week the raise hits, before the new paycheck feels normal. What you never see, you never miss. What you never see, you never miss.</p>
+                            <a href="step_5.html#framework" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">See the framework → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                            <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">New car or keep the old one &mdash; cash or finance?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">The 20/4/10 rule: 20% down, a loan of 4 years max, total car costs under 10% of gross income. A $600/mo payment invested at 8% for 10 years is roughly $110,000 you'll never see.</p>
-                            <a href="step_5.html#car" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">New car or keep the old one — cash or finance?</h4>
+                            <p class="text-gray-600 mb-3 leading-relaxed">The 20/4/10 rule: 20% down, a loan of 4 years max, total car costs under 10% of gross income. A $600/mo payment invested at 8% for 10 years is roughly $110,000 you'll never see — run that math before signing. If the car you want breaks the rule, it's a want, not a need; buy it with eyes open.</p>
+                            <a href="step_5.html#car" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">See the worked example → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                            <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">Higher salary vs. better benefits and 401(k) &mdash; how do I compare offers?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">Compare total comp: add the 401(k) match, HSA seed money, insurance premiums, and PTO value to the salary. A 6% match on $120k is $7,200 a year &mdash; the &ldquo;lower&rdquo; offer with great benefits often wins.</p>
-                            <a href="step_1.html#framework" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">Higher salary vs. better benefits and 401(k) — how do I compare offers?</h4>
+                            <p class="text-gray-600 mb-3 leading-relaxed">Compare total comp: add the 401(k) match, HSA seed money, insurance premiums, and PTO value to the salary. A 6% match on $120k is $7,200 a year — the “lower” offer with great benefits often wins. Also weigh vesting schedules: a match you forfeit by leaving in year one isn't really yours.</p>
+                            <a href="step_1.html#job-offer" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">See the worked example → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <h4 class="font-bold text-navy-900 text-lg mb-2 leading-snug">How do I know if I'm underpaid?</h4>
-                            <p class="text-gray-600 mb-3 leading-relaxed">Benchmark your role and market on levels.fyi, Glassdoor, or BLS data. 10&ndash;15% below market is a conversation with your manager; 20%+ is a job search. Closing that gap is usually the highest-ROI financial move available.</p>
-                            <a href="step_1.html#framework" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">Go deeper <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                            <p class="text-gray-600 mb-3 leading-relaxed">Benchmark your role on levels.fyi, Glassdoor, or BLS data — total comp, not just salary. 10–15% below market is a conversation with your manager (bring the data); 20%+ is usually a job search. Closing that gap is often the highest-ROI financial move available — a $15k raise compounds for decades.</p>
+                            <a href="step_1.html#underpaid" class="text-brand-600 hover:text-brand-700 font-semibold text-sm">See the framework → <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                     </div>
                 </section>
         </div>
 
-        <!-- 5 STEPS GRID -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <h2 class="text-3xl font-bold text-navy-900 mb-4 text-center">Want the full curriculum?</h2>
-            <p class="text-gray-500 text-center mb-10 max-w-2xl mx-auto">The 5-step playbook behind these answers &mdash; in the order that builds on itself.</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Step 1 -->
-                <a href="step_1.html" class="pillar-card p-6 flex flex-col group">
-                    <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Level 1</div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2"><span class="text-2xl">&#129302;</span> Automate Your Investing Engine</h3>
-                    <p class="text-gray-600 mb-6 text-sm flex-grow">Hit 15%+ savings on autopilot with the contribution waterfall.</p>
-                    <div class="text-brand-600 font-semibold text-sm group-hover:text-brand-700 transition-colors">Start Step <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></div>
-                </a>
-                <!-- Step 2 -->
-                <a href="step_2.html" class="pillar-card p-6 flex flex-col group">
-                    <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Level 2</div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2"><span class="text-2xl">&#127968;</span> Buy Right &mdash; or Rent Smart</h3>
-                    <p class="text-gray-600 mb-6 text-sm flex-grow">The 28/36 rule and the rent-vs-buy math, honestly done.</p>
-                    <div class="text-brand-600 font-semibold text-sm group-hover:text-brand-700 transition-colors">Start Step <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></div>
-                </a>
-                <!-- Step 3 -->
-                <a href="step_3.html" class="pillar-card p-6 flex flex-col group">
-                    <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Level 3</div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2"><span class="text-2xl">&#128737;&#65039;</span> Insure the Machine</h3>
-                    <p class="text-gray-600 mb-6 text-sm flex-grow">Term life, disability, wills: the unsexy stuff that matters most.</p>
-                    <div class="text-brand-600 font-semibold text-sm group-hover:text-brand-700 transition-colors">Start Step <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></div>
-                </a>
-                <!-- Step 4 -->
-                <a href="step_4.html" class="pillar-card p-6 flex flex-col group">
-                    <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Level 4</div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2"><span class="text-2xl">&#129534;</span> Max the Tax Code</h3>
-                    <p class="text-gray-600 mb-6 text-sm flex-grow">HSA triple advantage, Roth vs. traditional, and sequencing.</p>
-                    <div class="text-brand-600 font-semibold text-sm group-hover:text-brand-700 transition-colors">Start Step <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></div>
-                </a>
-                <!-- Step 5 -->
-                <a href="step_5.html" class="pillar-card p-6 flex flex-col group">
-                    <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Level 5</div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2"><span class="text-2xl">&#127919;</span> Beat Lifestyle Inflation</h3>
-                    <p class="text-gray-600 mb-6 text-sm flex-grow">Save half of every raise. Watch your net worth detach from your salary.</p>
-                    <div class="text-brand-600 font-semibold text-sm group-hover:text-brand-700 transition-colors">Start Step <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></div>
-                </a>
-            </div>
-        </div>
-
-        <!-- QUICK ACCESS ROW -->
-        <div class="bg-white border-y border-gray-200 py-12">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h3 class="text-xl font-bold text-center mb-8 text-navy-900">Quick Resources</h3>
-                <div class="flex flex-col md:flex-row justify-center gap-6">
-                    <a href="/tools/compound_interest_calculator.html" class="flex items-center justify-center gap-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 px-6 py-4 rounded-xl font-semibold text-gray-700 transition-colors">
-                        <i class="fa-solid fa-calculator text-brand-500 text-xl"></i> Compound Interest Calculator
+        <!-- TOOLS FOR THIS STAGE -->
+        <div id="tools-for-this-stage" class="bg-white border-y border-gray-200 py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-navy-900 mb-4 text-center">Don&rsquo;t just read about it. Run the numbers.</h2>
+                <p class="text-gray-500 text-center mb-10 max-w-2xl mx-auto">Three calculators matched to this stage &mdash; no signup, just answers.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <a href="/tools/compound_interest_calculator.html" class="pillar-card p-6 flex flex-col group">
+                        <i class="fa-solid fa-chart-line text-brand-500 text-2xl mb-4"></i>
+                        <h3 class="text-lg font-bold text-navy-900 mb-2">Compound Interest</h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">See what a 15% savings rate could become by 40.</p>
+                        <div class="text-brand-600 font-semibold text-sm group-hover:text-brand-700">Open calculator <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></div>
                     </a>
-                    <a href="/investment/real_estate_vs_stocks_model.html" class="flex items-center justify-center gap-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 px-6 py-4 rounded-xl font-semibold text-gray-700 transition-colors">
-                        <i class="fa-solid fa-house-chimney text-brand-500 text-xl"></i> Rent vs. Buy Model
+                    <a href="/tools/debt_payoff_calculator.html" class="pillar-card p-6 flex flex-col group">
+                        <i class="fa-solid fa-credit-card text-brand-500 text-2xl mb-4"></i>
+                        <h3 class="text-lg font-bold text-navy-900 mb-2">Debt Payoff</h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Compare payoff strategies before deciding what to do with extra cash.</p>
+                        <div class="text-brand-600 font-semibold text-sm group-hover:text-brand-700">Open calculator <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></div>
+                    </a>
+                    <a href="/investment/real_estate_vs_stocks_model.html" class="pillar-card p-6 flex flex-col group">
+                        <i class="fa-solid fa-house-chimney text-brand-500 text-2xl mb-4"></i>
+                        <h3 class="text-lg font-bold text-navy-900 mb-2">Rent vs. Buy</h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Test the economics of owning versus staying invested.</p>
+                        <div class="text-brand-600 font-semibold text-sm group-hover:text-brand-700">Open model <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></div>
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- CREDIBILITY BLOCK -->
-        <div class="max-w-3xl mx-auto px-4 py-16 text-center">
-            <div class="w-16 h-16 mx-auto bg-gray-200 rounded-full mb-4 overflow-hidden">
-                <img src="https://placehold.co/100x100/1e293b/ffffff?text=WL" alt="WealthLanding Experts" class="w-full h-full object-cover">
-            </div>
-            <h4 class="font-bold text-navy-900">Developed by WealthLanding Certified Financial Planners&reg;</h4>
-            <p class="text-gray-500 mt-2 text-sm">Our methodology is based on analyzing thousands of building-years financial plans. We prioritize mathematical optimization combined with behavioral psychology.</p>
-            <p class="text-xs text-gray-400 mt-4 font-mono">Last Updated: <span id="last-updated-date"></span> &bull; Fact Checked &#10003;</p>
+        <!-- BOTTOM CTA -->
+        <div class="max-w-3xl mx-auto px-4 py-16 text-center w-full">
+            <h2 class="text-3xl font-bold text-navy-900 mb-4">What&rsquo;s your next money question?</h2>
+            <p class="text-gray-500 mb-8 max-w-xl mx-auto">You don&rsquo;t need to solve everything at once. Start with the decision that matters most right now.</p>
+            <a href="#quiz-container" class="inline-flex items-center justify-center bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg shadow-brand-500/30 transition-all">
+                Pick My Focus &rarr;
+            </a>
+        </div>
+
+        <!-- TRUST / METHODOLOGY -->
+        <div class="max-w-3xl mx-auto px-4 pb-16 text-center w-full">
+            <h3 class="font-bold text-navy-900 mb-2">Educational playbook by WealthLanding</h3>
+            <p class="text-gray-500 text-sm max-w-xl mx-auto">These are rules of thumb, not a financial plan. Sources and model limits are on the <a href="/methodology/" class="text-brand-600 underline hover:text-brand-700">methodology page</a>.</p>
+            <p class="text-xs text-gray-400 mt-6">Last updated September 2026. <a href="/about/" class="underline hover:text-gray-600">Educational only</a>, not tax, legal, or investment advice.</p>
         </div>
     </main>
-<!-- MODULAR FOOTER -->
+
     <wealthlanding-footer></wealthlanding-footer>
     <script src="/components/footer.js"></script>
 
     <script>
-        document.getElementById('last-updated-date').innerText = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+        var QUIZ = {
+            invest: { step: "Step 1 \u00b7 Investing engine", href: "step_1.html#framework",
+                desc: "Start with the contribution waterfall: capture the employer match, consider an HSA if eligible, then compare Roth IRA and additional 401(k) contributions based on your situation.",
+                why: "Investing decisions become easier once you have a clear contribution and account-priority framework." },
+            home: { step: "Step 2 \u00b7 Rent or buy", href: "step_2.html#framework",
+                desc: "Compare affordability, the 28/36 rule, and the economics of renting versus buying before changing your long-term savings plan.",
+                why: "Housing is usually your largest expense, so nailing the rent-vs-buy and affordability math first makes every other decision easier." },
+            protect: { step: "Step 3 \u00b7 Insurance and wills", href: "step_3.html#framework",
+                desc: "Start with the basics: income protection, term life where appropriate, disability coverage, and estate documents.",
+                why: "Protection comes before optimization \u2014 the right coverage and documents make sure one bad event can't undo years of saving." },
+            tax: { step: "Step 4 \u00b7 Tax code", href: "step_4.html#framework",
+                desc: "Start with tax-advantaged accounts and compare Roth versus traditional treatment before considering more advanced strategies.",
+                why: "Taxes are often your largest lifetime expense, so a deliberate account strategy can matter more than which funds you pick." },
+            spend: { step: "Step 5 \u00b7 Lifestyle inflation", href: "step_5.html#framework",
+                desc: "Use automatic savings and deliberate raise allocation so your spending does not automatically absorb every increase in income.",
+                why: "A rising income only builds wealth if some of it gets captured \u2014 automatic systems do that before spending habits absorb it." }
+        };
 
         function handleQuiz(answer) {
-            const options = document.querySelectorAll('#quiz-step-1 .quiz-option');
-            options.forEach(opt => opt.classList.remove('selected'));
-            event.currentTarget.classList.add('selected');
+            var data = QUIZ[answer];
+            if (!data) return;
+            var options = document.querySelectorAll('#quiz-step-1 .quiz-option');
+            options.forEach(function(opt) { opt.classList.remove('selected'); });
+            if (event && event.currentTarget) event.currentTarget.classList.add('selected');
 
-            setTimeout(() => {
+            setTimeout(function() {
                 document.getElementById('quiz-step-1').classList.add('hidden');
                 document.getElementById('quiz-result').classList.remove('hidden');
-
-                let recStep = 1; let stepTitle = "Automate Your Investing Engine"; let stepDesc = "Put your wealth on autopilot with a contribution waterfall that runs itself.";
-                if(answer === 'home') { recStep = 2; stepTitle = "Buy Right \u2014 or Rent Smart"; stepDesc = "The math that tells you whether a house builds wealth or burns it."; }
-                if(answer === 'protect') { recStep = 3; stepTitle = "Insure the Machine"; stepDesc = "Term life, disability, and the paperwork that protects everyone you love."; }
-                if(answer === 'tax') { recStep = 4; stepTitle = "Max the Tax Code"; stepDesc = "Keep more of what you earn with HSA, Roth, and 401(k) sequencing."; }
-                if(answer === 'spend') { recStep = 5; stepTitle = "Beat Lifestyle Inflation"; stepDesc = "The raise-splitter: enjoy life now without sabotaging later."; }
-
-                document.getElementById('quiz-rec-step').innerText = `Step ${recStep}: ${stepTitle}`;
-                document.getElementById('quiz-rec-desc').innerText = stepDesc;
-                document.getElementById('quiz-rec-btn').onclick = () => window.location.href = `step_${recStep}.html`;
+                document.getElementById('quiz-rec-step').textContent = data.step;
+                document.getElementById('quiz-rec-desc').textContent = data.desc;
+                document.getElementById('quiz-rec-why').textContent = data.why;
+                var btn = document.getElementById('quiz-rec-btn');
+                btn.setAttribute('href', data.href);
+                btn.textContent = 'Go to this step \u2192';
             }, 400);
         }
 
         function resetQuiz() {
             document.getElementById('quiz-result').classList.add('hidden');
             document.getElementById('quiz-step-1').classList.remove('hidden');
-            document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+            document.querySelectorAll('#quiz-step-1 .quiz-option').forEach(function(opt) { opt.classList.remove('selected'); });
         }
     </script>
 
-   <script src="/components/header.js"></script>
+    <script src="/components/header.js"></script>
 
 </body>
 </html>
