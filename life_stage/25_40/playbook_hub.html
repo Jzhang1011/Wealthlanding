@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 30s Money Playbook | WealthLanding</title>
+    <meta name="description" content="5 Steps to Build Lasting Wealth in your 30s. Automate investing, buy right or rent smart, insure your income, max the tax code, and beat lifestyle inflation.">
+    <link rel="canonical" href="https://www.wealthlanding.com/life_stage/25_40/playbook_hub.html" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: { 50: '#fffbeb', 100: '#fef3c7', 500: '#f59e0b', 600: '#d97706', 900: '#78350f' },
+                        navy: { 800: '#1e293b', 900: '#0f172a' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #334155; }
+        .pillar-card {
+            background: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid #f1f5f9;
+            transition: all 0.2s ease-in-out;
+        }
+        .pillar-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
+        }
+        .quiz-option { cursor: pointer; border: 2px solid #e2e8f0; }
+        .quiz-option:hover { border-color: #fbbf24; }
+        .quiz-option.selected { border-color: #f59e0b; background-color: #fffbeb; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <div id="global-header-target"></div>
+
+    <main class="flex-grow flex flex-col w-full">
+        <!-- HERO -->
+        <div class="bg-navy-900 text-white pt-16 pb-24 text-center px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="inline-block bg-brand-500/20 text-brand-400 font-semibold px-3 py-1 rounded-full text-sm mb-6 border border-brand-500/30">
+                    🏗️ Building (25–40)
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">The 30s Money Playbook:<br><span class="text-brand-500">5 Steps to Build Lasting Wealth</span></h1>
+                <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto">Your income is growing. Your decisions are compounding — for better or worse. This is the decade where wealth is won or lost. Five steps, no jargon, just action.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="step_1.html" class="inline-flex items-center justify-center bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-1">
+                        Start Step 1
+                    </a>
+                    <a href="/tools/" class="inline-flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 px-8 rounded-lg text-lg border border-slate-700 transition-colors">
+                        Try the Calculators
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUIZ -->
+        <div class="max-w-4xl mx-auto -mt-12 relative z-10 px-4 mb-16">
+            <div class="bg-white rounded-xl shadow-xl border border-gray-100 p-8 text-center">
+                <h3 class="text-xl font-bold text-navy-900 mb-2">Not sure where to begin?</h3>
+                <p class="text-gray-500 mb-6">Take the 2-step focus quiz to find your starting line.</p>
+                <div id="quiz-container">
+                    <div id="quiz-step-1" class="space-y-4">
+                        <p class="font-medium text-left">What is your #1 focus right now?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                            <div class="quiz-option rounded-lg p-4 transition-colors" onclick="handleQuiz('invest')">
+                                <i class="fa-solid fa-chart-line text-brand-500 text-xl mb-2"></i><h4 class="font-bold">Growing my investments</h4>
+                            </div>
+                            <div class="quiz-option rounded-lg p-4 transition-colors" onclick="handleQuiz('home')">
+                                <i class="fa-solid fa-house text-brand-500 text-xl mb-2"></i><h4 class="font-bold">Buying a home — or deciding if I should</h4>
+                            </div>
+                            <div class="quiz-option rounded-lg p-4 transition-colors" onclick="handleQuiz('protect')">
+                                <i class="fa-solid fa-shield-halved text-brand-500 text-xl mb-2"></i><h4 class="font-bold">Protecting my family and income</h4>
+                            </div>
+                            <div class="quiz-option rounded-lg p-4 transition-colors" onclick="handleQuiz('tax')">
+                                <i class="fa-solid fa-receipt text-brand-500 text-xl mb-2"></i><h4 class="font-bold">Paying less in taxes</h4>
+                            </div>
+                            <div class="quiz-option rounded-lg p-4 transition-colors md:col-span-2" onclick="handleQuiz('spend')">
+                                <i class="fa-solid fa-money-bill-trend-up text-brand-500 text-xl mb-2"></i><h4 class="font-bold">My spending keeps rising with my raises</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="quiz-result" class="hidden text-center py-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-100 text-brand-600 mb-4">
+                            <i class="fa-solid fa-check text-2xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-navy-900 mb-2">We recommend starting at <span id="quiz-rec-step" class="text-brand-500">Step X</span></h4>
+                        <p class="text-gray-600 mb-6 max-w-md mx-auto" id="quiz-rec-desc">Description goes here.</p>
+                        <button id="quiz-rec-btn" class="bg-navy-900 hover:bg-navy-800 text-white font-semibold py-2 px-6 rounded-lg transition-colors">Go to Step</button>
+                        <button onclick="resetQuiz()" class="block w-full mt-4 text-sm text-gray-400 hover:text-gray-600">Retake quiz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5 STEPS GRID -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <h2 class="text-3xl font-bold text-navy-900 mb-10 text-center">Your Structured Pathway</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <a href="step_1.html" class="pillar-card p-6 flex flex-col group">
+                    <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Level 1</div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2"><span class="text-2xl">🤖</span> Automate Your Investing Engine</h3>
+                    <p class="text-gray-600 mb-6 text-sm flex-grow">Hit 15%+ savings on autopilot with the contribution waterfall.</p>
+                    <div class="text-brand-600 font-semibold text-sm group-hover:text-brand-700 transition-colors">Start Step <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></div>
+                </a>
+                <!-- Step 2 -->
+                <a href="step_2.html" class="pillar-card p-6 flex flex-col group">
+                    <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Level 2</div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2"><span class="text-2xl">🏠</span> Buy Right — or Rent Smart</h3>
+                    <p class="text-gray-600 mb-6 text-sm flex-grow">The 28/36 rule and the rent-vs-buy math, honestly done.</p>
+                    <div class="text-brand-600 font-semibold text-sm group-hover:text-brand-700 transition-colors">Start Step <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></div>
+                </a>
+                <!-- Step 3 -->
+                <a href="step_3.html" class="pillar-card p-6 flex flex-col group">
+                    <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Level 3</div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2"><span class="text-2xl">🛡️</span> Insure the Machine</h3>
+                    <p class="text-gray-600 mb-6 text-sm flex-grow">Term life, disability, wills: the unsexy stuff that matters most.</p>
+                    <div class="text-brand-600 font-semibold text-sm group-hover:text-brand-700 transition-colors">Start Step <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></div>
+                </a>
+                <!-- Step 4 -->
+                <a href="step_4.html" class="pillar-card p-6 flex flex-col group">
+                    <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Level 4</div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2"><span class="text-2xl">🧾</span> Max the Tax Code</h3>
+                    <p class="text-gray-600 mb-6 text-sm flex-grow">HSA triple advantage, Roth vs. traditional, and sequencing.</p>
+                    <div class="text-brand-600 font-semibold text-sm group-hover:text-brand-700 transition-colors">Start Step <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></div>
+                </a>
+                <!-- Step 5 -->
+                <a href="step_5.html" class="pillar-card p-6 flex flex-col group">
+                    <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Level 5</div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2"><span class="text-2xl">🎯</span> Beat Lifestyle Inflation</h3>
+                    <p class="text-gray-600 mb-6 text-sm flex-grow">Save half of every raise. Watch your net worth detach from your salary.</p>
+                    <div class="text-brand-600 font-semibold text-sm group-hover:text-brand-700 transition-colors">Start Step <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></div>
+                </a>
+            </div>
+        </div>
+
+        <!-- QUICK ACCESS ROW -->
+        <div class="bg-white border-y border-gray-200 py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-xl font-bold text-center mb-8 text-navy-900">Quick Resources</h3>
+                <div class="flex flex-col md:flex-row justify-center gap-6">
+                    <a href="/tools/compound_interest_calculator.html" class="flex items-center justify-center gap-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 px-6 py-4 rounded-xl font-semibold text-gray-700 transition-colors">
+                        <i class="fa-solid fa-calculator text-brand-500 text-xl"></i> Compound Interest Calculator
+                    </a>
+                    <a href="/investment/real_estate_vs_stocks_model.html" class="flex items-center justify-center gap-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 px-6 py-4 rounded-xl font-semibold text-gray-700 transition-colors">
+                        <i class="fa-solid fa-house-chimney text-brand-500 text-xl"></i> Rent vs. Buy Model
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CREDIBILITY BLOCK -->
+        <div class="max-w-3xl mx-auto px-4 py-16 text-center">
+            <div class="w-16 h-16 mx-auto bg-gray-200 rounded-full mb-4 overflow-hidden">
+                <img src="https://placehold.co/100x100/1e293b/ffffff?text=WL" alt="WealthLanding Experts" class="w-full h-full object-cover">
+            </div>
+            <h4 class="font-bold text-navy-900">Developed by WealthLanding Certified Financial Planners®</h4>
+            <p class="text-gray-500 mt-2 text-sm">Our methodology is based on analyzing thousands of building-years financial plans. We prioritize mathematical optimization combined with behavioral psychology.</p>
+            <p class="text-xs text-gray-400 mt-4 font-mono">Last Updated: <span id="last-updated-date"></span> • Fact Checked ✓</p>
+        </div>
+    </main>
+<!-- MODULAR FOOTER -->
+    <wealthlanding-footer></wealthlanding-footer>
+    <script src="/components/footer.js"></script>
+
+    <script>
+        document.getElementById('last-updated-date').innerText = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+        function handleQuiz(answer) {
+            const options = document.querySelectorAll('#quiz-step-1 .quiz-option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            event.currentTarget.classList.add('selected');
+
+            setTimeout(() => {
+                document.getElementById('quiz-step-1').classList.add('hidden');
+                document.getElementById('quiz-result').classList.remove('hidden');
+
+                let recStep = 1; let stepTitle = "Automate Your Investing Engine"; let stepDesc = "Put your wealth on autopilot with a contribution waterfall that runs itself.";
+                if(answer === 'home') { recStep = 2; stepTitle = "Buy Right — or Rent Smart"; stepDesc = "The math that tells you whether a house builds wealth or burns it."; }
+                if(answer === 'protect') { recStep = 3; stepTitle = "Insure the Machine"; stepDesc = "Term life, disability, and the paperwork that protects everyone you love."; }
+                if(answer === 'tax') { recStep = 4; stepTitle = "Max the Tax Code"; stepDesc = "Keep more of what you earn with HSA, Roth, and 401(k) sequencing."; }
+                if(answer === 'spend') { recStep = 5; stepTitle = "Beat Lifestyle Inflation"; stepDesc = "The raise-splitter: enjoy life now without sabotaging later."; }
+
+                document.getElementById('quiz-rec-step').innerText = `Step ${recStep}: ${stepTitle}`;
+                document.getElementById('quiz-rec-desc').innerText = stepDesc;
+                document.getElementById('quiz-rec-btn').onclick = () => window.location.href = `step_${recStep}.html`;
+            }, 400);
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-result').classList.add('hidden');
+            document.getElementById('quiz-step-1').classList.remove('hidden');
+            document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+        }
+    </script>
+
+   <script src="/components/header.js"></script>
+
+</body>
+</html>
