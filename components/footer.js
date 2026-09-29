@@ -180,7 +180,7 @@ class WealthLandingFooter extends HTMLElement {
               <h4 class="text-white font-bold mb-4">Learn</h4>
               <ul class="space-y-2 text-sm">
                 <li><a href="/learn/early-career/" class="wl-link-accent text-brand-400 font-medium">Early Career (18–25)</a></li>
-                <li><a href="/learn/building/" class="hover:text-brand-400 transition-colors">Building (25–40)</a></li>
+                <li><a href="/life_stage/25_40/playbook_hub.html" class="hover:text-brand-400 transition-colors">Building (25–40)</a></li>
                 <li><a href="/learn/peak/" class="hover:text-brand-400 transition-colors">Peak (40–55)</a></li>
                 <li><a href="/learn/pre-retirement/" class="hover:text-brand-400 transition-colors">Pre-Retirement (55+)</a></li>
               </ul>
