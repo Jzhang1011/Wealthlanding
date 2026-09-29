@@ -117,17 +117,55 @@
                 <h2 class="text-2xl font-bold text-navy-900 mb-4">Run the numbers</h2>
                 <p class="text-gray-600 mb-6 max-w-xl mx-auto">Work the rough target yourself — add the needs, subtract what you have:</p>
     <div class="t-card text-left max-w-xl mx-auto">
-    <ol class="list-decimal pl-6 space-y-2 text-gray-700">
-    <li>Annual income your family would need &times; years until kids are independent</li>
-    <li><strong>Plus</strong> mortgage balance and other debts <strong>plus</strong> future education costs</li>
-    <li><strong>Minus</strong> existing savings, investments, and current coverage</li>
-    <li>= rough coverage target. Sanity-check it against the 10&ndash;12&times; rule of thumb.</li>
-    </ol></div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+            <label for="li-income" class="block text-sm font-semibold text-navy-900 mb-1">Annual income to replace ($)</label>
+            <input id="li-income" type="number" min="0" step="1000" value="100000" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-navy-900 focus:outline-none focus:ring-2 focus:ring-brand-500">
+        </div>
+        <div>
+            <label for="li-years" class="block text-sm font-semibold text-navy-900 mb-1">Years of income to replace</label>
+            <input id="li-years" type="number" min="0" max="60" step="1" value="20" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-navy-900 focus:outline-none focus:ring-2 focus:ring-brand-500">
+        </div>
+        <div>
+            <label for="li-debts" class="block text-sm font-semibold text-navy-900 mb-1">Debts to cover: mortgage + other ($)</label>
+            <input id="li-debts" type="number" min="0" step="1000" value="300000" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-navy-900 focus:outline-none focus:ring-2 focus:ring-brand-500">
+        </div>
+        <div>
+            <label for="li-assets" class="block text-sm font-semibold text-navy-900 mb-1">Existing savings + current coverage ($)</label>
+            <input id="li-assets" type="number" min="0" step="1000" value="200000" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-navy-900 focus:outline-none focus:ring-2 focus:ring-brand-500">
+        </div>
+    </div>
+    <div id="li-result" class="mt-5 bg-brand-50 border border-brand-100 rounded-lg p-4 text-sm text-gray-700 space-y-1" aria-live="polite"></div>
+    <p class="text-xs text-gray-500 mt-3">Rough estimate, not advice. Sanity-check it against the 10&ndash;12&times; rule of thumb — the worksheet beats the multiple.</p>
+    </div>
+    <script>
+    (function () {
+        function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+        function val(id) { return Math.max(0, parseFloat(document.getElementById(id).value) || 0); }
+        function calcLife() {
+            var income = val('li-income'), years = val('li-years'), debts = val('li-debts'), assets = val('li-assets');
+            var replacement = income * years;
+            var target = Math.max(0, replacement + debts - assets);
+            var rule = income * 10;
+            document.getElementById('li-result').innerHTML =
+                '<p>Income replacement: ' + fmt(income) + ' &times; ' + years + ' years = <strong>' + fmt(replacement) + '</strong></p>' +
+                '<p>Plus debts to cover: + <strong>' + fmt(debts) + '</strong></p>' +
+                '<p>Minus savings &amp; existing coverage: &minus; <strong>' + fmt(assets) + '</strong></p>' +
+                '<p class="pt-2 text-base font-bold text-navy-900">Rough coverage target: ' + fmt(target) + '</p>' +
+                '<p class="text-xs text-gray-500">For reference, 10&times; income alone would suggest ' + fmt(rule) + '.</p>';
+        }
+        ['li-income', 'li-years', 'li-debts', 'li-assets'].forEach(function (id) {
+            document.getElementById(id).addEventListener('input', calcLife);
+        });
+        calcLife();
+    })();
+    </script>
             </section>
 
             <!-- WHAT NEXT -->
             <section class="anchor mb-10">
                 <h2 class="text-2xl font-bold text-navy-900 mb-4">What should you look at next?</h2>
+                <p class="text-gray-600 mb-5 max-w-2xl">Insurance protects your income; the will and estate documents decide who receives it and who acts for your family.</p>
                 <div class="space-y-4">
                     <a href="../step_3.html#will" class="t-card flex items-center justify-between gap-4 hover:border-brand-500 transition-colors group">
         <div><p class="text-xs font-bold text-brand-700 uppercase tracking-wider mb-1">If you don't have a will yet</p>

@@ -107,13 +107,44 @@
             <!-- RUN THE NUMBERS -->
             <section class="anchor mb-10 text-center">
                 <h2 class="text-2xl font-bold text-navy-900 mb-4">Run the numbers</h2>
-                <p class="text-gray-600 mb-6 max-w-xl mx-auto">No calculator needed — do the 30-second check yourself:</p>
+                <p class="text-gray-600 mb-6 max-w-xl mx-auto">Run the 30-second check with your own numbers:</p>
     <div class="t-card text-left max-w-xl mx-auto">
-    <ol class="list-decimal pl-6 space-y-2 text-gray-700">
-    <li>Gross monthly income &times; 0.28 = <strong>housing ceiling</strong></li>
-    <li>Gross monthly income &times; 0.36 &minus; other monthly debt payments = <strong>debt-side ceiling</strong></li>
-    <li>Your budget is the <strong>lower</strong> of the two.</li>
-    </ol></div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+            <label for="hh-income" class="block text-sm font-semibold text-navy-900 mb-1">Gross monthly income ($)</label>
+            <input id="hh-income" type="number" min="0" step="100" value="10000" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-navy-900 focus:outline-none focus:ring-2 focus:ring-brand-500">
+        </div>
+        <div>
+            <label for="hh-debts" class="block text-sm font-semibold text-navy-900 mb-1">Monthly non-housing debt payments ($)</label>
+            <input id="hh-debts" type="number" min="0" step="50" value="600" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-navy-900 focus:outline-none focus:ring-2 focus:ring-brand-500">
+        </div>
+    </div>
+    <div id="hh-result" class="mt-5 bg-brand-50 border border-brand-100 rounded-lg p-4 text-sm text-gray-700 space-y-1" aria-live="polite"></div>
+    <p class="text-xs text-gray-500 mt-3">A planning check, not a lender's maximum — and not advice. The 28/36 rule is a common ceiling, not a universal affordability rule.</p>
+    </div>
+    <script>
+    (function () {
+        function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+        function val(id) { return Math.max(0, parseFloat(document.getElementById(id).value) || 0); }
+        function calcHouse() {
+            var income = val('hh-income'), debts = val('hh-debts');
+            var housing28 = income * 0.28;
+            var total36 = income * 0.36;
+            var room = total36 - debts;
+            var budget = Math.min(housing28, room);
+            var binder = room < housing28 ? 'debt side' : '28% housing side';
+            document.getElementById('hh-result').innerHTML =
+                '<p>Housing ceiling (28%): ' + fmt(income) + ' &times; 0.28 = <strong>' + fmt(housing28) + '</strong></p>' +
+                '<p>Total debt ceiling (36%): ' + fmt(income) + ' &times; 0.36 = <strong>' + fmt(total36) + '</strong></p>' +
+                '<p>Room for housing after debts: ' + fmt(total36) + ' &minus; ' + fmt(debts) + ' = <strong>' + fmt(room) + '</strong></p>' +
+                '<p class="pt-2 text-base font-bold text-navy-900">Your budget: ' + fmt(budget) + '/month <span class="text-sm font-medium text-gray-500">(the ' + binder + ' binds)</span></p>';
+        }
+        ['hh-income', 'hh-debts'].forEach(function (id) {
+            document.getElementById(id).addEventListener('input', calcHouse);
+        });
+        calcHouse();
+    })();
+    </script>
             </section>
 
             <!-- WHAT NEXT -->
