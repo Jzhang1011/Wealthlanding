@@ -73,18 +73,50 @@
 
                     <section id="framework">
                         <h2 class="text-2xl font-bold text-navy-900 mb-4">The framework</h2>
-                        <ul class="space-y-4">
-                            <li><strong>HSA first</strong> (if eligible): the only triple-tax-advantaged account. Deductible contributions, tax-free growth, tax-free withdrawals for medical. At 65 it becomes a traditional IRA. Pay medical bills from cash and let the HSA compound.</li>
-                            <li><strong>Roth vs. traditional:</strong> simple rule — if your current marginal tax rate is LOWER than what you expect in retirement, favor Roth; if HIGHER, favor traditional/pre-tax. Most 30s earners in high-tax states benefit from pre-tax 401(k) + Roth IRA combo.</li>
-                            <li><strong>401(k) to the annual IRS max</strong> once Steps 1–3 are funded. The limit rises most years — check the current figure.</li>
-                            <li><strong>Mega backdoor Roth</strong> — a hidden superpower for high savers. <a href="#mega-backdoor" class="text-brand-700 hover:text-brand-600 font-medium underline">See the deep-dive below ↓</a></li>
-                        </ul>
+                        <div class="bg-white border border-gray-200 rounded-xl p-6 not-prose">
+                            <p class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-1"><i class="fa-solid fa-crown text-brand-600 mr-1"></i> The tax pyramid</p>
+                            <p class="text-sm text-gray-500 mb-4">Every account is a deal with the IRS. The fewer times you're taxed, the higher the layer — fund top-down.</p>
+                            <svg viewBox="0 0 720 400" class="w-full h-auto" role="img" aria-label="Tax pyramid: HSA triple tax benefit on top, Roth IRA Roth 401k and 529 double benefit in the middle, traditional 401k IRA and taxable at the base">
+                                <!-- crown -->
+                                <polygon points="332,44 338,16 352,34 360,10 368,34 382,16 388,44" fill="#f59e0b" stroke="#b45309" stroke-width="2.5" stroke-linejoin="round"/>
+                                <rect x="330" y="44" width="60" height="8" rx="3" fill="#b45309"/>
+                                <!-- LAYER 1: triple -->
+                                <polygon points="300,64 420,64 470,150 250,150" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5" stroke-linejoin="round"/>
+                                <text x="360" y="102" text-anchor="middle" font-size="20" font-weight="800" fill="#92400e">HSA</text>
+                                <text x="360" y="122" text-anchor="middle" font-size="12" font-weight="700" fill="#b45309">TRIPLE TAX BENEFIT</text>
+                                <text x="360" y="140" text-anchor="middle" font-size="11" fill="#92400e">deductible &middot; tax-free growth &middot; tax-free medical withdrawals</text>
+                                <!-- LAYER 2: double -->
+                                <polygon points="250,150 470,150 535,250 185,250" fill="#dbeafe" stroke="#60a5fa" stroke-width="2.5" stroke-linejoin="round"/>
+                                <text x="360" y="192" text-anchor="middle" font-size="17" font-weight="800" fill="#1e40af">ROTH IRA &middot; ROTH 401(k) &middot; 529</text>
+                                <text x="360" y="212" text-anchor="middle" font-size="12" font-weight="700" fill="#1d4ed8">DOUBLE TAX BENEFIT</text>
+                                <text x="360" y="230" text-anchor="middle" font-size="11" fill="#1e40af">tax-free growth + tax-free withdrawals (Roth: retirement &middot; 529: education)</text>
+                                <!-- LAYER 3: deferred -->
+                                <polygon points="185,250 535,250 615,360 105,360" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2.5" stroke-linejoin="round"/>
+                                <text x="360" y="296" text-anchor="middle" font-size="16" font-weight="800" fill="#334155">TRADITIONAL 401(k) / IRA &middot; TAXABLE</text>
+                                <text x="360" y="316" text-anchor="middle" font-size="12" font-weight="700" fill="#64748b">DEFERRED / SINGLE BENEFIT</text>
+                                <text x="360" y="334" text-anchor="middle" font-size="11" fill="#475569">deduct now, taxed later &middot; taxable: no shelter, but LTCG rates</text>
+                                <!-- side tags -->
+                                <text x="222" y="112" text-anchor="end" font-size="12" font-weight="800" fill="#b45309">3&times;</text>
+                                <text x="157" y="206" text-anchor="end" font-size="12" font-weight="800" fill="#1d4ed8">2&times;</text>
+                                <text x="77" y="310" text-anchor="end" font-size="12" font-weight="800" fill="#64748b">1&times;</text>
+                            </svg>
+                            <p class="text-xs text-gray-500 mt-3 leading-relaxed">The HSA is the only account taxed <em>zero</em> times when used for medical costs — deductible in, tax-free growth, tax-free out. At 65 it becomes a traditional IRA. 529s skip the federal deduction but grow and withdraw tax-free for education (many states add a deduction).</p>
+                        </div>
+                        <p class="!mt-6 font-bold text-navy-900">The funding order, top to bottom:</p>
+                        <ol class="space-y-3 !mt-3 list-none pl-0">
+                            <li class="flex items-start gap-3"><span class="w-2.5 h-2.5 rounded-full bg-amber-500 mt-2 flex-shrink-0"></span><span><strong>HSA to the max</strong> (if you have a qualifying high-deductible plan) — the crown jewel. Pay medical bills from cash, save receipts, let it compound.</span></li>
+                            <li class="flex items-start gap-3"><span class="w-2.5 h-2.5 rounded-full bg-amber-500 mt-2 flex-shrink-0"></span><span><strong>401(k) to the full employer match</strong> — free money beats tax optimization every time.</span></li>
+                            <li class="flex items-start gap-3"><span class="w-2.5 h-2.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span><span><strong>Split Roth vs. traditional by the rate rule:</strong> current marginal rate <em>lower</em> than expected in retirement &rarr; favor Roth; <em>higher</em> &rarr; favor pre-tax. Most 30s earners in high-tax states land on pre-tax 401(k) + Roth IRA. <a href="topics/roth-ira.html" class="text-brand-700 hover:text-brand-600 font-medium underline">Full Roth IRA guide &rarr;</a></span></li>
+                            <li class="flex items-start gap-3"><span class="w-2.5 h-2.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span><span><strong>Max the accounts:</strong> 401(k) to $24,500 and IRA to $7,500 for 2026, once Steps 1&ndash;3 are funded.</span></li>
+                            <li class="flex items-start gap-3"><span class="w-2.5 h-2.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span><span><strong>Mega backdoor Roth</strong> if your plan allows after-tax contributions + in-service rollovers — tens of thousands more in Roth space. <a href="topics/roth-ira.html#backdoor" class="text-brand-700 hover:text-brand-600 font-medium underline">How it works &rarr;</a></span></li>
+                            <li class="flex items-start gap-3"><span class="w-2.5 h-2.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span><span><strong>529 for education goals, then taxable brokerage</strong> — no shelter left, but long-term capital-gains rates and tax-loss harvesting keep it efficient.</span></li>
+                        </ol>
                     </section>
 
                     
                     <section id="mega-backdoor" class="scroll-mt-24">
                         <h2 class="text-2xl font-bold text-navy-900 mb-4">What's a backdoor / mega backdoor Roth &mdash; and do I qualify?</h2>
-                        <p>The <strong>regular backdoor Roth</strong> is for high earners locked out of direct Roth IRA contributions: make a nondeductible contribution to a traditional IRA, then convert it to Roth. There's no income limit on conversions.</p><p>The <strong>mega backdoor</strong> is bigger: some 401(k) plans let you contribute after-tax dollars beyond the normal annual limit, then roll them into Roth &mdash; potentially tens of thousands per year. You qualify only if your plan allows <strong>BOTH</strong> after-tax contributions <strong>AND</strong> in-service distributions (or in-plan Roth rollovers). Check your plan documents or ask HR &mdash; most people never realize their plan offers it.</p>
+                        <p>The <strong>regular backdoor Roth</strong> is for high earners locked out of direct Roth IRA contributions: make a nondeductible contribution to a traditional IRA, then convert it to Roth. There's no income limit on conversions.</p><p>The <strong>mega backdoor</strong> is bigger: some 401(k) plans let you contribute after-tax dollars beyond the normal annual limit, then roll them into Roth &mdash; potentially tens of thousands per year. You qualify only if your plan allows <strong>BOTH</strong> after-tax contributions <strong>AND</strong> in-service distributions (or in-plan Roth rollovers). Check your plan documents or ask HR &mdash; most people never realize their plan offers it. <a href="topics/roth-ira.html#backdoor" class="text-brand-700 hover:text-brand-600 font-medium underline">Full guide with the pro-rata trap to avoid &rarr;</a></p>
                     </section>
                     
                     <section id="hsa" class="scroll-mt-24">
