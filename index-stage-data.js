@@ -42,9 +42,9 @@
                     "Max Out Roth IRA ($7,000/yr limit)",
                     "Joint Finances & Shared Budgeting Strategy"
                 ],
-                recommendedGuide: "How Much House Can You Really Afford?",
+                recommendedGuide: "The 30s Money Playbook: 25 Questions Answered",
                 calcName: "Home Affordability & Down Payment Tool",
-                guideUrl: "curriculum/home-affordability-guide.html"
+                guideUrl: "life_stage/25_40/playbook_hub.html"
             },
             peak: {
                 title: "🛡️ Family & Peak Wealth (Ages 40–55)",
