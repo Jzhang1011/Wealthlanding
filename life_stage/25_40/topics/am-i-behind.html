@@ -27,6 +27,8 @@
         body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #334155; }
         .t-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; }
         section.anchor { scroll-margin-top: 150px; }
+        .bar-track { background: #e2e8f0; border-radius: 9999px; overflow: hidden; }
+        .bar-fill { border-radius: 9999px; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -43,11 +45,57 @@
                     BUILDING &middot; 25&ndash;40 &middot; Financial progress
                 </div>
                 <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">Am I Behind Financially?</h1>
-                <p class="text-lg text-slate-300 max-w-2xl">Benchmarks tell you the pace you're on. They don't grade your life — or decide your next move.</p>
+                <p class="text-lg text-slate-300 max-w-2xl mb-8">Benchmarks tell you the pace you're on. They don't grade your life — or decide your next move.</p>
+                <!-- Milestone track -->
+                <div class="max-w-2xl" role="img" aria-label="Savings milestones: 1 times salary by age 30, 3 times salary by age 40">
+                    <div class="flex items-center gap-0">
+                        <div class="flex flex-col items-center flex-shrink-0">
+                            <div class="w-12 h-12 rounded-full bg-brand-500 flex items-center justify-center font-extrabold text-navy-900 text-sm shadow-lg shadow-brand-500/40">1&times;</div>
+                            <p class="text-xs font-bold text-white mt-2">by 30</p>
+                            <p class="text-[11px] text-slate-400">salary saved</p>
+                        </div>
+                        <div class="flex-1 h-1 bg-gradient-to-r from-brand-500 to-brand-500/40 mx-1 rounded-full relative">
+                            <i class="fa-solid fa-chevron-right text-brand-500/60 text-xs absolute -top-1.5 left-1/2 -translate-x-1/2"></i>
+                        </div>
+                        <div class="flex flex-col items-center flex-shrink-0">
+                            <div class="w-12 h-12 rounded-full bg-brand-500 flex items-center justify-center font-extrabold text-navy-900 text-sm shadow-lg shadow-brand-500/40">3&times;</div>
+                            <p class="text-xs font-bold text-white mt-2">by 40</p>
+                            <p class="text-[11px] text-slate-400">salary saved</p>
+                        </div>
+                        <div class="flex-1 h-1 bg-slate-700 mx-1 rounded-full border border-dashed border-slate-600"></div>
+                        <div class="flex flex-col items-center flex-shrink-0 opacity-60">
+                            <div class="w-12 h-12 rounded-full bg-navy-800 border border-slate-600 flex items-center justify-center font-extrabold text-slate-400 text-sm">?</div>
+                            <p class="text-xs font-bold text-slate-400 mt-2">by 50+</p>
+                            <p class="text-[11px] text-slate-500">your pace decides</p>
+                        </div>
+                    </div>
+                    <p class="text-[11px] text-slate-500 mt-3">Fidelity retirement savings milestones, retirement accounts only. A compass, not a grade.</p>
+                </div>
             </div>
         </div>
 
         <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+            <!-- KEY TAKEAWAYS -->
+            <section class="anchor -mt-0 mb-10" aria-label="Key takeaways">
+                <div class="t-card shadow-sm">
+                    <p class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-4"><i class="fa-solid fa-list-check text-brand-600 mr-1"></i> Key takeaways</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center text-sm"><i class="fa-solid fa-compass"></i></span>
+                            <p class="text-sm text-gray-700 leading-relaxed pt-1">The 1&times;-by-30 / 3&times;-by-40 benchmark measures your <strong>pace</strong>, not your worth. It assumes you started saving at 25.</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center text-sm"><i class="fa-solid fa-gauge-high"></i></span>
+                            <p class="text-sm text-gray-700 leading-relaxed pt-1">Your <strong>savings rate</strong> is the lever you control — and over decades it matters more than the balance you have today.</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center text-sm"><i class="fa-solid fa-arrows-rotate"></i></span>
+                            <p class="text-sm text-gray-700 leading-relaxed pt-1">Behind? The fix is <strong>five percentage points of savings rate</strong>, not a lottery ticket. Small, sustained changes compound.</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
             <!-- SHORT ANSWER -->
             <section class="anchor" aria-label="Short answer">
                 <div class="bg-brand-50 border-l-4 border-brand-500 p-6 rounded-r-xl mb-10">
@@ -59,22 +107,68 @@
             <!-- THE DECISION -->
             <section class="anchor mb-10">
                 <h2 class="text-2xl font-bold text-navy-900 mb-4">The decision</h2>
-                <p class="text-gray-600 leading-relaxed mb-4">The real decision isn't really “am I behind?” — it's “what's my actual position, and what closes the gap?” That takes three moves. First, measure yourself against the benchmark. Second, adjust for your real circumstances: debt, home equity, a late career start, or a partner's savings all change what the multiple means. Third, pick the savings rate that moves you forward from here.</p><p class="text-gray-600 leading-relaxed mb-4"><strong>Benchmark → personal circumstances → next action.</strong> The benchmark tells you the pace; your circumstances tell you what the pace means; the savings rate is the lever you actually control.</p>
+                <p class="text-gray-600 leading-relaxed mb-6">The real decision isn't really “am I behind?” — it's “what's my actual position, and what closes the gap?” That takes three moves:</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                    <div class="t-card text-center">
+                        <div class="w-10 h-10 rounded-full bg-navy-900 text-white font-extrabold flex items-center justify-center mx-auto mb-3 text-sm">1</div>
+                        <p class="font-bold text-navy-900 text-sm mb-1"><i class="fa-solid fa-ruler text-brand-600 mr-1"></i> Measure</p>
+                        <p class="text-xs text-gray-600 leading-relaxed">Check your saved multiple against the 1&times; / 3&times; pace markers.</p>
+                    </div>
+                    <div class="t-card text-center">
+                        <div class="w-10 h-10 rounded-full bg-navy-900 text-white font-extrabold flex items-center justify-center mx-auto mb-3 text-sm">2</div>
+                        <p class="font-bold text-navy-900 text-sm mb-1"><i class="fa-solid fa-sliders text-brand-600 mr-1"></i> Adjust</p>
+                        <p class="text-xs text-gray-600 leading-relaxed">Debt, home equity, a late start, or a partner's savings all change what the multiple means.</p>
+                    </div>
+                    <div class="t-card text-center">
+                        <div class="w-10 h-10 rounded-full bg-brand-500 text-navy-900 font-extrabold flex items-center justify-center mx-auto mb-3 text-sm">3</div>
+                        <p class="font-bold text-navy-900 text-sm mb-1"><i class="fa-solid fa-bolt text-brand-600 mr-1"></i> Act</p>
+                        <p class="text-xs text-gray-600 leading-relaxed">Pick the savings rate that moves you forward from here. That's the lever.</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 leading-relaxed"><strong>Benchmark → personal circumstances → next action.</strong> The benchmark tells you the pace; your circumstances tell you what the pace means; the savings rate is the lever you actually control.</p>
             </section>
 
             <!-- SIMPLE RULE -->
             <section class="anchor mb-10">
                 <div class="t-card border-l-4 !border-l-brand-500">
                     <p class="text-xs font-bold text-brand-700 uppercase tracking-wider mb-2"><i class="fa-solid fa-ruler mr-1"></i> The simple rule <span class="text-gray-400 normal-case font-medium">&mdash; a rule of thumb, not a law</span></p>
-                    <p class="text-gray-700 leading-relaxed">Save 15% of gross income, including the employer match. Catching up? Aim for 20% or more. The savings rate is the variable you control — and over decades it matters more than the balance you've accumulated so far.</p>
+                    <p class="text-gray-700 leading-relaxed mb-5">Save 15% of gross income, including the employer match. Catching up? Aim for 20% or more. The savings rate is the variable you control — and over decades it matters more than the balance you've accumulated so far.</p>
+                    <div class="space-y-4" role="img" aria-label="Bar chart comparing a 15 percent savings rate with a 20 percent catch-up rate">
+                        <div>
+                            <div class="flex justify-between text-xs font-bold mb-1"><span class="text-navy-900">On track — 15%</span><span class="text-gray-500">includes employer match</span></div>
+                            <div class="bar-track h-4"><div class="bar-fill h-4 bg-brand-500" style="width: 75%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-bold mb-1"><span class="text-navy-900">Catching up — 20%+</span><span class="text-brand-700">+5 points closes most gaps</span></div>
+                            <div class="bar-track h-4"><div class="bar-fill h-4 bg-navy-900" style="width: 100%"></div></div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <!-- WORKED EXAMPLE -->
             <section class="anchor mb-10">
                 <h2 class="text-2xl font-bold text-navy-900 mb-4">Worked example</h2>
-                <div class="t-card">
-                    <p class="text-gray-600 leading-relaxed mb-4">Say you're 35, earn $100,000, and have $80,000 saved — that's 0.8&times; salary, below the 1&times;-by-30 pace.</p><p class="text-gray-600 leading-relaxed mb-4">Saving 15% ($15,000/year) with 7% average annual returns for 25 years:<br>FV = $15,000 &times; [((1.07<sup>25</sup>) &minus; 1) / 0.07] &asymp; <strong>$949,000</strong></p><p class="text-gray-600 leading-relaxed mb-4">Raise the rate to 20% ($20,000/year) and the same math gives &asymp; <strong>$1,265,000</strong>.</p><p class="text-gray-600 leading-relaxed mb-4">The gap between “behind” and “on track” is about five percentage points of savings rate — not a lottery ticket.</p>
+                <div class="t-card mb-4">
+                    <p class="text-gray-600 leading-relaxed mb-6">Say you're 35, earn $100,000, and have $80,000 saved — that's 0.8&times; salary, below the 1&times;-by-30 pace. Watch what five percentage points do over 25 years at 7% average annual returns:</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Saving 15% · $15k/yr</p>
+                            <p class="text-3xl font-extrabold text-navy-900 mb-3">&asymp; $949k</p>
+                            <div class="bar-track h-3"><div class="bar-fill h-3 bg-slate-400" style="width: 75%"></div></div>
+                            <p class="text-[11px] text-gray-500 mt-2 font-mono">$15,000 &times; [((1.07<sup>25</sup>) &minus; 1) / 0.07]</p>
+                        </div>
+                        <div class="bg-brand-50 border border-brand-200 rounded-xl p-5">
+                            <p class="text-xs font-bold text-brand-700 uppercase tracking-wider mb-1">Saving 20% · $20k/yr</p>
+                            <p class="text-3xl font-extrabold text-navy-900 mb-3">&asymp; $1.27M</p>
+                            <div class="bar-track h-3"><div class="bar-fill h-3 bg-brand-500" style="width: 100%"></div></div>
+                            <p class="text-[11px] text-gray-500 mt-2 font-mono">$20,000 &times; [((1.07<sup>25</sup>) &minus; 1) / 0.07]</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-3">
+                        <i class="fa-solid fa-arrow-trend-up text-emerald-600 text-xl"></i>
+                        <p class="text-sm text-gray-700 leading-relaxed">The gap between “behind” and “on track” is about <strong>five percentage points of savings rate</strong> — roughly <strong>+$316,000</strong> here, not a lottery ticket.</p>
+                    </div>
                 </div>
                 <p class="text-sm text-gray-500 mt-3">Illustrative math, not personalized advice. Your numbers will differ.</p>
             </section>
@@ -83,11 +177,11 @@
             <section class="anchor mb-10">
                 <h2 class="text-2xl font-bold text-navy-900 mb-4">What changes the answer?</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="t-card"><h3 class="font-bold text-navy-900 mb-1 text-sm">High-interest debt</h3><p class="text-sm text-gray-600 leading-relaxed">Net worth is assets minus debts. $80,000 saved alongside $60,000 at 22% APR is barely positive — kill the expensive debt before grading yourself.</p></div>
-<div class="t-card"><h3 class="font-bold text-navy-900 mb-1 text-sm">Home equity</h3><p class="text-sm text-gray-600 leading-relaxed">It counts toward net worth, but you can't spend it without selling or borrowing. Treat it as a cushion, not a retirement plan.</p></div>
-<div class="t-card"><h3 class="font-bold text-navy-900 mb-1 text-sm">A late start</h3><p class="text-sm text-gray-600 leading-relaxed">The benchmark assumes saving since 25. Started at 32? You're running a shorter race — the fix is a higher rate, not guilt.</p></div>
-<div class="t-card"><h3 class="font-bold text-navy-900 mb-1 text-sm">Household picture</h3><p class="text-sm text-gray-600 leading-relaxed">Two incomes mean two 401(k)s and two IRAs of room. Measure the household, not just your account.</p></div>
-<div class="t-card"><h3 class="font-bold text-navy-900 mb-1 text-sm">Pension or equity comp</h3><p class="text-sm text-gray-600 leading-relaxed">A pension, RSUs, or expected inheritance change the target. The multiple is a default for people with none of those.</p></div>
+                    <div class="t-card"><div class="flex items-center gap-2 mb-1"><span class="w-8 h-8 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-credit-card"></i></span><h3 class="font-bold text-navy-900 text-sm">High-interest debt</h3></div><p class="text-sm text-gray-600 leading-relaxed">Net worth is assets minus debts. $80,000 saved alongside $60,000 at 22% APR is barely positive — kill the expensive debt before grading yourself.</p></div>
+<div class="t-card"><div class="flex items-center gap-2 mb-1"><span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-house"></i></span><h3 class="font-bold text-navy-900 text-sm">Home equity</h3></div><p class="text-sm text-gray-600 leading-relaxed">It counts toward net worth, but you can't spend it without selling or borrowing. Treat it as a cushion, not a retirement plan.</p></div>
+<div class="t-card"><div class="flex items-center gap-2 mb-1"><span class="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-hourglass-start"></i></span><h3 class="font-bold text-navy-900 text-sm">A late start</h3></div><p class="text-sm text-gray-600 leading-relaxed">The benchmark assumes saving since 25. Started at 32? You're running a shorter race — the fix is a higher rate, not guilt.</p></div>
+<div class="t-card"><div class="flex items-center gap-2 mb-1"><span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-people-roof"></i></span><h3 class="font-bold text-navy-900 text-sm">Household picture</h3></div><p class="text-sm text-gray-600 leading-relaxed">Two incomes mean two 401(k)s and two IRAs of room. Measure the household, not just your account.</p></div>
+<div class="t-card"><div class="flex items-center gap-2 mb-1"><span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-chart-line"></i></span><h3 class="font-bold text-navy-900 text-sm">Pension or equity comp</h3></div><p class="text-sm text-gray-600 leading-relaxed">A pension, RSUs, or expected inheritance change the target. The multiple is a default for people with none of those.</p></div>
                 </div>
             </section>
 
@@ -95,15 +189,15 @@
             <section class="anchor mb-10">
                 <div class="bg-rose-50 border border-rose-200 rounded-xl p-6">
                     <h2 class="text-2xl font-bold text-navy-900 mb-4">Watch out for</h2>
-                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
-                        <li><strong>Comparing yourself to averages, not medians.</strong> A few huge balances pull the average up; the median is the honest comparison.</li>
-<li><strong>Treating the multiple as a grade.</strong> It's a pace marker. Shame doesn't compound — contributions do.</li>
-<li><strong>Raiding retirement to “catch up” elsewhere.</strong> Cashing out to fund a house down payment usually moves you backward.</li>
-<li><strong>Waiting for a higher income to start.</strong> Time in the market beats timing the perfect salary; start at the match today.</li>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start gap-3"><span class="w-8 h-8 rounded-lg bg-white border border-rose-200 text-rose-500 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-chart-column"></i></span><span class="text-sm leading-relaxed pt-1"><strong>Comparing yourself to averages, not medians.</strong> A few huge balances pull the average up; the median is the honest comparison.</span></li>
+<li class="flex items-start gap-3"><span class="w-8 h-8 rounded-lg bg-white border border-rose-200 text-rose-500 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-ban"></i></span><span class="text-sm leading-relaxed pt-1"><strong>Treating the multiple as a grade.</strong> It's a pace marker. Shame doesn't compound — contributions do.</span></li>
+<li class="flex items-start gap-3"><span class="w-8 h-8 rounded-lg bg-white border border-rose-200 text-rose-500 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-hand-holding-dollar"></i></span><span class="text-sm leading-relaxed pt-1"><strong>Raiding retirement to “catch up” elsewhere.</strong> Cashing out to fund a house down payment usually moves you backward.</span></li>
+<li class="flex items-start gap-3"><span class="w-8 h-8 rounded-lg bg-white border border-rose-200 text-rose-500 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-clock"></i></span><span class="text-sm leading-relaxed pt-1"><strong>Waiting for a higher income to start.</strong> Time in the market beats timing the perfect salary; start at the match today.</span></li>
                     </ul>
                 </div>
             </section>
-            
+
             <!-- RUN THE NUMBERS -->
             <section class="anchor mb-10 text-center">
                 <h2 class="text-2xl font-bold text-navy-900 mb-4">Run the numbers</h2>
