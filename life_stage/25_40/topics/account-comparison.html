@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Same Dollar, Four Destinations: HSA vs Roth vs Traditional vs Taxable | WealthLanding</title>
+    <meta name="description" content="Interactive comparison: put the same pre-tax dollars into an HSA, Roth IRA, traditional 401(k), or taxable brokerage and see the after-tax future value side by side, with every assumption shown.">
+    <link rel="canonical" href="https://www.wealthlanding.com/life_stage/25_40/topics/account-comparison.html" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: { 50: '#fffbeb', 100: '#fef3c7', 500: '#f59e0b', 600: '#d97706', 900: '#78350f' },
+                        navy: { 800: '#1e293b', 900: '#0f172a' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #334155; }
+        .t-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; }
+        section.anchor { scroll-margin-top: 150px; }
+        .bar-track { background: #e2e8f0; border-radius: 9999px; overflow: hidden; }
+        .bar-fill { border-radius: 9999px; transition: width 0.35s ease; }
+        input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 9999px; background: #e2e8f0; outline: none; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 9999px; background: #f59e0b; border: 3px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.25); cursor: pointer; }
+        input[type=range]::-moz-range-thumb { width: 14px; height: 14px; border-radius: 9999px; background: #f59e0b; border: 3px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.25); cursor: pointer; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <div id="global-header-target"></div>
+    <main class="flex-grow flex flex-col w-full">
+        <!-- HERO -->
+        <div class="bg-navy-900 text-white pt-12 pb-12 px-4">
+            <div class="max-w-3xl mx-auto">
+                <nav aria-label="Breadcrumb" class="text-sm text-slate-400 mb-6 font-medium">
+                    <a href="../playbook_hub.html" class="hover:text-brand-400 transition-colors">30s Money Playbook</a>
+                    <span class="mx-2">/</span><span class="text-slate-300">Tax strategy</span>
+                </nav>
+                <div class="inline-block bg-brand-500/20 text-brand-400 font-semibold px-3 py-1 rounded-full text-xs mb-5 border border-brand-500/30 tracking-wide">
+                    BUILDING &middot; 25&ndash;40 &middot; Tax strategy
+                </div>
+                <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Same dollar, four destinations.</h1>
+                <p class="text-slate-300 text-lg leading-relaxed max-w-2xl">One pot of pre-tax earnings. Four accounts. Drag the sliders and watch the after-tax ranking change — every assumption sits next to the number it produces.</p>
+            </div>
+        </div>
+
+        <article class="max-w-3xl mx-auto px-4 py-10 w-full">
+            <div class="t-card mb-6">
+                <p class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-5"><i class="fa-solid fa-sliders text-brand-600 mr-1"></i> Your assumptions</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5">
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Pre-tax amount</span><span class="font-extrabold text-navy-900" id="v-amount">$10,000</span></div>
+                        <input type="range" id="s-amount" min="1000" max="50000" step="500" value="10000">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Years invested</span><span class="font-extrabold text-navy-900" id="v-years">30</span></div>
+                        <input type="range" id="s-years" min="5" max="45" step="1" value="30">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Annual return</span><span class="font-extrabold text-navy-900" id="v-return">7%</span></div>
+                        <input type="range" id="s-return" min="2" max="12" step="0.5" value="7">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Tax rate now</span><span class="font-extrabold text-navy-900" id="v-now">24%</span></div>
+                        <input type="range" id="s-now" min="0" max="40" step="1" value="24">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Tax rate in retirement</span><span class="font-extrabold text-navy-900" id="v-later">22%</span></div>
+                        <input type="range" id="s-later" min="0" max="40" step="1" value="22">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Capital-gains rate</span><span class="font-extrabold text-navy-900" id="v-ltcg">15%</span></div>
+                        <input type="range" id="s-ltcg" min="0" max="30" step="1" value="15">
+                    </div>
+                </div>
+            </div>
+
+            <div class="t-card mb-6">
+                <p class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-5"><i class="fa-solid fa-chart-column text-brand-600 mr-1"></i> After-tax future value</p>
+                <div class="space-y-6" id="bars">
+                    <div>
+                        <div class="flex justify-between items-baseline text-sm mb-1">
+                            <span class="font-bold text-navy-900"><i class="fa-solid fa-crown text-amber-500 mr-1"></i>HSA <span class="font-normal text-gray-500">— taxed never</span></span>
+                            <span class="font-extrabold text-navy-900 text-lg" id="r-hsa"></span>
+                        </div>
+                        <div class="bar-track h-5"><div id="b-hsa" class="bar-fill h-5 bg-amber-500" style="width:0%"></div></div>
+                        <p class="text-xs text-gray-500 mt-1">Assumes qualified medical withdrawals. After 65, non-medical withdrawals behave like a traditional account.</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-baseline text-sm mb-1">
+                            <span class="font-bold text-navy-900"><i class="fa-solid fa-door-open text-emerald-600 mr-1"></i>Roth IRA <span class="font-normal text-gray-500">— taxed once</span></span>
+                            <span class="font-extrabold text-navy-900 text-lg" id="r-roth"></span>
+                        </div>
+                        <div class="bar-track h-5"><div id="b-roth" class="bar-fill h-5 bg-emerald-500" style="width:0%"></div></div>
+                        <p class="text-xs text-gray-500 mt-1">Assumes qualified withdrawals (59&frac12;+, 5-year rule met). Taxed once, going in.</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-baseline text-sm mb-1">
+                            <span class="font-bold text-navy-900"><i class="fa-solid fa-building-columns text-blue-600 mr-1"></i>Traditional 401(k) <span class="font-normal text-gray-500">— taxed later</span></span>
+                            <span class="font-extrabold text-navy-900 text-lg" id="r-trad"></span>
+                        </div>
+                        <div class="bar-track h-5"><div id="b-trad" class="bar-fill h-5 bg-blue-500" style="width:0%"></div></div>
+                        <p class="text-xs text-gray-500 mt-1">Assumes fully deductible contribution, taxed as ordinary income at withdrawal.</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-baseline text-sm mb-1">
+                            <span class="font-bold text-navy-900"><i class="fa-solid fa-chart-line text-slate-500 mr-1"></i>Taxable brokerage <span class="font-normal text-gray-500">— no shelter</span></span>
+                            <span class="font-extrabold text-navy-900 text-lg" id="r-tax"></span>
+                        </div>
+                        <div class="bar-track h-5"><div id="b-tax" class="bar-fill h-5 bg-slate-400" style="width:0%"></div></div>
+                        <p class="text-xs text-gray-500 mt-1">After-tax in; gains taxed at the capital-gains rate at sale. (Ignores annual tax drag — reality is slightly worse.)</p>
+                    </div>
+                </div>
+                <div class="mt-6 bg-brand-50 border border-brand-100 rounded-lg p-4">
+                    <p class="text-sm text-gray-700 leading-relaxed" id="insight"></p>
+                </div>
+            </div>
+
+            <div class="t-card bg-navy-900 border-navy-900 text-white">
+                <p class="text-sm font-bold mb-2"><i class="fa-solid fa-arrows-rotate text-brand-400 mr-2"></i>A different question lives in the retirement lab</p>
+                <p class="text-slate-300 text-sm leading-relaxed mb-4">This tool compares <em>where to put new dollars</em>. Deciding whether to convert existing traditional balances to Roth — paying tax now to buy tax-free later — is withdrawal modeling, and it belongs with the spend-down tools.</p>
+                <a href="/Retirement-simulator/OptimizeRoth.html" class="inline-flex items-center bg-brand-500 hover:bg-brand-600 text-white font-bold py-2.5 px-5 rounded-lg text-sm transition-all"><i class="fa-solid fa-scale-balanced mr-2"></i>Model Roth conversions</a>
+            </div>
+        </article>
+    </main>
+
+    <wealthlanding-footer></wealthlanding-footer>
+    <script src="/components/footer.js"></script>
+    <script src="/components/header.js"></script>
+    <script>
+        (function () {
+            const $ = id => document.getElementById(id);
+            const fmt$ = n => '$' + Math.round(n).toLocaleString('en-US');
+            function calc() {
+                const P = parseFloat($('s-amount').value);
+                const n = parseFloat($('s-years').value);
+                const r = parseFloat($('s-return').value) / 100;
+                const tNow = parseFloat($('s-now').value) / 100;
+                const tLater = parseFloat($('s-later').value) / 100;
+                const tLtcg = parseFloat($('s-ltcg').value) / 100;
+                $('v-amount').textContent = fmt$(P);
+                $('v-years').textContent = n;
+                $('v-return').textContent = (parseFloat($('s-return').value)) + '%';
+                $('v-now').textContent = $('s-now').value + '%';
+                $('v-later').textContent = $('s-later').value + '%';
+                $('v-ltcg').textContent = $('s-ltcg').value + '%';
+                const g = Math.pow(1 + r, n);
+                const hsa = P * g;
+                const roth = P * (1 - tNow) * g;
+                const trad = P * g * (1 - tLater);
+                const contrib = P * (1 - tNow);
+                const taxable = contrib + contrib * (g - 1) * (1 - tLtcg);
+                const mx = Math.max(hsa, roth, trad, taxable, 1);
+                const set = (k, v) => { $('r-' + k).textContent = fmt$(v); $('b-' + k).style.width = (v / mx * 100) + '%'; };
+                set('hsa', hsa); set('roth', roth); set('trad', trad); set('tax', taxable);
+                const rows = [['HSA', hsa], ['Roth IRA', roth], ['Traditional 401(k)', trad], ['Taxable', taxable]].sort((a, b) => b[1] - a[1]);
+                let insight = 'Ranking: ' + rows.map(x => x[0] + ' ' + fmt$(x[1])).join('  >  ') + '. ';
+                insight += 'The HSA wins whenever the medical assumption holds — it is the only account never taxed. ';
+                const d = Math.abs(roth - trad);
+                if (d / Math.max(roth, trad, 1) < 0.005) {
+                    insight += 'Roth and traditional tie: with the same rate in and out, P\u00D7growth\u00D7(1\u2212t) is identical either way — the only question is which rate is higher.';
+                } else if (roth > trad) {
+                    insight += 'Roth beats traditional by ' + fmt$(d) + ' because retirement (' + $('s-later').value + '%) undercuts today (' + $('s-now').value + '%).';
+                } else {
+                    insight += 'Traditional beats Roth by ' + fmt$(d) + ' because today\u2019s rate (' + $('s-now').value + '%) exceeds retirement (' + $('s-later').value + '%).';
+                }
+                $('insight').textContent = insight;
+            }
+            ['s-amount', 's-years', 's-return', 's-now', 's-later', 's-ltcg'].forEach(id => $(id).addEventListener('input', calc));
+            calc();
+        })();
+    </script>
+</body>
+</html>

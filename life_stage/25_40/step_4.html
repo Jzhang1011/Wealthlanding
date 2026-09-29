@@ -59,8 +59,8 @@
                     <ul class="space-y-2 text-sm">
                         <li><a href="#framework" class="text-brand-700 hover:text-brand-600 font-medium">Roth or traditional 401(k) &mdash; which one? <i class="fa-solid fa-arrow-down text-xs ml-1"></i></a></li>
                         <li><a href="#framework" class="text-brand-700 hover:text-brand-600 font-medium">How do I legally pay less in taxes? <i class="fa-solid fa-arrow-down text-xs ml-1"></i></a></li>
-                        <li><a href="#hsa" class="text-brand-700 hover:text-brand-600 font-medium">What is an HSA and should I actually use one? <i class="fa-solid fa-arrow-down text-xs ml-1"></i></a></li>
-                        <li><a href="#mega-backdoor" class="text-brand-700 hover:text-brand-600 font-medium">Backdoor / mega backdoor Roth &mdash; do I qualify? <i class="fa-solid fa-arrow-down text-xs ml-1"></i></a></li>
+                        <li><a href="topics/hsa.html" class="text-brand-700 hover:text-brand-600 font-medium">What is an HSA and should I actually use one? <i class="fa-solid fa-arrow-right text-xs ml-1"></i></a></li>
+                        <li><a href="topics/backdoor-roth.html" class="text-brand-700 hover:text-brand-600 font-medium">Backdoor / mega backdoor Roth &mdash; do I qualify? <i class="fa-solid fa-arrow-right text-xs ml-1"></i></a></li>
                     </ul>
                 </div>
 
@@ -73,57 +73,59 @@
 
                     <section id="framework">
                         <h2 class="text-2xl font-bold text-navy-900 mb-4">The framework</h2>
-                        <div class="bg-white border border-gray-200 rounded-xl p-6 not-prose">
-                            <p class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-1"><i class="fa-solid fa-crown text-brand-600 mr-1"></i> The tax pyramid</p>
-                            <p class="text-sm text-gray-500 mb-4">Every account is a deal with the IRS. The fewer times you're taxed, the higher the layer — fund top-down.</p>
-                            <svg viewBox="0 0 720 400" class="w-full h-auto" role="img" aria-label="Tax pyramid: HSA triple tax benefit on top, Roth IRA Roth 401k and 529 double benefit in the middle, traditional 401k IRA and taxable at the base">
-                                <!-- crown -->
-                                <polygon points="332,44 338,16 352,34 360,10 368,34 382,16 388,44" fill="#f59e0b" stroke="#b45309" stroke-width="2.5" stroke-linejoin="round"/>
-                                <rect x="330" y="44" width="60" height="8" rx="3" fill="#b45309"/>
-                                <!-- LAYER 1: triple -->
-                                <polygon points="300,64 420,64 470,150 250,150" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5" stroke-linejoin="round"/>
-                                <text x="360" y="102" text-anchor="middle" font-size="20" font-weight="800" fill="#92400e">HSA</text>
-                                <text x="360" y="122" text-anchor="middle" font-size="12" font-weight="700" fill="#b45309">TRIPLE TAX BENEFIT</text>
-                                <text x="360" y="140" text-anchor="middle" font-size="11" fill="#92400e">deductible &middot; tax-free growth &middot; tax-free medical withdrawals</text>
-                                <!-- LAYER 2: double -->
-                                <polygon points="250,150 470,150 535,250 185,250" fill="#dbeafe" stroke="#60a5fa" stroke-width="2.5" stroke-linejoin="round"/>
-                                <text x="360" y="192" text-anchor="middle" font-size="17" font-weight="800" fill="#1e40af">ROTH IRA &middot; ROTH 401(k) &middot; 529</text>
-                                <text x="360" y="212" text-anchor="middle" font-size="12" font-weight="700" fill="#1d4ed8">DOUBLE TAX BENEFIT</text>
-                                <text x="360" y="230" text-anchor="middle" font-size="11" fill="#1e40af">tax-free growth + tax-free withdrawals (Roth: retirement &middot; 529: education)</text>
-                                <!-- LAYER 3: deferred -->
-                                <polygon points="185,250 535,250 615,360 105,360" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2.5" stroke-linejoin="round"/>
-                                <text x="360" y="296" text-anchor="middle" font-size="16" font-weight="800" fill="#334155">TRADITIONAL 401(k) / IRA &middot; TAXABLE</text>
-                                <text x="360" y="316" text-anchor="middle" font-size="12" font-weight="700" fill="#64748b">DEFERRED / SINGLE BENEFIT</text>
-                                <text x="360" y="334" text-anchor="middle" font-size="11" fill="#475569">deduct now, taxed later &middot; taxable: no shelter, but LTCG rates</text>
-                                <!-- side tags -->
-                                <text x="222" y="112" text-anchor="end" font-size="12" font-weight="800" fill="#b45309">3&times;</text>
-                                <text x="157" y="206" text-anchor="end" font-size="12" font-weight="800" fill="#1d4ed8">2&times;</text>
-                                <text x="77" y="310" text-anchor="end" font-size="12" font-weight="800" fill="#64748b">1&times;</text>
+                        <p>Fill from the top. Each tier is a kind of tax treatment, not a brand of account.</p>
+                        <div class="bg-white border border-gray-200 rounded-xl p-6 not-prose mt-4">
+                            <svg viewBox="0 0 720 300" class="w-full h-auto" role="img" aria-label="Tax pyramid: crown taxed never on top, middle taxed once, base taxed later">
+                                <polygon points="332,34 338,8 352,26 360,4 368,26 382,8 388,34" fill="#f59e0b" stroke="#b45309" stroke-width="2.5" stroke-linejoin="round"/>
+                                <rect x="330" y="34" width="60" height="8" rx="3" fill="#b45309"/>
+                                <polygon points="310,50 410,50 455,122 265,122" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5" stroke-linejoin="round"/>
+                                <text x="360" y="92" text-anchor="middle" font-size="17" font-weight="800" fill="#92400e">TAXED NEVER</text>
+                                <polygon points="265,122 455,122 520,202 200,202" fill="#dbeafe" stroke="#60a5fa" stroke-width="2.5" stroke-linejoin="round"/>
+                                <text x="360" y="168" text-anchor="middle" font-size="17" font-weight="800" fill="#1e40af">TAXED ONCE</text>
+                                <polygon points="200,202 520,202 600,282 120,282" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2.5" stroke-linejoin="round"/>
+                                <text x="360" y="248" text-anchor="middle" font-size="17" font-weight="800" fill="#334155">TAXED LATER</text>
                             </svg>
-                            <p class="text-xs text-gray-500 mt-3 leading-relaxed">The HSA is the only account taxed <em>zero</em> times when used for medical costs — deductible in, tax-free growth, tax-free out. At 65 it becomes a traditional IRA. 529s skip the federal deduction but grow and withdraw tax-free for education (many states add a deduction).</p>
                         </div>
-                        <p class="!mt-6 font-bold text-navy-900">The funding order, top to bottom:</p>
-                        <ol class="space-y-3 !mt-3 list-none pl-0">
-                            <li class="flex items-start gap-3"><span class="w-2.5 h-2.5 rounded-full bg-amber-500 mt-2 flex-shrink-0"></span><span><strong>HSA to the max</strong> (if you have a qualifying high-deductible plan) — the crown jewel. Pay medical bills from cash, save receipts, let it compound.</span></li>
-                            <li class="flex items-start gap-3"><span class="w-2.5 h-2.5 rounded-full bg-amber-500 mt-2 flex-shrink-0"></span><span><strong>401(k) to the full employer match</strong> — free money beats tax optimization every time.</span></li>
-                            <li class="flex items-start gap-3"><span class="w-2.5 h-2.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span><span><strong>Split Roth vs. traditional by the rate rule:</strong> current marginal rate <em>lower</em> than expected in retirement &rarr; favor Roth; <em>higher</em> &rarr; favor pre-tax. Most 30s earners in high-tax states land on pre-tax 401(k) + Roth IRA. <a href="topics/roth-ira.html" class="text-brand-700 hover:text-brand-600 font-medium underline">Full Roth IRA guide &rarr;</a></span></li>
-                            <li class="flex items-start gap-3"><span class="w-2.5 h-2.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span><span><strong>Max the accounts:</strong> 401(k) to $24,500 and IRA to $7,500 for 2026, once Steps 1&ndash;3 are funded.</span></li>
-                            <li class="flex items-start gap-3"><span class="w-2.5 h-2.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span><span><strong>Mega backdoor Roth</strong> if your plan allows after-tax contributions + in-service rollovers — tens of thousands more in Roth space. <a href="topics/roth-ira.html#backdoor" class="text-brand-700 hover:text-brand-600 font-medium underline">How it works &rarr;</a></span></li>
-                            <li class="flex items-start gap-3"><span class="w-2.5 h-2.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span><span><strong>529 for education goals, then taxable brokerage</strong> — no shelter left, but long-term capital-gains rates and tax-loss harvesting keep it efficient.</span></li>
-                        </ol>
+                        <div class="grid grid-cols-1 gap-4 not-prose mt-4">
+                            <div class="bg-white border border-gray-200 border-t-4 border-t-amber-400 rounded-xl p-5">
+                                <p class="font-extrabold text-navy-900 mb-1"><i class="fa-solid fa-crown text-amber-500 mr-2"></i>Crown &mdash; taxed never, if you follow the rules</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">The <strong>HSA</strong> &mdash; only with a qualifying high-deductible plan. Deductible in, tax-free growth, tax-free out for medical costs. At 65 it can be used like a traditional IRA. The only triple-tax account, and it isn't available to everyone. <a href="topics/hsa.html" class="text-brand-700 hover:text-brand-600 font-semibold underline">How the HSA works &rarr;</a></p>
+                            </div>
+                            <div class="bg-white border border-gray-200 border-t-4 border-t-blue-400 rounded-xl p-5">
+                                <p class="font-extrabold text-navy-900 mb-1"><i class="fa-solid fa-layer-group text-blue-500 mr-2"></i>Middle &mdash; taxed once</p>
+                                <p class="text-sm text-gray-600 leading-relaxed"><strong>Roth IRA, Roth 401(k), and the 529.</strong> Money goes in after tax; qualified withdrawals come out tax-free. A direct Roth IRA has an income limit (2026: phases out at $153k&ndash;$168k single). A 529 belongs here, not in a family sidebar &mdash; it's the same "taxed once" idea, aimed at education instead of retirement, and it's for qualified education expenses, not a retirement account. <a href="topics/roth-ira.html" class="text-brand-700 hover:text-brand-600 font-semibold underline">Roth IRA guide &rarr;</a> &nbsp;<a href="topics/529.html" class="text-brand-700 hover:text-brand-600 font-semibold underline">529 guide &rarr;</a></p>
+                            </div>
+                            <div class="bg-white border border-gray-200 border-t-4 border-t-slate-400 rounded-xl p-5">
+                                <p class="font-extrabold text-navy-900 mb-1"><i class="fa-solid fa-building-columns text-slate-500 mr-2"></i>Base &mdash; taxed later</p>
+                                <p class="text-sm text-gray-600 leading-relaxed"><strong>Traditional 401(k) and traditional IRA.</strong> Deduction now, tax on the way out. This is where the rate comparison lives: if today's marginal rate is higher than the rate you expect in retirement, fill this tier before extra Roth. <a href="topics/traditional-401k.html" class="text-brand-700 hover:text-brand-600 font-semibold underline">Traditional 401(k) guide &rarr;</a></p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-4"><em>What doesn't fit a tier:</em> the <strong>taxable brokerage</strong> &mdash; for after the tax-advantaged buckets are full &mdash; and the <strong>mega backdoor Roth</strong>, a plan feature that moves extra after-tax 401(k) dollars into the middle tier. Most readers can't use it, so it stays out of the pyramid. <a href="topics/backdoor-roth.html" class="text-brand-700 hover:text-brand-600 font-medium underline">The two backdoor tricks &rarr;</a></p>
+                        <div class="bg-navy-900 text-white rounded-xl p-5 not-prose mt-6">
+                            <p class="text-sm font-bold mb-3"><i class="fa-solid fa-water text-brand-400 mr-2"></i>The pyramid explains <em>why</em>. The waterfall says <em>when</em>.</p>
+                            <div class="flex flex-wrap items-center gap-2 text-sm font-semibold">
+                                <span class="bg-white/10 border border-white/20 rounded-lg px-3 py-1.5">401(k) to the match</span><i class="fa-solid fa-arrow-right text-brand-400 text-xs"></i>
+                                <span class="bg-white/10 border border-white/20 rounded-lg px-3 py-1.5">HSA, if eligible</span><i class="fa-solid fa-arrow-right text-brand-400 text-xs"></i>
+                                <span class="bg-white/10 border border-white/20 rounded-lg px-3 py-1.5">Roth IRA</span><i class="fa-solid fa-arrow-right text-brand-400 text-xs"></i>
+                                <span class="bg-white/10 border border-white/20 rounded-lg px-3 py-1.5">Rest of the 401(k)</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mt-3">The fill order you learned on <a href="step_1.html#framework" class="text-brand-400 underline">Step 1</a> &mdash; unchanged. Fund each step only after the previous one is full.</p>
+                        </div>
                     </section>
 
                     
                     <section id="mega-backdoor" class="scroll-mt-24">
-                        <h2 class="text-2xl font-bold text-navy-900 mb-4">What's a backdoor / mega backdoor Roth &mdash; and do I qualify?</h2>
-                        <p>The <strong>regular backdoor Roth</strong> is for high earners locked out of direct Roth IRA contributions: make a nondeductible contribution to a traditional IRA, then convert it to Roth. There's no income limit on conversions.</p><p>The <strong>mega backdoor</strong> is bigger: some 401(k) plans let you contribute after-tax dollars beyond the normal annual limit, then roll them into Roth &mdash; potentially tens of thousands per year. You qualify only if your plan allows <strong>BOTH</strong> after-tax contributions <strong>AND</strong> in-service distributions (or in-plan Roth rollovers). Check your plan documents or ask HR &mdash; most people never realize their plan offers it. <a href="topics/roth-ira.html#backdoor" class="text-brand-700 hover:text-brand-600 font-medium underline">Full guide with the pro-rata trap to avoid &rarr;</a></p>
+                        <h2 class="text-2xl font-bold text-navy-900 mb-4">Backdoor &amp; mega backdoor Roth</h2>
+                        <div class="bg-white border border-gray-200 rounded-xl p-5 not-prose">
+                            <p class="text-sm text-gray-600 leading-relaxed">Two tricks for getting money into Roth when the front door is locked &mdash; now split apart on their own page. The <strong>regular backdoor</strong>: nondeductible traditional IRA, convert, watch the pro-rata rule. The <strong>mega backdoor</strong>: after-tax 401(k) plus in-plan or in-service Roth rollover, if your plan allows it. <a href="topics/backdoor-roth.html" class="text-brand-700 hover:text-brand-600 font-semibold underline">Explore the tricks &rarr;</a></p>
+                        </div>
                     </section>
                     
                     <section id="hsa" class="scroll-mt-24">
                         <h2 class="text-2xl font-bold text-navy-900 mb-4">What is an HSA and should I actually use one?</h2>
-                        <p>If you have a high-deductible health plan: usually yes. The HSA is <strong>triple tax-advantaged</strong> — deductible going in, tax-free growth, tax-free withdrawals for medical costs. Check the current IRS contribution limits for individual vs. family coverage.</p>
-                        <p>The play: contribute the max, pay medical bills from cash, save the receipts, and let the account compound for decades.</p>
-                        <p>Exception: if you have high expected medical costs, compare the HDHP's total cost against a traditional plan — the HSA doesn't win every matchup.</p>
+                        <div class="bg-white border border-amber-200 rounded-xl p-5 not-prose">
+                            <p class="text-sm text-gray-600 leading-relaxed"><i class="fa-solid fa-crown text-amber-500 mr-1"></i> The crown of the pyramid deserves its own page: the triple tax benefit, the receipt strategy that turns medical bills into tax-free retirement withdrawals, the age-65 switch &mdash; and the honest case where a traditional plan beats the HDHP. <a href="topics/hsa.html" class="text-brand-700 hover:text-brand-600 font-semibold underline">How the HSA works &rarr;</a></p>
+                        </div>
                     </section>
                     <section id="do-this-week">
                         <h2 class="text-2xl font-bold text-navy-900 mb-4">Do this this week</h2>
@@ -144,6 +146,7 @@
                         </ul>
                     </section>
 
+                    <p class="text-center text-sm text-gray-500 max-w-xl mx-auto">Step 4 is the fill order. The retirement lab is the spend-down: traditional balances become RMDs, Roth balances are the tax-free sleeve, HSA receipts are a medical bridge before Medicare.</p>
                     <div class="text-center pt-2">
                         <a href="/Retirement-simulator/OptimizeRoth.html" class="inline-flex items-center justify-center bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg shadow-brand-500/30 transition-all">
                             <i class="fa-solid fa-scale-balanced mr-2"></i> Optimize your Roth strategy

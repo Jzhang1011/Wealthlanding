@@ -172,7 +172,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <p class="text-xs text-gray-500 mt-3">*If you lived with your spouse at any point during the year. Figures are for tax year 2026 — the IRS adjusts them most years, so re-check before you contribute.</p>
+                    <p class="text-xs text-gray-500 mt-3">*If you lived with your spouse at any point during the year. Figures are for tax year 2026 — the IRS adjusts them most years. <a href="https://www.irs.gov/retirement-plans/cola-increases-for-dollar-limitations-on-benefits-and-contributions" class="underline font-medium text-brand-700" target="_blank" rel="noopener">Check the current IRS figures &rarr;</a></p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
                         <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 text-center">
                             <p class="text-xl font-extrabold text-navy-900">$7,500</p>
@@ -189,82 +189,23 @@
 
             <!-- BACKDOOR -->
             <section class="anchor mb-10" id="backdoor">
-                <h2 class="text-2xl font-bold text-navy-900 mb-4">Locked out? The backdoor tricks</h2>
-                <div class="t-card mb-4">
-                    <p class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-3"><i class="fa-solid fa-door-open text-brand-600 mr-1"></i> The regular backdoor Roth &mdash; for anyone over the income limit</p>
-                    <ol class="space-y-3 text-sm text-gray-600 leading-relaxed list-none">
-                        <li class="flex gap-3"><span class="w-7 h-7 rounded-full bg-navy-900 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">1</span><span><strong class="text-navy-900">Contribute to a traditional IRA.</strong> There's no income limit on <em>contributing</em> — only on deducting it. Yours will be nondeductible (after-tax).</span></li>
-                        <li class="flex gap-3"><span class="w-7 h-7 rounded-full bg-navy-900 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">2</span><span><strong class="text-navy-900">Convert it to Roth.</strong> There's no income limit on conversions. Do it quickly, before the money grows — growth before conversion is taxable.</span></li>
-                        <li class="flex gap-3"><span class="w-7 h-7 rounded-full bg-navy-900 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">3</span><span><strong class="text-navy-900">File Form 8606.</strong> This tracks your after-tax "basis" so you aren't taxed twice. Skip it and the IRS assumes the conversion was taxable.</span></li>
-                    </ol>
-                    <div class="mt-4 bg-rose-50 border border-rose-200 rounded-lg p-4">
-                        <p class="text-sm text-gray-700 leading-relaxed"><i class="fa-solid fa-triangle-exclamation text-rose-600 mr-1"></i> <strong>The pro-rata trap:</strong> if you hold <em>any</em> pre-tax money in traditional, SEP, or SIMPLE IRAs, the IRS treats every conversion as partly pre-tax — you can't cherry-pick just the after-tax dollars. The fix: roll pre-tax IRA balances into your 401(k) first, leaving the IRA empty for a clean backdoor.</p>
-                    </div>
-                </div>
+                <h2 class="text-2xl font-bold text-navy-900 mb-4">Over the income limit?</h2>
                 <div class="t-card">
-                    <p class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-3"><i class="fa-solid fa-rocket text-brand-600 mr-1"></i> The mega backdoor Roth &mdash; tens of thousands per year</p>
-                    <p class="text-sm text-gray-600 leading-relaxed mb-3">Some 401(k) plans let you contribute <strong>after-tax dollars beyond the normal $24,500 limit</strong>, up to the $72,000 total plan cap for 2026 — then roll them into Roth. That's potentially ~$40k+/year of extra Roth space.</p>
-                    <p class="text-sm text-gray-600 leading-relaxed">You qualify only if your plan allows <strong>both</strong> after-tax contributions <strong>and</strong> in-service distributions (or in-plan Roth rollovers). Check your plan documents or ask HR — most people never realize their plan offers it. Each conversion starts its own 5-year clock for penalty-free access before 59&frac12;.</p>
+                    <p class="text-sm text-gray-600 leading-relaxed"><i class="fa-solid fa-door-open text-brand-600 mr-1"></i> The <strong>regular backdoor Roth</strong> (nondeductible IRA, convert, watch the pro-rata rule) and the <strong>mega backdoor Roth</strong> (after-tax 401(k) plus in-service rollover) each have their own full walkthrough now — including the HR questions that decide mega eligibility and who should skip both. <a href="backdoor-roth.html" class="text-brand-700 hover:text-brand-600 font-semibold underline">Explore the tricks &rarr;</a></p>
                 </div>
             </section>
 
+
             <!-- COMPARISON TOOL -->
             <section class="anchor mb-10" id="compare">
-                <h2 class="text-2xl font-bold text-navy-900 mb-4">Run the numbers: same dollars, three accounts</h2>
-                <div class="t-card">
-                    <p class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-1"><i class="fa-solid fa-calculator text-brand-600 mr-1"></i> After-tax future value comparer</p>
-                    <p class="text-sm text-gray-500 mb-5">One pot of pre-tax earnings, three destinations. Adjust the assumptions and watch the ranking change.</p>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
-                        <label class="block">
-                            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Pre-tax amount</span>
-                            <div class="flex items-center mt-1 border border-gray-300 rounded-lg px-3 py-2 bg-white focus-within:border-brand-500">
-                                <span class="text-gray-400 text-sm mr-1">$</span>
-                                <input id="cmp-amount" type="number" value="10000" min="100" step="100" class="w-full outline-none text-navy-900 font-semibold text-sm">
-                            </div>
-                        </label>
-                        <label class="block">
-                            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Years invested</span>
-                            <input id="cmp-years" type="number" value="30" min="1" max="60" class="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 text-navy-900 font-semibold text-sm outline-none focus:border-brand-500">
-                        </label>
-                        <label class="block">
-                            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Annual return %</span>
-                            <input id="cmp-return" type="number" value="7" min="0" max="20" step="0.5" class="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 text-navy-900 font-semibold text-sm outline-none focus:border-brand-500">
-                        </label>
-                        <label class="block">
-                            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Tax rate now %</span>
-                            <input id="cmp-now" type="number" value="24" min="0" max="50" step="1" class="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 text-navy-900 font-semibold text-sm outline-none focus:border-brand-500">
-                        </label>
-                        <label class="block">
-                            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Tax rate in retirement %</span>
-                            <input id="cmp-later" type="number" value="22" min="0" max="50" step="1" class="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 text-navy-900 font-semibold text-sm outline-none focus:border-brand-500">
-                        </label>
-                        <label class="block">
-                            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Cap-gains rate %</span>
-                            <input id="cmp-ltcg" type="number" value="15" min="0" max="40" step="1" class="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 text-navy-900 font-semibold text-sm outline-none focus:border-brand-500">
-                        </label>
-                    </div>
-                    <div class="space-y-4" id="cmp-bars">
-                        <div>
-                            <div class="flex justify-between text-sm mb-1"><span class="font-bold text-navy-900"><i class="fa-solid fa-building-columns text-blue-600 mr-1"></i>Traditional (pre-tax)</span><span class="font-extrabold text-navy-900" id="cmp-trad-val"></span></div>
-                            <div class="bar-track h-4"><div id="cmp-trad-bar" class="bar-fill h-4 bg-blue-500" style="width:0%"></div></div>
-                            <p class="text-xs text-gray-500 mt-1">Full amount grows, taxed once at withdrawal.</p>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-sm mb-1"><span class="font-bold text-navy-900"><i class="fa-solid fa-door-open text-emerald-600 mr-1"></i>Roth (after-tax)</span><span class="font-extrabold text-navy-900" id="cmp-roth-val"></span></div>
-                            <div class="bar-track h-4"><div id="cmp-roth-bar" class="bar-fill h-4 bg-emerald-500" style="width:0%"></div></div>
-                            <p class="text-xs text-gray-500 mt-1">Taxed once going in, never again.</p>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-sm mb-1"><span class="font-bold text-navy-900"><i class="fa-solid fa-chart-line text-slate-500 mr-1"></i>Taxable brokerage</span><span class="font-extrabold text-navy-900" id="cmp-tax-val"></span></div>
-                            <div class="bar-track h-4"><div id="cmp-tax-bar" class="bar-fill h-4 bg-slate-400" style="width:0%"></div></div>
-                            <p class="text-xs text-gray-500 mt-1">After-tax in, gains nicked every year and at sale.</p>
-                        </div>
-                    </div>
-                    <div class="mt-5 bg-brand-50 border border-brand-100 rounded-lg p-4">
-                        <p class="text-sm text-gray-700 leading-relaxed" id="cmp-insight"></p>
-                    </div>
+                <h2 class="text-2xl font-bold text-navy-900 mb-4">Same dollar, four destinations</h2>
+                <div class="t-card bg-navy-900 border-navy-900 text-white">
+                    <p class="text-xs font-bold uppercase tracking-wider mb-2 text-brand-400"><i class="fa-solid fa-calculator mr-1"></i> Interactive tool</p>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">Put the same pre-tax dollars into an <strong class="text-white">HSA, Roth IRA, traditional 401(k), or taxable brokerage</strong> — drag the sliders for return, years, and tax rates, and watch the after-tax ranking change. Every assumption sits next to the number it produces.</p>
+                    <a href="account-comparison.html" class="inline-flex items-center bg-brand-500 hover:bg-brand-600 text-white font-bold py-2.5 px-5 rounded-lg text-sm transition-all"><i class="fa-solid fa-chart-column mr-2"></i>Compare the four accounts</a>
                 </div>
             </section>
+
 
             <!-- THE DECISION -->
             <section class="anchor mb-10">
@@ -285,6 +226,21 @@
                             <li>The deduction drops you into a lower bracket or under a phase-out cliff today.</li>
                             <li>You plan early-retirement Roth conversions in low-income years before 59&frac12;.</li>
                         </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WHO SHOULD SKIP -->
+            <section class="anchor mb-10">
+                <h2 class="text-2xl font-bold text-navy-900 mb-4">Who should skip it</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="t-card">
+                        <p class="font-bold text-navy-900 mb-2"><i class="fa-solid fa-ban text-rose-500 mr-2"></i>Peak earners at 32%+</p>
+                        <p class="text-sm text-gray-600 leading-relaxed">Paying top-bracket tax today to avoid a lower retirement rate is a bad trade. Favor traditional, or split — <a href="traditional-401k.html" class="text-brand-700 underline font-medium">the rate rule lives here &rarr;</a></p>
+                    </div>
+                    <div class="t-card">
+                        <p class="font-bold text-navy-900 mb-2"><i class="fa-solid fa-ban text-rose-500 mr-2"></i>Over the limit with messy IRAs</p>
+                        <p class="text-sm text-gray-600 leading-relaxed">Big pre-tax IRA balances you can't roll into a 401(k) make the backdoor pro-rata taxed. Clean first, or skip — <a href="backdoor-roth.html" class="text-brand-700 underline font-medium">details &rarr;</a></p>
                     </div>
                 </div>
             </section>
@@ -329,44 +285,5 @@
     <wealthlanding-footer></wealthlanding-footer>
     <script src="/components/footer.js"></script>
     <script src="/components/header.js"></script>
-    <script>
-        (function () {
-            const $ = id => document.getElementById(id);
-            const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
-            function calc() {
-                const P = Math.max(0, parseFloat($('cmp-amount').value) || 0);
-                const n = Math.max(1, parseFloat($('cmp-years').value) || 30);
-                const r = (parseFloat($('cmp-return').value) || 0) / 100;
-                const tNow = Math.min(0.99, Math.max(0, (parseFloat($('cmp-now').value) || 0) / 100));
-                const tLater = Math.min(0.99, Math.max(0, (parseFloat($('cmp-later').value) || 0) / 100));
-                const tLtcg = Math.min(0.99, Math.max(0, (parseFloat($('cmp-ltcg').value) || 0) / 100));
-                const g = Math.pow(1 + r, n);
-                const trad = P * g * (1 - tLater);
-                const roth = P * (1 - tNow) * g;
-                const contrib = P * (1 - tNow);
-                const taxable = contrib + (contrib * (g - 1)) * (1 - tLtcg);
-                const mx = Math.max(trad, roth, taxable, 1);
-                $('cmp-trad-bar').style.width = (trad / mx * 100) + '%';
-                $('cmp-roth-bar').style.width = (roth / mx * 100) + '%';
-                $('cmp-tax-bar').style.width = (taxable / mx * 100) + '%';
-                $('cmp-trad-val').textContent = fmt(trad);
-                $('cmp-roth-val').textContent = fmt(roth);
-                $('cmp-tax-val').textContent = fmt(taxable);
-                const diff = Math.abs(roth - trad);
-                let insight;
-                if (diff / Math.max(roth, trad, 1) < 0.005) {
-                    insight = 'Roth and traditional land within ' + fmt(diff) + ' of each other — when your tax rate is the same going in and coming out, the two are mathematically identical (the commutative property: P\u00D7growth\u00D7(1\u2212t) either way). The real decision is whether your rate will be higher or lower later.';
-                } else if (roth > trad) {
-                    insight = 'Roth wins by ' + fmt(diff) + ' because your retirement rate (' + Math.round(tLater * 100) + '%) is lower than today\u2019s (' + Math.round(tNow * 100) + '%). Pay the tax while it\u2019s cheap.';
-                } else {
-                    insight = 'Traditional wins by ' + fmt(diff) + ' because today\u2019s rate (' + Math.round(tNow * 100) + '%) beats retirement (' + Math.round(tLater * 100) + '%). Take the deduction now; pay less later.';
-                }
-                insight += ' Taxable trails both — the annual tax drag on gains is a quiet compounding killer.';
-                $('cmp-insight').textContent = insight;
-            }
-            ['cmp-amount', 'cmp-years', 'cmp-return', 'cmp-now', 'cmp-later', 'cmp-ltcg'].forEach(id => $(id).addEventListener('input', calc));
-            calc();
-        })();
-    </script>
 </body>
 </html>
