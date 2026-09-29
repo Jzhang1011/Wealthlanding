@@ -44,6 +44,10 @@
                 </div>
                 <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">Should I Rent or Buy?</h1>
                 <p class="text-lg text-slate-300 max-w-2xl">Buying isn't automatically better because it builds equity. Renting isn't automatically throwing money away. It's a math problem with a time horizon.</p>
+                <div class="mt-6 flex flex-wrap gap-3 text-sm">
+                    <span class="bg-white/10 border border-white/20 rounded-xl px-4 py-3"><span class="block text-xs text-slate-400 font-semibold uppercase tracking-wider">Owning costs</span><span class="text-xl font-extrabold text-brand-400">~5%/yr</span> <span class="text-slate-300">unrecoverable</span></span>
+                    <span class="bg-white/10 border border-white/20 rounded-xl px-4 py-3"><span class="block text-xs text-slate-400 font-semibold uppercase tracking-wider">Renting costs</span><span class="text-xl font-extrabold text-white">100%</span> <span class="text-slate-300">of rent — compare directly</span></span>
+                </div>
             </div>
         </div>
 
@@ -56,6 +60,19 @@
                 </div>
             </section>
 
+            <!-- 5 PERCENT RULE -->
+            <section class="anchor mb-10" aria-label="The 5 percent rule breakdown chart">
+                <div class="t-card">
+                    <p class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-1"><i class="fa-solid fa-chart-column text-brand-600 mr-1"></i> The 5% rule, at a glance</p>
+                    <p class="text-sm text-gray-500 mb-4">The unrecoverable slice of owning, per year.</p>
+                    <div class="flex h-20 rounded-xl overflow-hidden text-center text-white">
+                        <div class="flex flex-col items-center justify-center" style="width:20%;background:#3b82f6"><span class="text-sm font-extrabold">1%</span><span class="text-xs font-medium opacity-90">property tax</span></div>
+                        <div class="flex flex-col items-center justify-center" style="width:20%;background:#8b5cf6"><span class="text-sm font-extrabold">1%</span><span class="text-xs font-medium opacity-90">maintenance</span></div>
+                        <div class="flex flex-col items-center justify-center" style="width:60%;background:#f59e0b"><span class="text-sm font-extrabold">3% cost of capital</span><span class="text-xs font-medium opacity-90">mortgage interest + forgone returns on the down payment</span></div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3 leading-relaxed">= roughly <strong>5% of the home's price per year</strong>, gone whether the house appreciates or not. If that number beats your annual rent, buying deserves a serious look.</p>
+                </div>
+            </section>
             <!-- THE DECISION -->
             <section class="anchor mb-10">
                 <h2 class="text-2xl font-bold text-navy-900 mb-4">The decision</h2>
@@ -73,21 +90,23 @@
             <!-- WORKED EXAMPLE -->
             <section class="anchor mb-10">
                 <h2 class="text-2xl font-bold text-navy-900 mb-4">Worked example</h2>
-                <div class="t-card">
-                    <p class="text-gray-600 leading-relaxed mb-4">A $400,000 home &times; 5% = <strong>$20,000/year</strong> in unrecoverable costs.</p><p class="text-gray-600 leading-relaxed mb-4">Comparable rent at $1,600/month = <strong>$19,200/year</strong> — roughly a wash, so the decision comes down to how long you'll stay and how much you value stability.</p><p class="text-gray-600 leading-relaxed mb-4">At $1,400/month rent ($16,800/year), renting wins by $3,200/year. Invested at 7% for 10 years:<br>FV = $3,200 &times; [((1.07<sup>10</sup>) &minus; 1) / 0.07] &asymp; <strong>$44,300</strong>. That's the real price of buying in an expensive rental market.</p>
+                <p class="text-gray-600 leading-relaxed mb-4">A <strong>$400,000</strong> home:</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                    <div class="t-card border-t-4 !border-t-amber-500"><p class="text-xs font-bold text-amber-700 uppercase tracking-wider mb-1">Own</p><p class="text-2xl font-extrabold text-navy-900 mb-1">$20,000<span class="text-sm font-medium text-gray-500">/yr</span></p><p class="text-sm text-gray-600">$400,000 &times; 5% in unrecoverable costs.</p></div>
+                    <div class="t-card border-t-4 !border-t-blue-500"><p class="text-xs font-bold text-blue-700 uppercase tracking-wider mb-1">Rent</p><p class="text-2xl font-extrabold text-navy-900 mb-1">$19,200<span class="text-sm font-medium text-gray-500">/yr</span></p><p class="text-sm text-gray-600">$1,600/month for a comparable place — roughly a wash, so holding period and stability decide.</p></div>
                 </div>
+                <div class="t-card !bg-navy-900"><p class="text-xs font-bold text-brand-400 uppercase tracking-wider mb-1">When rent is cheaper</p><p class="text-gray-200 leading-relaxed text-sm">At $1,400/month rent ($16,800/yr), renting wins by <strong class="text-white">$3,200/yr</strong>. Invested at 7% for 10 years &asymp; <strong class="text-white">$44,300</strong> — the real price of buying in an expensive rental market.</p></div>
                 <p class="text-sm text-gray-500 mt-3">Illustrative math, not personalized advice. Your numbers will differ.</p>
             </section>
-
             <!-- WHAT CHANGES -->
             <section class="anchor mb-10">
                 <h2 class="text-2xl font-bold text-navy-900 mb-4">What changes the answer?</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="t-card"><h3 class="font-bold text-navy-900 mb-1 text-sm">Expected holding period</h3><p class="text-sm text-gray-600 leading-relaxed">Under ~5 years, buying and selling transaction costs (often 8–10% round-trip) usually wipe out any advantage.</p></div>
-<div class="t-card"><h3 class="font-bold text-navy-900 mb-1 text-sm">Local price-to-rent ratios</h3><p class="text-sm text-gray-600 leading-relaxed">In cheap-rent cities buying often wins; in coastal job centers renting often wins. Your zip code matters more than the national debate.</p></div>
-<div class="t-card"><h3 class="font-bold text-navy-900 mb-1 text-sm">Down payment size</h3><p class="text-sm text-gray-600 leading-relaxed">A bigger down payment means less interest paid — but also more capital locked up earning ~0% instead of market returns.</p></div>
-<div class="t-card"><h3 class="font-bold text-navy-900 mb-1 text-sm">Mortgage rate</h3><p class="text-sm text-gray-600 leading-relaxed">Higher rates raise the unrecoverable slice of every payment. The 5% rule already bakes in typical rates; adjust if yours is far from typical.</p></div>
-<div class="t-card"><h3 class="font-bold text-navy-900 mb-1 text-sm">Stability vs. mobility</h3><p class="text-sm text-gray-600 leading-relaxed">Kids in school, a settled job, a community — non-financial value is real. Just don't pretend it's free.</p></div>
+                    <div class="t-card"><div class="flex items-center gap-2 mb-1"><span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-calendar-days"></i></span><h3 class="font-bold text-navy-900 text-sm">Expected holding period</h3></div><p class="text-sm text-gray-600 leading-relaxed">Under ~5 years, buying and selling transaction costs (often 8–10% round-trip) usually wipe out any advantage.</p></div>
+<div class="t-card"><div class="flex items-center gap-2 mb-1"><span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-map-location-dot"></i></span><h3 class="font-bold text-navy-900 text-sm">Local price-to-rent ratios</h3></div><p class="text-sm text-gray-600 leading-relaxed">In cheap-rent cities buying often wins; in coastal job centers renting often wins. Your zip code matters more than the national debate.</p></div>
+<div class="t-card"><div class="flex items-center gap-2 mb-1"><span class="w-8 h-8 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-piggy-bank"></i></span><h3 class="font-bold text-navy-900 text-sm">Down payment size</h3></div><p class="text-sm text-gray-600 leading-relaxed">A bigger down payment means less interest paid — but also more capital locked up earning ~0% instead of market returns.</p></div>
+<div class="t-card"><div class="flex items-center gap-2 mb-1"><span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-percent"></i></span><h3 class="font-bold text-navy-900 text-sm">Mortgage rate</h3></div><p class="text-sm text-gray-600 leading-relaxed">Higher rates raise the unrecoverable slice of every payment. The 5% rule already bakes in typical rates; adjust if yours is far from typical.</p></div>
+<div class="t-card"><div class="flex items-center gap-2 mb-1"><span class="w-8 h-8 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-compass"></i></span><h3 class="font-bold text-navy-900 text-sm">Stability vs. mobility</h3></div><p class="text-sm text-gray-600 leading-relaxed">Kids in school, a settled job, a community — non-financial value is real. Just don't pretend it's free.</p></div>
                 </div>
             </section>
 
@@ -95,11 +114,11 @@
             <section class="anchor mb-10">
                 <div class="bg-rose-50 border border-rose-200 rounded-xl p-6">
                     <h2 class="text-2xl font-bold text-navy-900 mb-4">Watch out for</h2>
-                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
-                        <li><strong>“Rent is throwing money away.”</strong> Mortgage interest, property taxes, maintenance, and insurance are thrown away too — count both sides.</li>
-<li><strong>Forgetting maintenance.</strong> Budget ~1% of the home's value per year. Roofs and furnaces don't care about your spreadsheet.</li>
-<li><strong>Buying for appreciation.</strong> That's speculation, not a plan. Buy because the math works at today's price.</li>
-<li><strong>Stretching to the pre-approval max.</strong> The bank's ceiling is not your budget (see the 28/36 rule).</li>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start gap-3"><span class="w-8 h-8 rounded-lg bg-white border border-rose-200 text-rose-500 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-ban"></i></span><span class="text-sm leading-relaxed pt-1"><strong>“Rent is throwing money away.”</strong> Mortgage interest, property taxes, maintenance, and insurance are thrown away too — count both sides.</span></li>
+<li class="flex items-start gap-3"><span class="w-8 h-8 rounded-lg bg-white border border-rose-200 text-rose-500 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-screwdriver-wrench"></i></span><span class="text-sm leading-relaxed pt-1"><strong>Forgetting maintenance.</strong> Budget ~1% of the home's value per year. Roofs and furnaces don't care about your spreadsheet.</span></li>
+<li class="flex items-start gap-3"><span class="w-8 h-8 rounded-lg bg-white border border-rose-200 text-rose-500 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-chart-line"></i></span><span class="text-sm leading-relaxed pt-1"><strong>Buying for appreciation.</strong> That's speculation, not a plan. Buy because the math works at today's price.</span></li>
+<li class="flex items-start gap-3"><span class="w-8 h-8 rounded-lg bg-white border border-rose-200 text-rose-500 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-triangle-exclamation"></i></span><span class="text-sm leading-relaxed pt-1"><strong>Stretching to the pre-approval max.</strong> The bank's ceiling is not your budget (see the 28/36 rule).</span></li>
                     </ul>
                 </div>
             </section>

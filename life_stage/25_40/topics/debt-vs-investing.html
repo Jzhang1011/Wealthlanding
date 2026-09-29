@@ -44,6 +44,13 @@
                 </div>
                 <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">Should I Pay Off Debt or Invest?</h1>
                 <p class="text-lg text-slate-300 max-w-2xl">It's not one decision — it's a sequence. The interest rate, the tax code, and your employer match decide the order.</p>
+                <div class="mt-6 flex flex-wrap items-center gap-2 text-sm">
+                    <span class="bg-white/10 border border-white/20 rounded-full px-4 py-2 font-semibold"><span class="text-brand-400 font-extrabold mr-1">1</span> Capture the match</span>
+                    <i class="fa-solid fa-arrow-right text-slate-500"></i>
+                    <span class="bg-white/10 border border-white/20 rounded-full px-4 py-2 font-semibold"><span class="text-brand-400 font-extrabold mr-1">2</span> Kill debt above ~7%</span>
+                    <i class="fa-solid fa-arrow-right text-slate-500"></i>
+                    <span class="bg-white/10 border border-white/20 rounded-full px-4 py-2 font-semibold"><span class="text-brand-400 font-extrabold mr-1">3</span> Invest the rest</span>
+                </div>
             </div>
         </div>
 
@@ -56,6 +63,24 @@
                 </div>
             </section>
 
+            <!-- RATE SPECTRUM -->
+            <section class="anchor mb-10" aria-label="Interest rate spectrum chart">
+                <div class="t-card">
+                    <p class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-1"><i class="fa-solid fa-sliders text-brand-600 mr-1"></i> The rate spectrum, at a glance</p>
+                    <p class="text-sm text-gray-500 mb-4">Where your debt's rate lands decides the order.</p>
+                    <div class="flex justify-between text-xs font-bold text-gray-400 mb-1"><span>0%</span><span>5%</span><span>7%</span><span>12%+</span></div>
+                    <div class="flex h-20 rounded-xl overflow-hidden text-center">
+                        <div class="flex flex-col items-center justify-center text-white" style="width:41.7%;background:#10b981"><span class="text-sm font-extrabold">INVEST</span><span class="text-xs font-medium opacity-90">debt below ~5%</span></div>
+                        <div class="flex flex-col items-center justify-center text-white" style="width:16.6%;background:#f59e0b"><span class="text-sm font-extrabold">SPLIT</span><span class="text-xs font-medium opacity-90">5–7%</span></div>
+                        <div class="flex flex-col items-center justify-center text-white" style="width:41.7%;background:#f43f5e"><span class="text-sm font-extrabold">KILL DEBT</span><span class="text-xs font-medium opacity-90">above ~7%</span></div>
+                    </div>
+                    <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold">
+                        <span class="bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full px-3 py-1">4% mortgage &rarr; invest the extra</span>
+                        <span class="bg-amber-50 text-amber-700 border border-amber-200 rounded-full px-3 py-1">6% student loan &rarr; your call</span>
+                        <span class="bg-rose-50 text-rose-700 border border-rose-200 rounded-full px-3 py-1">18% credit card &rarr; kill it first</span>
+                    </div>
+                </div>
+            </section>
             <!-- THE DECISION -->
             <section class="anchor mb-10">
                 <h2 class="text-2xl font-bold text-navy-900 mb-4">The decision</h2>
@@ -73,21 +98,23 @@
             <!-- WORKED EXAMPLE -->
             <section class="anchor mb-10">
                 <h2 class="text-2xl font-bold text-navy-900 mb-4">Worked example</h2>
-                <div class="t-card">
-                    <p class="text-gray-600 leading-relaxed mb-4">You have an extra $10,000. Three uses:</p><p class="text-gray-600 leading-relaxed mb-4"><strong>Option A — pay down an 18% credit card:</strong> saves ~$1,800 in interest over the next year. Guaranteed.<br><strong>Option B — invest it at an expected 8%:</strong> ~$800 of expected gains, with real risk of less.<br><strong>Option C — prepay a 4% mortgage:</strong> saves $400 guaranteed, but that cash is now locked inside the house.</p><p class="text-gray-600 leading-relaxed mb-4">Same $10,000, three different answers. The interest rate — and whether you might need the cash — decides.</p>
+                <p class="text-gray-600 leading-relaxed mb-4">You have an extra <strong>$10,000</strong>. Three uses — same money, three different answers:</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="t-card border-t-4 !border-t-emerald-500"><p class="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-1">A &middot; Kill the 18% card</p><p class="text-2xl font-extrabold text-navy-900 mb-1">$1,800 <span class="text-sm font-medium text-gray-500">saved</span></p><p class="text-sm text-gray-600">Interest avoided over the next year. Guaranteed.</p></div>
+                    <div class="t-card border-t-4 !border-t-amber-500"><p class="text-xs font-bold text-amber-700 uppercase tracking-wider mb-1">B &middot; Invest at 8%</p><p class="text-2xl font-extrabold text-navy-900 mb-1">~$800 <span class="text-sm font-medium text-gray-500">expected</span></p><p class="text-sm text-gray-600">Expected gains — with real risk of less.</p></div>
+                    <div class="t-card border-t-4 !border-t-slate-400"><p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">C &middot; Prepay 4% mortgage</p><p class="text-2xl font-extrabold text-navy-900 mb-1">$400 <span class="text-sm font-medium text-gray-500">saved</span></p><p class="text-sm text-gray-600">Guaranteed — but that cash is now locked inside the house.</p></div>
                 </div>
                 <p class="text-sm text-gray-500 mt-3">Illustrative math, not personalized advice. Your numbers will differ.</p>
             </section>
-
             <!-- WHAT CHANGES -->
             <section class="anchor mb-10">
                 <h2 class="text-2xl font-bold text-navy-900 mb-4">What changes the answer?</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="t-card"><h3 class="font-bold text-navy-900 mb-1 text-sm">The employer match</h3><p class="text-sm text-gray-600 leading-relaxed">A 50% match on 6% of pay is an instant 50% return. It always goes first, even ahead of 24% APR debt.</p></div>
-<div class="t-card"><h3 class="font-bold text-navy-900 mb-1 text-sm">Tax-deductible interest</h3><p class="text-sm text-gray-600 leading-relaxed">Mortgage or student-loan interest may be deductible, which lowers the debt's effective rate and tilts toward investing.</p></div>
-<div class="t-card"><h3 class="font-bold text-navy-900 mb-1 text-sm">Your emergency fund</h3><p class="text-sm text-gray-600 leading-relaxed">No cash buffer? Build 1–3 months of expenses before either — otherwise the next surprise goes right back on the card.</p></div>
-<div class="t-card"><h3 class="font-bold text-navy-900 mb-1 text-sm">Variable vs. fixed rates</h3><p class="text-sm text-gray-600 leading-relaxed">A variable rate that can reset higher deserves more urgency than a fixed 4% mortgage.</p></div>
-<div class="t-card"><h3 class="font-bold text-navy-900 mb-1 text-sm">How debt feels to you</h3><p class="text-sm text-gray-600 leading-relaxed">Some people sleep better debt-free. That's a real input — just price it honestly against the math.</p></div>
+                    <div class="t-card"><div class="flex items-center gap-2 mb-1"><span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-hand-holding-dollar"></i></span><h3 class="font-bold text-navy-900 text-sm">The employer match</h3></div><p class="text-sm text-gray-600 leading-relaxed">A 50% match on 6% of pay is an instant 50% return. It always goes first, even ahead of 24% APR debt.</p></div>
+<div class="t-card"><div class="flex items-center gap-2 mb-1"><span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-receipt"></i></span><h3 class="font-bold text-navy-900 text-sm">Tax-deductible interest</h3></div><p class="text-sm text-gray-600 leading-relaxed">Mortgage or student-loan interest may be deductible, which lowers the debt's effective rate and tilts toward investing.</p></div>
+<div class="t-card"><div class="flex items-center gap-2 mb-1"><span class="w-8 h-8 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-life-ring"></i></span><h3 class="font-bold text-navy-900 text-sm">Your emergency fund</h3></div><p class="text-sm text-gray-600 leading-relaxed">No cash buffer? Build 1–3 months of expenses before either — otherwise the next surprise goes right back on the card.</p></div>
+<div class="t-card"><div class="flex items-center gap-2 mb-1"><span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-wave-square"></i></span><h3 class="font-bold text-navy-900 text-sm">Variable vs. fixed rates</h3></div><p class="text-sm text-gray-600 leading-relaxed">A variable rate that can reset higher deserves more urgency than a fixed 4% mortgage.</p></div>
+<div class="t-card"><div class="flex items-center gap-2 mb-1"><span class="w-8 h-8 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-heart"></i></span><h3 class="font-bold text-navy-900 text-sm">How debt feels to you</h3></div><p class="text-sm text-gray-600 leading-relaxed">Some people sleep better debt-free. That's a real input — just price it honestly against the math.</p></div>
                 </div>
             </section>
 
@@ -95,11 +122,11 @@
             <section class="anchor mb-10">
                 <div class="bg-rose-50 border border-rose-200 rounded-xl p-6">
                     <h2 class="text-2xl font-bold text-navy-900 mb-4">Watch out for</h2>
-                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
-                        <li><strong>Skipping the match to kill debt faster.</strong> No debt payoff beats a 50–100% instant return.</li>
-<li><strong>Draining the emergency fund to pay debt.</strong> Then the next surprise becomes new debt.</li>
-<li><strong>Ignoring tax benefits.</strong> Deductible interest changes the effective rate you're comparing against.</li>
-<li><strong>Treating a 4% mortgage like a 22% credit card.</strong> Different rates, different urgency — that's the whole framework.</li>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start gap-3"><span class="w-8 h-8 rounded-lg bg-white border border-rose-200 text-rose-500 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-ban"></i></span><span class="text-sm leading-relaxed pt-1"><strong>Skipping the match to kill debt faster.</strong> No debt payoff beats a 50–100% instant return.</span></li>
+<li class="flex items-start gap-3"><span class="w-8 h-8 rounded-lg bg-white border border-rose-200 text-rose-500 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-life-ring"></i></span><span class="text-sm leading-relaxed pt-1"><strong>Draining the emergency fund to pay debt.</strong> Then the next surprise becomes new debt.</span></li>
+<li class="flex items-start gap-3"><span class="w-8 h-8 rounded-lg bg-white border border-rose-200 text-rose-500 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-receipt"></i></span><span class="text-sm leading-relaxed pt-1"><strong>Ignoring tax benefits.</strong> Deductible interest changes the effective rate you're comparing against.</span></li>
+<li class="flex items-start gap-3"><span class="w-8 h-8 rounded-lg bg-white border border-rose-200 text-rose-500 flex items-center justify-center text-sm flex-shrink-0"><i class="fa-solid fa-scale-balanced"></i></span><span class="text-sm leading-relaxed pt-1"><strong>Treating a 4% mortgage like a 22% credit card.</strong> Different rates, different urgency — that's the whole framework.</span></li>
                     </ul>
                 </div>
             </section>
