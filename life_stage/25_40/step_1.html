@@ -54,14 +54,27 @@
                         </p>
                     </div>
                 </header>
+                <div class="bg-brand-50 border border-brand-200 rounded-xl p-6 mb-10">
+                    <h3 class="font-bold text-navy-900 mb-3 flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-500"></i> Questions this step answers</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#behind" class="text-brand-700 hover:text-brand-600 font-medium">Am I behind? How much should I have saved? <i class="fa-solid fa-arrow-down text-xs ml-1"></i></a></li>
+                        <li><a href="#framework" class="text-brand-700 hover:text-brand-600 font-medium">What percentage of my income should I be saving? <i class="fa-solid fa-arrow-down text-xs ml-1"></i></a></li>
+                        <li><a href="#framework" class="text-brand-700 hover:text-brand-600 font-medium">What order do I fund accounts in &mdash; 401(k), IRA, HSA? <i class="fa-solid fa-arrow-down text-xs ml-1"></i></a></li>
+                        <li><a href="#debt-vs-invest" class="text-brand-700 hover:text-brand-600 font-medium">Should I pay off debt or invest? <i class="fa-solid fa-arrow-down text-xs ml-1"></i></a></li>
+                        <li><a href="#framework" class="text-brand-700 hover:text-brand-600 font-medium">What do I actually invest in? <i class="fa-solid fa-arrow-down text-xs ml-1"></i></a></li>
+                        <li><a href="#lump-sum" class="text-brand-700 hover:text-brand-600 font-medium">Lump sum or dollar-cost average? <i class="fa-solid fa-arrow-down text-xs ml-1"></i></a></li>
+                        <li><a href="#rollover" class="text-brand-700 hover:text-brand-600 font-medium">What do I do with my old 401(k)? <i class="fa-solid fa-arrow-down text-xs ml-1"></i></a></li>
+                    </ul>
+                </div>
+
 
                 <div class="prose prose-lg max-w-none text-gray-600 mb-12 space-y-10">
-                    <section>
+                    <section id="why-this-matters">
                         <h2 class="text-2xl font-bold text-navy-900 mb-4">Why this matters</h2>
                         <p>Willpower is a terrible investment strategy. Every month you decide whether to invest is a month you might not. Automation removes the decision entirely: money moves the day you're paid, before you can spend it. Over a decade, the habit matters far more than the holdings.</p>
                     </section>
 
-                    <section>
+                    <section id="framework">
                         <h2 class="text-2xl font-bold text-navy-900 mb-4">The framework — the contribution waterfall</h2>
                         <p>Fund accounts in this order. Each step unlocks only after the previous one is full:</p>
                         <ol class="list-decimal pl-6 space-y-3">
@@ -74,7 +87,27 @@
                         <p class="mt-4"><strong>Target:</strong> 15% of gross income minimum, 20%+ if you're behind. Can't do 15% today? Start at the match and add 1% every quarter — you'll barely feel it.</p>
                     </section>
 
-                    <section>
+                    
+                    <section id="behind" class="scroll-mt-24">
+                        <h2 class="text-2xl font-bold text-navy-900 mb-4">Am I behind? How much should I have saved?</h2>
+                        <p>Fidelity's rule of thumb: <strong>1&times; your annual salary saved by 30, 3&times; by 40</strong>. It's a useful compass &mdash; not a grade.</p><p>Two caveats. First, the rule counts retirement accounts only; your real picture includes home equity, debt, a pension, or a partner's savings. Someone at 2&times; salary with zero debt is in better shape than 3&times; with $80k on credit cards. Second, the fix is always the same: raise your savings rate. The number tells you where you stand; this step tells you what to do.</p>
+                    </section>
+
+                    <section id="debt-vs-invest" class="scroll-mt-24">
+                        <h2 class="text-2xl font-bold text-navy-900 mb-4">Should I pay off debt or invest?</h2>
+                        <p>Use the interest rate as your referee:</p><ul class="list-disc pl-6 space-y-2 mt-3"><li><strong>Always capture the full 401(k) match first</strong> &mdash; a 50&ndash;100% instant return beats any debt payoff.</li><li><strong>Debt above ~7%</strong> (credit cards, personal loans): kill it before investing beyond the match.</li><li><strong>Debt between ~5&ndash;7%:</strong> split the difference &mdash; minimums plus investing.</li><li><strong>Debt below ~5%</strong> (most mortgages): pay on schedule and invest. Long-run market returns beat it.</li></ul>
+                    </section>
+
+                    <section id="lump-sum" class="scroll-mt-24">
+                        <h2 class="text-2xl font-bold text-navy-900 mb-4">Lump sum or dollar-cost average?</h2>
+                        <p>If a bonus, inheritance, or rollover lands all at once, investing it immediately has beaten spreading it out roughly <strong>two-thirds of the time</strong> &mdash; markets rise more often than they fall.</p><p>But dollar-cost averaging over 3&ndash;6 months is a perfectly fine choice if a sudden drop would make you panic-sell. The best strategy is the one you'll actually stick with. Either way, don't sit in cash waiting for &ldquo;the right time.&rdquo;</p>
+                    </section>
+
+                    <section id="rollover" class="scroll-mt-24">
+                        <h2 class="text-2xl font-bold text-navy-900 mb-4">What do I do with my old 401(k)?</h2>
+                        <p>Don't cash it out &mdash; you'll owe income tax plus a <strong>10% penalty</strong> if you're under 59&frac12;. Your two good moves: roll it into your new employer's 401(k), or into a rollover IRA (usually more fund choices and lower fees). Use a <strong>direct trustee-to-trustee rollover</strong> so nothing is withheld.</p><p>One exception: if you expect to use backdoor Roth IRA contributions, keep pre-tax money inside a 401(k) &mdash; it avoids the pro-rata tax rule that makes backdoor conversions messy.</p>
+                    </section>
+                    <section id="do-this-week">
                         <h2 class="text-2xl font-bold text-navy-900 mb-4">Do this this week</h2>
                         <ul class="space-y-3">
                             <li class="flex items-start gap-3 bg-brand-50 border border-brand-100 rounded-lg p-4"><span class="flex-shrink-0 w-6 h-6 rounded border-2 border-brand-500 bg-white mt-0.5"></span><span>Log into your 401(k) and confirm you're capturing the FULL match</span></li>
@@ -85,7 +118,7 @@
                         </ul>
                     </section>
 
-                    <section class="bg-rose-50 border border-rose-200 rounded-xl p-6">
+                    <section id="common-mistakes" class="bg-rose-50 border border-rose-200 rounded-xl p-6">
                         <h2 class="text-2xl font-bold text-navy-900 mb-4">⚠️ Common mistakes</h2>
                         <ul class="list-disc pl-6 space-y-2">
                             <li>Keeping old 401(k)s scattered at past employers (roll them over).</li>

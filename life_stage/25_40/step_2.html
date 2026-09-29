@@ -54,14 +54,25 @@
                         </p>
                     </div>
                 </header>
+                <div class="bg-brand-50 border border-brand-200 rounded-xl p-6 mb-10">
+                    <h3 class="font-bold text-navy-900 mb-3 flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-500"></i> Questions this step answers</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#framework" class="text-brand-700 hover:text-brand-600 font-medium">Should I rent or buy? Is renting throwing money away? <i class="fa-solid fa-arrow-down text-xs ml-1"></i></a></li>
+                        <li><a href="#framework" class="text-brand-700 hover:text-brand-600 font-medium">How much house can I actually afford? <i class="fa-solid fa-arrow-down text-xs ml-1"></i></a></li>
+                        <li><a href="#rates" class="text-brand-700 hover:text-brand-600 font-medium">Should I wait for interest rates to drop? <i class="fa-solid fa-arrow-down text-xs ml-1"></i></a></li>
+                        <li><a href="#pause-retirement" class="text-brand-700 hover:text-brand-600 font-medium">Should I pause retirement saving for a down payment? <i class="fa-solid fa-arrow-down text-xs ml-1"></i></a></li>
+                        <li><a href="#framework" class="text-brand-700 hover:text-brand-600 font-medium">20% down or buy sooner with PMI? <i class="fa-solid fa-arrow-down text-xs ml-1"></i></a></li>
+                    </ul>
+                </div>
+
 
                 <div class="prose prose-lg max-w-none text-gray-600 mb-12 space-y-10">
-                    <section>
+                    <section id="why-this-matters">
                         <h2 class="text-2xl font-bold text-navy-900 mb-4">Why this matters</h2>
                         <p>Nothing in your 30s moves the needle like housing — in either direction. A well-timed purchase builds equity on autopilot; an overstretched one locks you into a payment that strangles every other goal. Renting, meanwhile, is not "throwing money away" if the difference is invested. The only wrong move is deciding on vibes.</p>
                     </section>
 
-                    <section>
+                    <section id="framework">
                         <h2 class="text-2xl font-bold text-navy-900 mb-4">The framework</h2>
                         <ul class="space-y-4">
                             <li><strong>The 28/36 rule:</strong> housing costs ≤ 28% of gross monthly income; total debt payments ≤ 36%.</li>
@@ -71,7 +82,17 @@
                         </ul>
                     </section>
 
-                    <section>
+                    
+                    <section id="rates" class="scroll-mt-24">
+                        <h2 class="text-2xl font-bold text-navy-900 mb-4">Should I wait for interest rates to drop before buying?</h2>
+                        <p>You can <strong>refinance a rate, but you can't refinance a purchase price</strong>. Buy when your life says buy: you'll stay 5+ years, the payment fits the 28/36 rule, and you have the down payment plus reserves intact. If rates fall later, refinance and pocket the difference. If they don't, you still own the right house. Waiting on the sidelines while prices climb usually costs more than a slightly higher rate.</p>
+                    </section>
+
+                    <section id="pause-retirement" class="scroll-mt-24">
+                        <h2 class="text-2xl font-bold text-navy-900 mb-4">Should I pause retirement saving to save for a down payment faster?</h2>
+                        <p><strong>Never drop below the full 401(k) match</strong> &mdash; that's free money you'd never get back, and these compounding years are irreplaceable. The compromise: keep the match, pause only the <em>above-match</em> contributions, and put a hard deadline on the sprint &mdash; 12 to 18 months. If you can't hit your down-payment target in that window, the house is too expensive right now, not your savings rate too high.</p>
+                    </section>
+                    <section id="do-this-week">
                         <h2 class="text-2xl font-bold text-navy-900 mb-4">Do this this week</h2>
                         <ul class="space-y-3">
                             <li class="flex items-start gap-3 bg-brand-50 border border-brand-100 rounded-lg p-4"><span class="flex-shrink-0 w-6 h-6 rounded border-2 border-brand-500 bg-white mt-0.5"></span><span>Calculate your 28/36 numbers with your real income</span></li>
@@ -81,7 +102,7 @@
                         </ul>
                     </section>
 
-                    <section class="bg-rose-50 border border-rose-200 rounded-xl p-6">
+                    <section id="common-mistakes" class="bg-rose-50 border border-rose-200 rounded-xl p-6">
                         <h2 class="text-2xl font-bold text-navy-900 mb-4">⚠️ Common mistakes</h2>
                         <ul class="list-disc pl-6 space-y-2">
                             <li>Buying at the max the bank approves (that's their limit, not yours).</li>
