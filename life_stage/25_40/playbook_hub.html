@@ -282,8 +282,8 @@
         <!-- QUIZ -->
         <div id="quiz-container" class="max-w-4xl mx-auto -mt-12 relative z-10 px-4 mb-16 w-full">
             <div class="bg-white rounded-xl shadow-xl border border-gray-100 p-8 text-center">
-                <h2 class="text-xl font-bold text-navy-900 mb-2">Pick your focus. We&rsquo;ll point you at the step.</h2>
-                <p class="text-gray-500 mb-6">One tap &mdash; we&rsquo;ll point you at the right step of the playbook.</p>
+                <h2 class="text-xl font-bold text-navy-900 mb-2">Pick your focus. We&rsquo;ll point you at the right guide.</h2>
+                <p class="text-gray-500 mb-6">One tap &mdash; we&rsquo;ll point you at the guide that answers it.</p>
                 <div id="quiz-step-1" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left" role="group" aria-label="Choose your focus">
                     <button type="button" class="quiz-option rounded-lg p-4 transition-colors" onclick="handleQuiz('invest')">
                         <i class="fa-solid fa-chart-line text-brand-500 text-xl mb-2"></i><span class="font-bold block">Growing my investments</span>
@@ -305,10 +305,10 @@
                     <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-100 text-brand-600 mb-4">
                         <i class="fa-solid fa-check text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-navy-900 mb-2">We recommend starting at <span id="quiz-rec-step" class="text-brand-500"></span></h3>
+                    <h3 class="text-2xl font-bold text-navy-900 mb-2">Start here: <span id="quiz-rec-step" class="text-brand-500"></span></h3>
                     <p class="text-gray-600 mb-4 max-w-md mx-auto" id="quiz-rec-desc"></p>
                     <p class="text-sm text-gray-500 mb-6 max-w-md mx-auto bg-gray-50 border border-gray-200 rounded-lg p-4"><strong class="text-navy-900 block mb-1">Why start here?</strong><span id="quiz-rec-why"></span></p>
-                    <a id="quiz-rec-btn" href="#" class="inline-block bg-navy-900 hover:bg-navy-800 text-white font-semibold py-2 px-6 rounded-lg transition-colors">Go to this step &rarr;</a>
+                    <a id="quiz-rec-btn" href="#" class="inline-block bg-navy-900 hover:bg-navy-800 text-white font-semibold py-2 px-6 rounded-lg transition-colors">Open this guide &rarr;</a>
                     <button type="button" onclick="resetQuiz()" class="block w-full mt-4 text-sm text-gray-400 hover:text-gray-600">Retake quiz</button>
                 </div>
             </div>
@@ -582,18 +582,18 @@
 
     <script>
         var QUIZ = {
-            invest: { step: "Step 1 \u00b7 Investing engine", href: "step_1.html#framework",
-                desc: "Start with the contribution waterfall: capture the employer match, consider an HSA if eligible, then compare Roth IRA and additional 401(k) contributions based on your situation.",
-                why: "Investing decisions become easier once you have a clear contribution and account-priority framework." },
-            home: { step: "Step 2 \u00b7 Rent or buy", href: "step_2.html#framework",
-                desc: "Compare affordability, the 28/36 rule, and the economics of renting versus buying before changing your long-term savings plan.",
-                why: "Housing is usually your largest expense, so nailing the rent-vs-buy and affordability math first makes every other decision easier." },
-            protect: { step: "Step 3 \u00b7 Insurance and wills", href: "step_3.html#framework",
-                desc: "Start with the basics: income protection, term life where appropriate, disability coverage, and estate documents.",
-                why: "Protection comes before optimization \u2014 the right coverage and documents make sure one bad event can't undo years of saving." },
-            tax: { step: "Step 4 \u00b7 Tax code", href: "step_4.html#framework",
-                desc: "Start with tax-advantaged accounts and compare Roth versus traditional treatment before considering more advanced strategies.",
-                why: "Taxes are often your largest lifetime expense, so a deliberate account strategy can matter more than which funds you pick." },
+            invest: { step: "Am I behind on retirement savings?", href: "topics/am-i-behind.html",
+                desc: "Check your savings against the 1\u00d7/3\u00d7/6\u00d7 benchmarks, then decide what to do with extra cash \u2014 invest it or pay down debt.",
+                why: "You can\u2019t grow what you don\u2019t measure \u2014 the benchmark tells you whether your trajectory is on track before you optimize anything else." },
+            home: { step: "Rent vs. buy \u00b7 the 5% rule", href: "topics/rent-vs-buy.html",
+                desc: "Run the 5% rule and compare the true annual cost of renting versus buying before you change your long-term savings plan.",
+                why: "Housing is usually your largest expense, so nailing the rent-vs-buy math first makes every other decision easier." },
+            protect: { step: "Life insurance \u00b7 how much coverage?", href: "topics/life-insurance.html",
+                desc: "Work out how much coverage you actually need with the income\u00d7years+debts\u2212assets formula, then price term.",
+                why: "Protection comes before optimization \u2014 the right coverage makes sure one bad event can\u2019t undo years of saving." },
+            tax: { step: "Roth IRA \u00b7 Roth vs. traditional", href: "topics/roth-ira.html",
+                desc: "Check the 2026 income limits, compare Roth versus traditional treatment, and see the after-tax difference on the same dollar.",
+                why: "Taxes are often your largest lifetime expense, so the right account can matter more than which funds you pick." },
             spend: { step: "Step 5 \u00b7 Lifestyle inflation", href: "step_5.html#framework",
                 desc: "Use automatic savings and deliberate raise allocation so your spending does not automatically absorb every increase in income.",
                 why: "A rising income only builds wealth if some of it gets captured \u2014 automatic systems do that before spending habits absorb it." }
@@ -614,7 +614,7 @@
                 document.getElementById('quiz-rec-why').textContent = data.why;
                 var btn = document.getElementById('quiz-rec-btn');
                 btn.setAttribute('href', data.href);
-                btn.textContent = 'Go to this step \u2192';
+                btn.textContent = 'Open this guide \u2192';
             }, 400);
         }
 
