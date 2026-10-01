@@ -208,6 +208,10 @@
                         <div class="text-sm"><span class="font-semibold text-gray-600">Mid-quarter booking convention</span><p class="text-xs text-gray-400 font-normal mt-0.5">New deals recognized for 1.5 mo in the booking quarter</p></div>
                         <label class="tgl"><input type="checkbox" id="s-midq" checked><span class="track"></span></label>
                     </div>
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="text-sm"><span class="font-semibold text-gray-600">Mid-quarter churn timing</span><p class="text-xs text-gray-400 font-normal mt-0.5">Haircut base revenue for in-quarter churn</p></div>
+                        <label class="tgl"><input type="checkbox" id="s-churntime" checked><span class="track"></span></label>
+                    </div>
                 </div>
 
                 <p class="text-sm font-extrabold text-navy-900 mb-4"><i class="fa-solid fa-briefcase text-brand-600 mr-2"></i>Professional services — demand side</p>
@@ -219,6 +223,10 @@
                     <div>
                         <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Starting services backlog</span><span class="font-extrabold text-navy-900 num" id="v-svcbl"></span></div>
                         <input type="range" id="s-svcbl" min="0" max="100" step="5" value="0">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Services attach on expansion</span><span class="font-extrabold text-navy-900 num" id="v-attexp"></span></div>
+                        <input type="range" id="s-attexp" min="0" max="25" step="1" value="10">
                     </div>
                     <div>
                         <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Delivery period</span><span class="font-extrabold text-navy-900 num" id="v-deliv"></span></div>
@@ -357,6 +365,7 @@
                         <p class="text-xs text-gray-400 mt-1 num" id="r-svcgp-sub"></p>
                     </div>
                 </div>
+                <p class="text-xs text-gray-500 leading-relaxed mb-5" id="r-svcdepl"></p>
                 <div class="border border-slate-200 rounded-lg p-4 mb-5">
                     <p class="text-xs font-bold text-navy-900 uppercase tracking-wide mb-3"><i class="fa-solid fa-hard-hat text-brand-600 mr-1"></i>Supply-side validation</p>
                     <div class="space-y-4">
@@ -443,8 +452,8 @@
                     exp: v('s-exp'), conshare: v('s-conshare'), risk: v('s-risk'),
                     reps: v('s-reps'), quota: v('s-quota'), attain: v('s-attain'), prod: v('s-prod'), ramp: c('s-ramp'),
                     pipe: v('s-pipe'), win: v('s-win'), cycle: v('s-cycle'),
-                    wcap: v('s-wcap'), cons: c('s-cons'), midq: c('s-midq'), lag: v('s-lag'),
-                    attach: v('s-attach'), deliv: v('s-deliv'), shaped: c('s-shaped'), svcm: v('s-svcm'), subm: v('s-subm'),
+                    wcap: v('s-wcap'), cons: c('s-cons'), midq: c('s-midq'), lag: v('s-lag'), churntime: c('s-churntime'),
+                    attach: v('s-attach'), attexp: v('s-attexp'), deliv: v('s-deliv'), shaped: c('s-shaped'), svcm: v('s-svcm'), subm: v('s-subm'),
                     svcbl: v('s-svcbl'),
                     bhc: v('s-bhc'), bhrs: v('s-bhrs'), butil: v('s-butil'), brate: v('s-brate'),
                     fcf: v('s-fcf'), snm: v('s-snm')
@@ -511,7 +520,10 @@
                         const start = 3 * b + qStart + a.lag; // booking -> provisioning lag
                         nr += bookings[b] * recogMonths(start, a.term, q) / 12;
                     }
-                    const carry = baseStart[q] / 4; // base cohort ARR recognized ratably
+                    // mid-quarter churn timing: churned base ARR was only live ~half the quarter,
+                    // so haircut base revenue by half a quarter of the in-quarter churn
+                    const qChurnBase = baseStart[q] * (1 - qRet * qRisk);
+                    const carry = baseStart[q] / 4 - (a.churntime ? qChurnBase * 0.125 : 0);
                     qCarry.push(carry); qNew.push(nr); qSub.push(carry + nr);
                     newRecTotal += nr;
                 }
@@ -519,9 +531,9 @@
                 const subRev = qSub.reduce((s, x) => s + x, 0);
                 const deferred = tcv - newRecTotal;
 
-                // 6. services: attach to bookings + starting backlog, monthly burn (shaped front-loaded or even)
-                const svcBook = bookings.map(x => x * a.attach / 100);
-                const qSvc = [0, 0, 0, 0];
+                // 6. services: attach to new bookings AND expansion (separate rates) + starting backlog, monthly burn
+                const svcBook = bookings.map((x, b) => x * a.attach / 100 + walk[b].exp * a.attexp / 100);
+                const qSvc = [0, 0, 0, 0], qSvcBl = [0, 0, 0, 0];
                 const d = Math.round(a.deliv);
                 const raw = [];
                 for (let m = 0; m < d; m++) raw.push(a.shaped ? (d - m) : 1);
@@ -534,12 +546,12 @@
                     svcBookTotal += svcBook[b];
                     svcCohorts.push({ v: svcBook[b], start: 3 * b + 1.5, q0: b }); // delivery starts mid booking quarter
                 }
-                svcCohorts.forEach(co => {
+                svcCohorts.forEach((co, ci) => {
                     for (let m = 0; m < d; m++) {
                         const s0 = co.start + m, s1 = co.start + m + 1;
                         for (let q = co.q0; q < 4; q++) {
                             const ov = Math.max(0, Math.min(3 * q + 3, s1) - Math.max(3 * q, s0));
-                            if (ov > 0) qSvc[q] += co.v * wts[m] * ov;
+                            if (ov > 0) { const rev = co.v * wts[m] * ov; qSvc[q] += rev; if (ci === 0) qSvcBl[q] += rev; }
                         }
                     }
                 });
@@ -548,6 +560,8 @@
                 const subGP = subRev * a.subm / 100;
                 const svcGP = svcRev * a.svcm / 100;
                 const totalRev = subRev + svcRev;
+                const svcBlRev = qSvcBl.reduce((s, x) => s + x, 0);
+                const svcDepl = svcRev > 0 ? svcBlRev / svcRev : 0;
                 const totalGP = subGP + svcGP;
                 const blended = totalRev > 0 ? totalGP / totalRev * 100 : 0;
                 const growth = totalRev / beg - 1;
@@ -572,7 +586,7 @@
                     subRev, newRecTotal, tcv, deferred,
                     svcBook, svcBookTotal, svcRev, subGP, svcGP, totalRev, totalGP, blended, growth,
                     reqPipe, coverage, gap: Math.abs(cap - pipe),
-                    rule40, magic, cacPay, svcCap, svcUtil, wts
+                    rule40, magic, cacPay, svcCap, svcUtil, wts, svcBlRev, svcDepl
                 };
             }
 
@@ -617,15 +631,15 @@
 
             /* ---- scenarios ---- */
             const SCEN = {
-                'Base':     { 's-grre': 94, 's-grrm': 88, 's-entshare': 70, 's-exp': 16, 's-attain': 70, 's-lag': 2,   's-risk': 3 },
-                'Downside': { 's-grre': 90, 's-grrm': 80, 's-entshare': 70, 's-exp': 14, 's-attain': 55, 's-lag': 3,   's-risk': 6 },
-                'Upside':   { 's-grre': 96, 's-grrm': 90, 's-entshare': 70, 's-exp': 20, 's-attain': 80, 's-lag': 1.5, 's-risk': 1 },
+                'Base':     { 's-grre': 94, 's-grrm': 88, 's-entshare': 70, 's-exp': 16, 's-attain': 70, 's-lag': 2,   's-risk': 3, 's-attexp': 10, 's-churntime': true },
+                'Downside': { 's-grre': 90, 's-grrm': 80, 's-entshare': 70, 's-exp': 14, 's-attain': 55, 's-lag': 3,   's-risk': 6, 's-attexp': 10, 's-churntime': true },
+                'Upside':   { 's-grre': 96, 's-grrm': 90, 's-entshare': 70, 's-exp': 20, 's-attain': 80, 's-lag': 1.5, 's-risk': 1, 's-attexp': 10, 's-churntime': true },
                 'Jie Base': { 's-arr': 500, 's-term': 36, 's-seas': false,
                               's-entshare': 50, 's-grre': 94, 's-grrm': 90, 's-exp': 16, 's-conshare': 40, 's-risk': 0,
                               's-reps': 100, 's-quota': 1600, 's-attain': 70, 's-prod': 100, 's-ramp': false,
                               's-pipe': 448, 's-win': 25, 's-cycle': 12, 's-wcap': 100, 's-cons': false,
-                              's-midq': true, 's-lag': 1.5,
-                              's-attach': 25, 's-svcbl': 35, 's-deliv': 6, 's-shaped': true, 's-svcm': 35, 's-subm': 80,
+                              's-midq': true, 's-lag': 1.5, 's-churntime': true,
+                              's-attach': 25, 's-attexp': 10, 's-svcbl': 35, 's-deliv': 6, 's-shaped': true, 's-svcm': 35, 's-subm': 80,
                               's-fcf': 15, 's-snm': 45 }
             };
             function setScenario(name) {
@@ -645,8 +659,8 @@
             /* ---- render ---- */
             const SLIDERS = ['s-arr', 's-term', 's-entshare', 's-grre', 's-grrm', 's-exp', 's-conshare', 's-risk',
                 's-reps', 's-quota', 's-attain', 's-prod', 's-pipe', 's-win', 's-cycle', 's-wcap', 's-lag',
-                's-attach', 's-svcbl', 's-deliv', 's-svcm', 's-subm', 's-bhc', 's-bhrs', 's-butil', 's-brate', 's-fcf', 's-snm'];
-            const SWITCHES = ['s-seas', 's-ramp', 's-cons', 's-midq', 's-shaped'];
+                's-attach', 's-attexp', 's-svcbl', 's-deliv', 's-svcm', 's-subm', 's-bhc', 's-bhrs', 's-butil', 's-brate', 's-fcf', 's-snm'];
+            const SWITCHES = ['s-seas', 's-ramp', 's-cons', 's-midq', 's-churntime', 's-shaped'];
 
             function calc() {
                 const a = readInputs();
@@ -673,6 +687,7 @@
                 $('v-wcap').textContent = a.wcap + '%';
                 $('v-lag').textContent = a.lag + ' mo';
                 $('v-attach').textContent = fmtP(a.attach);
+                $('v-attexp').textContent = fmtP(a.attexp);
                 $('v-svcbl').textContent = fmtM0(a.svcbl);
                 $('v-deliv').textContent = a.deliv + ' mo';
                 $('v-svcm').textContent = fmtP(a.svcm);
@@ -748,7 +763,7 @@
 
                 // services demand
                 $('r-svcbook').textContent = fmtM(m.svcBookTotal);
-                $('r-svcbook-sub').textContent = fmtP(a.attach) + ' attach × ' + fmtM(m.tri) + ' sub bookings' + (a.svcbl > 0 ? ' + ' + fmtM0(a.svcbl) + ' starting backlog' : '');
+                $('r-svcbook-sub').textContent = fmtM(m.tri) + ' sub bookings × ' + fmtP(a.attach) + ', expansion × ' + fmtP(a.attexp) + (a.svcbl > 0 ? ', + ' + fmtM0(a.svcbl) + ' starting backlog' : '');
                 $('r-svcrev').textContent = fmtM(m.svcRev);
                 $('r-svcrev-sub').textContent = (a.shaped ? 'front-loaded' : 'even') + ' burn over ' + a.deliv + ' mo';
                 $('r-svcgp').textContent = fmtM(m.svcGP);
@@ -756,6 +771,9 @@
                 // services supply-side validation
                 const mx = Math.max(m.svcRev, m.svcCap, 1);
                 $('r-svcdem').textContent = fmtM(m.svcRev);
+                $('r-svcdepl').innerHTML = a.svcbl > 0
+                    ? 'Of the ' + fmtM(m.svcRev) + ' in services revenue, <strong class="text-navy-900">' + fmtM(m.svcBlRev) + ' (' + fmtP(m.svcDepl * 100) + ')</strong> came from burning the starting backlog — balance-sheet depletion, not commercial run-rate.'
+                    : 'No starting backlog: all services revenue is funded by this year\u2019s bookings.';
                 $('r-svccap').textContent = fmtM(m.svcCap);
                 $('b-svcdem').style.width = (m.svcRev / mx * 100) + '%';
                 $('b-svccap').style.width = (m.svcCap / mx * 100) + '%';
