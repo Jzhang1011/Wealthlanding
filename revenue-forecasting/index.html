@@ -91,9 +91,10 @@
                     <p class="text-xs font-bold text-navy-900 uppercase tracking-wider"><i class="fa-solid fa-sliders text-brand-600 mr-1"></i> Assumptions — everything below re-solves the model</p>
                     <div class="flex items-center gap-2">
                         <span class="text-xs text-gray-500">Scenario:</span>
-                        <button class="scen-btn active" id="btn-base">Base</button>
-                        <button class="scen-btn" id="btn-down">Downside</button>
-                        <button class="scen-btn" id="btn-up">Upside</button>
+                        <button class="scen-btn active" data-scen="Base">Base</button>
+                        <button class="scen-btn" data-scen="Downside">Downside</button>
+                        <button class="scen-btn" data-scen="Upside">Upside</button>
+                        <button class="scen-btn" data-scen="Jie Base">Jie Base</button>
                         <span class="text-xs font-bold text-navy-900 ml-1" id="scen-label">Base</span>
                     </div>
                 </div>
@@ -214,6 +215,10 @@
                     <div>
                         <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Services attach rate</span><span class="font-extrabold text-navy-900 num" id="v-attach"></span></div>
                         <input type="range" id="s-attach" min="0" max="60" step="1" value="25">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Starting services backlog</span><span class="font-extrabold text-navy-900 num" id="v-svcbl"></span></div>
+                        <input type="range" id="s-svcbl" min="0" max="100" step="5" value="0">
                     </div>
                     <div>
                         <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Delivery period</span><span class="font-extrabold text-navy-900 num" id="v-deliv"></span></div>
@@ -440,6 +445,7 @@
                     pipe: v('s-pipe'), win: v('s-win'), cycle: v('s-cycle'),
                     wcap: v('s-wcap'), cons: c('s-cons'), midq: c('s-midq'), lag: v('s-lag'),
                     attach: v('s-attach'), deliv: v('s-deliv'), shaped: c('s-shaped'), svcm: v('s-svcm'), subm: v('s-subm'),
+                    svcbl: v('s-svcbl'),
                     bhc: v('s-bhc'), bhrs: v('s-bhrs'), butil: v('s-butil'), brate: v('s-brate'),
                     fcf: v('s-fcf'), snm: v('s-snm')
                 };
@@ -513,26 +519,30 @@
                 const subRev = qSub.reduce((s, x) => s + x, 0);
                 const deferred = tcv - newRecTotal;
 
-                // 6. services: attach to bookings, monthly burn (shaped front-loaded or even)
+                // 6. services: attach to bookings + starting backlog, monthly burn (shaped front-loaded or even)
                 const svcBook = bookings.map(x => x * a.attach / 100);
                 const qSvc = [0, 0, 0, 0];
-                let svcBookTotal = 0;
                 const d = Math.round(a.deliv);
                 const raw = [];
                 for (let m = 0; m < d; m++) raw.push(a.shaped ? (d - m) : 1);
                 const wSum = raw.reduce((s, x) => s + x, 0);
                 const wts = raw.map(x => x / wSum);
+                // backlog is already in flight: burns from the start of Q1
+                const svcCohorts = [{ v: a.svcbl, start: 0, q0: 0 }];
+                let svcBookTotal = a.svcbl;
                 for (let b = 0; b < 4; b++) {
                     svcBookTotal += svcBook[b];
-                    const start = 3 * b + 1.5; // delivery starts mid booking quarter
+                    svcCohorts.push({ v: svcBook[b], start: 3 * b + 1.5, q0: b }); // delivery starts mid booking quarter
+                }
+                svcCohorts.forEach(co => {
                     for (let m = 0; m < d; m++) {
-                        const s0 = start + m, s1 = start + m + 1;
-                        for (let q = b; q < 4; q++) {
+                        const s0 = co.start + m, s1 = co.start + m + 1;
+                        for (let q = co.q0; q < 4; q++) {
                             const ov = Math.max(0, Math.min(3 * q + 3, s1) - Math.max(3 * q, s0));
-                            if (ov > 0) qSvc[q] += svcBook[b] * wts[m] * ov;
+                            if (ov > 0) qSvc[q] += co.v * wts[m] * ov;
                         }
                     }
-                }
+                });
                 const svcRev = qSvc.reduce((s, x) => s + x, 0);
 
                 const subGP = subRev * a.subm / 100;
@@ -609,24 +619,33 @@
             const SCEN = {
                 'Base':     { 's-grre': 94, 's-grrm': 88, 's-entshare': 70, 's-exp': 16, 's-attain': 70, 's-lag': 2,   's-risk': 3 },
                 'Downside': { 's-grre': 90, 's-grrm': 80, 's-entshare': 70, 's-exp': 14, 's-attain': 55, 's-lag': 3,   's-risk': 6 },
-                'Upside':   { 's-grre': 96, 's-grrm': 90, 's-entshare': 70, 's-exp': 20, 's-attain': 80, 's-lag': 1.5, 's-risk': 1 }
+                'Upside':   { 's-grre': 96, 's-grrm': 90, 's-entshare': 70, 's-exp': 20, 's-attain': 80, 's-lag': 1.5, 's-risk': 1 },
+                'Jie Base': { 's-arr': 500, 's-term': 36, 's-seas': false,
+                              's-entshare': 50, 's-grre': 94, 's-grrm': 90, 's-exp': 16, 's-conshare': 40, 's-risk': 0,
+                              's-reps': 100, 's-quota': 1600, 's-attain': 70, 's-prod': 100, 's-ramp': false,
+                              's-pipe': 448, 's-win': 25, 's-cycle': 12, 's-wcap': 100, 's-cons': false,
+                              's-midq': true, 's-lag': 1.5,
+                              's-attach': 25, 's-svcbl': 35, 's-deliv': 6, 's-shaped': true, 's-svcm': 35, 's-subm': 80,
+                              's-fcf': 15, 's-snm': 45 }
             };
             function setScenario(name) {
-                Object.entries(SCEN[name]).forEach(([id, val]) => { $(id).value = val; });
+                Object.entries(SCEN[name]).forEach(([id, val]) => {
+                    const elx = $(id);
+                    if (elx.type === 'checkbox') elx.checked = val; else elx.value = val;
+                });
                 $('scen-label').textContent = name;
-                ['btn-base', 'btn-down', 'btn-up'].forEach(id => $(id).classList.remove('active'));
-                $({ 'Base': 'btn-base', 'Downside': 'btn-down', 'Upside': 'btn-up' }[name]).classList.add('active');
+                document.querySelectorAll('.scen-btn').forEach(b => b.classList.toggle('active', b.dataset.scen === name));
                 calc();
             }
             function markCustom() {
                 $('scen-label').textContent = 'Custom';
-                ['btn-base', 'btn-down', 'btn-up'].forEach(id => $(id).classList.remove('active'));
+                document.querySelectorAll('.scen-btn').forEach(b => b.classList.remove('active'));
             }
 
             /* ---- render ---- */
             const SLIDERS = ['s-arr', 's-term', 's-entshare', 's-grre', 's-grrm', 's-exp', 's-conshare', 's-risk',
                 's-reps', 's-quota', 's-attain', 's-prod', 's-pipe', 's-win', 's-cycle', 's-wcap', 's-lag',
-                's-attach', 's-deliv', 's-svcm', 's-subm', 's-bhc', 's-bhrs', 's-butil', 's-brate', 's-fcf', 's-snm'];
+                's-attach', 's-svcbl', 's-deliv', 's-svcm', 's-subm', 's-bhc', 's-bhrs', 's-butil', 's-brate', 's-fcf', 's-snm'];
             const SWITCHES = ['s-seas', 's-ramp', 's-cons', 's-midq', 's-shaped'];
 
             function calc() {
@@ -654,6 +673,7 @@
                 $('v-wcap').textContent = a.wcap + '%';
                 $('v-lag').textContent = a.lag + ' mo';
                 $('v-attach').textContent = fmtP(a.attach);
+                $('v-svcbl').textContent = fmtM0(a.svcbl);
                 $('v-deliv').textContent = a.deliv + ' mo';
                 $('v-svcm').textContent = fmtP(a.svcm);
                 $('v-subm').textContent = fmtP(a.subm);
@@ -728,7 +748,7 @@
 
                 // services demand
                 $('r-svcbook').textContent = fmtM(m.svcBookTotal);
-                $('r-svcbook-sub').textContent = fmtP(a.attach) + ' attach × ' + fmtM(m.tri) + ' sub bookings';
+                $('r-svcbook-sub').textContent = fmtP(a.attach) + ' attach × ' + fmtM(m.tri) + ' sub bookings' + (a.svcbl > 0 ? ' + ' + fmtM0(a.svcbl) + ' starting backlog' : '');
                 $('r-svcrev').textContent = fmtM(m.svcRev);
                 $('r-svcrev-sub').textContent = (a.shaped ? 'front-loaded' : 'even') + ' burn over ' + a.deliv + ' mo';
                 $('r-svcgp').textContent = fmtM(m.svcGP);
@@ -785,9 +805,7 @@
 
             SLIDERS.forEach(id => $(id).addEventListener('input', () => { markCustom(); calc(); }));
             SWITCHES.forEach(id => $(id).addEventListener('change', () => { markCustom(); calc(); }));
-            $('btn-base').addEventListener('click', () => setScenario('Base'));
-            $('btn-down').addEventListener('click', () => setScenario('Downside'));
-            $('btn-up').addEventListener('click', () => setScenario('Upside'));
+            document.querySelectorAll('.scen-btn').forEach(b => b.addEventListener('click', () => setScenario(b.dataset.scen)));
             calc();
         })();
     </script>
