@@ -296,15 +296,16 @@
 
             <!-- ARR BRIDGE -->
             <section class="anchor t-card mb-6" id="arr-bridge">
-                <p class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-1"><i class="fa-solid fa-bridge-water text-brand-600 mr-1"></i> ARR bridge — where the year ends</p>
-                <p class="text-xs text-gray-500 mb-5">Beginning ARR, plus what sales and expansion add, minus what churn and renewal risk take away.</p>
+                <p class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-1"><i class="fa-solid fa-bridge-water text-brand-600 mr-1"></i> ARR bridge — quarterly cohort walk</p>
+                <p class="text-xs text-gray-500 mb-5">Each quarter's churn, expansion, and renewal risk apply to that quarter's live base — retention compounds instead of being applied once to the January number.</p>
                 <svg id="wf" viewBox="0 0 700 300" class="w-full mb-4" role="img" aria-label="ARR bridge waterfall chart"></svg>
                 <div class="overflow-x-auto">
                     <table class="model">
-                        <thead><tr><th>Bridge line</th><th class="text-right">ARR ($M)</th><th>Math</th></tr></thead>
+                        <thead><tr><th>Quarter</th><th class="text-right">Starting</th><th class="text-right">+ Expansion</th><th class="text-right">− Churn</th><th class="text-right">− Risk</th><th class="text-right">+ New logos</th><th class="text-right">= Ending</th></tr></thead>
                         <tbody id="bridge-rows"></tbody>
                     </table>
                 </div>
+                <p class="text-xs text-gray-500 mt-3 leading-relaxed" id="r-churnsplit"></p>
             </section>
 
             <!-- BOOKINGS TO REVENUE -->
@@ -412,7 +413,7 @@
 
             <div class="t-card bg-navy-900 border-navy-900 text-white">
                 <p class="text-sm font-bold mb-2"><i class="fa-solid fa-circle-info text-brand-400 mr-2"></i>How to read this model</p>
-                <p class="text-slate-300 text-sm leading-relaxed">Capacity says what the org <em>can</em> sell; pipeline says what the funnel <em>will</em> deliver — triangulate, then take the lower number into the board plan. Retention compounds by cohort: enterprise and mid-market renew at different rates, and one point of gross retention is worth more than one point of attainment at this scale. Bookings are a sales metric; revenue is an accounting outcome that starts only after the commencement lag and spreads over the contract term. Services demand must fit inside billable supply. And no plan survives diligence if it breaks the Rule of 40, the magic number, or CAC payback — the checks above turn red when it does. Illustrative example only — not Medallia actuals, not financial advice.</p>
+                <p class="text-slate-300 text-sm leading-relaxed">Capacity says what the org <em>can</em> sell; pipeline says what the funnel <em>will</em> deliver — triangulate, then take the lower number into the board plan. The ARR bridge walks quarterly: each quarter's churn, expansion, and risk apply to that quarter's live base, and new logos start compounding the quarter after they're booked — expansion only, since in-term contracts can't churn. One point of gross retention is worth more than one point of attainment at this scale. Bookings are a sales metric; revenue is an accounting outcome that starts only after the commencement lag and spreads over the contract term. Services demand must fit inside billable supply. And no plan survives diligence if it breaks the Rule of 40, the magic number, or CAC payback — the checks above turn red when it does. Illustrative example only — not Medallia actuals, not financial advice.</p>
             </div>
         </article>
     </main>
@@ -447,14 +448,12 @@
             /* ---- core model: pure function, inputs in, outputs out ---- */
             function model(a) {
                 const beg = a.arr;
-                // 5. cohort-segmented retention: blended GRR from enterprise / mid-market tiers
+                // 5. cohort-segmented retention: blended GRR from enterprise / mid-market tiers,
+                //    converted to quarterly rates so the bridge compounds on the live base
                 const grr = (a.entshare / 100) * (a.grre / 100) + (1 - a.entshare / 100) * (a.grrm / 100);
-                const churnTotal = beg * (1 - grr);
-                const contraction = churnTotal * a.conshare / 100;
-                const logoChurn = churnTotal - contraction;
-                const riskChurn = beg * a.risk / 100; // health-score-flagged renewals
-                const expansion = beg * a.exp / 100;
-                const nrr = grr * 100 + a.exp;
+                const qRet = Math.pow(grr, 1 / 4);                 // quarterly gross retention
+                const qExp = Math.pow(1 + a.exp / 100, 1 / 4) - 1;  // quarterly expansion
+                const qRisk = Math.pow(1 - a.risk / 100, 1 / 4);   // quarterly renewal-risk retention
 
                 // capacity-driven: reps x quota x attainment x ramp-adjusted productivity
                 const cap = a.reps * (a.quota / 1000) * (a.attain / 100) * (a.ramp ? a.prod / 100 : 1);
@@ -463,11 +462,35 @@
                 const pipe = a.pipe * (a.win / 100) * turns;
                 const tri = a.cons ? Math.min(cap, pipe) : (a.wcap / 100) * cap + (1 - a.wcap / 100) * pipe;
 
-                const end = beg + tri + expansion - contraction - logoChurn - riskChurn;
-
-                // quarterly bookings spread
+                // quarterly cohort walk: each quarter's churn, expansion, and risk apply to that
+                // quarter's live base. The starting-base cohort gets full retention every quarter;
+                // each quarter's new logos join the retention base the NEXT quarter with expansion
+                // only (no churn while inside their initial contract term); renewal risk hits base.
                 const seas = a.seas ? [0.18, 0.22, 0.25, 0.35] : [0.25, 0.25, 0.25, 0.25];
                 const bookings = seas.map(w => tri * w);
+                let baseBal = beg;
+                let cohorts = []; // balances of this year's new-logo cohorts
+                const walk = [], baseStart = [];
+                let totalExp = 0, totalChurn = 0, totalRisk = 0;
+                for (let q = 0; q < 4; q++) {
+                    const start = baseBal + cohorts.reduce((s, x) => s + x, 0);
+                    baseStart.push(baseBal);
+                    const bExp = baseBal * qExp;
+                    const bChurn = baseBal * (1 - qRet);
+                    const bRisk = baseBal * (1 - qRisk);
+                    baseBal = baseBal + bExp - bChurn - bRisk;
+                    let cExp = 0;
+                    cohorts = cohorts.map(b => { const e = b * qExp; cExp += e; return b + e; });
+                    const newL = bookings[q];
+                    cohorts.push(newL);
+                    const endQ = baseBal + cohorts.reduce((s, x) => s + x, 0);
+                    walk.push({ q, start, exp: bExp + cExp, churn: bChurn, risk: bRisk, newLogos: newL, end: endQ });
+                    totalExp += bExp + cExp; totalChurn += bChurn; totalRisk += bRisk;
+                }
+                const end = walk[3].end;
+                const nrr = baseBal / beg * 100; // base cohort: retention x expansion, compounded
+                const contraction = totalChurn * a.conshare / 100;
+
                 const qStart = a.midq ? 1.5 : 0;
 
                 // 3. ASC 606 timing: ratable recognition starting after the commencement lag
@@ -482,7 +505,7 @@
                         const start = 3 * b + qStart + a.lag; // booking -> provisioning lag
                         nr += bookings[b] * recogMonths(start, a.term, q) / 12;
                     }
-                    const carry = beg / 4;
+                    const carry = baseStart[q] / 4; // base cohort ARR recognized ratably
                     qCarry.push(carry); qNew.push(nr); qSub.push(carry + nr);
                     newRecTotal += nr;
                 }
@@ -533,8 +556,9 @@
                 const svcUtil = svcCap > 0 ? svcRev / svcCap : 0;
 
                 return {
-                    beg, grr, churnTotal, contraction, logoChurn, riskChurn, expansion, nrr,
-                    cap, pipe, tri, end, seas, bookings, qCarry, qNew, qSub, qSvc, qTot,
+                    beg, grr, qRet, qExp, qRisk, contraction, nrr,
+                    cap, pipe, tri, end, seas, bookings, walk, baseStart, qCarry, qNew, qSub, qSvc, qTot,
+                    totalExp, totalChurn, totalRisk,
                     subRev, newRecTotal, tcv, deferred,
                     svcBook, svcBookTotal, svcRev, subGP, svcGP, totalRev, totalGP, blended, growth,
                     reqPipe, coverage, gap: Math.abs(cap - pipe),
@@ -665,28 +689,30 @@
                     (gapPct > 20 ? 'That spread is the forecast risk: the board plan should carry the lower number until the gap closes.' : 'The models agree within ' + gapPct.toFixed(0) + '% — the triangulated number is defensible.');
                 $('r-coverage').innerHTML = 'Coverage check: at a ' + fmtP(a.win) + ' win rate and ' + a.cycle + '-month cycle, ' + fmtM(m.tri) + ' of net new ARR needs <strong>' + fmtM0(m.reqPipe) + ' of starting pipeline</strong>. You have ' + fmtM0(a.pipe) + ' — coverage is <strong class="' + (m.coverage >= 1 ? 'pos' : 'neg') + '">' + m.coverage.toFixed(2) + '×</strong>' + (m.coverage < 1 ? ' — the pipeline model is under-covered; either pipeline must grow or the triangulated number must fall.' : ' — pipeline covers the plan.') + ' (Enterprise norm: 3.5–4× coverage.)';
 
-                // ARR bridge
-                const steps = [
-                    { label: 'Beginning ARR', delta: 0, prev: 0, cum: m.beg, tag: fmtM0(m.beg), kind: 'total' },
-                    { label: 'New logo ARR', delta: m.tri, prev: m.beg, cum: m.beg + m.tri, tag: '+' + fmtM(m.tri), kind: 'up' },
-                    { label: 'Expansion', delta: m.expansion, prev: m.beg + m.tri, cum: m.beg + m.tri + m.expansion, tag: '+' + fmtM(m.expansion), kind: 'up' },
-                    { label: 'Contraction', delta: -m.contraction, prev: m.beg + m.tri + m.expansion, cum: m.beg + m.tri + m.expansion - m.contraction, tag: '−' + fmtM(m.contraction), kind: 'down' },
-                    { label: 'Logo churn', delta: -m.logoChurn, prev: m.beg + m.tri + m.expansion - m.contraction, cum: m.beg + m.tri + m.expansion - m.contraction - m.logoChurn, tag: '−' + fmtM(m.logoChurn), kind: 'down' },
-                    { label: 'Renewal risk', delta: -m.riskChurn, prev: m.beg + m.tri + m.expansion - m.contraction - m.logoChurn, cum: m.end, tag: '−' + fmtM(m.riskChurn), kind: 'down' },
-                    { label: 'Ending ARR', delta: 0, prev: 0, cum: m.end, tag: fmtM0(m.end), kind: 'total' }
-                ];
+                // ARR bridge — quarterly cohort walk
+                const steps = [{ label: 'Beginning ARR', delta: 0, prev: 0, cum: m.beg, tag: fmtM0(m.beg), kind: 'total' }];
+                m.walk.forEach((w, i) => {
+                    const net = w.exp - w.churn - w.risk + w.newLogos;
+                    steps.push({ label: 'Q' + (i + 1) + ' net', delta: net, prev: w.start, cum: w.end, tag: (net >= 0 ? '+' : '−') + fmtM(Math.abs(net)), kind: 'up' });
+                });
+                steps.push({ label: 'Ending ARR', delta: 0, prev: 0, cum: m.end, tag: fmtM0(m.end), kind: 'total' });
                 waterfall('wf', steps);
-                const brows = [
-                    ['Beginning ARR', fmtM0(m.beg), 'input'],
-                    ['+ New logo ARR', '<span class="pos">+' + fmtM(m.tri) + '</span>', 'triangulated (capacity × pipeline)'],
-                    ['+ Expansion', '<span class="pos">+' + fmtM(m.expansion) + '</span>', fmtM0(m.beg) + ' × ' + fmtP(a.exp)],
-                    ['− Contraction', '<span class="neg">−' + fmtM(m.contraction) + '</span>', fmtM(m.churnTotal) + ' gross churn × ' + a.conshare + '% contraction share'],
-                    ['− Logo churn', '<span class="neg">−' + fmtM(m.logoChurn) + '</span>', fmtM(m.churnTotal) + ' gross churn × ' + (100 - a.conshare) + '% logo share'],
-                    ['− Renewal risk', '<span class="neg">−' + fmtM(m.riskChurn) + '</span>', fmtM0(m.beg) + ' × ' + fmtP(a.risk) + ' health-score haircut'],
-                    ['= Ending ARR', '<strong>' + fmtM0(m.end) + '</strong>', 'beginning + new + expansion − churn − risk']
-                ];
-                $('bridge-rows').innerHTML = brows.map((r, i) =>
-                    '<tr' + (i === 6 ? ' class="total"' : '') + '><td>' + r[0] + '</td><td class="text-right num">' + r[1] + '</td><td class="text-gray-500">' + r[2] + '</td></tr>').join('');
+                const qn = ['Q1', 'Q2', 'Q3', 'Q4'];
+                let bhtml = '';
+                m.walk.forEach((w, i) => {
+                    bhtml += '<tr><td class="font-semibold">' + qn[i] + '</td><td class="text-right num">' + fmtM(w.start) + '</td>' +
+                        '<td class="text-right num"><span class="pos">+' + fmtM(w.exp) + '</span></td>' +
+                        '<td class="text-right num"><span class="neg">−' + fmtM(w.churn) + '</span></td>' +
+                        '<td class="text-right num"><span class="neg">−' + fmtM(w.risk) + '</span></td>' +
+                        '<td class="text-right num"><span class="pos">+' + fmtM(w.newLogos) + '</span></td>' +
+                        '<td class="text-right num font-bold text-navy-900">' + fmtM(w.end) + '</td></tr>';
+                });
+                bhtml += '<tr class="total"><td>Full year</td><td class="text-right num">' + fmtM0(m.beg) + '</td>' +
+                    '<td class="text-right num">+' + fmtM(m.totalExp) + '</td><td class="text-right num">−' + fmtM(m.totalChurn) + '</td>' +
+                    '<td class="text-right num">−' + fmtM(m.totalRisk) + '</td><td class="text-right num">+' + fmtM(m.tri) + '</td>' +
+                    '<td class="text-right num">' + fmtM0(m.end) + '</td></tr>';
+                $('bridge-rows').innerHTML = bhtml;
+                $('r-churnsplit').innerHTML = 'Full-year churn of <strong class="text-navy-900">' + fmtM(m.totalChurn) + '</strong> splits into ' + fmtM(m.contraction) + ' contraction (' + a.conshare + '%) and ' + fmtM(m.totalChurn - m.contraction) + ' logo churn. New logos join the retention base the quarter after booking — expansion only, since in-term contracts can\u2019t churn.';
 
                 // timing
                 bars('ch-book', m.bookings, ['Q1', 'Q2', 'Q3', 'Q4'], '#0f172a', fmtM);
@@ -750,7 +776,8 @@
                 if (m.cacPay > 24) flags.push('CAC payback ' + m.cacPay.toFixed(0) + ' mo beyond 24');
                 if (m.svcUtil > 1) flags.push('services demand ' + fmtP(m.svcUtil * 100) + ' of billable capacity');
                 if (m.coverage < 1) flags.push('pipeline under-covered at ' + m.coverage.toFixed(2) + '×');
-                $('insight').innerHTML = 'At these settings the model lands at <strong>' + fmtM0(m.end) + ' ending ARR</strong> on <strong>' + fmtM(m.tri) + ' net new ARR</strong> (NRR ' + fmtP(m.nrr) + ', blended GRR ' + fmtP(m.grr * 100) + '). ' +
+                $('insight').innerHTML = 'At these settings the model lands at <strong>' + fmtM0(m.end) + ' ending ARR</strong> on <strong>' + fmtM(m.tri) + ' net new ARR</strong> (quarterly-compounded NRR ' + fmtP(m.nrr) + ', blended GRR ' + fmtP(m.grr * 100) + '). ' +
+                    'Each quarter\u2019s walk compounds retention on the live base — new logos join the retention base the quarter after booking with expansion only, since in-term contracts can\u2019t churn. ' +
                     'The ' + a.lag + '-month commencement lag means Q1 bookings contribute nothing to Q1 revenue — the timing wedge is doing real work here. ' +
                     'Total revenue of ' + fmtM(m.totalRev) + ' grows ' + (m.growth * 100).toFixed(1) + '% with services at ' + fmtP(m.svcUtil * 100) + ' of billable capacity. ' +
                     (flags.length ? '<strong class="neg">Diligence flags: ' + flags.join('; ') + '.</strong>' : '<strong class="pos">All efficiency checks pass.</strong>');
