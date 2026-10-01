@@ -366,6 +366,25 @@
                     </div>
                 </div>
                 <p class="text-xs text-gray-500 leading-relaxed mb-5" id="r-svcdepl"></p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
+                    <div class="border border-slate-200 rounded-lg p-4">
+                        <p class="text-xs font-bold text-navy-900 uppercase tracking-wide mb-2">Services revenue by funding source ($M)</p>
+                        <svg id="ch-svcdepl" viewBox="0 0 320 190" class="w-full" role="img" aria-label="Services revenue by funding source"></svg>
+                        <div class="flex flex-wrap gap-4 mt-2 text-xs text-gray-500">
+                            <span><span class="inline-block w-2.5 h-2.5 rounded-sm mr-1" style="background:#f59e0b"></span>Starting-backlog burn</span>
+                            <span><span class="inline-block w-2.5 h-2.5 rounded-sm mr-1" style="background:#14b8a6"></span>This year's bookings</span>
+                        </div>
+                    </div>
+                    <div class="border border-slate-200 rounded-lg p-4">
+                        <p class="text-xs font-bold text-navy-900 uppercase tracking-wide mb-2">Backlog balance walk ($M)</p>
+                        <div class="overflow-x-auto">
+                            <table class="model">
+                                <thead><tr><th>Qtr</th><th class="text-right">Beginning</th><th class="text-right">+ Bookings</th><th class="text-right">− Revenue</th><th class="text-right">= Ending</th></tr></thead>
+                                <tbody id="blwalk-rows"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
                 <div class="border border-slate-200 rounded-lg p-4 mb-5">
                     <p class="text-xs font-bold text-navy-900 uppercase tracking-wide mb-3"><i class="fa-solid fa-hard-hat text-brand-600 mr-1"></i>Supply-side validation</p>
                     <div class="space-y-4">
@@ -391,6 +410,26 @@
                     <table class="model">
                         <thead><tr><th>Revenue line</th><th class="text-right">Revenue ($M)</th><th class="text-right">Gross margin</th><th class="text-right">Gross profit ($M)</th></tr></thead>
                         <tbody id="pnl-rows"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- CONSOLIDATED GAAP REVENUE -->
+            <section class="anchor t-card mb-6" id="gaap">
+                <p class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-1"><i class="fa-solid fa-layer-group text-brand-600 mr-1"></i> Consolidated GAAP revenue</p>
+                <p class="text-xs text-gray-500 mb-5">Subscription revenue recognized ratably plus services revenue burned from backlog — this is the top line that flows to the income statement. Every slider above moves these bars.</p>
+                <div class="border border-slate-200 rounded-lg p-4 mb-5">
+                    <p class="text-xs font-bold text-navy-900 uppercase tracking-wide mb-2">Quarterly GAAP revenue ($M)</p>
+                    <svg id="ch-gaap" viewBox="0 0 320 190" class="w-full" role="img" aria-label="Quarterly GAAP revenue stacked bar chart"></svg>
+                    <div class="flex flex-wrap gap-4 mt-2 text-xs text-gray-500">
+                        <span><span class="inline-block w-2.5 h-2.5 rounded-sm mr-1" style="background:#0f172a"></span>Subscription</span>
+                        <span><span class="inline-block w-2.5 h-2.5 rounded-sm mr-1" style="background:#14b8a6"></span>Services</span>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="model">
+                        <thead><tr><th>Quarter</th><th class="text-right">Subscription ($M)</th><th class="text-right">Services ($M)</th><th class="text-right">Total GAAP ($M)</th><th class="text-right">QoQ growth</th></tr></thead>
+                        <tbody id="gaap-rows"></tbody>
                     </table>
                 </div>
             </section>
@@ -559,6 +598,16 @@
 
                 const subGP = subRev * a.subm / 100;
                 const svcGP = svcRev * a.svcm / 100;
+                // backlog balance walk: beginning + bookings − revenue = ending
+                const blStart = [], blBook = [], blRev = [], blEnd = [];
+                let blRun = a.svcbl;
+                for (let q = 0; q < 4; q++) {
+                    blStart.push(blRun);
+                    blBook.push(svcBook[q]);
+                    blRev.push(qSvc[q]);
+                    blRun = blRun + svcBook[q] - qSvc[q];
+                    blEnd.push(blRun);
+                }
                 const totalRev = subRev + svcRev;
                 const svcBlRev = qSvcBl.reduce((s, x) => s + x, 0);
                 const svcDepl = svcRev > 0 ? svcBlRev / svcRev : 0;
@@ -586,7 +635,8 @@
                     subRev, newRecTotal, tcv, deferred,
                     svcBook, svcBookTotal, svcRev, subGP, svcGP, totalRev, totalGP, blended, growth,
                     reqPipe, coverage, gap: Math.abs(cap - pipe),
-                    rule40, magic, cacPay, svcCap, svcUtil, wts, svcBlRev, svcDepl
+                    rule40, magic, cacPay, svcCap, svcUtil, wts, qSvcBl, svcBlRev, svcDepl,
+                    blStart, blBook, blRev, blEnd
                 };
             }
 
@@ -614,6 +664,30 @@
                 svg.innerHTML = html;
             }
 
+            function stackedBars(svgId, series, labels, colors, fmt) {
+                const svg = $(svgId); const W = 320, H = 190, padB = 30, padT = 26;
+                const n = labels.length;
+                const totals = labels.map((_, i) => series.reduce((s, se) => s + se[i], 0));
+                const maxV = Math.max(...totals, 1);
+                const bw = W / n;
+                let html = '';
+                labels.forEach((lb, i) => {
+                    const x = i * bw + bw * 0.22, w = bw * 0.56;
+                    let y = H - padB;
+                    series.forEach((se, si) => {
+                        const h = (H - padB - padT) * se[i] / maxV;
+                        if (h > 0.5) {
+                            y -= h;
+                            const isTop = series.slice(si + 1).every(s2 => s2[i] * (H - padB - padT) / maxV <= 0.5);
+                            html += '<rect x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + w.toFixed(1) + '" height="' + h.toFixed(1) + '"' + (isTop ? ' rx="4"' : '') + ' fill="' + colors[si] + '"/>';
+                        }
+                    });
+                    const th = (H - padB - padT) * totals[i] / maxV;
+                    html += '<text x="' + (x + w / 2).toFixed(1) + '" y="' + (H - padB - th - 7).toFixed(1) + '" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">' + fmt(totals[i]) + '</text>';
+                    html += '<text x="' + (x + w / 2).toFixed(1) + '" y="' + (H - 10) + '" text-anchor="middle" font-size="11" fill="#64748b">' + lb + '</text>';
+                });
+                svg.innerHTML = html;
+            }
             function bars(svgId, vals, labels, color, fmt) {
                 const svg = $(svgId); const W = 320, H = 190, padB = 30, padT = 26;
                 const maxV = Math.max(...vals, 1);
@@ -768,7 +842,34 @@
                 $('r-svcrev-sub').textContent = (a.shaped ? 'front-loaded' : 'even') + ' burn over ' + a.deliv + ' mo';
                 $('r-svcgp').textContent = fmtM(m.svcGP);
                 $('r-svcgp-sub').textContent = fmtP(a.svcm) + ' margin';
-                // services supply-side validation
+                // services funding-source chart + backlog walk table
+                stackedBars('ch-svcdepl', [m.qSvcBl, m.qSvc.map((v, i) => v - m.qSvcBl[i])], ['Q1', 'Q2', 'Q3', 'Q4'], ['#f59e0b', '#14b8a6'], fmtM);
+                let blhtml = '';
+                ['Q1', 'Q2', 'Q3', 'Q4'].forEach((q, i) => {
+                    blhtml += '<tr><td class="font-semibold">' + q + '</td><td class="text-right num">' + fmtM(m.blStart[i]) + '</td>' +
+                        '<td class="text-right num"><span class="pos">+' + fmtM(m.blBook[i]) + '</span></td>' +
+                        '<td class="text-right num"><span class="neg">−' + fmtM(m.blRev[i]) + '</span></td>' +
+                        '<td class="text-right num font-bold text-navy-900">' + fmtM(m.blEnd[i]) + '</td></tr>';
+                });
+                blhtml += '<tr class="total"><td>Full year</td><td class="text-right num">' + fmtM0(m.blStart[0]) + '</td>' +
+                    '<td class="text-right num">+' + fmtM(m.svcBookTotal) + '</td><td class="text-right num">−' + fmtM(m.svcRev) + '</td>' +
+                    '<td class="text-right num">' + fmtM(m.blEnd[3]) + '</td></tr>';
+                $('blwalk-rows').innerHTML = blhtml;
+
+                // consolidated GAAP revenue
+                stackedBars('ch-gaap', [m.qSub, m.qSvc], ['Q1', 'Q2', 'Q3', 'Q4'], ['#0f172a', '#14b8a6'], fmtM);
+                const qTot = m.qSub.map((v, i) => v + m.qSvc[i]);
+                let ghtml = '';
+                ['Q1', 'Q2', 'Q3', 'Q4'].forEach((q, i) => {
+                    const g = (qTot[i] / qTot[i - 1] - 1) * 100;
+                    const qoq = i === 0 ? '—' : (g >= 0 ? '+' : '') + fmtP(g);
+                    ghtml += '<tr><td class="font-semibold">' + q + '</td><td class="text-right num">' + fmtM(m.qSub[i]) + '</td>' +
+                        '<td class="text-right num">' + fmtM(m.qSvc[i]) + '</td>' +
+                        '<td class="text-right num font-bold text-navy-900">' + fmtM(qTot[i]) + '</td><td class="text-right num">' + qoq + '</td></tr>';
+                });
+                ghtml += '<tr class="total"><td>Full year</td><td class="text-right num">' + fmtM(m.subRev) + '</td>' +
+                    '<td class="text-right num">' + fmtM(m.svcRev) + '</td><td class="text-right num">' + fmtM(m.totalRev) + '</td><td class="text-right num">—</td></tr>';
+                $('gaap-rows').innerHTML = ghtml;
                 const mx = Math.max(m.svcRev, m.svcCap, 1);
                 $('r-svcdem').textContent = fmtM(m.svcRev);
                 $('r-svcdepl').innerHTML = a.svcbl > 0
