@@ -28,6 +28,13 @@
     </script>
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #334155; }
+        /* derivation tooltips: hover any [data-tip] value to see its formula */
+        #calc-tip { position: fixed; z-index: 9999; pointer-events: none; display: none; background: #0f172a; color: #f1f5f9;
+            font-size: 11.5px; line-height: 1.6; padding: 9px 12px; border-radius: 10px; max-width: 320px;
+            box-shadow: 0 10px 28px rgba(2,6,23,.4); white-space: pre-line; font-family: 'Inter', system-ui, sans-serif; }
+        #calc-tip .tt { color: #fbbf24; font-weight: 700; }
+        [data-tip] { cursor: help; }
+        td[data-tip]:hover { text-decoration: underline dotted #94a3b8; text-underline-offset: 3px; }
         .t-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; }
         section.anchor { scroll-margin-top: 150px; }
         .bar-track { background: #e2e8f0; border-radius: 9999px; overflow: hidden; }
@@ -664,7 +671,8 @@
                 svg.innerHTML = html;
             }
 
-            function stackedBars(svgId, series, labels, colors, fmt) {
+            function stackedBars(svgId, series, labels, colors, fmt, names) {
+                names = names || [];
                 const svg = $(svgId); const W = 320, H = 190, padB = 30, padT = 26;
                 const n = labels.length;
                 const totals = labels.map((_, i) => series.reduce((s, se) => s + se[i], 0));
@@ -679,7 +687,7 @@
                         if (h > 0.5) {
                             y -= h;
                             const isTop = series.slice(si + 1).every(s2 => s2[i] * (H - padB - padT) / maxV <= 0.5);
-                            html += '<rect x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + w.toFixed(1) + '" height="' + h.toFixed(1) + '"' + (isTop ? ' rx="4"' : '') + ' fill="' + colors[si] + '"/>';
+                            html += '<rect x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + w.toFixed(1) + '" height="' + h.toFixed(1) + '"' + (isTop ? ' rx="4"' : '') + ' fill="' + colors[si] + '"><title>' + labels[i] + (names[si] ? ' ' + names[si] : '') + ': ' + fmt(se[i]) + '</title></rect>';
                         }
                     });
                     const th = (H - padB - padT) * totals[i] / maxV;
@@ -696,12 +704,35 @@
                 vals.forEach((v, i) => {
                     const h = (H - padB - padT) * v / maxV;
                     const x = i * bw + bw * 0.22, w = bw * 0.56;
-                    html += `<rect x="${x.toFixed(1)}" y="${(H - padB - h).toFixed(1)}" width="${w.toFixed(1)}" height="${Math.max(2, h).toFixed(1)}" rx="4" fill="${color}"/>`;
+                    html += `<rect x="${x.toFixed(1)}" y="${(H - padB - h).toFixed(1)}" width="${w.toFixed(1)}" height="${Math.max(2, h).toFixed(1)}" rx="4" fill="${color}"><title>${labels[i]}: ${fmt(v)}</title></rect>`;
                     html += `<text x="${(x + w / 2).toFixed(1)}" y="${(H - padB - h - 7).toFixed(1)}" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">${fmt(v)}</text>`;
                     html += `<text x="${(x + w / 2).toFixed(1)}" y="${H - 10}" text-anchor="middle" font-size="11" fill="#64748b">${labels[i]}</text>`;
                 });
                 svg.innerHTML = html;
             }
+
+            /* ---- derivation tooltips ---- */
+            // tip('line1','line2') -> data-tip attribute; hover shows the live formula.
+            const tip = (...lines) => ' data-tip="' + lines.join('&#10;') + '"';
+            (function () {
+                const el = document.createElement('div');
+                el.id = 'calc-tip';
+                document.body.appendChild(el);
+                const pad = 14;
+                function place(e) {
+                    let x = e.clientX + pad, y = e.clientY + pad;
+                    const r = el.getBoundingClientRect();
+                    if (x + r.width > window.innerWidth - 8) x = e.clientX - r.width - pad;
+                    if (y + r.height > window.innerHeight - 8) y = e.clientY - r.height - pad;
+                    el.style.left = x + 'px'; el.style.top = y + 'px';
+                }
+                document.addEventListener('mousemove', e => {
+                    const t = e.target && e.target.closest ? e.target.closest('[data-tip]') : null;
+                    if (t) { el.textContent = t.getAttribute('data-tip'); el.style.display = 'block'; place(e); }
+                    else el.style.display = 'none';
+                });
+                document.addEventListener('scroll', () => { el.style.display = 'none'; }, true);
+            })();
 
             /* ---- scenarios ---- */
             const SCEN = {
@@ -775,21 +806,28 @@
 
                 // KPIs
                 $('k-arr').textContent = fmtM0(m.end);
+                $('k-arr').setAttribute('data-tip', 'Ending ARR = ' + fmtM0(m.beg) + ' starting + ' + fmtM(m.end - m.beg) + ' net new\nNet new = +' + fmtM(m.totalExp) + ' expansion −' + fmtM(m.totalChurn) + ' churn −' + fmtM(m.totalRisk) + ' risk +' + fmtM(m.tri) + ' new logos');
                 $('k-arr-sub').textContent = 'from ' + fmtM0(m.beg) + ' starting ARR';
                 $('k-nnarr').textContent = fmtM(m.tri);
+                $('k-nnarr').setAttribute('data-tip', 'Triangulated net new ARR\nCapacity: ' + fmtM(m.cap) + ' = ' + a.reps + ' reps × ' + fmt$(a.quota * 1000) + ' × ' + a.attain + '% attainment\nPipeline: ' + fmtM(m.pipe) + ' = ' + fmtM0(a.pipe) + ' pipe × ' + a.win + '% win × ' + (12 / a.cycle).toFixed(2) + '× turns\nBlend: ' + (a.cons ? 'conservative — takes the lower' : a.wcap + '% capacity + ' + (100 - a.wcap) + '% pipeline'));
                 $('k-nnarr-sub').textContent = 'cap ' + fmtM(m.cap) + ' · pipe ' + fmtM(m.pipe);
                 $('k-rev').textContent = fmtM(m.totalRev);
+                $('k-rev').setAttribute('data-tip', 'Total GAAP revenue = subscription ' + fmtM(m.subRev) + ' + services ' + fmtM(m.svcRev) + '\nSubscription: carryover recognized ratably + new bookings over ' + a.term + '-mo term\nServices: backlog burn + this-year bookings burned over ' + a.deliv + ' mo');
                 $('k-rev-sub').textContent = 'sub ' + fmtM(m.subRev) + ' + svc ' + fmtM(m.svcRev);
                 $('k-r40').textContent = m.rule40.toFixed(0);
+                $('k-r40').setAttribute('data-tip', 'Rule of 40 = ' + (m.growth * 100).toFixed(1) + '% ARR growth + ' + fmtP(a.fcf) + ' FCF margin\n' + (m.rule40 >= 40 ? 'At/above 40 — efficient growth' : 'Below 40 — growth is expensive at this burn'));
                 $('k-r40-sub').textContent = (m.growth * 100).toFixed(1) + '% growth + ' + fmtP(a.fcf) + ' FCF';
                 $('k-r40').style.color = m.rule40 >= 40 ? '#34d399' : '#f87171';
 
                 // triangulation
                 $('r-cap').textContent = fmtM(m.cap);
+                $('r-cap').setAttribute('data-tip', 'Annual capacity = ' + a.reps + ' × ' + fmt$(a.quota * 1000) + ' × ' + a.attain + '%' + (a.ramp ? ' × ' + a.prod + '% ramp productivity' : '') + '\nWhat the rep base can close in a year at quota');
                 $('r-cap-math').textContent = a.reps + ' reps × ' + fmt$(a.quota * 1000) + ' × ' + fmtP(a.attain) + (a.ramp ? ' × ' + fmtP(a.prod) + ' ramp' : ' (no ramp drag)');
                 $('r-pipe').textContent = fmtM(m.pipe);
+                $('r-pipe').setAttribute('data-tip', 'Annual pipeline yield = ' + fmtM0(a.pipe) + ' starting pipe × ' + a.win + '% win rate × ' + (12 / a.cycle).toFixed(2) + ' turns/yr\n' + a.cycle + '-mo sales cycle → pipe turns ' + (12 / a.cycle).toFixed(2) + '× per year');
                 $('r-pipe-math').textContent = fmtM0(a.pipe) + ' pipe × ' + fmtP(a.win) + ' win × ' + (12 / a.cycle).toFixed(2) + '× turns/yr';
                 $('r-tri').textContent = fmtM(m.tri);
+                $('r-tri').setAttribute('data-tip', a.cons ? 'Conservative: min(' + fmtM(m.cap) + ', ' + fmtM(m.pipe) + ') = ' + fmtM(m.tri) : 'Blend: ' + a.wcap + '% × ' + fmtM(m.cap) + ' + ' + (100 - a.wcap) + '% × ' + fmtM(m.pipe) + ' = ' + fmtM(m.tri) + '\nSlide the triangulation weight to re-blend');
                 $('r-tri-math').textContent = a.cons ? 'conservative: lower of the two' : a.wcap + '% capacity + ' + (100 - a.wcap) + '% pipeline';
                 const gapPct = m.gap / Math.max(m.cap, m.pipe, 1) * 100;
                 $('b-tri-gap').style.width = Math.min(100, gapPct) + '%';
@@ -809,17 +847,22 @@
                 const qn = ['Q1', 'Q2', 'Q3', 'Q4'];
                 let bhtml = '';
                 m.walk.forEach((w, i) => {
-                    bhtml += '<tr><td class="font-semibold">' + qn[i] + '</td><td class="text-right num">' + fmtM(w.start) + '</td>' +
-                        '<td class="text-right num"><span class="pos">+' + fmtM(w.exp) + '</span></td>' +
-                        '<td class="text-right num"><span class="neg">−' + fmtM(w.churn) + '</span></td>' +
-                        '<td class="text-right num"><span class="neg">−' + fmtM(w.risk) + '</span></td>' +
-                        '<td class="text-right num"><span class="pos">+' + fmtM(w.newLogos) + '</span></td>' +
-                        '<td class="text-right num font-bold text-navy-900">' + fmtM(w.end) + '</td></tr>';
+                    const qExpP = fmtP(m.qExp * 100), qChurnP = fmtP((1 - m.qRet) * 100);
+                    bhtml += '<tr><td class="font-semibold">' + qn[i] + '</td>' +
+                        '<td class="text-right num"' + tip(i === 0 ? 'Starting ARR input: ' + fmtM0(a.arr) : 'Carried forward from Q' + i + ' ending ARR — retention compounds on this live base') + '>' + fmtM(w.start) + '</td>' +
+                        '<td class="text-right num"' + tip('+Expansion = ' + fmtM(m.baseStart[i]) + ' live base × ' + qExpP + ' quarterly expansion', fmtP(a.exp) + ' annual → quarterly geometric: ' + (1 + a.exp / 100).toFixed(2) + '^0.25 − 1') + '><span class="pos">+' + fmtM(w.exp) + '</span></td>' +
+                        '<td class="text-right num"' + tip('−Churn = ' + fmtM(m.baseStart[i]) + ' × ' + qChurnP + ' quarterly churn', fmtP(m.grr * 100) + ' annual GRR → quarterly geometric', 'Contraction share: ' + a.conshare + '% of churn') + '><span class="neg">−' + fmtM(w.churn) + '</span></td>' +
+                        '<td class="text-right num"' + tip('−Renewal risk = renewal base × ' + fmtP(a.risk), 'Haircut on the cohort up for renewal this quarter — separate from churn') + '><span class="neg">−' + fmtM(w.risk) + '</span></td>' +
+                        '<td class="text-right num"' + tip('+New logos = ' + fmtM(m.bookings[i]) + ' — Q' + (i + 1) + ' share of ' + fmtM(m.tri) + ' triangulated', a.reps + ' reps × ' + fmt$(a.quota * 1000) + ' × ' + a.attain + '%' + (a.ramp ? ' × ' + a.prod + '% ramp' : '') + ' ÷ 4' + (a.seas ? ' (back-half weighted)' : ' (even quarters)'), 'Joins the retention base next quarter — expansion only, no in-term churn') + '><span class="pos">+' + fmtM(w.newLogos) + '</span></td>' +
+                        '<td class="text-right num font-bold text-navy-900"' + tip('= ' + fmtM(w.start) + ' + ' + fmtM(w.exp) + ' − ' + fmtM(w.churn) + ' − ' + fmtM(w.risk) + ' + ' + fmtM(w.newLogos)) + '>' + fmtM(w.end) + '</td></tr>';
                 });
-                bhtml += '<tr class="total"><td>Full year</td><td class="text-right num">' + fmtM0(m.beg) + '</td>' +
-                    '<td class="text-right num">+' + fmtM(m.totalExp) + '</td><td class="text-right num">−' + fmtM(m.totalChurn) + '</td>' +
-                    '<td class="text-right num">−' + fmtM(m.totalRisk) + '</td><td class="text-right num">+' + fmtM(m.tri) + '</td>' +
-                    '<td class="text-right num">' + fmtM0(m.end) + '</td></tr>';
+                bhtml += '<tr class="total"><td>Full year</td>' +
+                    '<td class="text-right num"' + tip('Starting ARR input') + '>' + fmtM0(m.beg) + '</td>' +
+                    '<td class="text-right num"' + tip('Σ quarterly expansion = ' + fmtM(m.totalExp)) + '>+' + fmtM(m.totalExp) + '</td>' +
+                    '<td class="text-right num"' + tip('Σ quarterly churn = ' + fmtM(m.totalChurn), a.conshare + '% of it is contraction') + '>−' + fmtM(m.totalChurn) + '</td>' +
+                    '<td class="text-right num"' + tip('Σ quarterly renewal-risk haircuts = ' + fmtM(m.totalRisk)) + '>−' + fmtM(m.totalRisk) + '</td>' +
+                    '<td class="text-right num"' + tip('Triangulated net new ARR = ' + fmtM(m.tri)) + '>+' + fmtM(m.tri) + '</td>' +
+                    '<td class="text-right num"' + tip('= ' + fmtM0(m.beg) + ' + ' + fmtM(m.totalExp) + ' − ' + fmtM(m.totalChurn) + ' − ' + fmtM(m.totalRisk) + ' + ' + fmtM(m.tri)) + '>' + fmtM0(m.end) + '</td></tr>';
                 $('bridge-rows').innerHTML = bhtml;
                 $('r-churnsplit').innerHTML = 'Full-year churn of <strong class="text-navy-900">' + fmtM(m.totalChurn) + '</strong> splits into ' + fmtM(m.contraction) + ' contraction (' + a.conshare + '%) and ' + fmtM(m.totalChurn - m.contraction) + ' logo churn. New logos join the retention base the quarter after booking — expansion only, since in-term contracts can\u2019t churn.';
 
@@ -828,47 +871,67 @@
                 bars('ch-rev', m.qSub, ['Q1', 'Q2', 'Q3', 'Q4'], '#f59e0b', fmtM);
                 let thtml = '';
                 ['Q1', 'Q2', 'Q3', 'Q4'].forEach((q, i) => {
-                    thtml += '<tr><td class="font-semibold">' + q + '</td><td class="text-right num">' + fmtM(m.bookings[i]) + '</td><td class="text-right num">' + fmtM(m.qCarry[i]) + '</td><td class="text-right num">' + fmtM(m.qNew[i]) + '</td><td class="text-right num font-bold text-navy-900">' + fmtM(m.qSub[i]) + '</td></tr>';
+                    const haircut = a.churntime ? m.baseStart[i] * (1 - m.qRet * m.qRisk) * 0.125 : 0;
+                    thtml += '<tr><td class="font-semibold">' + q + '</td>' +
+                        '<td class="text-right num"' + tip('Bookings = ' + fmtM(m.bookings[i]) + ' — Q' + (i + 1) + ' share of ' + fmtM(m.tri), a.reps + ' reps × ' + fmt$(a.quota * 1000) + ' × ' + a.attain + '% attainment ÷ 4' + (a.seas ? ' (back-half weighted)' : '')) + '>' + fmtM(m.bookings[i]) + '</td>' +
+                        '<td class="text-right num"' + tip('Carryover = ' + fmtM(m.baseStart[i]) + ' base cohort ÷ 4' + (a.churntime ? ' − ' + fmtM(haircut) + ' mid-quarter churn haircut' : ''), a.churntime ? 'Half a quarter of in-quarter churn lands inside the quarter' : 'Mid-quarter churn timing off — full quarter counted') + '>' + fmtM(m.qCarry[i]) + '</td>' +
+                        '<td class="text-right num"' + tip('New-bookings revenue recognized in Q' + (i + 1), 'Ratable over ' + a.term + '-mo term from booking + ' + a.lag + '-mo commencement lag', 'Day-' + Math.round(a.lag * 30) + ' go-live: Q1 bookings contribute $0 to Q1') + '>' + fmtM(m.qNew[i]) + '</td>' +
+                        '<td class="text-right num font-bold text-navy-900"' + tip('= ' + fmtM(m.qCarry[i]) + ' carryover + ' + fmtM(m.qNew[i]) + ' new bookings') + '>' + fmtM(m.qSub[i]) + '</td></tr>';
                 });
-                thtml += '<tr class="total"><td>Full year</td><td class="text-right num">' + fmtM(m.tri) + '</td><td class="text-right num">' + fmtM0(m.beg) + '</td><td class="text-right num">' + fmtM(m.newRecTotal) + '</td><td class="text-right num">' + fmtM(m.subRev) + '</td></tr>';
+                thtml += '<tr class="total"><td>Full year</td>' +
+                    '<td class="text-right num"' + tip('Triangulated net new ARR') + '>' + fmtM(m.tri) + '</td>' +
+                    '<td class="text-right num"' + tip('Carryover base: starting ARR ' + fmtM0(m.beg), 'Recognized ≈ base minus in-year churn and the mid-quarter haircut') + '>' + fmtM0(m.beg) + '</td>' +
+                    '<td class="text-right num"' + tip('Only ' + fmtM(m.newRecTotal) + ' of ' + fmtM(m.tri) + ' bookings recognized this year', 'The ' + a.lag + '-mo lag pushes the rest into deferred') + '>' + fmtM(m.newRecTotal) + '</td>' +
+                    '<td class="text-right num"' + tip('= ' + fmtM(m.subRev) + ' total subscription revenue') + '>' + fmtM(m.subRev) + '</td></tr>';
                 $('timing-rows').innerHTML = thtml;
                 $('r-deferred').innerHTML = 'Only <strong class="text-navy-900">' + fmtM(m.newRecTotal) + '</strong> of this year\u2019s ' + fmtM(m.tri) + ' in bookings is recognized as revenue this year — the ' + a.lag + '-month commencement lag plus ratable recognition push the rest forward. ' +
                     'Total contract value booked: <strong class="text-navy-900">' + fmtM(m.tcv) + '</strong> (' + fmtM(m.tri) + ' ARR × ' + (a.term / 12) + '-yr term). Ending deferred balance from this year\u2019s cohorts: <strong class="text-navy-900">' + fmtM(m.deferred) + '</strong>.';
 
                 // services demand
                 $('r-svcbook').textContent = fmtM(m.svcBookTotal);
+                $('r-svcbook').setAttribute('data-tip', 'Services bookings = ' + fmtM(m.tri) + ' sub bookings × ' + a.attach + '% + ' + fmtM(m.totalExp) + ' expansion × ' + a.attexp + '%' + (a.svcbl > 0 ? '\n+ ' + fmtM0(a.svcbl) + ' starting backlog' : '') + '\nAttachment on expansion bills existing accounts for services');
                 $('r-svcbook-sub').textContent = fmtM(m.tri) + ' sub bookings × ' + fmtP(a.attach) + ', expansion × ' + fmtP(a.attexp) + (a.svcbl > 0 ? ', + ' + fmtM0(a.svcbl) + ' starting backlog' : '');
                 $('r-svcrev').textContent = fmtM(m.svcRev);
+                $('r-svcrev').setAttribute('data-tip', 'Burned over ' + a.deliv + ' mo, ' + (a.shaped ? 'front-loaded 50/30/15/5' : 'even monthly') + '\n' + fmtM(m.svcBlRev) + ' from starting backlog + ' + fmtM(m.svcRev - m.svcBlRev) + ' from this-year bookings');
                 $('r-svcrev-sub').textContent = (a.shaped ? 'front-loaded' : 'even') + ' burn over ' + a.deliv + ' mo';
                 $('r-svcgp').textContent = fmtM(m.svcGP);
+                $('r-svcgp').setAttribute('data-tip', 'Services gross profit = ' + fmtM(m.svcRev) + ' × ' + fmtP(a.svcm) + ' margin');
                 $('r-svcgp-sub').textContent = fmtP(a.svcm) + ' margin';
                 // services funding-source chart + backlog walk table
-                stackedBars('ch-svcdepl', [m.qSvcBl, m.qSvc.map((v, i) => v - m.qSvcBl[i])], ['Q1', 'Q2', 'Q3', 'Q4'], ['#f59e0b', '#14b8a6'], fmtM);
+                stackedBars('ch-svcdepl', [m.qSvcBl, m.qSvc.map((v, i) => v - m.qSvcBl[i])], ['Q1', 'Q2', 'Q3', 'Q4'], ['#f59e0b', '#14b8a6'], fmtM, ['backlog burn', 'booking burn']);
                 let blhtml = '';
                 ['Q1', 'Q2', 'Q3', 'Q4'].forEach((q, i) => {
-                    blhtml += '<tr><td class="font-semibold">' + q + '</td><td class="text-right num">' + fmtM(m.blStart[i]) + '</td>' +
-                        '<td class="text-right num"><span class="pos">+' + fmtM(m.blBook[i]) + '</span></td>' +
-                        '<td class="text-right num"><span class="neg">−' + fmtM(m.blRev[i]) + '</span></td>' +
-                        '<td class="text-right num font-bold text-navy-900">' + fmtM(m.blEnd[i]) + '</td></tr>';
+                    blhtml += '<tr><td class="font-semibold">' + q + '</td>' +
+                        '<td class="text-right num"' + tip(i === 0 ? 'Starting backlog input: ' + fmtM0(a.svcbl) : '= Q' + i + ' ending backlog — carried forward') + '>' + fmtM(m.blStart[i]) + '</td>' +
+                        '<td class="text-right num"' + tip('= ' + fmtM(m.bookings[i]) + ' sub bookings × ' + a.attach + '% + ' + fmtM(m.walk[i].exp) + ' expansion × ' + a.attexp + '%') + '><span class="pos">+' + fmtM(m.blBook[i]) + '</span></td>' +
+                        '<td class="text-right num"' + tip('Burned this quarter — ' + (a.shaped ? 'front-loaded 50/30/15/5' : 'even') + ' ' + a.deliv + '-mo schedule', 'Starting backlog burns first, from Q1') + '><span class="neg">−' + fmtM(m.blRev[i]) + '</span></td>' +
+                        '<td class="text-right num font-bold text-navy-900"' + tip('= ' + fmtM(m.blStart[i]) + ' + ' + fmtM(m.blBook[i]) + ' − ' + fmtM(m.blRev[i])) + '>' + fmtM(m.blEnd[i]) + '</td></tr>';
                 });
-                blhtml += '<tr class="total"><td>Full year</td><td class="text-right num">' + fmtM0(m.blStart[0]) + '</td>' +
-                    '<td class="text-right num">+' + fmtM(m.svcBookTotal) + '</td><td class="text-right num">−' + fmtM(m.svcRev) + '</td>' +
-                    '<td class="text-right num">' + fmtM(m.blEnd[3]) + '</td></tr>';
+                blhtml += '<tr class="total"><td>Full year</td>' +
+                    '<td class="text-right num"' + tip('Starting backlog input') + '>' + fmtM0(m.blStart[0]) + '</td>' +
+                    '<td class="text-right num"' + tip('Total services bookings incl. starting backlog') + '>+' + fmtM(m.svcBookTotal) + '</td>' +
+                    '<td class="text-right num"' + tip('Total services revenue recognized') + '>−' + fmtM(m.svcRev) + '</td>' +
+                    '<td class="text-right num"' + tip('= ' + fmtM(m.svcBookTotal) + ' − ' + fmtM(m.svcRev), 'Whatever is left carries into next year') + '>' + fmtM(m.blEnd[3]) + '</td></tr>';
                 $('blwalk-rows').innerHTML = blhtml;
 
                 // consolidated GAAP revenue
-                stackedBars('ch-gaap', [m.qSub, m.qSvc], ['Q1', 'Q2', 'Q3', 'Q4'], ['#0f172a', '#14b8a6'], fmtM);
+                stackedBars('ch-gaap', [m.qSub, m.qSvc], ['Q1', 'Q2', 'Q3', 'Q4'], ['#0f172a', '#14b8a6'], fmtM, ['subscription', 'services']);
                 const qTot = m.qSub.map((v, i) => v + m.qSvc[i]);
                 let ghtml = '';
                 ['Q1', 'Q2', 'Q3', 'Q4'].forEach((q, i) => {
                     const g = (qTot[i] / qTot[i - 1] - 1) * 100;
                     const qoq = i === 0 ? '—' : (g >= 0 ? '+' : '') + fmtP(g);
-                    ghtml += '<tr><td class="font-semibold">' + q + '</td><td class="text-right num">' + fmtM(m.qSub[i]) + '</td>' +
-                        '<td class="text-right num">' + fmtM(m.qSvc[i]) + '</td>' +
-                        '<td class="text-right num font-bold text-navy-900">' + fmtM(qTot[i]) + '</td><td class="text-right num">' + qoq + '</td></tr>';
+                    ghtml += '<tr><td class="font-semibold">' + q + '</td>' +
+                        '<td class="text-right num"' + tip('= ' + fmtM(m.qCarry[i]) + ' carryover + ' + fmtM(m.qNew[i]) + ' new bookings') + '>' + fmtM(m.qSub[i]) + '</td>' +
+                        '<td class="text-right num"' + tip('= ' + fmtM(m.qSvcBl[i]) + ' backlog burn + ' + fmtM(m.qSvc[i] - m.qSvcBl[i]) + ' booking burn') + '>' + fmtM(m.qSvc[i]) + '</td>' +
+                        '<td class="text-right num font-bold text-navy-900"' + tip('= ' + fmtM(m.qSub[i]) + ' subscription + ' + fmtM(m.qSvc[i]) + ' services') + '>' + fmtM(qTot[i]) + '</td>' +
+                        '<td class="text-right num"' + tip(i === 0 ? 'No prior quarter to compare' : '= ' + fmtM(qTot[i]) + ' ÷ ' + fmtM(qTot[i - 1]) + ' − 1') + '>' + qoq + '</td></tr>';
                 });
-                ghtml += '<tr class="total"><td>Full year</td><td class="text-right num">' + fmtM(m.subRev) + '</td>' +
-                    '<td class="text-right num">' + fmtM(m.svcRev) + '</td><td class="text-right num">' + fmtM(m.totalRev) + '</td><td class="text-right num">—</td></tr>';
+                ghtml += '<tr class="total"><td>Full year</td>' +
+                    '<td class="text-right num"' + tip('Total subscription revenue') + '>' + fmtM(m.subRev) + '</td>' +
+                    '<td class="text-right num"' + tip('Total services revenue') + '>' + fmtM(m.svcRev) + '</td>' +
+                    '<td class="text-right num"' + tip('Total GAAP revenue = ' + fmtM(m.subRev) + ' + ' + fmtM(m.svcRev)) + '>' + fmtM(m.totalRev) + '</td>' +
+                    '<td class="text-right num">—</td></tr>';
                 $('gaap-rows').innerHTML = ghtml;
                 const mx = Math.max(m.svcRev, m.svcCap, 1);
                 $('r-svcdem').textContent = fmtM(m.svcRev);
