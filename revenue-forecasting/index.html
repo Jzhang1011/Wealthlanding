@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise SaaS Revenue Forecasting Model (Medallia Example) | WealthLanding</title>
+    <meta name="description" content="Interactive enterprise SaaS revenue forecast: ARR bridge, net new ARR triangulated from capacity vs pipeline models, subscription bookings-to-revenue timing, and professional services — every assumption adjustable, downstream impact visible.">
+    <link rel="canonical" href="https://www.wealthlanding.com/revenue-forecasting/" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date()); gtag('config', 'G-9JMJJ5CJR4');
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: { 50: '#fffbeb', 100: '#fef3c7', 500: '#f59e0b', 600: '#d97706', 900: '#78350f' },
+                        navy: { 800: '#1e293b', 900: '#0f172a' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #334155; }
+        .t-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; }
+        section.anchor { scroll-margin-top: 150px; }
+        .bar-track { background: #e2e8f0; border-radius: 9999px; overflow: hidden; }
+        .bar-fill { border-radius: 9999px; transition: width 0.35s ease; }
+        input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 9999px; background: #e2e8f0; outline: none; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 9999px; background: #f59e0b; border: 3px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.25); cursor: pointer; }
+        input[type=range]::-moz-range-thumb { width: 14px; height: 14px; border-radius: 9999px; background: #f59e0b; border: 3px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.25); cursor: pointer; }
+        /* toggle switch */
+        .tgl { position: relative; width: 44px; height: 24px; flex: none; cursor: pointer; }
+        .tgl input { opacity: 0; width: 0; height: 0; }
+        .tgl .track { position: absolute; inset: 0; background: #cbd5e1; border-radius: 9999px; transition: background 0.2s; }
+        .tgl .track:before { content: ""; position: absolute; width: 18px; height: 18px; left: 3px; top: 3px; background: #fff; border-radius: 9999px; transition: transform 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+        .tgl input:checked + .track { background: #f59e0b; }
+        .tgl input:checked + .track:before { transform: translateX(20px); }
+        .num { font-variant-numeric: tabular-nums; }
+        .kpi { background: #0f172a; border-radius: 0.75rem; padding: 1rem 1.25rem; color: #fff; }
+        .kpi .lbl { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; font-weight: 700; }
+        .kpi .val { font-size: 1.5rem; font-weight: 800; margin-top: 0.25rem; }
+        .kpi .sub { font-size: 0.72rem; color: #94a3b8; margin-top: 0.15rem; }
+        table.model { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+        table.model th { text-align: left; padding: 0.5rem 0.6rem; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; color: #64748b; border-bottom: 2px solid #e2e8f0; }
+        table.model td { padding: 0.5rem 0.6rem; border-bottom: 1px solid #f1f5f9; }
+        table.model tr.total td { font-weight: 800; border-top: 2px solid #0f172a; border-bottom: none; color: #0f172a; }
+        .neg { color: #dc2626; } .pos { color: #059669; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <div id="global-header-target"></div>
+    <main class="flex-grow flex flex-col w-full">
+        <!-- HERO -->
+        <div class="bg-navy-900 text-white pt-12 pb-12 px-4">
+            <div class="max-w-5xl mx-auto">
+                <nav aria-label="Breadcrumb" class="text-sm text-slate-400 mb-6 font-medium">
+                    <a href="/" class="hover:text-brand-400 transition-colors">Home</a>
+                    <span class="mx-2">/</span><span class="text-slate-300">Revenue forecasting</span>
+                </nav>
+                <div class="inline-block bg-brand-500/20 text-brand-400 font-semibold px-3 py-1 rounded-full text-xs mb-5 border border-brand-500/30 tracking-wide">
+                    ENTERPRISE SAAS &middot; WORKED EXAMPLE
+                </div>
+                <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Enterprise SaaS revenue forecast, live.</h1>
+                <p class="text-slate-300 text-lg leading-relaxed max-w-3xl">A full forecasting model for a subscription + professional-services SaaS business, worked through with <strong class="text-white">Medallia-style example figures</strong> (illustrative — not company actuals). Every assumption below is a slider or switch; move one and watch the ARR bridge, the triangulation, and the revenue timing re-solve downstream.</p>
+            </div>
+        </div>
+
+        <article class="max-w-5xl mx-auto px-4 py-10 w-full">
+
+            <!-- KPI STRIP -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+                <div class="kpi"><div class="lbl">Ending ARR</div><div class="val num" id="k-arr"></div><div class="sub" id="k-arr-sub"></div></div>
+                <div class="kpi"><div class="lbl">Net new ARR</div><div class="val num" id="k-nnarr"></div><div class="sub" id="k-nnarr-sub"></div></div>
+                <div class="kpi"><div class="lbl">Total revenue</div><div class="val num" id="k-rev"></div><div class="sub" id="k-rev-sub"></div></div>
+                <div class="kpi"><div class="lbl">Implied growth</div><div class="val num" id="k-gr"></div><div class="sub" id="k-gr-sub"></div></div>
+            </div>
+
+            <!-- ASSUMPTIONS -->
+            <div class="t-card mb-6">
+                <p class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-1"><i class="fa-solid fa-sliders text-brand-600 mr-1"></i> Assumptions — everything below re-solves the model</p>
+                <p class="text-xs text-gray-500 mb-6">Sliders set values; switches flip model mechanics. Watch the bridge, triangulation, and timing sections move.</p>
+
+                <p class="text-sm font-extrabold text-navy-900 mb-4 mt-2"><i class="fa-solid fa-building text-brand-600 mr-2"></i>Base</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5 mb-8">
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Starting ARR</span><span class="font-extrabold text-navy-900 num" id="v-arr"></span></div>
+                        <input type="range" id="s-arr" min="100" max="2000" step="10" value="600">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Contract term</span><span class="font-extrabold text-navy-900 num" id="v-term"></span></div>
+                        <input type="range" id="s-term" min="12" max="60" step="12" value="36">
+                    </div>
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="text-sm"><span class="font-semibold text-gray-600">Back-half seasonality</span><p class="text-xs text-gray-400 font-normal mt-0.5">Q weights 18/22/25/35 vs even 25s</p></div>
+                        <label class="tgl"><input type="checkbox" id="s-seas" checked><span class="track"></span></label>
+                    </div>
+                </div>
+
+                <p class="text-sm font-extrabold text-navy-900 mb-4"><i class="fa-solid fa-rotate text-brand-600 mr-2"></i>Retention</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5 mb-8">
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Gross revenue retention</span><span class="font-extrabold text-navy-900 num" id="v-grr"></span></div>
+                        <input type="range" id="s-grr" min="80" max="100" step="0.5" value="92">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Expansion rate</span><span class="font-extrabold text-navy-900 num" id="v-exp"></span></div>
+                        <input type="range" id="s-exp" min="0" max="40" step="0.5" value="18">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Churn from contraction (vs logo loss)</span><span class="font-extrabold text-navy-900 num" id="v-conshare"></span></div>
+                        <input type="range" id="s-conshare" min="0" max="100" step="5" value="40">
+                    </div>
+                </div>
+                <p class="text-xs text-gray-500 mb-8 -mt-5">Net revenue retention: <strong class="text-navy-900 num" id="v-nrr"></strong> (gross retention + expansion)</p>
+
+                <p class="text-sm font-extrabold text-navy-900 mb-4"><i class="fa-solid fa-users text-brand-600 mr-2"></i>Capacity-driven model — what the sales org can carry</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5 mb-8">
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Quota-carrying reps</span><span class="font-extrabold text-navy-900 num" id="v-reps"></span></div>
+                        <input type="range" id="s-reps" min="20" max="400" step="5" value="150">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Average quota</span><span class="font-extrabold text-navy-900 num" id="v-quota"></span></div>
+                        <input type="range" id="s-quota" min="400" max="2500" step="50" value="1200">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Quota attainment</span><span class="font-extrabold text-navy-900 num" id="v-attain"></span></div>
+                        <input type="range" id="s-attain" min="40" max="120" step="1" value="80">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Team productivity (ramp-adjusted)</span><span class="font-extrabold text-navy-900 num" id="v-prod"></span></div>
+                        <input type="range" id="s-prod" min="50" max="100" step="1" value="85">
+                    </div>
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="text-sm"><span class="font-semibold text-gray-600">Apply ramp drag</span><p class="text-xs text-gray-400 font-normal mt-0.5">Off = every rep at full quota</p></div>
+                        <label class="tgl"><input type="checkbox" id="s-ramp" checked><span class="track"></span></label>
+                    </div>
+                </div>
+
+                <p class="text-sm font-extrabold text-navy-900 mb-4"><i class="fa-solid fa-filter text-brand-600 mr-2"></i>Pipeline-driven model — what the funnel can deliver</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5 mb-8">
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Starting pipeline</span><span class="font-extrabold text-navy-900 num" id="v-pipe"></span></div>
+                        <input type="range" id="s-pipe" min="50" max="1500" step="10" value="400">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Win rate</span><span class="font-extrabold text-navy-900 num" id="v-win"></span></div>
+                        <input type="range" id="s-win" min="5" max="50" step="1" value="25">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Avg sales cycle</span><span class="font-extrabold text-navy-900 num" id="v-cycle"></span></div>
+                        <input type="range" id="s-cycle" min="3" max="18" step="1" value="9">
+                    </div>
+                </div>
+
+                <p class="text-sm font-extrabold text-navy-900 mb-4"><i class="fa-solid fa-scale-balanced text-brand-600 mr-2"></i>Triangulation — reconcile the two models</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5 mb-8">
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Weight on capacity model</span><span class="font-extrabold text-navy-900 num" id="v-wcap"></span></div>
+                        <input type="range" id="s-wcap" min="0" max="100" step="5" value="50">
+                    </div>
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="text-sm"><span class="font-semibold text-gray-600">Conservative: take the lower</span><p class="text-xs text-gray-400 font-normal mt-0.5">Overrides the weight slider</p></div>
+                        <label class="tgl"><input type="checkbox" id="s-cons"><span class="track"></span></label>
+                    </div>
+                </div>
+
+                <p class="text-sm font-extrabold text-navy-900 mb-4"><i class="fa-solid fa-clock text-brand-600 mr-2"></i>Bookings → revenue timing</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5 mb-8">
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="text-sm"><span class="font-semibold text-gray-600">Mid-quarter booking convention</span><p class="text-xs text-gray-400 font-normal mt-0.5">New deals recognized for 1.5 mo in the booking quarter</p></div>
+                        <label class="tgl"><input type="checkbox" id="s-midq" checked><span class="track"></span></label>
+                    </div>
+                </div>
+
+                <p class="text-sm font-extrabold text-navy-900 mb-4"><i class="fa-solid fa-briefcase text-brand-600 mr-2"></i>Professional services</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Services attach rate</span><span class="font-extrabold text-navy-900 num" id="v-attach"></span></div>
+                        <input type="range" id="s-attach" min="0" max="60" step="1" value="25">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Delivery period</span><span class="font-extrabold text-navy-900 num" id="v-deliv"></span></div>
+                        <input type="range" id="s-deliv" min="3" max="12" step="1" value="6">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Services gross margin</span><span class="font-extrabold text-navy-900 num" id="v-svcm"></span></div>
+                        <input type="range" id="s-svcm" min="0" max="60" step="1" value="35">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2"><span class="font-semibold text-gray-600">Subscription gross margin</span><span class="font-extrabold text-navy-900 num" id="v-subm"></span></div>
+                        <input type="range" id="s-subm" min="60" max="90" step="1" value="80">
+                    </div>
+                </div>
+            </div>
+
+            <!-- TRIANGULATION -->
+            <section class="anchor t-card mb-6" id="triangulation">
+                <p class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-1"><i class="fa-solid fa-scale-balanced text-brand-600 mr-1"></i> Net new ARR — triangulated</p>
+                <p class="text-xs text-gray-500 mb-5">Two independent sourcing models for the same number. When they disagree, the gap is the forecast risk.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5">
+                    <div class="border border-blue-200 bg-blue-50/50 rounded-lg p-4">
+                        <p class="text-xs font-bold text-blue-800 uppercase tracking-wide mb-1"><i class="fa-solid fa-users mr-1"></i>Capacity-driven</p>
+                        <p class="text-2xl font-extrabold text-navy-900 num" id="r-cap"></p>
+                        <p class="text-xs text-gray-500 mt-1 num" id="r-cap-math"></p>
+                    </div>
+                    <div class="border border-emerald-200 bg-emerald-50/50 rounded-lg p-4">
+                        <p class="text-xs font-bold text-emerald-800 uppercase tracking-wide mb-1"><i class="fa-solid fa-filter mr-1"></i>Pipeline-driven</p>
+                        <p class="text-2xl font-extrabold text-navy-900 num" id="r-pipe"></p>
+                        <p class="text-xs text-gray-500 mt-1 num" id="r-pipe-math"></p>
+                    </div>
+                    <div class="border-2 border-brand-500 bg-brand-50 rounded-lg p-4">
+                        <p class="text-xs font-bold text-brand-900 uppercase tracking-wide mb-1"><i class="fa-solid fa-bullseye mr-1"></i>Triangulated</p>
+                        <p class="text-2xl font-extrabold text-navy-900 num" id="r-tri"></p>
+                        <p class="text-xs text-gray-500 mt-1 num" id="r-tri-math"></p>
+                    </div>
+                </div>
+                <div class="bar-track h-6 mb-2 relative">
+                    <div id="b-tri-gap" class="bar-fill h-6 bg-slate-300" style="width:0%"></div>
+                </div>
+                <p class="text-sm text-gray-700 leading-relaxed" id="r-tri-note"></p>
+                <p class="text-xs text-gray-500 mt-3 leading-relaxed" id="r-coverage"></p>
+            </section>
+
+            <!-- ARR BRIDGE -->
+            <section class="anchor t-card mb-6" id="arr-bridge">
+                <p class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-1"><i class="fa-solid fa-bridge-water text-brand-600 mr-1"></i> ARR bridge — where the year ends</p>
+                <p class="text-xs text-gray-500 mb-5">Beginning ARR, plus what sales and expansion add, minus what churn takes away.</p>
+                <svg id="wf" viewBox="0 0 640 300" class="w-full mb-4" role="img" aria-label="ARR bridge waterfall chart"></svg>
+                <div class="overflow-x-auto">
+                    <table class="model">
+                        <thead><tr><th>Bridge line</th><th class="text-right">ARR ($M)</th><th>Math</th></tr></thead>
+                        <tbody id="bridge-rows"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- BOOKINGS TO REVENUE -->
+            <section class="anchor t-card mb-6" id="timing">
+                <p class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-1"><i class="fa-solid fa-hourglass-half text-brand-600 mr-1"></i> Subscription bookings → revenue timing</p>
+                <p class="text-xs text-gray-500 mb-5">Bookings are sold ARR; revenue is recognized ratably over the contract term. A 36-month term means this year's bookings mostly become future revenue — flip the term or the mid-quarter switch and watch quarterly revenue move while bookings stay fixed.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
+                    <div class="border border-slate-200 rounded-lg p-4">
+                        <p class="text-xs font-bold text-navy-900 uppercase tracking-wide mb-2">Quarterly bookings (new ARR sold)</p>
+                        <svg id="ch-book" viewBox="0 0 320 190" class="w-full" role="img" aria-label="Quarterly bookings bar chart"></svg>
+                    </div>
+                    <div class="border border-slate-200 rounded-lg p-4">
+                        <p class="text-xs font-bold text-navy-900 uppercase tracking-wide mb-2">Quarterly subscription revenue recognized</p>
+                        <svg id="ch-rev" viewBox="0 0 320 190" class="w-full" role="img" aria-label="Quarterly revenue bar chart"></svg>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="model">
+                        <thead><tr><th>Quarter</th><th class="text-right">Bookings ($M)</th><th class="text-right">Carryover rev ($M)</th><th class="text-right">New-bookings rev ($M)</th><th class="text-right">Sub revenue ($M)</th></tr></thead>
+                        <tbody id="timing-rows"></tbody>
+                    </table>
+                </div>
+                <p class="text-xs text-gray-500 mt-4 leading-relaxed" id="r-deferred"></p>
+            </section>
+
+            <!-- SERVICES + P&L -->
+            <section class="anchor t-card mb-6" id="services">
+                <p class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-1"><i class="fa-solid fa-briefcase text-brand-600 mr-1"></i> Professional services &amp; total P&amp;L</p>
+                <p class="text-xs text-gray-500 mb-5">Services attach to subscription bookings and are recognized over the delivery period.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
+                    <div class="border border-slate-200 rounded-lg p-4">
+                        <p class="text-xs font-bold text-gray-500 uppercase tracking-wide">Services bookings</p>
+                        <p class="text-xl font-extrabold text-navy-900 num" id="r-svcbook"></p>
+                        <p class="text-xs text-gray-400 mt-1 num" id="r-svcbook-sub"></p>
+                    </div>
+                    <div class="border border-slate-200 rounded-lg p-4">
+                        <p class="text-xs font-bold text-gray-500 uppercase tracking-wide">Services revenue</p>
+                        <p class="text-xl font-extrabold text-navy-900 num" id="r-svcrev"></p>
+                        <p class="text-xs text-gray-400 mt-1 num" id="r-svcrev-sub"></p>
+                    </div>
+                    <div class="border border-slate-200 rounded-lg p-4">
+                        <p class="text-xs font-bold text-gray-500 uppercase tracking-wide">Services gross profit</p>
+                        <p class="text-xl font-extrabold text-navy-900 num" id="r-svcgp"></p>
+                        <p class="text-xs text-gray-400 mt-1 num" id="r-svcgp-sub"></p>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="model">
+                        <thead><tr><th>Revenue line</th><th class="text-right">Revenue ($M)</th><th class="text-right">Gross margin</th><th class="text-right">Gross profit ($M)</th></tr></thead>
+                        <tbody id="pnl-rows"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <div class="t-card mb-6 bg-brand-50 border-brand-100">
+                <p class="text-sm text-gray-700 leading-relaxed" id="insight"></p>
+            </div>
+
+            <div class="t-card bg-navy-900 border-navy-900 text-white">
+                <p class="text-sm font-bold mb-2"><i class="fa-solid fa-circle-info text-brand-400 mr-2"></i>How to read this model</p>
+                <p class="text-slate-300 text-sm leading-relaxed">Capacity says what the org <em>can</em> sell; pipeline says what the funnel <em>will</em> deliver — triangulate, then take the lower number into the board plan. Bookings are a sales metric; revenue is an accounting outcome spread over the contract term, so term length and booking timing move revenue without moving bookings. Retention compounds: one point of gross retention is worth more than one point of attainment at Medallia's scale. Illustrative example only — not Medallia actuals, not financial advice.</p>
+            </div>
+        </article>
+    </main>
+
+    <wealthlanding-footer></wealthlanding-footer>
+    <script src="/components/footer.js"></script>
+    <script src="/components/header.js"></script>
+    <script>
+        (function () {
+            const $ = id => document.getElementById(id);
+            const fmtM = n => '$' + n.toFixed(1) + 'M';
+            const fmtM0 = n => '$' + Math.round(n) + 'M';
+            const fmt$ = n => '$' + Math.round(n).toLocaleString('en-US');
+            const fmtP = n => n.toFixed(1) + '%';
+
+            function readInputs() {
+                const v = id => parseFloat($(id).value);
+                const c = id => $(id).checked;
+                return {
+                    arr: v('s-arr'), term: v('s-term'), seas: c('s-seas'),
+                    grr: v('s-grr'), exp: v('s-exp'), conshare: v('s-conshare'),
+                    reps: v('s-reps'), quota: v('s-quota'), attain: v('s-attain'), prod: v('s-prod'), ramp: c('s-ramp'),
+                    pipe: v('s-pipe'), win: v('s-win'), cycle: v('s-cycle'),
+                    wcap: v('s-wcap'), cons: c('s-cons'), midq: c('s-midq'),
+                    attach: v('s-attach'), deliv: v('s-deliv'), svcm: v('s-svcm'), subm: v('s-subm')
+                };
+            }
+
+            /* ---- core model: pure function, inputs in, outputs out ---- */
+            function model(a) {
+                const beg = a.arr;
+                const churnTotal = beg * (1 - a.grr / 100);
+                const contraction = churnTotal * a.conshare / 100;
+                const logoChurn = churnTotal - contraction;
+                const expansion = beg * a.exp / 100;
+                const nrr = a.grr + a.exp;
+
+                // capacity-driven: reps x quota x attainment x ramp-adjusted productivity
+                const cap = a.reps * (a.quota / 1000) * (a.attain / 100) * (a.ramp ? a.prod / 100 : 1);
+                // pipeline-driven: pipeline x win rate x turns per year
+                const turns = 12 / a.cycle;
+                const pipe = a.pipe * (a.win / 100) * turns;
+                const tri = a.cons ? Math.min(cap, pipe) : (a.wcap / 100) * cap + (1 - a.wcap / 100) * pipe;
+
+                const end = beg + tri + expansion - contraction - logoChurn;
+
+                // quarterly bookings spread
+                const seas = a.seas ? [0.18, 0.22, 0.25, 0.35] : [0.25, 0.25, 0.25, 0.25];
+                const bookings = seas.map(w => tri * w);
+                const qStart = a.midq ? 1.5 : 0;
+
+                // ratable recognition helper: months of a cohort (booked at month bm, life L) falling in quarter q
+                function recogMonths(bm, L, q) {
+                    return Math.max(0, Math.min(3 * q + 3, bm + L) - Math.max(3 * q, bm));
+                }
+
+                // subscription revenue: carryover + new cohorts, recognized ARR/12 per month
+                const qCarry = [], qNew = [], qSub = [];
+                let newRecTotal = 0, tcv = 0;
+                for (let q = 0; q < 4; q++) {
+                    let nr = 0;
+                    for (let b = 0; b <= q; b++) {
+                        const bm = 3 * b + qStart;
+                        const m = recogMonths(bm, a.term, q);
+                        nr += bookings[b] * m / 12;
+                    }
+                    const carry = beg / 4;
+                    qCarry.push(carry); qNew.push(nr); qSub.push(carry + nr);
+                    newRecTotal += nr;
+                }
+                for (let b = 0; b < 4; b++) tcv += bookings[b] * a.term / 12;
+                const subRev = qSub.reduce((s, x) => s + x, 0);
+                const deferred = tcv - newRecTotal;
+
+                // professional services: attach to bookings, recognized over delivery period
+                const svcBook = bookings.map(x => x * a.attach / 100);
+                const qSvc = [0, 0, 0, 0];
+                let svcBookTotal = 0;
+                for (let b = 0; b < 4; b++) {
+                    svcBookTotal += svcBook[b];
+                    const bm = 3 * b + 1.5;
+                    for (let q = b; q < 4; q++) {
+                        qSvc[q] += svcBook[b] * recogMonths(bm, a.deliv, q) / a.deliv;
+                    }
+                }
+                const svcRev = qSvc.reduce((s, x) => s + x, 0);
+
+                const subGP = subRev * a.subm / 100;
+                const svcGP = svcRev * a.svcm / 100;
+                const totalRev = subRev + svcRev;
+                const totalGP = subGP + svcGP;
+                const blended = totalRev > 0 ? totalGP / totalRev * 100 : 0;
+                const growth = totalRev / beg - 1;
+
+                const reqPipe = (a.win > 0 && turns > 0) ? tri / ((a.win / 100) * turns) : 0;
+                const coverage = reqPipe > 0 ? a.pipe / reqPipe : 0;
+
+                return {
+                    beg, churnTotal, contraction, logoChurn, expansion, nrr,
+                    cap, pipe, tri, end, seas, bookings, qCarry, qNew, qSub,
+                    subRev, newRecTotal, tcv, deferred,
+                    svcBook, svcBookTotal, qSvc, svcRev, subGP, svcGP, totalRev, totalGP, blended, growth,
+                    reqPipe, coverage, gap: Math.abs(cap - pipe)
+                };
+            }
+
+            /* ---- charts ---- */
+            function waterfall(svgId, steps) {
+                // steps: [{label, delta, cum}] — cum after applying delta; first is total bar
+                const svg = $(svgId); const W = 640, H = 300, padL = 8, padB = 56, padT = 30;
+                const vals = steps.map(s => s.cum);
+                const maxV = Math.max(...vals), minV = Math.min(0, ...steps.map(s => s.prev));
+                const y = v => padT + (maxV - v) / (maxV - minV || 1) * (H - padT - padB);
+                const bw = (W - padL * 2) / steps.length;
+                let html = '';
+                steps.forEach((s, i) => {
+                    const x = padL + i * bw + bw * 0.18, w = bw * 0.64;
+                    const y1 = y(s.prev), y2 = y(s.cum);
+                    const top = Math.min(y1, y2), h = Math.max(2, Math.abs(y2 - y1));
+                    const col = s.kind === 'total' ? '#0f172a' : (s.delta >= 0 ? '#059669' : '#dc2626');
+                    html += `<rect x="${x.toFixed(1)}" y="${top.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" rx="4" fill="${col}" opacity="${s.kind === 'total' ? 1 : 0.85}"/>`;
+                    if (i > 0) html += `<line x1="${(padL + i * bw).toFixed(1)}" y1="${y1.toFixed(1)}" x2="${(x).toFixed(1)}" y2="${y1.toFixed(1)}" stroke="#94a3b8" stroke-dasharray="4 3"/>`;
+                    html += `<text x="${(x + w / 2).toFixed(1)}" y="${(top - 8).toFixed(1)}" text-anchor="middle" font-size="12" font-weight="700" fill="#0f172a">${s.tag}</text>`;
+                    const words = s.label.split(' ');
+                    let ly = H - padB + 16;
+                    let line = '';
+                    words.forEach(wd => { if ((line + ' ' + wd).trim().length > 12) { html += `<text x="${(x + w / 2).toFixed(1)}" y="${ly}" text-anchor="middle" font-size="10.5" fill="#64748b">${line.trim()}</text>`; ly += 13; line = wd; } else line += ' ' + wd; });
+                    html += `<text x="${(x + w / 2).toFixed(1)}" y="${ly}" text-anchor="middle" font-size="10.5" fill="#64748b">${line.trim()}</text>`;
+                });
+                svg.innerHTML = html;
+            }
+
+            function bars(svgId, vals, labels, color, fmt) {
+                const svg = $(svgId); const W = 320, H = 190, padB = 30, padT = 26;
+                const maxV = Math.max(...vals, 1);
+                const bw = W / vals.length;
+                let html = '';
+                vals.forEach((v, i) => {
+                    const h = (H - padB - padT) * v / maxV;
+                    const x = i * bw + bw * 0.22, w = bw * 0.56;
+                    html += `<rect x="${x.toFixed(1)}" y="${(H - padB - h).toFixed(1)}" width="${w.toFixed(1)}" height="${Math.max(2, h).toFixed(1)}" rx="4" fill="${color}"/>`;
+                    html += `<text x="${(x + w / 2).toFixed(1)}" y="${(H - padB - h - 7).toFixed(1)}" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">${fmt(v)}</text>`;
+                    html += `<text x="${(x + w / 2).toFixed(1)}" y="${H - 10}" text-anchor="middle" font-size="11" fill="#64748b">${labels[i]}</text>`;
+                });
+                svg.innerHTML = html;
+            }
+
+            /* ---- render ---- */
+            const SLIDERS = ['s-arr', 's-term', 's-grr', 's-exp', 's-conshare', 's-reps', 's-quota', 's-attain', 's-prod', 's-pipe', 's-win', 's-cycle', 's-wcap', 's-attach', 's-deliv', 's-svcm', 's-subm'];
+            const SWITCHES = ['s-seas', 's-ramp', 's-cons', 's-midq'];
+
+            function calc() {
+                const a = readInputs();
+                const m = model(a);
+
+                // assumption labels
+                $('v-arr').textContent = fmtM0(a.arr);
+                $('v-term').textContent = a.term + ' mo';
+                $('v-grr').textContent = fmtP(a.grr);
+                $('v-exp').textContent = fmtP(a.exp);
+                $('v-conshare').textContent = a.conshare + '%';
+                $('v-nrr').textContent = fmtP(m.nrr);
+                $('v-reps').textContent = a.reps;
+                $('v-quota').textContent = fmt$(a.quota * 1000);
+                $('v-attain').textContent = fmtP(a.attain);
+                $('v-prod').textContent = fmtP(a.prod);
+                $('v-pipe').textContent = fmtM0(a.pipe);
+                $('v-win').textContent = fmtP(a.win);
+                $('v-cycle').textContent = a.cycle + ' mo';
+                $('v-wcap').textContent = a.wcap + '%';
+                $('v-attach').textContent = fmtP(a.attach);
+                $('v-deliv').textContent = a.deliv + ' mo';
+                $('v-svcm').textContent = fmtP(a.svcm);
+                $('v-subm').textContent = fmtP(a.subm);
+
+                // KPIs
+                $('k-arr').textContent = fmtM0(m.end);
+                $('k-arr-sub').textContent = 'from ' + fmtM0(m.beg) + ' starting ARR';
+                $('k-nnarr').textContent = fmtM(m.tri);
+                $('k-nnarr-sub').textContent = 'cap ' + fmtM(m.cap) + ' · pipe ' + fmtM(m.pipe);
+                $('k-rev').textContent = fmtM(m.totalRev);
+                $('k-rev-sub').textContent = 'sub ' + fmtM(m.subRev) + ' + svc ' + fmtM(m.svcRev);
+                $('k-gr').textContent = (m.growth * 100).toFixed(1) + '%';
+                $('k-gr-sub').textContent = 'blended GM ' + fmtP(m.blended);
+
+                // triangulation
+                $('r-cap').textContent = fmtM(m.cap);
+                $('r-cap-math').textContent = a.reps + ' reps × ' + fmt$(a.quota * 1000) + ' × ' + fmtP(a.attain) + (a.ramp ? ' × ' + fmtP(a.prod) + ' ramp' : ' (no ramp drag)');
+                $('r-pipe').textContent = fmtM(m.pipe);
+                $('r-pipe-math').textContent = fmtM0(a.pipe) + ' pipe × ' + fmtP(a.win) + ' win × ' + (12 / a.cycle).toFixed(2) + '× turns/yr';
+                $('r-tri').textContent = fmtM(m.tri);
+                $('r-tri-math').textContent = a.cons ? 'conservative: lower of the two' : a.wcap + '% capacity + ' + (100 - a.wcap) + '% pipeline';
+                const gapPct = Math.max(m.cap, m.pipe, 1) > 0 ? m.gap / Math.max(m.cap, m.pipe, 1) * 100 : 0;
+                $('b-tri-gap').style.width = Math.min(100, gapPct) + '%';
+                const hi = m.cap >= m.pipe ? 'Capacity' : 'Pipeline';
+                $('r-tri-note').innerHTML = '<strong class="text-navy-900">' + hi + ' runs ' + fmtM(m.gap) + ' higher</strong> — a ' + gapPct.toFixed(0) + '% spread between the two sourcing models. ' +
+                    (gapPct > 20 ? 'That spread is the forecast risk: the board plan should carry the lower number until the gap closes.' : 'The models agree within ' + gapPct.toFixed(0) + '% — the triangulated number is defensible.');
+                $('r-coverage').innerHTML = 'Coverage check: at a ' + fmtP(a.win) + ' win rate and ' + a.cycle + '-month cycle, ' + fmtM(m.tri) + ' of net new ARR needs <strong>' + fmtM0(m.reqPipe) + ' of starting pipeline</strong>. You have ' + fmtM0(a.pipe) + ' — coverage is <strong class="' + (m.coverage >= 1 ? 'pos' : 'neg') + '">' + m.coverage.toFixed(2) + '×</strong>' + (m.coverage < 1 ? ' — the pipeline model is under-covered; either pipeline must grow or the triangulated number must fall.' : ' — pipeline covers the plan.') + ' (Rule of thumb: 3× coverage for enterprise.)';
+
+                // ARR bridge
+                const steps = [
+                    { label: 'Beginning ARR', delta: 0, prev: 0, cum: m.beg, tag: fmtM0(m.beg), kind: 'total' },
+                    { label: 'New logo ARR', delta: m.tri, prev: m.beg, cum: m.beg + m.tri, tag: '+' + fmtM(m.tri), kind: 'up' },
+                    { label: 'Expansion', delta: m.expansion, prev: m.beg + m.tri, cum: m.beg + m.tri + m.expansion, tag: '+' + fmtM(m.expansion), kind: 'up' },
+                    { label: 'Contraction', delta: -m.contraction, prev: m.beg + m.tri + m.expansion, cum: m.beg + m.tri + m.expansion - m.contraction, tag: '−' + fmtM(m.contraction), kind: 'down' },
+                    { label: 'Logo churn', delta: -m.logoChurn, prev: m.beg + m.tri + m.expansion - m.contraction, cum: m.end, tag: '−' + fmtM(m.logoChurn), kind: 'down' },
+                    { label: 'Ending ARR', delta: 0, prev: 0, cum: m.end, tag: fmtM0(m.end), kind: 'total' }
+                ];
+                waterfall('wf', steps);
+                const brows = [
+                    ['Beginning ARR', fmtM0(m.beg), 'input'],
+                    ['+ New logo ARR', '<span class="pos">+' + fmtM(m.tri) + '</span>', 'triangulated (capacity × pipeline)'],
+                    ['+ Expansion', '<span class="pos">+' + fmtM(m.expansion) + '</span>', fmtM0(m.beg) + ' × ' + fmtP(a.exp)],
+                    ['− Contraction', '<span class="neg">−' + fmtM(m.contraction) + '</span>', fmtM(m.churnTotal) + ' gross churn × ' + a.conshare + '% contraction share'],
+                    ['− Logo churn', '<span class="neg">−' + fmtM(m.logoChurn) + '</span>', fmtM(m.churnTotal) + ' gross churn × ' + (100 - a.conshare) + '% logo share'],
+                    ['= Ending ARR', '<strong>' + fmtM0(m.end) + '</strong>', 'beginning + new + expansion − churn']
+                ];
+                $('bridge-rows').innerHTML = brows.map((r, i) =>
+                    '<tr' + (i === 5 ? ' class="total"' : '') + '><td>' + r[0] + '</td><td class="text-right num">' + r[1] + '</td><td class="text-gray-500">' + r[2] + '</td></tr>').join('');
+
+                // timing
+                bars('ch-book', m.bookings, ['Q1', 'Q2', 'Q3', 'Q4'], '#0f172a', fmtM);
+                bars('ch-rev', m.qSub, ['Q1', 'Q2', 'Q3', 'Q4'], '#f59e0b', fmtM);
+                let thtml = '';
+                ['Q1', 'Q2', 'Q3', 'Q4'].forEach((q, i) => {
+                    thtml += '<tr><td class="font-semibold">' + q + '</td><td class="text-right num">' + fmtM(m.bookings[i]) + '</td><td class="text-right num">' + fmtM(m.qCarry[i]) + '</td><td class="text-right num">' + fmtM(m.qNew[i]) + '</td><td class="text-right num font-bold text-navy-900">' + fmtM(m.qSub[i]) + '</td></tr>';
+                });
+                thtml += '<tr class="total"><td>Full year</td><td class="text-right num">' + fmtM(m.tri) + '</td><td class="text-right num">' + fmtM0(m.beg) + '</td><td class="text-right num">' + fmtM(m.newRecTotal) + '</td><td class="text-right num">' + fmtM(m.subRev) + '</td></tr>';
+                $('timing-rows').innerHTML = thtml;
+                $('r-deferred').innerHTML = 'Only <strong class="text-navy-900">' + fmtM(m.newRecTotal) + '</strong> of this year\u2019s ' + fmtM(m.tri) + ' in bookings is recognized as revenue this year — the rest sits in deferred revenue. ' +
+                    'Total contract value booked: <strong class="text-navy-900">' + fmtM(m.tcv) + '</strong> (' + fmtM(m.tri) + ' ARR × ' + (a.term / 12) + '-yr term). Ending deferred balance from this year\u2019s cohorts: <strong class="text-navy-900">' + fmtM(m.deferred) + '</strong>. ' +
+                    'Lengthen the term and revenue growth slows while bookings don\u2019t move — that\u2019s the timing wedge. ' +
+                    (a.midq ? 'Mid-quarter convention is ON: Q1 revenue is lighter because Q1 deals only count 1.5 months.' : 'Mid-quarter convention is OFF: booking-quarter deals count a full 3 months.');
+
+                // services + P&L
+                $('r-svcbook').textContent = fmtM(m.svcBookTotal);
+                $('r-svcbook-sub').textContent = fmtP(a.attach) + ' attach × ' + fmtM(m.tri) + ' sub bookings';
+                $('r-svcrev').textContent = fmtM(m.svcRev);
+                $('r-svcrev-sub').textContent = 'recognized over ' + a.deliv + ' mo delivery';
+                $('r-svcgp').textContent = fmtM(m.svcGP);
+                $('r-svcgp-sub').textContent = fmtP(a.svcm) + ' margin';
+                const pnl = [
+                    ['Subscription', fmtM(m.subRev), fmtP(a.subm), fmtM(m.subGP)],
+                    ['Professional services', fmtM(m.svcRev), fmtP(a.svcm), fmtM(m.svcGP)],
+                ];
+                let phtml = pnl.map(r => '<tr><td>' + r[0] + '</td><td class="text-right num">' + r[1] + '</td><td class="text-right num">' + r[2] + '</td><td class="text-right num">' + r[3] + '</td></tr>').join('');
+                phtml += '<tr class="total"><td>Total</td><td class="text-right num">' + fmtM(m.totalRev) + '</td><td class="text-right num">' + fmtP(m.blended) + '</td><td class="text-right num">' + fmtM(m.totalGP) + '</td></tr>';
+                $('pnl-rows').innerHTML = phtml;
+
+                // insight
+                const ret = m.nrr >= 110 ? 'expansion engine is doing the heavy lifting' : (m.nrr >= 100 ? 'retention is holding the base together' : 'churn is eating the base faster than expansion replaces it');
+                $('insight').innerHTML = 'At these settings the model lands at <strong>' + fmtM0(m.end) + ' ending ARR</strong> on <strong>' + fmtM(m.tri) + ' net new ARR</strong>. ' +
+                    'The ' + ret + ' (NRR ' + fmtP(m.nrr) + '). Total revenue of ' + fmtM(m.totalRev) + ' grows ' + (m.growth * 100).toFixed(1) + '% off the starting ARR run-rate, with services contributing ' + fmtM(m.svcRev) + ' at ' + fmtP(a.svcm) + ' margin. ' +
+                    (m.coverage < 1 ? 'The pipeline does not cover the plan — fix coverage before defending the number.' : 'Pipeline coverage supports the plan at ' + m.coverage.toFixed(2) + '×.');
+            }
+
+            SLIDERS.forEach(id => $(id).addEventListener('input', calc));
+            SWITCHES.forEach(id => $(id).addEventListener('change', calc));
+            calc();
+        })();
+    </script>
+</body>
+</html>
