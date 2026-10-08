@@ -323,7 +323,7 @@
             <h3 class="font-bold text-slate-800 text-sm">Your Card Portfolio</h3>
             <span class="text-[11px] font-mono font-bold text-slate-500" id="unlock-count"></span>
           </div>
-          <p class="text-[11px] text-slate-500 mb-4">Cards earning &gt;2% somewhere, plus loyalty cards with special benefits.</p>
+          <p class="text-[11px] text-slate-500 mb-4">Cards earning &gt;2% somewhere, plus loyalty cards with special benefits. Cards shared with your wallet above stay in sync.</p>
           <div class="flex gap-2 mb-4">
             <button id="unlock-all" class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:border-brand-500 hover:text-brand-700 transition">Select all</button>
             <button id="unlock-clear" class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:border-red-400 hover:text-red-600 transition">Clear</button>
@@ -758,7 +758,7 @@ function uRenderPortfolio(){
       +'<span class="text-[10px] text-slate-400 font-medium whitespace-nowrap">$'+c.fee+'</span>';
     lab.querySelector('input').addEventListener('change',e=>{
       if(e.target.checked) uPortfolio.add(id); else uPortfolio.delete(id);
-      uSave(); uRenderPortfolio(); uRender();
+      uSave(); syncPortfolioToWallet(); uRenderPortfolio(); uRender();
     });
     box.appendChild(lab);
   });
@@ -798,6 +798,19 @@ function syncOptToSim(optKey){
   if(sl) sl.value=spendState[simKey];
   if(lb) lb.textContent='$'+spendState[simKey]+'/mo';
   updateSimulator();
+}
+
+/* card portfolio sync with the top-section wallet: same physical card, different id schemes in the two card universes */
+const WALLET_TO_UNLOCK={csr:'csr',vx:'vx',ritz:'ritz',hyatt:'hyatt',plat:'amex_plat',aspire:'hilton_aspire'};
+const UNLOCK_TO_WALLET={csr:'csr',vx:'vx',ritz:'ritz',hyatt:'hyatt',amex_plat:'plat',hilton_aspire:'aspire'};
+function syncWalletToPortfolio(){
+  Object.entries(WALLET_TO_UNLOCK).forEach(([wid,uid])=>{ if(wallet.has(wid)) uPortfolio.add(uid); else uPortfolio.delete(uid); });
+  uSave(); uRenderPortfolio(); uRender();
+}
+function syncPortfolioToWallet(){
+  Object.entries(UNLOCK_TO_WALLET).forEach(([uid,wid])=>{ if(uPortfolio.has(uid)) wallet.add(wid); else wallet.delete(wid); });
+  saveWallet(); renderWalletGrid(); renderTileDots();
+  if(typeof updateSimulator==='function') updateSimulator();
 }
 
 function uRenderSliders(){
@@ -927,6 +940,9 @@ function uRender(){
 }
 
 function uInit(){
+  /* at load, the top-section wallet is the source of truth: mirror its mapped cards into the planner portfolio */
+  Object.entries(WALLET_TO_UNLOCK).forEach(([wid,uid])=>{ if(wallet.has(wid)) uPortfolio.add(uid); else uPortfolio.delete(uid); });
+  uSave();
   uRenderPortfolio();
   uRenderSliders();
   document.querySelectorAll('input[name="xfund"]').forEach(r=>{
@@ -946,8 +962,8 @@ function uInit(){
   document.getElementById('unlock-airline').addEventListener('change',uRender);
   const ufp=document.getElementById('unlock-flight-prio');
   if(ufp){ ufp.value=uFlightPrio; ufp.addEventListener('change',e=>{ uFlightPrio=e.target.value; uSaveFlightPrio(); uRender(); }); }
-  document.getElementById('unlock-all').addEventListener('click',()=>{ uPortfolio=new Set(Object.keys(UNLOCK_CARDS)); uSave(); uRenderPortfolio(); uRender(); });
-  document.getElementById('unlock-clear').addEventListener('click',()=>{ uPortfolio=new Set(); uSave(); uRenderPortfolio(); uRender(); });
+  document.getElementById('unlock-all').addEventListener('click',()=>{ uPortfolio=new Set(Object.keys(UNLOCK_CARDS)); uSave(); syncPortfolioToWallet(); uRenderPortfolio(); uRender(); });
+  document.getElementById('unlock-clear').addEventListener('click',()=>{ uPortfolio=new Set(); uSave(); syncPortfolioToWallet(); uRenderPortfolio(); uRender(); });
   uRender();
 }
 if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',uInit); else uInit();
@@ -1432,6 +1448,7 @@ function toggleCard(id, isOwned){
   renderTileDots();
   if(currentDetailKey) showDetail(currentDetailKey);
   if(typeof updateSimulator === 'function') updateSimulator();
+  if(typeof syncWalletToPortfolio === 'function') syncWalletToPortfolio();
 }
 
 if(addCardBtn) addCardBtn.addEventListener('click', () => { const id = cardPicker.value; if(id) toggleCard(id, true); });
@@ -1440,11 +1457,13 @@ document.getElementById('wallet-all')?.addEventListener('click', () => {
   wallet = new Set(Object.keys(CARDS)); saveWallet(); renderWalletGrid(); renderTileDots();
   if(currentDetailKey) showDetail(currentDetailKey);
   if(typeof updateSimulator === 'function') updateSimulator();
+  if(typeof syncWalletToPortfolio === 'function') syncWalletToPortfolio();
 });
 document.getElementById('wallet-clear')?.addEventListener('click', () => {
   wallet = new Set(); saveWallet(); renderWalletGrid(); renderTileDots();
   if(currentDetailKey) showDetail(currentDetailKey);
   if(typeof updateSimulator === 'function') updateSimulator();
+  if(typeof syncWalletToPortfolio === 'function') syncWalletToPortfolio();
 });
 renderWalletGrid();
 
