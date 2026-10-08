@@ -162,14 +162,14 @@
 </section>
 
 <!-- SPENDING SIMULATOR -->
-<section class="py-14 md:py-16 bg-white border-b border-slate-200/80">
+<section id="quick-check" class="py-14 md:py-16 bg-white border-b border-slate-200/80">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto mb-10">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-[11px] font-bold mb-3">
-        <i class="fa-solid fa-sliders"></i><span>SPENDING SIMULATOR</span>
+        <i class="fa-solid fa-bolt"></i><span>QUICK CHECK</span>
       </div>
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">See What Your Real Cash Back Would Be</h2>
-      <p class="text-slate-600 text-sm">Slide your estimated monthly spend in each category — see your spending mix, and how much you'd earn under three scenarios.</p>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">Cash Back & Points Only — No Benefits</h2>
+      <p class="text-slate-600 text-sm">The simple version: slide your monthly spend and see pure earn rates under three scenarios. No annual thresholds, free nights, or status perks — for the full annual plan with unlocks, jump to the <a href="#unlocks" class="font-bold text-brand-700 hover:underline">Annual Benefits Planner</a> below.</p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -312,8 +312,8 @@
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-[11px] font-bold mb-3">
         <i class="fa-solid fa-unlock"></i><span>ANNUAL SPEND OPTIMIZER</span>
       </div>
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">Turn Annual Spend Into Unlocked Benefits</h2>
-      <p class="text-slate-600 text-sm">Set your yearly spend by category, pick the cards you hold, and see every dollar of rewards, free nights, status and companion perks — plus which thresholds you're close to unlocking and which card to add next.</p>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">Annual Benefits Planner</h2>
+      <p class="text-slate-600 text-sm">The sophisticated version: annual planning across spend thresholds, free nights, companion passes, status, and no-spend card value. Set your yearly spend by category, pick the cards you hold, and see every dollar of rewards and unlocks — plus which thresholds you're close to and which card to add next. <span class="font-semibold text-slate-700">Category spend syncs both ways with the <a href="#quick-check" class="font-bold text-brand-700 hover:underline">Quick Check</a> above — set it once.</span></p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
@@ -748,6 +748,28 @@ function uRenderPortfolio(){
   }
 }
 
+/* category spend sync with the Quick Check simulator (monthly): dining, groceries, gas, and everything-else/other stay in sync both ways; each tool keeps its own defaults until the user drags a synced slider */
+const SYNC_SIM2OPT={dining:'dining',groceries:'groceries',gas:'gas','everything-else':'other'};
+const SYNC_OPT2SIM={dining:'dining',groceries:'groceries',gas:'gas',other:'everything-else'};
+function syncSimToOpt(simKey){
+  const optKey=SYNC_SIM2OPT[simKey]; if(!optKey) return;
+  uSpend[optKey]=(spendState[simKey]||0)*12;
+  uSave();
+  const sl=document.getElementById('uslider-'+optKey), lb=document.getElementById('uval-'+optKey);
+  if(sl) sl.value=uSpend[optKey];
+  if(lb) lb.textContent=uFmt(uSpend[optKey])+'/yr';
+  uRender();
+}
+function syncOptToSim(optKey){
+  const simKey=SYNC_OPT2SIM[optKey]; if(!simKey) return;
+  spendState[simKey]=Math.round((uSpend[optKey]||0)/12);
+  saveSpend();
+  const sl=document.getElementById('sim-slider-'+simKey), lb=document.getElementById('sim-val-'+simKey);
+  if(sl) sl.value=spendState[simKey];
+  if(lb) lb.textContent='$'+spendState[simKey]+'/mo';
+  updateSimulator();
+}
+
 function uRenderSliders(){
   const box=document.getElementById('unlock-sliders'); if(!box) return;
   box.innerHTML='';
@@ -761,7 +783,7 @@ function uRenderSliders(){
     row.querySelector('#uslider-'+c.key).addEventListener('input',e=>{
       uSpend[c.key]=parseInt(e.target.value,10)||0;
       document.getElementById('uval-'+c.key).textContent=uFmt(uSpend[c.key])+'/yr';
-      uSave(); uRender();
+      uSave(); uRender(); syncOptToSim(c.key);
     });
   });
 }
@@ -1786,6 +1808,7 @@ if(simSliders){
       if(label) label.textContent = `$${spendState[key]}/mo`;
       saveSpend();
       updateSimulator();
+      syncSimToOpt(key);
     });
   });
 }
