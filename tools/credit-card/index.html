@@ -343,13 +343,26 @@
             <span class="text-xs text-slate-700"><strong>Credit card <span class="text-emerald-700">(codes as purchase)</span></strong><br><span class="text-slate-500">Tested: Venture X, Oct 2026. Issuer-dependent — verify per card.</span></span>
           </label>
           <div id="xfund-card-wrap" class="hidden mt-3">
-            <label class="text-[11px] font-bold text-slate-600 block mb-1">Funding card</label>
-            <select id="xfund-card" class="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500/40"></select>
-            <div class="mt-3">
-              <label class="text-[11px] font-bold text-slate-600 flex justify-between items-baseline mb-1"><span>Amount on the funding card</span><span id="xfund-amt-label" class="font-mono text-slate-800"></span></label>
-              <input type="range" id="xfund-amt" min="0" max="120000" step="1000" value="75000" class="w-full accent-brand-600">
-              <p class="text-[10px] text-slate-500 mt-1 leading-relaxed">The rest goes by bank ACH (no rewards, no risk). Defaults to the card's first spend threshold — e.g. $75,000 on Venture X unlocks 2 free lounge guests + 1 Landing guest — so you fund just enough to activate the benefit.</p>
+            <div class="mb-3">
+              <label class="text-[11px] font-bold text-slate-600 block mb-1">Funding card 1</label>
+              <select id="xfund-card1" class="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500/40"></select>
+              <div class="flex justify-between items-baseline mt-2 mb-1">
+                <span class="text-[11px] text-slate-500">Amount on card 1</span>
+                <span id="xfund-amt1-label" class="font-mono text-xs font-bold text-slate-800"></span>
+              </div>
+              <input type="range" id="xfund-amt1" min="0" max="120000" step="1000" class="w-full accent-brand-600">
             </div>
+            <div class="mb-1">
+              <label class="text-[11px] font-bold text-slate-600 block mb-1">Funding card 2</label>
+              <select id="xfund-card2" class="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500/40"></select>
+              <div class="flex justify-between items-baseline mt-2 mb-1">
+                <span class="text-[11px] text-slate-500">Amount on card 2</span>
+                <span id="xfund-amt2-label" class="font-mono text-xs font-bold text-slate-800"></span>
+              </div>
+              <input type="range" id="xfund-amt2" min="0" max="120000" step="1000" class="w-full accent-brand-600">
+            </div>
+            <p id="xfund-bank-label" class="text-[10px] text-slate-500 mt-1"></p>
+            <p class="text-[10px] text-slate-500 mt-1 leading-relaxed">Card 1 defaults to its first spend threshold — e.g. $75,000 on Venture X unlocks 2 free lounge guests + 1 Landing guest — so you fund just enough to activate the benefit and put the rest on card 2.</p>
             <p class="text-[10px] text-amber-700 bg-amber-50 border border-amber-200 rounded-lg p-2 mt-2 leading-relaxed">Funding a debit account with a credit card is manufactured spend. Issuers can reclassify the transaction or shut down accounts at volume. Treat "codes as purchase" as provisional.</p>
           </div>
         </div>
@@ -386,8 +399,8 @@
             <div>
               <label class="text-[11px] font-bold text-slate-600 block mb-1">Flight booking priority</label>
               <select id="unlock-flight-prio" class="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500/40">
-                <option value="rate" selected>Best earn rate</option>
-                <option value="protection">Travel protection (Ritz-Carlton)</option>
+                <option value="ritz" selected>Ritz-Carlton — all flights</option>
+                <option value="rate">Best earn rate</option>
               </select>
               <p id="unlock-flight-note" class="text-[10px] mt-1.5 text-slate-400"></p>
             </div>
@@ -564,23 +577,35 @@ const UNLOCK_CATS = [
 ];
 
 const U_PORT_KEY='wl_unlocks_portfolio', U_SPEND_KEY='wl_unlocks_spend', U_FUND_KEY='wl_unlocks_fund';
-let uPortfolio=new Set(), uSpend={}, uFund={mode:'bank',card:'vx',amt:null};
+let uPortfolio=new Set(), uSpend={}, uFund={mode:'bank',card1:'vx',amt1:null,card2:'dc',amt2:0};
 
-/* split funding: default the card-funded amount to the funding card's first spend threshold (capped at X Money spend), so e.g. Venture X funds $75k to trip its guest-benefit threshold and the rest goes by bank */
-function uFundDefaultAmt(){
+/* split funding across two cards: card 1 defaults to its first spend threshold (capped at X Money spend), so e.g. Venture X funds $75k to trip its guest-benefit threshold; card 2 takes overflow; the rest goes by bank */
+function uFundDefaultAmt1(){
   const xSpend=uSpend.xmoney||0;
-  const card=UNLOCK_CARDS[uFund.card];
+  const card=UNLOCK_CARDS[uFund.card1];
   if(card&&card.thresholds&&card.thresholds.length) return Math.min(card.thresholds[0].spend,xSpend);
   return xSpend;
 }
-function uFundAmt(){
+function uFundAmt1(){
   const xSpend=uSpend.xmoney||0;
-  const a=(uFund.amt==null?uFundDefaultAmt():uFund.amt);
+  const a=(uFund.amt1==null?uFundDefaultAmt1():uFund.amt1);
   return Math.max(0,Math.min(a,xSpend));
+}
+function uFundAmt2(){
+  const xSpend=uSpend.xmoney||0;
+  return Math.max(0,Math.min(uFund.amt2||0,xSpend-uFundAmt1()));
+}
+function uFundSanitize(){
+  if(!FUND_RATES[uFund.card1]){ uFund.card1='vx'; uFund.amt1=null; }
+  if(!FUND_RATES[uFund.card2]){ uFund.card2='dc'; uFund.amt2=0; }
+  if(typeof uFund.amt1!=='number'&&uFund.amt1!=null) uFund.amt1=null;
+  if(typeof uFund.amt2!=='number') uFund.amt2=0;
 }
 try{ const s=JSON.parse(localStorage.getItem(U_PORT_KEY)||'null'); uPortfolio=new Set((s||[]).filter(id=>UNLOCK_CARDS[id])); }catch(e){ uPortfolio=new Set(); }
 try{ const s=JSON.parse(localStorage.getItem(U_SPEND_KEY)||'null'); uSpend=s&&typeof s==='object'?s:{}; }catch(e){ uSpend={}; }
 try{ const s=JSON.parse(localStorage.getItem(U_FUND_KEY)||'null'); if(s&&typeof s==='object') uFund=s; }catch(e){}
+/* migrate the old single-card funding shape {card,amt} to {card1,amt1,card2,amt2} */
+if(uFund&&uFund.card&&uFund.card1===undefined){ uFund.card1=uFund.card; uFund.amt1=(uFund.amt==null?null:uFund.amt); uFund.card2='dc'; uFund.amt2=0; delete uFund.card; delete uFund.amt; }
 UNLOCK_CATS.forEach(c=>{ if(typeof uSpend[c.key]!=='number') uSpend[c.key]=c.def; });
 function uSave(){ try{ localStorage.setItem(U_PORT_KEY,JSON.stringify([...uPortfolio])); localStorage.setItem(U_SPEND_KEY,JSON.stringify(uSpend)); localStorage.setItem(U_FUND_KEY,JSON.stringify(uFund)); }catch(e){} }
 function uFmt(n){ const neg=n<0; const a=Math.abs(Math.round(n)); return (neg?'-$':'$')+a.toLocaleString(); }
@@ -595,14 +620,15 @@ Object.assign(FUND_RATES,{
   disc:{name:"Discover it Cash Back",rate:1}, bcp:{name:"Amex Blue Cash Preferred",rate:1},
   gold:{name:"Amex Gold",rate:2}, plat:{name:"Amex Platinum",rate:2}
 });
+uFundSanitize();
 
-/* flight booking priority: 'rate' (best earn) or 'protection' (Ritz-Carlton for trip-delay coverage) */
+/* flight booking priority: 'ritz' (all flights on Ritz-Carlton) or 'rate' (best earn); old 'protection' value migrates to 'ritz' */
 const U_FLIGHT_KEY='wl_unlocks_flightprio';
-let uFlightPrio='rate';
-try{ const s=localStorage.getItem(U_FLIGHT_KEY); if(s==='protection'||s==='rate') uFlightPrio=s; }catch(e){}
+let uFlightPrio='ritz';
+try{ const s=localStorage.getItem(U_FLIGHT_KEY); uFlightPrio=(s==='rate')?'rate':'ritz'; }catch(e){}
 function uSaveFlightPrio(){ try{ localStorage.setItem(U_FLIGHT_KEY,uFlightPrio); }catch(e){} }
 function uRouteFor(catKey,sel){
-  if(catKey==='flights'&&uFlightPrio==='protection'&&sel.includes('ritz')) return 'ritz';
+  if(catKey==='flights'&&uFlightPrio==='ritz'&&sel.includes('ritz')) return 'ritz';
   let best=null,bestR=-1;
   sel.forEach(id=>{ const r=uRate(id,catKey); if(r>bestR){bestR=r;best=id;} });
   return best;
@@ -627,24 +653,26 @@ function uRate(cardId, catKey){
 function uCompute(){
   const sel=[...uPortfolio].filter(id=>UNLOCK_CARDS[id]);
   const xSpend=uSpend.xmoney||0;
-  const fundMode=uFund.mode, fundCard=uFund.card;
+  const fundMode=uFund.mode;
   const perCard={};
   sel.forEach(id=>{ perCard[id]={spend:0,rewards:0,unlocks:[],unlockVal:0}; });
 
   /* X Money debit: 3% on eligible spend (slider is eligible-only by definition) */
   let xRewards=xSpend*0.03;
 
-  /* credit-card funding: the card-funded SPLIT amount earns the funding card's everyday rate; counts toward thresholds only if the card is in the portfolio */
-  let fundRewards=0, fundName='';
-  const fundAmt=uFundAmt();
-  if(fundMode==='card' && FUND_RATES[fundCard]){
-    const fr=FUND_RATES[fundCard]; fundName=fr.name;
-    fundRewards=fundAmt*fr.rate/100;
-    if(perCard[fundCard]){ perCard[fundCard].spend+=fundAmt; perCard[fundCard].rewards+=fundRewards; }
+  /* credit-card funding, split across two cards: each card's amount earns its everyday rate and counts toward its thresholds only if the card is in the portfolio; any remainder goes by bank */
+  let fundRewards=0;
+  let fundOutAmt=0, fundOutRewards=0; const fundOutNames=[];
+  if(fundMode==='card'){
+    const a1=uFundAmt1(), a2=uFundAmt2();
+    const f1=FUND_RATES[uFund.card1], f2=FUND_RATES[uFund.card2];
+    const r1=f1?a1*f1.rate/100:0, r2=f2?a2*f2.rate/100:0;
+    fundRewards=r1+r2;
+    if(a1>0&&f1){ if(perCard[uFund.card1]){ perCard[uFund.card1].spend+=a1; perCard[uFund.card1].rewards+=r1; } else { fundOutAmt+=a1; fundOutRewards+=r1; fundOutNames.push(f1.name); } }
+    if(a2>0&&f2){ if(perCard[uFund.card2]){ perCard[uFund.card2].spend+=a2; perCard[uFund.card2].rewards+=r2; } else { fundOutAmt+=a2; fundOutRewards+=r2; fundOutNames.push(f2.name); } }
   }
-  const fundInPortfolio=!!(fundCard&&perCard[fundCard]);
 
-  /* route every other category to the best selected card (or Ritz-Carlton for flights when protection priority is on) */
+  /* route every other category to the best selected card (or Ritz-Carlton for flights when Ritz priority is on) */
   UNLOCK_CATS.forEach(c=>{
     if(c.key==='xmoney') return;
     const spend=uSpend[c.key]||0; if(spend<=0||sel.length===0) return;
@@ -661,7 +689,7 @@ function uCompute(){
     });
   });
 
-  let total= xRewards+(fundInPortfolio?0:fundRewards), tRewards=xRewards+(fundInPortfolio?0:fundRewards), tUnlock=0, tNoSpend=0, tFees=0;
+  let total= xRewards+fundOutRewards, tRewards=xRewards+fundOutRewards, tUnlock=0, tNoSpend=0, tFees=0;
   const rows=sel.map(id=>{
     const card=UNLOCK_CARDS[id], pc=perCard[id];
     const net=pc.rewards+pc.unlockVal+card.noSpend-card.fee;
@@ -713,7 +741,7 @@ function uCompute(){
   });
   recs.sort((a,b)=>b.delta-a.delta);
 
-  return {rows,total,tRewards,tUnlock,tNoSpend,tFees,next,recs,xRewards,fundRewards,fundName,fundInPortfolio,fundAmt,selCount:sel.length};
+  return {rows,total,tRewards,tUnlock,tNoSpend,tFees,next,recs,xRewards,fundRewards,fundOutAmt,fundOutRewards,fundOutNames,selCount:sel.length};
 }
 
 /* ---------- renderers ---------- */
@@ -736,16 +764,18 @@ function uRenderPortfolio(){
   });
   const cnt=document.getElementById('unlock-count');
   if(cnt) cnt.textContent=uPortfolio.size+' selected';
-  const fs=document.getElementById('xfund-card');
-  if(fs){
-    const cur=fs.value||uFund.card;
-    fs.innerHTML='';
-    Object.entries(FUND_RATES).forEach(([id,f])=>{
-      const o=document.createElement('option'); o.value=id; o.textContent=f.name+' — '+f.rate+'% base'; fs.appendChild(o);
-    });
-    fs.value=FUND_RATES[cur]?cur:'vx';
-    uFund.card=fs.value;
-  }
+  [['xfund-card1','card1','vx'],['xfund-card2','card2','dc']].forEach(([id,key,def])=>{
+    const fs=document.getElementById(id);
+    if(fs){
+      const cur=fs.value||uFund[key];
+      fs.innerHTML='';
+      Object.entries(FUND_RATES).forEach(([fid,f])=>{
+        const o=document.createElement('option'); o.value=fid; o.textContent=f.name+' — '+f.rate+'% base'; fs.appendChild(o);
+      });
+      fs.value=FUND_RATES[cur]?cur:def;
+      uFund[key]=fs.value;
+    }
+  });
 }
 
 /* category spend sync with the Quick Check simulator (monthly): dining, groceries, gas, and everything-else/other stay in sync both ways; each tool keeps its own defaults until the user drags a synced slider */
@@ -788,17 +818,20 @@ function uRenderSliders(){
   });
 }
 
-function uRenderFundAmt(){
-  const sl=document.getElementById('xfund-amt'); if(!sl) return;
-  const xSpend=uSpend.xmoney||0, amt=uFundAmt();
-  sl.max=Math.max(xSpend,1000);
-  if(document.activeElement!==sl) sl.value=amt;
-  const lb=document.getElementById('xfund-amt-label');
-  if(lb) lb.textContent=uFmt(amt)+' on card · '+uFmt(Math.max(0,xSpend-amt))+' by bank';
+function uRenderFundSplit(){
+  const xSpend=uSpend.xmoney||0, a1=uFundAmt1(), a2=uFundAmt2(), bank=Math.max(0,xSpend-a1-a2);
+  const s1=document.getElementById('xfund-amt1'), s2=document.getElementById('xfund-amt2');
+  if(s1){ s1.max=Math.max(xSpend,1000); if(document.activeElement!==s1) s1.value=a1; }
+  if(s2){ s2.max=Math.max(xSpend-a1,1000); if(document.activeElement!==s2) s2.value=a2; }
+  const l1=document.getElementById('xfund-amt1-label'), l2=document.getElementById('xfund-amt2-label'), bl=document.getElementById('xfund-bank-label');
+  const n1=(FUND_RATES[uFund.card1]||{}).name||'', n2=(FUND_RATES[uFund.card2]||{}).name||'';
+  if(l1) l1.textContent=uFmt(a1)+(n1?' on '+n1:'');
+  if(l2) l2.textContent=uFmt(a2)+(n2?' on '+n2:'');
+  if(bl) bl.textContent=uFmt(bank)+' by bank ACH (no rewards)';
 }
 
 function uRender(){
-  uRenderFundAmt();
+  uRenderFundSplit();
   const r=uCompute();
   const big=document.getElementById('unlock-big');
   if(big) big.innerHTML=uFmt(r.total)+'<span class="text-base font-semibold text-slate-500">/yr</span>';
@@ -844,12 +877,12 @@ function uRender(){
         +'<td class="py-2.5 text-right font-mono font-extrabold text-slate-900">'+uFmt(r.xRewards)+'</td>';
       tb.appendChild(tr);
     }
-    if(r.fundRewards>0 && r.fundName && !r.fundInPortfolio){
+    if(r.fundOutRewards>0){
       const ftr=document.createElement('tr'); ftr.className='border-b border-slate-100 bg-slate-50/60';
-      ftr.innerHTML='<td class="py-2.5 pr-2"><strong class="text-slate-800">'+r.fundName+'</strong><div class="text-[10px] text-slate-400 mt-0.5">X Money funding only — not in portfolio ('+uFmt(r.fundAmt)+' on card, rest by bank)</div></td>'
-        +'<td class="py-2.5 pr-2 text-right font-mono">'+uFmt(r.fundAmt)+'</td>'
-        +'<td class="py-2.5 pr-2 text-right font-mono text-emerald-700">'+uFmt(r.fundRewards)+'</td>'
-        +'<td colspan="4" class="py-2.5 text-right font-mono font-extrabold text-slate-900">'+uFmt(r.fundRewards)+'</td>';
+      ftr.innerHTML='<td class="py-2.5 pr-2"><strong class="text-slate-800">'+r.fundOutNames.join(' + ')+'</strong><div class="text-[10px] text-slate-400 mt-0.5">X Money funding only — not in portfolio</div></td>'
+        +'<td class="py-2.5 pr-2 text-right font-mono">'+uFmt(r.fundOutAmt)+'</td>'
+        +'<td class="py-2.5 pr-2 text-right font-mono text-emerald-700">'+uFmt(r.fundOutRewards)+'</td>'
+        +'<td colspan="4" class="py-2.5 text-right font-mono font-extrabold text-slate-900">'+uFmt(r.fundOutRewards)+'</td>';
       tb.appendChild(ftr);
     }
   }
@@ -885,9 +918,9 @@ function uRender(){
 
   const fn=document.getElementById('unlock-flight-note');
   if(fn){
-    if(uFlightPrio==='protection'){
+    if(uFlightPrio==='ritz'){
       const hasRitz=uPortfolio.has('ritz');
-      fn.textContent=hasRitz?'Flights route to Ritz-Carlton (2.4%) for trip-delay coverage.':'Add Ritz-Carlton to your portfolio to use protection routing — falling back to best rate.';
+      fn.textContent=hasRitz?'All flights go on Ritz-Carlton (2.4%) + primary trip-delay coverage ($500/ticket).':'Add Ritz-Carlton to your portfolio to use this routing — falling back to best rate.';
       fn.className='text-[10px] mt-1.5 '+(hasRitz?'text-emerald-700':'text-amber-700');
     } else { fn.textContent=''; }
   }
@@ -905,8 +938,10 @@ function uInit(){
     });
   });
   document.getElementById('xfund-card-wrap').classList.toggle('hidden',uFund.mode!=='card');
-  document.getElementById('xfund-card').addEventListener('change',e=>{ uFund.card=e.target.value; uFund.amt=null; uSave(); uRender(); });
-  document.getElementById('xfund-amt').addEventListener('input',e=>{ uFund.amt=+e.target.value; uSave(); uRender(); });
+  document.getElementById('xfund-card1').addEventListener('change',e=>{ uFund.card1=e.target.value; uFund.amt1=null; uSave(); uRender(); });
+  document.getElementById('xfund-card2').addEventListener('change',e=>{ uFund.card2=e.target.value; uSave(); uRender(); });
+  document.getElementById('xfund-amt1').addEventListener('input',e=>{ uFund.amt1=+e.target.value; uSave(); uRender(); });
+  document.getElementById('xfund-amt2').addEventListener('input',e=>{ uFund.amt2=+e.target.value; uSave(); uRender(); });
   document.getElementById('unlock-hotel-chain').addEventListener('change',uRender);
   document.getElementById('unlock-airline').addEventListener('change',uRender);
   const ufp=document.getElementById('unlock-flight-prio');
