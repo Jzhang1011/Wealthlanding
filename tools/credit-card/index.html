@@ -357,7 +357,7 @@
           </div>
           <p class="text-[11px] text-slate-500 mb-4">Drag to your numbers. Defaults are a high-spend household sketch.</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4" id="unlock-sliders"></div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5">
             <div>
               <label class="text-[11px] font-bold text-slate-600 block mb-1">Primary hotel chain</label>
               <select id="unlock-hotel-chain" class="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500/40">
@@ -377,6 +377,14 @@
                 <option value="aa">American</option>
                 <option value="ac">Air Canada</option>
               </select>
+            </div>
+            <div>
+              <label class="text-[11px] font-bold text-slate-600 block mb-1">Flight booking priority</label>
+              <select id="unlock-flight-prio" class="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500/40">
+                <option value="rate" selected>Best earn rate</option>
+                <option value="protection">Travel protection (Ritz-Carlton)</option>
+              </select>
+              <p id="unlock-flight-note" class="text-[10px] mt-1.5 text-slate-400"></p>
             </div>
           </div>
         </div>
@@ -415,9 +423,9 @@
             <div class="space-y-2.5" id="unlock-next"></div>
           </div>
           <div class="bg-white rounded-2xl border border-blue-200 p-6">
-            <h3 class="font-bold text-slate-800 text-sm mb-1 flex items-center gap-2"><i class="fa-solid fa-plus text-blue-500"></i>Next Card to Add</h3>
-            <p class="text-[11px] text-slate-500 mb-3">Highest marginal net value given your spend.</p>
-            <div class="space-y-2.5" id="unlock-recs"></div>
+            <h3 class="font-bold text-slate-800 text-sm mb-1 flex items-center gap-2"><i class="fa-solid fa-plus text-blue-500"></i>Cards Missing From Your Portfolio</h3>
+            <p class="text-[11px] text-slate-500 mb-3">Every card you don't hold, ranked by marginal net value.</p>
+            <div class="space-y-2.5 max-h-96 overflow-y-auto pr-1" id="unlock-recs"></div>
           </div>
         </div>
       </div>
@@ -509,6 +517,9 @@ const UNLOCK_CARDS = {
   vx_biz:        { name:"Venture X Business", issuer:"Capital One", fee:395, color:"#2A2A2E", noSpend:650, noSpendDesc:"Lounges + $300 travel credit + 10k miles",
     rates:{dining:3,groceries:3,gas:3,flights:3,hotel_hilton:3,hotel_marriott:3,hotel_hyatt:3,hotel_ihg:3,hotel_other:3,wholesale:3,utilities:3,other:3},
     thresholds:[{spend:75000,label:"2 free lounge guests + 1 Landing guest",value:150}] },
+  ritz:          { name:"Ritz-Carlton Card", issuer:"Chase", fee:450, color:"#8A6D3B", noSpend:550, noSpendDesc:"$300 airline credit + 85k anniversary night",
+    rates:{dining:2.4,groceries:1.6,gas:1.6,flights:2.4,hotel_hilton:1.6,hotel_marriott:4.8,hotel_hyatt:1.6,hotel_ihg:1.6,hotel_other:1.6,wholesale:1.6,utilities:1.6,other:1.6},
+    thresholds:[] },
   amex_plat:     { name:"Amex Platinum", issuer:"Amex", fee:895, color:"#7C7F85", noSpend:900, noSpendDesc:"Centurion/PP/Delta lounges + hotel Golds + credits",
     rates:{dining:2,groceries:2,gas:2,flights:10,hotel_hilton:2,hotel_marriott:2,hotel_hyatt:2,hotel_ihg:2,hotel_other:2,wholesale:2,utilities:2,other:2},
     thresholds:[{spend:75000,label:"2 free Centurion guests + unlimited Delta Sky Club",value:250}] },
@@ -556,6 +567,29 @@ UNLOCK_CATS.forEach(c=>{ if(typeof uSpend[c.key]!=='number') uSpend[c.key]=c.def
 function uSave(){ try{ localStorage.setItem(U_PORT_KEY,JSON.stringify([...uPortfolio])); localStorage.setItem(U_SPEND_KEY,JSON.stringify(uSpend)); localStorage.setItem(U_FUND_KEY,JSON.stringify(uFund)); }catch(e){} }
 function uFmt(n){ const neg=n<0; const a=Math.abs(Math.round(n)); return (neg?'-$':'$')+a.toLocaleString(); }
 
+/* funding cards: every unlock card (by everyday rate) + common wallet cards for X Money funding */
+const FUND_RATES={};
+Object.entries(UNLOCK_CARDS).forEach(([id,c])=>{ FUND_RATES[id]={name:c.name,rate:(c.rates.other||0)}; });
+Object.assign(FUND_RATES,{
+  csp:{name:"Chase Sapphire Preferred",rate:2}, cfu:{name:"Chase Freedom Unlimited",rate:1.5},
+  dc:{name:"Citi Double Cash",rate:2}, wfac:{name:"Wells Fargo Active Cash",rate:2},
+  savor:{name:"Capital One Savor",rate:1}, bce:{name:"Amex Blue Cash Everyday",rate:1},
+  disc:{name:"Discover it Cash Back",rate:1}, bcp:{name:"Amex Blue Cash Preferred",rate:1},
+  gold:{name:"Amex Gold",rate:2}, plat:{name:"Amex Platinum",rate:2}
+});
+
+/* flight booking priority: 'rate' (best earn) or 'protection' (Ritz-Carlton for trip-delay coverage) */
+const U_FLIGHT_KEY='wl_unlocks_flightprio';
+let uFlightPrio='rate';
+try{ const s=localStorage.getItem(U_FLIGHT_KEY); if(s==='protection'||s==='rate') uFlightPrio=s; }catch(e){}
+function uSaveFlightPrio(){ try{ localStorage.setItem(U_FLIGHT_KEY,uFlightPrio); }catch(e){} }
+function uRouteFor(catKey,sel){
+  if(catKey==='flights'&&uFlightPrio==='protection'&&sel.includes('ritz')) return 'ritz';
+  let best=null,bestR=-1;
+  sel.forEach(id=>{ const r=uRate(id,catKey); if(r>bestR){bestR=r;best=id;} });
+  return best;
+}
+
 /* rate lookup with hotel-chain and airline overrides */
 function uRate(cardId, catKey){
   const card=UNLOCK_CARDS[cardId]; if(!card) return 0;
@@ -582,21 +616,21 @@ function uCompute(){
   /* X Money debit: 3% on eligible spend (slider is eligible-only by definition) */
   let xRewards=xSpend*0.03;
 
-  /* credit-card funding: funding amount earns the funding card's everyday rate + counts toward its thresholds */
-  let fundRewards=0;
-  if(fundMode==='card' && UNLOCK_CARDS[fundCard] && perCard[fundCard]){
-    const r=uRate(fundCard,'other');
-    fundRewards=xSpend*r/100;
-    perCard[fundCard].spend+=xSpend;
-    perCard[fundCard].rewards+=fundRewards;
+  /* credit-card funding: funding amount earns the funding card's everyday rate; counts toward thresholds only if the card is in the portfolio */
+  let fundRewards=0, fundName='';
+  if(fundMode==='card' && FUND_RATES[fundCard]){
+    const fr=FUND_RATES[fundCard]; fundName=fr.name;
+    fundRewards=xSpend*fr.rate/100;
+    if(perCard[fundCard]){ perCard[fundCard].spend+=xSpend; perCard[fundCard].rewards+=fundRewards; }
   }
+  const fundInPortfolio=!!(fundCard&&perCard[fundCard]);
 
-  /* route every other category to the best selected card */
+  /* route every other category to the best selected card (or Ritz-Carlton for flights when protection priority is on) */
   UNLOCK_CATS.forEach(c=>{
     if(c.key==='xmoney') return;
     const spend=uSpend[c.key]||0; if(spend<=0||sel.length===0) return;
-    let best=null,bestR=-1;
-    sel.forEach(id=>{ const r=uRate(id,c.key); if(r>bestR){bestR=r;best=id;} });
+    const best=uRouteFor(c.key,sel);
+    const bestR=best?uRate(best,c.key):0;
     if(best&&bestR>0){ perCard[best].spend+=spend; perCard[best].rewards+=spend*bestR/100; }
   });
 
@@ -608,7 +642,7 @@ function uCompute(){
     });
   });
 
-  let total= xRewards, tRewards=xRewards, tUnlock=0, tNoSpend=0, tFees=0;
+  let total= xRewards+(fundInPortfolio?0:fundRewards), tRewards=xRewards+(fundInPortfolio?0:fundRewards), tUnlock=0, tNoSpend=0, tFees=0;
   const rows=sel.map(id=>{
     const card=UNLOCK_CARDS[id], pc=perCard[id];
     const net=pc.rewards+pc.unlockVal+card.noSpend-card.fee;
@@ -634,8 +668,8 @@ function uCompute(){
     UNLOCK_CATS.forEach(c=>{
       if(c.key==='xmoney') return;
       const spend=uSpend[c.key]||0; if(spend<=0) return;
-      let curBest=0;
-      sel.forEach(sid=>{ const r=uRate(sid,c.key); if(r>curBest) curBest=r; });
+      const routed=uRouteFor(c.key,sel);
+      const curBest=routed?uRate(routed,c.key):0;
       const mine=uRate(id,c.key);
       if(mine>curBest){
         const g=spend*(mine-curBest)/100;
@@ -648,18 +682,19 @@ function uCompute(){
     UNLOCK_CATS.forEach(c=>{
       if(c.key==='xmoney') return;
       const spend=uSpend[c.key]||0; if(spend<=0) return;
-      let curBest=0; sel.forEach(sid=>{ const r=uRate(sid,c.key); if(r>curBest) curBest=r; });
+      const routed=uRouteFor(c.key,sel);
+      const curBest=routed?uRate(routed,c.key):0;
       if(uRate(id,c.key)>curBest) winSpend+=spend;
     });
     let uVal=0; const uHit=[];
     card.thresholds.forEach(t=>{ if(winSpend>=t.spend&&t.value>0){ uVal+=t.value; uHit.push(t.label); } });
     delta+=uVal; if(uHit.length) why.push('unlocks: '+uHit.join('; '));
     delta+=card.noSpend-card.fee;
-    if(delta>50) recs.push({id,card,delta,why:why.slice(0,3)});
+    recs.push({id,card,delta,why:why.slice(0,3)});
   });
   recs.sort((a,b)=>b.delta-a.delta);
 
-  return {rows,total,tRewards,tUnlock,tNoSpend,tFees,next,recs,xRewards,fundRewards,selCount:sel.length};
+  return {rows,total,tRewards,tUnlock,tNoSpend,tFees,next,recs,xRewards,fundRewards,fundName,fundInPortfolio,selCount:sel.length};
 }
 
 /* ---------- renderers ---------- */
@@ -686,10 +721,10 @@ function uRenderPortfolio(){
   if(fs){
     const cur=fs.value||uFund.card;
     fs.innerHTML='';
-    Object.entries(UNLOCK_CARDS).forEach(([id,c])=>{
-      const o=document.createElement('option'); o.value=id; o.textContent=c.name+' — '+c.fee+'/yr'; fs.appendChild(o);
+    Object.entries(FUND_RATES).forEach(([id,f])=>{
+      const o=document.createElement('option'); o.value=id; o.textContent=f.name+' — '+f.rate+'% base'; fs.appendChild(o);
     });
-    fs.value=UNLOCK_CARDS[cur]?cur:'vx';
+    fs.value=FUND_RATES[cur]?cur:'vx';
     uFund.card=fs.value;
   }
 }
@@ -758,6 +793,14 @@ function uRender(){
         +'<td class="py-2.5 text-right font-mono font-extrabold text-slate-900">'+uFmt(r.xRewards)+'</td>';
       tb.appendChild(tr);
     }
+    if(r.fundRewards>0 && r.fundName && !r.fundInPortfolio){
+      const ftr=document.createElement('tr'); ftr.className='border-b border-slate-100 bg-slate-50/60';
+      ftr.innerHTML='<td class="py-2.5 pr-2"><strong class="text-slate-800">'+r.fundName+'</strong><div class="text-[10px] text-slate-400 mt-0.5">X Money funding only — not in portfolio</div></td>'
+        +'<td class="py-2.5 pr-2 text-right font-mono">'+uFmt(uSpend.xmoney||0)+'</td>'
+        +'<td class="py-2.5 pr-2 text-right font-mono text-emerald-700">'+uFmt(r.fundRewards)+'</td>'
+        +'<td colspan="4" class="py-2.5 text-right font-mono font-extrabold text-slate-900">'+uFmt(r.fundRewards)+'</td>';
+      tb.appendChild(ftr);
+    }
   }
 
   const nx=document.getElementById('unlock-next');
@@ -777,15 +820,25 @@ function uRender(){
   const rc=document.getElementById('unlock-recs');
   if(rc){
     rc.innerHTML='';
-    if(r.recs.length===0) rc.innerHTML='<p class="text-xs text-slate-400">Your portfolio already covers your spend — nothing adds $50+/yr.</p>';
-    r.recs.slice(0,3).forEach(x=>{
+    if(r.recs.length===0) rc.innerHTML='<p class="text-xs text-slate-400">Every card is already in your portfolio.</p>';
+    r.recs.forEach(x=>{
+      const pos=x.delta>=0;
       const d=document.createElement('div');
       d.className='rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-3';
       d.innerHTML='<div class="flex items-start justify-between gap-2"><div><div class="text-xs font-bold text-slate-800">'+x.card.name+'</div>'
         +'<div class="text-[10px] text-slate-400 mt-0.5">$'+x.card.fee+'/yr fee'+(x.why.length?' · '+x.why.join(' · '):'')+'</div></div>'
-        +'<div class="text-right flex-shrink-0"><div class="text-[10px] font-bold uppercase text-brand-700">adds</div><div class="font-mono font-extrabold text-emerald-600 text-base">+'+uFmt(x.delta)+'<span class="text-[10px] font-normal text-slate-500">/yr</span></div></div></div>';
+        +'<div class="text-right flex-shrink-0"><div class="text-[10px] font-bold uppercase '+(pos?'text-brand-700':'text-slate-400')+'">adds</div><div class="font-mono font-extrabold text-base '+(pos?'text-emerald-600':'text-red-500')+'">'+(pos?'+':'')+uFmt(x.delta)+'<span class="text-[10px] font-normal text-slate-500">/yr</span></div></div></div>';
       rc.appendChild(d);
     });
+  }
+
+  const fn=document.getElementById('unlock-flight-note');
+  if(fn){
+    if(uFlightPrio==='protection'){
+      const hasRitz=uPortfolio.has('ritz');
+      fn.textContent=hasRitz?'Flights route to Ritz-Carlton (2.4%) for trip-delay coverage.':'Add Ritz-Carlton to your portfolio to use protection routing — falling back to best rate.';
+      fn.className='text-[10px] mt-1.5 '+(hasRitz?'text-emerald-700':'text-amber-700');
+    } else { fn.textContent=''; }
   }
 }
 
@@ -804,6 +857,8 @@ function uInit(){
   document.getElementById('xfund-card').addEventListener('change',e=>{ uFund.card=e.target.value; uSave(); uRender(); });
   document.getElementById('unlock-hotel-chain').addEventListener('change',uRender);
   document.getElementById('unlock-airline').addEventListener('change',uRender);
+  const ufp=document.getElementById('unlock-flight-prio');
+  if(ufp){ ufp.value=uFlightPrio; ufp.addEventListener('change',e=>{ uFlightPrio=e.target.value; uSaveFlightPrio(); uRender(); }); }
   document.getElementById('unlock-all').addEventListener('click',()=>{ uPortfolio=new Set(Object.keys(UNLOCK_CARDS)); uSave(); uRenderPortfolio(); uRender(); });
   document.getElementById('unlock-clear').addEventListener('click',()=>{ uPortfolio=new Set(); uSave(); uRenderPortfolio(); uRender(); });
   uRender();
@@ -1679,6 +1734,8 @@ const statAny = document.getElementById('stat-any');
 const statWallet = document.getElementById('stat-wallet');
 const statSingle = document.getElementById('stat-single');
 
+const SIM_MAX = { groceries:5000, dining:5000, gas:2000, "travel-portal":5000, streaming:500, drugstore:1000, "online-shopping":3000, transit:1000, entertainment:2000, "everything-else":10000 };
+
 if(simSliders){
   SIM_KEYS.forEach(key => {
     const cat = CATEGORIES.find(c => c.key === key);
@@ -1689,7 +1746,7 @@ if(simSliders){
         <label class="text-xs font-semibold text-slate-700 flex items-center gap-1.5">${cat.icon || '💳'} ${cat.name}</label>
         <span class="text-xs font-mono font-bold text-slate-600" id="sim-val-${key}">$${spendState[key] || 0}/mo</span>
       </div>
-      <input type="range" min="0" max="2000" step="10" value="${spendState[key] || 0}" id="sim-slider-${key}"
+      <input type="range" min="0" max="${SIM_MAX[key]||2000}" step="10" value="${spendState[key] || 0}" id="sim-slider-${key}"
         class="w-full h-1.5 rounded-full bg-slate-200 accent-brand-600 cursor-pointer">
     `;
     simSliders.appendChild(row);
