@@ -305,7 +305,512 @@
   </div>
 </section>
 
-<!-- POINT VALUE GUIDE -->
+<!-- ANNUAL SPEND OPTIMIZER -->
+<section id="unlocks" class="py-14 md:py-16 bg-white border-b border-slate-200/80">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-[11px] font-bold mb-3">
+        <i class="fa-solid fa-unlock"></i><span>ANNUAL SPEND OPTIMIZER</span>
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">Turn Annual Spend Into Unlocked Benefits</h2>
+      <p class="text-slate-600 text-sm">Set your yearly spend by category, pick the cards you hold, and see every dollar of rewards, free nights, status and companion perks — plus which thresholds you're close to unlocking and which card to add next.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
+      <div class="lg:col-span-1 space-y-6">
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6">
+          <div class="flex items-center justify-between mb-1">
+            <h3 class="font-bold text-slate-800 text-sm">Your Card Portfolio</h3>
+            <span class="text-[11px] font-mono font-bold text-slate-500" id="unlock-count"></span>
+          </div>
+          <p class="text-[11px] text-slate-500 mb-4">Cards earning &gt;2% somewhere, plus loyalty cards with special benefits.</p>
+          <div class="flex gap-2 mb-4">
+            <button id="unlock-all" class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:border-brand-500 hover:text-brand-700 transition">Select all</button>
+            <button id="unlock-clear" class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:border-red-400 hover:text-red-600 transition">Clear</button>
+          </div>
+          <div class="space-y-1.5 max-h-96 overflow-y-auto pr-1" id="unlock-portfolio"></div>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6">
+          <h3 class="font-bold text-slate-800 text-sm mb-1">X Money Funding Source</h3>
+          <p class="text-[11px] text-slate-500 mb-4">How the money gets into your X Money account.</p>
+          <label class="flex items-start gap-2.5 mb-3 cursor-pointer">
+            <input type="radio" name="xfund" value="bank" class="mt-0.5 accent-brand-600" checked>
+            <span class="text-xs text-slate-700"><strong>Bank transfer / ACH</strong><br><span class="text-slate-500">No card rewards on funding. Safe, boring, correct.</span></span>
+          </label>
+          <label class="flex items-start gap-2.5 cursor-pointer">
+            <input type="radio" name="xfund" value="card" class="mt-0.5 accent-brand-600">
+            <span class="text-xs text-slate-700"><strong>Credit card <span class="text-emerald-700">(codes as purchase)</span></strong><br><span class="text-slate-500">Tested: Venture X, Oct 2026. Issuer-dependent — verify per card.</span></span>
+          </label>
+          <div id="xfund-card-wrap" class="hidden mt-3">
+            <label class="text-[11px] font-bold text-slate-600 block mb-1">Funding card</label>
+            <select id="xfund-card" class="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500/40"></select>
+            <p class="text-[10px] text-amber-700 bg-amber-50 border border-amber-200 rounded-lg p-2 mt-2 leading-relaxed">Funding a debit account with a credit card is manufactured spend. Issuers can reclassify the transaction or shut down accounts at volume. Treat "codes as purchase" as provisional.</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-2 space-y-6">
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6">
+          <div class="flex items-center justify-between mb-1">
+            <h3 class="font-bold text-slate-800 text-sm">Annual Spend by Category</h3>
+            <span class="text-xs font-mono font-bold text-slate-500" id="unlock-total"></span>
+          </div>
+          <p class="text-[11px] text-slate-500 mb-4">Drag to your numbers. Defaults are a high-spend household sketch.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4" id="unlock-sliders"></div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
+            <div>
+              <label class="text-[11px] font-bold text-slate-600 block mb-1">Primary hotel chain</label>
+              <select id="unlock-hotel-chain" class="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500/40">
+                <option value="hilton" selected>Hilton</option>
+                <option value="marriott">Marriott</option>
+                <option value="hyatt">Hyatt</option>
+                <option value="ihg">IHG</option>
+                <option value="other">Mixed / other</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-[11px] font-bold text-slate-600 block mb-1">Primary airline</label>
+              <select id="unlock-airline" class="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500/40">
+                <option value="other" selected>Mixed / other</option>
+                <option value="delta">Delta</option>
+                <option value="united">United</option>
+                <option value="aa">American</option>
+                <option value="ac">Air Canada</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-6">
+          <div class="text-[11px] font-bold uppercase tracking-wide text-emerald-700 mb-1">Total Annual Value</div>
+          <div class="text-4xl font-extrabold text-slate-900" id="unlock-big">$0<span class="text-base font-semibold text-slate-500">/yr</span></div>
+          <div class="text-[11px] text-slate-500 mt-1" id="unlock-big-sub">Select cards and set spend to see your number.</div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4 text-center" id="unlock-breakdown"></div>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6">
+          <h3 class="font-bold text-slate-800 text-sm mb-3">Per-Card Breakdown</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs">
+              <thead>
+                <tr class="text-left text-slate-400 uppercase text-[10px] tracking-wide border-b border-slate-200">
+                  <th class="py-2 pr-2 font-bold">Card</th>
+                  <th class="py-2 pr-2 font-bold text-right">Spend routed</th>
+                  <th class="py-2 pr-2 font-bold text-right">Rewards</th>
+                  <th class="py-2 pr-2 font-bold text-right">Unlocks</th>
+                  <th class="py-2 pr-2 font-bold text-right">No-spend value</th>
+                  <th class="py-2 pr-2 font-bold text-right">Fee</th>
+                  <th class="py-2 font-bold text-right">Net</th>
+                </tr>
+              </thead>
+              <tbody id="unlock-rows"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-2xl border border-amber-200 p-6">
+            <h3 class="font-bold text-slate-800 text-sm mb-1 flex items-center gap-2"><i class="fa-solid fa-bullseye text-amber-500"></i>Next Unlocks Within Reach</h3>
+            <p class="text-[11px] text-slate-500 mb-3">Thresholds you haven't hit yet, ranked by value.</p>
+            <div class="space-y-2.5" id="unlock-next"></div>
+          </div>
+          <div class="bg-white rounded-2xl border border-blue-200 p-6">
+            <h3 class="font-bold text-slate-800 text-sm mb-1 flex items-center gap-2"><i class="fa-solid fa-plus text-blue-500"></i>Next Card to Add</h3>
+            <p class="text-[11px] text-slate-500 mb-3">Highest marginal net value given your spend.</p>
+            <div class="space-y-2.5" id="unlock-recs"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <details class="group bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden">
+      <summary class="cursor-pointer px-6 py-4 list-none flex items-center justify-between focus:outline-none select-none">
+        <span class="font-bold text-slate-800 text-sm">Valuation &amp; conversion assumptions <span class="font-normal text-slate-500">— how points become dollars</span></span>
+        <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
+      </summary>
+      <div class="px-6 pb-6 pt-2 text-xs text-slate-600 leading-relaxed space-y-4">
+        <div>
+          <div class="font-bold text-slate-800 mb-1">Free night certificates</div>
+          <ul class="list-disc pl-5 space-y-0.5">
+            <li>Hilton uncapped free night: <strong>$300</strong> (reviewer range $200–500; $600+ only at 120k+ point properties)</li>
+            <li>Marriott 35k / 50k certificate: <strong>$245</strong> · Marriott 85k certificate: <strong>$595</strong></li>
+            <li>Hyatt Category 1–4 certificate: <strong>$255</strong> · IHG 40k certificate: <strong>$200</strong></li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-bold text-slate-800 mb-1">Companion tickets</div>
+          <ul class="list-disc pl-5 space-y-0.5">
+            <li>Delta companion certificate: <strong>$350</strong> (typical $250–500; $1,000+ only on strategic first-class use)</li>
+            <li>Alaska $99 companion fare: <strong>$300</strong> · Southwest Companion Pass: <strong>$3,000–6,000+</strong> (entirely usage-driven; 135k points to earn)</li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-bold text-slate-800 mb-1">Point values (effective cashback already applied above)</div>
+          <p>Hilton 0.5¢ · Marriott 0.8¢ · Hyatt 1.8¢ · IHG 0.5¢ · Chase UR 2.0¢ · Amex MR 2.0¢ · Capital One 1.5¢ · Delta 1.2¢ · United 1.3¢ · American 1.4¢ · Aeroplan 1.3¢. Adjust these in "Point &amp; Mile Values Used" below — the optimizer reads your edits.</p>
+        </div>
+        <div>
+          <div class="font-bold text-slate-800 mb-1">X Money debit (3% cashback)</div>
+          <ul class="list-disc pl-5 space-y-0.5">
+            <li><strong>Excluded</strong> (earn 0%): wholesale clubs, utilities, insurance premiums, jewelry/watches, colleges, transactions with no MCC. List expanded Sept 2026 — check the current list before routing spend.</li>
+            <li>Funding X Money by credit card <strong>codes as a cash advance</strong> at most issuers (no rewards, immediate interest). Tested as a purchase on Capital One Venture X (Oct 2026) — issuer-dependent, treat as provisional.</li>
+            <li>X Premium no longer required (Sept 2026). 6% APY needs $1,000+/mo qualifying direct deposit (Premium+ exempt).</li>
+          </ul>
+        </div>
+        <p class="text-slate-400">Card terms checked October 2026. Issuers change offers and credit splits — verify before applying.</p>
+      </div>
+    </details>
+  </div>
+</section>
+<script>
+/* ================= ANNUAL SPEND OPTIMIZER ================= */
+const UNLOCK_CARDS = {
+  hilton_free:   { name:"Hilton Honors (no fee)", issuer:"Amex", fee:0, color:"#7A2E3B", noSpend:0, noSpendDesc:"Hilton Silver",
+    rates:{dining:2.5,groceries:2.5,gas:1.5,flights:1.5,hotel_hilton:3.5,hotel_marriott:1.5,hotel_hyatt:1.5,hotel_ihg:1.5,hotel_other:1.5,wholesale:1.5,utilities:1.5,other:1.5},
+    thresholds:[{spend:20000,label:"Hilton Gold status",value:0}] },
+  hilton_surpass:{ name:"Hilton Surpass", issuer:"Amex", fee:150, color:"#8B3A4B", noSpend:240, noSpendDesc:"Hilton Gold + $200 Hilton credit",
+    rates:{dining:3,groceries:3,gas:3,flights:1.5,hotel_hilton:6,hotel_marriott:1.5,hotel_hyatt:1.5,hotel_ihg:1.5,hotel_other:1.5,wholesale:1.5,utilities:1.5,other:1.5},
+    thresholds:[{spend:15000,label:"Free Night Reward",value:300},{spend:40000,label:"Hilton Diamond status",value:0}] },
+  hilton_biz:    { name:"Hilton Business", issuer:"Amex", fee:195, color:"#5C2E3B", noSpend:240, noSpendDesc:"Hilton Gold + $200 Hilton credit",
+    rates:{dining:2.5,groceries:2.5,gas:2.5,flights:2.5,hotel_hilton:6,hotel_marriott:2.5,hotel_hyatt:2.5,hotel_ihg:2.5,hotel_other:2.5,wholesale:2.5,utilities:2.5,other:2.5},
+    thresholds:[{spend:40000,label:"Hilton Diamond status",value:0}] },
+  hilton_aspire: { name:"Hilton Aspire", issuer:"Amex", fee:550, color:"#4A1F2B", noSpend:1040, noSpendDesc:"Diamond + annual free night + $400 resort + $200 flight + CLEAR",
+    rates:{dining:3.5,groceries:1.5,gas:1.5,flights:3.5,hotel_hilton:7,hotel_marriott:1.5,hotel_hyatt:1.5,hotel_ihg:1.5,hotel_other:1.5,wholesale:1.5,utilities:1.5,other:1.5},
+    thresholds:[{spend:30000,label:"Extra Free Night Reward",value:300},{spend:60000,label:"Second extra Free Night Reward",value:300}] },
+  marriott_boundless:{ name:"Marriott Boundless", issuer:"Chase", fee:95, color:"#6B4A2B", noSpend:300, noSpendDesc:"15 elite nights + 35k anniversary night + Silver",
+    rates:{dining:2.4,groceries:2.4,gas:2.4,flights:1.6,hotel_hilton:1.6,hotel_marriott:4.8,hotel_hyatt:1.6,hotel_ihg:1.6,hotel_other:1.6,wholesale:1.6,utilities:1.6,other:1.6},
+    thresholds:[{spend:35000,label:"Marriott Gold Elite",value:0}] },
+  marriott_bevy: { name:"Marriott Bevy", issuer:"Chase", fee:250, color:"#7A5A35", noSpend:100, noSpendDesc:"Marriott Gold + 15 elite nights",
+    rates:{dining:3.2,groceries:3.2,gas:1.6,flights:1.6,hotel_hilton:1.6,hotel_marriott:4.8,hotel_hyatt:1.6,hotel_ihg:1.6,hotel_other:1.6,wholesale:1.6,utilities:1.6,other:1.6},
+    thresholds:[{spend:15000,label:"Free Night Award (50k pts)",value:300}] },
+  marriott_brilliant:{ name:"Marriott Brilliant", issuer:"Amex", fee:650, color:"#3D2E1F", noSpend:1100, noSpendDesc:"Platinum + 25 nights + 85k night + $300 dining + Priority Pass",
+    rates:{dining:2.4,groceries:1.6,gas:1.6,flights:2.4,hotel_hilton:1.6,hotel_marriott:4.8,hotel_hyatt:1.6,hotel_ihg:1.6,hotel_other:1.6,wholesale:1.6,utilities:1.6,other:1.6},
+    thresholds:[{spend:60000,label:"85k free night / 50k pts / 5 upgrades",value:300}] },
+  hyatt:         { name:"World of Hyatt", issuer:"Chase", fee:95, color:"#213E3B", noSpend:350, noSpendDesc:"Discoverist + 5 nights + Cat 1-4 night",
+    rates:{dining:3.6,groceries:1.8,gas:1.8,flights:3.6,hotel_hilton:1.8,hotel_marriott:1.8,hotel_hyatt:7.2,hotel_ihg:1.8,hotel_other:1.8,wholesale:1.8,utilities:1.8,other:1.8},
+    thresholds:[{spend:15000,label:"Second Cat 1-4 free night",value:300},{spend:62500,label:"Explorist (nights path)",value:0},{spend:137500,label:"Globalist (nights path)",value:0}] },
+  ihg_premier:   { name:"IHG Premier", issuer:"Chase", fee:150, color:"#1F3A5F", noSpend:470, noSpendDesc:"IHG Gold + 15 nights + 50k night + credits",
+    rates:{dining:2.5,groceries:2.5,gas:2.5,flights:2.5,hotel_hilton:1.5,hotel_marriott:1.5,hotel_hyatt:1.5,hotel_ihg:5,hotel_other:1.5,wholesale:1.5,utilities:1.5,other:1.5},
+    thresholds:[{spend:15000,label:"IHG Platinum Elite",value:0},{spend:40000,label:"IHG Diamond Elite",value:0}] },
+  ihg_select:    { name:"IHG Premier Select", issuer:"Chase", fee:350, color:"#16283F", noSpend:750, noSpendDesc:"IHG Platinum + 20 nights + 60k night + credits",
+    rates:{dining:3,groceries:1.5,gas:1.5,flights:3,hotel_hilton:1.5,hotel_marriott:1.5,hotel_hyatt:1.5,hotel_ihg:6,hotel_other:1.5,wholesale:1.5,utilities:1.5,other:1.5},
+    thresholds:[{spend:25000,label:"IHG Diamond Elite",value:0},{spend:40000,label:"Extra free night (60k pts)",value:300}] },
+  ihg_biz:       { name:"IHG Business", issuer:"Chase", fee:200, color:"#2A4A6F", noSpend:520, noSpendDesc:"15 nights + 50k night + credits + Expensify",
+    rates:{dining:2.5,groceries:1.5,gas:2.5,flights:2.5,hotel_hilton:1.5,hotel_marriott:1.5,hotel_hyatt:1.5,hotel_ihg:5,hotel_other:1.5,wholesale:1.5,utilities:1.5,other:1.5},
+    thresholds:[{spend:50000,label:"IHG Diamond Elite",value:0}] },
+  csr:           { name:"Chase Sapphire Reserve", issuer:"Chase", fee:795, color:"#0B2942", noSpend:900, noSpendDesc:"Lounges + $300 travel + $300 dining + $500 Edit",
+    rates:{dining:6,groceries:2,gas:2,flights:8,hotel_hilton:2,hotel_marriott:2,hotel_hyatt:2,hotel_ihg:2,hotel_other:2,wholesale:2,utilities:2,other:2},
+    thresholds:[{spend:75000,label:"IHG Diamond + Hyatt Explorist",value:0}] },
+  csr_biz:       { name:"Sapphire Reserve for Business", issuer:"Chase", fee:795, color:"#0B2942", noSpend:600, noSpendDesc:"Lounges + $300 travel + $500 Edit",
+    rates:{dining:6,groceries:2,gas:2,flights:8,hotel_hilton:2,hotel_marriott:2,hotel_hyatt:2,hotel_ihg:2,hotel_other:2,wholesale:2,utilities:2,other:2},
+    thresholds:[{spend:120000,label:"IHG Diamond status",value:0}] },
+  vx:            { name:"Capital One Venture X", issuer:"Capital One", fee:395, color:"#1C1C1E", noSpend:600, noSpendDesc:"Lounges + $300 travel credit + 10k miles",
+    rates:{dining:3,groceries:3,gas:3,flights:3,hotel_hilton:3,hotel_marriott:3,hotel_hyatt:3,hotel_ihg:3,hotel_other:3,wholesale:3,utilities:3,other:3},
+    thresholds:[{spend:75000,label:"2 free lounge guests + 1 Landing guest",value:150}] },
+  vx_biz:        { name:"Venture X Business", issuer:"Capital One", fee:395, color:"#2A2A2E", noSpend:650, noSpendDesc:"Lounges + $300 travel credit + 10k miles",
+    rates:{dining:3,groceries:3,gas:3,flights:3,hotel_hilton:3,hotel_marriott:3,hotel_hyatt:3,hotel_ihg:3,hotel_other:3,wholesale:3,utilities:3,other:3},
+    thresholds:[{spend:75000,label:"2 free lounge guests + 1 Landing guest",value:150}] },
+  amex_plat:     { name:"Amex Platinum", issuer:"Amex", fee:895, color:"#7C7F85", noSpend:900, noSpendDesc:"Centurion/PP/Delta lounges + hotel Golds + credits",
+    rates:{dining:2,groceries:2,gas:2,flights:10,hotel_hilton:2,hotel_marriott:2,hotel_hyatt:2,hotel_ihg:2,hotel_other:2,wholesale:2,utilities:2,other:2},
+    thresholds:[{spend:75000,label:"2 free Centurion guests + unlimited Delta Sky Club",value:250}] },
+  amex_bizplat:  { name:"Amex Business Platinum", issuer:"Amex", fee:895, color:"#5A5D63", noSpend:800, noSpendDesc:"Centurion/PP + business credits",
+    rates:{dining:2,groceries:2,gas:2,flights:10,hotel_hilton:2,hotel_marriott:2,hotel_hyatt:2,hotel_ihg:2,hotel_other:2,wholesale:2,utilities:2,other:2},
+    thresholds:[{spend:75000,label:"2 free Centurion guests",value:150},{spend:250000,label:"Up to $3,600 statement credits",value:2000}] },
+  delta_reserve: { name:"Delta SkyMiles Reserve", issuer:"Amex", fee:650, color:"#8C1D2F", noSpend:300, noSpendDesc:"15 Sky Club visits + $2,500 MQD headstart",
+    rates:{dining:1.2,groceries:1.2,gas:1.2,flights_delta:3.6,flights:1.2,hotel_hilton:1.2,hotel_marriott:1.2,hotel_hyatt:1.2,hotel_ihg:1.2,hotel_other:1.2,wholesale:1.2,utilities:1.2,other:1.2},
+    thresholds:[{spend:25000,label:"Delta Silver",value:0},{spend:75000,label:"Unlimited Sky Club + Delta Gold",value:200},{spend:125000,label:"Delta Platinum Medallion",value:0},{spend:255000,label:"Delta Diamond Medallion",value:0}] },
+  delta_plat:    { name:"Delta SkyMiles Platinum", issuer:"Amex", fee:350, color:"#9C7C38", noSpend:250, noSpendDesc:"Companion certificate + $2,500 MQD headstart",
+    rates:{dining:2.4,groceries:2.4,gas:1.2,flights_delta:3.6,flights:1.2,hotel_hilton:1.2,hotel_marriott:1.2,hotel_hyatt:1.2,hotel_ihg:1.2,hotel_other:1.2,wholesale:1.2,utilities:1.2,other:1.2},
+    thresholds:[{spend:50000,label:"Delta Silver",value:0},{spend:150000,label:"Delta Gold",value:0},{spend:250000,label:"Delta Platinum Medallion",value:0}] },
+  united_club:   { name:"United Club Card", issuer:"Chase", fee:695, color:"#13377A", noSpend:550, noSpendDesc:"United Club + 2 checked bags",
+    rates:{dining:2.6,groceries:1.3,gas:1.3,flights_united:5.2,flights:2.6,hotel_hilton:1.3,hotel_marriott:1.3,hotel_hyatt:1.3,hotel_ihg:1.3,hotel_other:1.3,wholesale:1.3,utilities:1.3,other:1.3},
+    thresholds:[{spend:50000,label:"United Club All Access",value:150},{spend:90000,label:"Premier Silver",value:0},{spend:180000,label:"Premier Gold",value:0},{spend:270000,label:"Premier Platinum",value:0},{spend:420000,label:"Premier 1K",value:0}] },
+  united_quest:  { name:"United Quest", issuer:"Chase", fee:250, color:"#1E4A9A", noSpend:280, noSpendDesc:"$200 TravelBank + 10k-mile discount + 2 bags",
+    rates:{dining:2.6,groceries:1.3,gas:1.3,flights_united:3.9,flights:2.6,hotel_hilton:1.3,hotel_marriott:1.3,hotel_hyatt:1.3,hotel_ihg:1.3,hotel_other:1.3,wholesale:1.3,utilities:1.3,other:1.3},
+    thresholds:[{spend:20000,label:"Extra 10k-mile award discount",value:130},{spend:40000,label:"2 Economy Plus upgrades",value:80},{spend:120000,label:"Premier Silver",value:0},{spend:240000,label:"Premier Gold",value:0},{spend:360000,label:"Premier Platinum",value:0}] },
+  citi_exec:     { name:"Citi AAdvantage Executive", issuer:"Citi", fee:695, color:"#0F2A4A", noSpend:560, noSpendDesc:"Admirals Club + free checked bags",
+    rates:{dining:1.4,groceries:1.4,gas:1.4,flights_aa:5.6,flights:1.4,hotel_hilton:1.4,hotel_marriott:1.4,hotel_hyatt:1.4,hotel_ihg:1.4,hotel_other:1.4,wholesale:1.4,utilities:1.4,other:1.4},
+    thresholds:[{spend:50000,label:"10k bonus Loyalty Points",value:0},{spend:90000,label:"10k bonus Loyalty Points",value:0},{spend:165000,label:"10k bonus Loyalty Points",value:0},{spend:240000,label:"10k bonus Loyalty Points",value:0}] },
+  aeroplan:      { name:"Chase Aeroplan", issuer:"Chase", fee:95, color:"#C8102E", noSpend:210, noSpendDesc:"Aeroplan 25K + checked bag",
+    rates:{dining:1.3,groceries:1.3,gas:1.3,flights_ac:3.9,flights:1.3,hotel_hilton:1.3,hotel_marriott:1.3,hotel_hyatt:1.3,hotel_ihg:1.3,hotel_other:1.3,wholesale:1.3,utilities:1.3,other:1.3},
+    thresholds:[{spend:75000,label:"Aeroplan 35K",value:0}] }
+};
+
+const UNLOCK_CATS = [
+  { key:"xmoney", name:"X Money debit spend", max:200000, step:1000, def:120000, note:"3% on eligible purchases; wholesale/utilities/insurance excluded" },
+  { key:"dining", name:"Dining", max:60000, step:500, def:18000 },
+  { key:"groceries", name:"Groceries", max:40000, step:500, def:12000 },
+  { key:"gas", name:"Gas", max:15000, step:250, def:4000 },
+  { key:"flights", name:"Flights (direct-booked)", max:50000, step:500, def:10000 },
+  { key:"hotels", name:"Hotels", max:40000, step:500, def:8000 },
+  { key:"wholesale", name:"Wholesale clubs", max:30000, step:500, def:6000, note:"earns 0% on X Money debit" },
+  { key:"utilities", name:"Utilities & insurance", max:20000, step:250, def:5000, note:"earns 0% on X Money debit" },
+  { key:"other", name:"Everything else", max:100000, step:1000, def:25000 }
+];
+
+const U_PORT_KEY='wl_unlocks_portfolio', U_SPEND_KEY='wl_unlocks_spend', U_FUND_KEY='wl_unlocks_fund';
+let uPortfolio=new Set(), uSpend={}, uFund={mode:'bank',card:'vx'};
+try{ const s=JSON.parse(localStorage.getItem(U_PORT_KEY)||'null'); uPortfolio=new Set((s||[]).filter(id=>UNLOCK_CARDS[id])); }catch(e){ uPortfolio=new Set(); }
+try{ const s=JSON.parse(localStorage.getItem(U_SPEND_KEY)||'null'); uSpend=s&&typeof s==='object'?s:{}; }catch(e){ uSpend={}; }
+try{ const s=JSON.parse(localStorage.getItem(U_FUND_KEY)||'null'); if(s&&typeof s==='object') uFund=s; }catch(e){}
+UNLOCK_CATS.forEach(c=>{ if(typeof uSpend[c.key]!=='number') uSpend[c.key]=c.def; });
+function uSave(){ try{ localStorage.setItem(U_PORT_KEY,JSON.stringify([...uPortfolio])); localStorage.setItem(U_SPEND_KEY,JSON.stringify(uSpend)); localStorage.setItem(U_FUND_KEY,JSON.stringify(uFund)); }catch(e){} }
+function uFmt(n){ const neg=n<0; const a=Math.abs(Math.round(n)); return (neg?'-$':'$')+a.toLocaleString(); }
+
+/* rate lookup with hotel-chain and airline overrides */
+function uRate(cardId, catKey){
+  const card=UNLOCK_CARDS[cardId]; if(!card) return 0;
+  if(catKey==='hotels'){
+    const chain=(document.getElementById('unlock-hotel-chain')||{}).value||'hilton';
+    const k='hotel_'+chain;
+    return card.rates[k]!=null?card.rates[k]:(card.rates.hotel_other||card.rates.other||0);
+  }
+  if(catKey==='flights'){
+    const al=(document.getElementById('unlock-airline')||{}).value||'other';
+    const k='flights_'+al;
+    if(card.rates[k]!=null) return card.rates[k];
+  }
+  return card.rates[catKey]!=null?card.rates[catKey]:(card.rates.other||0);
+}
+
+function uCompute(){
+  const sel=[...uPortfolio].filter(id=>UNLOCK_CARDS[id]);
+  const xSpend=uSpend.xmoney||0;
+  const fundMode=uFund.mode, fundCard=uFund.card;
+  const perCard={};
+  sel.forEach(id=>{ perCard[id]={spend:0,rewards:0,unlocks:[],unlockVal:0}; });
+
+  /* X Money debit: 3% on eligible spend (slider is eligible-only by definition) */
+  let xRewards=xSpend*0.03;
+
+  /* credit-card funding: funding amount earns the funding card's everyday rate + counts toward its thresholds */
+  let fundRewards=0;
+  if(fundMode==='card' && UNLOCK_CARDS[fundCard] && perCard[fundCard]){
+    const r=uRate(fundCard,'other');
+    fundRewards=xSpend*r/100;
+    perCard[fundCard].spend+=xSpend;
+    perCard[fundCard].rewards+=fundRewards;
+  }
+
+  /* route every other category to the best selected card */
+  UNLOCK_CATS.forEach(c=>{
+    if(c.key==='xmoney') return;
+    const spend=uSpend[c.key]||0; if(spend<=0||sel.length===0) return;
+    let best=null,bestR=-1;
+    sel.forEach(id=>{ const r=uRate(id,c.key); if(r>bestR){bestR=r;best=id;} });
+    if(best&&bestR>0){ perCard[best].spend+=spend; perCard[best].rewards+=spend*bestR/100; }
+  });
+
+  /* thresholds */
+  sel.forEach(id=>{
+    const card=UNLOCK_CARDS[id], pc=perCard[id];
+    card.thresholds.forEach(t=>{
+      if(pc.spend>=t.spend){ pc.unlocks.push(t); pc.unlockVal+=t.value; }
+    });
+  });
+
+  let total= xRewards, tRewards=xRewards, tUnlock=0, tNoSpend=0, tFees=0;
+  const rows=sel.map(id=>{
+    const card=UNLOCK_CARDS[id], pc=perCard[id];
+    const net=pc.rewards+pc.unlockVal+card.noSpend-card.fee;
+    total+=net; tRewards+=pc.rewards; tUnlock+=pc.unlockVal; tNoSpend+=card.noSpend; tFees+=card.fee;
+    return {id,card,pc,net};
+  }).sort((a,b)=>b.net-a.net);
+
+  /* next unlocks within reach */
+  const next=[];
+  sel.forEach(id=>{
+    const card=UNLOCK_CARDS[id], pc=perCard[id];
+    const upcoming=card.thresholds.filter(t=>pc.spend<t.spend).sort((a,b)=>a.spend-b.spend)[0];
+    if(upcoming) next.push({id,card,need:upcoming.spend-pc.spend,t:upcoming});
+  });
+  next.sort((a,b)=>(b.t.value||0)-(a.t.value||0));
+
+  /* next card to add: marginal net value */
+  const recs=[];
+  Object.keys(UNLOCK_CARDS).forEach(id=>{
+    if(uPortfolio.has(id)) return;
+    const card=UNLOCK_CARDS[id];
+    let delta=0; const why=[];
+    UNLOCK_CATS.forEach(c=>{
+      if(c.key==='xmoney') return;
+      const spend=uSpend[c.key]||0; if(spend<=0) return;
+      let curBest=0;
+      sel.forEach(sid=>{ const r=uRate(sid,c.key); if(r>curBest) curBest=r; });
+      const mine=uRate(id,c.key);
+      if(mine>curBest){
+        const g=spend*(mine-curBest)/100;
+        delta+=g;
+        if(g>25) why.push('+'+uFmt(g)+'/yr on '+c.name);
+      }
+    });
+    /* unlocks reachable with spend it would win */
+    let winSpend=0;
+    UNLOCK_CATS.forEach(c=>{
+      if(c.key==='xmoney') return;
+      const spend=uSpend[c.key]||0; if(spend<=0) return;
+      let curBest=0; sel.forEach(sid=>{ const r=uRate(sid,c.key); if(r>curBest) curBest=r; });
+      if(uRate(id,c.key)>curBest) winSpend+=spend;
+    });
+    let uVal=0; const uHit=[];
+    card.thresholds.forEach(t=>{ if(winSpend>=t.spend&&t.value>0){ uVal+=t.value; uHit.push(t.label); } });
+    delta+=uVal; if(uHit.length) why.push('unlocks: '+uHit.join('; '));
+    delta+=card.noSpend-card.fee;
+    if(delta>50) recs.push({id,card,delta,why:why.slice(0,3)});
+  });
+  recs.sort((a,b)=>b.delta-a.delta);
+
+  return {rows,total,tRewards,tUnlock,tNoSpend,tFees,next,recs,xRewards,fundRewards,selCount:sel.length};
+}
+
+/* ---------- renderers ---------- */
+function uRenderPortfolio(){
+  const box=document.getElementById('unlock-portfolio'); if(!box) return;
+  box.innerHTML='';
+  Object.entries(UNLOCK_CARDS).forEach(([id,c])=>{
+    const on=uPortfolio.has(id);
+    const lab=document.createElement('label');
+    lab.className='flex items-center gap-2.5 px-3 py-2 rounded-lg border cursor-pointer transition '+(on?'border-emerald-300 bg-emerald-50/60':'border-slate-200 bg-white hover:border-slate-300');
+    lab.innerHTML='<input type="checkbox" '+(on?'checked':'')+' class="accent-brand-600 w-3.5 h-3.5 flex-shrink-0">'
+      +'<span class="w-2.5 h-2.5 rounded-sm flex-shrink-0" style="background:'+c.color+'"></span>'
+      +'<span class="flex-1 min-w-0 text-xs font-semibold text-slate-800 truncate">'+c.name+'</span>'
+      +'<span class="text-[10px] text-slate-400 font-medium whitespace-nowrap">$'+c.fee+'</span>';
+    lab.querySelector('input').addEventListener('change',e=>{
+      if(e.target.checked) uPortfolio.add(id); else uPortfolio.delete(id);
+      uSave(); uRenderPortfolio(); uRender();
+    });
+    box.appendChild(lab);
+  });
+  const cnt=document.getElementById('unlock-count');
+  if(cnt) cnt.textContent=uPortfolio.size+' selected';
+  const fs=document.getElementById('xfund-card');
+  if(fs){
+    const cur=fs.value||uFund.card;
+    fs.innerHTML='';
+    Object.entries(UNLOCK_CARDS).forEach(([id,c])=>{
+      const o=document.createElement('option'); o.value=id; o.textContent=c.name+' — '+c.fee+'/yr'; fs.appendChild(o);
+    });
+    fs.value=UNLOCK_CARDS[cur]?cur:'vx';
+    uFund.card=fs.value;
+  }
+}
+
+function uRenderSliders(){
+  const box=document.getElementById('unlock-sliders'); if(!box) return;
+  box.innerHTML='';
+  UNLOCK_CATS.forEach(c=>{
+    const row=document.createElement('div');
+    row.innerHTML='<div class="flex items-center justify-between mb-1">'
+      +'<label class="text-xs font-semibold text-slate-700">'+c.name+(c.note?' <span class="font-normal text-slate-400">· '+c.note+'</span>':'')+'</label>'
+      +'<span class="text-xs font-mono font-bold text-slate-600" id="uval-'+c.key+'">'+uFmt(uSpend[c.key])+'/yr</span></div>'
+      +'<input type="range" min="0" max="'+c.max+'" step="'+c.step+'" value="'+uSpend[c.key]+'" id="uslider-'+c.key+'" class="w-full h-1.5 rounded-full bg-slate-200 accent-brand-600 cursor-pointer">';
+    box.appendChild(row);
+    row.querySelector('#uslider-'+c.key).addEventListener('input',e=>{
+      uSpend[c.key]=parseInt(e.target.value,10)||0;
+      document.getElementById('uval-'+c.key).textContent=uFmt(uSpend[c.key])+'/yr';
+      uSave(); uRender();
+    });
+  });
+}
+
+function uRender(){
+  const r=uCompute();
+  const big=document.getElementById('unlock-big');
+  if(big) big.innerHTML=uFmt(r.total)+'<span class="text-base font-semibold text-slate-500">/yr</span>';
+  const sub=document.getElementById('unlock-big-sub');
+  if(sub) sub.textContent=r.selCount===0?'Select cards to see your number.':
+    'Across '+r.selCount+' cards'+(uFund.mode==='card'?' · includes '+uFmt(r.fundRewards)+'/yr from credit-card funding':'')+'.';
+  const tot=document.getElementById('unlock-total');
+  if(tot) tot.textContent=uFmt(Object.values(uSpend).reduce((a,b)=>a+(b||0),0))+'/yr total';
+
+  const bd=document.getElementById('unlock-breakdown');
+  if(bd){
+    const cells=[['Rewards',r.tRewards,'text-emerald-700'],['Unlocks',r.tUnlock,'text-amber-700'],['No-spend value',r.tNoSpend,'text-blue-700'],['Annual fees',-r.tFees,'text-red-600']];
+    bd.innerHTML=cells.map(x=>'<div class="rounded-xl bg-white border border-slate-200 px-2 py-3"><div class="text-[10px] font-bold uppercase tracking-wide text-slate-400 mb-1">'+x[0]+'</div><div class="font-mono font-extrabold text-base '+x[2]+'">'+uFmt(x[1])+'</div></div>').join('');
+  }
+
+  const tb=document.getElementById('unlock-rows');
+  if(tb){
+    tb.innerHTML='';
+    if(r.rows.length===0){
+      tb.innerHTML='<tr><td colspan="7" class="py-6 text-center text-slate-400">Select cards from your portfolio to see the breakdown.</td></tr>';
+    }
+    r.rows.forEach(x=>{
+      const tr=document.createElement('tr');
+      tr.className='border-b border-slate-100 last:border-0';
+      const unlockTxt=x.pc.unlocks.length?x.pc.unlocks.map(t=>t.label+(t.value?' ('+uFmt(t.value)+')':'')).join('; '):'<span class="text-slate-300">—</span>';
+      tr.innerHTML='<td class="py-2.5 pr-2"><span class="inline-block w-2 h-2 rounded-sm mr-1.5" style="background:'+x.card.color+'"></span><strong class="text-slate-800">'+x.card.name+'</strong><div class="text-[10px] text-slate-400 mt-0.5">'+unlockTxt+'</div></td>'
+        +'<td class="py-2.5 pr-2 text-right font-mono">'+uFmt(x.pc.spend)+'</td>'
+        +'<td class="py-2.5 pr-2 text-right font-mono text-emerald-700">'+uFmt(x.pc.rewards)+'</td>'
+        +'<td class="py-2.5 pr-2 text-right font-mono text-amber-700">'+uFmt(x.pc.unlockVal)+'</td>'
+        +'<td class="py-2.5 pr-2 text-right font-mono text-blue-700">'+uFmt(x.card.noSpend)+'</td>'
+        +'<td class="py-2.5 pr-2 text-right font-mono text-red-600">-'+uFmt(x.card.fee).slice(1)+'</td>'
+        +'<td class="py-2.5 text-right font-mono font-extrabold '+(x.net>=0?'text-slate-900':'text-red-600')+'">'+uFmt(x.net)+'</td>';
+      tb.appendChild(tr);
+    });
+    if(r.xRewards>0){
+      const tr=document.createElement('tr'); tr.className='border-b border-slate-100 bg-slate-50/60';
+      tr.innerHTML='<td class="py-2.5 pr-2"><strong class="text-slate-800">X Money debit</strong><div class="text-[10px] text-slate-400 mt-0.5">3% on '+uFmt(uSpend.xmoney||0)+' eligible spend</div></td>'
+        +'<td class="py-2.5 pr-2 text-right font-mono">'+uFmt(uSpend.xmoney||0)+'</td>'
+        +'<td class="py-2.5 pr-2 text-right font-mono text-emerald-700">'+uFmt(r.xRewards)+'</td>'
+        +'<td class="py-2.5 pr-2 text-right font-mono text-slate-300">—</td>'
+        +'<td class="py-2.5 pr-2 text-right font-mono text-slate-300">—</td>'
+        +'<td class="py-2.5 pr-2 text-right font-mono text-slate-300">—</td>'
+        +'<td class="py-2.5 text-right font-mono font-extrabold text-slate-900">'+uFmt(r.xRewards)+'</td>';
+      tb.appendChild(tr);
+    }
+  }
+
+  const nx=document.getElementById('unlock-next');
+  if(nx){
+    nx.innerHTML='';
+    if(r.next.length===0) nx.innerHTML='<p class="text-xs text-slate-400">No pending thresholds — everything is unlocked, or no cards selected.</p>';
+    r.next.slice(0,6).forEach(n=>{
+      const d=document.createElement('div');
+      d.className='rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-3';
+      d.innerHTML='<div class="flex items-start justify-between gap-2"><div><div class="text-xs font-bold text-slate-800">'+n.card.name+'</div>'
+        +'<div class="text-[11px] text-slate-500 mt-0.5">'+n.t.label+(n.t.value?' · worth '+uFmt(n.t.value):' · status')+'</div></div>'
+        +'<div class="text-right flex-shrink-0"><div class="text-[10px] font-bold uppercase text-slate-400">needs</div><div class="font-mono font-bold text-amber-700 text-sm">'+uFmt(n.need)+'</div></div></div>';
+      nx.appendChild(d);
+    });
+  }
+
+  const rc=document.getElementById('unlock-recs');
+  if(rc){
+    rc.innerHTML='';
+    if(r.recs.length===0) rc.innerHTML='<p class="text-xs text-slate-400">Your portfolio already covers your spend — nothing adds $50+/yr.</p>';
+    r.recs.slice(0,3).forEach(x=>{
+      const d=document.createElement('div');
+      d.className='rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-3';
+      d.innerHTML='<div class="flex items-start justify-between gap-2"><div><div class="text-xs font-bold text-slate-800">'+x.card.name+'</div>'
+        +'<div class="text-[10px] text-slate-400 mt-0.5">$'+x.card.fee+'/yr fee'+(x.why.length?' · '+x.why.join(' · '):'')+'</div></div>'
+        +'<div class="text-right flex-shrink-0"><div class="text-[10px] font-bold uppercase text-brand-700">adds</div><div class="font-mono font-extrabold text-emerald-600 text-base">+'+uFmt(x.delta)+'<span class="text-[10px] font-normal text-slate-500">/yr</span></div></div></div>';
+      rc.appendChild(d);
+    });
+  }
+}
+
+function uInit(){
+  uRenderPortfolio();
+  uRenderSliders();
+  document.querySelectorAll('input[name="xfund"]').forEach(r=>{
+    if(r.value===uFund.mode) r.checked=true;
+    r.addEventListener('change',e=>{
+      uFund.mode=e.target.value;
+      document.getElementById('xfund-card-wrap').classList.toggle('hidden',uFund.mode!=='card');
+      uSave(); uRender();
+    });
+  });
+  document.getElementById('xfund-card-wrap').classList.toggle('hidden',uFund.mode!=='card');
+  document.getElementById('xfund-card').addEventListener('change',e=>{ uFund.card=e.target.value; uSave(); uRender(); });
+  document.getElementById('unlock-hotel-chain').addEventListener('change',uRender);
+  document.getElementById('unlock-airline').addEventListener('change',uRender);
+  document.getElementById('unlock-all').addEventListener('click',()=>{ uPortfolio=new Set(Object.keys(UNLOCK_CARDS)); uSave(); uRenderPortfolio(); uRender(); });
+  document.getElementById('unlock-clear').addEventListener('click',()=>{ uPortfolio=new Set(); uSave(); uRenderPortfolio(); uRender(); });
+  uRender();
+}
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',uInit); else uInit();
+</script>
+
 <section class="py-14 bg-white">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto mb-8">
@@ -324,7 +829,7 @@
 
 <footer class="py-8 bg-navy-900 border-t border-slate-800">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-[11px] text-slate-400 leading-relaxed text-center">
-    Rates reflect published issuer terms as of August 2026 and are shown for personal reference only.
+    Card earn rates reflect published issuer terms as of August 2026; spend-unlock thresholds, free-night and companion valuations checked October 2026. Shown for personal reference only.
   </div>
 </footer>
 
