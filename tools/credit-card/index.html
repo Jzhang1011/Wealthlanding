@@ -362,6 +362,7 @@
               <input type="range" id="xfund-amt2" min="0" max="120000" step="1000" class="w-full accent-brand-600">
             </div>
             <p id="xfund-bank-label" class="text-[10px] text-slate-500 mt-1"></p>
+            <p class="text-[10px] text-slate-500 mt-1 leading-relaxed">X Money only accepts <strong>Visa</strong> and <strong>Mastercard</strong> for card funding — Amex/Discover cards aren't listed.</p>
             <p class="text-[10px] text-slate-500 mt-1 leading-relaxed">Card 1 defaults to its first spend threshold — e.g. $75,000 on Venture X unlocks 2 free lounge guests + 1 Landing guest — so you fund just enough to activate the benefit and put the rest on card 2.</p>
             <p class="text-[10px] text-amber-700 bg-amber-50 border border-amber-200 rounded-lg p-2 mt-2 leading-relaxed">Funding a debit account with a credit card is manufactured spend. Issuers can reclassify the transaction or shut down accounts at volume. Treat "codes as purchase" as provisional.</p>
           </div>
@@ -490,76 +491,76 @@
 <script>
 /* ================= ANNUAL SPEND OPTIMIZER ================= */
 const UNLOCK_CARDS = {
-  hilton_free:   { name:"Hilton Honors (no fee)", issuer:"Amex", fee:0, color:"#7A2E3B", noSpend:0, noSpendDesc:"Hilton Silver",
+  hilton_free:   { name:"Hilton Honors (no fee)", issuer:"Amex", network:"amex", fee:0, color:"#7A2E3B", noSpend:0, noSpendDesc:"Hilton Silver",
     rates:{dining:2.5,groceries:2.5,gas:1.5,flights:1.5,hotel_hilton:3.5,hotel_marriott:1.5,hotel_hyatt:1.5,hotel_ihg:1.5,hotel_other:1.5,wholesale:1.5,utilities:1.5,other:1.5},
     thresholds:[{spend:20000,label:"Hilton Gold status",value:0}] },
-  hilton_surpass:{ name:"Hilton Surpass", issuer:"Amex", fee:150, color:"#8B3A4B", noSpend:240, noSpendDesc:"Hilton Gold + $200 Hilton credit",
+  hilton_surpass:{ name:"Hilton Surpass", issuer:"Amex", network:"amex", fee:150, color:"#8B3A4B", noSpend:240, noSpendDesc:"Hilton Gold + $200 Hilton credit",
     rates:{dining:3,groceries:3,gas:3,flights:1.5,hotel_hilton:6,hotel_marriott:1.5,hotel_hyatt:1.5,hotel_ihg:1.5,hotel_other:1.5,wholesale:1.5,utilities:1.5,other:1.5},
     thresholds:[{spend:15000,label:"Free Night Reward",value:300},{spend:40000,label:"Hilton Diamond status",value:0}] },
-  hilton_biz:    { name:"Hilton Business", issuer:"Amex", fee:195, color:"#5C2E3B", noSpend:240, noSpendDesc:"Hilton Gold + $200 Hilton credit",
+  hilton_biz:    { name:"Hilton Business", issuer:"Amex", network:"amex", fee:195, color:"#5C2E3B", noSpend:240, noSpendDesc:"Hilton Gold + $200 Hilton credit",
     rates:{dining:2.5,groceries:2.5,gas:2.5,flights:2.5,hotel_hilton:6,hotel_marriott:2.5,hotel_hyatt:2.5,hotel_ihg:2.5,hotel_other:2.5,wholesale:2.5,utilities:2.5,other:2.5},
     thresholds:[{spend:40000,label:"Hilton Diamond status",value:0}] },
-  hilton_aspire: { name:"Hilton Aspire", issuer:"Amex", fee:550, color:"#4A1F2B", noSpend:1040, noSpendDesc:"Diamond + annual free night + $400 resort + $200 flight + CLEAR",
+  hilton_aspire: { name:"Hilton Aspire", issuer:"Amex", network:"amex", fee:550, color:"#4A1F2B", noSpend:1040, noSpendDesc:"Diamond + annual free night + $400 resort + $200 flight + CLEAR",
     rates:{dining:3.5,groceries:1.5,gas:1.5,flights:3.5,hotel_hilton:7,hotel_marriott:1.5,hotel_hyatt:1.5,hotel_ihg:1.5,hotel_other:1.5,wholesale:1.5,utilities:1.5,other:1.5},
     thresholds:[{spend:30000,label:"Extra Free Night Reward",value:300},{spend:60000,label:"Second extra Free Night Reward",value:300}] },
-  marriott_boundless:{ name:"Marriott Boundless", issuer:"Chase", fee:95, color:"#6B4A2B", noSpend:300, noSpendDesc:"15 elite nights + 35k anniversary night + Silver",
+  marriott_boundless:{ name:"Marriott Boundless", issuer:"Chase", network:"visa", fee:95, color:"#6B4A2B", noSpend:300, noSpendDesc:"15 elite nights + 35k anniversary night + Silver",
     rates:{dining:2.4,groceries:2.4,gas:2.4,flights:1.6,hotel_hilton:1.6,hotel_marriott:4.8,hotel_hyatt:1.6,hotel_ihg:1.6,hotel_other:1.6,wholesale:1.6,utilities:1.6,other:1.6},
     thresholds:[{spend:35000,label:"Marriott Gold Elite",value:0}] },
-  marriott_bevy: { name:"Marriott Bevy", issuer:"Chase", fee:250, color:"#7A5A35", noSpend:100, noSpendDesc:"Marriott Gold + 15 elite nights",
+  marriott_bevy: { name:"Marriott Bevy", issuer:"Chase", network:"visa", fee:250, color:"#7A5A35", noSpend:100, noSpendDesc:"Marriott Gold + 15 elite nights",
     rates:{dining:3.2,groceries:3.2,gas:1.6,flights:1.6,hotel_hilton:1.6,hotel_marriott:4.8,hotel_hyatt:1.6,hotel_ihg:1.6,hotel_other:1.6,wholesale:1.6,utilities:1.6,other:1.6},
     thresholds:[{spend:15000,label:"Free Night Award (50k pts)",value:300}] },
-  marriott_brilliant:{ name:"Marriott Brilliant", issuer:"Amex", fee:650, color:"#3D2E1F", noSpend:1100, noSpendDesc:"Platinum + 25 nights + 85k night + $300 dining + Priority Pass",
+  marriott_brilliant:{ name:"Marriott Brilliant", issuer:"Amex", network:"amex", fee:650, color:"#3D2E1F", noSpend:1100, noSpendDesc:"Platinum + 25 nights + 85k night + $300 dining + Priority Pass",
     rates:{dining:2.4,groceries:1.6,gas:1.6,flights:2.4,hotel_hilton:1.6,hotel_marriott:4.8,hotel_hyatt:1.6,hotel_ihg:1.6,hotel_other:1.6,wholesale:1.6,utilities:1.6,other:1.6},
     thresholds:[{spend:60000,label:"85k free night / 50k pts / 5 upgrades",value:300}] },
-  hyatt:         { name:"World of Hyatt", issuer:"Chase", fee:95, color:"#213E3B", noSpend:350, noSpendDesc:"Discoverist + 5 nights + Cat 1-4 night",
+  hyatt:         { name:"World of Hyatt", issuer:"Chase", network:"visa", fee:95, color:"#213E3B", noSpend:350, noSpendDesc:"Discoverist + 5 nights + Cat 1-4 night",
     rates:{dining:3.6,groceries:1.8,gas:1.8,flights:3.6,hotel_hilton:1.8,hotel_marriott:1.8,hotel_hyatt:7.2,hotel_ihg:1.8,hotel_other:1.8,wholesale:1.8,utilities:1.8,other:1.8},
     thresholds:[{spend:15000,label:"Second Cat 1-4 free night",value:300},{spend:62500,label:"Explorist (nights path)",value:0},{spend:137500,label:"Globalist (nights path)",value:0}] },
-  ihg_premier:   { name:"IHG Premier", issuer:"Chase", fee:150, color:"#1F3A5F", noSpend:470, noSpendDesc:"IHG Gold + 15 nights + 50k night + credits",
+  ihg_premier:   { name:"IHG Premier", issuer:"Chase", network:"mc", fee:150, color:"#1F3A5F", noSpend:470, noSpendDesc:"IHG Gold + 15 nights + 50k night + credits",
     rates:{dining:2.5,groceries:2.5,gas:2.5,flights:2.5,hotel_hilton:1.5,hotel_marriott:1.5,hotel_hyatt:1.5,hotel_ihg:5,hotel_other:1.5,wholesale:1.5,utilities:1.5,other:1.5},
     thresholds:[{spend:15000,label:"IHG Platinum Elite",value:0},{spend:40000,label:"IHG Diamond Elite",value:0}] },
-  ihg_select:    { name:"IHG Premier Select", issuer:"Chase", fee:350, color:"#16283F", noSpend:750, noSpendDesc:"IHG Platinum + 20 nights + 60k night + credits",
+  ihg_select:    { name:"IHG Premier Select", issuer:"Chase", network:"mc", fee:350, color:"#16283F", noSpend:750, noSpendDesc:"IHG Platinum + 20 nights + 60k night + credits",
     rates:{dining:3,groceries:1.5,gas:1.5,flights:3,hotel_hilton:1.5,hotel_marriott:1.5,hotel_hyatt:1.5,hotel_ihg:6,hotel_other:1.5,wholesale:1.5,utilities:1.5,other:1.5},
     thresholds:[{spend:25000,label:"IHG Diamond Elite",value:0},{spend:40000,label:"Extra free night (60k pts)",value:300}] },
-  ihg_biz:       { name:"IHG Business", issuer:"Chase", fee:200, color:"#2A4A6F", noSpend:520, noSpendDesc:"15 nights + 50k night + credits + Expensify",
+  ihg_biz:       { name:"IHG Business", issuer:"Chase", network:"mc", fee:200, color:"#2A4A6F", noSpend:520, noSpendDesc:"15 nights + 50k night + credits + Expensify",
     rates:{dining:2.5,groceries:1.5,gas:2.5,flights:2.5,hotel_hilton:1.5,hotel_marriott:1.5,hotel_hyatt:1.5,hotel_ihg:5,hotel_other:1.5,wholesale:1.5,utilities:1.5,other:1.5},
     thresholds:[{spend:50000,label:"IHG Diamond Elite",value:0}] },
-  csr:           { name:"Chase Sapphire Reserve", issuer:"Chase", fee:795, color:"#0B2942", noSpend:900, noSpendDesc:"Lounges + $300 travel + $300 dining + $500 Edit",
+  csr:           { name:"Chase Sapphire Reserve", issuer:"Chase", network:"visa", fee:795, color:"#0B2942", noSpend:900, noSpendDesc:"Lounges + $300 travel + $300 dining + $500 Edit",
     rates:{dining:6,groceries:2,gas:2,flights:8,hotel_hilton:2,hotel_marriott:2,hotel_hyatt:2,hotel_ihg:2,hotel_other:2,wholesale:2,utilities:2,other:2},
     thresholds:[{spend:75000,label:"IHG Diamond + Hyatt Explorist",value:0}] },
-  csr_biz:       { name:"Sapphire Reserve for Business", issuer:"Chase", fee:795, color:"#0B2942", noSpend:600, noSpendDesc:"Lounges + $300 travel + $500 Edit",
+  csr_biz:       { name:"Sapphire Reserve for Business", issuer:"Chase", network:"visa", fee:795, color:"#0B2942", noSpend:600, noSpendDesc:"Lounges + $300 travel + $500 Edit",
     rates:{dining:6,groceries:2,gas:2,flights:8,hotel_hilton:2,hotel_marriott:2,hotel_hyatt:2,hotel_ihg:2,hotel_other:2,wholesale:2,utilities:2,other:2},
     thresholds:[{spend:120000,label:"IHG Diamond status",value:0}] },
-  vx:            { name:"Capital One Venture X", issuer:"Capital One", fee:395, color:"#1C1C1E", noSpend:600, noSpendDesc:"Lounges + $300 travel credit + 10k miles",
+  vx:            { name:"Capital One Venture X", issuer:"Capital One", network:"visa", fee:395, color:"#1C1C1E", noSpend:600, noSpendDesc:"Lounges + $300 travel credit + 10k miles",
     rates:{dining:3,groceries:3,gas:3,flights:3,hotel_hilton:3,hotel_marriott:3,hotel_hyatt:3,hotel_ihg:3,hotel_other:3,wholesale:3,utilities:3,other:3},
     thresholds:[{spend:75000,label:"2 free lounge guests + 1 Landing guest",value:150}] },
-  vx_biz:        { name:"Venture X Business", issuer:"Capital One", fee:395, color:"#2A2A2E", noSpend:650, noSpendDesc:"Lounges + $300 travel credit + 10k miles",
+  vx_biz:        { name:"Venture X Business", issuer:"Capital One", network:"visa", fee:395, color:"#2A2A2E", noSpend:650, noSpendDesc:"Lounges + $300 travel credit + 10k miles",
     rates:{dining:3,groceries:3,gas:3,flights:3,hotel_hilton:3,hotel_marriott:3,hotel_hyatt:3,hotel_ihg:3,hotel_other:3,wholesale:3,utilities:3,other:3},
     thresholds:[{spend:75000,label:"2 free lounge guests + 1 Landing guest",value:150}] },
-  ritz:          { name:"Ritz-Carlton Card", issuer:"Chase", fee:450, color:"#8A6D3B", noSpend:550, noSpendDesc:"$300 airline credit + 85k anniversary night",
+  ritz:          { name:"Ritz-Carlton Card", issuer:"Chase", network:"visa", fee:450, color:"#8A6D3B", noSpend:550, noSpendDesc:"$300 airline credit + 85k anniversary night",
     rates:{dining:2.4,groceries:1.6,gas:1.6,flights:2.4,hotel_hilton:1.6,hotel_marriott:4.8,hotel_hyatt:1.6,hotel_ihg:1.6,hotel_other:1.6,wholesale:1.6,utilities:1.6,other:1.6},
     thresholds:[] },
-  amex_plat:     { name:"Amex Platinum", issuer:"Amex", fee:895, color:"#7C7F85", noSpend:900, noSpendDesc:"Centurion/PP/Delta lounges + hotel Golds + credits",
+  amex_plat:     { name:"Amex Platinum", issuer:"Amex", network:"amex", fee:895, color:"#7C7F85", noSpend:900, noSpendDesc:"Centurion/PP/Delta lounges + hotel Golds + credits",
     rates:{dining:2,groceries:2,gas:2,flights:10,hotel_hilton:2,hotel_marriott:2,hotel_hyatt:2,hotel_ihg:2,hotel_other:2,wholesale:2,utilities:2,other:2},
     thresholds:[{spend:75000,label:"2 free Centurion guests + unlimited Delta Sky Club",value:250}] },
-  amex_bizplat:  { name:"Amex Business Platinum", issuer:"Amex", fee:895, color:"#5A5D63", noSpend:800, noSpendDesc:"Centurion/PP + business credits",
+  amex_bizplat:  { name:"Amex Business Platinum", issuer:"Amex", network:"amex", fee:895, color:"#5A5D63", noSpend:800, noSpendDesc:"Centurion/PP + business credits",
     rates:{dining:2,groceries:2,gas:2,flights:10,hotel_hilton:2,hotel_marriott:2,hotel_hyatt:2,hotel_ihg:2,hotel_other:2,wholesale:2,utilities:2,other:2},
     thresholds:[{spend:75000,label:"2 free Centurion guests",value:150},{spend:250000,label:"Up to $3,600 statement credits",value:2000}] },
-  delta_reserve: { name:"Delta SkyMiles Reserve", issuer:"Amex", fee:650, color:"#8C1D2F", noSpend:300, noSpendDesc:"15 Sky Club visits + $2,500 MQD headstart",
+  delta_reserve: { name:"Delta SkyMiles Reserve", issuer:"Amex", network:"amex", fee:650, color:"#8C1D2F", noSpend:300, noSpendDesc:"15 Sky Club visits + $2,500 MQD headstart",
     rates:{dining:1.2,groceries:1.2,gas:1.2,flights_delta:3.6,flights:1.2,hotel_hilton:1.2,hotel_marriott:1.2,hotel_hyatt:1.2,hotel_ihg:1.2,hotel_other:1.2,wholesale:1.2,utilities:1.2,other:1.2},
     thresholds:[{spend:25000,label:"Delta Silver",value:0},{spend:75000,label:"Unlimited Sky Club + Delta Gold",value:200},{spend:125000,label:"Delta Platinum Medallion",value:0},{spend:255000,label:"Delta Diamond Medallion",value:0}] },
-  delta_plat:    { name:"Delta SkyMiles Platinum", issuer:"Amex", fee:350, color:"#9C7C38", noSpend:250, noSpendDesc:"Companion certificate + $2,500 MQD headstart",
+  delta_plat:    { name:"Delta SkyMiles Platinum", issuer:"Amex", network:"amex", fee:350, color:"#9C7C38", noSpend:250, noSpendDesc:"Companion certificate + $2,500 MQD headstart",
     rates:{dining:2.4,groceries:2.4,gas:1.2,flights_delta:3.6,flights:1.2,hotel_hilton:1.2,hotel_marriott:1.2,hotel_hyatt:1.2,hotel_ihg:1.2,hotel_other:1.2,wholesale:1.2,utilities:1.2,other:1.2},
     thresholds:[{spend:50000,label:"Delta Silver",value:0},{spend:150000,label:"Delta Gold",value:0},{spend:250000,label:"Delta Platinum Medallion",value:0}] },
-  united_club:   { name:"United Club Card", issuer:"Chase", fee:695, color:"#13377A", noSpend:550, noSpendDesc:"United Club + 2 checked bags",
+  united_club:   { name:"United Club Card", issuer:"Chase", network:"visa", fee:695, color:"#13377A", noSpend:550, noSpendDesc:"United Club + 2 checked bags",
     rates:{dining:2.6,groceries:1.3,gas:1.3,flights_united:5.2,flights:2.6,hotel_hilton:1.3,hotel_marriott:1.3,hotel_hyatt:1.3,hotel_ihg:1.3,hotel_other:1.3,wholesale:1.3,utilities:1.3,other:1.3},
     thresholds:[{spend:50000,label:"United Club All Access",value:150},{spend:90000,label:"Premier Silver",value:0},{spend:180000,label:"Premier Gold",value:0},{spend:270000,label:"Premier Platinum",value:0},{spend:420000,label:"Premier 1K",value:0}] },
-  united_quest:  { name:"United Quest", issuer:"Chase", fee:250, color:"#1E4A9A", noSpend:280, noSpendDesc:"$200 TravelBank + 10k-mile discount + 2 bags",
+  united_quest:  { name:"United Quest", issuer:"Chase", network:"visa", fee:250, color:"#1E4A9A", noSpend:280, noSpendDesc:"$200 TravelBank + 10k-mile discount + 2 bags",
     rates:{dining:2.6,groceries:1.3,gas:1.3,flights_united:3.9,flights:2.6,hotel_hilton:1.3,hotel_marriott:1.3,hotel_hyatt:1.3,hotel_ihg:1.3,hotel_other:1.3,wholesale:1.3,utilities:1.3,other:1.3},
     thresholds:[{spend:20000,label:"Extra 10k-mile award discount",value:130},{spend:40000,label:"2 Economy Plus upgrades",value:80},{spend:120000,label:"Premier Silver",value:0},{spend:240000,label:"Premier Gold",value:0},{spend:360000,label:"Premier Platinum",value:0}] },
-  citi_exec:     { name:"Citi AAdvantage Executive", issuer:"Citi", fee:695, color:"#0F2A4A", noSpend:560, noSpendDesc:"Admirals Club + free checked bags",
+  citi_exec:     { name:"Citi AAdvantage Executive", issuer:"Citi", network:"mc", fee:695, color:"#0F2A4A", noSpend:560, noSpendDesc:"Admirals Club + free checked bags",
     rates:{dining:1.4,groceries:1.4,gas:1.4,flights_aa:5.6,flights:1.4,hotel_hilton:1.4,hotel_marriott:1.4,hotel_hyatt:1.4,hotel_ihg:1.4,hotel_other:1.4,wholesale:1.4,utilities:1.4,other:1.4},
     thresholds:[{spend:50000,label:"10k bonus Loyalty Points",value:0},{spend:90000,label:"10k bonus Loyalty Points",value:0},{spend:165000,label:"10k bonus Loyalty Points",value:0},{spend:240000,label:"10k bonus Loyalty Points",value:0}] },
-  aeroplan:      { name:"Chase Aeroplan", issuer:"Chase", fee:95, color:"#C8102E", noSpend:210, noSpendDesc:"Aeroplan 25K + checked bag",
+  aeroplan:      { name:"Chase Aeroplan", issuer:"Chase", network:"mc", fee:95, color:"#C8102E", noSpend:210, noSpendDesc:"Aeroplan 25K + checked bag",
     rates:{dining:1.3,groceries:1.3,gas:1.3,flights_ac:3.9,flights:1.3,hotel_hilton:1.3,hotel_marriott:1.3,hotel_hyatt:1.3,hotel_ihg:1.3,hotel_other:1.3,wholesale:1.3,utilities:1.3,other:1.3},
     thresholds:[{spend:75000,label:"Aeroplan 35K",value:0}] }
 };
@@ -595,9 +596,10 @@ function uFundAmt2(){
   const xSpend=uSpend.xmoney||0;
   return Math.max(0,Math.min(uFund.amt2||0,xSpend-uFundAmt1()));
 }
+function uFundEligible(id){ const f=FUND_RATES[id]; return !!(f&&(f.network==='visa'||f.network==='mc')); }
 function uFundSanitize(){
-  if(!FUND_RATES[uFund.card1]){ uFund.card1='vx'; uFund.amt1=null; }
-  if(!FUND_RATES[uFund.card2]){ uFund.card2='dc'; uFund.amt2=0; }
+  if(!uFundEligible(uFund.card1)){ uFund.card1='vx'; uFund.amt1=null; }
+  if(!uFundEligible(uFund.card2)){ uFund.card2='dc'; uFund.amt2=0; }
   if(typeof uFund.amt1!=='number'&&uFund.amt1!=null) uFund.amt1=null;
   if(typeof uFund.amt2!=='number') uFund.amt2=0;
 }
@@ -609,16 +611,22 @@ if(uFund&&uFund.card&&uFund.card1===undefined){ uFund.card1=uFund.card; uFund.am
 UNLOCK_CATS.forEach(c=>{ if(typeof uSpend[c.key]!=='number') uSpend[c.key]=c.def; });
 function uSave(){ try{ localStorage.setItem(U_PORT_KEY,JSON.stringify([...uPortfolio])); localStorage.setItem(U_SPEND_KEY,JSON.stringify(uSpend)); localStorage.setItem(U_FUND_KEY,JSON.stringify(uFund)); }catch(e){} }
 function uFmt(n){ const neg=n<0; const a=Math.abs(Math.round(n)); return (neg?'-$':'$')+a.toLocaleString(); }
+function uFmtShort(n){ n=Math.round(n); if(n>=1000){ const k=n/1000; return '$'+(Number.isInteger(k)?k:k.toFixed(1).replace(/\.0$/,''))+'k'; } return '$'+n; }
 
 /* funding cards: every unlock card (by everyday rate) + common wallet cards for X Money funding */
 const FUND_RATES={};
-Object.entries(UNLOCK_CARDS).forEach(([id,c])=>{ FUND_RATES[id]={name:c.name,rate:(c.rates.other||0)}; });
+Object.entries(UNLOCK_CARDS).forEach(([id,c])=>{ FUND_RATES[id]={name:c.name,rate:(c.rates.other||0),network:c.network}; });
 Object.assign(FUND_RATES,{
-  csp:{name:"Chase Sapphire Preferred",rate:2}, cfu:{name:"Chase Freedom Unlimited",rate:1.5},
-  dc:{name:"Citi Double Cash",rate:2}, wfac:{name:"Wells Fargo Active Cash",rate:2},
-  savor:{name:"Capital One Savor",rate:1}, bce:{name:"Amex Blue Cash Everyday",rate:1},
-  disc:{name:"Discover it Cash Back",rate:1}, bcp:{name:"Amex Blue Cash Preferred",rate:1},
-  gold:{name:"Amex Gold",rate:2}, plat:{name:"Amex Platinum",rate:2}
+  csp:{name:"Chase Sapphire Preferred",rate:2,network:"visa"},
+  cfu:{name:"Chase Freedom Unlimited",rate:1.5,network:"visa"},
+  dc:{name:"Citi Double Cash",rate:2,network:"mc"},
+  wfac:{name:"Wells Fargo Active Cash",rate:2,network:"visa"},
+  savor:{name:"Capital One Savor",rate:1,network:"mc"},
+  bce:{name:"Amex Blue Cash Everyday",rate:1,network:"amex"},
+  disc:{name:"Discover it Cash Back",rate:1,network:"discover"},
+  bcp:{name:"Amex Blue Cash Preferred",rate:1,network:"amex"},
+  gold:{name:"Amex Gold",rate:2,network:"amex"},
+  plat:{name:"Amex Platinum",rate:2,network:"amex"}
 });
 uFundSanitize();
 
@@ -655,7 +663,7 @@ function uCompute(){
   const xSpend=uSpend.xmoney||0;
   const fundMode=uFund.mode;
   const perCard={};
-  sel.forEach(id=>{ perCard[id]={spend:0,rewards:0,unlocks:[],unlockVal:0}; });
+  sel.forEach(id=>{ perCard[id]={spend:0,rewards:0,unlocks:[],unlockVal:0,src:{fund:0,cats:{}}}; });
 
   /* X Money debit: 3% on eligible spend (slider is eligible-only by definition) */
   let xRewards=xSpend*0.03;
@@ -668,8 +676,8 @@ function uCompute(){
     const f1=FUND_RATES[uFund.card1], f2=FUND_RATES[uFund.card2];
     const r1=f1?a1*f1.rate/100:0, r2=f2?a2*f2.rate/100:0;
     fundRewards=r1+r2;
-    if(a1>0&&f1){ if(perCard[uFund.card1]){ perCard[uFund.card1].spend+=a1; perCard[uFund.card1].rewards+=r1; } else { fundOutAmt+=a1; fundOutRewards+=r1; fundOutNames.push(f1.name); } }
-    if(a2>0&&f2){ if(perCard[uFund.card2]){ perCard[uFund.card2].spend+=a2; perCard[uFund.card2].rewards+=r2; } else { fundOutAmt+=a2; fundOutRewards+=r2; fundOutNames.push(f2.name); } }
+    if(a1>0&&f1){ if(perCard[uFund.card1]){ perCard[uFund.card1].spend+=a1; perCard[uFund.card1].rewards+=r1; perCard[uFund.card1].src.fund+=a1; } else { fundOutAmt+=a1; fundOutRewards+=r1; fundOutNames.push(f1.name); } }
+    if(a2>0&&f2){ if(perCard[uFund.card2]){ perCard[uFund.card2].spend+=a2; perCard[uFund.card2].rewards+=r2; perCard[uFund.card2].src.fund+=a2; } else { fundOutAmt+=a2; fundOutRewards+=r2; fundOutNames.push(f2.name); } }
   }
 
   /* route every other category to the best selected card (or Ritz-Carlton for flights when Ritz priority is on) */
@@ -678,7 +686,7 @@ function uCompute(){
     const spend=uSpend[c.key]||0; if(spend<=0||sel.length===0) return;
     const best=uRouteFor(c.key,sel);
     const bestR=best?uRate(best,c.key):0;
-    if(best&&bestR>0){ perCard[best].spend+=spend; perCard[best].rewards+=spend*bestR/100; }
+    if(best&&bestR>0){ perCard[best].spend+=spend; perCard[best].rewards+=spend*bestR/100; perCard[best].src.cats[c.key]=(perCard[best].src.cats[c.key]||0)+spend; }
   });
 
   /* thresholds */
@@ -744,6 +752,16 @@ function uCompute(){
   return {rows,total,tRewards,tUnlock,tNoSpend,tFees,next,recs,xRewards,fundRewards,fundOutAmt,fundOutRewards,fundOutNames,selCount:sel.length};
 }
 
+/* tooltip breakdown of a card's routed spend: X Money funding vs categories — all derived */
+function uSpendSrcTitle(x){
+  const bits=[];
+  if(x.pc.src.fund>0) bits.push('X Money funding: '+uFmt(x.pc.src.fund));
+  Object.entries(x.pc.src.cats).forEach(([k,v])=>{
+    const cn=(UNLOCK_CATS.find(c=>c.key===k)||{}).name||k;
+    bits.push(cn+': '+uFmt(v));
+  });
+  return bits.join(' \u00b7 ');
+}
 /* ---------- renderers ---------- */
 function uRenderPortfolio(){
   const box=document.getElementById('unlock-portfolio'); if(!box) return;
@@ -755,6 +773,7 @@ function uRenderPortfolio(){
     lab.innerHTML='<input type="checkbox" '+(on?'checked':'')+' class="accent-brand-600 w-3.5 h-3.5 flex-shrink-0">'
       +'<span class="w-2.5 h-2.5 rounded-sm flex-shrink-0" style="background:'+c.color+'"></span>'
       +'<span class="flex-1 min-w-0 text-xs font-semibold text-slate-800 truncate">'+c.name+'</span>'
+      +((c.thresholds&&c.thresholds[0])?'<span class="text-[10px] font-bold text-amber-700 bg-amber-50 border border-amber-200 rounded px-1.5 py-0.5 whitespace-nowrap" title="'+c.thresholds[0].label+'">\uD83D\uDD13 '+uFmtShort(c.thresholds[0].spend)+'</span>':'')
       +'<span class="text-[10px] text-slate-400 font-medium whitespace-nowrap">$'+c.fee+'</span>';
     lab.querySelector('input').addEventListener('change',e=>{
       if(e.target.checked) uPortfolio.add(id); else uPortfolio.delete(id);
@@ -769,7 +788,8 @@ function uRenderPortfolio(){
     if(fs){
       const cur=fs.value||uFund[key];
       fs.innerHTML='';
-      Object.entries(FUND_RATES).forEach(([fid,f])=>{
+      /* X Money only accepts Visa/Mastercard for card funding — filter the options */
+      Object.entries(FUND_RATES).filter(([,f])=>f.network==='visa'||f.network==='mc').forEach(([fid,f])=>{
         const o=document.createElement('option'); o.value=fid; o.textContent=f.name+' — '+f.rate+'% base'; fs.appendChild(o);
       });
       fs.value=FUND_RATES[cur]?cur:def;
@@ -871,7 +891,7 @@ function uRender(){
       tr.className='border-b border-slate-100 last:border-0';
       const unlockTxt=x.pc.unlocks.length?x.pc.unlocks.map(t=>t.label+(t.value?' ('+uFmt(t.value)+')':'')).join('; '):'<span class="text-slate-300">—</span>';
       tr.innerHTML='<td class="py-2.5 pr-2"><span class="inline-block w-2 h-2 rounded-sm mr-1.5" style="background:'+x.card.color+'"></span><strong class="text-slate-800">'+x.card.name+'</strong><div class="text-[10px] text-slate-400 mt-0.5">'+unlockTxt+'</div></td>'
-        +'<td class="py-2.5 pr-2 text-right font-mono">'+uFmt(x.pc.spend)+'</td>'
+        +'<td class="py-2.5 pr-2 text-right font-mono cursor-help" title="'+uSpendSrcTitle(x)+'">'+uFmt(x.pc.spend)+'</td>'
         +'<td class="py-2.5 pr-2 text-right font-mono text-emerald-700">'+uFmt(x.pc.rewards)+'</td>'
         +'<td class="py-2.5 pr-2 text-right font-mono text-amber-700">'+uFmt(x.pc.unlockVal)+'</td>'
         +'<td class="py-2.5 pr-2 text-right font-mono text-blue-700">'+uFmt(x.card.noSpend)+'</td>'
@@ -1295,6 +1315,48 @@ const CATEGORIES = [
     ]
   },
 ];
+
+/* ============ WALLET BRIDGE (derived, not duplicated) ============
+   The top wallet picker also offers the planner's airline & hotel cards.
+   Everything about them — name, fee, earn rates — is derived from
+   UNLOCK_CARDS (single source of truth). UNLOCK_CARDS rates are in
+   cents-per-dollar, so bridged simulator entries carry no ptCurrency and
+   effVal() uses them as-is. */
+const BRIDGE_HOTEL_AIRLINE = /^(hilton_|marriott_|ihg_|delta_|united_)/;
+const BRIDGE_EXTRA_IDS = new Set(['hyatt','citi_exec','aeroplan']);
+function bridgePlannerCardsToWallet(){
+  const alreadyCovered = new Set(Object.keys(UNLOCK_TO_WALLET)); // e.g. hilton_aspire->aspire
+  Object.keys(UNLOCK_CARDS).forEach(id=>{
+    if(CARDS[id] || alreadyCovered.has(id)) return; // already in the top universe
+    if(!BRIDGE_HOTEL_AIRLINE.test(id) && !BRIDGE_EXTRA_IDS.has(id)) return;
+    const u = UNLOCK_CARDS[id];
+    CARDS[id] = { name: u.name, issuer: u.issuer, fee: '$'+u.fee+'/yr',
+      feeNum: u.fee, color: u.color, bridged: true };
+    const r = u.rates || {};
+    const best = (...ks)=>Math.max(0, ...ks.map(k=>r[k]||0));
+    const addEntry = (catKey, val, capNote)=>{
+      if(!(val>0)) return;
+      const cat = CATEGORIES.find(c=>c.key===catKey);
+      if(!cat || cat.entries.some(e=>e.card===id)) return;
+      const num = Math.round(val*10)/10;
+      cat.entries.push({ card:id, rate:(Number.isInteger(num)?num:num.toFixed(1))+'\u00a2',
+        num:num, cap:capNote||'derived from planner rates' });
+    };
+    addEntry('dining', r.dining);
+    addEntry('groceries', r.groceries);
+    addEntry('gas', r.gas);
+    addEntry('travel-other', best('flights','flights_aa','flights_ac','flights_delta','flights_united'), 'best airline variant');
+    addEntry('hotel-loyalty', best('hotel_hilton','hotel_marriott','hotel_hyatt','hotel_ihg','hotel_other'), 'best hotel variant');
+    addEntry('everything-else', r.other);
+  });
+  /* wallet<->planner sync: bridged cards share ids in both universes */
+  Object.keys(UNLOCK_CARDS).forEach(uid=>{
+    if(CARDS[uid] && !WALLET_TO_UNLOCK[uid] && !UNLOCK_TO_WALLET[uid]){
+      WALLET_TO_UNLOCK[uid]=uid; UNLOCK_TO_WALLET[uid]=uid;
+    }
+  });
+}
+bridgePlannerCardsToWallet();
 
 const SCENARIOS = [
   { key:"flight-delay", icon:"✈️", name:"Flight Delayed 6+ Hours", sub:"trip delay reimbursement",
