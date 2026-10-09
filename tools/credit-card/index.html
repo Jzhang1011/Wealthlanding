@@ -63,6 +63,7 @@
     @page { margin: 0.5in; }
   }
 </style>
+<style>.ucs-card>summary{list-style:none}.ucs-card>summary::-webkit-details-marker{display:none}.ucs-card[open] .ucs-chev{transform:rotate(90deg)}</style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
 <div class="bg-navy-900 hidden"></div>
@@ -313,7 +314,7 @@
         <i class="fa-solid fa-unlock"></i><span>ANNUAL SPEND OPTIMIZER</span>
       </div>
       <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">Annual Benefits Planner</h2>
-      <p class="text-slate-600 text-sm">The sophisticated version: annual planning across spend thresholds, free nights, companion passes, status, and no-spend card value. Set your yearly spend, pick the cards you hold, then toggle exactly which earn rate each card should compete for — every card is ranked by normalized dollars per year, with unlock progress, dominated toggles flagged, and the best card to add next. <span class="font-semibold text-slate-700">Category spend syncs both ways with the <a href="#quick-check" class="font-bold text-brand-700 hover:underline">Quick Check</a> above — set it once.</span></p>
+      <p class="text-slate-600 text-sm">The sophisticated version: annual planning across spend thresholds, free nights, companion passes, status, and no-spend card value. Pick the cards you hold, then set what you actually put on each card, line by line at its own earn rate — every card is ranked by normalized dollars per year, with unlock progress from that card's own spend, beaten lines flagged, and the best card to add next. <span class="font-semibold text-slate-700">This planner keeps its own annual per-card numbers; the monthly <a href="#quick-check" class="font-bold text-brand-700 hover:underline">Quick Check</a> above is a separate quick estimate.</span></p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
@@ -371,11 +372,11 @@
       <div class="lg:col-span-2 space-y-6">
         <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6">
           <div class="flex items-center justify-between mb-1">
-            <h3 class="font-bold text-slate-800 text-sm">Annual Spend by Category</h3>
+            <h3 class="font-bold text-slate-800 text-sm">Annual Spend by Card</h3>
             <span class="text-xs font-mono font-bold text-slate-500" id="unlock-total"></span>
           </div>
-          <p class="text-[11px] text-slate-500 mb-4">Drag to your numbers. Defaults are a high-spend household sketch.</p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4" id="unlock-sliders"></div>
+          <p class="text-[11px] text-slate-500 mb-4">One section per selected card, one line per earn rate. Set what you put on each line per year (slider or type it). Rates show nominal earn and, for points cards, the normalized value (≈). Deselected cards keep their numbers for when you add them back.</p>
+          <div class="space-y-3" id="unlock-cardspend"></div>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5">
             <div>
               <label class="text-[11px] font-bold text-slate-600 block mb-1">Primary hotel chain</label>
@@ -550,38 +551,50 @@ const UNLOCK_CARDS = {
     thresholds:[{spend:50000,label:"10k bonus Loyalty Points",value:0},{spend:90000,label:"10k bonus Loyalty Points",value:0},{spend:165000,label:"10k bonus Loyalty Points",value:0},{spend:240000,label:"10k bonus Loyalty Points",value:0}] },
   aeroplan:      { name:"Chase Aeroplan", issuer:"Chase", network:"mc", ptVal:1.3, ptCur:"Aeroplan", fee:95, color:"#C8102E", noSpend:210, noSpendDesc:"Aeroplan 25K + checked bag",
     rates:{dining:1.3,groceries:1.3,gas:1.3,flights_ac:3.9,flights:1.3,hotel_hilton:1.3,hotel_marriott:1.3,hotel_hyatt:1.3,hotel_ihg:1.3,hotel_other:1.3,wholesale:1.3,utilities:1.3,other:1.3},
-    thresholds:[{spend:75000,label:"Aeroplan 35K",value:0}] }
+    thresholds:[{spend:75000,label:"Aeroplan 35K",value:0}] },
+  /* Added for "Annual Spend by Card": Costco card (wholesale = Costco warehouse purchases; caps model the $7k/yr combined gas limit) */
+  costco:        { name:"Costco Anywhere Visa by Citi", issuer:"Citi", network:"visa", ptVal:1, ptCur:"Costco cash back", fee:0, color:"#1E7A46", noSpend:0, noSpendDesc:"Costco membership required",
+    rates:{dining:3,groceries:1,gas:4,gas_costco:5,flights:3,hotel_hilton:3,hotel_marriott:3,hotel_hyatt:3,hotel_ihg:3,hotel_other:3,wholesale:2,utilities:1,other:1},
+    caps:[{keys:["gas_costco","gas"],limit:7000,after:1,note:"first $7,000/yr of gas combined, then 1%"}],
+    lineLabels:{wholesale:"Costco purchases",gas:"Gas & EV (non-Costco)",gas_costco:"Costco gas"},
+    thresholds:[] },
+  /* X Money debit as a portfolio "card": 3% on eligible purchases; wholesale clubs and utilities/insurance earn 0% (so they get no line) */
+  xmoney:        { name:"X Money (debit)", issuer:"X", network:"debit", ptVal:1, ptCur:"cash back", fee:0, color:"#111111", noSpend:0, noSpendDesc:"",
+    rates:{other:3,wholesale:0,utilities:0},
+    lineLabels:{base:"Eligible debit purchases"}, lineNotes:{base:"wholesale clubs, utilities & insurance earn 0%"},
+    thresholds:[] }
 };
 
-const UNLOCK_CATS = [
-  { key:"xmoney", name:"X Money debit spend", max:200000, step:1000, def:120000, note:"3% on eligible purchases; wholesale/utilities/insurance excluded" },
-  { key:"dining", name:"Dining", max:60000, step:500, def:18000 },
-  { key:"groceries", name:"Groceries", max:40000, step:500, def:12000 },
-  { key:"gas", name:"Gas", max:15000, step:250, def:4000 },
-  { key:"flights", name:"Flights (direct-booked)", max:50000, step:500, def:10000 },
-  { key:"hotels", name:"Hotels", max:40000, step:500, def:8000 },
-  { key:"wholesale", name:"Wholesale clubs", max:30000, step:500, def:6000, note:"earns 0% on X Money debit" },
-  { key:"utilities", name:"Utilities & insurance", max:20000, step:250, def:5000, note:"earns 0% on X Money debit" },
-  { key:"other", name:"Everything else", max:100000, step:1000, def:25000 }
-];
-
-const U_PORT_KEY='wl_unlocks_portfolio', U_SPEND_KEY='wl_unlocks_spend', U_FUND_KEY='wl_unlocks_fund';
-let uPortfolio=new Set(), uSpend={}, uFund={mode:'bank',card1:'vx',amt1:null,card2:'dc',amt2:0};
+/* Household mix (the old category defaults). Used only to estimate how spend on a
+   multi-category line (e.g. Venture X "Everything") splits across categories when
+   ranking cards you don't hold yet. */
+const U_MIX={dining:18000,groceries:12000,gas:4000,flights:10000,hotels:8000,wholesale:6000,utilities:5000,other:25000};
+const U_CAT_NAMES={dining:'Dining',groceries:'Groceries',gas:'Gas',flights:'Flights',hotels:'Hotels',wholesale:'Wholesale clubs',utilities:'Utilities & insurance',other:'Everything else'};
+/* default $/yr for a freshly selected card's lines (merged lines take the largest of their categories) */
+const U_SEED={dining:6000,groceries:6000,gas:2000,gas_costco:1000,flights:5000,hotels:4000,wholesale:5000,utilities:2000};
+const U_SEED_XMONEY=120000;
+const U_PORT_KEY='wl_unlocks_portfolio', U_SPEND_KEY='wl_unlocks_spend', U_FUND_KEY='wl_unlocks_fund', U_CARDSPEND_KEY='wl_unlocks_cardspend';
+let uPortfolio=new Set(), uCardSpend={}, uFund={mode:'bank',card1:'vx',amt1:null,card2:'dc',amt2:0};
+/* X Money debit spend = the X Money card's included lines (0 if X Money isn't in the portfolio) */
+function uXSpend(){
+  if(!uPortfolio.has('xmoney')) return 0;
+  return uEarnLines('xmoney').reduce((a,L)=>a+(uToggleOn('xmoney',L.key)?uLineAmt('xmoney',L.key):0),0);
+}
 
 /* split funding across two cards: card 1 defaults to its first spend threshold (capped at X Money spend), so e.g. Venture X funds $75k to trip its guest-benefit threshold; card 2 takes overflow; the rest goes by bank */
 function uFundDefaultAmt1(){
-  const xSpend=uSpend.xmoney||0;
+  const xSpend=uXSpend();
   const card=UNLOCK_CARDS[uFund.card1];
   if(card&&card.thresholds&&card.thresholds.length) return Math.min(card.thresholds[0].spend,xSpend);
   return xSpend;
 }
 function uFundAmt1(){
-  const xSpend=uSpend.xmoney||0;
+  const xSpend=uXSpend();
   const a=(uFund.amt1==null?uFundDefaultAmt1():uFund.amt1);
   return Math.max(0,Math.min(a,xSpend));
 }
 function uFundAmt2(){
-  const xSpend=uSpend.xmoney||0;
+  const xSpend=uXSpend();
   return Math.max(0,Math.min(uFund.amt2||0,xSpend-uFundAmt1()));
 }
 function uFundEligible(id){ const f=FUND_RATES[id]; return !!(f&&(f.network==='visa'||f.network==='mc')); }
@@ -592,12 +605,23 @@ function uFundSanitize(){
   if(typeof uFund.amt2!=='number') uFund.amt2=0;
 }
 try{ const s=JSON.parse(localStorage.getItem(U_PORT_KEY)||'null'); uPortfolio=new Set((s||[]).filter(id=>UNLOCK_CARDS[id])); }catch(e){ uPortfolio=new Set(); }
-try{ const s=JSON.parse(localStorage.getItem(U_SPEND_KEY)||'null'); uSpend=s&&typeof s==='object'?s:{}; }catch(e){ uSpend={}; }
 try{ const s=JSON.parse(localStorage.getItem(U_FUND_KEY)||'null'); if(s&&typeof s==='object') uFund=s; }catch(e){}
 /* migrate the old single-card funding shape {card,amt} to {card1,amt1,card2,amt2} */
 if(uFund&&uFund.card&&uFund.card1===undefined){ uFund.card1=uFund.card; uFund.amt1=(uFund.amt==null?null:uFund.amt); uFund.card2='dc'; uFund.amt2=0; delete uFund.card; delete uFund.amt; }
-UNLOCK_CATS.forEach(c=>{ if(typeof uSpend[c.key]!=='number') uSpend[c.key]=c.def; });
-function uSave(){ try{ localStorage.setItem(U_PORT_KEY,JSON.stringify([...uPortfolio])); localStorage.setItem(U_SPEND_KEY,JSON.stringify(uSpend)); localStorage.setItem(U_FUND_KEY,JSON.stringify(uFund)); }catch(e){} }
+/* per-card line amounts {cardId:{lineKey:$/yr}}; the old category spend (wl_unlocks_spend) can't map onto
+   cards, so only its X Money figure is carried over (it seeds the X Money card's debit line) */
+let uLegacyX=null;
+try{ const s=JSON.parse(localStorage.getItem(U_SPEND_KEY)||'null'); if(s&&typeof s==='object'&&typeof s.xmoney==='number'&&isFinite(s.xmoney)&&s.xmoney>=0) uLegacyX=s.xmoney; }catch(e){}
+let uCardSpendLoaded=false;
+try{ const s=JSON.parse(localStorage.getItem(U_CARDSPEND_KEY)||'null'); if(s&&typeof s==='object'&&!Array.isArray(s)){ uCardSpend=s; uCardSpendLoaded=true; } }catch(e){ uCardSpend={}; }
+Object.keys(uCardSpend).forEach(id=>{
+  const m=uCardSpend[id];
+  if(!UNLOCK_CARDS[id]||!m||typeof m!=='object'||Array.isArray(m)){ delete uCardSpend[id]; return; }
+  Object.keys(m).forEach(k=>{ const v=m[k]; if(typeof v!=='number'||!isFinite(v)||v<0) delete m[k]; });
+});
+/* first visit under the by-card model: X Money was always counted before, so it starts in the portfolio */
+if(!uCardSpendLoaded&&(uLegacyX==null||uLegacyX>0)) uPortfolio.add('xmoney');
+function uSave(){ try{ localStorage.setItem(U_PORT_KEY,JSON.stringify([...uPortfolio])); localStorage.setItem(U_CARDSPEND_KEY,JSON.stringify(uCardSpend)); localStorage.setItem(U_FUND_KEY,JSON.stringify(uFund)); }catch(e){} }
 function uFmt(n){ const neg=n<0; const a=Math.abs(Math.round(n)); return (neg?'-$':'$')+a.toLocaleString(); }
 function uFmtShort(n){ n=Math.round(n); if(n>=1000){ const k=n/1000; return '$'+(Number.isInteger(k)?k:k.toFixed(1).replace(/\.0$/,''))+'k'; } return '$'+n; }
 
@@ -624,128 +648,155 @@ let uFlightPrio='ritz';
 try{ const s=localStorage.getItem(U_FLIGHT_KEY); uFlightPrio=(s==='rate')?'rate':'ritz'; }catch(e){}
 function uSaveFlightPrio(){ try{ localStorage.setItem(U_FLIGHT_KEY,uFlightPrio); }catch(e){} }
 
-/* ============ per-card earn lines & toggles ============
-   Each portfolio card exposes its earn opportunities as toggleable lines.
-   Toggle ON = the card may win that spend; the best toggled-on normalized
-   rate takes each dollar. Everything derives from UNLOCK_CARDS. */
-const U_TOG_KEY='wl_unlocks_toggles';
+/* ============ per-card earn lines (Annual Spend by Card) ============
+   Every card's lines are DERIVED from UNLOCK_CARDS[id].rates (normalized
+   cents per $1): rate keys that share a rate merge into one line, and keys
+   earning the card's base ("other") rate collapse into "Everything else"
+   ("Everything" on flat cards). The $/yr the user sets on each line is the
+   planner's input. Toggle OFF = that line's spend is left out of the plan. */
+const U_LTOG_KEY='wl_unlocks_linetoggles';
 let uToggles={};
-try{ const s=JSON.parse(localStorage.getItem(U_TOG_KEY)||'null'); if(s&&typeof s==='object') uToggles=s; }catch(e){ uToggles={}; }
-Object.keys(uToggles).forEach(id=>{ if(!UNLOCK_CARDS[id]) delete uToggles[id]; });
+try{ const s=JSON.parse(localStorage.getItem(U_LTOG_KEY)||'null'); if(s&&typeof s==='object') uToggles=s; }catch(e){ uToggles={}; }
+Object.keys(uToggles).forEach(id=>{ if(!UNLOCK_CARDS[id]||!uToggles[id]||typeof uToggles[id]!=='object') delete uToggles[id]; });
 function uToggleOn(id,key){ const t=uToggles[id]; return !t||t[key]!==false; }
 function uSetToggle(id,key,on){
   if(!uToggles[id]) uToggles[id]={};
   if(on) delete uToggles[id][key]; else uToggles[id][key]=false;
-  try{ localStorage.setItem(U_TOG_KEY,JSON.stringify(uToggles)); }catch(e){}
+  try{ localStorage.setItem(U_LTOG_KEY,JSON.stringify(uToggles)); }catch(e){}
 }
 const U_CHAIN_NAMES={hilton:'Hilton',marriott:'Marriott',hyatt:'Hyatt',ihg:'IHG',other:'Mixed'};
 const U_AIRLINE_NAMES={aa:'American',ac:'Air Canada',delta:'Delta',united:'United'};
-const U_HOTEL_KEYS=['hotel_hilton','hotel_marriott','hotel_hyatt','hotel_ihg'];
-function uHotelHome(id){
+const U_RATE_KEYS=['dining','groceries','gas','gas_costco','flights','flights_delta','flights_united','flights_aa','flights_ac','hotel_hilton','hotel_marriott','hotel_hyatt','hotel_ihg','hotel_other','wholesale','utilities','other'];
+const U_OPTIONAL_KEYS=/^(gas_costco|flights_)/; // only become lines when a card defines them
+const U_HOTEL_ALL=['hotel_hilton','hotel_marriott','hotel_hyatt','hotel_ihg','hotel_other'];
+const U_KEY_LABELS={dining:'Dining',groceries:'Groceries',gas:'Gas',gas_costco:'Costco gas',flights:'Flights',flights_delta:'Delta flights',flights_united:'United flights',flights_aa:'American flights',flights_ac:'Air Canada flights',hotel_hilton:'Hilton stays',hotel_marriott:'Marriott stays',hotel_hyatt:'Hyatt stays',hotel_ihg:'IHG stays',hotel_other:'Other hotels',wholesale:'Wholesale clubs',utilities:'Utilities & insurance',other:'Everything else'};
+function uKeyCat(k){ return k==='gas_costco'?'gas':(k.indexOf('flights')===0?'flights':(k.indexOf('hotel_')===0?'hotels':k)); }
+/* normalized cents per $1 a card earns on a rate key (falls back the same way the old router did) */
+function uRateAt(id,k){
   const r=((UNLOCK_CARDS[id]||{}).rates)||{};
-  let bk=null,bv=-1;
-  U_HOTEL_KEYS.forEach(k=>{ const v=r[k]||0; if(v>bv){bv=v;bk=k;} });
-  return bk?bk.slice(6):null;
+  if(r[k]!=null) return r[k];
+  if(k==='gas_costco') return uRateAt(id,'gas');
+  if(k.indexOf('flights_')===0) return r.flights!=null?r.flights:(r.other||0);
+  if(k.indexOf('hotel_')===0) return r.hotel_other!=null?r.hotel_other:(r.other||0);
+  return r.other||0;
 }
-function uHotelOtherRate(id){
-  const r=((UNLOCK_CARDS[id]||{}).rates)||{}, home=uHotelHome(id);
-  let bv=0;
-  U_HOTEL_KEYS.forEach(k=>{ if(k!=='hotel_'+home) bv=Math.max(bv,r[k]||0); });
-  return Math.max(bv,r.hotel_other||0);
+function uFmtRate(v){ return (Math.round(v*10)/10+'').replace(/\.0$/,''); }
+/* nominal earn + normalized value, e.g. Venture X: "2% (≈3%)" = 2x miles at 1.5¢ */
+function uRateDisp(id,rate){
+  const c=UNLOCK_CARDS[id]||{}, pv=c.ptVal||1;
+  if(Math.abs(pv-1)<1e-9) return {main:uFmtRate(rate)+'%',full:uFmtRate(rate)+'% '+(c.ptCur||'cash back')};
+  const nom=rate/pv;
+  return {main:uFmtRate(nom)+'% (\u2248'+uFmtRate(rate)+'%)',full:uFmtRate(nom)+'x '+c.ptCur+' at '+uFmtRate(pv)+'\u00a2 each \u2248 '+uFmtRate(rate)+'% normalized'};
 }
-/* hotel earn lines: one collapsed line, or home-chain + other-hotels */
-function uHotelLines(id){
-  const c=UNLOCK_CARDS[id]; if(!c) return [];
-  const r=c.rates||{}, home=uHotelHome(id);
-  if(!home) return [];
-  const hv=r['hotel_'+home]||0, ov=uHotelOtherRate(id);
-  if(Math.abs(hv-ov)<1e-9) return [{key:'hotels',label:'Hotel stays',sub:'direct hotel bookings',rate:hv}];
-  return [{key:'hotel_home',label:U_CHAIN_NAMES[home]+' stays',sub:c.ptCur+' home chain',rate:hv},
-          {key:'hotel_other',label:'Other hotel stays',sub:'non-'+U_CHAIN_NAMES[home]+' bookings',rate:ov}];
-}
-/* earn lines: [{key,label,sub,rate,disp}] — rate in normalized cents per $1 */
+const uLineCache={};
+/* [{key,label,sub,keys,rate,base,disp,full}] */
 function uEarnLines(id){
+  if(uLineCache[id]) return uLineCache[id];
   const c=UNLOCK_CARDS[id]; if(!c) return [];
-  const r=c.rates||{}, pv=c.ptVal||1;
-  const mx=v=>{ const m=Math.round(v/pv*10)/10; return (Number.isInteger(m)?String(m):m.toFixed(1))+'x'; };
-  const cd=v=>(Math.round(v*10)/10+'').replace(/\.0$/,'')+'\u00a2/$';
+  const r=c.rates||{}, base=uRateAt(id,'other');
+  const keys=U_RATE_KEYS.filter(k=>!U_OPTIONAL_KEYS.test(k)||r[k]!=null);
+  const groups=[], byRate={}, baseKeys=[];
+  keys.forEach(k=>{
+    const v=uRateAt(id,k);
+    if(Math.abs(v-base)<1e-9){ baseKeys.push(k); return; }
+    const rk=v.toFixed(4);
+    if(!byRate[rk]){ byRate[rk]={rate:v,keys:[]}; groups.push(byRate[rk]); }
+    byRate[rk].keys.push(k);
+  });
+  const ll=c.lineLabels||{}, ln=c.lineNotes||{}, caps=c.caps||[];
+  const hasAirlineKeys=keys.some(k=>k.indexOf('flights_')===0);
+  const labelFor=ks=>{
+    let ks2=ks.slice();
+    if(U_HOTEL_ALL.every(h=>ks2.indexOf(h)>=0)){ ks2=ks2.filter(h=>U_HOTEL_ALL.indexOf(h)<0); ks2.splice(Math.min(ks.indexOf('hotel_hilton'),ks2.length),0,'@hotels'); }
+    return ks2.map(k=>k==='@hotels'?'Hotels':(ll[k]||(k==='flights'&&hasAirlineKeys?'Other airlines':U_KEY_LABELS[k]||k))).join(' \u00b7 ');
+  };
+  const capNote=ks=>{ const cp=caps.find(x=>x.keys.some(k=>ks.indexOf(k)>=0)); return cp?cp.note:''; };
   const lines=[];
-  const push=(key,label,sub,val)=>{ if(val>0) lines.push({key:key,label:label,sub:sub||'',rate:val,disp:mx(val)+' \u2192 '+cd(val)}); };
-  push('dining','Dining','restaurants & takeout',r.dining);
-  push('groceries','Groceries','supermarkets',r.groceries);
-  push('gas','Gas','fuel & EV charging',r.gas);
-  const al=((document.getElementById('unlock-airline')||{}).value||'other');
-  const fk='flights_'+al;
-  let fVal=r.flights||0, fLabel='Flights', fSub='direct-booked airfare';
-  if(al!=='other'&&r[fk]!=null){ fVal=r[fk]; fLabel=U_AIRLINE_NAMES[al]+' flights'; }
-  let bv=0,bk='';
-  ['aa','ac','delta','united'].forEach(a=>{ const v=r['flights_'+a]||0; if(v>bv){bv=v;bk=a;} });
-  if(bv>fVal+1e-9) fSub+=' \u00b7 best: '+U_AIRLINE_NAMES[bk]+' '+mx(bv);
-  push('flights',fLabel,fSub,fVal);
-  uHotelLines(id).forEach(L=>push(L.key,L.label,L.sub,L.rate));
-  push('other','Everything else','wholesale, utilities, misc',r.other);
+  groups.filter(g=>g.rate>0).sort((a,b)=>b.rate-a.rate).forEach(g=>{
+    const d=uRateDisp(id,g.rate);
+    lines.push({key:g.keys.join('+'),label:labelFor(g.keys),sub:capNote(g.keys),keys:g.keys,rate:g.rate,base:false,disp:d.main,full:d.full});
+  });
+  if(base>0){
+    const d=uRateDisp(id,base);
+    const cats=[]; baseKeys.forEach(k=>{ const ct=uKeyCat(k); if(ct!=='other'&&cats.indexOf(ct)<0) cats.push(ct); });
+    const flat=lines.length===0;
+    lines.push({key:'base',label:ll.base||(flat?'Everything':'Everything else'),
+      sub:ln.base||(flat?'all purchases':(cats.length?cats.map(ct=>U_CAT_NAMES[ct].toLowerCase()).join(', ')+' & misc':'all other purchases')),
+      keys:baseKeys,rate:base,base:true,disp:d.main,full:d.full});
+  }
+  uLineCache[id]=lines;
   return lines;
 }
-/* which earn line a spend category maps to for a card */
-function uLineKeyFor(id,catKey){
-  if(catKey==='dining') return 'dining';
-  if(catKey==='groceries') return 'groceries';
-  if(catKey==='gas') return 'gas';
-  if(catKey==='flights') return 'flights';
-  if(catKey==='hotels'){
-    const hl=uHotelLines(id);
-    if(hl.length!==2) return hl.length===1?'hotels':'other';
-    const chain=((document.getElementById('unlock-hotel-chain')||{}).value||'hilton');
-    return chain===uHotelHome(id)?'hotel_home':'hotel_other';
-  }
-  return 'other';
+function uSeedLine(id,L,count){
+  if(L.base){ if(id==='xmoney') return uLegacyX!=null?uLegacyX:U_SEED_XMONEY; return count===1?20000:5000; }
+  return Math.max(0,...L.keys.map(k=>U_SEED[k]!=null?U_SEED[k]:(U_SEED[uKeyCat(k)]||0)));
 }
-/* normalized earn rate (cents/$1) a card applies to a spend category right now */
-function uLineRate(id,catKey){
-  const c=UNLOCK_CARDS[id]; if(!c) return 0;
-  const r=c.rates||{};
-  if(catKey==='hotels'){
-    const home=uHotelHome(id);
-    if(!home) return r.hotel_other||r.other||0;
-    const chain=((document.getElementById('unlock-hotel-chain')||{}).value||'hilton');
-    return chain===home?(r['hotel_'+home]||0):uHotelOtherRate(id);
+/* stored $/yr on a card line; lines without a stored amount get their default */
+function uLineAmt(id,key){
+  if(!uCardSpend[id]) uCardSpend[id]={};
+  const m=uCardSpend[id];
+  if(typeof m[key]!=='number'){
+    const lines=uEarnLines(id), L=lines.find(x=>x.key===key);
+    m[key]=L?uSeedLine(id,L,lines.length):0;
   }
-  if(catKey==='flights'){
+  return m[key];
+}
+function uSetLineAmt(id,key,v){ if(!uCardSpend[id]) uCardSpend[id]={}; uCardSpend[id][key]=Math.max(0,Math.round(v)||0); }
+/* rewards for one card from its included line amounts, applying any caps (highest rate fills the cap first) */
+function uCardRewards(id,amt){
+  const c=UNLOCK_CARDS[id]||{}, lines=uEarnLines(id), byLine={}, done=new Set();
+  let total=0;
+  (c.caps||[]).forEach(cap=>{
+    let room=cap.limit;
+    lines.filter(L=>!done.has(L.key)&&L.keys.some(k=>cap.keys.indexOf(k)>=0)).sort((a,b)=>b.rate-a.rate).forEach(L=>{
+      const a=amt[L.key]||0, inCap=Math.max(0,Math.min(a,room)); room-=inCap;
+      const e=(inCap*L.rate+(a-inCap)*cap.after)/100; byLine[L.key]=e; total+=e; done.add(L.key);
+    });
+  });
+  lines.forEach(L=>{ if(done.has(L.key)) return; const e=(amt[L.key]||0)*L.rate/100; byLine[L.key]=e; total+=e; });
+  return {total:total,byLine:byLine};
+}
+/* representative rate key for a category inside a line (hotel chain / airline selects decide when the line covers several) */
+function uRepKey(L,cat){
+  const ks=L.keys.filter(k=>uKeyCat(k)===cat);
+  if(!ks.length) return cat;
+  if(cat==='hotels'){
+    const chain=((document.getElementById('unlock-hotel-chain')||{}).value||'hilton');
+    const ck='hotel_'+chain; return ks.indexOf(ck)>=0?ck:ks[0];
+  }
+  if(cat==='flights'){
     const al=((document.getElementById('unlock-airline')||{}).value||'other');
-    const k='flights_'+al;
-    if(al!=='other'&&r[k]!=null) return r[k];
-    return r.flights!=null?r.flights:(r.other||0);
+    if(al!=='other'&&ks.indexOf('flights_'+al)>=0) return 'flights_'+al;
+    if(ks.indexOf('flights')>=0) return al!=='other'?'flights_'+al:'flights';
+    return ks[0];
   }
-  return r[catKey]!=null?r[catKey]:(r.other||0);
+  if(cat==='gas') return ks.indexOf('gas')>=0?'gas':ks[0];
+  return ks[0];
 }
-/* spend categories an earn line covers */
-function uLineCovers(key){
-  if(key==='dining') return ['dining'];
-  if(key==='groceries') return ['groceries'];
-  if(key==='gas') return ['gas'];
-  if(key==='flights') return ['flights'];
-  if(key==='other') return ['wholesale','utilities','other'];
-  return ['hotels'];
+/* split a line's amount across the categories it covers, weighted by the household mix */
+function uLinePortions(L,amount){
+  const cats=[]; L.keys.forEach(k=>{ const ct=uKeyCat(k); if(cats.indexOf(ct)<0) cats.push(ct); });
+  const w=cats.reduce((a,ct)=>a+(U_MIX[ct]||0),0);
+  return cats.map(ct=>({cat:ct,key:uRepKey(L,ct),amt:w>0?amount*(U_MIX[ct]||0)/w:amount/cats.length}));
 }
-/* does an earn line apply given the current hotel chain? */
-function uLineApplies(id,key){
-  const chain=((document.getElementById('unlock-hotel-chain')||{}).value||'hilton');
-  if(key==='hotel_home') return chain===uHotelHome(id);
-  if(key==='hotel_other') return chain!==uHotelHome(id);
-  return true;
-}
+function uLineIsFlights(L){ return L.keys.some(k=>uKeyCat(k)==='flights'); }
 
 function uCompute(){
   const sel=[...uPortfolio].filter(id=>UNLOCK_CARDS[id]);
-  const xSpend=uSpend.xmoney||0;
   const fundMode=uFund.mode;
   const perCard={};
-  sel.forEach(id=>{ perCard[id]={spend:0,rewards:0,unlocks:[],unlockVal:0,lineSpend:{},dominated:[],src:{fund:0,cats:{}}}; });
+  let tLineSpend=0;
+  /* each card's own lines: explicit $/yr per earn line (toggled-off lines are left out) */
+  sel.forEach(id=>{
+    const lines=uEarnLines(id), amt={}, lineSpend={};
+    let spend=0;
+    lines.forEach(L=>{ const a=uLineAmt(id,L.key), on=uToggleOn(id,L.key); lineSpend[L.key]=on?a:0; if(on&&a>0){ amt[L.key]=a; spend+=a; } });
+    const rw=uCardRewards(id,amt);
+    perCard[id]={spend:spend,lineTotal:spend,rewards:rw.total,lineRewards:rw.total,lineEarn:rw.byLine,unlocks:[],unlockVal:0,lineSpend:lineSpend,dominated:{},src:{fund:0}};
+    tLineSpend+=spend;
+  });
 
-  /* X Money debit: 3% on eligible spend (slider is eligible-only by definition) */
-  let xRewards=xSpend*0.03;
-
-  /* credit-card funding, split across two cards: each card's amount earns its everyday rate and counts toward its thresholds only if the card is in the portfolio; any remainder goes by bank */
+  /* credit-card funding of X Money, split across two cards: each card's amount earns its everyday rate and counts toward its thresholds only if the card is in the portfolio; any remainder goes by bank */
   let fundRewards=0;
   let fundOutAmt=0, fundOutRewards=0; const fundOutNames=[];
   if(fundMode==='card'){
@@ -757,38 +808,25 @@ function uCompute(){
     if(a2>0&&f2){ if(perCard[uFund.card2]){ const pc=perCard[uFund.card2]; pc.spend+=a2; pc.rewards+=r2; pc.src.fund+=a2; } else { fundOutAmt+=a2; fundOutRewards+=r2; fundOutNames.push(f2.name); } }
   }
 
-  /* toggle-aware routing: each category goes to the toggled-on card with the best normalized rate */
-  const uncovered={}, catWinner={};
-  UNLOCK_CATS.forEach(c=>{
-    if(c.key==='xmoney') return;
-    const spend=uSpend[c.key]||0; if(spend<=0||sel.length===0) return;
-    let cands=sel.filter(id=>uToggleOn(id,uLineKeyFor(id,c.key)));
-    if(c.key==='flights'&&uFlightPrio==='ritz'&&cands.indexOf('ritz')>=0) cands=['ritz'];
-    let best=null,bestR=0;
-    cands.forEach(id=>{ const r=uLineRate(id,c.key); if(r>bestR){bestR=r;best=id;} });
-    if(best&&bestR>0){
-      const pc=perCard[best], lk=uLineKeyFor(best,c.key);
-      pc.spend+=spend; pc.rewards+=spend*bestR/100;
-      pc.src.cats[c.key]=(pc.src.cats[c.key]||0)+spend;
-      pc.lineSpend[lk]=(pc.lineSpend[lk]||0)+spend;
-      catWinner[c.key]=best;
-    } else {
-      uncovered[c.key]=(uncovered[c.key]||0)+spend;
-    }
-  });
-
-  /* dominated toggles: on, but the spend went to another card */
+  /* beaten lines: another card you hold earns more on every category the line covers
+     (flight lines on Ritz-Carlton are exempt when flights are prioritized for its trip-delay cover) */
+  const ritzPrio=(uFlightPrio==='ritz'&&uPortfolio.has('ritz'));
   sel.forEach(id=>{
     const pc=perCard[id];
     uEarnLines(id).forEach(L=>{
-      if(!uToggleOn(id,L.key)||(pc.lineSpend[L.key]||0)>0) return;
-      if(!uLineApplies(id,L.key)) return;
-      const took=uLineCovers(L.key).some(k=>(uSpend[k]||0)>0&&catWinner[k]&&catWinner[k]!==id);
-      if(took) pc.dominated.push(L.key);
+      const a=pc.lineSpend[L.key]||0; if(a<=0) return;
+      if(ritzPrio&&id==='ritz'&&uLineIsFlights(L)) return;
+      let best=null,bestAdv=0;
+      sel.forEach(o=>{
+        if(o===id) return;
+        const adv=Math.min(...L.keys.map(k=>uRateAt(o,k)))-L.rate;
+        if(adv>bestAdv+1e-9){ bestAdv=adv; best=o; }
+      });
+      if(best) pc.dominated[L.key]={by:best,gain:a*bestAdv/100};
     });
   });
 
-  /* thresholds */
+  /* thresholds use each card's own total (its lines + any X Money funding routed to it) */
   sel.forEach(id=>{
     const card=UNLOCK_CARDS[id], pc=perCard[id];
     card.thresholds.forEach(t=>{
@@ -796,7 +834,7 @@ function uCompute(){
     });
   });
 
-  let total=xRewards+fundOutRewards, tRewards=xRewards+fundOutRewards, tUnlock=0, tNoSpend=0, tFees=0;
+  let total=fundOutRewards, tRewards=fundOutRewards, tUnlock=0, tNoSpend=0, tFees=0;
   const rows=sel.map(id=>{
     const card=UNLOCK_CARDS[id], pc=perCard[id];
     const net=pc.rewards+pc.unlockVal+card.noSpend-card.fee;
@@ -813,24 +851,28 @@ function uCompute(){
   });
   next.sort((a,b)=>(b.t.value||0)-(a.t.value||0));
 
-  /* cards to add: marginal net value vs the current toggle-aware winners */
+  /* cards to add: move each portion of your current spend to the new card where it earns more
+     (multi-category lines are split by the household mix); new-card caps are not applied here */
+  const portions=[];
+  sel.forEach(id=>{
+    const pc=perCard[id];
+    uEarnLines(id).forEach(L=>{
+      const a=pc.lineSpend[L.key]||0; if(a<=0) return;
+      if(ritzPrio&&id==='ritz'&&uLineIsFlights(L)) return;
+      const eff=(pc.lineEarn[L.key]||0)/a*100;
+      uLinePortions(L,a).forEach(p=>portions.push({cat:p.cat,key:p.key,amt:p.amt,cur:eff}));
+    });
+  });
   const recs=[];
   Object.keys(UNLOCK_CARDS).forEach(id=>{
     if(uPortfolio.has(id)) return;
     const card=UNLOCK_CARDS[id];
-    let delta=0; const why=[]; let winSpend=0;
-    UNLOCK_CATS.forEach(c=>{
-      if(c.key==='xmoney') return;
-      const spend=uSpend[c.key]||0; if(spend<=0) return;
-      const w=catWinner[c.key];
-      const cur=w?uLineRate(w,c.key):0;
-      const mine=uLineRate(id,c.key);
-      if(mine>cur){
-        const g=spend*(mine-cur)/100;
-        delta+=g; winSpend+=spend;
-        if(g>25) why.push('+'+uFmt(g)+'/yr on '+c.name);
-      }
+    let delta=0, winSpend=0; const gainByCat={};
+    portions.forEach(p=>{
+      const mine=uRateAt(id,p.key);
+      if(mine>p.cur+1e-9){ const g=p.amt*(mine-p.cur)/100; delta+=g; winSpend+=p.amt; gainByCat[p.cat]=(gainByCat[p.cat]||0)+g; }
     });
+    const why=Object.keys(gainByCat).sort((a,b)=>gainByCat[b]-gainByCat[a]).filter(k=>gainByCat[k]>25).map(k=>'+'+uFmt(gainByCat[k])+'/yr on '+(U_CAT_NAMES[k]||k));
     let uVal=0; const uHit=[];
     card.thresholds.forEach(t=>{ if(winSpend>=t.spend&&t.value>0){ uVal+=t.value; uHit.push(t.label); } });
     delta+=uVal; if(uHit.length) why.push('unlocks: '+uHit.join('; '));
@@ -839,7 +881,7 @@ function uCompute(){
   });
   recs.sort((a,b)=>b.delta-a.delta);
 
-  return {rows:rows,total:total,tRewards:tRewards,tUnlock:tUnlock,tNoSpend:tNoSpend,tFees:tFees,next:next,recs:recs,xRewards:xRewards,fundRewards:fundRewards,fundOutAmt:fundOutAmt,fundOutRewards:fundOutRewards,fundOutNames:fundOutNames,selCount:sel.length,uncovered:uncovered};
+  return {rows:rows,perCard:perCard,total:total,tRewards:tRewards,tUnlock:tUnlock,tNoSpend:tNoSpend,tFees:tFees,tLineSpend:tLineSpend,next:next,recs:recs,fundRewards:fundRewards,fundOutAmt:fundOutAmt,fundOutRewards:fundOutRewards,fundOutNames:fundOutNames,selCount:sel.length};
 }
 
 /* ---------- renderers ---------- */
@@ -878,28 +920,6 @@ function uRenderPortfolio(){
   });
 }
 
-/* category spend sync with the Quick Check simulator (monthly): dining, groceries, gas, and everything-else/other stay in sync both ways; each tool keeps its own defaults until the user drags a synced slider */
-const SYNC_SIM2OPT={dining:'dining',groceries:'groceries',gas:'gas','everything-else':'other'};
-const SYNC_OPT2SIM={dining:'dining',groceries:'groceries',gas:'gas',other:'everything-else'};
-function syncSimToOpt(simKey){
-  const optKey=SYNC_SIM2OPT[simKey]; if(!optKey) return;
-  uSpend[optKey]=(spendState[simKey]||0)*12;
-  uSave();
-  const sl=document.getElementById('uslider-'+optKey), lb=document.getElementById('uval-'+optKey);
-  if(sl) sl.value=uSpend[optKey];
-  if(lb) lb.textContent=uFmt(uSpend[optKey])+'/yr';
-  uRender();
-}
-function syncOptToSim(optKey){
-  const simKey=SYNC_OPT2SIM[optKey]; if(!simKey) return;
-  spendState[simKey]=Math.round((uSpend[optKey]||0)/12);
-  saveSpend();
-  const sl=document.getElementById('sim-slider-'+simKey), lb=document.getElementById('sim-val-'+simKey);
-  if(sl) sl.value=spendState[simKey];
-  if(lb) lb.textContent='$'+spendState[simKey]+'/mo';
-  updateSimulator();
-}
-
 /* card portfolio sync with the top-section wallet: same physical card, different id schemes in the two card universes */
 const WALLET_TO_UNLOCK={csr:'csr',vx:'vx',ritz:'ritz',hyatt:'hyatt',plat:'amex_plat',aspire:'hilton_aspire'};
 const UNLOCK_TO_WALLET={csr:'csr',vx:'vx',ritz:'ritz',hyatt:'hyatt',amex_plat:'plat',hilton_aspire:'aspire'};
@@ -913,26 +933,101 @@ function syncPortfolioToWallet(){
   if(typeof updateSimulator==='function') updateSimulator();
 }
 
-function uRenderSliders(){
-  const box=document.getElementById('unlock-sliders'); if(!box) return;
-  box.innerHTML='';
-  UNLOCK_CATS.forEach(c=>{
-    const row=document.createElement('div');
-    row.innerHTML='<div class="flex items-center justify-between mb-1">'
-      +'<label class="text-xs font-semibold text-slate-700">'+c.name+(c.note?' <span class="font-normal text-slate-400">· '+c.note+'</span>':'')+'</label>'
-      +'<span class="text-xs font-mono font-bold text-slate-600" id="uval-'+c.key+'">'+uFmt(uSpend[c.key])+'/yr</span></div>'
-      +'<input type="range" min="0" max="'+c.max+'" step="'+c.step+'" value="'+uSpend[c.key]+'" id="uslider-'+c.key+'" class="w-full h-1.5 rounded-full bg-slate-200 accent-brand-600 cursor-pointer">';
-    box.appendChild(row);
-    row.querySelector('#uslider-'+c.key).addEventListener('input',e=>{
-      uSpend[c.key]=parseInt(e.target.value,10)||0;
-      document.getElementById('uval-'+c.key).textContent=uFmt(uSpend[c.key])+'/yr';
-      uSave(); uRender(); syncOptToSim(c.key);
+/* Quick Check and the planner are decoupled: the planner's per-card lines are annual and card-specific, so there is no category sync any more. */
+
+/* ---------- Annual Spend by Card panel ---------- */
+const uOpenCards={};
+let uCardSpendSig='';
+function uLineMax(id,L,v){
+  const m=id==='xmoney'?200000:(L.base?150000:60000);
+  return Math.max(m,Math.ceil((v||0)/10000)*10000);
+}
+/* chain / airline hint for lines that only cover another hotel chain or airline */
+function uLineHint(id,L){
+  const chain=((document.getElementById('unlock-hotel-chain')||{}).value||'hilton');
+  const al=((document.getElementById('unlock-airline')||{}).value||'other');
+  const hk=L.keys.filter(k=>k.indexOf('hotel_')===0), fk=L.keys.filter(k=>k.indexOf('flights_')===0);
+  if(hk.length&&hk.length===L.keys.length&&hk.indexOf('hotel_'+chain)<0) return 'not your primary chain ('+U_CHAIN_NAMES[chain]+')';
+  if(fk.length&&fk.length===L.keys.length&&al!=='other'&&fk.indexOf('flights_'+al)<0) return 'not your primary airline ('+U_AIRLINE_NAMES[al]+')';
+  if(id==='ritz'&&uFlightPrio==='ritz'&&uLineIsFlights(L)) return 'primary trip-delay cover';
+  return '';
+}
+function uCardBlended(id,pc){ return pc&&pc.lineTotal>0?pc.lineRewards/pc.lineTotal*100:0; }
+function uRenderCardSpend(r){
+  const box=document.getElementById('unlock-cardspend'); if(!box) return;
+  const sel=Object.keys(UNLOCK_CARDS).filter(id=>uPortfolio.has(id));
+  const sig=sel.join(',');
+  if(sig!==uCardSpendSig){
+    uCardSpendSig=sig;
+    box.innerHTML='';
+    if(!sel.length){ box.innerHTML='<p class="text-xs text-slate-400 text-center py-6">Select cards in your portfolio to enter what you spend on each.</p>'; }
+    const anyOpen=sel.some(id=>uOpenCards[id]);
+    sel.forEach((id,i)=>{
+      const c=UNLOCK_CARDS[id], lines=uEarnLines(id);
+      const det=document.createElement('details');
+      det.className='ucs-card rounded-xl border border-slate-200 bg-white overflow-hidden';
+      det.setAttribute('data-card',id);
+      if(uOpenCards[id]||(!anyOpen&&i===0&&uOpenCards[id]===undefined)) det.open=true;
+      let h='<summary class="flex items-center gap-3 px-4 py-3 cursor-pointer select-none hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/50" style="background:'+c.color+'0d">'
+        +'<i class="fa-solid fa-chevron-right ucs-chev text-[10px] text-slate-400 transition-transform" aria-hidden="true"></i>'
+        +'<span class="w-3 h-3 rounded-sm flex-shrink-0" style="background:'+c.color+'" aria-hidden="true"></span>'
+        +'<span class="flex-1 min-w-0"><span class="block text-sm font-bold text-slate-900 truncate">'+c.name+'</span>'
+        +'<span class="block text-[10px] text-slate-500 ucs-sub"></span></span>'
+        +'<span class="text-right flex-shrink-0"><span class="block font-mono font-extrabold text-sm text-slate-800 ucs-total"></span><span class="block text-[10px] text-slate-400">spend /yr</span></span>'
+        +'</summary><div class="px-4 pb-3 pt-1 divide-y divide-slate-100">';
+      lines.forEach(L=>{
+        const v=uLineAmt(id,L.key), uid='ucs-'+id+'-'+L.key.replace(/[^a-z0-9]+/gi,'-');
+        h+='<div class="py-2.5 ucs-line" data-line="'+L.key+'">'
+          +'<div class="flex items-start justify-between gap-3 mb-1.5">'
+          +'<label for="'+uid+'-n" class="min-w-0"><span class="block text-xs font-semibold text-slate-800">'+L.label
+          +' <span class="font-mono font-bold text-emerald-700" title="'+L.full+'">'+L.disp+'</span></span>'
+          +'<span class="block text-[10px] text-slate-400 ucs-note"></span></label>'
+          +'<span class="text-[10px] font-mono text-slate-500 flex-shrink-0 ucs-earn"></span></div>'
+          +'<div class="flex items-center gap-3">'
+          +'<input type="range" id="'+uid+'-r" min="0" max="'+uLineMax(id,L,v)+'" step="500" value="'+v+'" aria-label="'+c.name+' \u2014 '+L.label+' annual spend (slider)" class="flex-1 h-1.5 rounded-full bg-slate-200 accent-brand-600 cursor-pointer">'
+          +'<span class="relative flex-shrink-0"><span class="absolute left-2 top-1/2 -translate-y-1/2 text-xs text-slate-400" aria-hidden="true">$</span>'
+          +'<input type="number" id="'+uid+'-n" min="0" step="100" inputmode="numeric" value="'+v+'" class="w-28 rounded-lg border border-slate-200 bg-white pl-5 pr-2 py-1.5 text-xs font-mono text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500/40"></span>'
+          +'</div></div>';
+      });
+      h+='</div>';
+      det.innerHTML=h;
+      det.addEventListener('toggle',()=>{ uOpenCards[id]=det.open; });
+      det.querySelectorAll('.ucs-line').forEach(row=>{
+        const key=row.getAttribute('data-line'), L=lines.find(x=>x.key===key);
+        const rg=row.querySelector('input[type=range]'), nb=row.querySelector('input[type=number]');
+        rg.addEventListener('input',()=>{ const v=parseInt(rg.value,10)||0; nb.value=v; uSetLineAmt(id,key,v); uSave(); uRender(); });
+        nb.addEventListener('input',()=>{
+          const v=Math.max(0,parseInt(nb.value,10)||0);
+          if(v>+rg.max) rg.max=uLineMax(id,L,v);
+          rg.value=v; uSetLineAmt(id,key,v); uSave(); uRender();
+        });
+      });
+      box.appendChild(det);
+    });
+  }
+  /* in-place updates (no rebuild while the user drags) */
+  box.querySelectorAll('.ucs-card').forEach(det=>{
+    const id=det.getAttribute('data-card'), pc=r.perCard[id]; if(!pc) return;
+    det.querySelector('.ucs-total').textContent=uFmt(pc.lineTotal);
+    const bl=uCardBlended(id,pc), bd=uRateDisp(id,bl);
+    det.querySelector('.ucs-sub').textContent=(pc.lineTotal>0?'blended '+bd.main+' \u00b7 '+uFmt(pc.lineRewards)+'/yr rewards':'no spend yet')+(pc.src.fund>0?' \u00b7 +'+uFmt(pc.src.fund)+' X Money funding':'');
+    det.querySelectorAll('.ucs-line').forEach(row=>{
+      const key=row.getAttribute('data-line'), L=uEarnLines(id).find(x=>x.key===key); if(!L) return;
+      const on=uToggleOn(id,key), e=pc.lineEarn[key]||0, d=pc.dominated[key];
+      row.classList.toggle('opacity-50',!on);
+      row.querySelector('.ucs-earn').textContent=on?('+'+uFmt(e)+'/yr'):'excluded';
+      const bits=[]; if(L.sub) bits.push(L.sub); const hint=uLineHint(id,L); if(hint) bits.push(hint);
+      if(d) bits.push(UNLOCK_CARDS[d.by].name+' earns more (+'+uFmt(d.gain)+')');
+      const n=row.querySelector('.ucs-note'); n.textContent=bits.join(' \u00b7 '); n.className='block text-[10px] ucs-note '+(d?'text-amber-700':'text-slate-400');
+      const rg=row.querySelector('input[type=range]'), nb=row.querySelector('input[type=number]'), v=uLineAmt(id,key);
+      if(document.activeElement!==nb&&+nb.value!==v) nb.value=v;
+      if(document.activeElement!==rg&&+rg.value!==v){ if(v>+rg.max) rg.max=uLineMax(id,L,v); rg.value=v; }
     });
   });
 }
 
 function uRenderFundSplit(){
-  const xSpend=uSpend.xmoney||0, a1=uFundAmt1(), a2=uFundAmt2(), bank=Math.max(0,xSpend-a1-a2);
+  const xSpend=uXSpend(), a1=uFundAmt1(), a2=uFundAmt2(), bank=Math.max(0,xSpend-a1-a2);
   const s1=document.getElementById('xfund-amt1'), s2=document.getElementById('xfund-amt2');
   if(s1){ s1.max=Math.max(xSpend,1000); if(document.activeElement!==s1) s1.value=a1; }
   if(s2){ s2.max=Math.max(xSpend-a1,1000); if(document.activeElement!==s2) s2.value=a2; }
@@ -940,7 +1035,7 @@ function uRenderFundSplit(){
   const n1=(FUND_RATES[uFund.card1]||{}).name||'', n2=(FUND_RATES[uFund.card2]||{}).name||'';
   if(l1) l1.textContent=uFmt(a1)+(n1?' on '+n1:'');
   if(l2) l2.textContent=uFmt(a2)+(n2?' on '+n2:'');
-  if(bl) bl.textContent=uFmt(bank)+' by bank ACH (no rewards)';
+  if(bl) bl.textContent=uPortfolio.has('xmoney')?uFmt(bank)+' by bank ACH (no rewards)':'Add X Money (debit) to your portfolio — its debit line sets how much gets funded.';
 }
 
 function uSwitchHtml(id,key,on){
@@ -957,7 +1052,8 @@ function uRender(){
   if(sub) sub.textContent=r.selCount===0?'Select cards to see your number.':
     'Across '+r.selCount+' cards'+(uFund.mode==='card'?' \u00b7 includes '+uFmt(r.fundRewards)+'/yr from credit-card funding':'')+'.';
   const tot=document.getElementById('unlock-total');
-  if(tot) tot.textContent=uFmt(Object.values(uSpend).reduce((a,b)=>a+(b||0),0))+'/yr total';
+  if(tot) tot.textContent=uFmt(r.tLineSpend)+'/yr total';
+  uRenderCardSpend(r);
 
   const bd=document.getElementById('unlock-breakdown');
   if(bd){
@@ -972,7 +1068,6 @@ function uRender(){
     if(r.rows.length===0){
       box.innerHTML='<p class="text-xs text-slate-400 text-center py-6">Select cards from your portfolio to see them ranked here.</p>';
     }
-    const chain=((document.getElementById('unlock-hotel-chain')||{}).value||'hilton');
     r.rows.forEach((x,ri)=>{
       const pc=x.pc, card=x.card;
       const panel=document.createElement('div');
@@ -987,14 +1082,14 @@ function uRender(){
       html+='<div class="px-4 py-1">';
       uEarnLines(x.id).forEach(L=>{
         const on=uToggleOn(x.id,L.key);
-        const amt=pc.lineSpend[L.key]||0, earn=amt*L.rate/100;
-        const applies=uLineApplies(x.id,L.key);
-        const dom=pc.dominated.indexOf(L.key)>=0;
+        const amt=on?uLineAmt(x.id,L.key):0, earn=pc.lineEarn[L.key]||0;
+        const hint=uLineHint(x.id,L);
+        const dom=pc.dominated[L.key];
         html+='<div class="flex items-center gap-3 py-2 border-b border-slate-50 last:border-0 '+(on?'':'opacity-45')+'">'
           +uSwitchHtml(x.id,L.key,on)
           +'<div class="flex-1 min-w-0"><div class="text-xs font-semibold text-slate-800 truncate">'+L.label
-          +(dom?' <span class="text-[10px] font-bold text-amber-600">\u00b7 never wins</span>':'')+'</div>'
-          +'<div class="text-[10px] text-slate-400 truncate">'+L.disp+(L.sub?' \u00b7 '+L.sub:'')+(!applies?' \u00b7 your chain: '+U_CHAIN_NAMES[chain]:'')+'</div></div>'
+          +(dom?' <span class="text-[10px] font-bold text-amber-600">\u00b7 '+UNLOCK_CARDS[dom.by].name+' earns more (+'+uFmt(dom.gain)+')</span>':'')+'</div>'
+          +'<div class="text-[10px] text-slate-400 truncate" title="'+L.full+'">'+L.disp+(L.sub?' \u00b7 '+L.sub:'')+(hint?' \u00b7 '+hint:'')+'</div></div>'
           +'<div class="text-right flex-shrink-0"><div class="text-xs font-mono font-bold text-slate-700">'+uFmt(amt)+'</div>'
           +'<div class="text-[10px] font-mono '+(earn>0?'text-emerald-700':'text-slate-300')+'">'+(earn>0?'+'+uFmt(earn):'\u2014')+'</div></div>'
           +'</div>';
@@ -1022,20 +1117,10 @@ function uRender(){
       uSetToggle(b.getAttribute('data-card'),b.getAttribute('data-line'),b.getAttribute('data-on')!=='1');
       uRender();
     }));
-    const unc=Object.keys(r.uncovered||{}).filter(k=>(r.uncovered[k]||0)>0);
-    if(unc.length){
-      const d=document.createElement('div');
-      d.className='rounded-xl border border-dashed border-slate-300 bg-white px-4 py-3 text-xs text-slate-600';
-      d.innerHTML='<span class="font-bold text-slate-800">Uncovered spend: '+uFmt(unc.reduce((a,k)=>a+r.uncovered[k],0))+'/yr</span> \u2014 no toggled-on card earns on '
-        +unc.map(k=>{ const cn=(UNLOCK_CATS.find(c=>c.key===k)||{}).name||k; return cn+' ('+uFmt(r.uncovered[k])+')'; }).join(', ')
-        +'. Toggle a line on, or add a card below.';
-      box.appendChild(d);
-    }
-    if(r.xRewards>0||r.fundOutRewards>0){
+    if(r.fundOutRewards>0){
       const d=document.createElement('div');
       d.className='text-[11px] text-slate-500 px-1';
       const bits=[];
-      if(r.xRewards>0) bits.push('X Money debit: <strong class="text-slate-700">+'+uFmt(r.xRewards)+'/yr</strong> on '+uFmt(uSpend.xmoney||0));
       if(r.fundOutRewards>0) bits.push((r.fundOutNames.join(' + ')||'Funding')+': <strong class="text-slate-700">+'+uFmt(r.fundOutRewards)+'/yr</strong> <span class="text-slate-400">(card not in portfolio)</span>');
       d.innerHTML=bits.join(' \u00b7 ');
       box.appendChild(d);
@@ -1075,7 +1160,7 @@ function uRender(){
   if(fn){
     if(uFlightPrio==='ritz'){
       const hasRitz=uPortfolio.has('ritz');
-      fn.textContent=hasRitz?'All flights go on Ritz-Carlton (2.4%) + primary trip-delay coverage ($500/ticket).':'Add Ritz-Carlton to your portfolio to use this routing \u2014 falling back to best rate.';
+      fn.textContent=hasRitz?'Flights stay on Ritz-Carlton (2.4%) for primary trip-delay coverage ($500/ticket) \u2014 its flight line is never flagged as beaten.':'Add Ritz-Carlton to your portfolio to use this \u2014 flights are judged on earn rate for now.';
       fn.className='text-[10px] mt-1.5 '+(hasRitz?'text-emerald-700':'text-amber-700');
     } else { fn.textContent=''; }
   }
@@ -1086,7 +1171,6 @@ function uInit(){
   Object.entries(WALLET_TO_UNLOCK).forEach(([wid,uid])=>{ if(wallet.has(wid)) uPortfolio.add(uid); else uPortfolio.delete(uid); });
   uSave();
   uRenderPortfolio();
-  uRenderSliders();
   document.querySelectorAll('input[name="xfund"]').forEach(r=>{
     if(r.value===uFund.mode) r.checked=true;
     r.addEventListener('change',e=>{
@@ -2046,7 +2130,6 @@ if(simSliders){
       if(label) label.textContent = `$${spendState[key]}/mo`;
       saveSpend();
       updateSimulator();
-      syncSimToOpt(key);
     });
   });
 }
