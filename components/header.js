@@ -86,6 +86,7 @@
           '<nav><ul class="wl-nav-list">' +
           '<li class="wl-nav-item"><a class="wl-nav-link-direct" href="/learn/">Learn</a></li>' +
           '<li class="wl-nav-item"><a class="wl-nav-link-direct" href="/tools/">Tools</a></li>' +
+          '<li class="wl-nav-item"><a class="wl-nav-link-direct" href="/travel/airlines/">Travel</a></li>' +
           '<li class="wl-nav-item"><a class="wl-nav-link-direct" href="/retirement/">Retirement</a></li>' +
           '<li class="wl-nav-item"><a class="wl-nav-link-direct" href="/blogs/">Blog</a></li>' +
           '</ul></nav></div></div></header>'
