@@ -18,8 +18,7 @@
  *   facts           program: key facts list           (data-program)
  *   tiers           program: tier table                (data-program)
  *   tier-compare    program: tier comparison with companion benefits and who-it-is-for (data-program)
- *   tier-steps      program: staircase of tiers, benefits summary in each step (data-program)
- *   status-paths    program: one table, every path to every tier (data-program)
+ *   tier-ladder     program: staircase steps x path columns, one fused diagram (data-program)
  *   partner-grid    program: alliance partner cards (data-program)
  *   fare-compare    program: one fare paid three ways + card-spend-alone (data-program, data-fare optional, default 5000)
  *   card-gallery    program: illustrated card visuals  (data-program)
@@ -576,33 +575,11 @@
     root.appendChild(el('p', 'wla-fine', 'Card faces are illustrations drawn for this guide, not the official card art.'));
   }
 
-  /* ---------- tier steps: staircase with the benefits summary in each step ---------- */
-  function renderTierSteps(root, data, id) {
-    var p = data.programs[id];
-    var ol = el('ol', 'wla-steps');
-    p.tiers.forEach(function (t, i) {
-      var li = el('li', 'wla-step');
-      li.style.setProperty('--wla-accent', p.color);
-      li.appendChild(el('div', 'wla-step-kicker', 'Step ' + (i + 1)));
-      li.appendChild(el('h4', 'wla-step-title', t.name.replace(/^Premier /, '')));
-      li.appendChild(el('div', 'wla-step-threshold', num(t.threshold) + ' ' + p.flying.unit));
-      var ul = el('ul', 'wla-step-perks');
-      if (t.bags) ul.appendChild(el('li', null, t.bags + (t.bagCompanions ? ' · bags for you + up to ' + t.bagCompanions : '')));
-      if (t.eplus) ul.appendChild(el('li', null, 'Economy Plus ' + t.eplus.toLowerCase() + (t.eplusCompanions != null ? ' · you + ' + (t.eplusCompanions === 1 ? '1 companion' : 'up to ' + t.eplusCompanions + ' companions') : '')));
-      if (t.lounge) ul.appendChild(el('li', null, t.lounge.indexOf('No lounge') === 0 ? 'No lounge access' : 'Lounge: international Star Alliance lounges'));
-      if (t.upgrades) ul.appendChild(el('li', null, 'Upgrades from ' + t.upgrades.toLowerCase()));
-      if (t.plusPoints) ul.appendChild(el('li', null, num(t.plusPoints) + ' PlusPoints'));
-      li.appendChild(ul);
-      if (t.whoFor) li.appendChild(el('p', 'wla-step-who', t.whoFor));
-      ol.appendChild(li);
-    });
-    root.appendChild(ol);
-  }
-
-  /* ---------- status paths: one table, every path to every tier ----------
-     Rows: fare on another card, fare on each paths card, other spend on each paths
-     card, partner flights. Each cell is what that path alone takes to reach the tier. */
-  function renderStatusPaths(root, data, id) {
+  /* ---------- tier ladder: staircase steps x path columns, one fused diagram ----------
+     Stair column (sticky): each tier is a step with its benefits summary.
+     Path columns: fare on another card, fare on each paths card, other spend on
+     each paths card, partner flights. Dashed rules are the tier lines. */
+  function renderTierLadder(root, data, id) {
     var p = data.programs[id];
     var tiers = p.tiers;
     var pathCards = p.pathsCards
@@ -616,56 +593,75 @@
       }
       return fare;
     }
-    var t = el('table', 'wla-table wla-paths');
-    t.appendChild(el('caption', 'wla-sr', 'Every path to every ' + p.short + ' tier'));
-    var thead = el('thead'), hr = el('tr');
-    hr.appendChild(th('Path', 'col'));
-    tiers.forEach(function (tier) {
-      var h = th('', 'col');
-      h.appendChild(el('span', null, tier.name.replace(/^Premier /, '')));
-      h.appendChild(el('span', 'wla-th-sub', num(tier.threshold) + ' ' + p.flying.unit));
-      hr.appendChild(h);
-    });
-    thead.appendChild(hr); t.appendChild(thead);
-    var tb = el('tbody');
-    function addRow(label, sub, fn) {
-      var tr = el('tr');
-      var c0 = th(label, 'row'); if (sub) c0.appendChild(el('span', 'wla-th-sub', sub));
-      tr.appendChild(c0);
-      tiers.forEach(function (tier) { tr.appendChild(fn(tier)); });
-      tb.appendChild(tr);
+    function amountCell(amount, unitLabel, dashed, tierColor) {
+      var d = el('div', 'wla-ladder-cell' + (dashed ? ' wla-ladder-row' : ''));
+      if (tierColor) d.style.setProperty('--wla-tier', tierColor);
+      d.appendChild(el('strong', null, money(amount)));
+      d.appendChild(el('span', 'wla-th-sub', unitLabel));
+      return d;
     }
-    function moneyCell(amount, unitLabel) {
-      var td = el('td');
-      td.appendChild(el('strong', null, money(amount)));
-      td.appendChild(el('span', 'wla-th-sub', unitLabel));
-      return td;
-    }
-    addRow('United fare on another card', 'Flight points only, no card points', function (tier) {
-      return moneyCell(Math.ceil(tier.threshold / p.flying.perDollar), 'of United fares');
+    var paths = [];
+    paths.push({ kind: 'fare', label: p.airline + ' fare on another card', sub: 'Flight points only', cell: function (tier, dashed) {
+      return amountCell(Math.ceil(tier.threshold / p.flying.perDollar), 'of ' + p.airline + ' fares', dashed, tier.color || p.color);
+    } });
+    pathCards.forEach(function (c) {
+      paths.push({ kind: 'fare', label: p.airline + ' fare on the ' + c.name, sub: c.perDollarLabel + ' on the fare itself', cell: function (tier, dashed) {
+        return amountCell(fareNeeded(c, tier.threshold), 'of ' + p.airline + ' fares', dashed, tier.color || p.color);
+      } });
     });
     pathCards.forEach(function (c) {
-      addRow('United fare on the ' + c.name, c.perDollarLabel + ' on the fare itself', function (tier) {
-        return moneyCell(fareNeeded(c, tier.threshold), 'of United fares');
-      });
-    });
-    pathCards.forEach(function (c) {
-      addRow('Other spend on the ' + c.name, c.perDollarLabel + ' on everyday spend', function (tier) {
+      paths.push({ kind: 'spend', label: 'Other spend on the ' + c.name, sub: c.perDollarLabel + ' on everyday spend', cell: function (tier, dashed) {
         var s = spendNeeded(c, tier.threshold, 0);
-        if (s === null) return el('td', 'wla-muted', 'Not reachable (cap)');
-        return moneyCell(s, 'of card spend');
-      });
+        if (s === null) { var nr = el('div', 'wla-ladder-cell wla-muted' + (dashed ? ' wla-ladder-row' : ''), 'Not reachable (cap)'); nr.style.setProperty('--wla-tier', tier.color || p.color); return nr; }
+        return amountCell(s, 'of card spend', dashed, tier.color || p.color);
+      } });
     });
     if (p.partnerPQP) {
-      addRow('Partner flights', p.partnerPQP.label, function (tier) {
-        var td = el('td');
-        td.appendChild(el('strong', null, num(tier.threshold * p.partnerPQP.milesPerPQP) + ' award miles'));
-        td.appendChild(el('span', 'wla-th-sub', 'flown on partner airlines'));
-        return td;
-      });
+      paths.push({ kind: 'partner', label: 'Partner flights', sub: p.partnerPQP.label, cell: function (tier, dashed) {
+        var d = el('div', 'wla-ladder-cell' + (dashed ? ' wla-ladder-row' : ''));
+        d.style.setProperty('--wla-tier', tier.color || p.color);
+        d.appendChild(el('strong', null, num(tier.threshold * p.partnerPQP.milesPerPQP) + ' award miles'));
+        d.appendChild(el('span', 'wla-th-sub', 'flown on partner airlines'));
+        return d;
+      } });
     }
-    t.appendChild(tb);
-    root.appendChild(tableWrap(t, p.short + ' paths to status (scrolls sideways on small screens)'));
+    var wrap = el('div', 'wla-ladder-wrap');
+    var grid = el('div', 'wla-ladder');
+    grid.style.setProperty('grid-template-columns', '300px repeat(' + paths.length + ', 160px)');
+    var corner = el('div', 'wla-ladder-corner');
+    corner.appendChild(el('strong', null, 'Tier · benefit'));
+    corner.appendChild(el('span', 'wla-th-sub', 'Step up to climb'));
+    grid.appendChild(corner);
+    paths.forEach(function (path) {
+      var h = el('div', 'wla-ladder-path wla-kind-' + (path.kind || 'fare'));
+      h.appendChild(el('strong', null, path.label));
+      h.appendChild(el('span', 'wla-th-sub', path.sub));
+      grid.appendChild(h);
+    });
+    tiers.forEach(function (t, i) {
+      var step = el('div', 'wla-ladder-step');
+      step.style.setProperty('--wla-accent', p.color);
+      step.style.setProperty('--wla-tier', t.color || p.color);
+      step.style.setProperty('--wla-step', i);
+      var band = el('div', 'wla-step-band');
+      band.appendChild(el('div', 'wla-step-kicker', 'Step ' + (i + 1)));
+      band.appendChild(el('h4', 'wla-step-title', t.name.replace(/^Premier /, '')));
+      band.appendChild(el('div', 'wla-step-threshold', num(t.threshold) + ' ' + p.flying.unit));
+      step.appendChild(band);
+      var ul = el('ul', 'wla-step-perks');
+      if (t.bags) ul.appendChild(el('li', null, t.bags + (t.bagCompanions ? ' · bags for you + up to ' + t.bagCompanions : '')));
+      if (t.eplus) ul.appendChild(el('li', null, 'Economy Plus ' + t.eplus.toLowerCase() + (t.eplusCompanions != null ? ' · you + ' + (t.eplusCompanions === 1 ? '1 companion' : 'up to ' + t.eplusCompanions + ' companions') : '')));
+      if (t.lounge) ul.appendChild(el('li', null, t.lounge.indexOf('No lounge') === 0 ? 'No lounge access' : 'Lounge: international Star Alliance lounges'));
+      if (t.upgrades) ul.appendChild(el('li', null, 'Upgrades from ' + t.upgrades.toLowerCase()));
+      if (t.plusPoints) ul.appendChild(el('li', null, num(t.plusPoints) + ' PlusPoints'));
+      step.appendChild(ul);
+      if (t.whoFor) step.appendChild(el('p', 'wla-step-who', t.whoFor));
+      grid.appendChild(step);
+      paths.forEach(function (path) { grid.appendChild(path.cell(t, i > 0)); });
+    });
+    wrap.appendChild(grid);
+    root.appendChild(wrap);
+    root.appendChild(el('p', 'wla-fine', 'Scroll sideways to see all six paths.'));
     var notes = el('ul', 'wla-notes');
     var b = el('li'); b.appendChild(el('strong', null, 'Yearly card bonus included: '));
     b.appendChild(document.createTextNode('card rows assume the yearly card bonus applies (card open on Dec 31 of the prior year).'));
@@ -679,7 +675,7 @@
     seg.appendChild(document.createTextNode('at least four paid segments on ' + p.airline + (p.id === 'ua' ? ' / United Express' : '') + ' in the year, however you earn the points.'));
     notes.appendChild(seg);
     root.appendChild(notes);
-    root.appendChild(el('p', 'wla-fine', 'Each row is one path on its own. In real life you mix them — the table is for comparing the paths, not for picking one.'));
+    root.appendChild(el('p', 'wla-fine', 'Each column is one path on its own. In real life you mix them — the ladder is for comparing the paths, not for picking one.'));
   }
 
   /* ---------- alliance partner grid ---------- */
@@ -782,8 +778,7 @@
     'facts': renderFacts,
     'tiers': renderTiers,
     'tier-compare': renderTierCompare,
-    'tier-steps': renderTierSteps,
-    'status-paths': renderStatusPaths,
+    'tier-ladder': renderTierLadder,
     'partner-grid': renderPartnerGrid,
     'fare-compare': renderFareCompare,
     'card-gallery': renderCardGallery,
