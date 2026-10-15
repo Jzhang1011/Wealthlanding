@@ -152,7 +152,8 @@ noscript .wla-callout{margin:1rem 0}
 
 /* hero photo figure */
 .wla-figure{margin:0 0 1.5rem}
-.wla-figure img{display:block;width:100%;height:auto;border-radius:1rem;border:1px solid var(--wla-line)}
+.wla-figure img{display:block;width:100%;height:auto;max-height:340px;object-fit:cover;object-position:center 55%;border-radius:1rem;border:1px solid var(--wla-line)}
+@media(max-width:719px){.wla-figure img{max-height:210px}}
 .wla-figure figcaption{font-size:.8rem;color:var(--wla-muted);margin-top:.45rem}
 .wla-figure figcaption a{color:var(--wla-green-d)}
 
@@ -199,3 +200,36 @@ noscript .wla-callout{margin:1rem 0}
 .wla-cc-dl dt{color:var(--wla-muted)}
 .wla-cc-dl dd{margin:0;font-weight:700;color:var(--wla-navy);text-align:right}
 .wla-cc-note{font-size:.85rem;color:#475569;margin:.6rem 0 0!important}
+
+/* ---- stair chart: tiers as ascending steps ---- */
+.wla-steps{list-style:none;margin:1.25rem 0 .4rem;padding:0;display:grid;gap:.85rem;grid-template-columns:1fr;align-items:end}
+@media(min-width:900px){.wla-steps{grid-template-columns:repeat(4,1fr)}}
+.wla-step{background:#fff;border:1px solid var(--wla-line);border-top:5px solid var(--wla-accent);border-radius:.9rem;padding:1rem 1.05rem;display:flex;flex-direction:column}
+@media(min-width:900px){
+  .wla-step:nth-child(1){min-height:15rem}
+  .wla-step:nth-child(2){min-height:18.5rem}
+  .wla-step:nth-child(3){min-height:22rem}
+  .wla-step:nth-child(4){min-height:25.5rem}
+}
+.wla-step-kicker{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--wla-muted);font-weight:700}
+.wla-step-title{margin:.15rem 0 0!important;font-size:1.3rem!important;color:var(--wla-navy)}
+.wla-step-threshold{font-size:1.05rem;font-weight:800;color:var(--wla-accent);margin:.2rem 0 .7rem}
+.wla-step-perks{list-style:none;margin:0;padding:0;font-size:.88rem;color:#334155}
+.wla-step-perks li{padding:.28rem 0 .28rem 1.05rem;position:relative;border-top:1px dashed var(--wla-line)}
+.wla-step-perks li:before{content:"✓";position:absolute;left:0;color:var(--wla-green-d);font-weight:700}
+.wla-step-who{font-size:.83rem;color:#475569;margin:.8rem 0 0!important;border-top:1px solid var(--wla-line);padding-top:.6rem}
+
+/* ---- status paths table ---- */
+.wla-paths{min-width:760px}
+.wla-paths th[scope=row]{width:13rem}
+.wla-paths td{white-space:nowrap}
+.wla-paths td .wla-th-sub{white-space:normal}
+
+/* ---- alliance partner grid ---- */
+.wla-partners{display:grid;gap:.85rem;grid-template-columns:1fr;margin:1rem 0}
+@media(min-width:720px){.wla-partners{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.wla-partners{grid-template-columns:repeat(3,1fr)}}
+.wla-partner{background:#fff;border:1px solid var(--wla-line);border-top:4px solid var(--wla-accent);border-radius:.8rem;padding:.9rem 1rem}
+.wla-partner-name{font-size:1.05rem;font-weight:800;color:var(--wla-navy);letter-spacing:.01em}
+.wla-partner-region{font-size:.76rem;letter-spacing:.05em;text-transform:uppercase;color:var(--wla-muted);font-weight:700;margin-top:.1rem}
+.wla-partner-note{font-size:.88rem;color:#475569;margin:.45rem 0 0!important}

@@ -32,6 +32,16 @@
         {"code": "IAD", "city": "Washington Dulles"}
       ],
       "flying": {"unit": "PQP", "perDollar": 1, "basis": "about 1 PQP per $1 of eligible United base fare and carrier charges (taxes excluded)"},
+      "pathsCards": ["united_club", "united_quest"],
+      "partnerPQP": {"milesPerPQP": 5, "label": "Preferred partners: 1 PQP per 5 award miles", "capNote": "Capped at 750 PQP per Economy / Premium Economy flight and 1,500 PQP per First / Business flight, so the miles below take several flights to earn."},
+      "alliancePartners": [
+        {"name": "Air Canada", "region": "Canada · Transatlantic", "note": "The other big Star Alliance carrier in North America.", "color": "#E31837"},
+        {"name": "Lufthansa Group", "region": "Europe", "note": "Lufthansa, SWISS, Austrian and Brussels — the European core.", "color": "#05164D"},
+        {"name": "ANA", "region": "Japan · Asia-Pacific", "note": "All Nippon Airways — a go-to for Japan and onward Asia.", "color": "#003087"},
+        {"name": "Singapore Airlines", "region": "Southeast Asia · Oceania", "note": "Famous for long-haul premium cabins on miles.", "color": "#C49A3C"},
+        {"name": "Air New Zealand", "region": "Oceania", "note": "The way to New Zealand and the South Pacific on miles.", "color": "#111111"},
+        {"name": "EVA Air", "region": "Taiwan · Asia", "note": "Strong for Taiwan and connections across Asia.", "color": "#00854A"}
+      ],
       "tierCompareNote": "Companion benefits apply to travellers on the same reservation / itinerary as the member. One companion on the same reservation is also eligible for complimentary upgrades at every tier. Bag counts are for Economy on United / United Express; premium cabins get 3 bags at every tier.",
       "tiers": [
         {"name": "Premier Silver", "threshold": 6000, "perks": ["1 free checked bag", "Economy Plus seats at check-in for you and one companion", "Star Alliance Silver"], "bags": "1 free checked bag", "bagsNote": "2 on long-haul international Economy routes", "bagCompanions": 9, "eplus": "At check-in", "eplusCompanions": 1, "seatCompanions": 8, "lounge": "No lounge access (Star Alliance Silver)", "upgrades": "Day of departure", "upgradeCompanions": 1, "plusPoints": 0, "whoFor": "You check a bag a few times a year. But one free bag is also what a United card gives you — Silver alone is rarely worth chasing."},
