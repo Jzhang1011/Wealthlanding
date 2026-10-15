@@ -34,6 +34,15 @@
       font-size: 105%;
       scroll-behavior: smooth;
     }
+
+    /* Shared header fixes for this page:
+       - header buttons inherit the site font (the page's default button font was Arial);
+       - the 105% root size above scales the header's rem-based nav, so the Retirement
+         menu panel sat ~5-7px past the right edge at desktop widths. Clip horizontal
+         overflow at the root so the page never gains a horizontal scroll width. */
+    #global-header-target button { font-family: inherit; }
+    html { overflow-x: clip; }
+    @media (max-width: 760px) { .sensitivity-pair { grid-template-columns: minmax(0,1fr) !important; } }
     
     body {
       overflow-x: hidden;
@@ -1177,7 +1186,7 @@
               </div>
               <div class="field">
                 <label>State Income Tax Rate % (Auto-synced or Custom)</label>
-                <input id="stateTaxRate" type="number" step="0.01" value="5.75">
+                <input id="stateTaxRate-adv" data-mirror="stateTaxRate" type="number" step="0.01" value="5.75">
               </div>
             </div>
           </details>
@@ -1185,49 +1194,49 @@
           <details class="cascading-subdrawer">
             <summary class="cascading-summary"><span>🏥 Healthcare Subsidies & Tax Limits</span><span>▼</span></summary>
             <div class="cascading-content">
-              <div class="switch-row"><span>Preserve ACA Subsidies (U.S.)</span><input id="preserveAca" type="checkbox" checked></div>
-              <div class="switch-row"><span>Avoid IRMAA Surcharges (U.S.)</span><input id="avoidIrmaa" type="checkbox" checked></div>
-              <div class="field"><label>Top Federal Bracket Target</label><select id="bracketTarget"><option value="12">12%</option><option value="22">22%</option><option value="24" selected>24%</option><option value="32">32%</option><option value="35">35%</option><option value="none">No bracket cap</option></select></div>
+              <div class="switch-row"><span>Preserve ACA Subsidies (U.S.)</span><input id="preserveAca-adv" data-mirror="preserveAca" type="checkbox" checked></div>
+              <div class="switch-row"><span>Avoid IRMAA Surcharges (U.S.)</span><input id="avoidIrmaa-adv" data-mirror="avoidIrmaa" type="checkbox" checked></div>
+              <div class="field"><label>Top Federal Bracket Target</label><select id="bracketTarget-adv" data-mirror="bracketTarget"><option value="12">12%</option><option value="22">22%</option><option value="24" selected>24%</option><option value="32">32%</option><option value="35">35%</option><option value="none">No bracket cap</option></select></div>
             </div>
           </details>
 
           <details class="cascading-subdrawer">
             <summary class="cascading-summary"><span>💼 Long-Term Care & Extra Medical Spending</span><span>▼</span></summary>
             <div class="cascading-content">
-              <div class="field"><label>Annual Nursing / LTC Cost</label><input id="ltcAnnualCost" type="number" value="60000"></div>
-              <div class="field"><label>LTC Care Start Age</label><input id="ltcStartAge" type="number" value="80"></div>
-              <div class="field"><label>LTC Care End Age</label><input id="ltcEndAge" type="number" value="85"></div>
+              <div class="field"><label>Annual Nursing / LTC Cost</label><input id="ltcAnnualCost-adv" data-mirror="ltcAnnualCost" type="number" value="60000"></div>
+              <div class="field"><label>LTC Care Start Age</label><input id="ltcStartAge-adv" data-mirror="ltcStartAge" type="number" value="80"></div>
+              <div class="field"><label>LTC Care End Age</label><input id="ltcEndAge-adv" data-mirror="ltcEndAge" type="number" value="85"></div>
             </div>
           </details>
           
           <details class="cascading-subdrawer">
             <summary class="cascading-summary"><span>🏡 Housing & Debt</span><span>▼</span></summary>
             <div class="cascading-content">
-              <div class="field"><label>Annual Mortgage Payment</label><input id="mortgageAnnual" type="number" value="24000"></div>
-              <div class="field"><label>Mortgage End Age</label><input id="mortgageEndAge" type="number" value="65"></div>
+              <div class="field"><label>Annual Mortgage Payment</label><input id="mortgageAnnual-adv" data-mirror="mortgageAnnual" type="number" value="24000"></div>
+              <div class="field"><label>Mortgage End Age</label><input id="mortgageEndAge-adv" data-mirror="mortgageEndAge" type="number" value="65"></div>
             </div>
           </details>
 
           <details class="cascading-subdrawer">
             <summary class="cascading-summary"><span>💼 Part-Time Work (Optional)</span><span>▼</span></summary>
             <div class="cascading-content">
-              <div class="switch-row"><span>Enable Part-Time Work</span><input id="partTimeEnabled" type="checkbox"></div>
-              <div class="field"><label>Annual Part-Time Income</label><input id="partTimeIncome" type="number" value="0"></div>
-              <div class="field"><label>Start Age</label><input id="partTimeStartAge" type="number" value="61"></div>
-              <div class="field"><label>End Age</label><input id="partTimeEndAge" type="number" value="65"></div>
+              <div class="switch-row"><span>Enable Part-Time Work</span><input id="partTimeEnabled-adv" data-mirror="partTimeEnabled" type="checkbox"></div>
+              <div class="field"><label>Annual Part-Time Income</label><input id="partTimeIncome-adv" data-mirror="partTimeIncome" type="number" value="0"></div>
+              <div class="field"><label>Start Age</label><input id="partTimeStartAge-adv" data-mirror="partTimeStartAge" type="number" value="61"></div>
+              <div class="field"><label>End Age</label><input id="partTimeEndAge-adv" data-mirror="partTimeEndAge" type="number" value="65"></div>
             </div>
           </details>
 
           <details class="cascading-subdrawer">
             <summary class="cascading-summary"><span>💰 Contributions, College & Spending</span><span>▼</span></summary>
             <div class="cascading-content">
-              <div class="field"><label>Pre-Retirement Spending</label><input id="preRetirementSpend" type="number" value="140000"></div>
+              <div class="field"><label>Pre-Retirement Spending</label><input id="preRetirementSpend-adv" data-mirror="preRetirementSpend" type="number" value="140000"></div>
               <div class="field"><label>Post-Retirement Annual Spending</label><input data-owned-by="onboarding" readonly id="annualSpend" type="number" value="90000"></div>
               <div class="field"><label>Annual Savings Until Retirement</label><input data-owned-by="onboarding" readonly id="annualSavings" type="number" value="30000"></div>
-              <div class="field"><label>Annual Backdoor Roth / Adult</label><input id="annualBackdoorPerAdult" type="number" value="0"></div>
-              <div class="field"><label>Annual Mega Backdoor</label><input id="annualMegaBackdoor" type="number" value="0"></div>
-              <div class="field"><label>Total College Cost / Child</label><input id="collegeCostPerChild" type="number" value="150000"></div>
-              <div class="field"><label>Number of Children</label><input id="childCount" type="number" value="2"></div>
+              <div class="field"><label>Annual Backdoor Roth / Adult</label><input id="annualBackdoorPerAdult-adv" data-mirror="annualBackdoorPerAdult" type="number" value="0"></div>
+              <div class="field"><label>Annual Mega Backdoor</label><input id="annualMegaBackdoor-adv" data-mirror="annualMegaBackdoor" type="number" value="0"></div>
+              <div class="field"><label>Total College Cost / Child</label><input id="collegeCostPerChild-adv" data-mirror="collegeCostPerChild" type="number" value="150000"></div>
+              <div class="field"><label>Number of Children</label><input id="childCount-adv" data-mirror="childCount" type="number" value="2"></div>
             </div>
           </details>
 
@@ -1280,7 +1289,7 @@
         </div>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+      <div class="sensitivity-pair" style="display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 1.5rem; margin-bottom: 1.5rem;">
         <div class="card" style="margin-bottom:0;">
           <div class="card-head"><h3>Sensitivity Table</h3></div>
           <div class="card-body">
@@ -2470,6 +2479,18 @@
     loadBlueprintDecisionContext();
     recommendedFrontierStrategy=chooseRecommendedStrategy();
     selectedFrontierStrategy=recommendedFrontierStrategy;
+    /* The Advanced drawer repeats some Planning Assumptions fields. The copies carry
+       "<id>-adv" ids with data-mirror="<id>" and stay in sync with the primary field,
+       so either control can be edited and the model always reads the primary id. */
+    function copyField(from, to){ if(!from||!to) return; if(to.type==='checkbox') to.checked=from.checked; else to.value=from.value; }
+    function refreshMirrors(){ document.querySelectorAll('[data-mirror]').forEach(m=>copyField(document.getElementById(m.dataset.mirror), m)); }
+    ['input','change'].forEach(evt=>document.addEventListener(evt, e=>{
+      const t=e.target; if(!t||!t.id) return;
+      if(t.dataset&&t.dataset.mirror){ copyField(t, document.getElementById(t.dataset.mirror)); }
+      document.querySelectorAll('[data-mirror="'+t.id+'"]').forEach(m=>copyField(t, m));
+    }, true));
+    const renderWithoutMirrors = render;
+    render = function(){ refreshMirrors(); return renderWithoutMirrors.apply(this, arguments); };
     document.querySelectorAll('input,select').forEach(el=>el.addEventListener('input', render));
     document.querySelectorAll('input,select').forEach(el=>el.addEventListener('change', render));
     render();
