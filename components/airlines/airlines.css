@@ -245,3 +245,17 @@ noscript .wla-callout{margin:1rem 0}
 .wla-partner-name{font-size:1.05rem;font-weight:800;color:var(--wla-navy);letter-spacing:.01em}
 .wla-partner-region{font-size:.76rem;letter-spacing:.05em;text-transform:uppercase;color:var(--wla-muted);font-weight:700;margin-top:.1rem}
 .wla-partner-note{font-size:.88rem;color:#475569;margin:.45rem 0 0!important}
+
+/* ---- small label icons (CSS glyphs, same pattern as the ladder path glyphs) ---- */
+.wla-fact-currency dt:before{content:"$  "}
+.wla-fact-alliance dt:before{content:"\1F310  "}
+.wla-fact-metric dt:before{content:"\2B50  "}
+.wla-fact-window dt:before{content:"\1F4C5  "}
+.wla-fact-hubs dt:before{content:"\1F4CD  "}
+.wla-fact-verified dt:before{content:"\1F550  "}
+.wla-cc-row-fee dt:before{content:"$  "}
+.wla-cc-row-rate dt:before{content:"\1F4B3  "}
+.wla-cc-row-cap dt:before{content:"\1F4CA  "}
+.wla-cc-row-bonus dt:before{content:"\1F381  "}
+.wla-gem-title:before{content:"\1F48E  "}
+.wla-partner-name:before{content:"\2708  "}

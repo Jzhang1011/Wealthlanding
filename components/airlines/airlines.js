@@ -322,15 +322,15 @@
     var p = data.programs[id];
     var dl = el('dl', 'wla-facts');
     [
-      ['Currency', p.currency],
-      ['Alliance', p.alliance],
-      ['Status metric', p.statusMetric],
-      ['Earning window', p.statusYear],
-      ['U.S. hubs', p.hubs.map(function (h) { return h.code; }).join(', ')],
-      ['Last verified', data.meta.lastVerifiedLabel]
+      ['currency', 'Currency', p.currency],
+      ['alliance', 'Alliance', p.alliance],
+      ['metric', 'Status metric', p.statusMetric],
+      ['window', 'Earning window', p.statusYear],
+      ['hubs', 'U.S. hubs', p.hubs.map(function (h) { return h.code; }).join(', ')],
+      ['verified', 'Last verified', data.meta.lastVerifiedLabel]
     ].forEach(function (r) {
-      var d = el('div', 'wla-fact');
-      d.appendChild(el('dt', null, r[0])); d.appendChild(el('dd', null, r[1]));
+      var d = el('div', 'wla-fact wla-fact-' + r[0]);
+      d.appendChild(el('dt', null, r[1])); d.appendChild(el('dd', null, r[2]));
       dl.appendChild(d);
     });
     root.appendChild(dl);
@@ -564,8 +564,8 @@
       var body = el('div', 'wla-cc-body');
       body.appendChild(el('h4', 'wla-cc-title', c.name));
       var dl = el('dl', 'wla-cc-dl');
-      [['Annual fee', c.fee != null ? '$' + c.fee : 'Varies'], ['Status earn rate', c.perDollarLabel], ['Annual cap', c.capLabel || '—'], ['Yearly bonus', c.bonus ? num(c.bonus) + ' ' + c.unit : 'None']].forEach(function (r) {
-        var d = el('div'); d.appendChild(el('dt', null, r[0])); d.appendChild(el('dd', null, r[1])); dl.appendChild(d);
+      [['fee', 'Annual fee', c.fee != null ? '$' + c.fee : 'Varies'], ['rate', 'Status earn rate', c.perDollarLabel], ['cap', 'Annual cap', c.capLabel || '—'], ['bonus', 'Yearly bonus', c.bonus ? num(c.bonus) + ' ' + c.unit : 'None']].forEach(function (r) {
+        var d = el('div', 'wla-cc-row-' + r[0]); d.appendChild(el('dt', null, r[1])); d.appendChild(el('dd', null, r[2])); dl.appendChild(d);
       });
       body.appendChild(dl);
       if (c.note) body.appendChild(el('p', 'wla-cc-note', c.note));
@@ -579,6 +579,13 @@
   /* ---------- tier ladder (transposed): tiers are stair columns, paths are rows ----------
      Tier columns are steps: Silver lowest, 1K highest (margin-top shrinks per tier).
      Each step header carries the tier's benefits summary; each row is one path. */
+  function tierIcon(name) {
+    if (/1K|Executive/.test(name)) return '\u{1F451}';
+    if (/Platinum/.test(name)) return '\u{1F48E}';
+    if (/Gold/.test(name)) return '\u{1F947}';
+    if (/Silver/.test(name)) return '\u{1F948}';
+    return '\u2708';
+  }
   function renderTierLadder(root, data, id) {
     var p = data.programs[id];
     var tiers = p.tiers;
@@ -648,7 +655,7 @@
       h.style.setProperty('margin-top', ((tiers.length - 1 - i) * 1.5) + 'rem');
       var band = el('div', 'wla-step-band');
       band.appendChild(el('div', 'wla-step-kicker', 'Step ' + (i + 1)));
-      band.appendChild(el('h4', 'wla-step-title', t.name.replace(/^Premier /, '')));
+      band.appendChild(el('h4', 'wla-step-title', tierIcon(t.name) + ' ' + t.name.replace(/^(Premier|AAdvantage) /, '')));
       band.appendChild(el('div', 'wla-step-threshold', num(t.threshold) + ' ' + p.flying.unit));
       h.appendChild(band);
       var ul = el('ul', 'wla-step-perks');
