@@ -1,8 +1,9 @@
-/* Happy Retirement archive: renders the post list from /blogs/Happy_retirement/archive.json
-   and wires the topic filter, year filter and search box on /blogs/happy_retirement.html.
-   The page ships a static copy of the same list, so it still works without JavaScript. */
+/* Shared blog archive: renders a post list from a JSON file and wires the topic filter,
+   year filter and search box. Used by /blogs/happy_retirement.html and /blogs/travel.html.
+   Markup contract: an element with data-archive-src="/path/archive.json" and
+   data-archive-prefix="hr" (ids <prefix>-archive-list, -filter-topic, -filter-year, -search,
+   -archive-status, -archive-empty, -archive-reset). Pages ship a static copy of the list for no-JS. */
 (function () {
-  var DATA_URL = '/blogs/Happy_retirement/archive.json';
   var TAG = {
     'Tax Strategy': 'bg-emerald-50 text-emerald-800 border-emerald-200',
     'Healthcare': 'bg-amber-50 text-amber-800 border-amber-200',
@@ -10,6 +11,9 @@
     'Social Security': 'bg-indigo-50 text-indigo-800 border-indigo-200',
     'Savings': 'bg-teal-50 text-teal-800 border-teal-200',
     'Income Planning': 'bg-violet-50 text-violet-800 border-violet-200',
+    'Airline Status': 'bg-sky-50 text-sky-800 border-sky-200',
+    'United': 'bg-blue-50 text-blue-800 border-blue-200',
+    'Family Travel': 'bg-rose-50 text-rose-800 border-rose-200',
     'Case Study': 'bg-blue-50 text-blue-800 border-blue-200'
   };
   function esc(s) {
@@ -22,7 +26,7 @@
   function item(p) {
     var media = p.image
       ? '<img src="' + esc(p.image) + '" alt="' + esc(p.imageAlt || '') + '" loading="lazy" class="w-full h-full object-cover aspect-video sm:aspect-[4/3]">'
-      : '<div class="w-full h-full aspect-video sm:aspect-[4/3] bg-slate-900 text-emerald-300 flex items-center justify-center text-xs font-bold uppercase tracking-widest">Case study</div>';
+      : '<div class="w-full h-full aspect-video sm:aspect-[4/3] bg-slate-900 text-emerald-300 flex items-center justify-center text-xs font-bold uppercase tracking-widest">' + esc(p.tileLabel || 'Case study') + '</div>';
     return '<article class="archive-item group flex flex-col sm:flex-row gap-6 py-8 border-b border-slate-200 first:pt-0" data-topic="' + esc(topicsOf(p).join(' ')) + '" data-year="' + esc(p.year || '') + '">' +
       '<a href="' + esc(p.url) + '" class="block w-full sm:w-1/3 lg:w-1/4 shrink-0 overflow-hidden bg-slate-100 rounded-sm" tabindex="-1" aria-hidden="true">' + media + '</a>' +
       '<div class="flex flex-col justify-center">' +
@@ -33,14 +37,14 @@
       '<div class="mt-4 flex flex-wrap items-center gap-2">' + tagsOf(p).map(function (t) { return '<span class="text-xs font-semibold px-2.5 py-1 rounded-full border ' + (TAG[t] || TAG['Case Study']) + '">' + esc(t) + '</span>'; }).join('') + '</div>' +
       '</div></article>';
   }
-  function init(data) {
-    var list = document.getElementById('hr-archive-list');
-    var topicSel = document.getElementById('hr-filter-topic');
-    var yearSel = document.getElementById('hr-filter-year');
-    var search = document.getElementById('hr-search');
-    var status = document.getElementById('hr-archive-status');
-    var empty = document.getElementById('hr-archive-empty');
-    var reset = document.getElementById('hr-archive-reset');
+  function init(data, P) {
+    var list = document.getElementById(P + '-archive-list');
+    var topicSel = document.getElementById(P + '-filter-topic');
+    var yearSel = document.getElementById(P + '-filter-year');
+    var search = document.getElementById(P + '-search');
+    var status = document.getElementById(P + '-archive-status');
+    var empty = document.getElementById(P + '-archive-empty');
+    var reset = document.getElementById(P + '-archive-reset');
     if (!list || !topicSel || !yearSel || !search) return;
     var posts = data.posts || [];
 
@@ -67,7 +71,8 @@
       });
       list.innerHTML = shown.map(item).join('');
       if (empty) empty.hidden = shown.length > 0;
-      if (status) status.textContent = shown.length === posts.length ? 'Showing all ' + posts.length + ' articles' : 'Showing ' + shown.length + ' of ' + posts.length + ' articles';
+      var noun = posts.length === 1 ? ' article' : ' articles';
+      if (status) status.textContent = shown.length === posts.length ? 'Showing all ' + posts.length + noun : 'Showing ' + shown.length + ' of ' + posts.length + noun;
       var p = new URLSearchParams();
       if (t) p.set('topic', t); if (y) p.set('year', y); if (q) p.set('q', search.value.trim());
       var url = location.pathname + (p.toString() ? '?' + p.toString() : '') + location.hash;
@@ -82,8 +87,12 @@
     apply();
   }
   function start() {
-    fetch(DATA_URL).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(init).catch(function () {
-      var s = document.getElementById('hr-archive-status'); if (s) s.textContent = '';
+    var roots = document.querySelectorAll('[data-archive-src]');
+    Array.prototype.forEach.call(roots, function (root) {
+      var src = root.getAttribute('data-archive-src'), P = root.getAttribute('data-archive-prefix') || 'hr';
+      fetch(src).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (data) { init(data, P); })
+        .catch(function (e) { if (window.console) console.warn('Archive: keeping the static list (' + e + ')'); });
     });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();

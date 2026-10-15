@@ -38,11 +38,13 @@
 </head>
 <body>
   <div id="global-header-target"></div>
+  {% unless page.no_media_toggle %}
   <div class="sticky-toggle" aria-label="Choose format">
     <button class="toggle-btn active" id="btn-read" type="button">Read Article</button>
     <button class="toggle-btn" id="btn-watch" type="button">Watch Summary</button>
     <button class="toggle-btn" id="btn-listen" type="button">Listen to Deep Dive</button>
   </div>
+  {% endunless %}
   {% if page.full_bleed %}
   {{ content }}
   {% else %}
@@ -50,6 +52,7 @@
     {{ content }}
   </div>
   {% endif %}
+  {% unless page.no_media_toggle %}
   <script>
     document.getElementById('btn-read').addEventListener('click', function() {
       this.classList.add('active');
@@ -79,6 +82,7 @@
       if (vid) vid.classList.remove('active');
     });
   </script>
+  {% endunless %}
   <wealthlanding-footer></wealthlanding-footer>
   <script src="/components/footer.js"></script>
   <script src="/components/header.js"></script>
