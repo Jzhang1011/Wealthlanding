@@ -1,7 +1,8 @@
 /* WealthLanding blog share bar.
    Include on every blog post before </body>:
      <script src="/blogs/share.js" defer></script>
-   The bar injects itself right under the article title (first h1),
+   The bar injects itself into an element with [data-wl-share] if the page has one,
+   otherwise right under the article title (first h1),
    with X / Facebook / LinkedIn / Email / Copy-link actions.
    Self-contained: no Tailwind, no Font Awesome, no external requests. */
 (function () {
@@ -72,8 +73,11 @@
       }
     });
 
+    var slot = document.querySelector('[data-wl-share]');
     var h1 = document.querySelector('main h1, article h1, h1');
-    if (h1) {
+    if (slot) {
+      slot.appendChild(bar);
+    } else if (h1) {
       h1.parentNode.insertBefore(bar, h1.nextSibling);
     } else {
       var host = document.querySelector('article, main');
