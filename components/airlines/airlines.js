@@ -545,6 +545,7 @@
     var p = data.programs[id];
     var grid = el('div', 'wla-cc-grid');
     p.cards.forEach(function (c) {
+      if (c.gallery === false) return; // generic fallback card: math only, no gallery face
       var card = el('article', 'wla-cc');
       var face = el('div', 'wla-cc-face');
       face.style.setProperty('--wla-accent', p.color);
@@ -584,13 +585,23 @@
     var pathCards = p.pathsCards
       ? p.cards.filter(function (c) { return p.pathsCards.indexOf(c.id) !== -1; })
       : p.cards.slice();
+    // Fare needed when paying the fare with `card`: flying points + card-spend points,
+    // plus yearly bonus and milestones triggered by the running total, cap-aware.
+    // Binary search so milestone steps are exact (closed form is wrong past the first).
     function fareNeeded(card, threshold) {
-      var rate = p.flying.perDollar + card.perDollar;
-      var fare = Math.ceil((threshold - (card.bonus || 0)) / rate);
-      if (card.cap && fare * card.perDollar > card.cap) {
-        fare = Math.ceil((threshold - (card.bonus || 0) - card.cap) / p.flying.perDollar);
+      var flyRate = p.flying.perDollar, cardRate = card.perDollar;
+      var milestones = (card.milestones || []).slice().sort(function (a, b) { return a.at - b.at; });
+      function total(f) {
+        var cardLP = f * cardRate;
+        if (card.cap != null && cardLP > card.cap) cardLP = card.cap;
+        var t = f * flyRate + cardLP, b = card.bonus || 0;
+        for (var i = 0; i < milestones.length; i++) { if (t + b >= milestones[i].at) b += milestones[i].bonus; }
+        return t + b;
       }
-      return fare;
+      if (total(0) >= threshold) return 0;
+      var lo = 0, hi = 5000000;
+      while (hi - lo > 1) { var mid = Math.floor((lo + hi) / 2); if (total(mid) >= threshold) hi = mid; else lo = mid; }
+      return hi;
     }
     function amountCell(amount, unitLabel, tierColor) {
       var d = el('div', 'wla-ladder-cell');
@@ -642,8 +653,8 @@
       h.appendChild(band);
       var ul = el('ul', 'wla-step-perks');
       if (t.bags) ul.appendChild(el('li', null, t.bags + (t.bagCompanions ? ' · bags for you + up to ' + t.bagCompanions : '')));
-      if (t.eplus) ul.appendChild(el('li', null, 'Economy Plus ' + t.eplus.toLowerCase() + (t.eplusCompanions != null ? ' · you + ' + (t.eplusCompanions === 1 ? '1 companion' : 'up to ' + t.eplusCompanions + ' companions') : '')));
-      if (t.lounge) ul.appendChild(el('li', null, t.lounge.indexOf('No lounge') === 0 ? 'No lounge access' : 'Lounge: international Star Alliance lounges'));
+      if (t.eplus) ul.appendChild(el('li', null, (t.seatLabel || 'Economy Plus') + ' ' + t.eplus.toLowerCase() + (t.eplusCompanions != null ? ' · you + ' + (t.eplusCompanions === 1 ? '1 companion' : 'up to ' + t.eplusCompanions + ' companions') : '')));
+      if (t.lounge) ul.appendChild(el('li', null, t.lounge));
       if (t.upgrades) ul.appendChild(el('li', null, 'Upgrades from ' + t.upgrades.toLowerCase()));
       if (t.plusPoints) ul.appendChild(el('li', null, num(t.plusPoints) + ' PlusPoints'));
       h.appendChild(ul);

@@ -1,232 +1,1159 @@
 {
-  "_about": "Single source of facts for /travel/airlines/. Edit here and every page (hub table, city picker, card-spend comparison, per-program snapshot tables, hidden-gem cards) updates. Prose lives in the HTML pages. Omit a field rather than guessing. Rendered by /components/airlines/airlines.js.",
-  "meta": {
-    "lastVerified": "2026-10-15",
-    "lastVerifiedLabel": "October 15, 2026",
-    "disclaimer": "Airline programs change terms often and without much notice. Treat everything here as education, not a quote: confirm current rules on the airline's own site before you apply for a card, book, or chase status.",
-    "plannerUrl": "/tools/credit-card/",
-    "plannerAnchor": "/tools/credit-card/#unlocks",
-    "hubUrl": "/travel/airlines/",
-    "comingSoon": ["Alaska", "JetBlue", "Southwest"]
-  },
-  "programs": {
-    "ua": {
-      "id": "ua",
-      "name": "United MileagePlus",
-      "airline": "United Airlines",
-      "short": "United",
-      "url": "/travel/airlines/united.html",
-      "color": "#13377A",
-      "currency": "United miles (MileagePlus)",
-      "alliance": "Star Alliance",
-      "statusYear": "2027 qualification: calendar year (Jan 1 – Dec 31, 2027); status is valid until the end of the following program year",
-      "statusMetric": "PQP (dollars-based points) — the only metric for 2027; PQF flight counts were removed",
-      "statusMechanics": "Premier Qualifying Points (about 1 per $1 of eligible United fare). Each tier has a single PQP threshold for 2027 — the old PQF shortcut is gone. At least 4 paid segments on United or United Express are required for any tier.",
-      "hubs": [
-        {"code": "EWR", "city": "New York / Newark"},
-        {"code": "ORD", "city": "Chicago O'Hare"},
-        {"code": "DEN", "city": "Denver"},
-        {"code": "IAH", "city": "Houston Bush Intercontinental"},
-        {"code": "SFO", "city": "San Francisco"},
-        {"code": "LAX", "city": "Los Angeles"},
-        {"code": "IAD", "city": "Washington Dulles"}
-      ],
-      "flying": {"unit": "PQP", "perDollar": 1, "basis": "about 1 PQP per $1 of eligible United base fare and carrier charges (taxes excluded)"},
-      "pathsCards": ["united_club", "united_quest"],
-      "partnerPQP": {"milesPerPQP": 5, "label": "Preferred partners: 1 PQP per 5 award miles", "capNote": "Capped at 750 PQP per Economy / Premium Economy flight and 1,500 PQP per First / Business flight, so the miles below take several flights to earn."},
-      "alliancePartners": [
-        {"name": "Air Canada", "region": "Canada · Transatlantic", "note": "The other big Star Alliance carrier in North America.", "color": "#E31837"},
-        {"name": "Lufthansa Group", "region": "Europe", "note": "Lufthansa, SWISS, Austrian and Brussels — the European core.", "color": "#05164D"},
-        {"name": "ANA", "region": "Japan · Asia-Pacific", "note": "All Nippon Airways — a go-to for Japan and onward Asia.", "color": "#003087"},
-        {"name": "Singapore Airlines", "region": "Southeast Asia · Oceania", "note": "Famous for long-haul premium cabins on miles.", "color": "#C49A3C"},
-        {"name": "Air New Zealand", "region": "Oceania", "note": "The way to New Zealand and the South Pacific on miles.", "color": "#111111"},
-        {"name": "EVA Air", "region": "Taiwan · Asia", "note": "Strong for Taiwan and connections across Asia.", "color": "#00854A"}
-      ],
-      "tierCompareNote": "Companion benefits apply to travellers on the same reservation / itinerary as the member. One companion on the same reservation is also eligible for complimentary upgrades at every tier. Bag counts are for Economy on United / United Express; premium cabins get 3 bags at every tier.",
-      "tiers": [
-        {"name": "Premier Silver", "color": "#7C8698", "threshold": 6000, "perks": ["1 free checked bag", "Economy Plus seats at check-in for you and one companion", "Star Alliance Silver"], "bags": "1 free checked bag", "bagsNote": "2 on long-haul international Economy routes", "bagCompanions": 9, "eplus": "At check-in", "eplusCompanions": 1, "seatCompanions": 8, "lounge": "No lounge access (Star Alliance Silver)", "upgrades": "Day of departure", "upgradeCompanions": 1, "plusPoints": 0, "whoFor": "You check a bag a few times a year. But one free bag is also what a United card gives you — Silver alone is rarely worth chasing."},
-        {"name": "Premier Gold", "color": "#B8860B", "threshold": 12000, "perks": ["2 free checked bags", "Economy Plus at booking for you and one companion", "Star Alliance Gold (lounge access on eligible international itineraries)"], "bags": "2 free checked bags", "bagsNote": "3 on long-haul international Economy routes", "bagCompanions": 9, "eplus": "At booking", "eplusCompanions": 1, "seatCompanions": 8, "lounge": "Star Alliance Gold — international lounges, +1 guest on your flight at United Clubs", "upgrades": "48 hours before departure", "upgradeCompanions": 1, "plusPoints": 0, "whoFor": "The first tier that feels like status: a second bag, Economy Plus from the day you book, and real lounge access abroad."},
-        {"name": "Premier Platinum", "color": "#5B7C99", "threshold": 18000, "perks": ["3 free checked bags", "Economy Plus at booking for you and up to 8 companions", "40 PlusPoints on reaching the tier", "Star Alliance Gold"], "bags": "3 free checked bags", "bagsNote": "3 on long-haul international Economy routes", "bagCompanions": 9, "eplus": "At booking", "eplusCompanions": 8, "seatCompanions": 8, "lounge": "Star Alliance Gold — international lounges, +1 guest on your flight at United Clubs", "upgrades": "72 hours before departure", "upgradeCompanions": 1, "plusPoints": 40, "whoFor": "You fly with family or colleagues: Economy Plus now covers up to 8 companions, and PlusPoints buy real upgrades."},
-        {"name": "Premier 1K", "color": "#0A2A5E", "threshold": 32000, "perks": ["3 free checked bags", "Pre-boarding", "280 PlusPoints on reaching the tier, plus extra PlusPoints from eligible card spend", "Star Alliance Gold"], "bags": "3 free checked bags", "bagsNote": "3 on long-haul international Economy routes", "bagCompanions": 9, "eplus": "At booking", "eplusCompanions": 8, "seatCompanions": 8, "lounge": "Star Alliance Gold — international lounges, +1 guest on your flight at United Clubs", "upgrades": "96 hours before departure", "upgradeCompanions": 1, "plusPoints": 280, "whoFor": "You live on United. The upgrade window and 280 PlusPoints are the payoff for $32,000 of yearly PQP."}
-      ],
-      "cards": [
-        {"id": "united_club", "name": "United Club Card", "issuer": "Chase", "fee": 695, "unit": "PQP", "perDollar": 0.0666667, "perDollarLabel": "1 PQP per $15", "bonus": 1500, "bonusLabel": "1,500 PQP yearly card bonus (card open on Dec 31 of prior year)", "cap": 32000, "capLabel": "32,000 PQP/yr from spend (2027)", "plannerKey": "united_club", "note": "Includes United Club membership. The only consumer card with a PQP cap high enough to reach 1K on spend alone."},
-        {"id": "united_quest", "name": "United Quest Card", "issuer": "Chase", "fee": 350, "unit": "PQP", "perDollar": 0.05, "perDollarLabel": "1 PQP per $20", "bonus": 1000, "bonusLabel": "1,000 PQP yearly card bonus (card open on Dec 31 of prior year)", "cap": 18000, "capLabel": "18,000 PQP/yr from spend", "plannerKey": "united_quest", "note": "Caps at 18,000 PQP from spend, so 1K cannot be reached on spend alone."},
-        {"id": "united_explorer", "name": "United Explorer Card", "issuer": "Chase", "fee": 150, "unit": "PQP", "perDollar": 0.05, "perDollarLabel": "1 PQP per $20", "bonus": 0, "bonusLabel": "", "cap": 1000, "capLabel": "1,000 PQP/yr from spend", "plannerKey": "united_explorer", "note": "Annual fee $0 intro for the first year, then $150. Entry card: helps at the margins, does not scale into status. No yearly card bonus PQP."}
-      ],
-      "compare": {
-        "topTierRequirement": "32,000 PQP (2027), plus 4 United-operated segments",
-        "easiestCardPath": "United Club Card: 1 PQP per $15, up to 32,000 PQP a year (2027)",
-        "awardFlexScore": 4,
-        "awardFlexWhy": "Wide Star Alliance partner network, no award change fees, miles never expire, Chase Ultimate Rewards transfers at 1:1, and cardholder discounts. Own-metal prices are dynamic.",
-        "bestFitCities": "Newark/NYC (NJ side), Chicago, Houston, Denver, San Francisco, Washington Dulles, Los Angeles",
-        "gemHeadline": "Card holders save 10% on every United award (15% if also Premier) and see extra Polaris Saver space."
-      },
-      "gems": [
-        {"title": "Card award discount + exclusive Saver space", "body": "Since early 2026 primary United cardholders save at least 10% on every United-flown award, and 15% if they also hold Premier status. United also holds back extra Saver award inventory, including Polaris business class, for cardholders and Premier members. United's own example: a 15,000-mile economy award prices at 13,500 for a cardholder; Polaris Saver can drop to about 72,000 miles (68,000 for Premier cardholders).", "source": "United press release, Feb 19, 2026", "url": "https://united.mediaroom.com/2026-02-19-United-Gives-MileagePlus-Credit-Cardholders-More-Miles,-Exclusive-Flight-Discounts"},
-        {"title": "Premier upgrades now work on award tickets", "body": "From February 1, 2026 every Premier member is eligible for complimentary upgrades and PlusPoints upgrades even on tickets booked with miles. Before that, upgrades on award tickets were much more restricted, so award travelers with status now get a far more consistent upgrade experience than paying customers do.", "source": "The Points Guy, Dec 8, 2025", "url": "https://thepointsguy.com/news/united-airlines-premier-status-pluspoints-changes/"},
-        {"title": "Status from card spend alone is real (with a catch)", "body": "United counts PQP earned on eligible Chase United cards toward every Premier tier, and card PQP can satisfy the PQP-only requirement for 1K. With the United Club Card's 1-per-$15 rate and 32,000-PQP cap (2027), spend can cover the whole requirement; you still have to fly four United or United Express segments.", "source": "United: How to Earn Premier Status", "url": "https://www.united.com/en/us/fly/mileageplus/premier/qualify.html"},
-        {"title": "Chase points move 1:1 to United", "body": "Chase Ultimate Rewards transfers to MileagePlus at 1:1, which turns a flexible bank currency into United award space at the moment you find it. United awards also carry no change fees, miles never expire, and you can pool miles with family.", "source": "Chase transfer-partner list (via The Points King, Oct 2026) and United press release", "url": "https://thepointsking.com/blog/chase-transfer-partners/"},
-        {"title": "PlusPoints are a flexible currency — now demand-priced", "body": "Premier Platinum members receive 40 PlusPoints and 1K members 280. They can buy upgrades or be exchanged for things like TravelBank cash, bonus miles or status-qualifying points. The fixed PlusPoints upgrade chart ended in February 2027, so prices now move with demand — use a balance on flights where the upgrade is worth it rather than hoarding it.", "source": "AwardWallet and The Points Guy", "url": "https://awardwallet.com/news/united-mileageplus/premier-status-changes-2026/"}
-      ],
-      "retired": [
-        {"title": "Excursionist Perk (ended)", "body": "A free one-way segment on a multi-city award was once United's best-known trick. United eliminated it for new bookings effective August 21, 2025, so it should not drive any decision today.", "source": "Frequent Miler", "url": "https://frequentmiler.com/the-day-uniteds-excursionist-perk-died/"}
-      ],
-      "sources": [
-        {"label": "United: Premier status updates — what's changing in 2027 (Oct 13, 2026)", "url": "https://www.united.com/en/us/fly/mileageplus/whats-new.html"},
-        {"label": "United: How to qualify for Premier status", "url": "https://www.united.com/en/us/fly/mileageplus/premier/qualify.html"},
-        {"label": "United: Premier benefits", "url": "https://www.united.com/en/us/fly/mileageplus/premier/benefits.html"},
-        {"label": "United: Checked bags", "url": "https://www.united.com/en/us/fly/baggage/checked-bags.html"},
-        {"label": "United press release: card miles, award discounts, Saver access (Feb 19, 2026)", "url": "https://united.mediaroom.com/2026-02-19-United-Gives-MileagePlus-Credit-Cardholders-More-Miles,-Exclusive-Flight-Discounts"},
-        {"label": "The Points Guy: United 2026 Premier requirements and upgrade changes", "url": "https://thepointsguy.com/news/united-airlines-premier-status-pluspoints-changes/"},
-        {"label": "AwardWallet: changes coming to United MileagePlus in 2026", "url": "https://awardwallet.com/news/united-mileageplus/premier-status-changes-2026/"},
-        {"label": "Chase: United Quest Card", "url": "https://www.chase.com/personal/credit-cards/united/united-quest-card"},
-        {"label": "Chase: United Club Card", "url": "https://creditcards.chase.com/travel-credit-cards/united/club-infinite"},
-        {"label": "Frequent Miler: the Excursionist Perk ended", "url": "https://frequentmiler.com/the-day-uniteds-excursionist-perk-died/"}
-      ]
+ "_about": "Single source of facts for /travel/airlines/. Edit here and every page (hub table, city picker, card-spend comparison, per-program snapshot tables, hidden-gem cards) updates. Prose lives in the HTML pages. Omit a field rather than guessing. Rendered by /components/airlines/airlines.js.",
+ "meta": {
+  "lastVerified": "2026-10-15",
+  "lastVerifiedLabel": "October 15, 2026",
+  "disclaimer": "Airline programs change terms often and without much notice. Treat everything here as education, not a quote: confirm current rules on the airline's own site before you apply for a card, book, or chase status.",
+  "plannerUrl": "/tools/credit-card/",
+  "plannerAnchor": "/tools/credit-card/#unlocks",
+  "hubUrl": "/travel/airlines/",
+  "comingSoon": [
+   "Alaska",
+   "JetBlue",
+   "Southwest"
+  ]
+ },
+ "programs": {
+  "ua": {
+   "id": "ua",
+   "name": "United MileagePlus",
+   "airline": "United Airlines",
+   "short": "United",
+   "url": "/travel/airlines/united.html",
+   "color": "#13377A",
+   "currency": "United miles (MileagePlus)",
+   "alliance": "Star Alliance",
+   "statusYear": "2027 qualification: calendar year (Jan 1 – Dec 31, 2027); status is valid until the end of the following program year",
+   "statusMetric": "PQP (dollars-based points) — the only metric for 2027; PQF flight counts were removed",
+   "statusMechanics": "Premier Qualifying Points (about 1 per $1 of eligible United fare). Each tier has a single PQP threshold for 2027 — the old PQF shortcut is gone. At least 4 paid segments on United or United Express are required for any tier.",
+   "hubs": [
+    {
+     "code": "EWR",
+     "city": "New York / Newark"
     },
-    "aa": {
-      "id": "aa",
-      "name": "American AAdvantage",
-      "airline": "American Airlines",
-      "short": "American",
-      "url": "/travel/airlines/american.html",
-      "color": "#0B5CAD",
-      "currency": "AAdvantage miles",
-      "alliance": "oneworld",
-      "statusYear": "March 1 – last day of February; status lasts through March 31 of the following full year",
-      "statusMetric": "Loyalty Points (1 per eligible base mile earned)",
-      "statusMechanics": "Loyalty Points come from flying (about 5 base miles per $1 of base fare plus carrier charges), co-brand card spend (1 per $1), and partners. Bonus miles do not earn Loyalty Points. There is no flight-count or segment requirement.",
-      "hubs": [
-        {"code": "DFW", "city": "Dallas–Fort Worth"},
-        {"code": "CLT", "city": "Charlotte"},
-        {"code": "MIA", "city": "Miami"},
-        {"code": "PHL", "city": "Philadelphia"},
-        {"code": "ORD", "city": "Chicago O'Hare"},
-        {"code": "PHX", "city": "Phoenix"},
-        {"code": "LAX", "city": "Los Angeles"},
-        {"code": "JFK/LGA", "city": "New York (one hub across both airports)"},
-        {"code": "DCA", "city": "Washington National"}
-      ],
-      "flying": {"unit": "LP", "perDollar": 5, "basis": "about 5 Loyalty Points per $1 of eligible American base fare and carrier charges (Basic Economy tickets bought after Dec 17, 2025 earn nothing)"},
-      "tiers": [
-        {"name": "AAdvantage Gold", "threshold": 40000, "perks": ["1 free checked bag", "Complimentary upgrades from 24 hours before departure", "40% bonus miles on flights"]},
-        {"name": "AAdvantage Platinum", "threshold": 75000, "perks": ["2 free checked bags", "Upgrades from 48 hours before departure", "60% bonus miles on flights"]},
-        {"name": "AAdvantage Platinum Pro", "threshold": 125000, "perks": ["3 free checked bags", "Upgrades from 72 hours before departure", "80% bonus miles on flights"]},
-        {"name": "AAdvantage Executive Platinum", "threshold": 200000, "perks": ["3 free checked bags", "Upgrades from 100 hours before departure", "120% bonus miles on flights"]}
-      ],
-      "cards": [
-        {"id": "citi_exec", "name": "Citi / AAdvantage Executive World Legend Mastercard", "issuer": "Citi", "fee": 695, "unit": "LP", "perDollar": 1, "perDollarLabel": "1 Loyalty Point per $1", "bonus": 0, "milestones": [{"at": 50000, "bonus": 10000}, {"at": 90000, "bonus": 10000}, {"at": 165000, "bonus": 10000}, {"at": 240000, "bonus": 10000}], "milestoneLabel": "+10,000 Loyalty Points each at 50k, 90k, 165k and 240k LP in the status year (up to 40,000)", "cap": null, "plannerKey": "citi_exec", "note": "Includes Admirals Club membership. Fee shown is for new cardmembers from Aug 23, 2026."},
-        {"id": "citi_any", "name": "Any Citi / AAdvantage card (no milestone bonus)", "issuer": "Citi", "fee": null, "unit": "LP", "perDollar": 1, "perDollarLabel": "1 Loyalty Point per $1", "bonus": 0, "cap": null, "note": "Category bonuses add miles, not Loyalty Points, so every card earns Loyalty Points at about 1 per dollar. Fees vary by card."}
-      ],
-      "compare": {
-        "topTierRequirement": "200,000 Loyalty Points (about $40,000 of American fares, or card spend plus flying)",
-        "easiestCardPath": "Citi / AAdvantage Executive: 1 LP per $1 plus up to 40,000 bonus LP in four milestones",
-        "awardFlexScore": 4,
-        "awardFlexWhy": "Fixed, region-based partner award chart across oneworld, status upgrades that also work on Alaska, and Citi ThankYou transfers. American's own-metal awards are dynamic.",
-        "bestFitCities": "Dallas–Fort Worth, Charlotte, Miami, Philadelphia, Phoenix, Washington National, plus New York and Chicago",
-        "gemHeadline": "Every card dollar earns Loyalty Points, and the Executive card adds up to 40,000 bonus LP."
-      },
-      "gems": [
-        {"title": "Card spend earns Loyalty Points at 1:1, with milestone bonuses", "body": "Loyalty Points follow base miles, and every Citi/AAdvantage card earns base miles at 1 per dollar. The refreshed Executive card (new fee $695 from Aug 23, 2026) adds 10,000 bonus Loyalty Points at each of 50k, 90k, 165k and 240k LP in the same status year, up to 40,000, doubling the earlier maximum of 20,000.", "source": "Citi and American press release, Aug 3, 2026", "url": "https://www.citigroup.com/global/news/press-release/2026/american-airlines-citi-elevate-premium-travel-enhanced-citi-aadvantage-executive-world-legend-mastercard"},
-        {"title": "The Loyalty Point Rewards ladder goes well beyond status", "body": "Past the status tiers, American hands out choices at 15k, 60k, 100k, 175k, 250k and higher: systemwide upgrades (a pair counts as one reward choice at 175k and 250k), Loyalty Point bonuses, Hyatt status or free-night awards, Admirals Club membership (at 250k it uses both choices) and more. At 60,000 LP you can register for a 25% Loyalty Point bonus on select partner spend (capped at 25,000 bonus LP).", "source": "aa.com: Loyalty Point Rewards", "url": "https://www.aa.com/web/i18n/aadvantage-program/aadvantage-status/loyalty-point-rewards.html"},
-        {"title": "Systemwide upgrades reach British Airways transatlantic", "body": "A systemwide upgrade can be used on American flights and, on transatlantic trips, on British Airways flights (with at least one American-marketed flight in the trip). For one-way trips of up to three segments.", "source": "aa.com: Upgrades for status members", "url": "https://www.aa.com/pubcontent/en_US/aadvantage-program/answers-support/upgrades-for-status-members.html"},
-        {"title": "Status also works on Alaska, and AA miles book Alaska", "body": "AAdvantage status members can get First Class upgrades and complimentary Premium Class seats on qualifying Alaska Airlines fares. In the other direction, AAdvantage miles can book Alaska flights, including Alaska-operated Hawaiian flights from April 22, 2026. This is a real extension of American's West Coast reach.", "source": "aa.com: upgrades page and Alaska partner page", "url": "https://www.aa.com/web/i18n/travel-info/partner-airlines/alaska-airlines.html"},
-        {"title": "Partner awards sit on a fixed chart", "body": "American moved its own flights to dynamic pricing in April 2023, but awards on oneworld partners remain on region-based partner charts, which keeps premium-cabin partner awards more predictable than awards on American metal.", "source": "Frequent Miler; The Points Guy", "url": "https://frequentmiler.com/american-airlines-devaluation-relax-partner-awards-unaffected/"},
-        {"title": "Complimentary upgrades work on award tickets too", "body": "Status members are eligible for unlimited complimentary upgrades on eligible American flights, including on AAdvantage award tickets and for one companion, within North America. Note that Basic Economy tickets bought on or after May 18, 2026 are excluded.", "source": "aa.com: Upgrades for status members", "url": "https://www.aa.com/pubcontent/en_US/aadvantage-program/answers-support/upgrades-for-status-members.html"}
-      ],
-      "retired": [],
-      "sources": [
-        {"label": "aa.com: Loyalty Point Rewards (2026)", "url": "https://www.aa.com/web/i18n/aadvantage-program/aadvantage-status/loyalty-point-rewards.html"},
-        {"label": "aa.com: Upgrades for status members", "url": "https://www.aa.com/pubcontent/en_US/aadvantage-program/answers-support/upgrades-for-status-members.html"},
-        {"label": "American newsroom: status and reward levels unchanged for 2026", "url": "https://news.aa.com/news/news-details/2026/American-Airlines-maintains-AAdvantage-status-and-reward-levels-for-third-year-in-a-row-AADV-01/default.aspx"},
-        {"label": "Citi / American press release: refreshed Executive card (Aug 3, 2026)", "url": "https://www.citigroup.com/global/news/press-release/2026/american-airlines-citi-elevate-premium-travel-enhanced-citi-aadvantage-executive-world-legend-mastercard"},
-        {"label": "aa.com: AAdvantage miles with Alaska Airlines", "url": "https://www.aa.com/web/i18n/travel-info/partner-airlines/alaska-airlines.html"},
-        {"label": "American newsroom: 9 hubs, 9 stories", "url": "https://news.aa.com/centennial/our-stories/9-hubs-9-stories/"},
-        {"label": "The Points Guy: American drops its award charts", "url": "https://thepointsguy.com/news/american-airlines-drops-award-charts/"}
-      ]
+    {
+     "code": "ORD",
+     "city": "Chicago O'Hare"
     },
-    "dl": {
-      "id": "dl",
-      "name": "Delta SkyMiles",
-      "airline": "Delta Air Lines",
-      "short": "Delta",
-      "url": "/travel/airlines/delta.html",
-      "color": "#9B1B30",
-      "currency": "SkyMiles",
-      "alliance": "SkyTeam",
-      "statusYear": "Calendar year (Jan 1 – Dec 31); status lasts through Jan 31 of the year after next",
-      "statusMetric": "MQDs (Medallion Qualification Dollars): 1 per $1 of eligible ticket price",
-      "statusMechanics": "Status is dollars-only: Medallion Qualification Dollars from eligible Delta and partner tickets (taxes and Main Basic excluded), award tickets ($1 per 100 miles redeemed) and eligible Delta Amex cards (headstart plus spend). No segment requirement.",
-      "hubs": [
-        {"code": "ATL", "city": "Atlanta"},
-        {"code": "DTW", "city": "Detroit"},
-        {"code": "MSP", "city": "Minneapolis–St. Paul"},
-        {"code": "SLC", "city": "Salt Lake City"},
-        {"code": "SEA", "city": "Seattle–Tacoma"},
-        {"code": "JFK/LGA", "city": "New York JFK and LaGuardia"},
-        {"code": "BOS", "city": "Boston"},
-        {"code": "LAX", "city": "Los Angeles"}
-      ],
-      "flying": {"unit": "MQD", "perDollar": 1, "basis": "$1 MQD per $1 of eligible ticket price (excluding taxes and fees and Main Basic tickets)"},
-      "tiers": [
-        {"name": "Silver Medallion", "threshold": 5000, "perks": ["1 free checked bag", "Complimentary upgrades clear 24 hours before departure", "Priority customer-service line", "7 miles per $1 on Delta flights"]},
-        {"name": "Gold Medallion", "threshold": 10000, "perks": ["2 free checked bags", "Upgrades clear 72 hours before departure", "4 onboard drink vouchers", "8 miles per $1 on Delta flights"]},
-        {"name": "Platinum Medallion", "threshold": 15000, "perks": ["3 free checked bags in the U.S. and Canada", "Comfort+ upgrades clear shortly after ticketing; First 120 hours out", "1 Choice Benefit (for example 4 Regional Upgrade Certificates)", "9 miles per $1 on Delta flights"]},
-        {"name": "Diamond Medallion", "threshold": 28000, "perks": ["3 free checked bags in the U.S. and Canada", "Same upgrade windows as Platinum, with priority", "3 Choice Benefits (for example 4 Global Upgrade Certificates)", "11 miles per $1 on Delta flights"]}
-      ],
-      "cards": [
-        {"id": "delta_reserve", "name": "Delta SkyMiles Reserve Amex", "issuer": "American Express", "fee": 650, "unit": "MQD", "perDollar": 0.1, "perDollarLabel": "1 MQD per $10", "bonus": 2500, "bonusLabel": "$2,500 MQD Headstart each qualification year", "cap": null, "plannerKey": "delta_reserve", "note": "15 Sky Club visits a year; $75,000 of spend in a calendar year unlocks unlimited Sky Club access (see Delta's terms)."},
-        {"id": "delta_platinum", "name": "Delta SkyMiles Platinum Amex", "issuer": "American Express", "fee": 350, "unit": "MQD", "perDollar": 0.05, "perDollarLabel": "1 MQD per $20", "bonus": 2500, "bonusLabel": "$2,500 MQD Headstart each qualification year", "cap": null, "plannerKey": "delta_plat", "note": "Same headstart as Reserve at a lower fee, but half the MQD earn rate on spend."}
-      ],
-      "compare": {
-        "topTierRequirement": "$28,000 MQDs (flying, award MQDs and card MQDs combined)",
-        "easiestCardPath": "Delta SkyMiles Reserve Amex: $2,500 MQD Headstart plus 1 MQD per $10 of spend",
-        "awardFlexScore": 2,
-        "awardFlexWhy": "Free award changes and cancellations (U.S. and Canada origin), no blackout dates on Delta flights, Amex Membership Rewards at 1:1, but dynamic pricing with no award chart and a narrower list of bookable partners.",
-        "bestFitCities": "Atlanta, Detroit, Minneapolis–St. Paul, Salt Lake City, Seattle, Boston, New York JFK/LGA, Los Angeles",
-        "gemHeadline": "Even award tickets earn MQDs, and Medallion upgrades apply on award travel."
-      },
-      "gems": [
-        {"title": "The MQD Headstart is per card type", "body": "Delta gives $2,500 MQDs per eligible card type every qualification year. One Platinum- or Reserve-tier card starts you halfway to Silver. Delta words the benefit as 'per card type'; several card guides read that as stacking across a Platinum and a Reserve card. Confirm the current terms before relying on a second card for it.", "source": "delta.com: Medallion overview and how to qualify", "url": "https://www.delta.com/us/en/skymiles/medallion-program/how-to-qualify"},
-        {"title": "Award tickets still earn status dollars", "body": "Award Tickets and Upgrades with Miles (excluding Main Basic) earn $1 MQD per 100 miles redeemed, so spending miles also moves you toward Medallion status.", "source": "Delta News Hub: 2026 Medallion status", "url": "https://news.delta.com/2026-medallion-status-what-know-year-end"},
-        {"title": "Cardmember discount and free changes on awards", "body": "Eligible Delta Amex cardmembers save 15% when booking Delta-operated award travel. Awards that originate in the U.S. or Canada can be changed or canceled without a redeposit or change fee (excluding Basic fares), though any mileage difference and taxes apply.", "source": "delta.com: Travel with Miles", "url": "https://www.delta.com/us/en/skymiles/how-to-use-miles/travel-with-miles"},
-        {"title": "Medallion perks stretch to award tickets and companions", "body": "Complimentary upgrades apply on paid tickets, award tickets, Miles + Cash and Pay with Miles tickets (except Basic experiences), including upgrades for a companion. The free checked bag benefit covers the member plus up to eight companions on the same reservation when flying Delta.", "source": "delta.com: Medallion benefits", "url": "https://www.delta.com/us/en/skymiles/medallion-program/medallion-benefits"},
-        {"title": "Choice Benefits include an MQD accelerator and a way back", "body": "Platinum and Diamond members choose Choice Benefits such as Upgrade Certificates, bonus miles, status gifting for others, or an MQD Accelerator ($1,000 or $2,000 MQDs toward the next qualification year). Delta also runs Reclaim My Status for people whose travel slows down.", "source": "delta.com: Medallion benefits", "url": "https://www.delta.com/us/en/skymiles/medallion-program/medallion-benefits"},
-        {"title": "Spend-based Sky Club access", "body": "The Delta SkyMiles Reserve Amex includes 15 Sky Club visits per year. Spending $75,000 on an eligible card in a calendar year unlocks unlimited Sky Club access for the rest of that year and the next Medallion year, a spend target that also lands you in Gold on MQDs.", "source": "American Express card terms; Delta Sky Club access rules", "url": "https://www.delta.com/us/en/delta-sky-club/access"}
-      ],
-      "retired": [],
-      "sources": [
-        {"label": "delta.com: How to get Medallion status", "url": "https://www.delta.com/us/en/skymiles/medallion-program/how-to-qualify"},
-        {"label": "delta.com: Medallion benefits", "url": "https://www.delta.com/us/en/skymiles/medallion-program/medallion-benefits"},
-        {"label": "delta.com: Travel with miles", "url": "https://www.delta.com/us/en/skymiles/how-to-use-miles/travel-with-miles"},
-        {"label": "Delta News Hub: 2026 Medallion status, what to know before year end", "url": "https://news.delta.com/2026-medallion-status-what-know-year-end"},
-        {"label": "delta.com: Sky Club access", "url": "https://www.delta.com/us/en/delta-sky-club/access"},
-        {"label": "delta.com: Convert partner points to miles", "url": "https://www.delta.com/us/en/skymiles/how-to-earn-miles/convert-partner-points"}
-      ]
+    {
+     "code": "DEN",
+     "city": "Denver"
+    },
+    {
+     "code": "IAH",
+     "city": "Houston Bush Intercontinental"
+    },
+    {
+     "code": "SFO",
+     "city": "San Francisco"
+    },
+    {
+     "code": "LAX",
+     "city": "Los Angeles"
+    },
+    {
+     "code": "IAD",
+     "city": "Washington Dulles"
     }
+   ],
+   "flying": {
+    "unit": "PQP",
+    "perDollar": 1,
+    "basis": "about 1 PQP per $1 of eligible United base fare and carrier charges (taxes excluded)"
+   },
+   "pathsCards": [
+    "united_club",
+    "united_quest"
+   ],
+   "partnerPQP": {
+    "milesPerPQP": 5,
+    "label": "Preferred partners: 1 PQP per 5 award miles",
+    "capNote": "Capped at 750 PQP per Economy / Premium Economy flight and 1,500 PQP per First / Business flight, so the miles below take several flights to earn."
+   },
+   "alliancePartners": [
+    {
+     "name": "Air Canada",
+     "region": "Canada · Transatlantic",
+     "note": "The other big Star Alliance carrier in North America.",
+     "color": "#E31837"
+    },
+    {
+     "name": "Lufthansa Group",
+     "region": "Europe",
+     "note": "Lufthansa, SWISS, Austrian and Brussels — the European core.",
+     "color": "#05164D"
+    },
+    {
+     "name": "ANA",
+     "region": "Japan · Asia-Pacific",
+     "note": "All Nippon Airways — a go-to for Japan and onward Asia.",
+     "color": "#003087"
+    },
+    {
+     "name": "Singapore Airlines",
+     "region": "Southeast Asia · Oceania",
+     "note": "Famous for long-haul premium cabins on miles.",
+     "color": "#C49A3C"
+    },
+    {
+     "name": "Air New Zealand",
+     "region": "Oceania",
+     "note": "The way to New Zealand and the South Pacific on miles.",
+     "color": "#111111"
+    },
+    {
+     "name": "EVA Air",
+     "region": "Taiwan · Asia",
+     "note": "Strong for Taiwan and connections across Asia.",
+     "color": "#00854A"
+    }
+   ],
+   "tierCompareNote": "Companion benefits apply to travellers on the same reservation / itinerary as the member. One companion on the same reservation is also eligible for complimentary upgrades at every tier. Bag counts are for Economy on United / United Express; premium cabins get 3 bags at every tier.",
+   "tiers": [
+    {
+     "name": "Premier Silver",
+     "color": "#7C8698",
+     "threshold": 6000,
+     "perks": [
+      "1 free checked bag",
+      "Economy Plus seats at check-in for you and one companion",
+      "Star Alliance Silver"
+     ],
+     "bags": "1 free checked bag",
+     "bagsNote": "2 on long-haul international Economy routes",
+     "bagCompanions": 9,
+     "eplus": "At check-in",
+     "eplusCompanions": 1,
+     "seatCompanions": 8,
+     "lounge": "No lounge access (Star Alliance Silver)",
+     "upgrades": "Day of departure",
+     "upgradeCompanions": 1,
+     "plusPoints": 0,
+     "whoFor": "You check a bag a few times a year. But one free bag is also what a United card gives you — Silver alone is rarely worth chasing."
+    },
+    {
+     "name": "Premier Gold",
+     "color": "#B8860B",
+     "threshold": 12000,
+     "perks": [
+      "2 free checked bags",
+      "Economy Plus at booking for you and one companion",
+      "Star Alliance Gold (lounge access on eligible international itineraries)"
+     ],
+     "bags": "2 free checked bags",
+     "bagsNote": "3 on long-haul international Economy routes",
+     "bagCompanions": 9,
+     "eplus": "At booking",
+     "eplusCompanions": 1,
+     "seatCompanions": 8,
+     "lounge": "Star Alliance Gold — international lounges, +1 guest on your flight at United Clubs",
+     "upgrades": "48 hours before departure",
+     "upgradeCompanions": 1,
+     "plusPoints": 0,
+     "whoFor": "The first tier that feels like status: a second bag, Economy Plus from the day you book, and real lounge access abroad."
+    },
+    {
+     "name": "Premier Platinum",
+     "color": "#5B7C99",
+     "threshold": 18000,
+     "perks": [
+      "3 free checked bags",
+      "Economy Plus at booking for you and up to 8 companions",
+      "40 PlusPoints on reaching the tier",
+      "Star Alliance Gold"
+     ],
+     "bags": "3 free checked bags",
+     "bagsNote": "3 on long-haul international Economy routes",
+     "bagCompanions": 9,
+     "eplus": "At booking",
+     "eplusCompanions": 8,
+     "seatCompanions": 8,
+     "lounge": "Star Alliance Gold — international lounges, +1 guest on your flight at United Clubs",
+     "upgrades": "72 hours before departure",
+     "upgradeCompanions": 1,
+     "plusPoints": 40,
+     "whoFor": "You fly with family or colleagues: Economy Plus now covers up to 8 companions, and PlusPoints buy real upgrades."
+    },
+    {
+     "name": "Premier 1K",
+     "color": "#0A2A5E",
+     "threshold": 32000,
+     "perks": [
+      "3 free checked bags",
+      "Pre-boarding",
+      "280 PlusPoints on reaching the tier, plus extra PlusPoints from eligible card spend",
+      "Star Alliance Gold"
+     ],
+     "bags": "3 free checked bags",
+     "bagsNote": "3 on long-haul international Economy routes",
+     "bagCompanions": 9,
+     "eplus": "At booking",
+     "eplusCompanions": 8,
+     "seatCompanions": 8,
+     "lounge": "Star Alliance Gold — international lounges, +1 guest on your flight at United Clubs",
+     "upgrades": "96 hours before departure",
+     "upgradeCompanions": 1,
+     "plusPoints": 280,
+     "whoFor": "You live on United. The upgrade window and 280 PlusPoints are the payoff for $32,000 of yearly PQP."
+    }
+   ],
+   "cards": [
+    {
+     "id": "united_club",
+     "name": "United Club Card",
+     "issuer": "Chase",
+     "fee": 695,
+     "unit": "PQP",
+     "perDollar": 0.0666667,
+     "perDollarLabel": "1 PQP per $15",
+     "bonus": 1500,
+     "bonusLabel": "1,500 PQP yearly card bonus (card open on Dec 31 of prior year)",
+     "cap": 32000,
+     "capLabel": "32,000 PQP/yr from spend (2027)",
+     "plannerKey": "united_club",
+     "note": "Includes United Club membership. The only consumer card with a PQP cap high enough to reach 1K on spend alone."
+    },
+    {
+     "id": "united_quest",
+     "name": "United Quest Card",
+     "issuer": "Chase",
+     "fee": 350,
+     "unit": "PQP",
+     "perDollar": 0.05,
+     "perDollarLabel": "1 PQP per $20",
+     "bonus": 1000,
+     "bonusLabel": "1,000 PQP yearly card bonus (card open on Dec 31 of prior year)",
+     "cap": 18000,
+     "capLabel": "18,000 PQP/yr from spend",
+     "plannerKey": "united_quest",
+     "note": "Caps at 18,000 PQP from spend, so 1K cannot be reached on spend alone."
+    },
+    {
+     "id": "united_explorer",
+     "name": "United Explorer Card",
+     "issuer": "Chase",
+     "fee": 150,
+     "unit": "PQP",
+     "perDollar": 0.05,
+     "perDollarLabel": "1 PQP per $20",
+     "bonus": 0,
+     "bonusLabel": "",
+     "cap": 1000,
+     "capLabel": "1,000 PQP/yr from spend",
+     "plannerKey": "united_explorer",
+     "note": "Annual fee $0 intro for the first year, then $150. Entry card: helps at the margins, does not scale into status. No yearly card bonus PQP."
+    }
+   ],
+   "compare": {
+    "topTierRequirement": "32,000 PQP (2027), plus 4 United-operated segments",
+    "easiestCardPath": "United Club Card: 1 PQP per $15, up to 32,000 PQP a year (2027)",
+    "awardFlexScore": 4,
+    "awardFlexWhy": "Wide Star Alliance partner network, no award change fees, miles never expire, Chase Ultimate Rewards transfers at 1:1, and cardholder discounts. Own-metal prices are dynamic.",
+    "bestFitCities": "Newark/NYC (NJ side), Chicago, Houston, Denver, San Francisco, Washington Dulles, Los Angeles",
+    "gemHeadline": "Card holders save 10% on every United award (15% if also Premier) and see extra Polaris Saver space."
+   },
+   "gems": [
+    {
+     "title": "Card award discount + exclusive Saver space",
+     "body": "Since early 2026 primary United cardholders save at least 10% on every United-flown award, and 15% if they also hold Premier status. United also holds back extra Saver award inventory, including Polaris business class, for cardholders and Premier members. United's own example: a 15,000-mile economy award prices at 13,500 for a cardholder; Polaris Saver can drop to about 72,000 miles (68,000 for Premier cardholders).",
+     "source": "United press release, Feb 19, 2026",
+     "url": "https://united.mediaroom.com/2026-02-19-United-Gives-MileagePlus-Credit-Cardholders-More-Miles,-Exclusive-Flight-Discounts"
+    },
+    {
+     "title": "Premier upgrades now work on award tickets",
+     "body": "From February 1, 2026 every Premier member is eligible for complimentary upgrades and PlusPoints upgrades even on tickets booked with miles. Before that, upgrades on award tickets were much more restricted, so award travelers with status now get a far more consistent upgrade experience than paying customers do.",
+     "source": "The Points Guy, Dec 8, 2025",
+     "url": "https://thepointsguy.com/news/united-airlines-premier-status-pluspoints-changes/"
+    },
+    {
+     "title": "Status from card spend alone is real (with a catch)",
+     "body": "United counts PQP earned on eligible Chase United cards toward every Premier tier, and card PQP can satisfy the PQP-only requirement for 1K. With the United Club Card's 1-per-$15 rate and 32,000-PQP cap (2027), spend can cover the whole requirement; you still have to fly four United or United Express segments.",
+     "source": "United: How to Earn Premier Status",
+     "url": "https://www.united.com/en/us/fly/mileageplus/premier/qualify.html"
+    },
+    {
+     "title": "Chase points move 1:1 to United",
+     "body": "Chase Ultimate Rewards transfers to MileagePlus at 1:1, which turns a flexible bank currency into United award space at the moment you find it. United awards also carry no change fees, miles never expire, and you can pool miles with family.",
+     "source": "Chase transfer-partner list (via The Points King, Oct 2026) and United press release",
+     "url": "https://thepointsking.com/blog/chase-transfer-partners/"
+    },
+    {
+     "title": "PlusPoints are a flexible currency — now demand-priced",
+     "body": "Premier Platinum members receive 40 PlusPoints and 1K members 280. They can buy upgrades or be exchanged for things like TravelBank cash, bonus miles or status-qualifying points. The fixed PlusPoints upgrade chart ended in February 2027, so prices now move with demand — use a balance on flights where the upgrade is worth it rather than hoarding it.",
+     "source": "AwardWallet and The Points Guy",
+     "url": "https://awardwallet.com/news/united-mileageplus/premier-status-changes-2026/"
+    }
+   ],
+   "retired": [
+    {
+     "title": "Excursionist Perk (ended)",
+     "body": "A free one-way segment on a multi-city award was once United's best-known trick. United eliminated it for new bookings effective August 21, 2025, so it should not drive any decision today.",
+     "source": "Frequent Miler",
+     "url": "https://frequentmiler.com/the-day-uniteds-excursionist-perk-died/"
+    }
+   ],
+   "sources": [
+    {
+     "label": "United: Premier status updates — what's changing in 2027 (Oct 13, 2026)",
+     "url": "https://www.united.com/en/us/fly/mileageplus/whats-new.html"
+    },
+    {
+     "label": "United: How to qualify for Premier status",
+     "url": "https://www.united.com/en/us/fly/mileageplus/premier/qualify.html"
+    },
+    {
+     "label": "United: Premier benefits",
+     "url": "https://www.united.com/en/us/fly/mileageplus/premier/benefits.html"
+    },
+    {
+     "label": "United: Checked bags",
+     "url": "https://www.united.com/en/us/fly/baggage/checked-bags.html"
+    },
+    {
+     "label": "United press release: card miles, award discounts, Saver access (Feb 19, 2026)",
+     "url": "https://united.mediaroom.com/2026-02-19-United-Gives-MileagePlus-Credit-Cardholders-More-Miles,-Exclusive-Flight-Discounts"
+    },
+    {
+     "label": "The Points Guy: United 2026 Premier requirements and upgrade changes",
+     "url": "https://thepointsguy.com/news/united-airlines-premier-status-pluspoints-changes/"
+    },
+    {
+     "label": "AwardWallet: changes coming to United MileagePlus in 2026",
+     "url": "https://awardwallet.com/news/united-mileageplus/premier-status-changes-2026/"
+    },
+    {
+     "label": "Chase: United Quest Card",
+     "url": "https://www.chase.com/personal/credit-cards/united/united-quest-card"
+    },
+    {
+     "label": "Chase: United Club Card",
+     "url": "https://creditcards.chase.com/travel-credit-cards/united/club-infinite"
+    },
+    {
+     "label": "Frequent Miler: the Excursionist Perk ended",
+     "url": "https://frequentmiler.com/the-day-uniteds-excursionist-perk-died/"
+    }
+   ]
   },
-  "cities": [
-    {"id": "nyc", "label": "New York City area (EWR · JFK · LGA)", "hubs": {"ua": ["EWR"], "aa": ["JFK/LGA"], "dl": ["JFK/LGA"]}, "best": ["ua", "dl", "aa"], "why": "All three carriers run hubs here: United at Newark, and American and Delta at JFK and LaGuardia. Nonstop choices are broad on every airline, so the deciding factor is the airport you can reach easily (Newark for much of New Jersey and the Hudson Valley, JFK or LaGuardia for the city and Long Island), then which card and lounge setup you prefer.", "watch": "Many carriers compete here, so price each trip instead of assuming your program's airline is cheapest."},
-    {"id": "chi", "label": "Chicago (ORD)", "hubs": {"ua": ["ORD"], "aa": ["ORD"], "dl": []}, "best": ["ua", "aa"], "why": "United and American both run hubs at O'Hare. Pick on the program: United for Star Alliance and Chase points transfers, American for the cheapest Loyalty Point math from card spend and oneworld.", "watch": "Delta flies here but has no hub, so Delta status is the weakest fit unless you travel often through Delta hubs."},
-    {"id": "lax", "label": "Los Angeles (LAX)", "hubs": {"ua": ["LAX"], "aa": ["LAX"], "dl": ["LAX"]}, "best": ["ua", "aa", "dl"], "why": "United, American and Delta all list LAX as a hub, so no single program is the default. Decide by how you earn (card spend versus flying), which alliance serves your international trips, and which lounge access you value.", "watch": "With three hubs competing, loyalty to one airline matters less than flexibility: keep an eye on all three for each trip."},
-    {"id": "sfo", "label": "San Francisco Bay Area (SFO)", "hubs": {"ua": ["SFO"], "aa": [], "dl": []}, "best": ["ua"], "why": "United's hub at SFO gives Bay Area flyers the strongest default: the most chances to earn and use status on nonstop and connecting itineraries through a home-airport hub.", "watch": "Other carriers, including Alaska, compete heavily here; we will cover those programs as they are added."},
-    {"id": "den", "label": "Denver (DEN)", "hubs": {"ua": ["DEN"], "aa": [], "dl": []}, "best": ["ua"], "why": "Denver is a United hub, so United is the natural home program for Colorado flyers who want status that is useful on home-airport flights.", "watch": "Other carriers also serve Denver; compare fares per trip."},
-    {"id": "hou", "label": "Houston (IAH)", "hubs": {"ua": ["IAH"], "aa": [], "dl": []}, "best": ["ua"], "why": "Houston Bush Intercontinental is a United hub, which makes United the clear fit for Houston residents who want hub-based status benefits.", "watch": "Delta and American serve Houston as non-hub carriers."},
-    {"id": "dc", "label": "Washington, D.C. (IAD · DCA)", "hubs": {"ua": ["IAD"], "aa": ["DCA"], "dl": []}, "best": ["ua", "aa"], "why": "The two airports split the hubs: Dulles (IAD) is United's hub and Reagan National (DCA) is American's. Whichever airport is easier for you decides the program; both give you a home-airport hub.", "watch": "Delta has no hub in the D.C. area."},
-    {"id": "dfw", "label": "Dallas–Fort Worth (DFW)", "hubs": {"ua": [], "aa": ["DFW"], "dl": []}, "best": ["aa"], "why": "DFW is American's home base, so American is the default for North Texas flyers who want status and upgrades on home-airport flying.", "watch": "Other airlines compete in the region, so price-shop even as a loyalist."},
-    {"id": "clt", "label": "Charlotte (CLT)", "hubs": {"ua": [], "aa": ["CLT"], "dl": []}, "best": ["aa"], "why": "Charlotte is an American hub, making American the natural choice for flyers in the Carolinas who want a home-airport hub.", "watch": "Smaller airports nearby may rely on connections through other carriers' hubs."},
-    {"id": "mia", "label": "Miami (MIA)", "hubs": {"ua": [], "aa": ["MIA"], "dl": []}, "best": ["aa"], "why": "Miami is an American hub, so American is the default for South Florida flyers who want status that works from their home airport.", "watch": "Competitors operate in Florida; compare when you are price-sensitive."},
-    {"id": "phl", "label": "Philadelphia (PHL)", "hubs": {"ua": [], "aa": ["PHL"], "dl": []}, "best": ["aa"], "why": "Philadelphia is an American hub, which makes American the home program for Philly-area flyers.", "watch": "Newark and New York airports are within reach for some travelers, which could change the answer."},
-    {"id": "phx", "label": "Phoenix (PHX)", "hubs": {"ua": [], "aa": ["PHX"], "dl": []}, "best": ["aa"], "why": "Phoenix is an American hub, so American is the default for Arizona flyers who want hub-based benefits.", "watch": "Other airlines serve Phoenix as non-hub carriers."},
-    {"id": "atl", "label": "Atlanta (ATL)", "hubs": {"ua": [], "aa": [], "dl": ["ATL"]}, "best": ["dl"], "why": "Atlanta is Delta's biggest hub, so Delta is the practical home program: your status and upgrades apply to the largest share of nonstop and connecting options from your home airport.", "watch": "That strength also means other carriers offer fewer choices, so compare prices rather than assuming loyalty is free."},
-    {"id": "dtw", "label": "Detroit (DTW)", "hubs": {"ua": [], "aa": [], "dl": ["DTW"]}, "best": ["dl"], "why": "Detroit is a Delta hub, so Delta is the clear fit for Michigan flyers who want hub-based status benefits.", "watch": "Check fares on other airlines when you are price-sensitive."},
-    {"id": "msp", "label": "Minneapolis–St. Paul (MSP)", "hubs": {"ua": [], "aa": [], "dl": ["MSP"]}, "best": ["dl"], "why": "Minneapolis–St. Paul is a Delta hub, so Delta is the natural choice for Twin Cities flyers.", "watch": "Shop around when fares matter more than status."},
-    {"id": "slc", "label": "Salt Lake City (SLC)", "hubs": {"ua": [], "aa": [], "dl": ["SLC"]}, "best": ["dl"], "why": "Salt Lake City is a Delta hub, so Delta is the home program for Utah flyers who want hub-based benefits.", "watch": "Other carriers serve SLC without a hub."},
-    {"id": "sea", "label": "Seattle (SEA)", "hubs": {"ua": [], "aa": [], "dl": ["SEA"]}, "best": ["dl"], "why": "Delta lists Seattle–Tacoma as a hub, so Delta is the default among the three programs covered here.", "watch": "Alaska Airlines is headquartered in Seattle and is a major carrier at SEA; we will cover that program soon. If you value Alaska flying, American's partnership with Alaska makes AAdvantage worth a look too."},
-    {"id": "bos", "label": "Boston (BOS)", "hubs": {"ua": [], "aa": [], "dl": ["BOS"]}, "best": ["dl"], "why": "Delta lists Boston Logan as a hub, so Delta is the default among the three programs covered here.", "watch": "Other airlines also compete heavily in Boston, so compare fares per trip."}
-  ],
-  "faqFallback": {
-    "other": {"label": "Somewhere else (no hub from these three)", "best": [], "why": "If your home airport is not a hub for United, American or Delta, status is worth less because you will connect through someone's hub on most trips. Look at which airline offers nonstop flights to the cities you visit most, which hub you would connect through, and whether card-based benefits (checked bags, lounge access, award discounts) are enough value on their own."}
+  "aa": {
+   "id": "aa",
+   "name": "American AAdvantage",
+   "airline": "American Airlines",
+   "short": "American",
+   "url": "/travel/airlines/american.html",
+   "color": "#0B5CAD",
+   "currency": "AAdvantage miles",
+   "alliance": "oneworld",
+   "statusYear": "2026–27 qualification: Mar 1, 2026 – Feb 28, 2027; status earned lasts through Mar 31, 2028",
+   "statusMetric": "Loyalty Points (LP) — the only metric; no flight or segment requirement",
+   "statusMechanics": "Loyalty Points come from flying (about 5 per $1 of eligible American fare), co-brand card spend (1 per $1), and partners. Bonus miles count as base miles, so they earn LP too. Basic Economy tickets bought after Dec 17, 2025 earn nothing.",
+   "hubs": [
+    {
+     "code": "DFW",
+     "city": "Dallas–Fort Worth"
+    },
+    {
+     "code": "CLT",
+     "city": "Charlotte"
+    },
+    {
+     "code": "MIA",
+     "city": "Miami"
+    },
+    {
+     "code": "PHL",
+     "city": "Philadelphia"
+    },
+    {
+     "code": "ORD",
+     "city": "Chicago O'Hare"
+    },
+    {
+     "code": "PHX",
+     "city": "Phoenix"
+    },
+    {
+     "code": "LAX",
+     "city": "Los Angeles"
+    },
+    {
+     "code": "JFK/LGA",
+     "city": "New York (one hub across both airports)"
+    },
+    {
+     "code": "DCA",
+     "city": "Washington National"
+    }
+   ],
+   "flying": {
+    "unit": "LP",
+    "perDollar": 5,
+    "basis": "about 5 Loyalty Points per $1 of eligible American base fare and carrier charges (Basic Economy tickets bought after Dec 17, 2025 earn nothing)"
+   },
+   "tiers": [
+    {
+     "name": "AAdvantage Gold",
+     "color": "#A67C00",
+     "threshold": 40000,
+     "perks": [
+      "1 free checked bag",
+      "Complimentary upgrades from 24 hours before departure",
+      "40% bonus miles on flights"
+     ],
+     "bags": "1 free checked bag",
+     "eplus": "At check-in",
+     "seatLabel": "Main Cabin Extra",
+     "lounge": "No lounge access (oneworld Ruby)",
+     "upgrades": "24 hours before departure",
+     "upgradeCompanions": 1,
+     "whoFor": "The occasional flyer who wants a free bag, priority boarding, and a shot at upgrades on a few trips a year."
+    },
+    {
+     "name": "AAdvantage Platinum",
+     "color": "#7C8698",
+     "threshold": 75000,
+     "perks": [
+      "2 free checked bags",
+      "Upgrades from 48 hours before departure",
+      "60% bonus miles on flights"
+     ],
+     "bags": "2 free checked bags",
+     "eplus": "At booking",
+     "eplusCompanions": 8,
+     "seatLabel": "Main Cabin Extra",
+     "lounge": "Admirals Club + Flagship Lounge on qualifying international itineraries, +1 guest",
+     "upgrades": "48 hours before departure",
+     "upgradeCompanions": 1,
+     "whoFor": "The regular domestic flyer — Main Cabin Extra at booking, lounge access on international trips, and the first tier where status feels like a real upgrade."
+    },
+    {
+     "name": "AAdvantage Platinum Pro",
+     "color": "#3A6EA5",
+     "threshold": 125000,
+     "perks": [
+      "3 free checked bags",
+      "Upgrades from 72 hours before departure",
+      "80% bonus miles on flights"
+     ],
+     "bags": "3 free checked bags",
+     "eplus": "At booking",
+     "eplusCompanions": 8,
+     "seatLabel": "Main Cabin Extra",
+     "lounge": "Admirals Club + Flagship Lounge on qualifying international itineraries, +1 guest",
+     "upgrades": "72 hours before departure",
+     "upgradeCompanions": 1,
+     "whoFor": "The heavy domestic + occasional international flyer who wants Emerald lounge access and 72-hour upgrades."
+    },
+    {
+     "name": "AAdvantage Executive Platinum",
+     "color": "#7A1C1C",
+     "threshold": 200000,
+     "perks": [
+      "3 free checked bags",
+      "Upgrades from 100 hours before departure",
+      "120% bonus miles on flights"
+     ],
+     "bags": "3 free checked bags",
+     "eplus": "At booking",
+     "eplusCompanions": 8,
+     "seatLabel": "Main Cabin Extra",
+     "lounge": "Admirals Club + Flagship Lounge on qualifying international itineraries, +1 guest",
+     "upgrades": "100 hours before departure",
+     "upgradeCompanions": 1,
+     "whoFor": "The road warrior — 100-hour upgrades, 3 bags, Flagship lounges, systemwide upgrades, and top-of-list priority."
+    }
+   ],
+   "cards": [
+    {
+     "id": "citi_exec",
+     "name": "Citi / AAdvantage Executive World Legend Mastercard",
+     "issuer": "Citi",
+     "fee": 695,
+     "unit": "LP",
+     "perDollar": 1,
+     "perDollarLabel": "1 Loyalty Point per $1",
+     "bonus": 0,
+     "milestones": [
+      {
+       "at": 50000,
+       "bonus": 10000
+      },
+      {
+       "at": 90000,
+       "bonus": 10000
+      },
+      {
+       "at": 165000,
+       "bonus": 10000
+      },
+      {
+       "at": 240000,
+       "bonus": 10000
+      }
+     ],
+     "milestoneLabel": "+10,000 Loyalty Points each at 50k, 90k, 165k and 240k LP in the status year (up to 40,000)",
+     "cap": null,
+     "plannerKey": "citi_exec",
+     "note": "Includes Admirals Club membership. Fee shown is for new cardmembers from Aug 23, 2026."
+    },
+    {
+     "id": "citi_globe",
+     "name": "Citi / AAdvantage Globe Mastercard",
+     "issuer": "Citi",
+     "fee": 350,
+     "unit": "LP",
+     "perDollar": 1,
+     "perDollarLabel": "1 Loyalty Point per $1",
+     "bonus": 0,
+     "cap": null,
+     "plannerKey": "citi_globe",
+     "note": "Flight Streak bonus (+5,000 LP per 4 qualifying AA segments, up to 15,000/yr) is not in the numbers on this page — it depends on segments flown, not spend."
+    },
+    {
+     "id": "citi_any",
+     "name": "Any Citi / AAdvantage card (no milestone bonus)",
+     "issuer": "Citi",
+     "fee": null,
+     "unit": "LP",
+     "perDollar": 1,
+     "perDollarLabel": "1 Loyalty Point per $1",
+     "bonus": 0,
+     "cap": null,
+     "note": "Category bonuses add miles, not Loyalty Points, so every card earns Loyalty Points at about 1 per dollar. Fees vary by card. Excludes the Globe card's Flight Streak bonus.",
+     "gallery": false
+    }
+   ],
+   "compare": {
+    "topTierRequirement": "200,000 Loyalty Points (about $40,000 of American fares, or card spend plus flying)",
+    "easiestCardPath": "Citi / AAdvantage Executive: 1 LP per $1 plus up to 40,000 bonus LP in four milestones",
+    "awardFlexScore": 4,
+    "awardFlexWhy": "Fixed, region-based partner award chart across oneworld, status upgrades that also work on Alaska, and Citi ThankYou transfers. American's own-metal awards are dynamic.",
+    "bestFitCities": "Dallas–Fort Worth, Charlotte, Miami, Philadelphia, Phoenix, Washington National, plus New York and Chicago",
+    "gemHeadline": "Every card dollar earns Loyalty Points, and the Executive card adds up to 40,000 bonus LP."
+   },
+   "gems": [
+    {
+     "title": "Card spend earns Loyalty Points at 1:1, with milestone bonuses",
+     "body": "Loyalty Points follow base miles, and every Citi/AAdvantage card earns base miles at 1 per dollar. The refreshed Executive card (new fee $695 from Aug 23, 2026) adds 10,000 bonus Loyalty Points at each of 50k, 90k, 165k and 240k LP in the same status year, up to 40,000, doubling the earlier maximum of 20,000.",
+     "source": "Citi and American press release, Aug 3, 2026",
+     "url": "https://www.citigroup.com/global/news/press-release/2026/american-airlines-citi-elevate-premium-travel-enhanced-citi-aadvantage-executive-world-legend-mastercard"
+    },
+    {
+     "title": "The Loyalty Point Rewards ladder goes well beyond status",
+     "body": "Past the status tiers, American hands out choices at 15k, 60k, 100k, 175k, 250k and higher: systemwide upgrades (a pair counts as one reward choice at 175k and 250k), Loyalty Point bonuses, Hyatt status or free-night awards, Admirals Club membership (at 250k it uses both choices) and more. At 60,000 LP you can register for a 25% Loyalty Point bonus on select partner spend (capped at 25,000 bonus LP).",
+     "source": "aa.com: Loyalty Point Rewards",
+     "url": "https://www.aa.com/web/i18n/aadvantage-program/aadvantage-status/loyalty-point-rewards.html"
+    },
+    {
+     "title": "Systemwide upgrades reach British Airways transatlantic",
+     "body": "A systemwide upgrade can be used on American flights and, on transatlantic trips, on British Airways flights (with at least one American-marketed flight in the trip). For one-way trips of up to three segments.",
+     "source": "aa.com: Upgrades for status members",
+     "url": "https://www.aa.com/pubcontent/en_US/aadvantage-program/answers-support/upgrades-for-status-members.html"
+    },
+    {
+     "title": "Status also works on Alaska, and AA miles book Alaska",
+     "body": "AAdvantage status members can get First Class upgrades and complimentary Premium Class seats on qualifying Alaska Airlines fares. In the other direction, AAdvantage miles can book Alaska flights, including Alaska-operated Hawaiian flights from April 22, 2026. This is a real extension of American's West Coast reach.",
+     "source": "aa.com: upgrades page and Alaska partner page",
+     "url": "https://www.aa.com/web/i18n/travel-info/partner-airlines/alaska-airlines.html"
+    },
+    {
+     "title": "Partner awards sit on a fixed chart",
+     "body": "American moved its own flights to dynamic pricing in April 2023, but awards on oneworld partners remain on region-based partner charts, which keeps premium-cabin partner awards more predictable than awards on American metal.",
+     "source": "Frequent Miler; The Points Guy",
+     "url": "https://frequentmiler.com/american-airlines-devaluation-relax-partner-awards-unaffected/"
+    },
+    {
+     "title": "Complimentary upgrades work on award tickets too",
+     "body": "Status members are eligible for unlimited complimentary upgrades on eligible American flights, including on AAdvantage award tickets and for one companion, within North America. Note that Basic Economy tickets bought on or after May 18, 2026 are excluded.",
+     "source": "aa.com: Upgrades for status members",
+     "url": "https://www.aa.com/pubcontent/en_US/aadvantage-program/answers-support/upgrades-for-status-members.html"
+    }
+   ],
+   "retired": [],
+   "sources": [
+    {
+     "label": "aa.com: Loyalty Point Rewards (2026)",
+     "url": "https://www.aa.com/web/i18n/aadvantage-program/aadvantage-status/loyalty-point-rewards.html"
+    },
+    {
+     "label": "aa.com: Upgrades for status members",
+     "url": "https://www.aa.com/pubcontent/en_US/aadvantage-program/answers-support/upgrades-for-status-members.html"
+    },
+    {
+     "label": "American newsroom: status and reward levels unchanged for 2026",
+     "url": "https://news.aa.com/news/news-details/2026/American-Airlines-maintains-AAdvantage-status-and-reward-levels-for-third-year-in-a-row-AADV-01/default.aspx"
+    },
+    {
+     "label": "Citi / American press release: refreshed Executive card (Aug 3, 2026)",
+     "url": "https://www.citigroup.com/global/news/press-release/2026/american-airlines-citi-elevate-premium-travel-enhanced-citi-aadvantage-executive-world-legend-mastercard"
+    },
+    {
+     "label": "aa.com: AAdvantage miles with Alaska Airlines",
+     "url": "https://www.aa.com/web/i18n/travel-info/partner-airlines/alaska-airlines.html"
+    },
+    {
+     "label": "American newsroom: 9 hubs, 9 stories",
+     "url": "https://news.aa.com/centennial/our-stories/9-hubs-9-stories/"
+    },
+    {
+     "label": "The Points Guy: American drops its award charts",
+     "url": "https://thepointsguy.com/news/american-airlines-drops-award-charts/"
+    }
+   ],
+   "pathsCards": [
+    "citi_exec",
+    "citi_any"
+   ],
+   "alliancePartners": [
+    {
+     "name": "British Airways",
+     "region": "Europe · UK",
+     "note": "London + Europe connections; dense short-haul network. Watch for BA's high surcharges on award tickets.",
+     "color": "#2E5C99"
+    },
+    {
+     "name": "Cathay Pacific",
+     "region": "Hong Kong · Asia",
+     "note": "Transpacific premium cabins and Asia connections via Hong Kong.",
+     "color": "#006564"
+    },
+    {
+     "name": "Qantas",
+     "region": "Australia · Oceania",
+     "note": "Australia, New Zealand and the South Pacific — the long-haul award sweet spot.",
+     "color": "#E4002B"
+    },
+    {
+     "name": "Qatar Airways",
+     "region": "Doha · Middle East",
+     "note": "Qsuite business class; one-stop connections to Africa, India and Asia via Doha.",
+     "color": "#5C0632"
+    },
+    {
+     "name": "Japan Airlines",
+     "region": "Japan · Asia",
+     "note": "Japan nonstops and onward Asia; famously good premium-cabin award availability.",
+     "color": "#C8102E"
+    },
+    {
+     "name": "Alaska Airlines",
+     "region": "US West Coast · Domestic",
+     "note": "Domestic West Coast feed, Hawaii and Mexico; a full oneworld member.",
+     "color": "#0A2A5E"
+    }
+   ]
+  },
+  "dl": {
+   "id": "dl",
+   "name": "Delta SkyMiles",
+   "airline": "Delta Air Lines",
+   "short": "Delta",
+   "url": "/travel/airlines/delta.html",
+   "color": "#9B1B30",
+   "currency": "SkyMiles",
+   "alliance": "SkyTeam",
+   "statusYear": "Calendar year (Jan 1 – Dec 31); status lasts through Jan 31 of the year after next",
+   "statusMetric": "MQDs (Medallion Qualification Dollars): 1 per $1 of eligible ticket price",
+   "statusMechanics": "Status is dollars-only: Medallion Qualification Dollars from eligible Delta and partner tickets (taxes and Main Basic excluded), award tickets ($1 per 100 miles redeemed) and eligible Delta Amex cards (headstart plus spend). No segment requirement.",
+   "hubs": [
+    {
+     "code": "ATL",
+     "city": "Atlanta"
+    },
+    {
+     "code": "DTW",
+     "city": "Detroit"
+    },
+    {
+     "code": "MSP",
+     "city": "Minneapolis–St. Paul"
+    },
+    {
+     "code": "SLC",
+     "city": "Salt Lake City"
+    },
+    {
+     "code": "SEA",
+     "city": "Seattle–Tacoma"
+    },
+    {
+     "code": "JFK/LGA",
+     "city": "New York JFK and LaGuardia"
+    },
+    {
+     "code": "BOS",
+     "city": "Boston"
+    },
+    {
+     "code": "LAX",
+     "city": "Los Angeles"
+    }
+   ],
+   "flying": {
+    "unit": "MQD",
+    "perDollar": 1,
+    "basis": "$1 MQD per $1 of eligible ticket price (excluding taxes and fees and Main Basic tickets)"
+   },
+   "tiers": [
+    {
+     "name": "Silver Medallion",
+     "threshold": 5000,
+     "perks": [
+      "1 free checked bag",
+      "Complimentary upgrades clear 24 hours before departure",
+      "Priority customer-service line",
+      "7 miles per $1 on Delta flights"
+     ]
+    },
+    {
+     "name": "Gold Medallion",
+     "threshold": 10000,
+     "perks": [
+      "2 free checked bags",
+      "Upgrades clear 72 hours before departure",
+      "4 onboard drink vouchers",
+      "8 miles per $1 on Delta flights"
+     ]
+    },
+    {
+     "name": "Platinum Medallion",
+     "threshold": 15000,
+     "perks": [
+      "3 free checked bags in the U.S. and Canada",
+      "Comfort+ upgrades clear shortly after ticketing; First 120 hours out",
+      "1 Choice Benefit (for example 4 Regional Upgrade Certificates)",
+      "9 miles per $1 on Delta flights"
+     ]
+    },
+    {
+     "name": "Diamond Medallion",
+     "threshold": 28000,
+     "perks": [
+      "3 free checked bags in the U.S. and Canada",
+      "Same upgrade windows as Platinum, with priority",
+      "3 Choice Benefits (for example 4 Global Upgrade Certificates)",
+      "11 miles per $1 on Delta flights"
+     ]
+    }
+   ],
+   "cards": [
+    {
+     "id": "delta_reserve",
+     "name": "Delta SkyMiles Reserve Amex",
+     "issuer": "American Express",
+     "fee": 650,
+     "unit": "MQD",
+     "perDollar": 0.1,
+     "perDollarLabel": "1 MQD per $10",
+     "bonus": 2500,
+     "bonusLabel": "$2,500 MQD Headstart each qualification year",
+     "cap": null,
+     "plannerKey": "delta_reserve",
+     "note": "15 Sky Club visits a year; $75,000 of spend in a calendar year unlocks unlimited Sky Club access (see Delta's terms)."
+    },
+    {
+     "id": "delta_platinum",
+     "name": "Delta SkyMiles Platinum Amex",
+     "issuer": "American Express",
+     "fee": 350,
+     "unit": "MQD",
+     "perDollar": 0.05,
+     "perDollarLabel": "1 MQD per $20",
+     "bonus": 2500,
+     "bonusLabel": "$2,500 MQD Headstart each qualification year",
+     "cap": null,
+     "plannerKey": "delta_plat",
+     "note": "Same headstart as Reserve at a lower fee, but half the MQD earn rate on spend."
+    }
+   ],
+   "compare": {
+    "topTierRequirement": "$28,000 MQDs (flying, award MQDs and card MQDs combined)",
+    "easiestCardPath": "Delta SkyMiles Reserve Amex: $2,500 MQD Headstart plus 1 MQD per $10 of spend",
+    "awardFlexScore": 2,
+    "awardFlexWhy": "Free award changes and cancellations (U.S. and Canada origin), no blackout dates on Delta flights, Amex Membership Rewards at 1:1, but dynamic pricing with no award chart and a narrower list of bookable partners.",
+    "bestFitCities": "Atlanta, Detroit, Minneapolis–St. Paul, Salt Lake City, Seattle, Boston, New York JFK/LGA, Los Angeles",
+    "gemHeadline": "Even award tickets earn MQDs, and Medallion upgrades apply on award travel."
+   },
+   "gems": [
+    {
+     "title": "The MQD Headstart is per card type",
+     "body": "Delta gives $2,500 MQDs per eligible card type every qualification year. One Platinum- or Reserve-tier card starts you halfway to Silver. Delta words the benefit as 'per card type'; several card guides read that as stacking across a Platinum and a Reserve card. Confirm the current terms before relying on a second card for it.",
+     "source": "delta.com: Medallion overview and how to qualify",
+     "url": "https://www.delta.com/us/en/skymiles/medallion-program/how-to-qualify"
+    },
+    {
+     "title": "Award tickets still earn status dollars",
+     "body": "Award Tickets and Upgrades with Miles (excluding Main Basic) earn $1 MQD per 100 miles redeemed, so spending miles also moves you toward Medallion status.",
+     "source": "Delta News Hub: 2026 Medallion status",
+     "url": "https://news.delta.com/2026-medallion-status-what-know-year-end"
+    },
+    {
+     "title": "Cardmember discount and free changes on awards",
+     "body": "Eligible Delta Amex cardmembers save 15% when booking Delta-operated award travel. Awards that originate in the U.S. or Canada can be changed or canceled without a redeposit or change fee (excluding Basic fares), though any mileage difference and taxes apply.",
+     "source": "delta.com: Travel with Miles",
+     "url": "https://www.delta.com/us/en/skymiles/how-to-use-miles/travel-with-miles"
+    },
+    {
+     "title": "Medallion perks stretch to award tickets and companions",
+     "body": "Complimentary upgrades apply on paid tickets, award tickets, Miles + Cash and Pay with Miles tickets (except Basic experiences), including upgrades for a companion. The free checked bag benefit covers the member plus up to eight companions on the same reservation when flying Delta.",
+     "source": "delta.com: Medallion benefits",
+     "url": "https://www.delta.com/us/en/skymiles/medallion-program/medallion-benefits"
+    },
+    {
+     "title": "Choice Benefits include an MQD accelerator and a way back",
+     "body": "Platinum and Diamond members choose Choice Benefits such as Upgrade Certificates, bonus miles, status gifting for others, or an MQD Accelerator ($1,000 or $2,000 MQDs toward the next qualification year). Delta also runs Reclaim My Status for people whose travel slows down.",
+     "source": "delta.com: Medallion benefits",
+     "url": "https://www.delta.com/us/en/skymiles/medallion-program/medallion-benefits"
+    },
+    {
+     "title": "Spend-based Sky Club access",
+     "body": "The Delta SkyMiles Reserve Amex includes 15 Sky Club visits per year. Spending $75,000 on an eligible card in a calendar year unlocks unlimited Sky Club access for the rest of that year and the next Medallion year, a spend target that also lands you in Gold on MQDs.",
+     "source": "American Express card terms; Delta Sky Club access rules",
+     "url": "https://www.delta.com/us/en/delta-sky-club/access"
+    }
+   ],
+   "retired": [],
+   "sources": [
+    {
+     "label": "delta.com: How to get Medallion status",
+     "url": "https://www.delta.com/us/en/skymiles/medallion-program/how-to-qualify"
+    },
+    {
+     "label": "delta.com: Medallion benefits",
+     "url": "https://www.delta.com/us/en/skymiles/medallion-program/medallion-benefits"
+    },
+    {
+     "label": "delta.com: Travel with miles",
+     "url": "https://www.delta.com/us/en/skymiles/how-to-use-miles/travel-with-miles"
+    },
+    {
+     "label": "Delta News Hub: 2026 Medallion status, what to know before year end",
+     "url": "https://news.delta.com/2026-medallion-status-what-know-year-end"
+    },
+    {
+     "label": "delta.com: Sky Club access",
+     "url": "https://www.delta.com/us/en/delta-sky-club/access"
+    },
+    {
+     "label": "delta.com: Convert partner points to miles",
+     "url": "https://www.delta.com/us/en/skymiles/how-to-earn-miles/convert-partner-points"
+    }
+   ]
   }
+ },
+ "cities": [
+  {
+   "id": "nyc",
+   "label": "New York City area (EWR · JFK · LGA)",
+   "hubs": {
+    "ua": [
+     "EWR"
+    ],
+    "aa": [
+     "JFK/LGA"
+    ],
+    "dl": [
+     "JFK/LGA"
+    ]
+   },
+   "best": [
+    "ua",
+    "dl",
+    "aa"
+   ],
+   "why": "All three carriers run hubs here: United at Newark, and American and Delta at JFK and LaGuardia. Nonstop choices are broad on every airline, so the deciding factor is the airport you can reach easily (Newark for much of New Jersey and the Hudson Valley, JFK or LaGuardia for the city and Long Island), then which card and lounge setup you prefer.",
+   "watch": "Many carriers compete here, so price each trip instead of assuming your program's airline is cheapest."
+  },
+  {
+   "id": "chi",
+   "label": "Chicago (ORD)",
+   "hubs": {
+    "ua": [
+     "ORD"
+    ],
+    "aa": [
+     "ORD"
+    ],
+    "dl": []
+   },
+   "best": [
+    "ua",
+    "aa"
+   ],
+   "why": "United and American both run hubs at O'Hare. Pick on the program: United for Star Alliance and Chase points transfers, American for the cheapest Loyalty Point math from card spend and oneworld.",
+   "watch": "Delta flies here but has no hub, so Delta status is the weakest fit unless you travel often through Delta hubs."
+  },
+  {
+   "id": "lax",
+   "label": "Los Angeles (LAX)",
+   "hubs": {
+    "ua": [
+     "LAX"
+    ],
+    "aa": [
+     "LAX"
+    ],
+    "dl": [
+     "LAX"
+    ]
+   },
+   "best": [
+    "ua",
+    "aa",
+    "dl"
+   ],
+   "why": "United, American and Delta all list LAX as a hub, so no single program is the default. Decide by how you earn (card spend versus flying), which alliance serves your international trips, and which lounge access you value.",
+   "watch": "With three hubs competing, loyalty to one airline matters less than flexibility: keep an eye on all three for each trip."
+  },
+  {
+   "id": "sfo",
+   "label": "San Francisco Bay Area (SFO)",
+   "hubs": {
+    "ua": [
+     "SFO"
+    ],
+    "aa": [],
+    "dl": []
+   },
+   "best": [
+    "ua"
+   ],
+   "why": "United's hub at SFO gives Bay Area flyers the strongest default: the most chances to earn and use status on nonstop and connecting itineraries through a home-airport hub.",
+   "watch": "Other carriers, including Alaska, compete heavily here; we will cover those programs as they are added."
+  },
+  {
+   "id": "den",
+   "label": "Denver (DEN)",
+   "hubs": {
+    "ua": [
+     "DEN"
+    ],
+    "aa": [],
+    "dl": []
+   },
+   "best": [
+    "ua"
+   ],
+   "why": "Denver is a United hub, so United is the natural home program for Colorado flyers who want status that is useful on home-airport flights.",
+   "watch": "Other carriers also serve Denver; compare fares per trip."
+  },
+  {
+   "id": "hou",
+   "label": "Houston (IAH)",
+   "hubs": {
+    "ua": [
+     "IAH"
+    ],
+    "aa": [],
+    "dl": []
+   },
+   "best": [
+    "ua"
+   ],
+   "why": "Houston Bush Intercontinental is a United hub, which makes United the clear fit for Houston residents who want hub-based status benefits.",
+   "watch": "Delta and American serve Houston as non-hub carriers."
+  },
+  {
+   "id": "dc",
+   "label": "Washington, D.C. (IAD · DCA)",
+   "hubs": {
+    "ua": [
+     "IAD"
+    ],
+    "aa": [
+     "DCA"
+    ],
+    "dl": []
+   },
+   "best": [
+    "ua",
+    "aa"
+   ],
+   "why": "The two airports split the hubs: Dulles (IAD) is United's hub and Reagan National (DCA) is American's. Whichever airport is easier for you decides the program; both give you a home-airport hub.",
+   "watch": "Delta has no hub in the D.C. area."
+  },
+  {
+   "id": "dfw",
+   "label": "Dallas–Fort Worth (DFW)",
+   "hubs": {
+    "ua": [],
+    "aa": [
+     "DFW"
+    ],
+    "dl": []
+   },
+   "best": [
+    "aa"
+   ],
+   "why": "DFW is American's home base, so American is the default for North Texas flyers who want status and upgrades on home-airport flying.",
+   "watch": "Other airlines compete in the region, so price-shop even as a loyalist."
+  },
+  {
+   "id": "clt",
+   "label": "Charlotte (CLT)",
+   "hubs": {
+    "ua": [],
+    "aa": [
+     "CLT"
+    ],
+    "dl": []
+   },
+   "best": [
+    "aa"
+   ],
+   "why": "Charlotte is an American hub, making American the natural choice for flyers in the Carolinas who want a home-airport hub.",
+   "watch": "Smaller airports nearby may rely on connections through other carriers' hubs."
+  },
+  {
+   "id": "mia",
+   "label": "Miami (MIA)",
+   "hubs": {
+    "ua": [],
+    "aa": [
+     "MIA"
+    ],
+    "dl": []
+   },
+   "best": [
+    "aa"
+   ],
+   "why": "Miami is an American hub, so American is the default for South Florida flyers who want status that works from their home airport.",
+   "watch": "Competitors operate in Florida; compare when you are price-sensitive."
+  },
+  {
+   "id": "phl",
+   "label": "Philadelphia (PHL)",
+   "hubs": {
+    "ua": [],
+    "aa": [
+     "PHL"
+    ],
+    "dl": []
+   },
+   "best": [
+    "aa"
+   ],
+   "why": "Philadelphia is an American hub, which makes American the home program for Philly-area flyers.",
+   "watch": "Newark and New York airports are within reach for some travelers, which could change the answer."
+  },
+  {
+   "id": "phx",
+   "label": "Phoenix (PHX)",
+   "hubs": {
+    "ua": [],
+    "aa": [
+     "PHX"
+    ],
+    "dl": []
+   },
+   "best": [
+    "aa"
+   ],
+   "why": "Phoenix is an American hub, so American is the default for Arizona flyers who want hub-based benefits.",
+   "watch": "Other airlines serve Phoenix as non-hub carriers."
+  },
+  {
+   "id": "atl",
+   "label": "Atlanta (ATL)",
+   "hubs": {
+    "ua": [],
+    "aa": [],
+    "dl": [
+     "ATL"
+    ]
+   },
+   "best": [
+    "dl"
+   ],
+   "why": "Atlanta is Delta's biggest hub, so Delta is the practical home program: your status and upgrades apply to the largest share of nonstop and connecting options from your home airport.",
+   "watch": "That strength also means other carriers offer fewer choices, so compare prices rather than assuming loyalty is free."
+  },
+  {
+   "id": "dtw",
+   "label": "Detroit (DTW)",
+   "hubs": {
+    "ua": [],
+    "aa": [],
+    "dl": [
+     "DTW"
+    ]
+   },
+   "best": [
+    "dl"
+   ],
+   "why": "Detroit is a Delta hub, so Delta is the clear fit for Michigan flyers who want hub-based status benefits.",
+   "watch": "Check fares on other airlines when you are price-sensitive."
+  },
+  {
+   "id": "msp",
+   "label": "Minneapolis–St. Paul (MSP)",
+   "hubs": {
+    "ua": [],
+    "aa": [],
+    "dl": [
+     "MSP"
+    ]
+   },
+   "best": [
+    "dl"
+   ],
+   "why": "Minneapolis–St. Paul is a Delta hub, so Delta is the natural choice for Twin Cities flyers.",
+   "watch": "Shop around when fares matter more than status."
+  },
+  {
+   "id": "slc",
+   "label": "Salt Lake City (SLC)",
+   "hubs": {
+    "ua": [],
+    "aa": [],
+    "dl": [
+     "SLC"
+    ]
+   },
+   "best": [
+    "dl"
+   ],
+   "why": "Salt Lake City is a Delta hub, so Delta is the home program for Utah flyers who want hub-based benefits.",
+   "watch": "Other carriers serve SLC without a hub."
+  },
+  {
+   "id": "sea",
+   "label": "Seattle (SEA)",
+   "hubs": {
+    "ua": [],
+    "aa": [],
+    "dl": [
+     "SEA"
+    ]
+   },
+   "best": [
+    "dl"
+   ],
+   "why": "Delta lists Seattle–Tacoma as a hub, so Delta is the default among the three programs covered here.",
+   "watch": "Alaska Airlines is headquartered in Seattle and is a major carrier at SEA; we will cover that program soon. If you value Alaska flying, American's partnership with Alaska makes AAdvantage worth a look too."
+  },
+  {
+   "id": "bos",
+   "label": "Boston (BOS)",
+   "hubs": {
+    "ua": [],
+    "aa": [],
+    "dl": [
+     "BOS"
+    ]
+   },
+   "best": [
+    "dl"
+   ],
+   "why": "Delta lists Boston Logan as a hub, so Delta is the default among the three programs covered here.",
+   "watch": "Other airlines also compete heavily in Boston, so compare fares per trip."
+  }
+ ],
+ "faqFallback": {
+  "other": {
+   "label": "Somewhere else (no hub from these three)",
+   "best": [],
+   "why": "If your home airport is not a hub for United, American or Delta, status is worth less because you will connect through someone's hub on most trips. Look at which airline offers nonstop flights to the cities you visit most, which hub you would connect through, and whether card-based benefits (checked bags, lounge access, award discounts) are enough value on their own."
+  }
+ }
 }
