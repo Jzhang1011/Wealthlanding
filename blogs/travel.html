@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Blog — Airline Status &amp; Travel Case Studies | WealthLanding</title>
+  <meta name="description" content="Story-driven travel case studies from WealthLanding: airline status, loyalty programs and practical ways to protect the trips you pay for.">
+  <link rel="canonical" href="https://www.wealthlanding.com/blogs/travel.html">
+  
+  <style>
+    :root {
+      --emerald: #02B17D;
+      --navy: #0f172a;
+    }
+    
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: #ffffff;
+      color: var(--navy);
+    }
+
+    /* ARCHIVE LIST ITEM HOVER */
+    .archive-item {
+      transition: all 0.2s ease-in-out;
+    }
+    .archive-item:hover h2 {
+      color: var(--emerald);
+    }
+    .archive-item img {
+      transition: transform 0.5s ease;
+    }
+    .archive-item:hover img {
+      transform: scale(1.03);
+    }
+
+    /* CUSTOM SELECT ARROW */
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1em;
+    }
+  </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased">
+
+  <div id="global-header-target"></div>
+
+  <main class="w-full">
+    
+    <!-- HEADER SECTION -->
+    <section class="bg-slate-50 border-b border-slate-200 py-10 px-4 sm:px-6">
+      <div class="max-w-[1000px] mx-auto">
+        <div class="text-sm font-semibold text-emerald-700 uppercase tracking-wider mb-2">
+          Blog Archive
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 uppercase">
+          Travel
+        </h1>
+        <p class="text-slate-600 text-base mt-3 max-w-2xl">
+          Real travel stories and the rules behind them: airline status, loyalty programs and practical ways to protect the trips you pay for. Start with the <a class="text-emerald-700 font-semibold underline" href="/travel/airlines/">airline loyalty hub</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- FILTER & SEARCH BAR: wired by /blogs/archive.js -->
+    <section class="border-b border-slate-200 bg-white sticky top-0 z-10 shadow-sm px-4 sm:px-6" aria-label="Filter the archive">
+      <form class="max-w-[1000px] mx-auto py-4 flex flex-col md:flex-row md:items-center justify-between gap-4" role="search" action="/blogs/travel.html" method="get">
+        <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+          <label class="sr-only" for="tr-filter-topic">Topic</label>
+          <select id="tr-filter-topic" name="topic" class="w-full bg-slate-50 border border-slate-300 text-slate-700 py-2 pl-3 pr-10 rounded-sm text-sm focus:outline-none focus:border-slate-500 focus:ring-2 focus:ring-emerald-500 sm:w-48">
+            <option value="">All Topics</option>
+            <option value="airline-status">Airline Status</option>
+            <option value="united">United</option>
+            <option value="family-travel">Family Travel</option>
+          </select>
+          <label class="sr-only" for="tr-filter-year">Year</label>
+          <select id="tr-filter-year" name="year" class="w-full bg-slate-50 border border-slate-300 text-slate-700 py-2 pl-3 pr-10 rounded-sm text-sm focus:outline-none focus:border-slate-500 focus:ring-2 focus:ring-emerald-500 sm:w-32">
+            <option value="">All Years</option>
+            <option value="2026">2026</option>
+          </select>
+        </div>
+        <div class="w-full md:w-72 relative">
+          <label class="sr-only" for="tr-search">Search the archive</label>
+          <input id="tr-search" name="q" type="search" autocomplete="off" placeholder="Search archive..." class="w-full bg-white border border-slate-300 text-slate-900 py-2 pl-4 pr-10 rounded-sm text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500 placeholder-slate-400">
+          <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" aria-hidden="true">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </span>
+        </div>
+      </form>
+    </section>
+
+
+    <!-- ARCHIVE LISTING: posts come from /blogs/Travel/archive.json (static copy below for no-JS) -->
+    <section class="max-w-[1000px] mx-auto px-4 sm:px-6 py-8 sm:py-12" aria-labelledby="tr-archive-h" data-archive-src="/blogs/Travel/archive.json" data-archive-prefix="tr">
+      <h2 id="tr-archive-h" class="sr-only">All Travel articles</h2>
+      <p id="tr-archive-status" class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2" aria-live="polite">Showing all 1 article</p>
+      <div id="tr-archive-list" class="flex flex-col">
+        <article class="archive-item group flex flex-col sm:flex-row gap-6 py-8 border-b border-slate-200 first:pt-0" data-topic="airline-status united family-travel" data-year="2026"><a href="/blogs/Travel/united-1k-delayed-ski-trip.html" class="block w-full sm:w-1/3 lg:w-1/4 shrink-0 overflow-hidden bg-slate-100 rounded-sm" tabindex="-1" aria-hidden="true"><img src="/blogs/Travel/assets/breckenridge-peak-card.webp" alt="A skier crossing a snowy slope below a mountain peak near Breckenridge, Colorado" loading="lazy" class="w-full h-full object-cover aspect-video sm:aspect-[4/3]"></a><div class="flex flex-col justify-center"><div class="text-[11px] font-bold text-emerald-700 uppercase tracking-wide mb-1">Case study · United MileagePlus</div><div class="text-[11px] font-bold text-slate-500 uppercase tracking-wide mb-2">Updated October 2026</div><a href="/blogs/Travel/united-1k-delayed-ski-trip.html"><h2 class="text-xl sm:text-2xl font-bold text-slate-900 leading-tight mb-3 group-hover:text-emerald-700">The Delay Text on the Way to BWI</h2></a><p class="text-slate-600 text-sm sm:text-base leading-relaxed line-clamp-3">A Christmas ski trip to Denver, two kids in the back seat and a message that the flight had slipped to tomorrow. What United Premier 1K status actually did that day, and the rules behind each moment.</p><div class="mt-4 flex flex-wrap items-center gap-2"><span class="text-xs font-semibold px-2.5 py-1 rounded-full border bg-sky-50 text-sky-800 border-sky-200">Airline Status</span><span class="text-xs font-semibold px-2.5 py-1 rounded-full border bg-blue-50 text-blue-800 border-blue-200">United</span><span class="text-xs font-semibold px-2.5 py-1 rounded-full border bg-rose-50 text-rose-800 border-rose-200">Family Travel</span></div></div></article>
+      </div>
+      <div id="tr-archive-empty" class="py-12 text-center" hidden>
+        <p class="text-lg font-bold text-slate-900">No articles match your filters.</p>
+        <p class="text-slate-600 text-sm mt-1">Try a different topic, year or search term.</p>
+        <button type="button" id="tr-archive-reset" class="mt-4 inline-flex items-center text-sm font-bold text-white bg-slate-900 hover:bg-emerald-700 px-4 py-2 rounded-sm">Clear filters</button>
+      </div>
+    </section>
+
+  </main>
+<!-- ... rest of your webpage content ... -->
+    <wealthlanding-footer></wealthlanding-footer>
+    
+   <!-- ConvertKit Script -->
+    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+
+    <!-- MODULAR FOOTER -->
+    
+    <script src="/components/footer.js"></script>
+  <script src="/components/header.js"></script>
+  <script src="/blogs/archive.js" defer></script>
+</body>
+</html>

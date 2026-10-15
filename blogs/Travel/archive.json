@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Travel",
+    "description": "Story-driven travel case studies on airline status, loyalty programs and protecting the trips you pay for.",
+    "topics": [
+      {"id": "airline-status", "label": "Airline Status"},
+      {"id": "united", "label": "United"},
+      {"id": "family-travel", "label": "Family Travel"}
+    ],
+    "note": "Add a post here once; blogs/travel.html renders the archive, topic and year filters, and search from this list via /blogs/archive.js. 'topics' lists topic ids (first is primary); 'tags' are the pills shown on the card. Leave date null unless the post itself states one."
+  },
+  "posts": [
+    {
+      "id": "united-1k-delayed-ski-trip",
+      "url": "/blogs/Travel/united-1k-delayed-ski-trip.html",
+      "title": "The Delay Text on the Way to BWI",
+      "desc": "A Christmas ski trip to Denver, two kids in the back seat and a message that the flight had slipped to tomorrow. What United Premier 1K status actually did that day, and the rules behind each moment.",
+      "topics": ["airline-status", "united", "family-travel"],
+      "tags": ["Airline Status", "United", "Family Travel"],
+      "series": "Case study · United MileagePlus",
+      "image": "/blogs/Travel/assets/breckenridge-peak-card.webp",
+      "imageAlt": "A skier crossing a snowy slope below a mountain peak near Breckenridge, Colorado",
+      "date": "Updated October 2026",
+      "year": 2026
+    }
+  ]
+}
