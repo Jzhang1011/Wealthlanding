@@ -259,3 +259,5 @@ noscript .wla-callout{margin:1rem 0}
 .wla-cc-row-bonus dt:before{content:"\1F381  "}
 .wla-gem-title:before{content:"\1F48E  "}
 .wla-partner-name:before{content:"\2708  "}
+.wla-cc-photo{aspect-ratio:1.586;overflow:hidden;background:#0b254f}
+.wla-cc-photo img{width:100%;height:100%;object-fit:cover;display:block}

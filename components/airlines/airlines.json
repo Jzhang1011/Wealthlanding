@@ -211,7 +211,8 @@
      "cap": 32000,
      "capLabel": "32,000 PQP/yr from spend (2027)",
      "plannerKey": "united_club",
-     "note": "Includes United Club membership. The only consumer card with a PQP cap high enough to reach 1K on spend alone."
+     "note": "Includes United Club membership. The only consumer card with a PQP cap high enough to reach 1K on spend alone.",
+     "image": "/components/airlines/img/cards/united-club.webp"
     },
     {
      "id": "united_quest",
@@ -226,7 +227,8 @@
      "cap": 18000,
      "capLabel": "18,000 PQP/yr from spend",
      "plannerKey": "united_quest",
-     "note": "Caps at 18,000 PQP from spend, so 1K cannot be reached on spend alone."
+     "note": "Caps at 18,000 PQP from spend, so 1K cannot be reached on spend alone.",
+     "image": "/components/airlines/img/cards/united-quest.webp"
     },
     {
      "id": "united_explorer",
@@ -241,7 +243,8 @@
      "cap": 1000,
      "capLabel": "1,000 PQP/yr from spend",
      "plannerKey": "united_explorer",
-     "note": "Annual fee $0 intro for the first year, then $150. Entry card: helps at the margins, does not scale into status. No yearly card bonus PQP."
+     "note": "Annual fee $0 intro for the first year, then $150. Entry card: helps at the margins, does not scale into status. No yearly card bonus PQP.",
+     "image": "/components/airlines/img/cards/united-explorer.webp"
     }
    ],
    "compare": {
@@ -494,7 +497,8 @@
      "milestoneLabel": "+10,000 Loyalty Points each at 50k, 90k, 165k and 240k LP in the status year (up to 40,000)",
      "cap": null,
      "plannerKey": "citi_exec",
-     "note": "Includes Admirals Club membership. Fee shown is for new cardmembers from Aug 23, 2026."
+     "note": "Includes Admirals Club membership. Fee shown is for new cardmembers from Aug 23, 2026.",
+     "image": "/components/airlines/img/cards/citi-aa-executive.png"
     },
     {
      "id": "citi_globe",
@@ -507,7 +511,8 @@
      "bonus": 0,
      "cap": null,
      "plannerKey": "citi_globe",
-     "note": "Flight Streak bonus (+5,000 LP per 4 qualifying AA segments, up to 15,000/yr) is not in the numbers on this page — it depends on segments flown, not spend."
+     "note": "Flight Streak bonus (+5,000 LP per 4 qualifying AA segments, up to 15,000/yr) is not in the numbers on this page — it depends on segments flown, not spend.",
+     "image": "/components/airlines/img/cards/citi-aa-globe.png"
     },
     {
      "id": "citi_any",

@@ -547,6 +547,15 @@
     p.cards.forEach(function (c) {
       if (c.gallery === false) return; // generic fallback card: math only, no gallery face
       var card = el('article', 'wla-cc');
+      if (c.image) {
+        var photo = el('div', 'wla-cc-photo');
+        var img = el('img');
+        img.setAttribute('src', c.image);
+        img.setAttribute('alt', c.name + ' card');
+        img.setAttribute('loading', 'lazy');
+        photo.appendChild(img);
+        card.appendChild(photo);
+      } else {
       var face = el('div', 'wla-cc-face');
       face.style.setProperty('--wla-accent', p.color);
       var top = el('div', 'wla-cc-top');
@@ -561,6 +570,7 @@
       bot.appendChild(el('span', 'wla-cc-issuer', c.issuer));
       face.appendChild(bot);
       card.appendChild(face);
+      }
       var body = el('div', 'wla-cc-body');
       body.appendChild(el('h4', 'wla-cc-title', c.name));
       var dl = el('dl', 'wla-cc-dl');
@@ -573,7 +583,7 @@
       grid.appendChild(card);
     });
     root.appendChild(grid);
-    root.appendChild(el('p', 'wla-fine', 'Card faces are illustrations drawn for this guide, not the official card art.'));
+    root.appendChild(el('p', 'wla-fine', 'Card images are the issuers\u2019 official card art, shown for identification. Trademarks belong to their owners.'));
   }
 
   /* ---------- tier ladder (transposed): tiers are stair columns, paths are rows ----------
