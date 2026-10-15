@@ -12,96 +12,257 @@
         "label": "Healthcare"
       },
       {
+        "id": "social-security",
+        "label": "Social Security"
+      },
+      {
+        "id": "savings",
+        "label": "Savings"
+      },
+      {
+        "id": "income",
+        "label": "Income Planning"
+      },
+      {
         "id": "lifestyle",
         "label": "Lifestyle"
       }
     ],
-    "note": "Add a post here once; blogs/happy_retirement.html renders the archive, topic and year filters, and search from this list. Leave date null unless the post itself states one."
+    "note": "Add a post here once; blogs/happy_retirement.html renders the archive, topic and year filters, and search from this list. 'topics' lists topic ids (first is primary); 'tags' are the pills shown on the card. Leave date null unless the post itself states one."
   },
   "posts": [
+    {
+      "id": "rc-longevity-marathon",
+      "url": "/retirement-confidence/longevity-marathon/",
+      "title": "Will Your Retirement Money Last 30 Years?",
+      "desc": "Understand why retirement may last longer than expected and how inflation and investment growth affect your long-term financial security.",
+      "topics": [
+        "income"
+      ],
+      "tags": [
+        "Income Planning"
+      ],
+      "series": "Retirement Confidence · Principle 1",
+      "image": "/asset/retirement-confidence/photos/hikers-forest-card.webp",
+      "imageAlt": "Two hikers with backpacks walking a trail through a tall forest",
+      "date": "Reviewed October 15, 2026",
+      "year": 2026
+    },
+    {
+      "id": "rc-savings-target-two-buckets",
+      "url": "/retirement-confidence/savings-target-two-buckets/",
+      "title": "How Much Should You Have Saved by 50?",
+      "desc": "Understand retirement savings benchmarks, what to do if you are behind, and how to separate near-term spending needs from long-term growth.",
+      "topics": [
+        "savings"
+      ],
+      "tags": [
+        "Savings"
+      ],
+      "series": "Retirement Confidence · Principle 2",
+      "image": "/asset/retirement-confidence/photos/coin-jar-card.webp",
+      "imageAlt": "A tipped-over glass jar with coins spilling onto a table",
+      "date": "Reviewed October 15, 2026",
+      "year": 2026
+    },
+    {
+      "id": "rc-savings-priority-pyramid",
+      "url": "/retirement-confidence/savings-priority-pyramid/",
+      "title": "Where Should Your Next Dollar of Savings Go?",
+      "desc": "Explore a practical framework for prioritizing emergency savings, employer matches, debt, tax-advantaged accounts, and investments.",
+      "topics": [
+        "savings"
+      ],
+      "tags": [
+        "Savings"
+      ],
+      "series": "Retirement Confidence · Principle 3",
+      "image": "/asset/retirement-confidence/photos/wooden-blocks-card.webp",
+      "imageAlt": "Colorful wooden blocks stacked into a small tower, each layer resting on the one below",
+      "date": "Reviewed October 15, 2026",
+      "year": 2026
+    },
+    {
+      "id": "rc-social-security-timing",
+      "url": "/retirement-confidence/social-security-timing/",
+      "title": "Should You Claim Social Security at 62, 67, or 70?",
+      "desc": "Explore the trade-offs between claiming early and delaying benefits, including longevity, household income, and spousal considerations.",
+      "topics": [
+        "social-security"
+      ],
+      "tags": [
+        "Social Security"
+      ],
+      "series": "Retirement Confidence · Principle 4",
+      "image": "/asset/retirement-confidence/photos/social-security-typewriter-card.webp",
+      "imageAlt": "A typewriter with a sheet of paper reading Social Security",
+      "date": "Reviewed October 15, 2026",
+      "year": 2026
+    },
+    {
+      "id": "rc-medicare-gap",
+      "url": "/retirement-confidence/medicare-gap/",
+      "title": "What Medicare Doesn't Cover in Retirement",
+      "desc": "Understand healthcare premiums, out-of-pocket expenses, supplemental coverage, and long-term care planning.",
+      "topics": [
+        "healthcare"
+      ],
+      "tags": [
+        "Healthcare"
+      ],
+      "series": "Retirement Confidence · Principle 5",
+      "image": "/asset/retirement-confidence/photos/stethoscope-card.webp",
+      "imageAlt": "Close-up of a stethoscope on a table",
+      "date": "Reviewed October 15, 2026",
+      "year": 2026
+    },
+    {
+      "id": "rc-tax-box-allocation",
+      "url": "/retirement-confidence/tax-box-allocation/",
+      "title": "Traditional vs. Roth: How to Build a Tax-Smart Retirement Portfolio",
+      "desc": "Learn how tax-deferred, tax-free, and taxable accounts differ and why managing taxable income can matter in retirement.",
+      "topics": [
+        "tax"
+      ],
+      "tags": [
+        "Tax Strategy"
+      ],
+      "series": "Retirement Confidence · Principle 6",
+      "image": "/asset/retirement-confidence/photos/two-roads-card.webp",
+      "imageAlt": "A forest path that splits into two roads",
+      "date": "Reviewed October 15, 2026",
+      "year": 2026
+    },
+    {
+      "id": "rc-withdrawal-sequence",
+      "url": "/retirement-confidence/withdrawal-sequence/",
+      "title": "Which Retirement Account Should You Spend First?",
+      "desc": "Explore how taxable, traditional retirement, and Roth accounts may fit into a tax-aware withdrawal strategy.",
+      "topics": [
+        "tax",
+        "income"
+      ],
+      "tags": [
+        "Tax Strategy",
+        "Income Planning"
+      ],
+      "series": "Retirement Confidence · Principle 7",
+      "image": "/asset/retirement-confidence/photos/compass-map-card.webp",
+      "imageAlt": "A compass resting on a paper map",
+      "date": "Reviewed October 15, 2026",
+      "year": 2026
+    },
     {
       "id": "1m_rmd_letter",
       "url": "/blogs/Happy_retirement/1m_rmd_letter.html",
       "title": "The Letter That Quietly Cost Over One Million Dollars",
       "desc": "It looked like ordinary annual paperwork. It quietly triggered a six-part tax, Medicare, and investment cascade.",
-      "topic": "tax",
-      "tag": "Tax Strategy",
       "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80",
       "imageAlt": "Stack of papers representing annual RMD paperwork",
       "date": "Updated August 2026",
-      "year": 2026
+      "year": 2026,
+      "topics": [
+        "tax"
+      ],
+      "tags": [
+        "Tax Strategy"
+      ]
     },
     {
       "id": "doctor_waited",
       "url": "/blogs/Happy_retirement/doctor_waited.html",
       "title": "The Doctor Who Waited Too Long",
       "desc": "He spent his career deferring taxes. The expensive mistake was assuming that later would always be better.",
-      "topic": "tax",
-      "tag": "Case Study",
       "image": "https://images.unsplash.com/photo-1758691461530-b215ed4ede6a?auto=format&fit=crop&w=600&q=80",
       "imageAlt": "Senior doctor seated in a medical office",
       "date": "Updated August 2026",
-      "year": 2026
+      "year": 2026,
+      "topics": [
+        "tax"
+      ],
+      "tags": [
+        "Case Study"
+      ]
     },
     {
       "id": "silent_partner",
       "url": "/blogs/Happy_retirement/silent_partner.html",
       "title": "The IRS Was His Silent Business Partner",
       "desc": "He spent forty years accumulating $4 million in retirement savings. He thought the whole balance belonged to his family.",
-      "topic": "tax",
-      "tag": "Case Study",
       "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80",
       "imageAlt": "Businessman in a dark suit",
       "date": "Updated August 2026",
-      "year": 2026
+      "year": 2026,
+      "topics": [
+        "tax"
+      ],
+      "tags": [
+        "Case Study"
+      ]
     },
     {
       "id": "how-to-avoid-RMD-taxes",
       "url": "/blogs/Happy_retirement/how-to-avoid-RMD-taxes.html",
       "title": "Bill Left $5.1 Million. Tom Left $3.3 Million. What Happened?",
       "desc": "Bill and Tom retired on the same day at 60, each with about $3.8 million saved. A case study in how required minimum distributions and tax timing led to very different results.",
-      "topic": "tax",
-      "tag": "Case Study",
       "image": null,
       "imageAlt": null,
       "date": "June 2026",
-      "year": 2026
+      "year": 2026,
+      "topics": [
+        "tax"
+      ],
+      "tags": [
+        "Case Study"
+      ]
     },
     {
       "id": "roth_conversions_pre_medicare",
       "url": "/blogs/budget_spending/roth_conversions_pre_medicare.html",
       "title": "Roth Conversions: Compressing Tax Liabilities Pre-Medicare",
       "desc": "Timing your tax conversions during lower-income gap years keeps your lifetime tax liabilities minimized and guards against structural Medicare surcharges.",
-      "topic": "tax",
-      "tag": "Tax Strategy",
       "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80",
       "imageAlt": "Hand holding a phone calculator next to tax paperwork",
       "date": null,
-      "year": null
+      "year": null,
+      "topics": [
+        "tax"
+      ],
+      "tags": [
+        "Tax Strategy"
+      ]
     },
     {
       "id": "aca_early_retirement_subsidies",
       "url": "/blogs/budget_spending/aca_early_retirement_subsidies.html",
       "title": "Navigating Early Retirement ACA Premium Tax Subsidies",
       "desc": "Learn the mechanical frameworks required to monitor your Modified Adjusted Gross Income (MAGI) to secure maximum health insurance savings.",
-      "topic": "healthcare",
-      "tag": "Healthcare",
       "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
       "imageAlt": "Healthcare professional holding a smartphone",
       "date": null,
-      "year": null
+      "year": null,
+      "topics": [
+        "healthcare"
+      ],
+      "tags": [
+        "Healthcare"
+      ]
     },
     {
       "id": "medicare",
       "url": "/blogs/Happy_retirement/medicare.html",
       "title": "The Expat Medicare Trap: Why Retiring Abroad Won't Save You From Uncle Sam's Late Penalty",
       "desc": "Moving overseas at 65 doesn't switch off Medicare's enrollment clock. Skipping Part B abroad can mean a lifetime premium penalty if you ever come home.",
-      "topic": "healthcare",
-      "tag": "Healthcare",
       "image": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80",
       "imageAlt": "A gloved clinician giving a patient an injection",
       "date": null,
-      "year": null
+      "year": null,
+      "topics": [
+        "healthcare"
+      ],
+      "tags": [
+        "Healthcare"
+      ]
     }
   ]
 }
