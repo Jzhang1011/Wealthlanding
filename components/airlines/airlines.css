@@ -201,30 +201,30 @@ noscript .wla-callout{margin:1rem 0}
 .wla-cc-dl dd{margin:0;font-weight:700;color:var(--wla-navy);text-align:right}
 .wla-cc-note{font-size:.85rem;color:#475569;margin:.6rem 0 0!important}
 
-/* ---- tier ladder: staircase steps x path columns ---- */
+/* ---- tier ladder (transposed): tiers as stair columns, paths as rows ---- */
 .wla-ladder-wrap{overflow-x:auto;margin:1.5rem 0 .4rem;padding:.25rem .25rem .75rem;border:1px solid var(--wla-line);border-radius:1.1rem;background:#fcfdff}
 .wla-ladder{display:grid;min-width:1080px}
 /* corner: dark anchor block */
-.wla-ladder-corner{position:sticky;left:0;z-index:3;display:flex;flex-direction:column;justify-content:center;padding:.8rem 1rem;background:var(--wla-navy);color:#fff;border-radius:.9rem 0 0 0}
+.wla-ladder-corner{position:sticky;left:0;z-index:3;display:flex;flex-direction:column;justify-content:center;padding:.8rem 1rem;background:var(--wla-navy);color:#fff}
 .wla-ladder-corner .wla-th-sub{color:rgba(255,255,255,.72)}
-/* path headers: kind accent on top */
-.wla-ladder-path{padding:.7rem .8rem .8rem;background:#fff;border-top:4px solid var(--wla-kind);border-bottom:2px solid var(--wla-navy)}
-.wla-ladder-path strong{display:block;font-size:.92rem;color:var(--wla-navy)}
+/* tier step headers: ascending stairs, Silver lowest, 1K highest */
+.wla-ladder-tier{align-self:start;background:#fff;border-radius:.9rem;box-shadow:0 4px 16px rgba(15,23,42,.12);overflow:hidden}
+.wla-step-band{background:var(--wla-tier);padding:.75rem 1rem .85rem}
+.wla-step-band .wla-step-kicker{color:rgba(255,255,255,.75)}
+.wla-step-band .wla-step-title{color:#fff}
+.wla-step-band .wla-step-threshold{color:#fff;margin-bottom:0}
+.wla-ladder-tier .wla-step-perks{padding:0 1rem}
+.wla-ladder-tier .wla-step-who{padding:.6rem 1rem 0;margin:0 1rem .9rem!important}
+/* path row labels: sticky, kind accent on the left */
+.wla-ladder-path{position:sticky;left:0;z-index:2;background:#fff;display:flex;flex-direction:column;justify-content:center;padding:.8rem 1rem;border-left:4px solid var(--wla-kind)}
+.wla-ladder-path strong{font-size:.92rem;color:var(--wla-navy)}
 .wla-kind-fare{--wla-kind:#2563EB}
 .wla-kind-spend{--wla-kind:#059669}
 .wla-kind-partner{--wla-kind:#7C3AED}
 .wla-kind-fare strong:before{content:"\2708  "}
 .wla-kind-spend strong:before{content:"\1F4B3  "}
 .wla-kind-partner strong:before{content:"\1F310  "}
-/* step cards: raised blocks, tier-colored band, stair offset */
-.wla-ladder-step{position:sticky;left:0;z-index:2;background:#fff;margin:.55rem 0 .55rem calc(var(--wla-step) * 1.2rem);border-radius:.9rem;box-shadow:0 4px 16px rgba(15,23,42,.12);overflow:hidden}
-.wla-step-band{background:var(--wla-tier);padding:.75rem 1rem .85rem}
-.wla-step-band .wla-step-kicker{color:rgba(255,255,255,.75)}
-.wla-step-band .wla-step-title{color:#fff}
-.wla-step-band .wla-step-threshold{color:#fff;margin-bottom:0}
-.wla-ladder-step .wla-step-perks{padding:0 1rem}
-.wla-ladder-step .wla-step-who{padding:.6rem 1rem 0;margin:0 1rem .9rem!important}
-/* attainment cells: soft tier tint */
+/* attainment cells: soft tint of their tier column */
 .wla-ladder-cell{display:flex;flex-direction:column;justify-content:center;padding:.8rem;background:color-mix(in srgb, var(--wla-tier) 6%, #fff)}
 .wla-ladder-cell strong{font-size:1.12rem;color:var(--wla-navy)}
 .wla-ladder-row{border-top:2px dashed var(--wla-line)}
