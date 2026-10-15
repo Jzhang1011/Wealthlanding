@@ -1,8 +1,8 @@
 {
   "_about": "Single source of facts for /travel/airlines/. Edit here and every page (hub table, city picker, card-spend comparison, per-program snapshot tables, hidden-gem cards) updates. Prose lives in the HTML pages. Omit a field rather than guessing. Rendered by /components/airlines/airlines.js.",
   "meta": {
-    "lastVerified": "2026-10-11",
-    "lastVerifiedLabel": "October 11, 2026",
+    "lastVerified": "2026-10-15",
+    "lastVerifiedLabel": "October 15, 2026",
     "disclaimer": "Airline programs change terms often and without much notice. Treat everything here as education, not a quote: confirm current rules on the airline's own site before you apply for a card, book, or chase status.",
     "plannerUrl": "/tools/credit-card/",
     "plannerAnchor": "/tools/credit-card/#unlocks",
@@ -19,9 +19,9 @@
       "color": "#13377A",
       "currency": "United miles (MileagePlus)",
       "alliance": "Star Alliance",
-      "statusYear": "Calendar year earning period (Jan 1 – Dec 31); status is valid until the end of the following program year",
-      "statusMetric": "PQP (dollars-based points) plus optional PQF (flight count) shortcut",
-      "statusMechanics": "Premier Qualifying Points (about 1 per $1 of eligible United fare) and Premier Qualifying Flights. Each tier has a PQF + PQP path or a higher PQP-only path. At least 4 flown segments on United or United Express are required for any tier.",
+      "statusYear": "2027 qualification: calendar year (Jan 1 – Dec 31, 2027); status is valid until the end of the following program year",
+      "statusMetric": "PQP (dollars-based points) — the only metric for 2027; PQF flight counts were removed",
+      "statusMechanics": "Premier Qualifying Points (about 1 per $1 of eligible United fare). Each tier has a single PQP threshold for 2027 — the old PQF shortcut is gone. At least 4 paid segments on United or United Express are required for any tier.",
       "hubs": [
         {"code": "EWR", "city": "New York / Newark"},
         {"code": "ORD", "city": "Chicago O'Hare"},
@@ -32,19 +32,21 @@
         {"code": "IAD", "city": "Washington Dulles"}
       ],
       "flying": {"unit": "PQP", "perDollar": 1, "basis": "about 1 PQP per $1 of eligible United base fare and carrier charges (taxes excluded)"},
+      "tierCompareNote": "Companion benefits apply to travellers on the same reservation / itinerary as the member. One companion on the same reservation is also eligible for complimentary upgrades at every tier. Bag counts are for Economy on United / United Express; premium cabins get 3 bags at every tier.",
       "tiers": [
-        {"name": "Premier Silver", "threshold": 6000, "combo": "5,000 PQP + 15 PQF", "perks": ["1 free checked bag", "Economy Plus seats at check-in for you and one companion", "Star Alliance Silver"]},
-        {"name": "Premier Gold", "threshold": 12000, "combo": "10,000 PQP + 30 PQF", "perks": ["2 free checked bags", "Economy Plus at booking for you and one companion", "Star Alliance Gold (lounge access on eligible international itineraries)"]},
-        {"name": "Premier Platinum", "threshold": 18000, "combo": "15,000 PQP + 45 PQF", "perks": ["3 free checked bags", "Economy Plus at booking for you and up to 8 companions", "40 PlusPoints on reaching the tier", "Star Alliance Gold"]},
-        {"name": "Premier 1K", "threshold": 28000, "combo": "22,000 PQP + 60 PQF", "perks": ["3 free checked bags", "Pre-boarding", "280 PlusPoints on reaching the tier, plus extra PlusPoints from eligible card spend", "Star Alliance Gold"]}
+        {"name": "Premier Silver", "threshold": 6000, "perks": ["1 free checked bag", "Economy Plus seats at check-in for you and one companion", "Star Alliance Silver"], "bags": "1 free checked bag", "bagsNote": "2 on long-haul international Economy routes", "bagCompanions": 9, "eplus": "At check-in", "eplusCompanions": 1, "seatCompanions": 8, "lounge": "No lounge access (Star Alliance Silver)", "upgrades": "Day of departure", "upgradeCompanions": 1, "plusPoints": 0, "whoFor": "You check a bag a few times a year. But one free bag is also what a United card gives you — Silver alone is rarely worth chasing."},
+        {"name": "Premier Gold", "threshold": 12000, "perks": ["2 free checked bags", "Economy Plus at booking for you and one companion", "Star Alliance Gold (lounge access on eligible international itineraries)"], "bags": "2 free checked bags", "bagsNote": "3 on long-haul international Economy routes", "bagCompanions": 9, "eplus": "At booking", "eplusCompanions": 1, "seatCompanions": 8, "lounge": "Star Alliance Gold — international lounges, +1 guest on your flight at United Clubs", "upgrades": "48 hours before departure", "upgradeCompanions": 1, "plusPoints": 0, "whoFor": "The first tier that feels like status: a second bag, Economy Plus from the day you book, and real lounge access abroad."},
+        {"name": "Premier Platinum", "threshold": 18000, "perks": ["3 free checked bags", "Economy Plus at booking for you and up to 8 companions", "40 PlusPoints on reaching the tier", "Star Alliance Gold"], "bags": "3 free checked bags", "bagsNote": "3 on long-haul international Economy routes", "bagCompanions": 9, "eplus": "At booking", "eplusCompanions": 8, "seatCompanions": 8, "lounge": "Star Alliance Gold — international lounges, +1 guest on your flight at United Clubs", "upgrades": "72 hours before departure", "upgradeCompanions": 1, "plusPoints": 40, "whoFor": "You fly with family or colleagues: Economy Plus now covers up to 8 companions, and PlusPoints buy real upgrades."},
+        {"name": "Premier 1K", "threshold": 32000, "perks": ["3 free checked bags", "Pre-boarding", "280 PlusPoints on reaching the tier, plus extra PlusPoints from eligible card spend", "Star Alliance Gold"], "bags": "3 free checked bags", "bagsNote": "3 on long-haul international Economy routes", "bagCompanions": 9, "eplus": "At booking", "eplusCompanions": 8, "seatCompanions": 8, "lounge": "Star Alliance Gold — international lounges, +1 guest on your flight at United Clubs", "upgrades": "96 hours before departure", "upgradeCompanions": 1, "plusPoints": 280, "whoFor": "You live on United. The upgrade window and 280 PlusPoints are the payoff for $32,000 of yearly PQP."}
       ],
       "cards": [
-        {"id": "united_club", "name": "United Club Card", "issuer": "Chase", "fee": 695, "unit": "PQP", "perDollar": 0.0666667, "perDollarLabel": "1 PQP per $15", "bonus": 1500, "bonusLabel": "1,500 PQP annual jumpstart (from the year after opening)", "cap": 28000, "capLabel": "28,000 PQP/yr from spend", "plannerKey": "united_club", "note": "Includes United Club membership. The only consumer card with a PQP cap high enough to reach 1K on spend alone."},
-        {"id": "united_quest", "name": "United Quest Card", "issuer": "Chase", "fee": 350, "unit": "PQP", "perDollar": 0.05, "perDollarLabel": "1 PQP per $20", "bonus": 1000, "bonusLabel": "1,000 PQP annual bonus (from 2026, card open on Dec 31 of prior year)", "cap": 18000, "capLabel": "18,000 PQP/yr from spend", "plannerKey": "united_quest", "note": "Caps at 18,000 PQP from spend, so 1K cannot be reached on spend alone."}
+        {"id": "united_club", "name": "United Club Card", "issuer": "Chase", "fee": 695, "unit": "PQP", "perDollar": 0.0666667, "perDollarLabel": "1 PQP per $15", "bonus": 1500, "bonusLabel": "1,500 PQP yearly card bonus (card open on Dec 31 of prior year)", "cap": 32000, "capLabel": "32,000 PQP/yr from spend (2027)", "plannerKey": "united_club", "note": "Includes United Club membership. The only consumer card with a PQP cap high enough to reach 1K on spend alone."},
+        {"id": "united_quest", "name": "United Quest Card", "issuer": "Chase", "fee": 350, "unit": "PQP", "perDollar": 0.05, "perDollarLabel": "1 PQP per $20", "bonus": 1000, "bonusLabel": "1,000 PQP yearly card bonus (card open on Dec 31 of prior year)", "cap": 18000, "capLabel": "18,000 PQP/yr from spend", "plannerKey": "united_quest", "note": "Caps at 18,000 PQP from spend, so 1K cannot be reached on spend alone."},
+        {"id": "united_explorer", "name": "United Explorer Card", "issuer": "Chase", "fee": 150, "unit": "PQP", "perDollar": 0.05, "perDollarLabel": "1 PQP per $20", "bonus": 0, "bonusLabel": "", "cap": 1000, "capLabel": "1,000 PQP/yr from spend", "plannerKey": "united_explorer", "note": "Annual fee $0 intro for the first year, then $150. Entry card: helps at the margins, does not scale into status. No yearly card bonus PQP."}
       ],
       "compare": {
-        "topTierRequirement": "28,000 PQP (or 22,000 PQP + 60 PQF), plus 4 United-operated segments",
-        "easiestCardPath": "United Club Card: 1 PQP per $15, up to 28,000 PQP a year",
+        "topTierRequirement": "32,000 PQP (2027), plus 4 United-operated segments",
+        "easiestCardPath": "United Club Card: 1 PQP per $15, up to 32,000 PQP a year (2027)",
         "awardFlexScore": 4,
         "awardFlexWhy": "Wide Star Alliance partner network, no award change fees, miles never expire, Chase Ultimate Rewards transfers at 1:1, and cardholder discounts. Own-metal prices are dynamic.",
         "bestFitCities": "Newark/NYC (NJ side), Chicago, Houston, Denver, San Francisco, Washington Dulles, Los Angeles",
@@ -53,15 +55,18 @@
       "gems": [
         {"title": "Card award discount + exclusive Saver space", "body": "Since early 2026 primary United cardholders save at least 10% on every United-flown award, and 15% if they also hold Premier status. United also holds back extra Saver award inventory, including Polaris business class, for cardholders and Premier members. United's own example: a 15,000-mile economy award prices at 13,500 for a cardholder; Polaris Saver can drop to about 72,000 miles (68,000 for Premier cardholders).", "source": "United press release, Feb 19, 2026", "url": "https://united.mediaroom.com/2026-02-19-United-Gives-MileagePlus-Credit-Cardholders-More-Miles,-Exclusive-Flight-Discounts"},
         {"title": "Premier upgrades now work on award tickets", "body": "From February 1, 2026 every Premier member is eligible for complimentary upgrades and PlusPoints upgrades even on tickets booked with miles. Before that, upgrades on award tickets were much more restricted, so award travelers with status now get a far more consistent upgrade experience than paying customers do.", "source": "The Points Guy, Dec 8, 2025", "url": "https://thepointsguy.com/news/united-airlines-premier-status-pluspoints-changes/"},
-        {"title": "Status from card spend alone is real (with a catch)", "body": "United counts PQP earned on eligible Chase United cards toward every Premier tier, and card PQP can satisfy the PQP-only requirement for 1K. With the United Club Card's 1-per-$15 rate and 28,000-PQP cap, spend can cover the whole requirement; you still have to fly four United or United Express segments.", "source": "United: How to Earn Premier Status", "url": "https://www.united.com/ual/en/us/fly/help/faq/premier-qualification.html"},
+        {"title": "Status from card spend alone is real (with a catch)", "body": "United counts PQP earned on eligible Chase United cards toward every Premier tier, and card PQP can satisfy the PQP-only requirement for 1K. With the United Club Card's 1-per-$15 rate and 32,000-PQP cap (2027), spend can cover the whole requirement; you still have to fly four United or United Express segments.", "source": "United: How to Earn Premier Status", "url": "https://www.united.com/en/us/fly/mileageplus/premier/qualify.html"},
         {"title": "Chase points move 1:1 to United", "body": "Chase Ultimate Rewards transfers to MileagePlus at 1:1, which turns a flexible bank currency into United award space at the moment you find it. United awards also carry no change fees, miles never expire, and you can pool miles with family.", "source": "Chase transfer-partner list (via The Points King, Oct 2026) and United press release", "url": "https://thepointsking.com/blog/chase-transfer-partners/"},
-        {"title": "PlusPoints are a flexible currency (and change in 2027)", "body": "Premier Platinum members receive 40 PlusPoints and 1K members 280. They can buy upgrades or be exchanged for things like TravelBank cash, bonus miles or status-qualifying points. United says the fixed PlusPoints upgrade chart ends in February 2027 and prices will move with demand, so plan to use them before then if you can.", "source": "AwardWallet and The Points Guy", "url": "https://awardwallet.com/news/united-mileageplus/premier-status-changes-2026/"}
+        {"title": "PlusPoints are a flexible currency — now demand-priced", "body": "Premier Platinum members receive 40 PlusPoints and 1K members 280. They can buy upgrades or be exchanged for things like TravelBank cash, bonus miles or status-qualifying points. The fixed PlusPoints upgrade chart ended in February 2027, so prices now move with demand — use a balance on flights where the upgrade is worth it rather than hoarding it.", "source": "AwardWallet and The Points Guy", "url": "https://awardwallet.com/news/united-mileageplus/premier-status-changes-2026/"}
       ],
       "retired": [
         {"title": "Excursionist Perk (ended)", "body": "A free one-way segment on a multi-city award was once United's best-known trick. United eliminated it for new bookings effective August 21, 2025, so it should not drive any decision today.", "source": "Frequent Miler", "url": "https://frequentmiler.com/the-day-uniteds-excursionist-perk-died/"}
       ],
       "sources": [
-        {"label": "United: How to Earn Premier Status", "url": "https://www.united.com/ual/en/us/fly/help/faq/premier-qualification.html"},
+        {"label": "United: Premier status updates — what's changing in 2027 (Oct 13, 2026)", "url": "https://www.united.com/en/us/fly/mileageplus/whats-new.html"},
+        {"label": "United: How to qualify for Premier status", "url": "https://www.united.com/en/us/fly/mileageplus/premier/qualify.html"},
+        {"label": "United: Premier benefits", "url": "https://www.united.com/en/us/fly/mileageplus/premier/benefits.html"},
+        {"label": "United: Checked bags", "url": "https://www.united.com/en/us/fly/baggage/checked-bags.html"},
         {"label": "United press release: card miles, award discounts, Saver access (Feb 19, 2026)", "url": "https://united.mediaroom.com/2026-02-19-United-Gives-MileagePlus-Credit-Cardholders-More-Miles,-Exclusive-Flight-Discounts"},
         {"label": "The Points Guy: United 2026 Premier requirements and upgrade changes", "url": "https://thepointsguy.com/news/united-airlines-premier-status-pluspoints-changes/"},
         {"label": "AwardWallet: changes coming to United MileagePlus in 2026", "url": "https://awardwallet.com/news/united-mileageplus/premier-status-changes-2026/"},

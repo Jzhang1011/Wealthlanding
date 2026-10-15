@@ -134,3 +134,68 @@ noscript .wla-callout{margin:1rem 0}
 .wla-table tbody th[scope=row]{position:sticky;left:0;z-index:1}
 .wla-compare th[scope=row]{width:7.5rem;min-width:7.5rem}
 @media(min-width:720px){.wla-compare th[scope=row]{width:11rem;min-width:11rem}}
+
+/* ---- 2027 visual pass: brand row, photo, stats, tier compare, fare compare, card gallery ---- */
+
+/* hero brand row: UNITED text lockup + Star Alliance mark on a white chip */
+.wla-brand-row{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.25rem;margin:0 0 1.25rem}
+.wla-brand-lockup{display:flex;align-items:center;gap:.55rem;color:#fff}
+.wla-brand-globe{width:30px;height:30px;border:2.5px solid #fff;border-radius:50%;position:relative;flex:0 0 auto}
+.wla-brand-globe:before{content:"";position:absolute;inset:-2.5px;width:calc(100% + 5px);height:calc(100% + 5px);left:-2.5px;top:-2.5px;border:1.5px solid rgba(255,255,255,.85);border-radius:50%;transform:scaleX(.45)}
+.wla-brand-globe:after{content:"";position:absolute;left:-2px;right:-2px;top:50%;border-top:1.5px solid rgba(255,255,255,.85)}
+.wla-brand-name{font-size:1.35rem;font-weight:800;letter-spacing:.28em}
+.wla-brand-sub{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:#94a3b8;font-weight:600}
+.wla-brand-divider{width:1px;height:2rem;background:#475569}
+.wla-brand-alliance{display:flex;align-items:center;gap:.5rem;background:#fff;border-radius:.6rem;padding:.35rem .7rem .35rem .45rem}
+.wla-brand-alliance img{width:30px;height:auto;display:block}
+.wla-brand-alliance span{font-size:.78rem;font-weight:700;color:#1e293b;letter-spacing:.04em}
+
+/* hero photo figure */
+.wla-figure{margin:0 0 1.5rem}
+.wla-figure img{display:block;width:100%;height:auto;border-radius:1rem;border:1px solid var(--wla-line)}
+.wla-figure figcaption{font-size:.8rem;color:var(--wla-muted);margin-top:.45rem}
+.wla-figure figcaption a{color:var(--wla-green-d)}
+
+/* stat strip */
+.wla-stats{display:grid;gap:.75rem;grid-template-columns:repeat(2,1fr);margin:1rem 0 1.25rem}
+@media(min-width:720px){.wla-stats{grid-template-columns:repeat(4,1fr)}}
+.wla-stat{background:#f8fafc;border:1px solid var(--wla-line);border-radius:.7rem;padding:.8rem .9rem}
+.wla-stat-num{display:block;font-size:1.45rem;font-weight:800;color:var(--wla-navy);line-height:1.15}
+.wla-stat-label{display:block;font-size:.78rem;color:var(--wla-muted);margin-top:.15rem}
+
+/* tier comparison table */
+.wla-tier-compare{min-width:820px}
+.wla-tier-compare thead th{white-space:normal}
+.wla-tier-compare th[scope=row]{width:11rem}
+.wla-whofor{font-size:.85rem;color:#475569}
+
+/* fare comparison: progress bars */
+.wla-fare-compare{min-width:680px}
+.wla-bar{height:8px;background:#e2e8f0;border-radius:999px;overflow:hidden;margin-bottom:.25rem}
+.wla-bar-fill{height:100%;background:var(--wla-green);border-radius:999px}
+.wla-fare-sub{font-size:1rem!important;margin:1.25rem 0 .25rem!important}
+
+/* illustrated card gallery */
+.wla-cc-grid{display:grid;gap:1rem;grid-template-columns:1fr;margin:1rem 0}
+@media(min-width:900px){.wla-cc-grid{grid-template-columns:repeat(3,1fr)}}
+.wla-cc{background:#fff;border:1px solid var(--wla-line);border-radius:.9rem;overflow:hidden;display:flex;flex-direction:column}
+.wla-cc-face{aspect-ratio:1.586;background:linear-gradient(135deg,var(--wla-accent) 0%,#0b254f 100%);color:#fff;padding:1rem 1.1rem;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.wla-cc-face:before{content:"";position:absolute;width:11rem;height:11rem;border-radius:50%;background:rgba(255,255,255,.07);right:-3rem;top:-4rem}
+.wla-cc-top{display:flex;align-items:center;gap:.5rem;position:relative}
+.wla-cc-globe{width:24px;height:24px;border:2px solid #fff;border-radius:50%;position:relative;flex:0 0 auto}
+.wla-cc-globe:before{content:"";position:absolute;inset:-2px;width:calc(100% + 4px);height:calc(100% + 4px);left:-2px;top:-2px;border:1.2px solid rgba(255,255,255,.85);border-radius:50%;transform:scaleX(.45)}
+.wla-cc-globe:after{content:"";position:absolute;left:-1.5px;right:-1.5px;top:50%;border-top:1.2px solid rgba(255,255,255,.85)}
+.wla-cc-brand{font-weight:800;letter-spacing:.28em;font-size:.95rem}
+.wla-cc-chip{width:36px;height:26px;border-radius:5px;background:linear-gradient(135deg,#f3d98b,#c9a227);margin-top:1.1rem;position:relative}
+.wla-cc-chip:before{content:"";position:absolute;inset:0;border:1px solid rgba(0,0,0,.15);border-radius:5px}
+.wla-cc-num{letter-spacing:.14em;font-size:1rem;margin-top:auto;padding-top:.9rem;position:relative}
+.wla-cc-bot{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;margin-top:.35rem;position:relative;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:#cbd5e1}
+.wla-cc-name{font-weight:700;color:#fff;text-transform:none;letter-spacing:0;font-size:.8rem}
+.wla-cc-body{padding:1rem 1.1rem;display:flex;flex-direction:column;flex:1}
+.wla-cc-title{margin:0 0 .5rem!important;font-size:1.05rem!important}
+.wla-cc-dl{margin:0}
+.wla-cc-dl>div{display:flex;justify-content:space-between;gap:.5rem;padding:.3rem 0;border-bottom:1px dashed var(--wla-line);font-size:.88rem}
+.wla-cc-dl>div:last-child{border-bottom:0}
+.wla-cc-dl dt{color:var(--wla-muted)}
+.wla-cc-dl dd{margin:0;font-weight:700;color:var(--wla-navy);text-align:right}
+.wla-cc-note{font-size:.85rem;color:#475569;margin:.6rem 0 0!important}
