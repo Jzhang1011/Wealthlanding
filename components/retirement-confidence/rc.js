@@ -53,17 +53,17 @@
   }
 
   /* ---- Hub: seven principle cards ---- */
+  var ICONS = {"savings": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><ellipse cx=\"12\" cy=\"6\" rx=\"7\" ry=\"2.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><path d=\"M5 6v4c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V6M5 10v4c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6v-4M5 14v4c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6v-4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/></svg>", "runway": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6l7-3z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\"/><path d=\"M8.8 12.2l2.2 2.2 4.4-4.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>", "tax": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 20h16\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><rect x=\"5.5\" y=\"12\" width=\"3\" height=\"6\" rx=\".6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><rect x=\"10.5\" y=\"8\" width=\"3\" height=\"10\" rx=\".6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><rect x=\"15.5\" y=\"4.5\" width=\"3\" height=\"13.5\" rx=\".6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/></svg>"};
+  function photo(data, key) { return (data.meta.photos || {})[key] || null; }
+
   function renderCards(el, data) {
     el.innerHTML = '<div class="rc-cards">' + data.articles.map(function (a) {
-      return '<article class="rc-card">' +
-        '<div class="rc-card-art"><img src="' + esc(a.image) + '" alt="' + esc(a.imageAlt) + '" width="800" height="350" loading="lazy" decoding="async"></div>' +
-        '<div class="rc-card-body">' +
-        '<span class="rc-card-num">PRINCIPLE ' + esc(a.num) + '</span>' +
-        '<span class="rc-card-principle">' + esc(a.principle) + '</span>' +
-        '<h3>' + esc(a.title) + '</h3>' +
-        '<p>' + esc(a.desc) + '</p>' +
-        '<a class="rc-card-link" href="' + esc(a.url) + '">Explore this principle<span class="rc-sr">: ' + esc(a.principle) + '</span> <span aria-hidden="true">&rarr;</span></a>' +
-        '</div></article>';
+      var p = photo(data, a.heroPhoto) || { card: a.image, cardWidth: 720, cardHeight: 480 };
+      return '<article class="rc-card"><a class="rc-card-art" href="' + esc(a.url) + '" tabindex="-1" aria-hidden="true">' +
+        '<img src="' + esc(p.card) + '" alt="" width="' + p.cardWidth + '" height="' + p.cardHeight + '" loading="lazy" decoding="async"></a>' +
+        '<span class="rc-card-badge" aria-hidden="true">' + esc(a.num) + '</span><div class="rc-card-body">' +
+        '<span class="rc-card-principle">Principle ' + esc(a.num) + ' · ' + esc(a.principle) + '</span><h3>' + esc(a.title) + '</h3><p>' + esc(a.desc) + '</p>' +
+        '<a class="rc-card-link" href="' + esc(a.url) + '">Explore this principle<span class="rc-sr">: ' + esc(a.principle) + '</span> <span aria-hidden="true">&rarr;</span></a></div></article>';
     }).join('') + '</div>';
   }
 
@@ -71,11 +71,21 @@
   function renderStart(el, data) {
     var map = bySlug(data);
     el.innerHTML = '<div class="rc-start">' + data.startHere.map(function (s) {
-      return '<div class="rc-start-item"><q>' + esc(s.worry) + '</q><ul>' + s.links.map(function (slug) {
+      return '<div class="rc-start-item rc-start-' + esc(s.icon) + '"><span class="rc-start-icon">' + (ICONS[s.icon] || '') + '</span><div><q>' + esc(s.worry) + '</q><ul>' + s.links.map(function (slug) {
         var a = map[slug];
-        return a ? '<li>Start with <a href="' + esc(a.url) + '">Principle ' + esc(a.num) + ': ' + esc(a.title) + '</a></li>' : '';
-      }).join('') + '</ul></div>';
+        return a ? '<li><a href="' + esc(a.url) + '">Principle ' + esc(a.num) + ': ' + esc(a.principle) + ' <span aria-hidden="true">&rarr;</span></a></li>' : '';
+      }).join('') + '</ul></div></div>';
     }).join('') + '</div>';
+  }
+
+  /* ---- Photo credits for the photos used on this page (data-photos="key,key") ---- */
+  function renderCredits(el, data) {
+    var keys = (el.getAttribute('data-photos') || '').split(',').filter(function (k, i, arr) { return k && arr.indexOf(k) === i && photo(data, k); });
+    if (!keys.length) return;
+    el.innerHTML = '<p class="rc-photo-credits">Photos: ' + keys.map(function (k) {
+      var p = photo(data, k);
+      return '<a href="' + esc(p.sourceUrl) + '" rel="noopener" target="_blank">' + esc(p.photographer) + '</a>';
+    }).join('; ') + ' on Unsplash, used under the <a href="https://unsplash.com/license" rel="noopener" target="_blank">Unsplash License</a>.</p>';
   }
 
   /* ---- Article: table of contents from the article's own H2s ---- */
@@ -99,6 +109,30 @@
       items.map(function (r) {
         return '<li><a href="' + esc(r.url) + '">Principle ' + esc(r.num) + ': ' + esc(r.title) + '</a><span>' + esc(r.desc) + '</span></li>';
       }).join('') + '</ul></section>';
+  }
+
+  /* ---- Happy Retirement blog page: featured series cards (Tailwind classes, matches that page) ---- */
+  function renderBlogSeries(el, data) {
+    var m = data.meta;
+    el.innerHTML = '<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6"><div>' +
+      '<div class="text-sm font-semibold text-emerald-700 uppercase tracking-wider mb-2">Featured series</div>' +
+      '<h2 id="rc-series-h" class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900">The 7 Principles of Retirement Confidence</h2>' +
+      '<p class="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl">A seven-part guide to the retirement decisions you can control: savings, Social Security, healthcare, taxes and withdrawals. Start with the overview, or jump to the principle that fits your question.</p></div>' +
+      '<a href="' + esc(m.hubUrl) + '" class="shrink-0 inline-flex items-center text-sm font-bold text-white bg-slate-900 hover:bg-emerald-700 px-4 py-2 rounded-sm">Start with the series overview &rarr;</a></div>' +
+      '<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">' + data.articles.map(function (a) {
+        return '<a href="' + esc(a.url) + '" class="group block bg-white border border-slate-200 rounded-sm overflow-hidden hover:border-emerald-400">' +
+          '<img src="' + esc((photo(data, a.heroPhoto) || {}).card || a.image) + '" alt="" width="720" height="480" loading="lazy" class="w-full aspect-[3/2] object-cover bg-slate-100">' +
+          '<div class="p-4"><div class="text-[11px] font-bold text-slate-500 uppercase tracking-wide mb-1">Principle ' + esc(a.num) + ' · ' + esc(a.principle) + '</div>' +
+          '<h3 class="text-base font-bold text-slate-900 leading-snug group-hover:text-emerald-700">' + esc(a.title) + '</h3></div></a>';
+      }).join('') + '</div>';
+  }
+
+  /* ---- Article: links into the Retirement Lab (series.json toolLinks) ---- */
+  function renderTools(el, data, slug) {
+    var a = bySlug(data)[slug];
+    if (!a || !a.toolLinks || !a.toolLinks.length) return;
+    el.innerHTML = '<h2 id="put-to-work">Put this principle to work</h2><p>These WealthLanding tools and guides from the <a href="' + esc(data.meta.retirementUrl || '/retirement/') + '">Retirement Lab</a> help you apply this principle to your own numbers.</p><ul>' +
+      a.toolLinks.map(function (t) { return '<li><a href="' + esc(t.url) + '">' + esc(t.label) + '</a><span>' + esc(t.why) + '</span></li>'; }).join('') + '</ul>';
   }
 
   /* ---- Article: previous / next in the series + back to hub ---- */
@@ -128,7 +162,7 @@
   function renderReviewed(el, data) { el.textContent = data.meta.lastReviewedLabel; }
 
   var RENDER = {
-    'video': renderVideo, 'principle-cards': renderCards, 'start-here': renderStart,
+    'video': renderVideo, 'tools': renderTools, 'blog-series': renderBlogSeries, 'photo-credits': renderCredits, 'principle-cards': renderCards, 'start-here': renderStart,
     'related': renderRelated, 'series-nav': renderSeriesNav, 'sources': renderSources,
     'disclaimer': renderDisclaimer, 'reviewed': renderReviewed
   };
