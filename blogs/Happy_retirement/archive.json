@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Happy Retirement",
+    "description": "Tax minimization, lifestyle design, and healthcare strategies for a successful retirement.",
+    "topics": [
+      {
+        "id": "tax",
+        "label": "Tax Strategy"
+      },
+      {
+        "id": "healthcare",
+        "label": "Healthcare"
+      },
+      {
+        "id": "lifestyle",
+        "label": "Lifestyle"
+      }
+    ],
+    "note": "Add a post here once; blogs/happy_retirement.html renders the archive, topic and year filters, and search from this list. Leave date null unless the post itself states one."
+  },
+  "posts": [
+    {
+      "id": "1m_rmd_letter",
+      "url": "/blogs/Happy_retirement/1m_rmd_letter.html",
+      "title": "The Letter That Quietly Cost Over One Million Dollars",
+      "desc": "It looked like ordinary annual paperwork. It quietly triggered a six-part tax, Medicare, and investment cascade.",
+      "topic": "tax",
+      "tag": "Tax Strategy",
+      "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80",
+      "imageAlt": "Stack of papers representing annual RMD paperwork",
+      "date": "Updated August 2026",
+      "year": 2026
+    },
+    {
+      "id": "doctor_waited",
+      "url": "/blogs/Happy_retirement/doctor_waited.html",
+      "title": "The Doctor Who Waited Too Long",
+      "desc": "He spent his career deferring taxes. The expensive mistake was assuming that later would always be better.",
+      "topic": "tax",
+      "tag": "Case Study",
+      "image": "https://images.unsplash.com/photo-1758691461530-b215ed4ede6a?auto=format&fit=crop&w=600&q=80",
+      "imageAlt": "Senior doctor seated in a medical office",
+      "date": "Updated August 2026",
+      "year": 2026
+    },
+    {
+      "id": "silent_partner",
+      "url": "/blogs/Happy_retirement/silent_partner.html",
+      "title": "The IRS Was His Silent Business Partner",
+      "desc": "He spent forty years accumulating $4 million in retirement savings. He thought the whole balance belonged to his family.",
+      "topic": "tax",
+      "tag": "Case Study",
+      "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80",
+      "imageAlt": "Businessman in a dark suit",
+      "date": "Updated August 2026",
+      "year": 2026
+    },
+    {
+      "id": "how-to-avoid-RMD-taxes",
+      "url": "/blogs/Happy_retirement/how-to-avoid-RMD-taxes.html",
+      "title": "Bill Left $5.1 Million. Tom Left $3.3 Million. What Happened?",
+      "desc": "Bill and Tom retired on the same day at 60, each with about $3.8 million saved. A case study in how required minimum distributions and tax timing led to very different results.",
+      "topic": "tax",
+      "tag": "Case Study",
+      "image": null,
+      "imageAlt": null,
+      "date": "June 2026",
+      "year": 2026
+    },
+    {
+      "id": "roth_conversions_pre_medicare",
+      "url": "/blogs/budget_spending/roth_conversions_pre_medicare.html",
+      "title": "Roth Conversions: Compressing Tax Liabilities Pre-Medicare",
+      "desc": "Timing your tax conversions during lower-income gap years keeps your lifetime tax liabilities minimized and guards against structural Medicare surcharges.",
+      "topic": "tax",
+      "tag": "Tax Strategy",
+      "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80",
+      "imageAlt": "Hand holding a phone calculator next to tax paperwork",
+      "date": null,
+      "year": null
+    },
+    {
+      "id": "aca_early_retirement_subsidies",
+      "url": "/blogs/budget_spending/aca_early_retirement_subsidies.html",
+      "title": "Navigating Early Retirement ACA Premium Tax Subsidies",
+      "desc": "Learn the mechanical frameworks required to monitor your Modified Adjusted Gross Income (MAGI) to secure maximum health insurance savings.",
+      "topic": "healthcare",
+      "tag": "Healthcare",
+      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
+      "imageAlt": "Healthcare professional holding a smartphone",
+      "date": null,
+      "year": null
+    },
+    {
+      "id": "medicare",
+      "url": "/blogs/Happy_retirement/medicare.html",
+      "title": "The Expat Medicare Trap: Why Retiring Abroad Won't Save You From Uncle Sam's Late Penalty",
+      "desc": "Moving overseas at 65 doesn't switch off Medicare's enrollment clock. Skipping Part B abroad can mean a lifetime premium penalty if you ever come home.",
+      "topic": "healthcare",
+      "tag": "Healthcare",
+      "image": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80",
+      "imageAlt": "A gloved clinician giving a patient an injection",
+      "date": null,
+      "year": null
+    }
+  ]
+}
