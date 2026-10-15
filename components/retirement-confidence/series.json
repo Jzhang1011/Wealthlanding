@@ -1,0 +1,374 @@
+{
+  "_about": "Single source for the Retirement Confidence series at /retirement-confidence/. Edit titles, descriptions, related links, sources, the review date and the video here; rc.js renders hub cards, related reading, previous/next navigation, sources, the disclaimer and the video panel from this file. Article prose lives in each article's index.html.",
+  "meta": {
+    "seriesName": "Retirement Confidence",
+    "hubTitle": "The 7 Principles of Retirement Confidence",
+    "hubUrl": "/retirement-confidence/",
+    "voice": "WealthLanding Knowledge Guardian",
+    "lastReviewed": "2026-10-15",
+    "lastReviewedLabel": "October 15, 2026",
+    "videoUrl": "",
+    "videoTitle": "The Three Layers of Control and the Seven Principles of Retirement Confidence",
+    "videoComingSoon": "The companion video is in production. When it is published it will appear here, with captions.",
+    "disclaimer": "This article is for general education. It is not individualized financial, tax, legal, or insurance advice, and it does not recommend any product. Rules, limits and premiums change, often every year; confirm current figures with the official sources listed and consider a qualified professional for decisions about your own situation. Examples use hypothetical people and simplified assumptions; your results will differ."
+  },
+  "articles": [
+    {
+      "num": "01",
+      "slug": "longevity-marathon",
+      "url": "/retirement-confidence/longevity-marathon/",
+      "principle": "The Longevity Marathon",
+      "title": "Will Your Retirement Money Last 30 Years?",
+      "desc": "Understand why retirement may last longer than expected and how inflation and investment growth affect your long-term financial security.",
+      "image": "/asset/retirement-confidence/longevity-marathon.svg",
+      "imageAlt": "Illustration of a long, winding path across rolling hills toward a distant horizon, with mile markers along the way",
+      "layer": "Within your direct control: investment allocation and spending",
+      "related": [
+        "savings-target-two-buckets",
+        "withdrawal-sequence",
+        "social-security-timing"
+      ],
+      "sources": [
+        {
+          "label": "J.P. Morgan Asset Management, 2026 Guide to Retirement (Life expectancy probabilities; retirement savings checkpoints)",
+          "url": "https://am.jpmorgan.com/us/en/asset-management/adv/insights/retirement-insights/guide-to-retirement/"
+        },
+        {
+          "label": "Social Security Administration: Starting your retirement benefits early (full retirement age table)",
+          "url": "https://www.ssa.gov/benefits/retirement/planner/agereduction.html"
+        },
+        {
+          "label": "Social Security Administration: Delayed retirement credits",
+          "url": "https://www.ssa.gov/benefits/retirement/planner/delayret.html"
+        },
+        {
+          "label": "Social Security Administration: Life expectancy calculator",
+          "url": "https://www.ssa.gov/oact/population/longevity.html"
+        }
+      ]
+    },
+    {
+      "num": "02",
+      "slug": "savings-target-two-buckets",
+      "url": "/retirement-confidence/savings-target-two-buckets/",
+      "principle": "The Savings Target and the Two-Bucket Approach",
+      "title": "How Much Should You Have Saved by 50?",
+      "desc": "Understand retirement savings benchmarks, what to do if you are behind, and how to separate near-term spending needs from long-term growth.",
+      "image": "/asset/retirement-confidence/savings-target-two-buckets.svg",
+      "imageAlt": "Illustration of two containers side by side: a smaller one labeled for near-term cash needs and a larger one for long-term growth",
+      "layer": "Within your direct control: savings rate and spending",
+      "related": [
+        "savings-priority-pyramid",
+        "longevity-marathon",
+        "withdrawal-sequence"
+      ],
+      "sources": [
+        {
+          "label": "J.P. Morgan Asset Management, 2026 Guide to Retirement (Retirement savings checkpoints, pages 11–12)",
+          "url": "https://am.jpmorgan.com/us/en/asset-management/adv/insights/retirement-insights/guide-to-retirement/"
+        },
+        {
+          "label": "Fidelity Viewpoints: How much do I need to retire? (savings factors and assumptions)",
+          "url": "https://www.fidelity.com/viewpoints/retirement/how-much-do-i-need-to-retire"
+        },
+        {
+          "label": "IRS: 401(k) limit increases to $24,500 for 2026, IRA limit increases to $7,500",
+          "url": "https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500"
+        },
+        {
+          "label": "Social Security Administration: my Social Security account (benefit estimates)",
+          "url": "https://www.ssa.gov/myaccount/"
+        }
+      ]
+    },
+    {
+      "num": "03",
+      "slug": "savings-priority-pyramid",
+      "url": "/retirement-confidence/savings-priority-pyramid/",
+      "principle": "The Savings Priority Pyramid",
+      "title": "Where Should Your Next Dollar of Savings Go?",
+      "desc": "Explore a practical framework for prioritizing emergency savings, employer matches, debt, tax-advantaged accounts, and investments.",
+      "image": "/asset/retirement-confidence/savings-priority-pyramid.svg",
+      "imageAlt": "Illustration of a seven-level pyramid built from blocks, widest at the base, representing the order of savings priorities",
+      "layer": "Within your direct control: savings rate and account choices",
+      "related": [
+        "savings-target-two-buckets",
+        "tax-box-allocation",
+        "medicare-gap"
+      ],
+      "sources": [
+        {
+          "label": "IRS: 401(k) limit increases to $24,500 for 2026, IRA limit increases to $7,500 (IR-2025-111)",
+          "url": "https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500"
+        },
+        {
+          "label": "IRS: Retirement topics – 401(k) and profit-sharing plan contribution limits",
+          "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits"
+        },
+        {
+          "label": "IRS: Retirement topics – IRA contribution limits",
+          "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits"
+        },
+        {
+          "label": "IRS Publication 969: Health Savings Accounts (2026 limits and age-55 additional contribution)",
+          "url": "https://www.irs.gov/publications/p969"
+        },
+        {
+          "label": "IRS Revenue Procedure 2025-19 (2026 HSA limits)",
+          "url": "https://www.irs.gov/pub/irs-drop/rp-25-19.pdf"
+        },
+        {
+          "label": "IRS Publication 590-A: Contributions to IRAs (Roth income limits and traditional IRA deduction phase-outs)",
+          "url": "https://www.irs.gov/publications/p590a"
+        }
+      ]
+    },
+    {
+      "num": "04",
+      "slug": "social-security-timing",
+      "url": "/retirement-confidence/social-security-timing/",
+      "principle": "Social Security Timing",
+      "title": "Should You Claim Social Security at 62, 67, or 70?",
+      "desc": "Explore the trade-offs between claiming early and delaying benefits, including longevity, household income, and spousal considerations.",
+      "image": "/asset/retirement-confidence/social-security-timing.svg",
+      "imageAlt": "Illustration of three rising bars labeled 62, 67 and 70, showing that a later claiming age produces a larger monthly benefit",
+      "layer": "Within your influence: when you claim Social Security",
+      "related": [
+        "longevity-marathon",
+        "tax-box-allocation",
+        "withdrawal-sequence"
+      ],
+      "sources": [
+        {
+          "label": "Social Security Administration: Starting your retirement benefits early (reduction table by birth year)",
+          "url": "https://www.ssa.gov/benefits/retirement/planner/agereduction.html"
+        },
+        {
+          "label": "Social Security Administration: Delayed retirement credits",
+          "url": "https://www.ssa.gov/benefits/retirement/planner/delayret.html"
+        },
+        {
+          "label": "Social Security Administration blog: Do you qualify for spouse's benefits? (July 11, 2024)",
+          "url": "https://www.ssa.gov/blog/en/posts/2024-07-11.html"
+        },
+        {
+          "label": "Social Security Administration: Receiving benefits while working (2026 earnings test limits)",
+          "url": "https://www.ssa.gov/benefits/retirement/planner/whileworking.html"
+        },
+        {
+          "label": "Social Security Administration: my Social Security account (personal benefit estimates)",
+          "url": "https://www.ssa.gov/myaccount/"
+        },
+        {
+          "label": "IRS Publication 915: Social Security and equivalent railroad retirement benefits (taxation of benefits)",
+          "url": "https://www.irs.gov/publications/p915"
+        }
+      ]
+    },
+    {
+      "num": "05",
+      "slug": "medicare-gap",
+      "url": "/retirement-confidence/medicare-gap/",
+      "principle": "The Medicare Gap",
+      "title": "What Medicare Doesn't Cover in Retirement",
+      "desc": "Understand healthcare premiums, out-of-pocket expenses, supplemental coverage, and long-term care planning.",
+      "image": "/asset/retirement-confidence/medicare-gap.svg",
+      "imageAlt": "Illustration of a protective umbrella covering most of a household, with a few uncovered gaps at the edges",
+      "layer": "Within your influence: health habits; within your control: coverage choices and reserves",
+      "related": [
+        "savings-priority-pyramid",
+        "tax-box-allocation",
+        "longevity-marathon"
+      ],
+      "sources": [
+        {
+          "label": "CMS fact sheet: 2026 Medicare Parts A & B premiums and deductibles (Nov 14, 2025)",
+          "url": "https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-deductibles"
+        },
+        {
+          "label": "Medicare.gov: Costs (2026 Part A and Part B amounts; no yearly out-of-pocket limit in Original Medicare)",
+          "url": "https://www.medicare.gov/basics/costs/medicare-costs"
+        },
+        {
+          "label": "Medicare.gov: What's not covered?",
+          "url": "https://www.medicare.gov/providers-services/original-medicare/not-covered"
+        },
+        {
+          "label": "Medicare.gov: Compare Original Medicare & Medicare Advantage",
+          "url": "https://www.medicare.gov/basics/get-started-with-medicare/get-more-coverage/your-coverage-options/compare-original-medicare-medicare-advantage"
+        },
+        {
+          "label": "Medicare.gov: Long-term care",
+          "url": "https://www.medicare.gov/coverage/long-term-care"
+        },
+        {
+          "label": "Medicare.gov: How much does Medicare drug coverage cost? (2026 Part D deductible and out-of-pocket threshold)",
+          "url": "https://www.medicare.gov/health-drug-plans/part-d/basics/costs"
+        },
+        {
+          "label": "Medicare.gov: Avoid late enrollment penalties",
+          "url": "https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties"
+        },
+        {
+          "label": "Medicare.gov: When does Medicare coverage start? (Initial Enrollment Period)",
+          "url": "https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start"
+        },
+        {
+          "label": "Medicare.gov: COBRA coverage (Part B sign-up window after employment ends)",
+          "url": "https://www.medicare.gov/basics/get-started-with-medicare/medicare-basics/working-past-65/cobra-coverage"
+        },
+        {
+          "label": "Medicare.gov: When can I buy a Medigap policy?",
+          "url": "https://www.medicare.gov/health-drug-plans/medigap/ready-to-buy/when"
+        },
+        {
+          "label": "Medicare.gov: Medicare Plan Finder (Open Enrollment dates for 2027 plans)",
+          "url": "https://www.medicare.gov/plan-compare/"
+        },
+        {
+          "label": "Social Security Administration: Premiums – rules for higher-income beneficiaries (IRMAA)",
+          "url": "https://www.ssa.gov/benefits/medicare/medicare-premiums.html"
+        },
+        {
+          "label": "SHIP: free, unbiased Medicare counseling in every state",
+          "url": "https://www.shiphelp.org/"
+        }
+      ]
+    },
+    {
+      "num": "06",
+      "slug": "tax-box-allocation",
+      "url": "/retirement-confidence/tax-box-allocation/",
+      "principle": "Tax Box Allocation",
+      "title": "Traditional vs. Roth: How to Build a Tax-Smart Retirement Portfolio",
+      "desc": "Learn how tax-deferred, tax-free, and taxable accounts differ and why managing taxable income can matter in retirement.",
+      "image": "/asset/retirement-confidence/tax-box-allocation.svg",
+      "imageAlt": "Illustration of three labeled boxes for tax-deferred, tax-free and taxable accounts, each holding a share of savings",
+      "layer": "Within your direct control: account choices",
+      "related": [
+        "withdrawal-sequence",
+        "medicare-gap",
+        "savings-priority-pyramid"
+      ],
+      "sources": [
+        {
+          "label": "IRS: Tax inflation adjustments for tax year 2026 (brackets and standard deduction)",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill"
+        },
+        {
+          "label": "IRS Revenue Procedure 2025-32 (2026 inflation-adjusted amounts)",
+          "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf"
+        },
+        {
+          "label": "IRS Publication 590-A: Contributions to IRAs (Roth conversions are included in income)",
+          "url": "https://www.irs.gov/publications/p590a"
+        },
+        {
+          "label": "IRS Publication 590-B: Distributions from IRAs (Roth IRAs have no lifetime RMDs for the original owner)",
+          "url": "https://www.irs.gov/publications/p590b"
+        },
+        {
+          "label": "IRS: Retirement plan and IRA required minimum distributions FAQs",
+          "url": "https://www.irs.gov/retirement-plans/retirement-plan-and-ira-required-minimum-distributions-faqs"
+        },
+        {
+          "label": "IRS Internal Revenue Bulletin 2024-33 (T.D. 10001: applicable RMD age of 75 for people born in 1960 or later)",
+          "url": "https://www.irs.gov/irb/2024-33_IRB"
+        },
+        {
+          "label": "Social Security Administration: Premiums – rules for higher-income beneficiaries (IRMAA)",
+          "url": "https://www.ssa.gov/benefits/medicare/medicare-premiums.html"
+        },
+        {
+          "label": "HealthCare.gov: Saving money on health insurance (income-based savings)",
+          "url": "https://www.healthcare.gov/lower-costs/"
+        },
+        {
+          "label": "IRS Publication 915: Social Security and equivalent railroad retirement benefits",
+          "url": "https://www.irs.gov/publications/p915"
+        }
+      ]
+    },
+    {
+      "num": "07",
+      "slug": "withdrawal-sequence",
+      "url": "/retirement-confidence/withdrawal-sequence/",
+      "principle": "The Withdrawal Sequence",
+      "title": "Which Retirement Account Should You Spend First?",
+      "desc": "Explore how taxable, traditional retirement, and Roth accounts may fit into a tax-aware withdrawal strategy.",
+      "image": "/asset/retirement-confidence/withdrawal-sequence.svg",
+      "imageAlt": "Illustration of three water taps feeding one glass, representing withdrawals drawn from taxable, traditional and Roth accounts",
+      "layer": "Within your direct control: withdrawal planning",
+      "related": [
+        "tax-box-allocation",
+        "social-security-timing",
+        "longevity-marathon"
+      ],
+      "sources": [
+        {
+          "label": "IRS Revenue Procedure 2025-32 (2026 0% long-term capital gains thresholds and standard deduction)",
+          "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf"
+        },
+        {
+          "label": "IRS: Tax inflation adjustments for tax year 2026 (ordinary income brackets)",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill"
+        },
+        {
+          "label": "IRS: Retirement plan and IRA required minimum distributions FAQs",
+          "url": "https://www.irs.gov/retirement-plans/retirement-plan-and-ira-required-minimum-distributions-faqs"
+        },
+        {
+          "label": "IRS Internal Revenue Bulletin 2024-33 (applicable RMD age by birth year)",
+          "url": "https://www.irs.gov/irb/2024-33_IRB"
+        },
+        {
+          "label": "IRS Publication 590-B: Distributions from IRAs",
+          "url": "https://www.irs.gov/publications/p590b"
+        },
+        {
+          "label": "Social Security Administration: Premiums – rules for higher-income beneficiaries (IRMAA)",
+          "url": "https://www.ssa.gov/benefits/medicare/medicare-premiums.html"
+        }
+      ]
+    }
+  ],
+  "startHere": [
+    {
+      "worry": "I'm worried I haven't saved enough",
+      "links": [
+        "savings-target-two-buckets"
+      ]
+    },
+    {
+      "worry": "I'm worried about running out of money",
+      "links": [
+        "longevity-marathon"
+      ]
+    },
+    {
+      "worry": "I want to make my retirement money more tax-efficient",
+      "links": [
+        "tax-box-allocation",
+        "withdrawal-sequence"
+      ]
+    }
+  ],
+  "siteLinks": {
+    "retirementLab": {
+      "label": "Retirement Lab",
+      "url": "/retirement/"
+    },
+    "feasibility": {
+      "label": "Retirement Feasibility Engine",
+      "url": "/Retirement-simulator/retirement_feasibility_engine.html"
+    },
+    "roth": {
+      "label": "Roth strategy tool",
+      "url": "/Retirement-simulator/OptimizeRoth.html"
+    },
+    "healthcare": {
+      "label": "U.S. healthcare and long-term care strategy",
+      "url": "/Retirement-simulator/healthcare_us_strategy.html"
+    }
+  }
+}
