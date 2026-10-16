@@ -109,7 +109,34 @@
     }
    ],
    "tierCompareNote": "Companion benefits apply to travellers on the same reservation / itinerary as the member. One companion on the same reservation is also eligible for complimentary upgrades at every tier. Bag counts are for Economy on United / United Express; premium cabins get 3 bags at every tier.",
-   "tiers": [
+     "calculator": {
+    "bagFeeRoundTrip": 90,
+    "bagFeeNote": "First checked bag $45 each way prepaid ($50 at airport) since Apr 3, 2026. Bags are valued at the first-bag fee; second-bag fees are not modeled.",
+    "seatValueRoundTrip": 100,
+    "seatValueNote": "Estimate: Economy Plus runs about $20-$150+ per segment by route. $100 per round trip is roughly $50 a segment. Edit to match your routes.",
+    "loungeDayPass": 59,
+    "loungeNote": "United Club one-time pass $59. Status lounge access counts on international trips only; the guest count uses the United Club rule (1 guest on your flight) - partner lounges may differ.",
+    "plusPointValue": 16,
+    "plusPointNote": "Your valuation per PlusPoint (default $16). Platinum gets 40 PlusPoints a year; 1K gets 320 total (40 at Platinum + 280 more at 1K). Edit the count if you earn more from milestones.",
+    "cashbackTop": 3,
+    "milesValue": 1
+  },
+  "gifting": {
+    "mechanism": "PlusPoints exchange — any Premier member with PlusPoints can gift status (effectively Platinum and 1K, who earn PlusPoints).",
+    "options": [
+      {"gift": "Premier Silver", "cost": "40 PlusPoints", "max": 3},
+      {"gift": "Premier Gold", "cost": "100 PlusPoints", "max": 2},
+      {"gift": "Premier Platinum", "cost": "440 PlusPoints", "max": 1},
+      {"gift": "Premier 1K", "cost": "600 PlusPoints", "max": 1}
+    ],
+    "cap": "600 PlusPoints total exchangeable per expiration date across all exchange perks (gifts, TravelBank, miles, PQP). Exchange by Mar 31 of the year after earning. Gifted status lasts through the PlusPoints' expiration.",
+    "note": "Recipients earn no PlusPoints from gifted status unless they also qualify for that tier on their own."
+  },
+  "cardStatus": {
+    "headline": "No United card grants status outright.",
+    "detail": "United cards earn PQP toward status — counted in this calculator through your card spend. United Club membership from the Club card is lounge access, not status."
+  },
+"tiers": [
     {
      "name": "Premier Silver",
      "color": "#7C8698",
@@ -129,7 +156,8 @@
      "upgrades": "Day of departure",
      "upgradeCompanions": 1,
      "plusPoints": 0,
-     "whoFor": "You check a bag a few times a year. But one free bag is also what a United card gives you — Silver alone is rarely worth chasing."
+     "whoFor": "You check a bag a few times a year. But one free bag is also what a United card gives you — Silver alone is rarely worth chasing.",
+    "calc": {"bonusPct": 40, "bagsDomestic": 1, "bagsIntl": 2, "bagCompanions": 9, "seatCompanions": 1, "lounge": false, "loungeGuests": 0, "plusPoints": 0}
     },
     {
      "name": "Premier Gold",
@@ -150,7 +178,8 @@
      "upgrades": "48 hours before departure",
      "upgradeCompanions": 1,
      "plusPoints": 0,
-     "whoFor": "The first tier that feels like status: a second bag, Economy Plus from the day you book, and real lounge access abroad."
+     "whoFor": "The first tier that feels like status: a second bag, Economy Plus from the day you book, and real lounge access abroad.",
+    "calc": {"bonusPct": 60, "bagsDomestic": 2, "bagsIntl": 3, "bagCompanions": 9, "seatCompanions": 1, "lounge": true, "loungeGuests": 1, "plusPoints": 0}
     },
     {
      "name": "Premier Platinum",
@@ -172,7 +201,8 @@
      "upgrades": "72 hours before departure",
      "upgradeCompanions": 1,
      "plusPoints": 40,
-     "whoFor": "You fly with family or colleagues: Economy Plus now covers up to 8 companions, and PlusPoints buy real upgrades."
+     "whoFor": "You fly with family or colleagues: Economy Plus now covers up to 8 companions, and PlusPoints buy real upgrades.",
+    "calc": {"bonusPct": 80, "bagsDomestic": 3, "bagsIntl": 3, "bagCompanions": 9, "seatCompanions": 8, "lounge": true, "loungeGuests": 1, "plusPoints": 40}
     },
     {
      "name": "Premier 1K",
@@ -194,7 +224,8 @@
      "upgrades": "96 hours before departure",
      "upgradeCompanions": 1,
      "plusPoints": 280,
-     "whoFor": "You live on United. The upgrade window and 280 PlusPoints are the payoff for $32,000 of yearly PQP."
+     "whoFor": "You live on United. The upgrade window and 280 PlusPoints are the payoff for $32,000 of yearly PQP.",
+    "calc": {"bonusPct": 100, "bagsDomestic": 3, "bagsIntl": 3, "bagCompanions": 9, "seatCompanions": 8, "lounge": true, "loungeGuests": 1, "plusPoints": 320}
     }
    ],
    "cards": [
@@ -393,7 +424,35 @@
     "perDollar": 5,
     "basis": "about 5 Loyalty Points per $1 of eligible American base fare and carrier charges (Basic Economy tickets bought after Dec 17, 2025 earn nothing)"
    },
-   "tiers": [
+     "calculator": {
+    "bagFeeRoundTrip": 90,
+    "bagFeeNote": "First checked bag $45 each way in Main Cabin prepaid online ($55 on Basic Economy). Bags are valued at the first-bag fee. Companion bag coverage from status alone is unverified, so only your own bags are counted.",
+    "seatValueRoundTrip": 100,
+    "seatValueNote": "Estimate: Main Cabin Extra runs about $20-$150+ per segment by route. Edit to match your routes. Gold Main Cabin Extra is at check-in only, and companion coverage at Gold is unverified, so Gold counts you alone.",
+    "loungeDayPass": 79,
+    "loungeNote": "Admirals Club One-Day Pass $79. Status lounge access counts on qualifying international itineraries only; +1 guest.",
+    "swuValue": 500,
+    "swuNote": "Systemwide upgrades come from Loyalty Point Rewards choices (2 SWUs as one choice at 175,000 LP), not from the tier itself. Enter how many you picked; $500 each is an editable estimate.",
+    "cashbackTop": 3,
+    "milesValue": 1
+  },
+  "gifting": {
+    "mechanism": "Loyalty Point Rewards choices — gifting costs one of your reward choices at that LP threshold.",
+    "options": [
+      {"gift": "2x AAdvantage Gold", "cost": "175,000 LP", "max": 1, "choices": "1 choice"},
+      {"gift": "2x AAdvantage Gold per choice", "cost": "250,000 LP", "max": 2, "choices": "2 choices"},
+      {"gift": "1x AAdvantage Platinum per choice", "cost": "400,000 / 550,000 / 750,000 LP", "max": 2, "choices": "2 choices each"},
+      {"gift": "1x AAdvantage Platinum Pro", "cost": "1,000,000 LP", "max": 1, "choices": "1 choice"},
+      {"gift": "1x AAdvantage Executive Platinum", "cost": "3,000,000+ LP", "max": 1, "choices": "1 choice"}
+    ],
+    "cap": null,
+    "note": "Picking a gift means not picking the systemwide upgrades, miles, or other reward at that threshold — the gift has an opportunity cost."
+  },
+  "cardStatus": {
+    "headline": "No American card grants status outright.",
+    "detail": "AAdvantage cards earn Loyalty Points toward status — counted in this calculator through your card spend. Admirals Club membership from the Executive card is lounge access, not status."
+  },
+"tiers": [
     {
      "name": "AAdvantage Gold",
      "color": "#A67C00",
@@ -409,7 +468,8 @@
      "lounge": "No lounge access (oneworld Ruby)",
      "upgrades": "24 hours before departure",
      "upgradeCompanions": 1,
-     "whoFor": "The occasional flyer who wants a free bag, priority boarding, and a shot at upgrades on a few trips a year."
+     "whoFor": "The occasional flyer who wants a free bag, priority boarding, and a shot at upgrades on a few trips a year.",
+    "calc": {"bonusPct": 40, "bagsDomestic": 1, "bagsIntl": 1, "bagCompanions": 0, "seatCompanions": 0, "lounge": false, "loungeGuests": 0, "swu": 0}
     },
     {
      "name": "AAdvantage Platinum",
@@ -427,7 +487,8 @@
      "lounge": "Admirals Club + Flagship Lounge on qualifying international itineraries, +1 guest",
      "upgrades": "48 hours before departure",
      "upgradeCompanions": 1,
-     "whoFor": "The regular domestic flyer — Main Cabin Extra at booking, lounge access on international trips, and the first tier where status feels like a real upgrade."
+     "whoFor": "The regular domestic flyer — Main Cabin Extra at booking, lounge access on international trips, and the first tier where status feels like a real upgrade.",
+    "calc": {"bonusPct": 60, "bagsDomestic": 2, "bagsIntl": 2, "bagCompanions": 0, "seatCompanions": 8, "lounge": true, "loungeGuests": 1, "swu": 0}
     },
     {
      "name": "AAdvantage Platinum Pro",
@@ -445,7 +506,8 @@
      "lounge": "Admirals Club + Flagship Lounge on qualifying international itineraries, +1 guest",
      "upgrades": "72 hours before departure",
      "upgradeCompanions": 1,
-     "whoFor": "The heavy domestic + occasional international flyer who wants Emerald lounge access and 72-hour upgrades."
+     "whoFor": "The heavy domestic + occasional international flyer who wants Emerald lounge access and 72-hour upgrades.",
+    "calc": {"bonusPct": 80, "bagsDomestic": 3, "bagsIntl": 3, "bagCompanions": 0, "seatCompanions": 8, "lounge": true, "loungeGuests": 1, "swu": 0}
     },
     {
      "name": "AAdvantage Executive Platinum",
@@ -463,7 +525,8 @@
      "lounge": "Admirals Club + Flagship Lounge on qualifying international itineraries, +1 guest",
      "upgrades": "100 hours before departure",
      "upgradeCompanions": 1,
-     "whoFor": "The road warrior — 100-hour upgrades, 3 bags, Flagship lounges, systemwide upgrades, and top-of-list priority."
+     "whoFor": "The road warrior — 100-hour upgrades, 3 bags, Flagship lounges, systemwide upgrades, and top-of-list priority.",
+    "calc": {"bonusPct": 120, "bagsDomestic": 3, "bagsIntl": 3, "bagCompanions": 0, "seatCompanions": 8, "lounge": true, "loungeGuests": 1, "swu": 0}
     }
    ],
    "cards": [
@@ -699,7 +762,34 @@
     "perDollar": 1,
     "basis": "$1 MQD per $1 of eligible ticket price (excluding taxes and fees and Main Basic tickets)"
    },
-   "tiers": [
+     "calculator": {
+    "bagFeeRoundTrip": 90,
+    "bagFeeNote": "First checked bag $45 each way ($55 second) since Apr 2026. Bags are valued at the first-bag fee. Companion bag benefit excludes flights departing Paris CDG / Amsterdam AMS. International bag allowance uses the domestic number - not separately verified.",
+    "seatValueRoundTrip": 100,
+    "seatValueNote": "Estimate: Comfort+ runs about $20-$150+ per segment by route. Edit to match your routes. Comfort+ is free at booking for Platinum/Diamond, 72h before departure for Gold, 24h for Silver; 1 companion on the same reservation.",
+    "loungeDayPass": 0,
+    "loungeNote": "Delta status alone grants no Sky Club access on any itinerary - lounge value from status is $0. Access comes from cabin (Delta One / Premium Select) or a Choice Benefit membership, not status.",
+    "rucValue": 300,
+    "rucNote": "Regional Upgrade Certificates come from Choice Benefits: Platinum picks 4 RUCs as one Choice Benefit selection. Enter how many you picked; $300 each is an editable estimate.",
+    "gucValue": 800,
+    "gucNote": "Global Upgrade Certificates come from Choice Benefits: Diamond picks 4 Global, 8 Regional, or 2 Global + 4 Regional as one selection. Enter how many you picked; $800 each is an editable estimate.",
+    "cashbackTop": 3,
+    "milesValue": 1
+  },
+  "gifting": {
+    "mechanism": "Choice Benefits — gifting uses one of your Choice Benefit selections.",
+    "options": [
+      {"gift": "Silver Medallion x2 (x4 for the 2026 Medallion year)", "cost": "Platinum Choice Benefit", "max": 1, "choices": "Platinum gets 1 choice"},
+      {"gift": "Gold Medallion x2 (x4 for the 2026 Medallion year)", "cost": "Diamond Choice Benefit", "max": 1, "choices": "Diamond gets 3 choices"}
+    ],
+    "cap": null,
+    "note": "Diamond members effectively get 4 choices total, counting the Platinum choice earned on the way up. Picking a gift means not picking upgrade certificates, miles, or another Choice Benefit."
+  },
+  "cardStatus": {
+    "headline": "No Delta card grants status outright — but Delta cards give a $2,500 MQD headstart.",
+    "detail": "Delta Platinum and Reserve cardmembers get $2,500 MQDs each Medallion Qualification Year, no spend required — one per card type, max 4 deposits ($10,000) across card types. The card-alone hint below subtracts your card's $2,500 headstart. Sky Club access from the Reserve card is lounge access, not status."
+  },
+"tiers": [
     {
      "name": "Silver Medallion",
      "threshold": 5000,
@@ -708,7 +798,8 @@
       "Complimentary upgrades clear 24 hours before departure",
       "Priority customer-service line",
       "7 miles per $1 on Delta flights"
-     ]
+     ],
+    "calc": {"bonusPct": 40, "bagsDomestic": 1, "bagsIntl": 1, "bagCompanions": 8, "seatCompanions": 1, "lounge": false, "loungeGuests": 0}
     },
     {
      "name": "Gold Medallion",
@@ -718,7 +809,8 @@
       "Upgrades clear 72 hours before departure",
       "4 onboard drink vouchers",
       "8 miles per $1 on Delta flights"
-     ]
+     ],
+    "calc": {"bonusPct": 60, "bagsDomestic": 2, "bagsIntl": 2, "bagCompanions": 8, "seatCompanions": 1, "lounge": false, "loungeGuests": 0}
     },
     {
      "name": "Platinum Medallion",
@@ -728,7 +820,8 @@
       "Comfort+ upgrades clear shortly after ticketing; First 120 hours out",
       "1 Choice Benefit (for example 4 Regional Upgrade Certificates)",
       "9 miles per $1 on Delta flights"
-     ]
+     ],
+    "calc": {"bonusPct": 80, "bagsDomestic": 3, "bagsIntl": 3, "bagCompanions": 8, "seatCompanions": 1, "lounge": false, "loungeGuests": 0}
     },
     {
      "name": "Diamond Medallion",
@@ -738,7 +831,8 @@
       "Same upgrade windows as Platinum, with priority",
       "3 Choice Benefits (for example 4 Global Upgrade Certificates)",
       "11 miles per $1 on Delta flights"
-     ]
+     ],
+    "calc": {"bonusPct": 120, "bagsDomestic": 3, "bagsIntl": 3, "bagCompanions": 8, "seatCompanions": 1, "lounge": false, "loungeGuests": 0}
     }
    ],
    "cards": [

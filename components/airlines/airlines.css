@@ -261,3 +261,34 @@ noscript .wla-callout{margin:1rem 0}
 .wla-partner-name:before{content:"\2708  "}
 .wla-cc-photo{aspect-ratio:1.586;overflow:hidden;background:#0b254f}
 .wla-cc-photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ---------- status value calculator ---------- */
+.wla-calc-form{display:grid;gap:1.25rem;margin:1rem 0 2rem}
+.wla-calc-section{border:1px solid #e2e8f0;border-radius:12px;padding:1rem 1.25rem;background:#fff}
+.wla-calc-section-title{font-size:1.05rem;margin:0 0 .75rem}
+.wla-calc-subhead{font-size:.95rem;margin:.75rem 0 .25rem}
+.wla-calc-field{display:block;margin:.6rem 0}
+.wla-calc-label{display:block;font-weight:600;font-size:.9rem;margin-bottom:.25rem}
+.wla-calc-input{width:100%;max-width:22rem;padding:.5rem .6rem;border:1px solid #cbd5e1;border-radius:8px;font:inherit}
+select.wla-calc-input{cursor:pointer}
+.wla-calc-hint{display:block;font-size:.82rem;color:#64748b;margin-top:.25rem;line-height:1.45}
+.wla-calc-checkrow{display:flex;gap:.5rem;align-items:flex-start;cursor:pointer}
+.wla-calc-check{width:1.1rem;height:1.1rem;margin-top:.15rem;accent-color:#166534}
+.wla-calc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.25rem}
+.wla-calc-stat{border:1px solid #e2e8f0;border-radius:12px;padding:1rem;background:#f8fafc}
+.wla-calc-stat-label{font-size:.85rem;color:#475569}
+.wla-calc-stat-value{font-size:1.6rem;font-weight:800;margin-top:.25rem}
+.wla-calc-good .wla-calc-stat-value{color:#166534}
+.wla-calc-bad .wla-calc-stat-value{color:#991b1b}
+.wla-calc-breakdown td{vertical-align:top}
+.wla-calc-detail{display:block;font-size:.82rem;color:#64748b;font-weight:400;margin-top:.15rem}
+.wla-calc-amount{text-align:right;white-space:nowrap;font-weight:700}
+.wla-calc-costrow td{border-top:2px solid #e2e8f0}
+.wla-calc-netrow td{border-top:2px solid #0f172a;font-weight:800;font-size:1.05rem}
+.wla-calc-norm{font-size:.9rem;color:#475569;margin-top:.75rem}
+.wla-calc-verdict{font-size:1rem;line-height:1.6;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:.9rem 1rem}
+@media (max-width:640px){.wla-calc-stats{grid-template-columns:1fr}.wla-calc-stat-value{font-size:1.35rem}}
+.wla-calc-giftinfo ul{margin:.5rem 0 .5rem 1.25rem}
+.wla-calc-giftinfo li{margin:.25rem 0}
+.wla-calc-giftinfo p{margin:.5rem 0}
+.wla-calc-spendvalue{font-size:1.5rem;font-weight:800;margin:.25rem 0}
