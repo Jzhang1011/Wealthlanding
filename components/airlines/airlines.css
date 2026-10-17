@@ -121,7 +121,10 @@
 .wla-gem-src{font-size:.8rem!important;color:var(--wla-muted)}
 .wla-sources{font-size:.9rem}
 .wla-others{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0 0}
-.wla-section .wla-other{display:inline-block;border:1px solid var(--wla-line);border-left:4px solid var(--wla-accent);background:#fff;border-radius:.6rem;padding:.55rem .9rem;text-decoration:none;font-weight:700;color:var(--wla-navy)}
+.wla-section .wla-other{display:inline-flex;flex-direction:column;align-items:center;gap:.35rem;border:1px solid var(--wla-line);border-left:4px solid var(--wla-accent);background:#fff;border-radius:.6rem;padding:.8rem 1.1rem;text-decoration:none;font-weight:700;color:var(--wla-navy);min-width:9rem;text-align:center}
+.wla-other-icon{height:2.2rem;width:auto;max-width:7rem;object-fit:contain}
+.wla-other-icon-glyph{font-size:1.8rem;line-height:1.2}
+.wla-other-name{font-size:.85rem}
 .wla-section .wla-other-hub{--wla-accent:var(--wla-navy);background:#f1f5f9}
 .wla-other:hover{box-shadow:0 4px 14px rgba(15,23,42,.1)}
 noscript .wla-callout{margin:1rem 0}

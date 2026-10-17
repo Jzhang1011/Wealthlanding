@@ -591,6 +591,7 @@
      Each step header carries the tier's benefits summary; each row is one path. */
   function tierIcon(name) {
     if (/1K|Executive/.test(name)) return '\u{1F451}';
+    if (/Diamond/.test(name)) return '\u{1F48E}';
     if (/Platinum/.test(name)) return '\u{1F48E}';
     if (/Gold/.test(name)) return '\u{1F947}';
     if (/Silver/.test(name)) return '\u{1F948}';
@@ -781,10 +782,18 @@
     var wrap = el('div', 'wla-others');
     ORDER.filter(function (k) { return k !== id; }).forEach(function (k) {
       var p = data.programs[k];
-      var a = el('a', 'wla-other', p.name); a.href = p.url; a.style.setProperty('--wla-accent', p.color);
+      var a = el('a', 'wla-other', null); a.href = p.url; a.style.setProperty('--wla-accent', p.color);
+      if (p.allianceIcon) {
+        var img = el('img', 'wla-other-icon', null);
+        img.src = p.allianceIcon; img.alt = p.alliance + ' logo';
+        a.appendChild(img);
+      }
+      a.appendChild(el('span', 'wla-other-name', p.name));
       wrap.appendChild(a);
     });
-    var hub = el('a', 'wla-other wla-other-hub', 'Compare all programs'); hub.href = data.meta.hubUrl;
+    var hub = el('a', 'wla-other wla-other-hub', null); hub.href = data.meta.hubUrl;
+    hub.appendChild(el('span', 'wla-other-icon wla-other-icon-glyph', '✈'));
+    hub.appendChild(el('span', 'wla-other-name', 'Compare all programs'));
     wrap.appendChild(hub);
     root.appendChild(wrap);
   }

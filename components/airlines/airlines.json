@@ -23,6 +23,7 @@
    "color": "#13377A",
    "currency": "United miles (MileagePlus)",
    "alliance": "Star Alliance",
+   "allianceIcon": "/components/airlines/img/star-alliance-logo.svg",
    "statusYear": "2027 qualification: calendar year (Jan 1 – Dec 31, 2027); status is valid until the end of the following program year",
    "statusMetric": "PQP (dollars-based points) — the only metric for 2027; PQF flight counts were removed",
    "statusMechanics": "Premier Qualifying Points (about 1 per $1 of eligible United fare). Each tier has a single PQP threshold for 2027 — the old PQF shortcut is gone. At least 4 paid segments on United or United Express are required for any tier.",
@@ -378,6 +379,7 @@
    "color": "#0B5CAD",
    "currency": "AAdvantage miles",
    "alliance": "oneworld",
+   "allianceIcon": "/components/airlines/img/oneworld-logo.svg",
    "statusYear": "2026–27 qualification: Mar 1, 2026 – Feb 28, 2027; status earned lasts through Mar 31, 2028",
    "statusMetric": "Loyalty Points (LP) — the only metric; no flight or segment requirement",
    "statusMechanics": "Loyalty Points come from flying (about 5 per $1 of eligible American fare), co-brand card spend (1 per $1), and partners. Bonus miles count as base miles, so they earn LP too. Basic Economy tickets bought after Dec 17, 2025 earn nothing.",
@@ -464,12 +466,13 @@
      ],
      "bags": "1 free checked bag",
      "eplus": "At check-in",
+     "eplusCompanions": 8,
      "seatLabel": "Main Cabin Extra",
      "lounge": "No lounge access (oneworld Ruby)",
      "upgrades": "24 hours before departure",
      "upgradeCompanions": 1,
      "whoFor": "The occasional flyer who wants a free bag, priority boarding, and a shot at upgrades on a few trips a year.",
-    "calc": {"bonusPct": 40, "bagsDomestic": 1, "bagsIntl": 1, "bagCompanions": 0, "seatCompanions": 0, "lounge": false, "loungeGuests": 0, "swu": 0}
+    "calc": {"bonusPct": 40, "bagsDomestic": 1, "bagsIntl": 1, "bagCompanions": 0, "seatCompanions": 8, "lounge": false, "loungeGuests": 0, "swu": 0}
     },
     {
      "name": "AAdvantage Platinum",
@@ -712,233 +715,386 @@
    ]
   },
   "dl": {
-   "id": "dl",
-   "name": "Delta SkyMiles",
-   "airline": "Delta Air Lines",
-   "short": "Delta",
-   "url": "/travel/airlines/delta.html",
-   "color": "#9B1B30",
-   "currency": "SkyMiles",
-   "alliance": "SkyTeam",
-   "statusYear": "Calendar year (Jan 1 – Dec 31); status lasts through Jan 31 of the year after next",
-   "statusMetric": "MQDs (Medallion Qualification Dollars): 1 per $1 of eligible ticket price",
-   "statusMechanics": "Status is dollars-only: Medallion Qualification Dollars from eligible Delta and partner tickets (taxes and Main Basic excluded), award tickets ($1 per 100 miles redeemed) and eligible Delta Amex cards (headstart plus spend). No segment requirement.",
-   "hubs": [
-    {
-     "code": "ATL",
-     "city": "Atlanta"
-    },
-    {
-     "code": "DTW",
-     "city": "Detroit"
-    },
-    {
-     "code": "MSP",
-     "city": "Minneapolis–St. Paul"
-    },
-    {
-     "code": "SLC",
-     "city": "Salt Lake City"
-    },
-    {
-     "code": "SEA",
-     "city": "Seattle–Tacoma"
-    },
-    {
-     "code": "JFK/LGA",
-     "city": "New York JFK and LaGuardia"
-    },
-    {
-     "code": "BOS",
-     "city": "Boston"
-    },
-    {
-     "code": "LAX",
-     "city": "Los Angeles"
-    }
-   ],
-   "flying": {
-    "unit": "MQD",
-    "perDollar": 1,
-    "basis": "$1 MQD per $1 of eligible ticket price (excluding taxes and fees and Main Basic tickets)"
+  "id": "dl",
+  "name": "Delta SkyMiles",
+  "airline": "Delta Air Lines",
+  "short": "Delta",
+  "url": "/travel/airlines/delta.html",
+  "color": "#9B1B30",
+  "currency": "SkyMiles",
+  "alliance": "SkyTeam",
+  "allianceIcon": "/components/airlines/img/skyteam-logo.png",
+  "statusYear": "2027 status: earn Jan 1 – Dec 31, 2026; status lasts through Jan 31, 2028",
+  "statusMetric": "MQDs (Medallion Qualification Dollars): 1 per $1 of eligible ticket price",
+  "statusMechanics": "Status is dollars-only: Medallion Qualification Dollars from eligible Delta and partner tickets (taxes and Main Basic excluded), award tickets ($1 per 100 miles redeemed) and eligible Delta Amex cards (headstart plus spend). No segment requirement.",
+  "hubs": [
+   {
+    "code": "ATL",
+    "city": "Atlanta"
    },
-     "calculator": {
-    "bagFeeRoundTrip": 90,
-    "bagFeeNote": "First checked bag $45 each way ($55 second) since Apr 2026. Bags are valued at the first-bag fee. Companion bag benefit excludes flights departing Paris CDG / Amsterdam AMS. International bag allowance uses the domestic number - not separately verified.",
-    "seatValueRoundTrip": 100,
-    "seatValueNote": "Estimate: Comfort+ runs about $20-$150+ per segment by route. Edit to match your routes. Comfort+ is free at booking for Platinum/Diamond, 72h before departure for Gold, 24h for Silver; 1 companion on the same reservation.",
-    "loungeDayPass": 0,
-    "loungeNote": "Delta status alone grants no Sky Club access on any itinerary - lounge value from status is $0. Access comes from cabin (Delta One / Premium Select) or a Choice Benefit membership, not status.",
-    "rucValue": 300,
-    "rucNote": "Regional Upgrade Certificates come from Choice Benefits: Platinum picks 4 RUCs as one Choice Benefit selection. Enter how many you picked; $300 each is an editable estimate.",
-    "gucValue": 800,
-    "gucNote": "Global Upgrade Certificates come from Choice Benefits: Diamond picks 4 Global, 8 Regional, or 2 Global + 4 Regional as one selection. Enter how many you picked; $800 each is an editable estimate.",
-    "cashbackTop": 3,
-    "milesValue": 1
+   {
+    "code": "DTW",
+    "city": "Detroit"
+   },
+   {
+    "code": "MSP",
+    "city": "Minneapolis–St. Paul"
+   },
+   {
+    "code": "SLC",
+    "city": "Salt Lake City"
+   },
+   {
+    "code": "SEA",
+    "city": "Seattle–Tacoma"
+   },
+   {
+    "code": "JFK/LGA",
+    "city": "New York JFK and LaGuardia"
+   },
+   {
+    "code": "BOS",
+    "city": "Boston"
+   },
+   {
+    "code": "LAX",
+    "city": "Los Angeles"
+   }
+  ],
+  "flying": {
+   "unit": "MQD",
+   "perDollar": 1,
+   "basis": "$1 MQD per $1 of eligible ticket price (excluding taxes and fees and Main Basic tickets)"
+  },
+  "calculator": {
+   "bagFeeRoundTrip": 90,
+   "bagFeeNote": "First checked bag $45 each way ($55 second) since Apr 2026. Bags are valued at the first-bag fee. Companion bag benefit excludes flights departing Paris CDG / Amsterdam AMS. International bag allowance uses the domestic number - not separately verified.",
+   "seatValueRoundTrip": 100,
+   "seatValueNote": "Estimate: Comfort+ runs about $20-$150+ per segment by route. Edit to match your routes. Comfort+ is free at booking for Platinum/Diamond, 72h before departure for Gold, 24h for Silver; 1 companion on the same reservation.",
+   "loungeDayPass": 0,
+   "loungeNote": "Delta status alone grants no Sky Club access on any itinerary - lounge value from status is $0. Access comes from cabin (Delta One / Premium Select) or a Choice Benefit membership, not status.",
+   "rucValue": 300,
+   "rucNote": "Regional Upgrade Certificates come from Choice Benefits: Platinum picks 4 RUCs as one Choice Benefit selection. Enter how many you picked; $300 each is an editable estimate.",
+   "gucValue": 800,
+   "gucNote": "Global Upgrade Certificates come from Choice Benefits: Diamond picks 4 Global, 8 Regional, or 2 Global + 4 Regional as one selection. Enter how many you picked; $800 each is an editable estimate.",
+   "cashbackTop": 3,
+   "milesValue": 1
   },
   "gifting": {
-    "mechanism": "Choice Benefits — gifting uses one of your Choice Benefit selections.",
-    "options": [
-      {"gift": "Silver Medallion x2 (x4 for the 2026 Medallion year)", "cost": "Platinum Choice Benefit", "max": 1, "choices": "Platinum gets 1 choice"},
-      {"gift": "Gold Medallion x2 (x4 for the 2026 Medallion year)", "cost": "Diamond Choice Benefit", "max": 1, "choices": "Diamond gets 3 choices"}
-    ],
-    "cap": null,
-    "note": "Diamond members effectively get 4 choices total, counting the Platinum choice earned on the way up. Picking a gift means not picking upgrade certificates, miles, or another Choice Benefit."
+   "mechanism": "Choice Benefits — gifting uses one of your Choice Benefit selections.",
+   "options": [
+    {
+     "gift": "Silver Medallion x2 (x4 for the 2026 Medallion year)",
+     "cost": "Platinum Choice Benefit",
+     "max": 1,
+     "choices": "Platinum gets 1 choice"
+    },
+    {
+     "gift": "Gold Medallion x2 (x4 for the 2026 Medallion year)",
+     "cost": "Diamond Choice Benefit",
+     "max": 1,
+     "choices": "Diamond gets 3 choices"
+    }
+   ],
+   "cap": null,
+   "note": "Diamond members effectively get 4 choices total, counting the Platinum choice earned on the way up. Picking a gift means not picking upgrade certificates, miles, or another Choice Benefit."
   },
   "cardStatus": {
-    "headline": "No Delta card grants status outright — but Delta cards give a $2,500 MQD headstart.",
-    "detail": "Delta Platinum and Reserve cardmembers get $2,500 MQDs each Medallion Qualification Year, no spend required — one per card type, max 4 deposits ($10,000) across card types. The card-alone hint below subtracts your card's $2,500 headstart. Sky Club access from the Reserve card is lounge access, not status."
+   "headline": "No Delta card grants status outright — but Delta cards give a $2,500 MQD headstart.",
+   "detail": "Delta Platinum and Reserve cardmembers get $2,500 MQDs each Medallion Qualification Year, no spend required — one per card type, max 4 deposits ($10,000) across card types. The card-alone hint below subtracts your card's $2,500 headstart. Sky Club access from the Reserve card is lounge access, not status."
   },
-"tiers": [
-    {
-     "name": "Silver Medallion",
-     "threshold": 5000,
-     "perks": [
-      "1 free checked bag",
-      "Complimentary upgrades clear 24 hours before departure",
-      "Priority customer-service line",
-      "7 miles per $1 on Delta flights"
-     ],
-    "calc": {"bonusPct": 40, "bagsDomestic": 1, "bagsIntl": 1, "bagCompanions": 8, "seatCompanions": 1, "lounge": false, "loungeGuests": 0}
+  "tiers": [
+   {
+    "name": "Silver Medallion",
+    "threshold": 5000,
+    "perks": [
+     "1 free checked bag",
+     "Complimentary upgrades clear 24 hours before departure",
+     "Priority customer-service line",
+     "7 miles per $1 on Delta flights"
+    ],
+    "calc": {
+     "bonusPct": 40,
+     "bagsDomestic": 1,
+     "bagsIntl": 1,
+     "bagCompanions": 8,
+     "seatCompanions": 1,
+     "lounge": false,
+     "loungeGuests": 0
     },
-    {
-     "name": "Gold Medallion",
-     "threshold": 10000,
-     "perks": [
-      "2 free checked bags",
-      "Upgrades clear 72 hours before departure",
-      "4 onboard drink vouchers",
-      "8 miles per $1 on Delta flights"
-     ],
-    "calc": {"bonusPct": 60, "bagsDomestic": 2, "bagsIntl": 2, "bagCompanions": 8, "seatCompanions": 1, "lounge": false, "loungeGuests": 0}
-    },
-    {
-     "name": "Platinum Medallion",
-     "threshold": 15000,
-     "perks": [
-      "3 free checked bags in the U.S. and Canada",
-      "Comfort+ upgrades clear shortly after ticketing; First 120 hours out",
-      "1 Choice Benefit (for example 4 Regional Upgrade Certificates)",
-      "9 miles per $1 on Delta flights"
-     ],
-    "calc": {"bonusPct": 80, "bagsDomestic": 3, "bagsIntl": 3, "bagCompanions": 8, "seatCompanions": 1, "lounge": false, "loungeGuests": 0}
-    },
-    {
-     "name": "Diamond Medallion",
-     "threshold": 28000,
-     "perks": [
-      "3 free checked bags in the U.S. and Canada",
-      "Same upgrade windows as Platinum, with priority",
-      "3 Choice Benefits (for example 4 Global Upgrade Certificates)",
-      "11 miles per $1 on Delta flights"
-     ],
-    "calc": {"bonusPct": 120, "bagsDomestic": 3, "bagsIntl": 3, "bagCompanions": 8, "seatCompanions": 1, "lounge": false, "loungeGuests": 0}
-    }
-   ],
-   "cards": [
-    {
-     "id": "delta_reserve",
-     "name": "Delta SkyMiles Reserve Amex",
-     "issuer": "American Express",
-     "fee": 650,
-     "unit": "MQD",
-     "perDollar": 0.1,
-     "perDollarLabel": "1 MQD per $10",
-     "bonus": 2500,
-     "bonusLabel": "$2,500 MQD Headstart each qualification year",
-     "cap": null,
-     "plannerKey": "delta_reserve",
-     "note": "15 Sky Club visits a year; $75,000 of spend in a calendar year unlocks unlimited Sky Club access (see Delta's terms)."
-    },
-    {
-     "id": "delta_platinum",
-     "name": "Delta SkyMiles Platinum Amex",
-     "issuer": "American Express",
-     "fee": 350,
-     "unit": "MQD",
-     "perDollar": 0.05,
-     "perDollarLabel": "1 MQD per $20",
-     "bonus": 2500,
-     "bonusLabel": "$2,500 MQD Headstart each qualification year",
-     "cap": null,
-     "plannerKey": "delta_plat",
-     "note": "Same headstart as Reserve at a lower fee, but half the MQD earn rate on spend."
-    }
-   ],
-   "compare": {
-    "topTierRequirement": "$28,000 MQDs (flying, award MQDs and card MQDs combined)",
-    "easiestCardPath": "Delta SkyMiles Reserve Amex: $2,500 MQD Headstart plus 1 MQD per $10 of spend",
-    "awardFlexScore": 2,
-    "awardFlexWhy": "Free award changes and cancellations (U.S. and Canada origin), no blackout dates on Delta flights, Amex Membership Rewards at 1:1, but dynamic pricing with no award chart and a narrower list of bookable partners.",
-    "bestFitCities": "Atlanta, Detroit, Minneapolis–St. Paul, Salt Lake City, Seattle, Boston, New York JFK/LGA, Los Angeles",
-    "gemHeadline": "Even award tickets earn MQDs, and Medallion upgrades apply on award travel."
+    "color": "#7C8698",
+    "bags": "1 free checked bag",
+    "bagCompanions": 8,
+    "eplus": "24 hours before departure",
+    "eplusCompanions": 1,
+    "seatLabel": "Comfort+",
+    "lounge": "No lounge access from status",
+    "upgrades": "24 hours before departure",
+    "upgradeCompanions": 1,
+    "whoFor": "You fly Delta a few times a year and check a bag. But one free bag is also what a Delta Gold card gives you — Silver alone is rarely worth chasing."
    },
-   "gems": [
-    {
-     "title": "The MQD Headstart is per card type",
-     "body": "Delta gives $2,500 MQDs per eligible card type every qualification year. One Platinum- or Reserve-tier card starts you halfway to Silver. Delta words the benefit as 'per card type'; several card guides read that as stacking across a Platinum and a Reserve card. Confirm the current terms before relying on a second card for it.",
-     "source": "delta.com: Medallion overview and how to qualify",
-     "url": "https://www.delta.com/us/en/skymiles/medallion-program/how-to-qualify"
+   {
+    "name": "Gold Medallion",
+    "threshold": 10000,
+    "perks": [
+     "2 free checked bags",
+     "Upgrades clear 72 hours before departure",
+     "4 onboard drink vouchers",
+     "8 miles per $1 on Delta flights"
+    ],
+    "calc": {
+     "bonusPct": 60,
+     "bagsDomestic": 2,
+     "bagsIntl": 2,
+     "bagCompanions": 8,
+     "seatCompanions": 1,
+     "lounge": false,
+     "loungeGuests": 0
     },
-    {
-     "title": "Award tickets still earn status dollars",
-     "body": "Award Tickets and Upgrades with Miles (excluding Main Basic) earn $1 MQD per 100 miles redeemed, so spending miles also moves you toward Medallion status.",
-     "source": "Delta News Hub: 2026 Medallion status",
-     "url": "https://news.delta.com/2026-medallion-status-what-know-year-end"
+    "color": "#A67C00",
+    "bags": "2 free checked bags",
+    "bagCompanions": 8,
+    "eplus": "72 hours before departure",
+    "eplusCompanions": 1,
+    "seatLabel": "Comfort+",
+    "lounge": "No Delta Sky Club access from status (SkyTeam Elite Plus partner lounges on international itineraries)",
+    "upgrades": "72 hours before departure",
+    "upgradeCompanions": 1,
+    "whoFor": "The regular Delta flyer: free bags for the family, earlier upgrades, and waived same-day confirmed changes."
+   },
+   {
+    "name": "Platinum Medallion",
+    "threshold": 15000,
+    "perks": [
+     "3 free checked bags in the U.S. and Canada",
+     "Comfort+ upgrades at booking; First Class 120 hours out",
+     "1 Choice Benefit (for example 4 Regional Upgrade Certificates)",
+     "9 miles per $1 on Delta flights"
+    ],
+    "calc": {
+     "bonusPct": 80,
+     "bagsDomestic": 3,
+     "bagsIntl": 3,
+     "bagCompanions": 8,
+     "seatCompanions": 1,
+     "lounge": false,
+     "loungeGuests": 0
     },
-    {
-     "title": "Cardmember discount and free changes on awards",
-     "body": "Eligible Delta Amex cardmembers save 15% when booking Delta-operated award travel. Awards that originate in the U.S. or Canada can be changed or canceled without a redeposit or change fee (excluding Basic fares), though any mileage difference and taxes apply.",
-     "source": "delta.com: Travel with Miles",
-     "url": "https://www.delta.com/us/en/skymiles/how-to-use-miles/travel-with-miles"
+    "color": "#3A6EA5",
+    "bags": "3 free checked bags",
+    "bagCompanions": 8,
+    "eplus": "At booking",
+    "eplusCompanions": 1,
+    "seatLabel": "Comfort+",
+    "lounge": "No Delta Sky Club access from status (SkyTeam Elite Plus partner lounges on international itineraries)",
+    "upgrades": "120 hours before departure",
+    "upgradeCompanions": 1,
+    "whoFor": "The sweet spot: Comfort+ at booking, one Choice Benefit (often 4 Regional Upgrade Certificates), and waived same-day changes."
+   },
+   {
+    "name": "Diamond Medallion",
+    "threshold": 28000,
+    "perks": [
+     "3 free checked bags in the U.S. and Canada",
+     "Same upgrade windows as Platinum, with priority",
+     "3 Choice Benefits (for example 4 Global Upgrade Certificates)",
+     "11 miles per $1 on Delta flights"
+    ],
+    "calc": {
+     "bonusPct": 120,
+     "bagsDomestic": 3,
+     "bagsIntl": 3,
+     "bagCompanions": 8,
+     "seatCompanions": 1,
+     "lounge": false,
+     "loungeGuests": 0
     },
-    {
-     "title": "Medallion perks stretch to award tickets and companions",
-     "body": "Complimentary upgrades apply on paid tickets, award tickets, Miles + Cash and Pay with Miles tickets (except Basic experiences), including upgrades for a companion. The free checked bag benefit covers the member plus up to eight companions on the same reservation when flying Delta.",
-     "source": "delta.com: Medallion benefits",
-     "url": "https://www.delta.com/us/en/skymiles/medallion-program/medallion-benefits"
-    },
-    {
-     "title": "Choice Benefits include an MQD accelerator and a way back",
-     "body": "Platinum and Diamond members choose Choice Benefits such as Upgrade Certificates, bonus miles, status gifting for others, or an MQD Accelerator ($1,000 or $2,000 MQDs toward the next qualification year). Delta also runs Reclaim My Status for people whose travel slows down.",
-     "source": "delta.com: Medallion benefits",
-     "url": "https://www.delta.com/us/en/skymiles/medallion-program/medallion-benefits"
-    },
-    {
-     "title": "Spend-based Sky Club access",
-     "body": "The Delta SkyMiles Reserve Amex includes 15 Sky Club visits per year. Spending $75,000 on an eligible card in a calendar year unlocks unlimited Sky Club access for the rest of that year and the next Medallion year, a spend target that also lands you in Gold on MQDs.",
-     "source": "American Express card terms; Delta Sky Club access rules",
-     "url": "https://www.delta.com/us/en/delta-sky-club/access"
-    }
-   ],
-   "retired": [],
-   "sources": [
-    {
-     "label": "delta.com: How to get Medallion status",
-     "url": "https://www.delta.com/us/en/skymiles/medallion-program/how-to-qualify"
-    },
-    {
-     "label": "delta.com: Medallion benefits",
-     "url": "https://www.delta.com/us/en/skymiles/medallion-program/medallion-benefits"
-    },
-    {
-     "label": "delta.com: Travel with miles",
-     "url": "https://www.delta.com/us/en/skymiles/how-to-use-miles/travel-with-miles"
-    },
-    {
-     "label": "Delta News Hub: 2026 Medallion status, what to know before year end",
-     "url": "https://news.delta.com/2026-medallion-status-what-know-year-end"
-    },
-    {
-     "label": "delta.com: Sky Club access",
-     "url": "https://www.delta.com/us/en/delta-sky-club/access"
-    },
-    {
-     "label": "delta.com: Convert partner points to miles",
-     "url": "https://www.delta.com/us/en/skymiles/how-to-earn-miles/convert-partner-points"
-    }
-   ]
-  }
+    "color": "#4C1D95",
+    "bags": "3 free checked bags",
+    "bagCompanions": 8,
+    "eplus": "At booking",
+    "eplusCompanions": 1,
+    "seatLabel": "Comfort+",
+    "lounge": "No Delta Sky Club access from status (SkyTeam Elite Plus partner lounges on international itineraries)",
+    "upgrades": "120 hours before departure, highest priority",
+    "upgradeCompanions": 1,
+    "whoFor": "The road-warrior tier: three Choice Benefits, top upgrade priority, free CLEAR+, and a dedicated phone line."
+   }
+  ],
+  "cards": [
+   {
+    "id": "delta_reserve",
+    "name": "Delta SkyMiles Reserve Amex",
+    "issuer": "American Express",
+    "fee": 650,
+    "unit": "MQD",
+    "perDollar": 0.1,
+    "perDollarLabel": "1 MQD per $10",
+    "bonus": 2500,
+    "bonusLabel": "$2,500 MQD Headstart each qualification year",
+    "cap": null,
+    "plannerKey": "delta_reserve",
+    "note": "15 Sky Club visits a year; $75,000 of spend in a calendar year unlocks unlimited Sky Club access. Annual companion certificate (First / Comfort+ / Main) after renewal. Centurion Lounge access when flying Delta.",
+    "image": "/components/airlines/img/cards/delta-reserve.png"
+   },
+   {
+    "id": "delta_platinum",
+    "name": "Delta SkyMiles Platinum Amex",
+    "issuer": "American Express",
+    "fee": 350,
+    "unit": "MQD",
+    "perDollar": 0.05,
+    "perDollarLabel": "1 MQD per $20",
+    "bonus": 2500,
+    "bonusLabel": "$2,500 MQD Headstart each qualification year",
+    "cap": null,
+    "plannerKey": "delta_plat",
+    "note": "Same $2,500 headstart as Reserve at a lower fee, but half the MQD earn rate. Annual companion certificate (Main cabin, fare classes L/T/U/V/X) after renewal. Global Entry / TSA PreCheck credit up to $120 every 4 years.",
+    "image": "/components/airlines/img/cards/delta-platinum.png"
+   }
+  ],
+  "compare": {
+   "topTierRequirement": "$28,000 MQDs (flying, award MQDs and card MQDs combined)",
+   "easiestCardPath": "Delta SkyMiles Reserve Amex: $2,500 MQD Headstart plus 1 MQD per $10 of spend",
+   "awardFlexScore": 2,
+   "awardFlexWhy": "Free award changes and cancellations (U.S. and Canada origin), no blackout dates on Delta flights, Amex Membership Rewards at 1:1, but dynamic pricing with no award chart and a narrower list of bookable partners.",
+   "bestFitCities": "Atlanta, Detroit, Minneapolis–St. Paul, Salt Lake City, Seattle, Boston, New York JFK/LGA, Los Angeles",
+   "gemHeadline": "Even award tickets earn MQDs, and Medallion upgrades apply on award travel."
+  },
+  "gems": [
+   {
+    "title": "The MQD Headstart is per card type",
+    "body": "Delta gives $2,500 MQDs per eligible card type every qualification year — one Platinum- or Reserve-tier card starts you halfway to Silver. The headstart stacks across card types (a Platinum plus a Reserve), up to 4 deposits / $10,000 MQDs total across card types.",
+    "source": "Amex card terms; TPG: Delta Platinum review",
+    "url": "https://thepointsguy.com/credit-cards/reviews/platinum-delta-skymiles-credit-card-review"
+   },
+   {
+    "title": "Award tickets still earn status dollars",
+    "body": "Award tickets and upgrades with miles (excluding Main Basic) earn $1 MQD per 100 miles redeemed, so spending miles also moves you toward Medallion status.",
+    "source": "Delta News Hub: 2026 Medallion status",
+    "url": "https://news.delta.com/2026-medallion-status-what-know-year-end"
+   },
+   {
+    "title": "TakeOff 15 stacks on flash sales",
+    "body": "Gold, Platinum and Reserve cardholders save 15% on Delta-operated award tickets (TakeOff 15), and it stacks on SkyMiles flash sales — recurring ~2-day sales with domestic one-ways from 5,000 miles and US–Europe round-trips from 26,000. Check the cash fare too; sales often discount both.",
+    "source": "Thrifty Traveler: TakeOff 15; PointsToPictures: SkyMiles guide",
+    "url": "https://thriftytraveler.com/guides/credit-card/delta-takeoff-15-benefit/"
+   },
+   {
+    "title": "Book the same SkyTeam seat for fewer miles",
+    "body": "The same SkyTeam seat often costs far fewer miles booked through Air France–KLM Flying Blue (US–Europe business from 60,000 miles at saver level) or Virgin Atlantic Flying Club (~60,000 for Delta One JFK–LHR) than through SkyMiles (~95,000+). Amex points transfer to all three.",
+    "source": "TPG: Flying Blue guide; Mighty Travels",
+    "url": "http://thepointsguy.com/loyalty-programs/ultimate-guide-flying-blue/"
+   },
+   {
+    "title": "Companion certificate sweet spots",
+    "body": "Use the annual companion certificate on the most expensive round-trip you'd buy anyway — transcon or Hawaii, First Class on Reserve — since the companion pays only $22–$250 in taxes/fees. Value collapses on cheap short hops. Platinum's cert covers Main cabin (fare classes L/T/U/V/X); Reserve's also covers First and Comfort+.",
+    "source": "TPG: Delta companion certificate",
+    "url": "https://thepointsguy.com/credit-cards/save-family-money-delta-companion-ticket/"
+   },
+   {
+    "title": "Upgrade certificates: use them where they outrank everything",
+    "body": "Global Upgrade Certificates are best on long-haul international to Delta One (also valid on select Air France, KLM, Virgin Atlantic, Korean Air and Aeromexico flights). Regional certificates cover domestic and nearby international, including Delta One on transcons. Both are one-way, one cabin up, one passenger per certificate — and an open seat on the seat map is not the same as upgrade space.",
+    "source": "TPG: Delta upgrade certificates",
+    "url": "https://thepointsguy.com/loyalty-programs/delta-upgrade-certificates"
+   },
+   {
+    "title": "Spend-based Sky Club access",
+    "body": "The Delta SkyMiles Reserve Amex includes 15 Sky Club visits per year. Spending $75,000 on the card in a calendar year unlocks unlimited Sky Club access. Remember: Basic Economy tickets get no Sky Club entry even with an eligible card.",
+    "source": "Delta Sky Club access rules",
+    "url": "https://www.delta.com/us/en/delta-sky-club/access"
+   }
+  ],
+  "retired": [],
+  "sources": [
+   {
+    "label": "delta.com: How to get Medallion status",
+    "url": "https://www.delta.com/us/en/skymiles/medallion-program/how-to-qualify"
+   },
+   {
+    "label": "delta.com: Medallion benefits",
+    "url": "https://www.delta.com/us/en/skymiles/medallion-program/medallion-benefits"
+   },
+   {
+    "label": "delta.com: Travel with miles",
+    "url": "https://www.delta.com/us/en/skymiles/how-to-use-miles/travel-with-miles"
+   },
+   {
+    "label": "Delta News Hub: 2026 Medallion status, what to know before year end",
+    "url": "https://news.delta.com/2026-medallion-status-what-know-year-end"
+   },
+   {
+    "label": "delta.com: Sky Club access",
+    "url": "https://www.delta.com/us/en/delta-sky-club/access"
+   },
+   {
+    "label": "delta.com: Convert partner points to miles",
+    "url": "https://www.delta.com/us/en/skymiles/how-to-earn-miles/convert-partner-points"
+   },
+   {
+    "label": "TPG: Delta Choice Benefits guide",
+    "url": "http://thePointsGuy.com/loyalty-programs/ultimate-guide-delta-choice-benefits/"
+   },
+   {
+    "label": "TPG: Earning MQDs on partner airlines",
+    "url": "https://thepointsguy.com/loyalty-programs/earn-delta-mqds-flying-partner-airlines/"
+   },
+   {
+    "label": "TPG: Delta Sky Club access guide",
+    "url": "http://thepointsguy.com/loyalty-programs/ultimate-guide-delta-sky-club-access/"
+   },
+   {
+    "label": "SkyTeam: member airlines",
+    "url": "http://www.skyteam.com/en/about/"
+   },
+   {
+    "label": "TPG: Delta SkyMiles Platinum review",
+    "url": "https://thepointsguy.com/credit-cards/reviews/platinum-delta-skymiles-credit-card-review"
+   }
+  ],
+  "pathsCards": [
+   "delta_reserve",
+   "delta_platinum"
+  ],
+  "alliancePartners": [
+   {
+    "name": "Air France",
+    "region": "Paris CDG · Europe",
+    "note": "Delta's core transatlantic joint-venture partner; the largest Europe gateway.",
+    "color": "#05164D"
+   },
+   {
+    "name": "KLM",
+    "region": "Amsterdam AMS · Europe",
+    "note": "Transatlantic JV partner; AMS is Delta's #2 Europe gateway.",
+    "color": "#00A1DE"
+   },
+   {
+    "name": "Korean Air",
+    "region": "Seoul ICN · Asia-Pacific",
+    "note": "Delta's key Asia partner; ICN gateway to Asia.",
+    "color": "#003A70"
+   },
+   {
+    "name": "Virgin Atlantic",
+    "region": "London LHR · UK",
+    "note": "Delta owns 49%; London gateway and Upper Class awards.",
+    "color": "#E10A0A"
+   },
+   {
+    "name": "Aeromexico",
+    "region": "Mexico City MEX · Latin America",
+    "note": "Delta owns 20%; the biggest Latin gateway.",
+    "color": "#C8102E"
+   },
+   {
+    "name": "SAS",
+    "region": "Copenhagen CPH · Scandinavia",
+    "note": "Newest SkyTeam member (2024); CPH is the alliance's growing northern-Europe hub.",
+    "color": "#003057"
+   }
+  ]
+ }
  },
  "cities": [
   {
