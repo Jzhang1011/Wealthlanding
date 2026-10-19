@@ -43,6 +43,26 @@
     thead.appendChild(hr); table.appendChild(thead);
   }
 
+  /* Card status tiers (hotels.json cards[].statusTier) -> row class, badge and legend */
+  var STATUS_TIERS = {
+    top: { badge: 'Top tier', legend: "Card gives the program's top elite tier" },
+    perks: { badge: 'Breakfast or lounge', legend: 'Status includes free breakfast, a food and beverage credit or lounge access, but is not the top tier' },
+    basic: { badge: null, legend: 'Lower tier without those benefits' }
+  };
+  function statusLegend(used) {
+    var ul = el('ul', 'wlh-tier-legend');
+    ul.setAttribute('aria-label', 'Row colors in the card status table');
+    ['top', 'perks', 'basic'].forEach(function (k) {
+      if (k !== 'basic' && !used[k]) return;
+      var li = el('li', 'wlh-tier-' + k);
+      li.appendChild(el('span', 'wlh-tier-swatch'));
+      if (STATUS_TIERS[k].badge) { li.appendChild(el('span', 'wlh-tier-badge', STATUS_TIERS[k].badge)); }
+      li.appendChild(document.createTextNode(STATUS_TIERS[k].legend));
+      ul.appendChild(li);
+    });
+    return ul;
+  }
+
   /* ---------- hub ---------- */
   function renderProgramCards(root, data) {
     var grid = el('div', 'wla-cards wlh-cards');
@@ -129,20 +149,25 @@
     var t = el('table', 'wla-table wlh-cardroutes');
     t.appendChild(el('caption', 'wla-sr', 'Status and night credits from hotel co-brand cards'));
     headRow(t, ['Card', 'Program', 'Annual fee', 'Status for holding it', 'Night credits', 'Spend to the next tier']);
-    var tb = el('tbody');
+    var tb = el('tbody'), used = {};
     ORDER.forEach(function (id) {
       var p = data.programs[id];
       p.cards.forEach(function (c) {
-        var tr = el('tr'); tr.appendChild(th(c.name, 'row'));
+        var tier = STATUS_TIERS[c.statusTier] ? c.statusTier : 'basic';
+        if (tier !== 'basic') used[tier] = true;
+        var tr = el('tr', 'wlh-tier-' + tier); tr.appendChild(th(c.name, 'row'));
         tr.appendChild(el('td', null, p.short));
         tr.appendChild(el('td', null, fee(c)));
-        tr.appendChild(el('td', null, c.status));
+        var st = el('td', null, c.status);
+        if (STATUS_TIERS[tier].badge) { st.appendChild(document.createTextNode(' ')); st.appendChild(el('span', 'wlh-tier-badge', STATUS_TIERS[tier].badge)); }
+        tr.appendChild(st);
         tr.appendChild(el('td', c.enc ? null : 'wla-muted', c.enc || 'None described'));
         tr.appendChild(el('td', c.spend ? null : 'wla-muted', c.spend || '\u2014'));
         tb.appendChild(tr);
       });
     });
     t.appendChild(tb);
+    root.appendChild(statusLegend(used));
     root.appendChild(tableWrap(t, 'Hotel co-brand card routes table'));
   }
 
