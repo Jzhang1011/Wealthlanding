@@ -1,0 +1,21 @@
+/* Hotel loyalty section: small additions on top of /components/airlines/airlines.css (shared wla- classes). */
+@media(min-width:800px){.wlh-cards{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.wlh-cards{grid-template-columns:repeat(4,1fr)}}
+.wlh-card{padding-top:0;overflow:hidden}
+.wlh-card-img{display:block;width:calc(100% + 2.4rem);max-width:none;height:auto;aspect-ratio:16/10;object-fit:cover;margin:0 -1.2rem .9rem}
+.wlh-compare{min-width:760px}
+.wlh-compare th[scope=row]{width:8.5rem}
+.wlh-compare thead th{white-space:normal}
+.wlh-fit-matrix{min-width:820px}
+.wlh-fit-matrix td{min-width:10rem}
+.wlh-cardroutes{min-width:820px}
+.wlh-cardroutes thead th,.wlh-cards-table thead th{white-space:normal}
+.wlh-cards-table{min-width:760px}
+.wlh-cards-table th[scope=row]{min-width:12rem}
+.wlh-tier-compare td{min-width:9rem}
+.wlh-strong{font-weight:700;color:var(--wla-navy)}
+.wlh-fit{min-width:560px}
+.wlh-rules{display:grid;gap:.6rem;margin:1rem 0}
+.wlh-rule{background:#fff;border:1px solid var(--wla-line);border-left:4px solid var(--wla-accent,#2563eb);border-radius:.6rem;padding:.7rem .9rem}
+.wlh-rule dt{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--wla-muted);font-weight:700}
+.wlh-rule dd{margin:.2rem 0 0}
