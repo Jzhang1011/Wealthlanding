@@ -4,6 +4,8 @@
  * Data:   /components/airlines/airlines.json  (programs, tiers, cards, hubs, city fit,
  *         hidden gems, sources, last-verified date). Edit that file and every page updates.
  * Styles: /components/airlines/airlines.css
+ * Core:   /components/loyalty/loyalty-core.js (load first: helpers, gems, sources,
+ *         other-programs, verified and the mount loop are shared with the hotel section)
  *
  * Pages place empty mount points such as
  *   <div data-wl-render="tiers" data-program="ua"></div>
@@ -39,38 +41,9 @@
   var ORDER = ['ua', 'aa', 'dl'];
   var RANKS = ['Entry tier', 'Second tier', 'Third tier', 'Top tier'];
 
-  function el(tag, cls, text) {
-    var n = document.createElement(tag);
-    if (cls) n.className = cls;
-    if (text != null) n.textContent = text;
-    return n;
-  }
-  function money(n) {
-    return '$' + Math.round(n).toLocaleString('en-US');
-  }
-  function num(n) {
-    return Math.round(n).toLocaleString('en-US');
-  }
-  function link(href, text, cls, external) {
-    var a = el('a', cls, text);
-    a.href = href;
-    if (external) { a.target = '_blank'; a.rel = 'noopener'; }
-    return a;
-  }
-  function tableWrap(table, label) {
-    var w = el('div', 'wla-scroll');
-    w.setAttribute('role', 'region');
-    w.setAttribute('aria-label', label);
-    w.tabIndex = 0;
-    w.appendChild(table);
-    return w;
-  }
-  function th(text, scope) {
-    var c = el('th', null, text);
-    if (scope) c.setAttribute('scope', scope);
-    return c;
-  }
-  function pill(text, cls) { return el('span', 'wla-pill ' + (cls || ''), text); }
+  /* Shared helpers and generic renderers live in /components/loyalty/loyalty-core.js */
+  var L = window.WLLoyalty;
+  var el = L.el, money = L.money, num = L.num, link = L.link, tableWrap = L.tableWrap, th = L.th, pill = L.pill;
 
   /* ---------- card-spend math (illustrative) ---------- */
   // Returns the card spend (USD) needed to reach `threshold` units after `flyingUnits`
@@ -726,24 +699,6 @@
     root.appendChild(grid);
   }
 
-  function renderGems(root, data, id, retired, limit) {
-    var p = data.programs[id];
-    var list = (retired ? p.retired : p.gems) || [];
-    if (limit) list = list.slice(0, limit);
-    if (!list.length) return;
-    var grid = el('div', retired ? 'wla-gems wla-gems-retired' : 'wla-gems');
-    list.forEach(function (g) {
-      var c = el('article', 'wla-gem');
-      c.appendChild(el('h3', 'wla-gem-title', g.title));
-      c.appendChild(el('p', null, g.body));
-      var s = el('p', 'wla-gem-src'); s.appendChild(document.createTextNode('Source: '));
-      s.appendChild(link(g.url, g.source, 'wla-link', true));
-      c.appendChild(s);
-      grid.appendChild(c);
-    });
-    root.appendChild(grid);
-  }
-
   function renderCities(root, data, id) {
     var p = data.programs[id];
     var rows = data.cities.filter(function (c) { return (c.hubs[id] || []).length; });
@@ -769,49 +724,12 @@
     root.appendChild(el('p', 'wla-fine', 'Hubs reflect each airline\u2019s published U.S. hub list. Nonstop reach from smaller airports varies by season and changes often; check the airline\u2019s route map for your airport.'));
   }
 
-  function renderSources(root, data, id) {
-    var p = data.programs[id];
-    var ul = el('ul', 'wla-sources');
-    p.sources.forEach(function (s) {
-      var li = el('li'); li.appendChild(link(s.url, s.label, 'wla-link', true)); ul.appendChild(li);
-    });
-    root.appendChild(ul);
-  }
-
-  function renderOther(root, data, id) {
-    var wrap = el('div', 'wla-others');
-    ORDER.filter(function (k) { return k !== id; }).forEach(function (k) {
-      var p = data.programs[k];
-      var a = el('a', 'wla-other', null); a.href = p.url; a.style.setProperty('--wla-accent', p.color);
-      if (p.allianceIcon) {
-        var img = el('img', 'wla-other-icon', null);
-        img.src = p.allianceIcon; img.alt = p.alliance + ' logo';
-        a.appendChild(img);
-      }
-      a.appendChild(el('span', 'wla-other-name', p.name));
-      wrap.appendChild(a);
-    });
-    var hub = el('a', 'wla-other wla-other-hub', null); hub.href = data.meta.hubUrl;
-    hub.appendChild(el('span', 'wla-other-icon wla-other-icon-glyph', '✈'));
-    hub.appendChild(el('span', 'wla-other-name', 'Compare all programs'));
-    wrap.appendChild(hub);
-    root.appendChild(wrap);
-  }
-
-  function renderVerified(root, data) {
-    var box = el('div', 'wla-verified');
-    box.appendChild(el('strong', null, 'Last verified: ' + data.meta.lastVerifiedLabel + '. '));
-    box.appendChild(document.createTextNode(data.meta.disclaimer));
-    root.appendChild(box);
-  }
-
   var RENDER = {
     'program-cards': renderProgramCards,
     'compare-table': renderCompareTable,
     'picker': renderPicker,
     'card-spend': renderCardSpend,
-    'coming-soon': renderComingSoon,
-    'verified': renderVerified
+    'coming-soon': renderComingSoon
   };
   var RENDER_P = {
     'facts': renderFacts,
@@ -822,40 +740,17 @@
     'fare-compare': renderFareCompare,
     'card-gallery': renderCardGallery,
     'cardpath': renderCardPath,
-    'cities': renderCities,
-    'sources': renderSources,
-    'other-programs': renderOther
+    'cities': renderCities
   };
 
-  function run(data) {
-    var nodes = document.querySelectorAll('[data-wl-render]');
-    Array.prototype.forEach.call(nodes, function (node) {
-      var kind = node.getAttribute('data-wl-render');
-      var prog = node.getAttribute('data-program');
-      try {
-        node.textContent = '';
-        if (RENDER[kind]) RENDER[kind](node, data);
-        else if (kind === 'gems') renderGems(node, data, prog, false, parseInt(node.getAttribute('data-limit') || '0', 10));
-        else if (kind === 'retired') renderGems(node, data, prog, true);
-        else if (RENDER_P[kind] && data.programs[prog]) RENDER_P[kind](node, data, prog);
-        node.setAttribute('data-wl-ready', '1');
-      } catch (e) {
-        node.textContent = 'This section could not load. Please refresh the page.';
-        if (window.console) console.error('[wl-airlines]', kind, e);
-      }
-    });
-  }
-
-  function start() {
-    fetch(DATA_URL, { credentials: 'same-origin' })
-      .then(function (r) { if (!r.ok) throw new Error('airlines.json ' + r.status); return r.json(); })
-      .then(run)
-      .catch(function (e) {
-        if (window.console) console.error('[wl-airlines]', e);
-        Array.prototype.forEach.call(document.querySelectorAll('[data-wl-render]'), function (n) {
-          n.textContent = 'This section could not load. Please refresh the page.';
-        });
-      });
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+  L.mount({
+    set: 'airlines',
+    dataUrl: DATA_URL,
+    order: ORDER,
+    hub: RENDER,
+    program: RENDER_P,
+    hubIcon: '\u2708',
+    hubLabel: 'Compare all programs',
+    tag: 'wl-airlines'
+  });
 })();

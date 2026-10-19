@@ -1,0 +1,1017 @@
+{
+ "meta": {
+  "lastVerified": "2026-10-19",
+  "lastVerifiedLabel": "October 19, 2026",
+  "disclaimer": "Hotel programs and card issuers change benefits, thresholds and award prices without much notice, and many benefits are \"subject to availability\" at the hotel. This guide is general education, not financial or travel advice; confirm the current terms on the program’s and issuer’s own site before you book, apply or change how you spend.",
+  "hubUrl": "/travel/hotels/",
+  "plannerUrl": "/tools/credit-card/#unlocks",
+  "airlineHubUrl": "/travel/airlines/"
+ },
+ "programs": {
+  "mb": {
+   "id": "mb",
+   "name": "Marriott Bonvoy",
+   "short": "Marriott",
+   "glyph": "M",
+   "color": "#8f2f23",
+   "url": "/travel/hotels/marriott.html",
+   "img": "/components/hotels/img/marriott-card.webp",
+   "imgAlt": "A hotel lobby with a wide staircase and chandeliers",
+   "currency": "Marriott Bonvoy points",
+   "statusMechanics": "Elite Night Credits in a calendar year (Ambassador also needs qualifying spend)",
+   "facts": [
+    [
+     "Currency",
+     "Marriott Bonvoy points"
+    ],
+    [
+     "Elite tiers",
+     "Silver, Gold, Platinum, Titanium, Ambassador"
+    ],
+    [
+     "How status is earned",
+     "Elite Night Credits (nights) in a calendar year; Ambassador adds a spend requirement"
+    ],
+    [
+     "Top tier",
+     "Ambassador Elite: 100 nights plus $23,000 in qualifying annual spend"
+    ],
+    [
+     "Long-stay award perk",
+     "Stay for 5, Pay for 4 on award stays"
+    ],
+    [
+     "Card route",
+     "Co-brand cards from American Express and Chase grant status and up to 25 Elite Night Credits a year"
+    ]
+   ],
+   "tiers": [
+    {
+     "name": "Silver Elite",
+     "req": "10 nights",
+     "bonus": "10%",
+     "upgrade": null,
+     "late": "Priority late checkout",
+     "food": null,
+     "extras": [
+      "Ultimate Reservation Guarantee",
+      "Free Wi-Fi"
+     ]
+    },
+    {
+     "name": "Gold Elite",
+     "req": "25 nights",
+     "bonus": "25%",
+     "upgrade": "Enhanced room upgrade on arrival, subject to availability",
+     "late": "2 p.m., subject to availability",
+     "food": null,
+     "extras": [
+      "Welcome gift of 250 or 500 points, varying by brand"
+     ]
+    },
+    {
+     "name": "Platinum Elite",
+     "req": "50 nights",
+     "bonus": "50%",
+     "upgrade": "Enhanced upgrade including Select Suites",
+     "late": "4 p.m. guaranteed (subject to availability at resort and convention hotels)",
+     "food": "Lounge access with complimentary breakfast at brands that have lounges; Welcome Gift Choice can include a breakfast offering, varying by brand",
+     "extras": [
+      "Annual Choice Benefit at 50 nights: e.g. five Nightly Upgrade Awards or five Elite Night Credits",
+      "Lifetime Platinum after 600 nights and 10 years at Platinum or higher"
+     ]
+    },
+    {
+     "name": "Titanium Elite",
+     "req": "75 nights",
+     "bonus": "75%",
+     "upgrade": "Enhanced upgrade including Select Suites",
+     "late": "4 p.m. guaranteed (as Platinum)",
+     "food": "As Platinum",
+     "extras": [
+      "48-Hour Guarantee when booked by 3 p.m. two days ahead",
+      "Second Annual Choice Benefit at 75 nights, including a Free Night Award option",
+      "Complimentary United MileagePlus Premier Silver (registration required)"
+     ]
+    },
+    {
+     "name": "Ambassador Elite",
+     "req": "100 nights + $23,000 qualifying spend",
+     "bonus": "75%",
+     "upgrade": "As Titanium",
+     "late": "Your24: choose your check-in time, request two days ahead",
+     "food": "As Platinum",
+     "extras": [
+      "Dedicated Ambassador service",
+      "Hertz President’s Circle"
+     ]
+    }
+   ],
+   "tierNote": "Benefits stack: each tier keeps the ones below it. \"Nights\" means Elite Night Credits earned in a calendar year.",
+   "cards": [
+    {
+     "name": "Marriott Bonvoy Brilliant American Express Card",
+     "issuer": "American Express",
+     "fee": 650,
+     "status": "Platinum Elite",
+     "enc": "25 Elite Night Credits a year",
+     "spend": null,
+     "night": "Free Night Award up to 85,000 points after your card renewal month"
+    },
+    {
+     "name": "Marriott Bonvoy Bevy American Express Card",
+     "issuer": "American Express",
+     "fee": 250,
+     "status": "Gold Elite",
+     "enc": "15 Elite Night Credits a year",
+     "spend": null,
+     "night": "Free Night Award up to 50,000 points after $15,000 spend in a calendar year"
+    },
+    {
+     "name": "Marriott Bonvoy Business American Express Card",
+     "issuer": "American Express",
+     "fee": 125,
+     "status": "Gold Elite",
+     "enc": "15 Elite Night Credits a year",
+     "spend": null,
+     "night": "Annual Free Night Award up to 35,000 points"
+    },
+    {
+     "name": "Marriott Bonvoy Boundless Credit Card",
+     "issuer": "Chase",
+     "fee": null,
+     "status": "Silver Elite",
+     "enc": "15 Elite Night Credits a year, plus 1 for every $5,000 spent",
+     "spend": "Gold Elite after $35,000 spend in a calendar year",
+     "night": "Free Night Award up to 35,000 points after your account anniversary"
+    }
+   ],
+   "cardNote": "Night credits from co-brand cards are limited: Chase’s Marriott card terms say you receive them from only one personal and one business Marriott card per year, even if you hold more. Fees and benefits are as published on marriott.com and chase.com; card offers change often.",
+   "transfer": "Chase Ultimate Rewards lists Marriott Bonvoy as a hotel transfer partner. American Express Membership Rewards is widely reported to transfer to Marriott too; we could not load Amex’s partner page, so check the ratio there.",
+   "redemption": [
+    [
+     "How prices work",
+     "Marriott’s redemption page does not publish a fixed award chart. The points price for a date shows when you search with \"Use Points/Awards,\" and the Flexible Dates option looks for the lowest points prices across a range of dates."
+    ],
+    [
+     "Long stays",
+     "Stay for 5, Pay for 4: you get a complimentary night when you redeem points for five consecutive nights."
+    ],
+    [
+     "Points + cash",
+     "Cash + Points lets you cover part of a stay with cash to stretch your points. PointSavers are discounted points prices at selected hotels and dates."
+    ],
+    [
+     "Other uses",
+     "Instant Redemption lets you pay for anything charged to the room at participating hotels; points can also buy room upgrades at select hotels, or convert to airline miles."
+    ],
+    [
+     "Transfer partners",
+     "Chase Ultimate Rewards lists Marriott as a partner. Marriott points also transfer out to 38 airline programs, mostly at 3 points to 1 mile."
+    ]
+   ],
+   "compare": {
+    "topTier": "Ambassador: 100 nights + $23,000 spend",
+    "cardPath": "Brilliant card: Platinum Elite plus 25 Elite Night Credits a year",
+    "breakfast": "Platinum and up: lounge access with breakfast at brands with lounges",
+    "longStay": "Stay for 5, Pay for 4 on award stays",
+    "pricing": "No published chart; prices shown by date",
+    "gem": "The largest brand footprint, and points transfer out to 38 airlines"
+   },
+   "fit": [
+    [
+     "Frequent business traveler",
+     "Strong",
+     "The largest brand footprint means the most cities where a Marriott is near the office, and Platinum adds lounge breakfast and 4 p.m. checkout."
+    ],
+    [
+     "Family and resort vacations",
+     "Good",
+     "Stay for 5, Pay for 4 suits a week at the beach; resort benefits are more often \"subject to availability.\""
+    ],
+    [
+     "Occasional traveler using a card",
+     "Good",
+     "Bevy or Brilliant hands you Gold or Platinum, which you could not reach by staying a few nights a year."
+    ],
+    [
+     "Airline-mile collector",
+     "Strong",
+     "Marriott points convert to 38 airline programs, with a bonus per 60,000 points at most of them."
+    ],
+    [
+     "Luxury on points",
+     "Mixed",
+     "There are many luxury brands, but with no published chart the top properties can price high on peak dates."
+    ]
+   ],
+   "notFor": [
+    "Travelers who want fixed, predictable award prices: Marriott does not publish a chart.",
+    "Anyone chasing Ambassador on nights alone: it also requires $23,000 of qualifying spend.",
+    "People stacking several Marriott cards for night credits: only one personal and one business card count each year."
+   ],
+   "gems": [
+    {
+     "title": "Points become airline miles, with a bonus",
+     "body": "Marriott lists 38 airline partners, most at 3 points to 1 mile, and adds 5,000 bonus miles for every 60,000 points you transfer (10,000 for United MileagePlus). The bonus does not apply to American, Avianca or Delta. You can transfer 3,000 to 240,000 points a day.",
+     "source": "Marriott Bonvoy",
+     "url": "https://www.marriott.com/loyalty/redeem/travel/points-to-miles.mi"
+    },
+    {
+     "title": "The fifth award night is free",
+     "body": "Redeem points for five consecutive nights and one night is complimentary. On a week-long trip, book the five award nights together rather than as separate reservations.",
+     "source": "Marriott Bonvoy",
+     "url": "https://www.marriott.com/loyalty/redeem/hotels.mi"
+    },
+    {
+     "title": "Titanium comes with United status",
+     "body": "Titanium Elite includes complimentary United MileagePlus Premier Silver once you register, a rare hotel-to-airline status link.",
+     "source": "Marriott Bonvoy",
+     "url": "https://www.marriott.com/loyalty/member-benefits/titanium.mi"
+    },
+    {
+     "title": "Choose your perk at 50 and 75 nights",
+     "body": "At 50 and 75 Elite Night Credits you pick an Annual Choice Benefit, such as Nightly Upgrade Awards or five extra night credits. At 75 nights the choice also includes a Free Night Award.",
+     "source": "Marriott Bonvoy",
+     "url": "https://www.marriott.com/loyalty/member-benefits/platinum.mi"
+    },
+    {
+     "title": "Points pay the bar tab",
+     "body": "Instant Redemption lets you use points for anything you can charge to your room (dining, spa) at participating hotels. That is handy for a small leftover balance.",
+     "source": "Marriott Bonvoy",
+     "url": "https://www.marriott.com/loyalty/redeem/hotels.mi"
+    }
+   ],
+   "unverified": [
+    "Which night is free on a five-night award (third-party guides say the lowest-priced night), and which award types are excluded, are not spelled out on marriott.com’s redemption page.",
+    "Peak and off-peak pricing: Marriott no longer publishes a chart, so we do not quote point ranges.",
+    "American Express Membership Rewards transfer ratio to Marriott (Amex partner page did not load).",
+    "Status match or status challenge: we found no standing, officially published offer on marriott.com."
+   ],
+   "sources": [
+    {
+     "label": "Marriott Bonvoy: Silver Elite benefits",
+     "url": "https://www.marriott.com/loyalty/member-benefits/silver.mi"
+    },
+    {
+     "label": "Marriott Bonvoy: Gold Elite benefits",
+     "url": "https://www.marriott.com/loyalty/member-benefits/gold.mi"
+    },
+    {
+     "label": "Marriott Bonvoy: Platinum Elite benefits",
+     "url": "https://www.marriott.com/loyalty/member-benefits/platinum.mi"
+    },
+    {
+     "label": "Marriott Bonvoy: Titanium Elite benefits",
+     "url": "https://www.marriott.com/loyalty/member-benefits/titanium.mi"
+    },
+    {
+     "label": "Marriott Bonvoy: Ambassador Elite benefits",
+     "url": "https://www.marriott.com/loyalty/member-benefits/ambassador.mi"
+    },
+    {
+     "label": "Marriott Bonvoy: Redeem points at hotels (Stay for 5, Pay for 4; Cash + Points; PointSavers)",
+     "url": "https://www.marriott.com/loyalty/redeem/hotels.mi"
+    },
+    {
+     "label": "Marriott Bonvoy: Transfer points to airline miles",
+     "url": "https://www.marriott.com/loyalty/redeem/travel/points-to-miles.mi"
+    },
+    {
+     "label": "Marriott Bonvoy: American Express co-brand cards",
+     "url": "https://www.marriott.com/credit-cards/american-express-credit-cards.mi"
+    },
+    {
+     "label": "Marriott Bonvoy: All co-brand credit cards",
+     "url": "https://www.marriott.com/credit-cards.mi"
+    },
+    {
+     "label": "Chase: Marriott Bonvoy Boundless card",
+     "url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless"
+    },
+    {
+     "label": "Chase: How to transfer Ultimate Rewards points (hotel partners)",
+     "url": "https://www.chase.com/personal/credit-cards/education/basics/how-to-transfer-chase-ultimate-rewards-points"
+    }
+   ]
+  },
+  "hh": {
+   "id": "hh",
+   "name": "Hilton Honors",
+   "short": "Hilton",
+   "glyph": "H",
+   "color": "#104c97",
+   "url": "/travel/hotels/hilton.html",
+   "img": "/components/hotels/img/hilton-card.webp",
+   "imgAlt": "A resort swimming pool lined with lounge chairs and umbrellas",
+   "currency": "Hilton Honors points",
+   "statusMechanics": "Nights, stays or eligible spend in a calendar year (Diamond Reserve needs nights or stays plus spend)",
+   "facts": [
+    [
+     "Currency",
+     "Hilton Honors points"
+    ],
+    [
+     "Elite tiers",
+     "Silver, Gold, Diamond, Diamond Reserve"
+    ],
+    [
+     "How status is earned",
+     "Nights, stays or eligible spend in a calendar year"
+    ],
+    [
+     "Top tier",
+     "Diamond Reserve: 80 nights or 40 stays, plus $18,000 eligible spend"
+    ],
+    [
+     "Long-stay award perk",
+     "5th Night Free on Standard Room Rewards for Silver and above"
+    ],
+    [
+     "Card route",
+     "Co-brand Amex cards grant Silver, Gold or Diamond outright, with spend routes to higher tiers"
+    ]
+   ],
+   "tiers": [
+    {
+     "name": "Silver",
+     "req": "10 nights, 4 stays or $2,500 eligible spend",
+     "bonus": "20%",
+     "upgrade": null,
+     "late": null,
+     "food": null,
+     "extras": [
+      "5th Night Free on Standard Room Reward stays",
+      "Two bottles of water"
+     ]
+    },
+    {
+     "name": "Gold",
+     "req": "25 nights, 15 stays or $6,000",
+     "bonus": "80%",
+     "upgrade": "Space-available, up to Executive Floor",
+     "late": null,
+     "food": "Daily food and beverage credit at select U.S. brands, or continental breakfast at select brands outside the U.S., for you and one guest",
+     "extras": [
+      "Milestone Bonuses"
+     ]
+    },
+    {
+     "name": "Diamond",
+     "req": "50 nights, 25 stays or $11,500",
+     "bonus": "100%",
+     "upgrade": "Space-available, up to a one-bedroom suite",
+     "late": null,
+     "food": "As Gold, plus Executive Lounge access",
+     "extras": [
+      "48-hour room guarantee on paid stays",
+      "Premium Wi-Fi",
+      "Diamond status extension for long-time Diamonds"
+     ]
+    },
+    {
+     "name": "Diamond Reserve",
+     "req": "80 nights or 40 stays, AND $18,000 eligible spend",
+     "bonus": "120%",
+     "upgrade": "Confirmable Upgrade Reward up to a one-bedroom suite (a second at 120 nights)",
+     "late": "4 p.m. guaranteed",
+     "food": "Premium Club Access",
+     "extras": [
+      "Exclusive customer service"
+     ]
+    }
+   ],
+   "tierNote": "Benefits stack upward. At 60 nights you can gift Gold status to someone, and at 100 nights Diamond status. Elite Rollover Nights end: nights earned in 2026 do not roll into 2027.",
+   "cards": [
+    {
+     "name": "Hilton Honors American Express Card",
+     "issuer": "American Express",
+     "fee": 0,
+     "status": "Silver",
+     "enc": null,
+     "spend": "Gold after $20,000 spend in a calendar year",
+     "night": null
+    },
+    {
+     "name": "Hilton Honors American Express Surpass Card",
+     "issuer": "American Express",
+     "fee": 150,
+     "status": "Gold",
+     "enc": null,
+     "spend": "Diamond after $40,000 spend in a calendar year",
+     "night": "Free Night Reward after $15,000 spend in a calendar year"
+    },
+    {
+     "name": "Hilton Honors American Express Business Card",
+     "issuer": "American Express",
+     "fee": 195,
+     "status": "Gold",
+     "enc": null,
+     "spend": "Diamond after $40,000 spend in a calendar year",
+     "night": null
+    },
+    {
+     "name": "Hilton Honors American Express Aspire Card",
+     "issuer": "American Express",
+     "fee": 550,
+     "status": "Diamond",
+     "enc": null,
+     "spend": null,
+     "night": "Annual Free Night Reward, plus up to $400 resort credits and up to $200 flight credits a year"
+    }
+   ],
+   "cardNote": "Hilton’s cards give status directly instead of night credits; hilton.com does not describe elite night credits from cards. Card terms are summarized from hilton.com and can change.",
+   "transfer": "Chase does not list Hilton as a transfer partner. American Express Membership Rewards is widely reported to transfer to Hilton; we could not load Amex’s partner page, so check the ratio there.",
+   "redemption": [
+    [
+     "How prices work",
+     "Standard Room Reward prices vary with demand and the room rate, and Hilton says prices may change in real time. There are no blackout dates."
+    ],
+    [
+     "Long stays",
+     "Silver and above get every 5th night free on Standard Room Rewards booked entirely with points, up to 20 nights (four free nights). It does not apply to Points & Money."
+    ],
+    [
+     "Points + cash",
+     "Points & Money combines points (in 1,000-point increments, starting at 5,000) with cash."
+    ],
+    [
+     "Fees",
+     "No resort fees on all-points reward stays or on card Free Night Rewards."
+    ],
+    [
+     "Sharing",
+     "Points pooling lets you send up to 500,000 points a year to friends or family."
+    ]
+   ],
+   "compare": {
+    "topTier": "Diamond Reserve: 80 nights or 40 stays + $18,000 spend",
+    "cardPath": "Aspire card: Diamond outright; Surpass or Business: Diamond after $40,000 spend",
+    "breakfast": "Gold and up: daily F&B credit (U.S.) or continental breakfast (outside U.S.)",
+    "longStay": "5th night free for Silver+ on all-points Standard Room Rewards",
+    "pricing": "Demand-based, changes in real time",
+    "gem": "Gold-level breakfast or food credit from a mid-fee card"
+   },
+   "fit": [
+    [
+     "Frequent business traveler",
+     "Strong",
+     "Stays count as well as nights, so many short trips add up fast, and Diamond adds lounge access."
+    ],
+    [
+     "Family and resort vacations",
+     "Strong",
+     "The 5th night free, no resort fees on points stays and Gold’s food credit for two all help on leisure trips."
+    ],
+    [
+     "Occasional traveler using a card",
+     "Strong",
+     "Surpass gives Gold (food credit and upgrades) without a single stay; Aspire gives Diamond."
+    ],
+    [
+     "Airline-mile collector",
+     "Weak",
+     "Hilton points are mainly for Hilton stays."
+    ],
+    [
+     "Luxury on points",
+     "Mixed",
+     "Demand-based pricing means top properties can be expensive on peak dates; Aspire’s free night helps."
+    ]
+   ],
+   "notFor": [
+    "Travelers who want a fixed award chart: prices move with demand.",
+    "Diamond Reserve hopefuls who stay a lot but spend little: it requires $18,000 of eligible spend on top of nights or stays.",
+    "People who relied on rolling extra nights forward: Elite Rollover Nights end after 2026."
+   ],
+   "gems": [
+    {
+     "title": "Status by stays, nights or spend",
+     "body": "Each lower tier can be reached three ways: by nights, by stays or by eligible spend. Gold is 25 nights, 15 stays or $6,000, so frequent one-night trips count fully.",
+     "source": "Hilton Honors",
+     "url": "https://www.hilton.com/en/hilton-honors/member-benefits/"
+    },
+    {
+     "title": "Status match with a 90-day trial",
+     "body": "Base and Silver members can submit proof of status and a stay with another program from the last 24 months. Approval gives Gold for 90 days; 6 nights in that window keeps Gold and 12 nights upgrades you to Diamond. You can use it once.",
+     "source": "Hilton Help Center",
+     "url": "https://www.hilton.com/en/help-center/hilton-honors-benefits/hilton-honors-status-match-benefit/"
+    },
+    {
+     "title": "Gift status at 60 and 100 nights",
+     "body": "At 60 nights you can gift Gold to someone, and at 100 nights you can gift Diamond. That is useful for a partner who travels with you.",
+     "source": "Hilton Honors",
+     "url": "https://www.hilton.com/en/hilton-honors/member-benefits/"
+    },
+    {
+     "title": "Milestone Bonuses pay at 40 nights and up",
+     "body": "Gold and above earn 10,000 bonus points at 40 nights and every 10 nights after, up to 180 nights, plus an extra 30,000 at 60 nights.",
+     "source": "Hilton Honors",
+     "url": "https://www.hilton.com/en/hilton-honors/terms/"
+    },
+    {
+     "title": "Pool points with family",
+     "body": "You can send up to 500,000 points a year to other members, so a household can combine balances for one award.",
+     "source": "Hilton Honors",
+     "url": "https://www.hilton.com/en/hilton-honors/terms/"
+    }
+   ],
+   "unverified": [
+    "American Express Membership Rewards transfer ratio to Hilton (Amex partner page did not load).",
+    "Exact food and beverage credit amounts by brand: hilton.com describes the benefit but amounts vary by brand and location, so we do not quote them."
+   ],
+   "sources": [
+    {
+     "label": "Hilton Honors: Member benefits by tier",
+     "url": "https://www.hilton.com/en/hilton-honors/member-benefits/"
+    },
+    {
+     "label": "Hilton Honors: Program terms and conditions",
+     "url": "https://www.hilton.com/en/hilton-honors/terms/"
+    },
+    {
+     "label": "Hilton Honors: Co-brand credit cards",
+     "url": "https://www.hilton.com/en/hilton-honors/credit-cards/"
+    },
+    {
+     "label": "Hilton Help Center: Status Match benefit",
+     "url": "https://www.hilton.com/en/help-center/hilton-honors-benefits/hilton-honors-status-match-benefit/"
+    },
+    {
+     "label": "Chase: How to transfer Ultimate Rewards points (hotel partners)",
+     "url": "https://www.chase.com/personal/credit-cards/education/basics/how-to-transfer-chase-ultimate-rewards-points"
+    }
+   ]
+  },
+  "wh": {
+   "id": "wh",
+   "name": "World of Hyatt",
+   "short": "Hyatt",
+   "glyph": "Hy",
+   "color": "#6b4f2a",
+   "url": "/travel/hotels/hyatt.html",
+   "img": "/components/hotels/img/hyatt-card.webp",
+   "imgAlt": "A modern hotel lobby with curved wooden walls and lounge seating",
+   "currency": "World of Hyatt points",
+   "statusMechanics": "Qualifying nights or Base Points in a calendar year",
+   "facts": [
+    [
+     "Currency",
+     "World of Hyatt points"
+    ],
+    [
+     "Elite tiers",
+     "Discoverist, Explorist, Globalist"
+    ],
+    [
+     "How status is earned",
+     "Qualifying nights or Base Points in a calendar year"
+    ],
+    [
+     "Top tier",
+     "Globalist: 60 qualifying nights or 100,000 Base Points"
+    ],
+    [
+     "Award pricing",
+     "Published award chart: eight categories with five redemption levels since May 2026"
+    ],
+    [
+     "Card route",
+     "World of Hyatt Credit Card: Discoverist, 5 qualifying night credits a year, plus 2 per $5,000 spent"
+    ]
+   ],
+   "tiers": [
+    {
+     "name": "Discoverist",
+     "req": "10 nights or 25,000 Base Points",
+     "bonus": null,
+     "upgrade": null,
+     "late": null,
+     "food": null,
+     "extras": [
+      "Entry elite tier; also comes with the World of Hyatt Credit Card"
+     ]
+    },
+    {
+     "name": "Explorist",
+     "req": "30 nights or 50,000 Base Points",
+     "bonus": null,
+     "upgrade": null,
+     "late": null,
+     "food": null,
+     "extras": [
+      "Announced early access to award availability (Feb 2026; details pending)"
+     ]
+    },
+    {
+     "name": "Globalist",
+     "req": "60 nights or 100,000 Base Points",
+     "bonus": null,
+     "upgrade": "Best room available, up to a standard suite (as Hyatt describes Globalist stay benefits)",
+     "late": "Late checkout at participating hotels",
+     "food": "Complimentary breakfast",
+     "extras": [
+      "Lifetime Globalist at 1,000,000 lifetime Base Points"
+     ]
+    }
+   ],
+   "tierNote": "Hyatt’s own tier pages blocked our automated checks. Thresholds come from Hyatt’s program overview; the Globalist stay benefits are as Hyatt described them for Guest of Honor stays. Check hyatt.com for the current list at each tier.",
+   "cards": [
+    {
+     "name": "World of Hyatt Credit Card",
+     "issuer": "Chase",
+     "fee": 95,
+     "status": "Discoverist",
+     "enc": "5 qualifying night credits each year, plus 2 for every $5,000 spent (no cap)",
+     "spend": null,
+     "night": "Category 1–4 Free Night Award each anniversary, plus another after $15,000 spend in a calendar year"
+    }
+   ],
+   "cardNote": "From Chase’s card page. Free Night Awards from the card waive resort fees on that night. Chase Ultimate Rewards points from eligible cards also transfer to World of Hyatt.",
+   "transfer": "Chase Ultimate Rewards lists World of Hyatt as a hotel transfer partner (transfers need a Sapphire Preferred, Sapphire Reserve or Ink Business Preferred).",
+   "redemption": [
+    [
+     "How prices work",
+     "Hyatt keeps a published award chart with fixed point amounts. Since May 2026 each of its eight categories has five redemption levels: Lowest, Low, Moderate, Upper and Top. Hyatt says only a limited number of nights move into Upper and Top in 2026."
+    ],
+    [
+     "Long stays",
+     "We found no official fifth-night-free rule for Hyatt award stays."
+    ],
+    [
+     "Points + cash",
+     "We could not confirm Hyatt’s current points-plus-cash options on hyatt.com, so check there before planning around them."
+    ],
+    [
+     "Category changes",
+     "Hyatt reviews hotel categories every year and announces changes in April. Reservations made before a change are honored as booked."
+    ],
+    [
+     "Transfer partners",
+     "Chase Ultimate Rewards is the main transfer route into Hyatt."
+    ]
+   ],
+   "compare": {
+    "topTier": "Globalist: 60 nights or 100,000 Base Points",
+    "cardPath": "Hyatt card: Discoverist, 5 night credits a year + 2 per $5,000",
+    "breakfast": "Globalist: complimentary breakfast",
+    "longStay": "No official fifth-night-free rule found",
+    "pricing": "Published chart: 8 categories, 5 levels",
+    "gem": "A published award chart, and Chase points transfer in"
+   },
+   "fit": [
+    [
+     "Frequent business traveler",
+     "Good",
+     "Globalist is generous, but Hyatt has fewer hotels than Marriott or Hilton, so check your usual cities."
+    ],
+    [
+     "Family and resort vacations",
+     "Good",
+     "Award stays at all-inclusive and resort brands can be strong, and Globalist breakfast helps; the footprint is smaller."
+    ],
+    [
+     "Occasional traveler using a card",
+     "Good",
+     "The $95 card’s Category 1–4 night and night credits are easy wins, but card status stops at Discoverist."
+    ],
+    [
+     "Airline-mile collector",
+     "Weak",
+     "Hyatt is a destination for Chase points, not a way to earn miles."
+    ],
+    [
+     "Luxury on points",
+     "Strong",
+     "The published chart with category caps makes high-end redemptions easier to plan than at dynamic-priced programs."
+    ]
+   ],
+   "notFor": [
+    "Travelers in cities with few or no Hyatt hotels: status only helps where you can use it.",
+    "Anyone hoping a card gets them Globalist: the card gives Discoverist and night credits, not top status.",
+    "People who want every award night at the lowest price: since May 2026 some dates price at the Upper or Top level."
+   ],
+   "gems": [
+    {
+     "title": "A published chart with category caps",
+     "body": "Hyatt says it will keep fixed point thresholds instead of dynamic award pricing. The five levels sit inside clearly defined category caps, so you can see the most a hotel can cost.",
+     "source": "Hyatt Newsroom",
+     "url": "https://newsroom.hyatt.com/awardchartupdates"
+    },
+    {
+     "title": "Guest of Honor: gift Globalist benefits",
+     "body": "Starting at 40 qualifying nights (or 65,000 Base Points) a year, Milestone Rewards include Guest of Honor awards. They give Globalist benefits on eligible paid or award stays of up to seven nights, for you or someone you gift them to.",
+     "source": "Hyatt Newsroom",
+     "url": "https://newsroom.hyatt.com/redefiningloyalty"
+    },
+    {
+     "title": "Milestone Rewards keep going past 100 nights",
+     "body": "Hyatt’s Milestone Rewards start at 20 qualifying nights (or 35,000 Base Points) and continue every 10 nights up to 150, with choices that include points, suite upgrades and experience credits.",
+     "source": "Hyatt Newsroom",
+     "url": "https://newsroom.hyatt.com/redefiningloyalty"
+    },
+    {
+     "title": "Card night credits never cap",
+     "body": "The World of Hyatt Credit Card adds 2 qualifying night credits for every $5,000 spent, with no limit, on top of 5 credits each year.",
+     "source": "Chase",
+     "url": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card"
+    },
+    {
+     "title": "Early award access and point sharing announced",
+     "body": "In February 2026 Hyatt announced early access to award availability for Explorists, Globalists and cardmembers, and digital point sharing later in the year. Details were still to come.",
+     "source": "Hyatt Newsroom",
+     "url": "https://newsroom.hyatt.com/awardchartupdates"
+    }
+   ],
+   "unverified": [
+    "Full tier-by-tier benefits (bonus percentages, Discoverist and Explorist perks, waived resort fees and parking for Globalists): hyatt.com blocked our checks, so we describe them generally.",
+    "Points-per-night ranges for each category and level: not quoted, because we could not load Hyatt’s chart page.",
+    "Current Milestone Rewards choices at each level: the list here follows Hyatt’s 2023 announcement and may have changed.",
+    "Points + Cash and Upgrade Award details on hyatt.com.",
+    "Status match or challenge: we found no standing, officially published offer."
+   ],
+   "sources": [
+    {
+     "label": "World of Hyatt: Program overview (tier qualification)",
+     "url": "https://world.hyatt.com/content/gp/en/program-overview.html"
+    },
+    {
+     "label": "World of Hyatt: Tiers and benefits",
+     "url": "https://world.hyatt.com/content/gp/en/tiers-and-benefits.html"
+    },
+    {
+     "label": "Hyatt Newsroom: Award chart update, five redemption levels (Feb 25, 2026)",
+     "url": "https://newsroom.hyatt.com/awardchartupdates"
+    },
+    {
+     "label": "Hyatt Newsroom: Milestone Rewards and Guest of Honor (Nov 30, 2023)",
+     "url": "https://newsroom.hyatt.com/redefiningloyalty"
+    },
+    {
+     "label": "Chase: World of Hyatt Credit Card",
+     "url": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card"
+    },
+    {
+     "label": "Chase: How to transfer Ultimate Rewards points (hotel partners)",
+     "url": "https://www.chase.com/personal/credit-cards/education/basics/how-to-transfer-chase-ultimate-rewards-points"
+    }
+   ]
+  },
+  "ihg": {
+   "id": "ihg",
+   "name": "IHG One Rewards",
+   "short": "IHG",
+   "glyph": "I",
+   "color": "#2f6b4f",
+   "url": "/travel/hotels/ihg.html",
+   "img": "/components/hotels/img/ihg-card.webp",
+   "imgAlt": "A hotel bed beside a large window with a city view",
+   "currency": "IHG One Rewards points",
+   "statusMechanics": "Qualifying nights or Elite Qualifying Points in a calendar year",
+   "facts": [
+    [
+     "Currency",
+     "IHG One Rewards points"
+    ],
+    [
+     "Elite tiers",
+     "Silver, Gold, Platinum, Diamond"
+    ],
+    [
+     "How status is earned",
+     "Qualifying nights or points in a calendar year"
+    ],
+    [
+     "Top tier",
+     "Diamond Elite: 70 nights or 120,000 points"
+    ],
+    [
+     "Long-stay award perk",
+     "Fourth Reward Night free for IHG cardmembers (no-fee card after $5,000 spend, from 2027)"
+    ],
+    [
+     "Card route",
+     "Chase co-brand cards grant Silver to Platinum and 5 to 20 Elite Night Credits each January"
+    ]
+   ],
+   "tiers": [
+    {
+     "name": "Silver Elite",
+     "req": "10 nights",
+     "bonus": "20%",
+     "upgrade": null,
+     "late": "2 p.m.",
+     "food": null,
+     "extras": [
+      "Points don’t expire for Elite members"
+     ]
+    },
+    {
+     "name": "Gold Elite",
+     "req": "20 nights or 40,000 points",
+     "bonus": "40%",
+     "upgrade": null,
+     "late": "2 p.m.",
+     "food": null,
+     "extras": [
+      "Rollover nights",
+      "Hertz Five Star"
+     ]
+    },
+    {
+     "name": "Platinum Elite",
+     "req": "40 nights or 60,000 points",
+     "bonus": "60%",
+     "upgrade": "Complimentary upgrades, subject to availability",
+     "late": "2 p.m.",
+     "food": "Welcome amenity: points or a drink or snack",
+     "extras": [
+      "Early check-in",
+      "Reward Night discounts",
+      "72-hour guaranteed room availability"
+     ]
+    },
+    {
+     "name": "Diamond Elite",
+     "req": "70 nights or 120,000 points",
+     "bonus": "100%",
+     "upgrade": "As Platinum",
+     "late": "2 p.m.",
+     "food": "Welcome amenity: free breakfast, points or a drink or snack",
+     "extras": [
+      "Dedicated Diamond support",
+      "Hertz President’s Circle"
+     ]
+    }
+   ],
+   "tierNote": "Benefits stack upward. Milestone Rewards add choices every 10 nights from 20 to 100, including Confirmable Suite Upgrades and an Annual Lounge Membership at 40 and 70 nights.",
+   "cards": [
+    {
+     "name": "IHG One Rewards Credit Card (no annual fee)",
+     "issuer": "Chase",
+     "fee": 0,
+     "status": "Silver Elite",
+     "enc": "5 Elite Night Credits each January",
+     "spend": "Gold Elite after $15,000 spend in a calendar year (starting 2027)",
+     "night": "Fourth Reward Night free after $5,000 spend in a calendar year (starting 2027)"
+    },
+    {
+     "name": "IHG One Rewards Premier Credit Card",
+     "issuer": "Chase",
+     "fee": null,
+     "status": "Gold Elite",
+     "enc": "15 Elite Night Credits each January, plus 2 per $5,000 and 5 more at $15,000",
+     "spend": "Platinum after $15,000; Diamond after $40,000 in a calendar year",
+     "night": "Anniversary Free Night (up to 50,000 points, top up with your points); fourth Reward Night free"
+    },
+    {
+     "name": "IHG One Rewards Premier Select Credit Card",
+     "issuer": "Chase",
+     "fee": null,
+     "status": "Platinum Elite",
+     "enc": "20 Elite Night Credits each January, plus 2 per $5,000 and 5 more at $15,000",
+     "spend": "Diamond after $25,000 spend in a calendar year",
+     "night": "Anniversary Free Night (up to 60,000 points), another after $40,000 spend; fourth Reward Night free"
+    },
+    {
+     "name": "IHG One Rewards Business Credit Card",
+     "issuer": "Chase",
+     "fee": null,
+     "status": "Platinum Elite",
+     "enc": "15 Elite Night Credits each January, plus the same per-$5,000 night credits as the Premier",
+     "spend": null,
+     "night": "Anniversary Free Night (up to 50,000 points); fourth Reward Night free"
+    }
+   ],
+   "cardNote": "Card benefits as listed on ihg.com in October 2026; annual fees are set by Chase, so check the Chase application page. IHG’s member terms treat points from U.S. IHG credit card purchases and Chase transfers as non-elite-qualifying, so card spend helps status through night credits and spend thresholds, not points.",
+   "transfer": "Chase Ultimate Rewards lists IHG One Rewards as a hotel transfer partner.",
+   "redemption": [
+    [
+     "How prices work",
+     "Reward Night prices move up and down like cash rates, based on room cost, the Best Flexible Rate and demand, and can change daily. Your price locks when you book. No blackout dates."
+    ],
+    [
+     "Long stays",
+     "IHG cardmembers get the fourth Reward Night free on a consecutive four-night points stay at the same hotel (the no-fee card needs $5,000 spend in a year, from 2027)."
+    ],
+    [
+     "Points + cash",
+     "Points & Cash uses some of your points and buys the rest; you need at least 5,000 points. If you cancel, the cash part is not refunded but all points come back."
+    ],
+    [
+     "Minimum",
+     "Reward Nights start at 5,000 points."
+    ],
+    [
+     "Transfer partners",
+     "Chase Ultimate Rewards lists IHG as a partner."
+    ]
+   ],
+   "compare": {
+    "topTier": "Diamond: 70 nights or 120,000 points",
+    "cardPath": "Premier Select or Business card: Platinum outright; Premier Select: Diamond after $25,000 spend",
+    "breakfast": "Diamond: free breakfast as a welcome-amenity choice",
+    "longStay": "4th Reward Night free for cardmembers",
+    "pricing": "Dynamic; can change daily",
+    "gem": "Cardholders get the fourth award night free"
+   },
+   "fit": [
+    [
+     "Frequent business traveler",
+     "Good",
+     "A large footprint of mid-range brands, and status can be reached on points as well as nights."
+    ],
+    [
+     "Family and resort vacations",
+     "Good",
+     "The fourth night free on a four-night points stay suits long weekends; benefits at resorts vary."
+    ],
+    [
+     "Occasional traveler using a card",
+     "Strong",
+     "Cards give up to Platinum outright and up to 20 night credits each January."
+    ],
+    [
+     "Airline-mile collector",
+     "Weak",
+     "IHG points are mainly for IHG stays."
+    ],
+    [
+     "Luxury on points",
+     "Mixed",
+     "Dynamic pricing means flagship hotels can be expensive; the InterContinental Ambassador paid program adds perks there."
+    ]
+   ],
+   "notFor": [
+    "Travelers who count on late checkout as a status perk: the published standard is 2 p.m. at every tier.",
+    "Anyone who wants a fixed award chart: points prices move daily.",
+    "People who hope card spend points count toward status: they are non-elite-qualifying."
+   ],
+   "gems": [
+    {
+     "title": "Fourth award night free for cardmembers",
+     "body": "On a consecutive four-night points stay at the same hotel, IHG cardmembers can get the fourth Reward Night free. The no-fee card unlocks it from 2027 after $5,000 spend in a year.",
+     "source": "IHG One Rewards",
+     "url": "https://www.ihg.com/onerewards/content/us/en/cc"
+    },
+    {
+     "title": "Night credits arrive every January",
+     "body": "IHG’s Chase cards add 5, 15 or 20 Elite Night Credits at the start of each calendar year, and the Premier and Premier Select add 2 per $5,000 spent plus 5 more at $15,000.",
+     "source": "IHG One Rewards",
+     "url": "https://www.ihg.com/onerewards/content/us/en/cc"
+    },
+    {
+     "title": "Pick a lounge membership as a milestone",
+     "body": "At 40 and 70 nights, Milestone Rewards let you pick two rewards, including Confirmable Suite Upgrades or an Annual Lounge Membership.",
+     "source": "IHG One Rewards",
+     "url": "https://www.ihg.com/onerewards/content/us/en/tier-benefits"
+    },
+    {
+     "title": "Top up your anniversary night",
+     "body": "The Premier and Business anniversary nights are capped at 50,000 points (60,000 on Premier Select), but you can add points from your account to use them at pricier hotels.",
+     "source": "IHG One Rewards",
+     "url": "https://www.ihg.com/onerewards/content/us/en/cc"
+    },
+    {
+     "title": "Points & Cash refunds the points",
+     "body": "If you cancel a Points & Cash booking within the hotel’s policy, all points come back, including those you bought; only the cash part is lost.",
+     "source": "IHG One Rewards",
+     "url": "https://www.ihg.com/onerewards/content/us/en/reward-nights-pointsandcash"
+    }
+   ],
+   "unverified": [
+    "Annual fees for the Premier, Premier Select and Business cards: not shown on ihg.com’s card page, so check Chase.",
+    "InterContinental Ambassador pricing and full benefits.",
+    "Status match or challenge: we found no standing, officially published offer."
+   ],
+   "sources": [
+    {
+     "label": "IHG One Rewards: Membership benefits by tier",
+     "url": "https://www.ihg.com/onerewards/content/us/en/tier-benefits"
+    },
+    {
+     "label": "IHG One Rewards: Reward Nights and Points & Cash",
+     "url": "https://www.ihg.com/onerewards/content/us/en/reward-nights-pointsandcash"
+    },
+    {
+     "label": "IHG One Rewards: Co-brand credit cards",
+     "url": "https://www.ihg.com/onerewards/content/us/en/cc"
+    },
+    {
+     "label": "IHG One Rewards: Member terms and conditions",
+     "url": "https://www.ihg.com/content/us/en/customer-care/member-tc"
+    },
+    {
+     "label": "Chase: How to transfer Ultimate Rewards points (hotel partners)",
+     "url": "https://www.chase.com/personal/credit-cards/education/basics/how-to-transfer-chase-ultimate-rewards-points"
+    }
+   ]
+  }
+ },
+ "order": [
+  "mb",
+  "hh",
+  "wh",
+  "ihg"
+ ]
+}
