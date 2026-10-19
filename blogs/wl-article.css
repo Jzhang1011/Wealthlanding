@@ -148,3 +148,4 @@
     @media(max-width:620px){.finder{grid-template-columns:1fr}.scenario{padding:20px 18px 4px;border-radius:18px}.scenario h3{font-size:20px}}
     .finder-group h3 a{display:inline;padding:0;color:inherit;font:inherit}
     .story{min-width:0}
+    .wl-video{margin:8px 0 40px}
