@@ -12,6 +12,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
   {% if page.description %}<meta name="description" content="{{ page.description | escape }}">{% endif %}
+  {% if page.og_image %}
+  {% assign og_url = site.url | default: "https://www.wealthlanding.com" | append: page.url | replace: "/index.html", "/" %}
+  {% assign og_title = page.og_title | default: page.title %}
+  {% assign og_img = page.og_image | prepend: "https://www.wealthlanding.com" %}
+  <link rel="canonical" href="{{ og_url }}">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WealthLanding">
+  <meta property="og:title" content="{{ og_title | escape }}">
+  {% if page.description %}<meta property="og:description" content="{{ page.description | escape }}">{% endif %}
+  <meta property="og:url" content="{{ og_url }}">
+  <meta property="og:image" content="{{ og_img }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  {% if page.og_image_alt %}<meta property="og:image:alt" content="{{ page.og_image_alt | escape }}">{% endif %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ og_title | escape }}">
+  {% if page.description %}<meta name="twitter:description" content="{{ page.description | escape }}">{% endif %}
+  <meta name="twitter:image" content="{{ og_img }}">
+  {% if page.og_image_alt %}<meta name="twitter:image:alt" content="{{ page.og_image_alt | escape }}">{% endif %}
+  {% endif %}
   {% if page.full_bleed %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
