@@ -45,8 +45,8 @@
 
   /* Card status tiers (hotels.json cards[].statusTier) -> row class, badge and legend */
   var STATUS_TIERS = {
-    top: { badge: 'Top tier', legend: "Card gives the program's top elite tier" },
-    perks: { badge: 'Breakfast or lounge', legend: 'Status includes free breakfast, a food and beverage credit or lounge access, but is not the top tier' },
+    top: { badge: 'Top status', legend: 'Highest standard elite tier you can get through a card' },
+    perks: { badge: 'Breakfast or lounge', legend: 'Status includes free breakfast, a food and beverage credit or lounge access, but is not top status' },
     basic: { badge: null, legend: 'Lower tier without those benefits' }
   };
   function statusLegend(used) {
@@ -169,6 +169,7 @@
     t.appendChild(tb);
     root.appendChild(statusLegend(used));
     root.appendChild(tableWrap(t, 'Hotel co-brand card routes table'));
+    if (used.top) root.appendChild(el('p', 'wla-fine', 'Top status means the highest standard elite tier reachable through a card. Hilton Diamond Reserve sits above Diamond but requires nights or stays plus eligible spend.'));
   }
 
   /* ---------- program ---------- */

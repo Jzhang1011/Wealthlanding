@@ -6,7 +6,7 @@
   "hubUrl": "/travel/hotels/",
   "plannerUrl": "/tools/credit-card/#unlocks",
   "airlineHubUrl": "/travel/airlines/",
-  "statusTierNote": "cards[].statusTier drives the row colors in the hub 'Status from a credit card' table: 'top' = the program's highest elite tier; 'perks' = a lower tier whose verified benefits (tiers[].food) include free breakfast, a food and beverage credit or lounge access; 'basic' = neither."
+  "statusTierNote": "cards[].statusTier drives the row colors in the hub 'Status from a credit card' table: 'top' = top status, the highest standard elite tier reachable through a card (e.g. Hilton Diamond; Hilton's Diamond Reserve is a spend-plus-nights tier above it); 'perks' = a lower tier whose verified benefits (tiers[].food) include free breakfast, a food and beverage credit or lounge access; 'basic' = neither."
  },
  "programs": {
   "mb": {
@@ -423,7 +423,7 @@
      "issuer": "American Express",
      "fee": 550,
      "status": "Diamond",
-     "statusTier": "perks",
+     "statusTier": "top",
      "enc": null,
      "spend": null,
      "night": "Annual Free Night Reward, plus up to $400 resort credits and up to $200 flight credits a year"
