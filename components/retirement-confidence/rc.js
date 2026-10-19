@@ -42,24 +42,12 @@
   function renderVideo(el, data) {
     var meta = data.meta, src = videoEmbedSrc(meta.videoUrl), yt = youtubeId(src);
     var allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';
-    if (yt) {
-      // Click-to-play facade: nothing loads from YouTube until the visitor presses play.
-      var watch = 'https://www.youtube.com/watch?v=' + yt;
-      el.innerHTML = '<div class="rc-video-frame rc-video-facade">' +
-        '<button type="button" class="rc-video-play" aria-label="Play video: ' + esc(meta.videoTitle) + '">' +
-        '<img src="https://i.ytimg.com/vi/' + yt + '/hqdefault.jpg" alt="" loading="lazy" decoding="async" width="480" height="360">' +
-        '<span class="rc-video-play-icon" aria-hidden="true"></span>' +
-        '<span class="rc-video-caption">' + esc(meta.videoTitle) + '</span></button></div>' +
-        '<p class="rc-video-alt"><a href="' + watch + '" target="_blank" rel="noopener">Watch on YouTube</a></p>';
-      el.querySelector('.rc-video-play').addEventListener('click', function () {
-        var f = el.querySelector('.rc-video-frame');
-        f.classList.remove('rc-video-facade');
-        f.innerHTML = '<iframe src="' + esc(src) + '&autoplay=1" title="' + esc(meta.videoTitle) + ' (video)" loading="lazy" allow="' + allow +
-          '" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>';
-        var ifr = f.querySelector('iframe'); if (ifr) ifr.focus();
-      });
+    if (yt && window.WLYouTube) {
+      // Click-to-play facade from the shared /components/video/yt-facade.js, keeping the rc-video-* classes.
+      window.WLYouTube.facade(el, { id: yt, title: meta.videoTitle, prefix: 'rc-video' });
       return;
     }
+    if (yt) return; // shared facade not loaded: keep the static fallback link in the mount
     if (src) {
       el.innerHTML = '<div class="rc-video-frame"><iframe src="' + esc(src) + '" title="' + esc(meta.videoTitle) +
         ' (video)" loading="lazy" allow="' + allow + '" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>';
