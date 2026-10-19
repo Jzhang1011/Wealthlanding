@@ -19,3 +19,15 @@
 .wlh-rule{background:#fff;border:1px solid var(--wla-line);border-left:4px solid var(--wla-accent,#2563eb);border-radius:.6rem;padding:.7rem .9rem}
 .wlh-rule dt{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--wla-muted);font-weight:700}
 .wlh-rule dd{margin:.2rem 0 0}
+/* Card status rows: data-driven from hotels.json cards[].statusTier (top | perks | basic) */
+.wla-table tr.wlh-tier-top td,.wla-table tbody tr.wlh-tier-top th{background:#e8f3ff}
+.wla-table tr.wlh-tier-perks td,.wla-table tbody tr.wlh-tier-perks th{background:#fdeef3}
+.wlh-tier-badge{display:inline-block;margin-left:.15rem;border-radius:999px;font-size:.7rem;font-weight:700;line-height:1.4;padding:.05rem .5rem;border:1px solid;white-space:nowrap;vertical-align:middle}
+.wlh-tier-top .wlh-tier-badge{background:#fff;border-color:#7cb3ea;color:#0b4a85}
+.wlh-tier-perks .wlh-tier-badge{background:#fff;border-color:#e9a3bb;color:#8a1f45}
+.wlh-tier-legend{list-style:none;margin:.4rem 0 .8rem;padding:0;display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font-size:.85rem;color:var(--wla-muted,#475569)}
+.wlh-tier-legend li{display:flex;align-items:center;gap:.4rem}
+.wlh-tier-legend .wlh-tier-badge{margin:0}
+.wlh-tier-swatch{width:.95rem;height:.95rem;border-radius:.25rem;border:1px solid #cbd5e1;background:#fff;flex:0 0 auto}
+.wlh-tier-top .wlh-tier-swatch{background:#e8f3ff;border-color:#7cb3ea}
+.wlh-tier-perks .wlh-tier-swatch{background:#fdeef3;border-color:#e9a3bb}

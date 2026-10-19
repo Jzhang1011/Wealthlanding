@@ -5,7 +5,8 @@
   "disclaimer": "Hotel programs and card issuers change benefits, thresholds and award prices without much notice, and many benefits are \"subject to availability\" at the hotel. This guide is general education, not financial or travel advice; confirm the current terms on the program’s and issuer’s own site before you book, apply or change how you spend.",
   "hubUrl": "/travel/hotels/",
   "plannerUrl": "/tools/credit-card/#unlocks",
-  "airlineHubUrl": "/travel/airlines/"
+  "airlineHubUrl": "/travel/airlines/",
+  "statusTierNote": "cards[].statusTier drives the row colors in the hub 'Status from a credit card' table: 'top' = top status, the highest standard elite tier reachable through a card (e.g. Hilton Diamond; Hilton's Diamond Reserve is a spend-plus-nights tier above it); 'perks' = a lower tier whose verified benefits (tiers[].food) include free breakfast, a food and beverage credit or lounge access; 'basic' = neither."
  },
  "programs": {
   "mb": {
@@ -114,6 +115,7 @@
      "issuer": "American Express",
      "fee": 650,
      "status": "Platinum Elite",
+     "statusTier": "perks",
      "enc": "25 Elite Night Credits a year",
      "spend": null,
      "night": "Free Night Award up to 85,000 points after your card renewal month"
@@ -123,6 +125,7 @@
      "issuer": "American Express",
      "fee": 250,
      "status": "Gold Elite",
+     "statusTier": "basic",
      "enc": "15 Elite Night Credits a year",
      "spend": null,
      "night": "Free Night Award up to 50,000 points after $15,000 spend in a calendar year"
@@ -132,6 +135,7 @@
      "issuer": "American Express",
      "fee": 125,
      "status": "Gold Elite",
+     "statusTier": "basic",
      "enc": "15 Elite Night Credits a year",
      "spend": null,
      "night": "Annual Free Night Award up to 35,000 points"
@@ -141,6 +145,7 @@
      "issuer": "Chase",
      "fee": null,
      "status": "Silver Elite",
+     "statusTier": "basic",
      "enc": "15 Elite Night Credits a year, plus 1 for every $5,000 spent",
      "spend": "Gold Elite after $35,000 spend in a calendar year",
      "night": "Free Night Award up to 35,000 points after your account anniversary"
@@ -388,6 +393,7 @@
      "issuer": "American Express",
      "fee": 0,
      "status": "Silver",
+     "statusTier": "basic",
      "enc": null,
      "spend": "Gold after $20,000 spend in a calendar year",
      "night": null
@@ -397,6 +403,7 @@
      "issuer": "American Express",
      "fee": 150,
      "status": "Gold",
+     "statusTier": "perks",
      "enc": null,
      "spend": "Diamond after $40,000 spend in a calendar year",
      "night": "Free Night Reward after $15,000 spend in a calendar year"
@@ -406,6 +413,7 @@
      "issuer": "American Express",
      "fee": 195,
      "status": "Gold",
+     "statusTier": "perks",
      "enc": null,
      "spend": "Diamond after $40,000 spend in a calendar year",
      "night": null
@@ -415,6 +423,7 @@
      "issuer": "American Express",
      "fee": 550,
      "status": "Diamond",
+     "statusTier": "top",
      "enc": null,
      "spend": null,
      "night": "Annual Free Night Reward, plus up to $400 resort credits and up to $200 flight credits a year"
@@ -622,6 +631,7 @@
      "issuer": "Chase",
      "fee": 95,
      "status": "Discoverist",
+     "statusTier": "basic",
      "enc": "5 qualifying night credits each year, plus 2 for every $5,000 spent (no cap)",
      "spend": null,
      "night": "Category 1–4 Free Night Award each anniversary, plus another after $15,000 spend in a calendar year"
@@ -851,6 +861,7 @@
      "issuer": "Chase",
      "fee": 0,
      "status": "Silver Elite",
+     "statusTier": "basic",
      "enc": "5 Elite Night Credits each January",
      "spend": "Gold Elite after $15,000 spend in a calendar year (starting 2027)",
      "night": "Fourth Reward Night free after $5,000 spend in a calendar year (starting 2027)"
@@ -860,6 +871,7 @@
      "issuer": "Chase",
      "fee": null,
      "status": "Gold Elite",
+     "statusTier": "basic",
      "enc": "15 Elite Night Credits each January, plus 2 per $5,000 and 5 more at $15,000",
      "spend": "Platinum after $15,000; Diamond after $40,000 in a calendar year",
      "night": "Anniversary Free Night (up to 50,000 points, top up with your points); fourth Reward Night free"
@@ -869,6 +881,7 @@
      "issuer": "Chase",
      "fee": null,
      "status": "Platinum Elite",
+     "statusTier": "basic",
      "enc": "20 Elite Night Credits each January, plus 2 per $5,000 and 5 more at $15,000",
      "spend": "Diamond after $25,000 spend in a calendar year",
      "night": "Anniversary Free Night (up to 60,000 points), another after $40,000 spend; fourth Reward Night free"
@@ -878,6 +891,7 @@
      "issuer": "Chase",
      "fee": null,
      "status": "Platinum Elite",
+     "statusTier": "basic",
      "enc": "15 Elite Night Credits each January, plus the same per-$5,000 night credits as the Premier",
      "spend": null,
      "night": "Anniversary Free Night (up to 50,000 points); fourth Reward Night free"
