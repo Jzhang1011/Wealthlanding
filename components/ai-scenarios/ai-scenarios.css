@@ -1,0 +1,50 @@
+/* WealthLanding — AI Economic Scenarios 2030. Deep navy + amber, Inter, rounded cards. */
+.ais{--ais-navy:#0b1b3a;--ais-ink:#0f172a;--ais-muted:#5b6478;--ais-line:#e3e7ef;--ais-amber:#f59e0b;--ais-amber-d:#b45309;--ais-card:#fff;font-family:Inter,system-ui,sans-serif;color:var(--ais-ink)}
+.ais *{box-sizing:border-box}
+.ais-presets{display:flex;gap:8px;flex-wrap:wrap}
+.ais-preset{font:inherit;font-weight:700;font-size:14px;padding:10px 18px;border-radius:999px;border:1px solid var(--ais-line);background:#fff;color:var(--ais-navy);cursor:pointer}
+.ais-preset[aria-checked="true"]{background:var(--ais-navy);color:#fff;border-color:var(--ais-navy);box-shadow:inset 0 -3px 0 var(--ais-amber)}
+.ais button:focus-visible,.ais input:focus-visible,.ais a:focus-visible{outline:3px solid var(--ais-amber);outline-offset:2px}
+.ais-narrative{color:var(--ais-muted);line-height:1.65;max-width:70ch;margin:14px 0 18px}
+.ais-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.ais-kpi{background:var(--ais-card);border:1px solid var(--ais-line);border-radius:16px;padding:14px 16px;box-shadow:0 4px 14px rgba(11,27,58,.05);display:flex;flex-direction:column;gap:4px;min-width:0}
+.ais-kpi span{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ais-muted)}
+.ais-kpi strong{font-size:24px;font-weight:800;color:var(--ais-navy);letter-spacing:-.01em}
+.ais-kpi small{font-size:12px;color:var(--ais-amber-d);font-weight:600}
+.ais-ref{font-size:12.5px;color:var(--ais-muted);margin:10px 0 22px}
+.ais-layout{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:22px;align-items:start}
+.ais-controls{display:flex;flex-direction:column;gap:16px;min-width:0}
+.ais-group{border:1px solid var(--ais-line);border-radius:18px;background:#fff;padding:14px 16px 8px;margin:0;min-width:0}
+.ais-group legend{font-weight:800;font-size:14px;color:var(--ais-navy);padding:0 6px}
+.ais-tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:2px 7px;margin-left:4px;vertical-align:middle}
+.ais-tag-paper{background:#e8eefb;color:#1e3a8a}
+.ais-tag-illustrative{background:#fef3c7;color:#92400e}
+.ais-row{margin:10px 0 12px}
+.ais-row-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.ais-row label{font-size:13px;line-height:1.4;color:#334155;overflow-wrap:anywhere}
+.ais-row output{font-weight:800;font-size:13px;color:var(--ais-navy);font-variant-numeric:tabular-nums;white-space:nowrap}
+.ais input[type=range]{width:100%;accent-color:var(--ais-amber);margin-top:6px}
+.ais-toggle{display:flex;gap:8px;align-items:center;font-size:13px;font-weight:600;margin:8px 0}
+.ais-toggle input{accent-color:var(--ais-amber);width:18px;height:18px}
+.ais-hrow{display:grid;grid-template-columns:1fr 92px;gap:4px 10px;align-items:center;margin:10px 0;font-size:13px}
+.ais-hrow label{color:#334155}
+.ais-hrow input{font:inherit;width:100%;padding:6px 8px;border:1px solid var(--ais-line);border-radius:10px}
+.ais-hrow small{grid-column:1/-1;color:var(--ais-muted);font-size:11.5px;overflow-wrap:anywhere}
+.ais-hrow small a{color:var(--ais-amber-d)}
+.ais-signal{font-size:12.5px;font-weight:600;color:var(--ais-navy);margin:8px 0}
+.ais-charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;min-width:0}
+.ais-chart{margin:0;background:#fff;border:1px solid var(--ais-line);border-radius:18px;padding:12px 12px 8px;box-shadow:0 4px 14px rgba(11,27,58,.05);min-width:0}
+.ais-chart figcaption{font-weight:700;font-size:13px;color:var(--ais-navy);margin:0 4px 4px}
+.ais-svg svg{display:block;width:100%;height:auto}
+.ais-grid{stroke:#eef1f6;stroke-width:1}
+.ais-axis{font-size:11px;fill:#8a93a6;font-family:Inter,sans-serif}
+.ais-line{stroke:var(--ais-amber);stroke-width:3}
+.ais-dot{fill:var(--ais-amber)}
+.ais-base{stroke:var(--ais-navy);stroke-width:2;stroke-dasharray:5 5;opacity:.6}
+.ais-legend{font-size:11.5px;color:var(--ais-muted);display:flex;gap:6px;align-items:center;margin:2px 4px}
+.ais-k{display:inline-block;width:18px;height:3px;border-radius:2px}
+.ais-k-s{background:var(--ais-amber)}
+.ais-k-b{background:var(--ais-navy);opacity:.6;margin-left:10px}
+.ais-error{color:#b91c1c;font-weight:600}
+@media (max-width:980px){.ais-layout{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){.ais-charts{grid-template-columns:minmax(0,1fr)}.ais-kpi strong{font-size:20px}}

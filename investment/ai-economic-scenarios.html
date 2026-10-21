@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>if (/[?&]embed=1\b/.test(location.search)) document.documentElement.classList.add('ais-embed');</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9JMJJ5CJR4');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Economic Scenarios 2030: Interactive Model | WealthLanding</title>
+  <meta name="description" content="Interactive model of GDP, growth, labor share, wages and unemployment to 2030 under Modest, Substantial and Extreme AI scenarios, built on the Korinek–Jones task-based framework.">
+  <link rel="canonical" href="https://www.wealthlanding.com/investment/ai-economic-scenarios.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WealthLanding">
+  <meta property="og:title" content="AI Economic Scenarios 2030: Interactive Model">
+  <meta property="og:description" content="Move the sliders to see how AI adoption, automation and reinstatement could change GDP, the labor share, wages and unemployment by 2030.">
+  <meta property="og:url" content="https://www.wealthlanding.com/investment/ai-economic-scenarios.html">
+  <meta property="og:image" content="https://www.wealthlanding.com/investment/ai-economic-scenarios-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Economic Scenarios 2030: Interactive Model">
+  <meta name="twitter:description" content="GDP, labor share, wages and unemployment to 2030 under three AI scenarios, with every parameter adjustable.">
+  <meta name="twitter:image" content="https://www.wealthlanding.com/investment/ai-economic-scenarios-og.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/components/ai-scenarios/ai-scenarios.css">
+  <style>
+    body{margin:0;font-family:Inter,system-ui,sans-serif;background:#f6f7fb;color:#0f172a}
+    .aisp-wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+    .aisp-hero{background:#0b1b3a;color:#fff;padding:56px 0 44px}
+    .aisp-hero a.back{color:#cbd5e1;font-weight:700;font-size:14px;text-decoration:none}
+    .aisp-hero a.back:hover{color:#fbbf24}
+    .aisp-eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:#fbbf24;margin-top:22px}
+    .aisp-hero h1{font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.1;margin:12px 0 14px;letter-spacing:-.02em;max-width:22ch}
+    .aisp-hero p{color:#cbd5e1;line-height:1.7;max-width:70ch;margin:0}
+    .aisp-banner{background:#fffbeb;border:1px solid #fde68a;color:#78350f;border-radius:14px;padding:12px 16px;font-size:13.5px;line-height:1.55;margin:24px 0}
+    .aisp-banner a{color:#92400e}
+    main section{margin:40px 0}
+    main h2{font-size:1.6rem;letter-spacing:-.01em;color:#0b1b3a;margin:0 0 12px}
+    main h3{font-size:1.1rem;color:#0b1b3a;margin:22px 0 8px}
+    main p,main li{line-height:1.7;color:#374151}
+    .aisp-card{background:#fff;border:1px solid #e3e7ef;border-radius:20px;padding:22px 24px;box-shadow:0 6px 20px rgba(11,27,58,.05)}
+    .aisp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .aisp-eq{overflow-x:auto;padding:10px 0;font-size:1.08rem}
+    math{font-size:1.05em}
+    table.aisp-t{border-collapse:collapse;width:100%;font-size:14px}
+    .aisp-tw{overflow-x:auto}
+    table.aisp-t th,table.aisp-t td{border-bottom:1px solid #e3e7ef;padding:8px 10px;text-align:right;white-space:nowrap}
+    table.aisp-t th:first-child,table.aisp-t td:first-child{text-align:left}
+    pre.aisp-code{background:#0b1b3a;color:#e2e8f0;border-radius:14px;padding:14px 16px;overflow-x:auto;font-size:13px}
+    .aisp-small{font-size:13px;color:#5b6478}
+    .ais-embed #global-header-target,.ais-embed wealthlanding-footer,.ais-embed .aisp-hero,.ais-embed .aisp-hide-embed,.ais-embed #wl-sharebar{display:none!important}
+    .ais-embed main section{margin:12px 0}
+    @media(max-width:640px){.aisp-wrap{padding:0 16px}.aisp-card{padding:18px 16px}}
+  </style>
+</head>
+<body>
+  <div id="global-header-target"></div>
+
+  <header class="aisp-hero">
+    <div class="aisp-wrap">
+      <a href="./index.html" class="back">← Investment Decision Center</a>
+      <div class="aisp-eyebrow">Interactive model · Educational</div>
+      <h1>AI Economic Scenarios 2030</h1>
+      <p>How much could AI move GDP, wages, the labor share and unemployment by 2030? This model starts from the task-based framework in Korinek, Jones, Sacher, Cotter and McCrory's working paper <em>Economic Scenarios for Transformative AI</em>. Pick a scenario, then change any assumption.</p>
+      <div data-wl-share></div>
+    </div>
+  </header>
+
+  <main class="aisp-wrap">
+    <div class="aisp-banner aisp-hide-embed" role="note">
+      <strong>What is from the paper and what is ours.</strong> The production model, the 2024 calibration, the three presets' parameters, and the small “Paper” comparison figures come from the
+      <a href="https://www-cdn.anthropic.com/files/4zrzovbb/website/cf58f84d46a4a76bf5a5b039ac695fba6b80041c.pdf" target="_blank" rel="noopener">working paper (PDF)</a>.
+      The unemployment reabsorption mechanism, power and chip caps, investment feedback, policy levers and hyperscaler signal are WealthLanding's own reverse-engineered, illustrative additions. They are not from Anthropic or the authors.
+    </div>
+
+    <section aria-labelledby="ais-model-h">
+      <h2 id="ais-model-h">Explore the scenarios</h2>
+      <div data-ai-scenarios data-src="/components/ai-scenarios/scenarios.json">
+        <noscript><p>This interactive model needs JavaScript. The formulas and assumptions below explain how it works.</p></noscript>
+      </div>
+    </section>
+
+    <section aria-labelledby="ais-how-h" class="aisp-hide-embed">
+      <h2 id="ais-how-h">How the model works</h2>
+      <div class="aisp-card">
+        <p>The economy produces output from many task instances combined with a constant-elasticity (CES) aggregator, with elasticity of substitution <math><mi>σ</mi></math> (0.5 by default, so tasks are complements). A share <math><msub><mi>m</mi><mi>t</mi></msub></math> of the economy's labor tasks is exposed to AI (cognitive work). Within that, a share <math><msub><mi>d</mi><mi>t</mi></msub></math> of instances is actually done with AI, so <math><msub><mi>m</mi><mi>t</mi></msub><msub><mi>d</mi><mi>t</mi></msub></math> is the effective AI share. Each AI instance is <math><msup><mi>e</mi><msub><mi>a</mi><mi>t</mi></msub></msup></math> times more productive. Of the AI-performed work, a share <math><mi>ψ</mi></math> is automated (done by capital) and the rest is augmented (a worker using AI). Each automated instance creates <math><mi>ρ</mi></math> new labor tasks (reinstatement). Capital is supplied with elasticity <math><mi>ε</mi></math> = 3 with respect to its rental rate.</p>
+        <p><strong>A note on notation.</strong> In the paper and on this page, <math><mi>ψ</mi></math> is the automation share and <math><mi>ρ</mi></math> is reinstatement. The share of work performed with AI is the product <math><mi>m</mi><mi>d</mi></math>. It is not a separate parameter.</p>
+
+        <h3>Paths over time (paper)</h3>
+        <div class="aisp-eq"><math display="block"><msub><mi>m</mi><mi>t</mi></msub><mo>=</mo><mfrac><mover><mi>m</mi><mo>¯</mo></mover><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><msub><mi>κ</mi><mi>m</mi></msub><mo>(</mo><mi>t</mi><mo>−</mo><msub><mi>t</mi><mi>m</mi></msub><mo>)</mo></mrow></msup></mrow></mfrac><mo>,</mo><mspace width="1em"/><msub><mi>κ</mi><mi>m</mi></msub><mo>=</mo><mfrac><mn>1</mn><mn>3.5</mn></mfrac><mi>ln</mi><mrow><mo>[</mo><mfrac><mrow><mover><mi>m</mi><mo>¯</mo></mover><mo>−</mo><msub><mi>m</mi><mn>2026</mn></msub></mrow><msub><mi>m</mi><mn>2026</mn></msub></mfrac><mo>·</mo><mfrac><msub><mi>m</mi><mn>2030</mn></msub><mrow><mover><mi>m</mi><mo>¯</mo></mover><mo>−</mo><msub><mi>m</mi><mn>2030</mn></msub></mrow></mfrac><mo>]</mo></mrow></math></div>
+        <p>The same logistic form applies to <math><msub><mi>d</mi><mi>t</mi></msub></math> with ceiling 1. The mid-2026 anchors are <math><mi>m</mi></math> = 0.14 and <math><mi>d</mi></math> = 0.10, and the exposure ceiling is <math><mover><mi>m</mi><mo>¯</mo></mover></math> = 0.624 (cognitive share of labor income). Productivity rises linearly: <math><msub><mi>a</mi><mi>t</mi></msub><mo>=</mo><msub><mi>a</mi><mn>2026</mn></msub><mo>+</mo><msub><mi>g</mi><mi>a</mi></msub><mo>(</mo><mi>t</mi><mo>−</mo><mn>2026.5</mn><mo>)</mo></math>.</p>
+
+        <h3>Closed-form solution (paper, Proposition 1, uniform parameters)</h3>
+        <div class="aisp-eq"><math display="block"><msub><mi>s</mi><mrow><mi>L</mi><mo>,</mo><mi>t</mi></mrow></msub><mo>=</mo><mn>1</mn><mo>−</mo><mrow><mo>[</mo><msub><mi>s</mi><mrow><mi>K</mi><mn>0</mn></mrow></msub><mo>+</mo><msub><mi>s</mi><mrow><mi>L</mi><mn>0</mn></mrow></msub><mi>ψ</mi><mi>m</mi><mi>d</mi><mo>(</mo><msup><mi>e</mi><mrow><mo>−</mo><mo>(</mo><mn>1</mn><mo>−</mo><mi>σ</mi><mo>)</mo><mi>a</mi></mrow></msup><mo>−</mo><mi>ρ</mi><mo>)</mo><mo>]</mo></mrow><msup><mi>e</mi><mrow><mo>(</mo><mn>1</mn><mo>−</mo><mi>σ</mi><mo>)</mo><mi>x</mi></mrow></msup></math></div>
+        <div class="aisp-eq"><math display="block"><msub><mover><mi>ℓ</mi><mo>~</mo></mover><mi>N</mi></msub><mo>=</mo><mo>−</mo><mi>ln</mi><mrow><mo>(</mo><mn>1</mn><mo>−</mo><mi>m</mi><mi>d</mi><mo>[</mo><mn>1</mn><mo>−</mo><mi>ρ</mi><mi>ψ</mi><mo>−</mo><mo>(</mo><mn>1</mn><mo>−</mo><mi>ψ</mi><mo>)</mo><msup><mi>e</mi><mrow><mo>−</mo><mo>(</mo><mn>1</mn><mo>−</mo><mi>σ</mi><mo>)</mo><mi>a</mi></mrow></msup><mo>]</mo><mo>)</mo></mrow></math></div>
+        <div class="aisp-eq"><math display="block"><mi>Δ</mi><mi>ln</mi><mi>w</mi><mo>=</mo><mfrac><mrow><mi>Δ</mi><mi>ln</mi><msub><mi>s</mi><mi>L</mi></msub><mo>+</mo><msub><mover><mi>ℓ</mi><mo>~</mo></mover><mi>N</mi></msub></mrow><mrow><mn>1</mn><mo>−</mo><mi>σ</mi></mrow></mfrac><mo>,</mo><mspace width="1em"/><mi>Δ</mi><mi>ln</mi><mo>(</mo><mi>Y</mi><mo>/</mo><mi>L</mi><mo>)</mo><mo>=</mo><mi>Δ</mi><mi>ln</mi><mi>w</mi><mo>−</mo><mi>Δ</mi><mi>ln</mi><msub><mi>s</mi><mi>L</mi></msub></math></div>
+        <div class="aisp-eq"><math display="block"><mi>ε</mi><mi>x</mi><mo>=</mo><mi>Δ</mi><mi>ln</mi><mi>K</mi><mo>=</mo><mi>ln</mi><mfrac><mrow><mn>1</mn><mo>−</mo><msub><mi>s</mi><mi>L</mi></msub></mrow><msub><mi>s</mi><mrow><mi>K</mi><mn>0</mn></mrow></msub></mfrac><mo>+</mo><mi>Δ</mi><mi>ln</mi><mo>(</mo><mi>Y</mi><mo>/</mo><mi>L</mi><mo>)</mo><mo>−</mo><mi>x</mi></math></div>
+        <p>Here <math><mi>x</mi><mo>=</mo><mi>Δ</mi><mi>ln</mi><mi>r</mi></math> is the gap in the rental rate of capital. The page solves for it numerically by bisection (the root is unique). The base year is 2024, with labor share <math><msub><mi>s</mi><mrow><mi>L</mi><mn>0</mn></mrow></msub></math> = 0.60. The cognitive-employment target is <math><msub><mover><mi>ℓ</mi><mo>~</mo></mover><mi>C</mi></msub><mo>≈</mo><mo>−</mo><mo>(</mo><msub><mi>s</mi><mrow><mi>N</mi><mn>0</mn></mrow></msub><mo>/</mo><msub><mi>s</mi><mrow><mi>C</mi><mn>0</mn></mrow></msub><mo>)</mo><msub><mover><mi>ℓ</mi><mo>~</mo></mover><mi>N</mi></msub></math>.</p>
+
+        <h3>WealthLanding's illustrative additions</h3>
+        <ul>
+          <li><strong>Unemployment.</strong> The paper models search and matching with sticky wages. This page uses a simpler stand-in. When the cognitive-employment target falls, the displaced workers join an excess pool <math><msub><mi>P</mi><mi>t</mi></msub></math>. Each month a fraction <math><mi>h</mi><mo>/</mo><mn>12</mn></math> of the pool is rehired, so <math><msub><mi>U</mi><mi>t</mi></msub><mo>=</mo><mover><mi>U</mi><mo>¯</mo></mover><mo>+</mo><msub><mi>P</mi><mi>t</mi></msub></math> with <math><mover><mi>U</mi><mo>¯</mo></mover></math> = 3.8%. The preset speeds (1.1, 1.3 and 0.25 per year) were tuned so that 2030 unemployment lands near the paper's published values.</li>
+          <li><strong>GDP with unemployment.</strong> <math><mi>Δ</mi><mi>ln</mi><mi>Y</mi><mo>≈</mo><mi>Δ</mi><mi>ln</mi><mo>(</mo><mi>Y</mi><mo>/</mo><mi>L</mi><mo>)</mo><mo>+</mo><msub><mi>s</mi><mrow><mi>L</mi><mn>0</mn></mrow></msub><mi>ln</mi><mfrac><mrow><mn>1</mn><mo>−</mo><msub><mi>U</mi><mi>t</mi></msub></mrow><mrow><mn>1</mn><mo>−</mo><mover><mi>U</mi><mo>¯</mo></mover></mrow></mfrac></math>. Growth in year <math><mi>t</mi></math> is the 12-month change in this gap plus the 2% baseline.</li>
+          <li><strong>Power and chip caps.</strong> If power or chips can deliver only a fraction <math><mi>c</mi></math> of what the scenario needs by 2030, the rise in <math><mi>d</mi></math> and <math><mi>a</mi></math> above their mid-2026 levels is scaled down. The scaling phases in linearly, reaching a factor of <math><mi>c</mi></math> = min(power, chips) in 2030.</li>
+          <li><strong>Compute tax.</strong> This scales the same rise by <math><mn>1</mn><mo>−</mo><mi>τ</mi></math>, using an assumed adoption elasticity of 1.</li>
+          <li><strong>Investment feedback.</strong> Diffusion is multiplied by <math><mn>1</mn><mo>+</mo><mi>min</mi><mo>(</mo><mn>0.25</mn><mo>,</mo><mi>φ</mi><mo>·</mo><msub><mtext>gap</mtext><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>)</mo></math>, capped at <math><mi>d</mi></math> ≤ 1. A larger economy funds more AI deployment, and the bound prevents runaway paths.</li>
+          <li><strong>Retraining.</strong> This raises the reabsorption speed <math><mi>h</mi></math> by the chosen percentage.</li>
+          <li><strong>Transfers/UBI.</strong> Worker household income = labor income + T × (capital income above the no-AI level). It is shown relative to baseline labor income.</li>
+          <li><strong>Hyperscaler signal.</strong> Signal S is the average of two parts, each clipped to [−1, 1]: (average cloud growth − 20) / 40, and (CapEx growth year over year − 20) / 80. When the toggle is on, <math><msub><mi>d</mi><mn>2030</mn></msub><mo>←</mo><msub><mi>d</mi><mn>2030</mn></msub><mo>(</mo><mn>1</mn><mo>+</mo><mn>0.2</mn><mo>·</mo><mi>S</mi><mo>·</mo><mtext>strength</mtext><mo>)</mo></math>. If you enter an AI revenue share, it also nudges <math><msub><mi>a</mi><mn>2030</mn></msub></math> by up to ±0.10. The reference points are WealthLanding judgment calls, not estimates.</li>
+        </ul>
+
+        <h3>Assumptions and limits</h3>
+        <ul>
+          <li>The paper's model, and this one, leave out robotics, aggregate-demand effects and an intertemporal saving (Euler) decision. The paper's ideas channel is small, and it is omitted here.</li>
+          <li>The paper allows parameters to differ across occupations. This page uses one uniform value for each parameter.</li>
+          <li>The average wage here is the full-employment wage from the closed form. The paper's figure also reflects wage rigidity, so ours differs, most visibly in the Extreme preset.</li>
+          <li>Results are gaps relative to a no-AI path with 2% growth. They are not forecasts.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="ais-presets-h" class="aisp-hide-embed">
+      <h2 id="ais-presets-h">Preset values (paper Table 1) and published 2030 results (Table 3)</h2>
+      <div class="aisp-card aisp-tw">
+        <table class="aisp-t">
+          <caption class="aisp-small" style="text-align:left;caption-side:bottom;padding-top:8px">Source: Korinek et al. (2026), Tables 1 and 3. Reabsorption speeds are WealthLanding's calibration.</caption>
+          <thead><tr><th scope="col">Parameter / result</th><th scope="col">Modest</th><th scope="col">Substantial</th><th scope="col">Extreme</th></tr></thead>
+          <tbody>
+            <tr><td>m₂₀₃₀</td><td>0.20</td><td>0.30</td><td>0.50</td></tr>
+            <tr><td>d₂₀₃₀</td><td>0.20</td><td>0.40</td><td>0.60</td></tr>
+            <tr><td>a mid-2026 → 2030</td><td>0.30 → 0.30</td><td>0.35 → 0.45</td><td>0.45 → 0.80</td></tr>
+            <tr><td>ψ (automation share)</td><td>0.50</td><td>0.75</td><td>0.90</td></tr>
+            <tr><td>ρ (reinstatement)</td><td>0.50</td><td>0.25</td><td>0</td></tr>
+            <tr><td>GDP above no-AI, 2030</td><td>1.6%</td><td>8.3%</td><td>32.4%</td></tr>
+            <tr><td>GDP growth, 2030</td><td>2.4%</td><td>5.4%</td><td>15.4%</td></tr>
+            <tr><td>Labor share, 2030</td><td>59.4%</td><td>56.1%</td><td>45.2%</td></tr>
+            <tr><td>Unemployment, 2030</td><td>3.9%</td><td>4.6%</td><td>11.9%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="ais-you-h" class="aisp-hide-embed">
+      <h2 id="ais-you-h">What it means for you</h2>
+      <div class="aisp-grid">
+        <div class="aisp-card"><h3>Career</h3><p>In every preset, the pressure falls on cognitive tasks that AI can perform end to end. The model's key lever is reinstatement (ρ). Roles that keep creating new tasks for people hold up better. Building skills that sit next to AI, such as judgment, client relationships, and supervising AI output, matches the augmentation side of ψ. A larger emergency fund is a hedge against the slow-reabsorption case.</p></div>
+        <div class="aisp-card"><h3>Investing themes</h3><p>Higher-AI scenarios move income from labor to capital and raise the return on capital. They also lean on power, chips and data-center build-outs, which the caps above make explicit. These are themes for understanding the economy, not picks. Diversification still matters, because the same scenario that lifts AI-linked capital can hurt other sectors.</p></div>
+        <div class="aisp-card"><h3>Policy</h3><p>Try the policy sliders. Retraining shortens the unemployment hump. Transfers can keep worker household income at or above baseline even when the labor share falls. The paper estimates that a transfer of about 9% of GDP would keep cognitive workers' income at its no-AI level in the Extreme case. A compute tax slows adoption, which trades growth for a gentler transition.</p></div>
+      </div>
+      <p class="aisp-small" style="margin-top:14px"><strong>Not investment advice.</strong> This page is an educational model. It is not a forecast, and it is not a recommendation to buy, sell or hold any security. Talk to a qualified professional about your own situation.</p>
+    </section>
+
+    <section aria-labelledby="ais-src-h" class="aisp-hide-embed">
+      <h2 id="ais-src-h">Sources</h2>
+      <div class="aisp-card">
+        <ul>
+          <li>Korinek, A., Jones, C. I., Sacher, S., Cotter, K. and McCrory, A. (2026). <em>Economic Scenarios for Transformative AI</em>. The Anthropic Institute Working Paper No. 2026-02. <a href="https://www-cdn.anthropic.com/files/4zrzovbb/website/cf58f84d46a4a76bf5a5b039ac695fba6b80041c.pdf" target="_blank" rel="noopener">PDF</a> · <a href="https://cepr.org/publications/dp21939" target="_blank" rel="noopener">CEPR DP21939</a> · <a href="https://www.anthropic.com/institute/econ-scenarios" target="_blank" rel="noopener">Anthropic's scenario explorer</a></li>
+          <li>Hyperscaler inputs come from the quarter ended June 30, 2026: <a href="https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx" target="_blank" rel="noopener">Amazon Q2 2026 (July 30, 2026)</a> · <a href="https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast" target="_blank" rel="noopener">Microsoft FY26 Q4 (July 29, 2026)</a> · <a href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm" target="_blank" rel="noopener">Alphabet Q2 2026 (July 22, 2026)</a>. Update them after each earnings release.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="ais-embed-h" class="aisp-hide-embed">
+      <h2 id="ais-embed-h">Embed this model</h2>
+      <div class="aisp-card">
+        <p>Add <code>?embed=1</code> to show only the interactive model, without the site header and footer:</p>
+        <pre class="aisp-code"><code>&lt;iframe src="https://www.wealthlanding.com/investment/ai-economic-scenarios.html?embed=1"
+        title="AI Economic Scenarios 2030 (WealthLanding)" width="100%" height="1500"
+        style="border:0" loading="lazy"&gt;&lt;/iframe&gt;</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <wealthlanding-footer></wealthlanding-footer>
+  <script src="/components/footer.js"></script>
+  <script src="/components/header.js"></script>
+  <script src="/components/ai-scenarios/ai-scenarios.js" defer></script>
+  <script src="/blogs/share.js" defer></script>
+</body>
+</html>
