@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "title": "AI Economic Scenarios 2030",
+    "paper": {
+      "title": "Economic Scenarios for Transformative AI",
+      "authors": "Anton Korinek, Charles I. Jones, Seth Sacher, Kyle Cotter, Alexander McCrory",
+      "series": "The Anthropic Institute Working Paper No. 2026-02 (September 2026); also CEPR Discussion Paper DP21939",
+      "pdf": "https://www-cdn.anthropic.com/files/4zrzovbb/website/cf58f84d46a4a76bf5a5b039ac695fba6b80041c.pdf",
+      "cepr": "https://cepr.org/publications/dp21939",
+      "explorer": "https://www.anthropic.com/institute/econ-scenarios"
+    },
+    "disclaimer": "WealthLanding's simplified, reverse-engineered illustrative model. Values labeled 'paper' come from the working paper's Table 1 and Table 3; everything else (unemployment dynamics, capacity caps, investment feedback, policy levers, hyperscaler mapping) is WealthLanding's own illustrative extension and is not from Anthropic or the authors."
+  },
+  "calibration": {
+    "source": "paper",
+    "note": "Base year 2024 calibration from the paper (Section 3 / Table 1).",
+    "sL0": 0.60,
+    "sK0": 0.40,
+    "mBar": 0.624,
+    "dBar": 1.0,
+    "anchorYear": 2026.5,
+    "m2026": 0.14,
+    "d2026": 0.10,
+    "sigma": 0.5,
+    "epsilon": 3,
+    "rBar": 0.115,
+    "delta": 0.05,
+    "baselineGrowth": 0.02,
+    "uBar": 0.038
+  },
+  "presets": [
+    {
+      "id": "modest",
+      "label": "Modest",
+      "paper": { "m2030": 0.2, "d2030": 0.2, "a2026": 0.30, "a2030": 0.30, "psi": 0.50, "rho": 0.50 },
+      "illustrative": { "reabsorption": 1.1 },
+      "narrative": "AI spreads like a useful but ordinary general-purpose technology. Adoption is uneven, gains per task stay flat, and half of AI-performed work is augmentation rather than automation. New labor tasks replace half of what is automated, so the labor market barely notices.",
+      "paperResults2030": { "gdpGap": 1.6, "growth": 2.4, "wage": 0.7, "laborShare": 59.4, "unemployment": 3.9, "tfp": 0.7 }
+    },
+    {
+      "id": "substantial",
+      "label": "Substantial",
+      "paper": { "m2030": 0.3, "d2030": 0.4, "a2026": 0.35, "a2030": 0.45, "psi": 0.75, "rho": 0.25 },
+      "illustrative": { "reabsorption": 1.3 },
+      "narrative": "Capabilities keep improving and businesses reorganize around them. Most AI-performed work is automation, reinstatement of new human tasks is slower, and growth roughly doubles its trend pace by 2030 while the labor share slips several points.",
+      "paperResults2030": { "gdpGap": 8.3, "growth": 5.4, "wage": 2.1, "laborShare": 56.1, "unemployment": 4.6, "tfp": 3.1 }
+    },
+    {
+      "id": "extreme",
+      "label": "Extreme",
+      "paper": { "m2030": 0.5, "d2030": 0.6, "a2026": 0.45, "a2030": 0.80, "psi": 0.90, "rho": 0.0 },
+      "illustrative": { "reabsorption": 0.25 },
+      "narrative": "AI can do most cognitive tasks and productivity per task climbs fast. Nearly all AI-performed work is automation with no reinstatement, capital floods in, growth runs in the double digits, and displaced cognitive workers take years to find new roles.",
+      "paperResults2030": { "gdpGap": 32.4, "growth": 15.4, "wage": 9.7, "laborShare": 45.2, "unemployment": 11.9, "tfp": 13.4 }
+    }
+  ],
+  "sliders": [
+    { "key": "m2030", "label": "m₂₀₃₀ — AI-exposed (cognitive) task share by 2030", "min": 0.15, "max": 0.62, "step": 0.01, "fmt": "pct", "source": "paper" },
+    { "key": "d2030", "label": "d₂₀₃₀ — diffusion: share of exposed instances done with AI", "min": 0.11, "max": 0.95, "step": 0.01, "fmt": "pct", "source": "paper" },
+    { "key": "a2026", "label": "a mid-2026 — log productivity gain per AI instance", "min": 0, "max": 1, "step": 0.01, "fmt": "num", "source": "paper" },
+    { "key": "a2030", "label": "a₂₀₃₀ — log productivity gain per AI instance", "min": 0, "max": 1.5, "step": 0.01, "fmt": "num", "source": "paper" },
+    { "key": "psi", "label": "ψ — automation share of AI work (vs augmentation)", "min": 0, "max": 1, "step": 0.01, "fmt": "pct", "source": "paper" },
+    { "key": "rho", "label": "ρ — reinstatement: new labor tasks per automated task", "min": 0, "max": 1, "step": 0.01, "fmt": "num", "source": "paper" },
+    { "key": "sigma", "label": "σ — elasticity of substitution across tasks", "min": 0.1, "max": 0.9, "step": 0.05, "fmt": "num", "source": "paper" },
+    { "key": "epsilon", "label": "ε — capital supply elasticity", "min": 0.5, "max": 20, "step": 0.5, "fmt": "num", "source": "paper" },
+    { "key": "reabsorption", "label": "Reabsorption speed (share of excess unemployed rehired per year)", "min": 0.05, "max": 3, "step": 0.05, "fmt": "num", "source": "illustrative" }
+  ],
+  "extensions": {
+    "source": "illustrative",
+    "defaults": { "power": 100, "chips": 100, "feedback": 0, "retrain": 0, "transfer": 0, "computeTax": 0 },
+    "sliders": [
+      { "key": "power", "label": "Power availability (GW delivered as % of what the scenario needs by 2030)", "min": 30, "max": 100, "step": 5, "fmt": "pctInt" },
+      { "key": "chips", "label": "Chip supply (% of accelerators the scenario needs by 2030)", "min": 30, "max": 100, "step": 5, "fmt": "pctInt" },
+      { "key": "feedback", "label": "Investment feedback strength φ (bounded)", "min": 0, "max": 1, "step": 0.05, "fmt": "num" },
+      { "key": "retrain", "label": "Retraining program: faster reabsorption (%)", "min": 0, "max": 200, "step": 10, "fmt": "pctInt" },
+      { "key": "transfer", "label": "Transfer/UBI: share of AI-driven capital income redistributed (%)", "min": 0, "max": 100, "step": 5, "fmt": "pctInt" },
+      { "key": "computeTax", "label": "Compute tax rate (% of AI compute cost)", "min": 0, "max": 50, "step": 5, "fmt": "pctInt" }
+    ],
+    "computeTaxElasticity": 1.0,
+    "feedbackCap": 0.25
+  },
+  "hyperscalers": {
+    "source": "illustrative mapping; inputs from company releases",
+    "asOf": "Quarter ended June 30, 2026 (latest releases as of October 21, 2026)",
+    "inputs": [
+      { "key": "aws", "label": "AWS revenue growth (y/y %)", "value": 37, "date": "July 30, 2026", "source": "Amazon Q2 2026 results", "url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx" },
+      { "key": "azure", "label": "Azure and other cloud services growth (y/y %)", "value": 43, "date": "July 29, 2026", "source": "Microsoft FY26 Q4 earnings release", "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast" },
+      { "key": "gcp", "label": "Google Cloud revenue growth (y/y %)", "value": 82, "date": "July 22, 2026", "source": "Alphabet Q2 2026 results", "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm" },
+      { "key": "capex", "label": "Combined quarterly CapEx, $B (cash purchases/additions of property & equipment)", "value": 134.9, "date": "Q2 2026 / FY26 Q4", "source": "Amazon $54.2B + Microsoft $35.8B + Alphabet $44.9B, from each company's cash-flow statement in the releases above", "url": "" },
+      { "key": "capexPrior", "label": "Same quarter a year earlier, $B", "value": 71.7, "date": "Q2 2025 / FY25 Q4", "source": "Amazon $32.2B + Microsoft $17.1B + Alphabet $22.4B, prior-year columns of the same statements", "url": "" },
+      { "key": "aiShare", "label": "AI share of cloud revenue (%)", "value": null, "placeholder": "enter latest figure", "date": "", "source": "Not reported on a comparable basis by all three companies", "url": "" }
+    ],
+    "mapping": { "cloudRef": 20, "cloudSpan": 40, "capexRef": 20, "capexSpan": 80, "aiShareRef": 20, "aiShareSpan": 40, "dNudge": 0.20, "aNudge": 0.10 }
+  }
+}
