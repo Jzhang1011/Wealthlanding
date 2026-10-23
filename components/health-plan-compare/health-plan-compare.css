@@ -1,0 +1,60 @@
+/* WealthLanding — Health Plan Comparison Calculator */
+.hpc{--navy:#0b1b3a;--amber:#d97706;--line:#e3e7ef;font-family:Inter,system-ui,sans-serif;color:#0f172a;display:grid;gap:18px}
+.hpc>*{min-width:0}
+.hpc-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px 22px;box-shadow:0 6px 20px rgba(11,27,58,.05);position:relative}
+.hpc-example{background:#fffbeb;border-color:#fde68a;color:#78350f;font-size:14px;line-height:1.55}
+.hpc-h{margin:0 0 12px;font-size:1.15rem;color:var(--navy)}
+.hpc-h4{margin:16px 0 8px;font-size:1rem;color:var(--navy)}
+.hpc-toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;justify-content:space-between;margin-bottom:14px}
+.hpc-actions{display:flex;flex-wrap:wrap;gap:8px}
+.hpc-btn{font:inherit;font-weight:700;font-size:13.5px;border-radius:999px;padding:9px 16px;border:1px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer}
+.hpc-btn:hover{background:#1e3a8a}
+.hpc-btn-ghost{background:#fff;color:var(--navy)}
+.hpc-btn-ghost:hover{background:#f1f5f9}
+.hpc-btn:focus-visible,.hpc input:focus-visible,.hpc select:focus-visible,.hpc summary:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}
+.hpc-plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.hpc-plan{border:1px solid var(--line);border-top:5px solid var(--hpc-c);border-radius:16px;padding:14px;background:#fbfcfe}
+.hpc-plan-h{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-end}
+.hpc-plan-h .hpc-f{flex:1 1 160px}
+.hpc-dot{width:12px;height:12px;border-radius:50%;background:var(--hpc-c);margin-bottom:14px;flex:none}
+.hpc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px 12px;margin-top:10px}
+.hpc-f{display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:600;color:#334155}
+.hpc-f small{font-weight:500;color:#64748b;font-size:12px;line-height:1.4}
+.hpc-f input,.hpc-f select{font:inherit;font-size:15px;font-weight:500;padding:8px 10px;border:1px solid #cbd5e1;border-radius:10px;background:#fff;color:#0f172a;min-width:0}
+.hpc-f input[type=range]{padding:0;accent-color:var(--amber);border:0}
+.hpc-f-inline{min-width:220px}
+.hpc-check{display:flex;gap:8px;align-items:center;font-size:13.5px;font-weight:600;color:#334155;margin-top:12px}
+.hpc-check input{width:18px;height:18px;accent-color:var(--navy)}
+.hpc-copays{margin-top:10px;font-size:13px}
+.hpc-copays summary{cursor:pointer;font-weight:700;color:var(--navy)}
+.hpc-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13.5px;font-weight:600;margin-bottom:6px}
+.hpc-legend i,.hpc-tip i,.hpc-sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.hpc-chart svg{width:100%;height:auto;display:block;touch-action:pan-y}
+.hpc-chart text{font-size:12px;fill:#475569;font-family:Inter,system-ui,sans-serif}
+.hpc-chart .hpc-ax{font-weight:700;fill:var(--navy);font-size:12.5px}
+.hpc-grid-l{stroke:#e5e7eb}
+.hpc-be text{font-weight:800;fill:var(--navy);font-size:12.5px;paint-order:stroke;stroke:#fff;stroke-width:4px}
+.hpc-exp{stroke:var(--amber);stroke-width:2;stroke-dasharray:6 5}
+.hpc-chart .hpc-exp-t{fill:#92400e;font-weight:700}
+.hpc-hover{stroke:#94a3b8;stroke-width:1}
+.hpc-tip{position:absolute;z-index:5;background:var(--navy);color:#fff;border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.6;pointer-events:none;min-width:200px;box-shadow:0 10px 24px rgba(0,0,0,.2)}
+.hpc-exp-box{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-top:12px;font-size:14px;line-height:1.6}
+.hpc-exp-box p{margin:4px 0}
+.hpc-pill{display:inline-block;border:2px solid var(--hpc-c);border-radius:999px;padding:1px 10px;margin:2px 2px;font-weight:700}
+.hpc-small{font-size:12.5px;color:#5b6478;line-height:1.55}
+.hpc-dt{margin-top:12px}
+.hpc-dt summary{cursor:pointer;font-weight:700;color:var(--navy);font-size:14px}
+.hpc-tw{overflow-x:auto}
+.hpc-t{border-collapse:collapse;width:100%;font-size:14px;margin-top:8px}
+.hpc-t th,.hpc-t td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:right;white-space:nowrap}
+.hpc-t th:first-child,.hpc-t td:first-child{text-align:left}
+.hpc-t thead th{color:var(--navy);font-size:12.5px;text-transform:uppercase;letter-spacing:.03em}
+.hpc-be-list{margin:0;padding-left:18px;font-size:14px;line-height:1.7}
+.hpc-err{color:#b91c1c;font-weight:600}
+@media(max-width:640px){.hpc-card{padding:16px 14px}.hpc-chart text{font-size:13px}.hpc-be text{font-size:13px}}
+@media print{
+  .hpc-noprint,.hpc-tip{display:none!important}
+  .hpc-card{box-shadow:none;break-inside:avoid}
+  .hpc-dt{display:block}
+  .hpc-plans{grid-template-columns:repeat(3,1fr)}
+}
