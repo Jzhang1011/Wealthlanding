@@ -26,6 +26,20 @@
   },
   "posts": [
     {
+      "id": "employer-health-insurance-costs-rising",
+      "url": "/blogs/budget_spending/employer-health-insurance-costs-rising.html",
+      "title": "Why Employer Health Insurance Costs Are Rising in 2027",
+      "desc": "Employers expect an 8.2% jump in 2027, the most since 2003. The drivers, from GLP-1s to No Surprises Act disputes, charted from Mercer, KFF and CMS data, plus an open-enrollment checklist.",
+      "date": "Updated October 2026",
+      "year": 2026,
+      "topics": [
+        "healthcare"
+      ],
+      "tags": [
+        "Healthcare"
+      ]
+    },
+    {
       "id": "roth_conversions_pre_medicare",
       "url": "/blogs/budget_spending/roth_conversions_pre_medicare.html",
       "title": "Roth Conversions: Compressing Tax Liabilities Pre-Medicare",
