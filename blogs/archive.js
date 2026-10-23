@@ -1,5 +1,5 @@
 /* Shared blog archive: renders a post list from a JSON file and wires the topic filter,
-   year filter and search box. Used by /blogs/happy_retirement.html and /blogs/travel.html.
+   year filter and search box. Used by every blog section hub (happy_retirement, travel, market_investment, budget_spending, real_estate).
    Markup contract: an element with data-archive-src="/path/archive.json" and
    data-archive-prefix="hr" (ids <prefix>-archive-list, -filter-topic, -filter-year, -search,
    -archive-status, -archive-empty, -archive-reset). Pages ship a static copy of the list for no-JS. */
@@ -14,6 +14,11 @@
     'Airline Status': 'bg-sky-50 text-sky-800 border-sky-200',
     'United': 'bg-blue-50 text-blue-800 border-blue-200',
     'Family Travel': 'bg-rose-50 text-rose-800 border-rose-200',
+    'Markets': 'bg-slate-100 text-slate-800 border-slate-300',
+    'Currencies': 'bg-amber-50 text-amber-800 border-amber-200',
+    'Healthcare and Biotech': 'bg-teal-50 text-teal-800 border-teal-200',
+    'Housing Market': 'bg-orange-50 text-orange-800 border-orange-200',
+    'Estate Planning': 'bg-indigo-50 text-indigo-800 border-indigo-200',
     'Case Study': 'bg-blue-50 text-blue-800 border-blue-200'
   };
   function esc(s) {

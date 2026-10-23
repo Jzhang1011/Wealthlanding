@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "title": "Budget and Spending",
+    "hub": "budget_spending.html",
+    "prefix": "bs",
+    "description": "Budgeting, tax and spending case studies: Roth conversions, ACA subsidies and real family savings.",
+    "topics": [
+      {
+        "id": "tax-strategy",
+        "label": "Tax Strategy"
+      },
+      {
+        "id": "healthcare",
+        "label": "Healthcare"
+      },
+      {
+        "id": "family-travel",
+        "label": "Family Travel"
+      },
+      {
+        "id": "savings",
+        "label": "Savings"
+      }
+    ],
+    "note": "Add a post here once; blogs/budget_spending.html renders the archive, topic and year filters, and search from this list via /blogs/archive.js. Rebuild the static no-JS copy with: python3 tools/build_blog_hubs.py"
+  },
+  "posts": [
+    {
+      "id": "roth_conversions_pre_medicare",
+      "url": "/blogs/budget_spending/roth_conversions_pre_medicare.html",
+      "title": "Roth Conversions: Compressing Tax Liabilities Pre-Medicare",
+      "desc": "How Roth conversions during lower-income gap years before Medicare can compress lifetime tax liabilities and reduce IRMAA exposure. Educational only.",
+      "topics": [
+        "tax-strategy"
+      ],
+      "tags": [
+        "Tax Strategy"
+      ],
+      "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+      "imageAlt": "Calculator and tax documents",
+      "year": 2026
+    },
+    {
+      "id": "aca_early_retirement_subsidies",
+      "url": "/blogs/budget_spending/aca_early_retirement_subsidies.html",
+      "title": "Navigating Early Retirement ACA Premium Tax Subsidies",
+      "desc": "Mechanical frameworks for monitoring MAGI to pursue ACA premium tax credit savings in early retirement. Educational only, not advice.",
+      "topics": [
+        "healthcare",
+        "tax-strategy"
+      ],
+      "tags": [
+        "Healthcare",
+        "Tax Strategy"
+      ],
+      "image": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80",
+      "imageAlt": "Healthcare spending",
+      "year": 2026
+    },
+    {
+      "id": "disneyland_family_of_five",
+      "url": "/blogs/budget_spending/disneyland_family_of_five.html",
+      "title": "How a Family of 5 Saved $1,210 on Their Disneyland Trip",
+      "desc": "A worked example: how a family of five cut 20% off a 4-day Disneyland California trip with discounted tickets, tracked fares, opaque hotel rates and stacked credit card rewards.",
+      "topics": [
+        "family-travel",
+        "savings"
+      ],
+      "tags": [
+        "Family Travel",
+        "Savings"
+      ],
+      "image": "/blogs/budget_spending/images/disneyland-family-trip.jpg",
+      "imageAlt": "Disneyland castle at night",
+      "date": "Updated October 2026",
+      "year": 2026
+    }
+  ]
+}

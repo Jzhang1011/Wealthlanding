@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "title": "Real Estate",
+    "hub": "real_estate.html",
+    "prefix": "re",
+    "description": "Housing market analysis and estate planning: what the data says and how wealth passes between generations.",
+    "topics": [
+      {
+        "id": "housing-market",
+        "label": "Housing Market"
+      },
+      {
+        "id": "estate-planning",
+        "label": "Estate Planning"
+      },
+      {
+        "id": "tax-strategy",
+        "label": "Tax Strategy"
+      }
+    ],
+    "note": "Add a post here once; blogs/real_estate.html renders the archive, topic and year filters, and search from this list via /blogs/archive.js. Rebuild the static no-JS copy with: python3 tools/build_blog_hubs.py"
+  },
+  "posts": [
+    {
+      "id": "buyers-market-with-no-buyers",
+      "url": "/blogs/real_estate/buyers-market-with-no-buyers.html",
+      "title": "The Buyer's Market With No Buyers",
+      "desc": "Redfin counts a record 62.6% more sellers than buyers in September 2026, yet buying has rarely been harder. What the gap really measures: mortgage rates, lock-in and the renters waiting on the sidelines.",
+      "topics": [
+        "housing-market"
+      ],
+      "tags": [
+        "Housing Market"
+      ],
+      "image": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80",
+      "imageAlt": "Suburban home for sale",
+      "year": 2026
+    },
+    {
+      "id": "secure_act_inherited_iras",
+      "url": "/blogs/real_estate/secure_act_inherited_iras.html",
+      "title": "The SECURE Act 2.0 & Inherited IRAs: 10-Year Rule Mechanics",
+      "desc": "How SECURE Act 2.0 and the 10-year rule reshape inherited IRA distributions and generational wealth transfers. Educational only.",
+      "topics": [
+        "estate-planning",
+        "tax-strategy"
+      ],
+      "tags": [
+        "Estate Planning",
+        "Tax Strategy"
+      ],
+      "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80",
+      "imageAlt": "Portrait of a man in low light",
+      "year": 2026
+    }
+  ]
+}
