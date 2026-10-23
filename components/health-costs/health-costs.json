@@ -1,0 +1,88 @@
+{
+  "sources": {
+    "mercer": {"label": "Mercer (Marsh), “Survey: Health benefit costs expected to jump 8.2% in 2027, the biggest increase since 2003,” Aug. 31, 2026", "url": "https://www.mercer.com/en-us/insights/us-health-news/survey-health-benefit-costs-expected-to-jump-in-2027/"},
+    "mercerChart": {"label": "Mercer chart data published with the Aug. 31, 2026 article (Mercer National Survey of Employer-Sponsored Health Plans; BLS CPI)", "url": "https://datawrapper.dwcdn.net/gWEwS/2/"},
+    "kff": {"label": "KFF, 2026 Employer Health Benefits Survey", "url": "https://www.kff.org/health-costs/2026-employer-health-benefits-survey/"},
+    "kffRelease": {"label": "KFF news release, Oct. 22, 2026", "url": "https://www.kff.org/private-insurance/workers-now-pay-7471-on-average-annually-for-family-health-coverage-up-9-or-621-from-2025-benchmark-employer-health-benefits-survey-finds/"},
+    "nhe": {"label": "CMS, National Health Expenditure Fact Sheet (2024 data)", "url": "https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/nhe-fact-sheet"},
+    "idr": {"label": "CMS, Federal IDR Supplemental Background reports, 2023–2025", "url": "https://www.cms.gov/initiatives/no-surprise-billing/overview/policies-resources/independent-dispute-resolution-reports"}
+  },
+  "charts": {
+    "mercer-trend": {
+      "type": "bars",
+      "title": "Employer health benefit cost per employee: annual change, 2013–2027",
+      "caption": "2027 is a projection after planned cost-saving changes; 2026 is also projected. Mercer notes 2020–2022 were disrupted by pandemic-related swings in use of care.",
+      "unit": "%", "decimals": 1, "highlightLast": true,
+      "source": ["mercerChart"],
+      "labelHeader": "Year", "valueHeader": "Annual change in total health benefit cost per employee",
+      "data": [["2013",2.1],["2014",3.9],["2015",3.8],["2016",2.4],["2017",2.6],["2018",3.6],["2019",3.0],["2020",3.4],["2021",6.3],["2022",3.2],["2023",5.2],["2024",4.5],["2025",6.0],["2026",6.7],["2027",8.2]]
+    },
+    "mercer-before-after": {
+      "type": "hbars",
+      "title": "Projected 2027 cost increase, before and after employers act",
+      "caption": "Average expected change in total health benefit cost per employee, preliminary results from more than 1,800 employers.",
+      "unit": "%", "decimals": 1, "max": 12,
+      "source": ["mercer"],
+      "labelHeader": "Scenario", "valueHeader": "Projected 2027 increase",
+      "data": [["If employers make no changes", 11.0, "amber"], ["After planned cost-saving changes", 8.2, "navy"]]
+    },
+    "drivers": {
+      "type": "hbars",
+      "title": "Three newer drivers vs. the 8.2% total (Mercer actuarial estimates)",
+      "caption": "Each newer driver is estimated at up to about 1 percentage point of 2027 cost growth. These are separate estimates, not slices of the total: do not add them up or treat the remainder as “everything else.”",
+      "unit": " pts", "decimals": 1, "max": 9,
+      "source": ["mercer"],
+      "labelHeader": "Item", "valueHeader": "Percentage points of 2027 cost growth",
+      "data": [["Total projected 2027 increase", 8.2, "navy"], ["GLP-1s for weight management (about 1 pt)", 1.0, "amber"], ["AI-enabled claims submission (up to 1 pt)", 1.0, "amber", "up to"], ["No Surprises Act IDR awards (up to 1 pt)", 1.0, "amber", "up to"]]
+    },
+    "glp1-coverage": {
+      "type": "hbars",
+      "title": "Large employers covering GLP-1s for weight loss, 2026",
+      "caption": "Share of firms whose largest plan covers GLP-1 agonists when used primarily for weight loss, by firm size. All firms with 200+ workers: 18% (19% in 2025).",
+      "unit": "%", "decimals": 0, "max": 40,
+      "source": ["kff"],
+      "labelHeader": "Firm size", "valueHeader": "Share covering GLP-1s for weight loss",
+      "data": [["200–999 workers", 16, "navy"], ["1,000–4,999 workers", 29, "navy"], ["5,000+ workers", 33, "navy"], ["All firms with 200+ workers", 18, "amber"]]
+    },
+    "idr-volume": {
+      "type": "bars",
+      "title": "No Surprises Act payment disputes initiated, by half-year",
+      "caption": "Disputes initiated through the Federal IDR portal. For comparison, 200,112 disputes were initiated in all of 2022 (portal opened April 15, 2022).",
+      "unit": "", "decimals": 0, "format": "k", "highlightLast": true,
+      "source": ["idr"],
+      "labelHeader": "Period", "valueHeader": "Disputes initiated",
+      "data": [["H1 2023",288810],["H2 2023",390346],["H1 2024",610498],["H2 2024",853374],["H1 2025",1186812],["H2 2025",1372563]]
+    },
+    "nhe-growth": {
+      "type": "hbars",
+      "title": "U.S. health spending growth by category, 2024",
+      "caption": "Hospital spending, the largest category (31% of the total), grew faster than overall health spending. CMS reports hospital prices rose 3.4% in 2024, the most since 2007.",
+      "unit": "%", "decimals": 1, "max": 10,
+      "source": ["nhe"],
+      "labelHeader": "Category", "valueHeader": "Spending growth in 2024",
+      "data": [["Hospital care", 8.9, "amber"], ["Private health insurance", 8.8, "navy"], ["Physician and clinical services", 8.1, "navy"], ["Retail prescription drugs", 7.9, "navy"], ["Total national health spending", 7.2, "navy"]]
+    },
+    "kff-family": {
+      "type": "stacked",
+      "title": "Average annual family premium: who pays, 2016, 2021 and 2026",
+      "caption": "Totals are KFF’s published averages (parts may not sum exactly because of rounding). Worker contributions rose 26% from 2021 to 2026 and total premiums 28%; KFF reports wages rose 27% and inflation 24% over the same period.",
+      "unit": "$", "decimals": 0,
+      "source": ["kff"],
+      "labelHeader": "Year", "seriesHeaders": ["Worker contribution", "Employer contribution", "Total premium"],
+      "data": [["2016", 5269, 12948, 18217], ["2021", 5927, 16259, 22186], ["2026", 7471, 20833, 28303]]
+    },
+    "kff-yoy": {
+      "type": "hbars",
+      "title": "One year of change, 2025 to 2026",
+      "caption": "Workers’ own family contributions grew faster than the premium itself, wages or prices.",
+      "unit": "%", "decimals": 1, "max": 10,
+      "source": ["kffRelease"],
+      "labelHeader": "Measure", "valueHeader": "Change, 2025 to 2026",
+      "data": [["Worker contribution, family coverage", 9.0, "amber"], ["Total family premium", 5.0, "navy"], ["Workers’ wages", 3.7, "navy"], ["Inflation", 2.7, "navy"]]
+    }
+  },
+  "calculator": {
+    "defaultContribution": 7471, "defaultPremium": 28303, "defaultShare": 27, "defaultIncrease": 8.2,
+    "source": ["kff", "mercer"]
+  }
+}
