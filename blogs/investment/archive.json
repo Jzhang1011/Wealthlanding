@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "title": "Market and Investment",
+    "hub": "market_investment.html",
+    "prefix": "mi",
+    "description": "Market and investment analysis: currencies, sectors and the forces that move long-term portfolios.",
+    "topics": [
+      {
+        "id": "markets",
+        "label": "Markets"
+      },
+      {
+        "id": "currencies",
+        "label": "Currencies"
+      },
+      {
+        "id": "healthcare-biotech",
+        "label": "Healthcare and Biotech"
+      }
+    ],
+    "note": "Add a post here once; blogs/market_investment.html renders the archive, topic and year filters, and search from this list via /blogs/archive.js. Rebuild the static no-JS copy with: python3 tools/build_blog_hubs.py"
+  },
+  "posts": [
+    {
+      "id": "JPY_090126",
+      "url": "/blogs/investment/JPY_090126.html",
+      "title": "The Yen Is Finally Becoming an Earnings Story",
+      "desc": "Japan spent ¥15.4 trillion supporting the yen, yet the currency slipped back toward ¥160 per dollar. Why rising Bank of Japan rates and 3% JGB yields turn the yen into an earnings story.",
+      "topics": [
+        "markets",
+        "currencies"
+      ],
+      "tags": [
+        "Markets",
+        "Currencies"
+      ],
+      "image": "https://www.japantimes.co.jp/japantimes/uploads/images/2026/02/20/524834.jpg?auto=format&fit=crop&w=600&q=80",
+      "imageAlt": "Japanese yen and markets",
+      "year": 2026
+    },
+    {
+      "id": "mRNA_090326",
+      "url": "/blogs/investment/mRNA_090326.html",
+      "title": "The New mRNA Trade: Why 'Magic Bullet' Tech Isn't Enough Anymore",
+      "desc": "A computational improvement that raises the probability of success or removes months from development can increase the expected value of an entire drug pipeline. What that means for the mRNA trade.",
+      "topics": [
+        "markets",
+        "healthcare-biotech"
+      ],
+      "tags": [
+        "Markets",
+        "Healthcare and Biotech"
+      ],
+      "image": "https://www.news-medical.net/image-handler/ts/20181112091027/ri/673/picture/2018/11/By_Designua.jpg?auto=format&fit=crop&w=600&q=80",
+      "imageAlt": "Illustration of mRNA technology",
+      "year": 2026
+    }
+  ]
+}
