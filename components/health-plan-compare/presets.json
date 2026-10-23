@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "note": "Example numbers for illustration only. They are not real plan data from any insurer or employer.",
+  "defaults": {
+    "freq": 26,
+    "inNetworkPct": 100,
+    "expected": 5000,
+    "taxRate": 22,
+    "xMax": 0,
+    "visits": {
+      "primary": 3,
+      "specialist": 2,
+      "urgent": 1,
+      "rx": 6
+    }
+  },
+  "frequencies": [
+    {
+      "value": 52,
+      "label": "Weekly (52)"
+    },
+    {
+      "value": 26,
+      "label": "Every two weeks (26)"
+    },
+    {
+      "value": 24,
+      "label": "Twice a month (24)"
+    },
+    {
+      "value": 12,
+      "label": "Monthly (12)"
+    },
+    {
+      "value": 1,
+      "label": "Annual amount"
+    }
+  ],
+  "colors": [
+    "#1e3a8a",
+    "#d97706",
+    "#0f766e"
+  ],
+  "plans": [
+    {
+      "name": "Example PPO",
+      "premium": 120,
+      "deductible": 1000,
+      "deductibleOut": 2000,
+      "coinsIn": 20,
+      "coinsOut": 40,
+      "oopIn": 4000,
+      "oopOut": 8000,
+      "employerFund": 0,
+      "ownHsa": 0,
+      "hdhp": false,
+      "copays": {
+        "primary": 25,
+        "specialist": 50,
+        "urgent": 75,
+        "rx": 10
+      }
+    },
+    {
+      "name": "Example HMO",
+      "premium": 80,
+      "deductible": 750,
+      "deductibleOut": 0,
+      "coinsIn": 20,
+      "coinsOut": 100,
+      "oopIn": 5500,
+      "oopOut": null,
+      "employerFund": 0,
+      "ownHsa": 0,
+      "hdhp": false,
+      "copays": {
+        "primary": 20,
+        "specialist": 40,
+        "urgent": 100,
+        "rx": 10
+      }
+    },
+    {
+      "name": "Example HDHP + HSA",
+      "premium": 60,
+      "deductible": 3500,
+      "deductibleOut": 7000,
+      "coinsIn": 20,
+      "coinsOut": 40,
+      "oopIn": 7000,
+      "oopOut": 14000,
+      "employerFund": 500,
+      "ownHsa": 1500,
+      "hdhp": true,
+      "copays": {
+        "primary": 0,
+        "specialist": 0,
+        "urgent": 0,
+        "rx": 0
+      }
+    }
+  ]
+}

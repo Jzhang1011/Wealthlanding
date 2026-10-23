@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>if (/[?&]embed=1\b/.test(location.search)) document.documentElement.classList.add('hpc-embed');</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JMJJ5CJR4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9JMJJ5CJR4');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Health Plan Comparison Calculator: PPO vs HMO vs HDHP | WealthLanding</title>
+  <meta name="description" content="Compare two or three employer health plans side by side. Enter premiums, deductibles, coinsurance and out-of-pocket maximums to see your total yearly cost at every level of medical spending and where the plans break even.">
+  <link rel="canonical" href="https://www.wealthlanding.com/tools/health-plan-compare/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WealthLanding">
+  <meta property="og:title" content="Health Plan Comparison Calculator: PPO vs HMO vs HDHP">
+  <meta property="og:description" content="See your total yearly cost (premiums plus out-of-pocket) for each plan at every level of medical spending, and where the lines cross.">
+  <meta property="og:url" content="https://www.wealthlanding.com/tools/health-plan-compare/">
+  <meta name="twitter:card" content="summary">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/components/health-plan-compare/health-plan-compare.css">
+  <style>
+    body{margin:0;font-family:Inter,system-ui,sans-serif;background:#f6f7fb;color:#0f172a}
+    .hp-wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+    .hp-hero{background:#0b1b3a;color:#fff;padding:56px 0 44px}
+    .hp-hero a.back{color:#cbd5e1;font-weight:700;font-size:14px;text-decoration:none}
+    .hp-hero a.back:hover{color:#fbbf24}
+    .hp-eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:#fbbf24;margin-top:22px}
+    .hp-hero h1{font-size:clamp(2rem,4.4vw,3.1rem);line-height:1.1;margin:12px 0 14px;letter-spacing:-.02em;max-width:24ch}
+    .hp-hero p{color:#cbd5e1;line-height:1.7;max-width:72ch;margin:0}
+    .hp-banner{background:#fffbeb;border:1px solid #fde68a;color:#78350f;border-radius:14px;padding:12px 16px;font-size:13.5px;line-height:1.55;margin:24px 0}
+    .hp-banner a{color:#92400e}
+    main section{margin:36px 0}
+    main h2{font-size:1.5rem;letter-spacing:-.01em;color:#0b1b3a;margin:0 0 12px}
+    main p,main li{line-height:1.7;color:#374151}
+    main a{color:#1e3a8a}
+    .hp-card{background:#fff;border:1px solid #e3e7ef;border-radius:20px;padding:22px 24px;box-shadow:0 6px 20px rgba(11,27,58,.05)}
+    .hp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+    pre.hp-code{background:#0b1b3a;color:#e2e8f0;border-radius:14px;padding:14px 16px;overflow-x:auto;font-size:13px}
+    .hp-voice{font-size:13px;color:#5b6478;font-weight:600}
+    .hpc-embed #global-header-target,.hpc-embed wealthlanding-footer,.hpc-embed .hp-hero,.hpc-embed .hp-hide-embed{display:none!important}
+    .hpc-embed main section{margin:12px 0}
+    @media(max-width:640px){.hp-wrap{padding:0 14px}.hp-card{padding:18px 16px}}
+    @media print{#global-header-target,wealthlanding-footer,.hp-hero a.back,.hp-noprint{display:none!important}.hp-hero{background:#fff;color:#0b1b3a;padding:12px 0}.hp-hero p{color:#374151}body{background:#fff}}
+  </style>
+</head>
+<body>
+  <div id="global-header-target"></div>
+
+  <header class="hp-hero">
+    <div class="hp-wrap">
+      <a href="/tools/" class="back">← All tools</a>
+      <div class="hp-eyebrow">Calculator · Open enrollment · Educational</div>
+      <h1>Health Plan Comparison Calculator</h1>
+      <p>Your employer offers a PPO, an HMO and a high-deductible plan. Which one costs you the least? It depends on how much care you use. Enter two or three plans and see your total yearly cost, premiums plus out-of-pocket, at every level of medical spending. Where the lines cross, the plans cost the same.</p>
+    </div>
+  </header>
+
+  <main class="hp-wrap">
+    <div class="hp-banner hp-hide-embed" role="note">
+      <strong>Educational tool, not advice.</strong> Results are estimates from a simplified model and the numbers you enter. Real plans have rules this calculator does not capture. Confirm the details in each plan's Summary of Benefits and Coverage (SBC) before you choose.
+    </div>
+
+    <section aria-label="Calculator">
+      <div data-health-plan-compare data-src="/components/health-plan-compare/presets.json"></div>
+    </section>
+
+    <section aria-labelledby="hp-how-h">
+      <h2 id="hp-how-h">How this is calculated</h2>
+      <div class="hp-card">
+        <p><strong>Total yearly cost = annual premium − employer HSA/HRA contribution + your out-of-pocket costs.</strong> The x-axis is the allowed amount of care in a year: the price your plan has agreed to pay a provider, before your share is taken out.</p>
+        <ol>
+          <li><strong>Premium.</strong> Your paycheck deduction times the number of paychecks (52, 26, 24 or 12), or the annual amount you enter.</li>
+          <li><strong>Network split.</strong> The slider sends that share of spending to the in-network rules and the rest to the out-of-network rules. Each network has its own deductible, coinsurance and out-of-pocket maximum.</li>
+          <li><strong>Deductible first.</strong> You pay every dollar until the deductible is met.</li>
+          <li><strong>Then coinsurance.</strong> After the deductible you pay your coinsurance percentage. 20% means the plan pays 80%.</li>
+          <li><strong>Capped at the out-of-pocket maximum.</strong> Once your share reaches the out-of-pocket maximum, the plan pays 100% of covered in-network care for the rest of the year. A blank out-of-network maximum means there is no limit.</li>
+          <li><strong>Copays (optional).</strong> When you turn on the visit estimate, copays times visits are added as a fixed in-network amount and count toward the in-network out-of-pocket maximum, as the Affordable Care Act requires for in-network essential health benefits. High-deductible plans are treated as having no copays because the deductible usually applies first.</li>
+          <li><strong>Employer money.</strong> An employer HSA or HRA contribution is subtracted from your cost, as if it pays your first bills. Unused HSA money stays yours, so it still has value.</li>
+        </ol>
+        <p>Each line is made of straight segments, so the break-even points are solved exactly, not read off the picture.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="hp-assume-h">
+      <h2 id="hp-assume-h">Assumptions and what real plans do differently</h2>
+      <div class="hp-grid">
+        <div class="hp-card">
+          <ul>
+            <li><strong>One coverage level.</strong> Enter the deductible and maximum for the tier you will pick (self-only or family). Embedded family deductibles, where each person has their own smaller deductible, are not modeled.</li>
+            <li><strong>Copays apply outside the deductible.</strong> Some plans apply the deductible to specialist or urgent care visits first.</li>
+            <li><strong>No separate prescription deductible</strong> or drug tiers beyond a single generic copay.</li>
+          </ul>
+        </div>
+        <div class="hp-card">
+          <ul>
+            <li><strong>Balance billing is not included.</strong> Out-of-network providers can bill you the difference between their charge and the allowed amount, and that usually does not count toward any maximum.</li>
+            <li><strong>Non-covered services</strong> (for example, some cosmetic or experimental care) are outside this model.</li>
+            <li><strong>HSA tax savings are illustrative.</strong> We multiply your own planned contribution by the marginal tax rate you enter. Contribution limits, payroll taxes, state taxes and eligibility rules are not modeled, and the savings are not in the chart lines.</li>
+          </ul>
+        </div>
+      </div>
+      <p>Every plan must publish a Summary of Benefits and Coverage with these numbers in a standard format. HealthCare.gov explains it here: <a href="https://www.healthcare.gov/glossary/summary-of-benefits-and-coverage/" target="_blank" rel="noopener">Summary of Benefits and Coverage (SBC)</a>, and defines the <a href="https://www.healthcare.gov/glossary/out-of-pocket-maximum-limit/" target="_blank" rel="noopener">out-of-pocket maximum</a>.</p>
+    </section>
+
+    <section aria-labelledby="hp-tips-h" class="hp-hide-embed">
+      <h2 id="hp-tips-h">Reading the chart</h2>
+      <div class="hp-card">
+        <ul>
+          <li><strong>Left edge:</strong> the cost if you use no care at all. This is mostly premiums, so the cheapest-premium plan usually wins here.</li>
+          <li><strong>Right edge:</strong> the worst case. The plan with the lowest premium plus out-of-pocket maximum wins here.</li>
+          <li><strong>Crossing points:</strong> below the break-even spending one plan is cheaper; above it, the other is. If your typical year sits near a crossing, the plans cost about the same and other factors matter more: your doctors, the network and how you feel about risk.</li>
+          <li>For readers in their late 40s to mid-60s, a planned surgery or a chronic condition can move you far to the right. Try your expected spending and a bad-year number.</li>
+        </ul>
+        <p>Related reading: <a href="/blogs/Happy_retirement/employer-health-insurance-costs-rising.html">Why employer health insurance costs are rising</a> and <a href="/retirement-confidence/medicare-gap/">What Medicare doesn't cover in retirement</a>.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="hp-embed-h" class="hp-hide-embed hp-noprint">
+      <h2 id="hp-embed-h">Embed this calculator</h2>
+      <div class="hp-card">
+        <p>Add <code>?embed=1</code> to show only the calculator, without the site header and footer:</p>
+        <pre class="hp-code"><code>&lt;iframe src="https://www.wealthlanding.com/tools/health-plan-compare/?embed=1"
+  title="Health plan comparison calculator" width="100%" height="1800" style="border:0"&gt;&lt;/iframe&gt;</code></pre>
+      </div>
+    </section>
+
+    <section class="hp-disclaimer">
+      <p class="hp-voice">WealthLanding Knowledge Guardian</p>
+      <p style="font-size:13px;color:#5b6478">Disclaimer: This calculator is for educational purposes only and is not insurance, tax, legal or medical advice. The preset plans use example numbers, not real plan data. Your costs depend on your plan's actual terms, your providers and the care you receive. Review your plan's Summary of Benefits and Coverage and talk with your benefits administrator or a licensed professional before making decisions.</p>
+    </section>
+  </main>
+
+  <wealthlanding-footer></wealthlanding-footer>
+  <script src="/components/footer.js"></script>
+  <script src="/components/header.js"></script>
+  <script src="/components/health-plan-compare/health-plan-compare.js" defer></script>
+</body>
+</html>
