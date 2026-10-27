@@ -16,11 +16,33 @@
       {
         "id": "healthcare-biotech",
         "label": "Healthcare and Biotech"
+      },
+      {
+        "id": "economy-labor",
+        "label": "Economy and Labor"
       }
     ],
     "note": "Add a post here once; blogs/market_investment.html renders the archive, topic and year filters, and search from this list via /blogs/archive.js. Rebuild the static no-JS copy with: python3 tools/build_blog_hubs.py"
   },
   "posts": [
+    {
+      "id": "ai-jobs-different-countries",
+      "url": "/blogs/investment/ai-jobs-different-countries.html",
+      "title": "AI Is Coming for Different Jobs in Different Countries. Here's Why That Matters.",
+      "desc": "China's gig drivers, America's young office workers, Japan's labor shortage, Europe's protections and India's IT services: why the same AI shock can produce very different job outcomes.",
+      "date": "October 27, 2026",
+      "year": 2026,
+      "topics": [
+        "economy-labor",
+        "markets"
+      ],
+      "tags": [
+        "Economy and Labor",
+        "Markets"
+      ],
+      "image": "/asset/ai-jobs/delivery-scooter-kyoto-card.webp",
+      "imageAlt": "A food-delivery scooter crossing a street in Kyoto"
+    },
     {
       "id": "JPY_090126",
       "url": "/blogs/investment/JPY_090126.html",
