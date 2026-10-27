@@ -1,0 +1,33 @@
+/* Visuals for /blogs/investment/ai-jobs-different-countries.html */
+.aj-fig{margin:28px 0;padding:22px 22px 16px;border:1px solid #dfe7ef;border-radius:20px;background:#fff;box-shadow:0 10px 30px rgba(18,32,51,.06)}
+.aj-fig h3,.aj-fig .aj-title{font:700 18px/1.3 Inter,system-ui,sans-serif;color:#071a2f;margin:0 0 6px}
+.aj-fig .aj-sub{font-size:14px;color:#526173;margin:0 0 14px}
+.aj-fig figcaption,.aj-note{font-size:13px;line-height:1.5;color:#526173;margin-top:12px}
+.aj-matrix{display:grid;grid-template-columns:minmax(96px,.8fr) 1fr 1fr;gap:8px}
+.aj-matrix .aj-h{font:700 13px/1.35 Inter,system-ui,sans-serif;color:#071a2f;padding:10px;text-align:center;background:#f1f5f9;border-radius:12px;display:flex;align-items:center;justify-content:center}
+.aj-matrix .aj-r{font:700 13px/1.35 Inter,system-ui,sans-serif;color:#071a2f;padding:10px;background:#f1f5f9;border-radius:12px;display:flex;align-items:center}
+.aj-matrix .aj-c{padding:14px;border-radius:12px;font-size:15px;line-height:1.4;font-weight:600;min-height:88px;display:flex;align-items:center}
+.aj-c.good{background:#e6f7f1;color:#065f46;border:1px solid #a7e3cd}
+.aj-c.bad{background:#fdecec;color:#8a1c1c;border:1px solid #f5b5b5}
+.aj-c.mid{background:#fff6e0;color:#7a4b00;border:1px solid #f3d48a}
+.aj-blank{background:transparent}
+@media (max-width:560px){.aj-matrix{grid-template-columns:1fr 1fr}.aj-matrix .aj-blank{display:none}.aj-matrix .aj-r{grid-column:1/-1}.aj-matrix .aj-c{font-size:14px;min-height:0}.aj-matrix .aj-h{font-size:12px}}
+.aj-bars{list-style:none;margin:0;padding:0}
+.aj-bars li{display:grid;grid-template-columns:minmax(110px,190px) 1fr;gap:10px;align-items:center;margin:10px 0;font-size:14px}
+.aj-bar{height:26px;border-radius:6px;background:#02B17D;color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;min-width:44px}
+.aj-bar.alt{background:#64748b}
+.aj-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.aj-table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.45}
+.aj-table th,.aj-table td{border-bottom:1px solid #e2e8f0;padding:10px 8px;text-align:left;vertical-align:top}
+.aj-table thead th{background:#f1f5f9;color:#071a2f;font-weight:700}
+.aj-table tbody th{font-weight:700;color:#071a2f}
+@media (max-width:640px){.aj-table.stack thead{display:none}.aj-table.stack tr{display:block;border:1px solid #e2e8f0;border-radius:12px;margin:0 0 10px;padding:6px 10px}.aj-table.stack th,.aj-table.stack td{display:block;border:0;padding:4px 0}.aj-table.stack td::before{content:attr(data-label);display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#64748b}}
+.aj-dash{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.aj-card{border:1px solid #dfe7ef;border-radius:16px;padding:14px 16px;background:#fbfcfe}
+.aj-card h3{font-size:16px;margin:0 0 8px;color:#071a2f}
+.aj-card p{font-size:14px;margin:4px 0;line-height:1.45}
+.aj-card b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:#02875f}
+.aj-notes{margin:36px 0 0;border:1px solid #dfe7ef;border-radius:16px;background:#f8fafc;padding:4px 18px}
+.aj-notes summary{cursor:pointer;font-weight:700;padding:12px 0;color:#071a2f}
+.aj-notes ul{font-size:14px;padding-left:18px}
+.aj-notes li{margin:6px 0;overflow-wrap:anywhere}

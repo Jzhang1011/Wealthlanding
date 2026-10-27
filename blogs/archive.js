@@ -19,6 +19,7 @@
     'Healthcare and Biotech': 'bg-teal-50 text-teal-800 border-teal-200',
     'Housing Market': 'bg-orange-50 text-orange-800 border-orange-200',
     'Estate Planning': 'bg-indigo-50 text-indigo-800 border-indigo-200',
+    'Economy and Labor': 'bg-sky-50 text-sky-800 border-sky-200',
     'Case Study': 'bg-blue-50 text-blue-800 border-blue-200'
   };
   function esc(s) {
