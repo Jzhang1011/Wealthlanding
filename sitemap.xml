@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Core -->
   <url><loc>https://www.wealthlanding.com/</loc></url>
-  <url><loc>https://www.wealthlanding.com/learn/</loc></url>
   <url><loc>https://www.wealthlanding.com/blogs/budget_spending/disneyland_family_of_five.html</loc></url>
+  <url><loc>https://www.wealthlanding.com/plan-by-age/</loc></url>
+  <url><loc>https://www.wealthlanding.com/plan-by-age/45-49/</loc></url>
+  <url><loc>https://www.wealthlanding.com/plan-by-age/50-54/</loc></url>
+  <url><loc>https://www.wealthlanding.com/plan-by-age/55-59/</loc></url>
+  <url><loc>https://www.wealthlanding.com/plan-by-age/60-62/</loc></url>
+  <url><loc>https://www.wealthlanding.com/plan-by-age/63-65/</loc></url>
   <url><loc>https://www.wealthlanding.com/learn/deals/</loc></url>
   <url><loc>https://www.wealthlanding.com/learn/deals/flights/</loc></url>
   <url><loc>https://www.wealthlanding.com/learn/deals/hotels/</loc></url>
@@ -11,10 +16,6 @@
   <url><loc>https://www.wealthlanding.com/learn/deals/events/</loc></url>
   <url><loc>https://www.wealthlanding.com/learn/deals/parks/</loc></url>
   <url><loc>https://www.wealthlanding.com/learn/deals/museums/</loc></url>
-  <url><loc>https://www.wealthlanding.com/learn/early-career/</loc></url>
-  <url><loc>https://www.wealthlanding.com/life_stage/25_40/playbook_hub.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/learn/peak/</loc></url>
-  <url><loc>https://www.wealthlanding.com/learn/pre-retirement/</loc></url>
   <url><loc>https://www.wealthlanding.com/tools/</loc></url>
   <url><loc>https://www.wealthlanding.com/tools/credit-card/</loc></url>
   <url><loc>https://www.wealthlanding.com/tools/health-plan-compare/</loc></url>
@@ -45,12 +46,6 @@
   <url><loc>https://www.wealthlanding.com/travel/hotels/ihg.html</loc><lastmod>2026-10-19</lastmod></url>
 
   <!-- Early-career playbook -->
-  <url><loc>https://www.wealthlanding.com/life_stage/18_25/playbook_hub.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/life_stage/18_25/step_1.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/life_stage/18_25/step_2.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/life_stage/18_25/step_3.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/life_stage/18_25/step_4.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/life_stage/18_25/step_5.html</loc></url>
 
   <!-- Retirement lab (public hub tools) -->
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/Retirement_Gateway.html</loc></url>
@@ -81,7 +76,6 @@
   <url><loc>https://www.wealthlanding.com/blogs/happy_retirement.html</loc></url>
   <url><loc>https://www.wealthlanding.com/blogs/travel.html</loc><lastmod>2026-10-15</lastmod></url>
   <url><loc>https://www.wealthlanding.com/blogs/Travel/united-1k-delayed-ski-trip.html</loc><lastmod>2026-10-15</lastmod></url>
-  <url><loc>https://www.wealthlanding.com/blogs/18_25.html</loc></url>
   <url><loc>https://www.wealthlanding.com/blogs/market_investment.html</loc></url>
   <url><loc>https://www.wealthlanding.com/blogs/Happy_retirement/doctor_waited.html</loc></url>
   <url><loc>https://www.wealthlanding.com/blogs/Happy_retirement/1m_rmd_letter.html</loc></url>
@@ -89,10 +83,6 @@
   <url><loc>https://www.wealthlanding.com/blogs/Happy_retirement/how-to-avoid-RMD-taxes.html</loc></url>
   <url><loc>https://www.wealthlanding.com/blogs/Happy_retirement/spousal-survivor-divorced-benefits.html</loc><lastmod>2026-10-19</lastmod></url>
   <url><loc>https://www.wealthlanding.com/blogs/budget_spending/employer-health-insurance-costs-rising.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://www.wealthlanding.com/blogs/18_25/paycheck.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/blogs/18_25/everyday_cost.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/blogs/18_25/FSA_HSA.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/blogs/18_25/gig_economy_tax.html</loc></url>
   <url><loc>https://www.wealthlanding.com/blogs/budget_spending/roth_conversions_pre_medicare.html</loc></url>
   <url><loc>https://www.wealthlanding.com/blogs/budget_spending/aca_early_retirement_subsidies.html</loc></url>
   <url><loc>https://www.wealthlanding.com/blogs/investment/ai-jobs-different-countries.html</loc><lastmod>2026-10-27</lastmod></url>
@@ -122,11 +112,6 @@
   <url><loc>https://www.wealthlanding.com/blogs/spending_smart/airbnb_cc_choice.html</loc></url>
   <url><loc>https://www.wealthlanding.com/blogs/spending_smart/flight_saver.html</loc></url>
   <url><loc>https://www.wealthlanding.com/investment/dividend-screener.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/life_stage/25_40/step_1.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/life_stage/25_40/step_2.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/life_stage/25_40/step_3.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/life_stage/25_40/step_4.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/life_stage/25_40/step_5.html</loc></url>
   <url><loc>https://www.wealthlanding.com/life_stage/25_40/topics/529.html</loc></url>
   <url><loc>https://www.wealthlanding.com/life_stage/25_40/topics/account-comparison.html</loc></url>
   <url><loc>https://www.wealthlanding.com/life_stage/25_40/topics/am-i-behind.html</loc></url>

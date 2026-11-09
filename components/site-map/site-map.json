@@ -218,10 +218,6 @@
           "label": "How much life insurance"
         },
         {
-          "href": "/blogs/18_25/paycheck.html",
-          "label": "Decoding your paycheck"
-        },
-        {
           "href": "/blogs/budget_spending.html",
           "label": "Budget and spending articles"
         }
@@ -240,14 +236,6 @@
           "match": [
             "blogs/budget_spending/",
             "blogs/budget_spending.html"
-          ]
-        },
-        {
-          "label": "Starting out",
-          "hub": "/blogs/18_25.html",
-          "match": [
-            "blogs/18_25/",
-            "blogs/18_25.html"
           ]
         },
         {
@@ -279,7 +267,6 @@
             "links": [
               "/tools/health-plan-compare/",
               "/life_stage/25_40/topics/hsa.html",
-              "/blogs/18_25/FSA_HSA.html",
               "/blogs/budget_spending/employer-health-insurance-costs-rising.html"
             ]
           },
@@ -288,18 +275,7 @@
             "a": "List every balance with its rate and minimum payment. Paying the highest rate first (avalanche) costs the least interest; paying the smallest balance first (snowball) brings earlier wins. Either works if the extra payment keeps going.",
             "links": [
               "/tools/debt_payoff_calculator.html",
-              "/life_stage/25_40/topics/debt-vs-investing.html",
-              "/life_stage/18_25/step_2.html"
-            ]
-          },
-          {
-            "q": "Where is my paycheck going?",
-            "a": "Start from take-home pay, not salary. Withholding, benefits and retirement contributions come out first, and side income usually has no tax withheld at all.",
-            "links": [
-              "/blogs/18_25/paycheck.html",
-              "/blogs/18_25/gig_economy_tax.html",
-              "/blogs/18_25/everyday_cost.html",
-              "/life_stage/18_25/step_1.html"
+              "/life_stage/25_40/topics/debt-vs-investing.html"
             ]
           },
           {
@@ -316,7 +292,6 @@
             "a": "Insurance replaces income or covers costs you could not absorb. Check what your employer already provides before buying more.",
             "links": [
               "/life_stage/25_40/topics/life-insurance.html",
-              "/life_stage/25_40/step_3.html",
               "/life_stage/25_40/topics/am-i-behind.html"
             ]
           }
@@ -356,10 +331,6 @@
         {
           "href": "/blogs/real_estate.html",
           "label": "Real estate articles"
-        },
-        {
-          "href": "/life_stage/25_40/step_2.html",
-          "label": "Buy right or rent smart (30s playbook)"
         }
       ],
       "groups": [
@@ -397,8 +368,7 @@
             "q": "Should I rent or buy?",
             "a": "Compare the full cost of owning (mortgage interest, property tax, insurance, maintenance, and the return you give up on the down payment) with rent plus investing the difference. How long you expect to stay matters as much as the price.",
             "links": [
-              "/life_stage/25_40/topics/rent-vs-buy.html",
-              "/life_stage/25_40/step_2.html"
+              "/life_stage/25_40/topics/rent-vs-buy.html"
             ]
           },
           {
@@ -631,46 +601,36 @@
     }
   ],
   "learn": {
-    "label": "Learn by age",
-    "hub": "/learn/",
+    "label": "Plan by age: 45–65",
+    "hub": "/plan-by-age/",
     "links": [
       {
-        "href": "/learn/early-career/",
-        "label": "Early career (18–25)"
+        "href": "/plan-by-age/45-49/",
+        "label": "Ages 45–49: Peak years, full plate"
       },
       {
-        "href": "/life_stage/25_40/playbook_hub.html",
-        "label": "Building (25–40)"
+        "href": "/plan-by-age/50-54/",
+        "label": "Ages 50–54: The catch-up years"
       },
       {
-        "href": "/learn/peak/",
-        "label": "Peak earning (40–55)"
+        "href": "/plan-by-age/55-59/",
+        "label": "Ages 55–59: Early-exit options"
       },
       {
-        "href": "/learn/pre-retirement/",
-        "label": "Pre-retirement (55+)"
+        "href": "/plan-by-age/60-62/",
+        "label": "Ages 60–62: Decision years"
+      },
+      {
+        "href": "/plan-by-age/63-65/",
+        "label": "Ages 63–65: Medicare countdown"
       }
     ],
     "groups": [
       {
-        "label": "20s Money Playbook",
-        "hub": "/life_stage/18_25/playbook_hub.html",
+        "label": "Plan by age: 45–65",
+        "hub": "/plan-by-age/",
         "match": [
-          "life_stage/18_25/"
-        ]
-      },
-      {
-        "label": "30s Money Playbook",
-        "hub": "/life_stage/25_40/playbook_hub.html",
-        "match": [
-          "life_stage/25_40/"
-        ]
-      },
-      {
-        "label": "Learn by age",
-        "hub": "/learn/",
-        "match": [
-          "learn/"
+          "plan-by-age/"
         ]
       }
     ]
