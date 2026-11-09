@@ -156,12 +156,12 @@
   <section class="grid lg:grid-cols-12 gap-6" id="catalysts">
     <div class="lg:col-span-7 card p-6">
       <div class="eyebrow">Catalyst Timeline</div>
-      <h2 class="serif text-2xl font-bold mt-1">What could change the decision</h2>
+      <h2 class="serif text-2xl font-bold mt-1">What could change the thesis</h2>
       <div id="catalyst-list" class="timeline mt-7"></div>
     </div>
     <div class="lg:col-span-5 card p-6">
-      <div class="eyebrow">Now What?</div>
-      <h2 class="serif text-2xl font-bold mt-1">Required Actions</h2>
+      <div class="eyebrow">What to watch</div>
+      <h2 class="serif text-2xl font-bold mt-1">Signals to track</h2>
       <ul id="actions" class="space-y-3 mt-5 text-sm text-slate-600"></ul>
     </div>
   </section>
@@ -170,13 +170,14 @@
 <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-900 mt-12">
   <div class="wrap flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
     <div>© 2026 <b>Wealth<span class="text-emerald-400">Landing</span></b></div>
-    <div class="text-slate-500">Educational research and thesis tracking system. Not individualized financial advice.</div>
+    <div class="text-slate-500">Educational research and thesis tracking only. Nothing here is a recommendation to buy, sell, or hold any security, and it is not individualized financial advice. Valuation levels are model outputs based on stated assumptions and can be wrong; do your own research or consult a licensed professional.</div>
   </div>
 </footer>
 
+<script src="/investment/labels.js"></script>
 <script>
   const esc = value => String(value ?? '').replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
-  const pretty = value => String(value ?? '').replaceAll('_', ' ').replaceAll('-', ' ').replace(/\b\w/g, character => character.toUpperCase());
+  const pretty = value => window.WLInvestLabels ? WLInvestLabels.label(value) : String(value ?? '');
   
   // Robust slug sanitizer that strips .json extensions cleanly
   const normalizeSlug = value => {

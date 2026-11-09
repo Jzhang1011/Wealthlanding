@@ -712,7 +712,8 @@
     "workers/",
     "Retirement-simulator/Archive/",
     "investment/Archive/",
-    "Retirement-simulator/Topic/"
+    "Retirement-simulator/Topic/",
+    "blogs/12_18/"
   ],
   "no_breadcrumb": [
     "index.html",

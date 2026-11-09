@@ -57,15 +57,15 @@
     ]
   },
   "decision": {
-    "state": "active_buy",
+    "state": "criteria_met",
     "previous_state": "valuation_review",
     "changed": true,
-    "summary": "Accumulate monopolistic regulated derivatives exchange (CME) and high-yield infrastructure custodians (COIN) dislocated by Fed rate hike volatility.",
-    "cta": "buy_below_attractive_threshold",
+    "summary": "The theme studies a regulated derivatives exchange (CME) and infrastructure custodians (COIN) whose prices moved with Fed rate-hike volatility.",
+    "cta": "watch_attractive_value_level",
     "reason_codes": ["RATE_VOLATILITY_EXPANSION", "REGULATED_MOAT_DOMINANCE"],
     "required_actions": [
-      "Accumulate CME below $265.00 for resilient cash return and volume expansion",
-      "Accumulate COIN below $168.00 targeting 15%+ margin of safety",
+      "Watch CME relative to the modeled $265.00 attractive-value level, along with cash returns and volume trends",
+      "Watch COIN relative to the modeled $168.00 level, which implies a 15%+ margin of safety",
       "Monitor MSTR on watchlist pending mNAV premium compression"
     ]
   },
@@ -254,7 +254,7 @@
       "catalyst": "Q3 2026 earnings release and volume records",
       "valuation_status": "moderately_undervalued",
       "main_risk": "Broad market liquidity contraction reducing trading velocity",
-      "next_action": "Accumulate below $265.00 entry zone",
+      "next_action": "Watch the modeled $265.00 attractive-value level",
       "company_review": {
         "status": "selected",
         "company_slug": "cme-group",
@@ -282,7 +282,7 @@
       "catalyst": "US perpetual futures derivatives expansion",
       "valuation_status": "moderately_undervalued",
       "main_risk": "Cyclical downturn in retail transaction fee capture",
-      "next_action": "Scale into positions below $168.00 attractive threshold",
+      "next_action": "Watch the modeled $168.00 attractive-value level",
       "company_review": {
         "status": "selected",
         "company_slug": "coinbase",
@@ -310,7 +310,7 @@
       "catalyst": "Next-gen GPU cluster delivery and energization",
       "valuation_status": "modestly_undervalued",
       "main_risk": "Grid interconnect execution delays and GPU capex escalation",
-      "next_action": "Buy below $41.00 margin of safety threshold",
+      "next_action": "Watch the modeled $41.00 margin-of-safety level",
       "company_review": {
         "status": "selected",
         "company_slug": "iren-ltd",

@@ -120,7 +120,7 @@
     "explanation": "Scenario-weighted valuation based on structural 10.5% ROE convergence to 1.05x P/B, cross-checked against long-term dividend discount modeling."
   },
   "entry_zones": {
-    "strong_buy_below": 2736.0,
+    "deep_value_below": 2736.0,
     "attractive_below": 3323.0,
     "fair_value_low": 3520.0,
     "fair_value_high": 4100.0,
@@ -151,13 +151,13 @@
     "Corporate credit provisions rise above 50 bps of total loans"
   ],
   "decision": {
-    "state": "active_buy",
-    "cta": "buy_below_attractive_threshold",
+    "state": "criteria_met",
+    "cta": "watch_attractive_value_level",
     "summary": "SMFG is an exceptional corporate governance and lending torque play. Trading at 0.94x P/B with an ROE over 10.4%, it offers attractive risk-adjusted entry as cross-shareholdings are recycled into continuous equity retirement.",
     "next_catalyst": "Corporate loan rate repricing on September 24, 2026",
     "next_decision_date": "2026-09-24",
     "required_actions": [
-      "Accumulate on minor dips into the attractive zone below ¥3,323 or hold at current ¥3,510",
+      "Note: the current ¥3,510 is above the modeled attractive-value level of ¥3,323",
       "Monitor progress of ¥180B share buyback execution"
     ]
   },

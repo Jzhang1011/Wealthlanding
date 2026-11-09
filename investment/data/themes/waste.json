@@ -74,17 +74,17 @@
     ]
   },
   "decision": {
-    "state": "active_buy",
+    "state": "criteria_met",
     "previous_state": "monitor",
     "changed": true,
     "summary": "High structural pricing resilience and regulatory moats make the sector a premier cash-flow refuge, with Clean Harbors offering direct upside to PFAS mandates.",
-    "cta": "buy_below_attractive_threshold",
+    "cta": "watch_attractive_value_level",
     "reason_codes": [
       "STRUCTURAL_DEMAND_CONFIRMED",
       "VALUATION_DISPERSION"
     ],
     "required_actions": [
-      "Accumulate Clean Harbors (CLH) below $242 per share",
+      "Watch Clean Harbors (CLH) relative to the modeled $242 attractive-value level",
       "Monitor Republic Services (RSG) entry zone at $205 for attractive accumulation"
     ]
   },
@@ -310,7 +310,7 @@
       "catalyst": "Q3 2026 earnings margin expansion confirmation and RNG plant commissioning",
       "valuation_status": "fairly_valued",
       "main_risk": "Fleet delivery delays and fuel cost spikes",
-      "next_action": "Add to position below $205 attractive threshold",
+      "next_action": "Watch the modeled $205 attractive-value level",
       "company_review": {
         "status": "selected",
         "company_slug": "republic-services",
@@ -341,7 +341,7 @@
       "catalyst": "Commissioning of 12 new renewable natural gas facilities through 2027",
       "valuation_status": "fairly_valued",
       "main_risk": "Commodity paper and plastic recycling price volatility",
-      "next_action": "Maintain core long holding; accumulate on pullbacks below $210",
+      "next_action": "Track whether thesis criteria still hold; watch the modeled $210 level",
       "company_review": {
         "status": "selected",
         "company_slug": "waste-management",

@@ -127,7 +127,7 @@
     "explanation": "Scenario-weighted earnings model cross-checked against multi-year utility capex backlogs and 10-year DCF (8.5% WACC, 3.25% terminal growth)."
   },
   "entry_zones": {
-    "strong_buy_below": 91.43,
+    "deep_value_below": 91.43,
     "attractive_below": 111.02,
     "fair_value_low": 117.55,
     "fair_value_high": 137.14,
@@ -158,13 +158,13 @@
   ],
   "decision": {
     "state": "watchlist",
-    "cta": "buy_below_attractive_threshold",
+    "cta": "watch_attractive_value_level",
     "summary": "Xylem is an indispensable tier-1 franchise at the epicenter of water modernization. At $138.25, the stock trades near the upper band of fair value; wait for a disciplined pullback below $111.02 before initiating capital allocation.",
     "next_catalyst": "Q3 2026 Earnings Release",
     "next_decision_date": "2026-11-05",
     "required_actions": [
       "Track municipal project backlog conversion and Evoqua synergy milestones",
-      "Place scale-in buy orders below $111.02"
+      "Watch the modeled attractive-value level of $111.02"
     ]
   },
   "sources": [

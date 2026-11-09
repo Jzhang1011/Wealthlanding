@@ -121,7 +121,7 @@
     "explanation": "Scenario-weighted valuation reflecting structural 11.0% ROE and capital return capacity, cross-checked against 1.10x Price-to-Book parity."
   },
   "entry_zones": {
-    "strong_buy_below": 1465.0,
+    "deep_value_below": 1465.0,
     "attractive_below": 1779.0,
     "fair_value_low": 1884.0,
     "fair_value_high": 2198.0,
@@ -152,13 +152,13 @@
     "Consolidated ROE falls permanently below 8.0%"
   ],
   "decision": {
-    "state": "active_buy",
-    "cta": "buy_below_attractive_threshold",
+    "state": "criteria_met",
+    "cta": "watch_attractive_value_level",
     "summary": "MUFG is the undisputed anchor of the JPY structural thesis. Trading at 0.98x P/B with an 11.3% ROE, it offers double-digit upside to fair value (¥2,080) alongside strong dividend yield and share repurchases.",
     "next_catalyst": "Rate repricing implementation on September 24, 2026",
     "next_decision_date": "2026-09-24",
     "required_actions": [
-      "Accumulate shares in the attractive entry zone below ¥1,850",
+      "Watch the modeled attractive-value level of ¥1,850",
       "Confirm lending margin progression in Q2 earnings release"
     ]
   },

@@ -128,7 +128,7 @@
     "explanation": "FY2026 adjusted EPS guidance of $15.20-$15.30 anchors the model. FY2027 EPS assumptions capture backlog conversion, margin recovery and data-center participation."
   },
   "entry_zones": {
-    "strong_buy_below": 400.65,
+    "deep_value_below": 400.65,
     "attractive_below": 469.95,
     "fair_value_low": 469.95,
     "fair_value_high": 530.45,

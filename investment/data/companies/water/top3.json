@@ -126,7 +126,7 @@
     "explanation": "Scenario-weighted EPS valuation cross-checked with a 10-year discounted cash flow analysis reflecting zero financial debt and conservative 8.5% cost of equity."
   },
   "entry_zones": {
-    "strong_buy_below": 145.55,
+    "deep_value_below": 145.55,
     "attractive_below": 176.74,
     "fair_value_low": 187.14,
     "fair_value_high": 218.33,
@@ -157,12 +157,12 @@
   ],
   "decision": {
     "state": "watchlist",
-    "cta": "buy_below_attractive_threshold",
-    "summary": "Watts Water is a pristine balance-sheet compounder with superior code-mandated moats. Shares at $204.60 reflect fair value; look to accumulate positions below the attractive threshold of $176.74.",
+    "cta": "watch_attractive_value_level",
+    "summary": "Watts Water is studied here as a strong-balance-sheet compounder with code-mandated demand. At $204.60 the shares sit near modeled fair value; the model's attractive-value level is $176.74.",
     "next_catalyst": "Q3 2026 Earnings Release",
     "next_decision_date": "2026-10-29",
     "required_actions": [
-      "Set buy limits at $176.74 to establish position with 15%+ margin of safety",
+      "Watch the modeled attractive-value level of $176.74, which implies a 15%+ margin of safety",
       "Monitor non-residential replacement indicators and input metal pricing"
     ]
   },

@@ -76,7 +76,7 @@
     "previous_state": "monitor",
     "changed": true,
     "summary": "Core structural thesis strengthens on regulatory clarity, but valuation dispersion across tier-1 names requires strict entry discipline.",
-    "cta": "buy_below_attractive_threshold",
+    "cta": "watch_attractive_value_level",
     "reason_codes": [
       "STRUCTURAL_DEMAND_CONFIRMED",
       "VALUATION_DISPERSION"
@@ -316,7 +316,7 @@
       "catalyst": "Q3 2026 earnings margin leverage validation",
       "valuation_status": "moderately_undervalued",
       "main_risk": "Discretionary consumer spending slowdown in residential pool systems",
-      "next_action": "Maintain buy bid below attractive threshold",
+      "next_action": "Watch the modeled attractive-value level",
       "company_review": {
         "status": "selected",
         "company_slug": "pentair",
@@ -348,7 +348,7 @@
       "catalyst": "Synergy realization updates and utility backlog expansion",
       "valuation_status": "fairly_valued",
       "main_risk": "Integration delays or cyclical non-residential construction slowdown",
-      "next_action": "Accumulate on pullbacks into fair value lower band",
+      "next_action": "Watch whether the price reaches the lower band of the modeled fair-value range",
       "company_review": {
         "status": "selected",
         "company_slug": "xylem",
@@ -380,7 +380,7 @@
       "catalyst": "Non-residential plumbing code adoption and accretive bolt-on deals",
       "valuation_status": "moderately_undervalued",
       "main_risk": "Slowdown in commercial institutional real estate construction",
-      "next_action": "Scale position below attractive entry zone",
+      "next_action": "Watch the modeled attractive-value level",
       "company_review": {
         "status": "selected",
         "company_slug": "watts-water",

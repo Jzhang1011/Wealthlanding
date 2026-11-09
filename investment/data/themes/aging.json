@@ -78,14 +78,14 @@
     "previous_state": "valuation_review",
     "changed": false,
     "summary": "Core structural demand remains pristine. Focus capital allocation strictly on cash-generative medtech and post-acute operators trading within margin of safety, while rejecting high-multiple REITs.",
-    "cta": "buy_below_attractive_threshold",
+    "cta": "watch_attractive_value_level",
     "reason_codes": [
       "STRUCTURAL_DEMAND_CONFIRMED",
       "VALUATION_DISPERSION"
     ],
     "required_actions": [
-      "Accumulate ResMed (RMD) on pullbacks below $205",
-      "Build Encompass Health (EHC) position below $92",
+      "Watch ResMed (RMD) relative to the modeled $205 attractive-value level",
+      "Watch Encompass Health (EHC) relative to the modeled $92 attractive-value level",
       "Monitor Stryker (SYK) for entry below $335",
       "Keep Welltower (WELL) on valuation hold pending multiple normalization"
     ]
@@ -320,7 +320,7 @@
       "catalyst": "Q1 FY2027 earnings release on October 22, 2026",
       "valuation_status": "moderately_undervalued",
       "main_risk": "Supply chain component cost inflation or competitive device launches",
-      "next_action": "Accumulate positions on pullbacks below $205.00",
+      "next_action": "Watch the modeled $205.00 attractive-value level",
       "company_review": {
         "status": "selected",
         "company_slug": "resmed",
@@ -351,7 +351,7 @@
       "catalyst": "Implementation of +3.0% CMS IRF PPS update on October 1, 2026",
       "valuation_status": "moderately_undervalued",
       "main_risk": "Medicare Advantage pre-authorization denial friction",
-      "next_action": "Add to position below $92.00",
+      "next_action": "Watch the modeled $92.00 attractive-value level",
       "company_review": {
         "status": "selected",
         "company_slug": "encompass-health",
@@ -382,7 +382,7 @@
       "catalyst": "Q3 2026 earnings release on October 29, 2026",
       "valuation_status": "fairly_valued",
       "main_risk": "Hospital capital equipment spending freezes",
-      "next_action": "Set scale-in buy orders below $335.00",
+      "next_action": "Watch the modeled $335.00 attractive-value level",
       "company_review": {
         "status": "selected",
         "company_slug": "stryker",

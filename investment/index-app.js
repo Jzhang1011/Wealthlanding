@@ -18,16 +18,7 @@ const esc = value =>
     const formatAction = value => {
       if (!value) return 'No reviews';
 
-      const actionMap = {
-        buy_below_attractive_threshold: 'Buy Below Attractive Threshold',
-        buy_below_entry_zone: 'Buy Below Entry Zone',
-        watch_for_catalyst: 'Watch for Catalyst',
-        hold_and_monitor: 'Hold & Monitor',
-        await_earnings_results: 'Await Earnings Results',
-        fair_value: 'Fair Value Zone'
-      };
-
-      return actionMap[value] || pretty(value);
+      return window.WLInvestLabels ? WLInvestLabels.label(value) : pretty(value);
     };
 
     const dateLabel = value => {

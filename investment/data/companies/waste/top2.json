@@ -125,7 +125,7 @@
     "explanation": "Scenario-weighted normalized earnings model reflecting steady free cash flow compounding, high route internalisation, and resilient disposal moat."
   },
   "entry_zones": {
-    "strong_buy_below": 144.92,
+    "deep_value_below": 144.92,
     "attractive_below": 175.98,
     "fair_value_low": 186.33,
     "fair_value_high": 217.38,
@@ -156,13 +156,13 @@
   ],
   "decision": {
     "state": "monitor",
-    "cta": "fair_value_hold",
+    "cta": "fair_value_monitor",
     "summary": "Republic Services is trading at $208.75, virtually identical to its probability-weighted fair value ($207.03). It is an exceptional business with high recurring cash flow, but disciplined capital allocation mandates waiting for a pullback toward the attractive accumulation threshold ($175.98) before expanding exposure.",
     "next_catalyst": "Q3 2026 Earnings Release",
     "next_decision_date": "2026-10-28",
     "required_actions": [
-      "Maintain existing core long position",
-      "Establish buy limits at $176.00"
+      "Track whether the original thesis criteria still hold",
+      "Watch the modeled attractive-value level of $176.00"
     ]
   },
   "sources": [

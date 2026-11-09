@@ -126,7 +126,7 @@
     "explanation": "Scenario-weighted earnings model supported by terminal landfill real estate value, cash flow conversion exceeding 80%, and regulated inflation-hedging mechanics."
   },
   "entry_zones": {
-    "strong_buy_below": 151.49,
+    "deep_value_below": 151.49,
     "attractive_below": 183.96,
     "fair_value_low": 194.78,
     "fair_value_high": 227.24,
@@ -157,12 +157,12 @@
   ],
   "decision": {
     "state": "monitor",
-    "cta": "fair_value_hold",
-    "summary": "Waste Management is the premier structural moat in North American infrastructure. Trading at $218.40 against a probability-weighted fair value of $216.42, the stock is fairly valued. While existing positions should be firmly held, new capital deployment should await an entry closer to the attractive accumulation threshold ($183.96).",
+    "cta": "fair_value_monitor",
+    "summary": "Waste Management is studied here as a structural moat in North American infrastructure. At $218.40 against a probability-weighted modeled fair value of $216.42, the stock screens as fairly valued; the model's attractive-value level is $183.96.",
     "next_catalyst": "Q3 2026 Earnings Release",
     "next_decision_date": "2026-10-28",
     "required_actions": [
-      "Hold current position and reinvest dividends",
+      "Track dividend growth and whether the thesis criteria still hold",
       "Set alert for accumulation below $184.00"
     ]
   },

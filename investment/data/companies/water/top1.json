@@ -126,7 +126,7 @@
     "explanation": "Scenario-weighted EPS model cross-validated against 10-year discounted free cash flow assuming 9% cost of equity and 3.0% terminal growth rate."
   },
   "entry_zones": {
-    "strong_buy_below": 67.51,
+    "deep_value_below": 67.51,
     "attractive_below": 81.97,
     "fair_value_low": 86.8,
     "fair_value_high": 101.26,
@@ -157,7 +157,7 @@
   ],
   "decision": {
     "state": "watchlist",
-    "cta": "buy_below_attractive_threshold",
+    "cta": "watch_attractive_value_level",
     "summary": "Pentair possesses outstanding operational quality and structural exposure to water filtration. Shares currently trade in the fair value zone at $93.45; initiate primary accumulation tranches below $81.97 to secure an institutional margin of safety.",
     "next_catalyst": "Q3 2026 Earnings Announcement",
     "next_decision_date": "2026-10-22",

@@ -127,7 +127,7 @@
     "explanation": "Scenario-weighted normalized earnings model cross-checked against 10-year hazardous waste facility replacement cost and terminal free cash flow conversion."
   },
   "entry_zones": {
-    "strong_buy_below": 193.74,
+    "deep_value_below": 193.74,
     "attractive_below": 235.25,
     "fair_value_low": 249.09,
     "fair_value_high": 290.61,
@@ -157,13 +157,13 @@
     "Commercial viability of non-thermal destruction technology eliminating the need for incineration"
   ],
   "decision": {
-    "state": "active_buy",
-    "cta": "buy_below_attractive_threshold",
+    "state": "criteria_met",
+    "cta": "watch_attractive_value_level",
     "summary": "Clean Harbors is the premier institutional vehicle for capturing hazardous waste and PFAS destruction demand. Trading at $234.50, the stock sits directly within the Attractive accumulation zone ($235.25), supported by a probability-weighted fair value of $276.77.",
     "next_catalyst": "Q3 2026 Earnings Release",
     "next_decision_date": "2026-11-04",
     "required_actions": [
-      "Accumulate core positions below $235.25",
+      "Watch the modeled attractive-value level of $235.25",
       "Set stop-loss reassessment trigger at $180"
     ]
   },

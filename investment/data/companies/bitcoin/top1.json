@@ -114,7 +114,7 @@
     "explanation": "Three-scenario normalized earnings framework pegged to exchange contract clearing volumes, corroborated by 10-year discounted free cash flow."
   },
   "entry_zones": {
-    "strong_buy_below": 204.6,
+    "deep_value_below": 204.6,
     "attractive_below": 248.5,
     "fair_value_low": 263.1,
     "fair_value_high": 306.9,
@@ -139,13 +139,13 @@
     "Loss of regulatory monopoly as designated contract market (DCM)"
   ],
   "decision": {
-    "state": "active_buy",
-    "cta": "buy_below_fair_value",
+    "state": "criteria_met",
+    "cta": "watch_below_fair_value",
     "summary": "CME is the premier institutional play on monetary policy volatility and crypto derivatives institutionalization. It trades inside its fair value zone with high defensive resilience.",
     "next_catalyst": "Q3 2026 Earnings Announcement",
     "next_decision_date": "2026-10-28",
     "required_actions": [
-      "Accumulate on market dips below $265.00",
+      "Watch whether the price moves below the modeled $265.00 attractive-value level",
       "Re-evaluate contract ADV figures post-November FOMC meeting"
     ]
   },

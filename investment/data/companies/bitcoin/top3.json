@@ -114,7 +114,7 @@
     "explanation": "Sum-of-the-parts valuation balancing depreciated ASIC mining replacement value against enterprise data center infrastructure capitalization rates."
   },
   "entry_zones": {
-    "strong_buy_below": 32.8,
+    "deep_value_below": 32.8,
     "attractive_below": 39.8,
     "fair_value_low": 42.1,
     "fair_value_high": 49.1,
@@ -139,13 +139,13 @@
     "Total delivered cost per Bitcoin mined exceeding spot market price"
   ],
   "decision": {
-    "state": "active_buy",
-    "cta": "buy_below_fair_value",
+    "state": "criteria_met",
+    "cta": "watch_below_fair_value",
     "summary": "IREN is fairly priced to modestly undervalued at $44.45, offering a low-cost power moat that bridges Bitcoin hash rates with enterprise high-performance computing.",
     "next_catalyst": "Operational and Energization Update",
     "next_decision_date": "2026-10-15",
     "required_actions": [
-      "Accumulate within the fair value range ($42.10-$45.00)",
+      "Note: the price sits inside the modeled fair-value range ($42.10–$45.00)",
       "Add aggressively if market volatility drives price into the attractive zone (<$39.80)"
     ]
   },

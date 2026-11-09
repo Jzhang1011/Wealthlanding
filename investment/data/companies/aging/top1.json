@@ -136,7 +136,7 @@
     "explanation": "The valuation uses scenario-specific normalized earnings and multiples. Net cash is a supporting balance-sheet factor and is not added separately to avoid double counting value already reflected in the earnings multiple."
   },
   "entry_zones": {
-    "strong_buy_below": 185.0,
+    "deep_value_below": 185.0,
     "attractive_below": 220.0,
     "fair_value_low": 220.0,
     "fair_value_high": 265.0,
@@ -176,7 +176,7 @@
   ],
   "decision": {
     "state": "watchlist",
-    "cta": "buy_below_attractive_threshold",
+    "cta": "watch_attractive_value_level",
     "summary": "ResMed offers the strongest combination of business quality and valuation support among the selected aging companies, but the current price is just above the attractive threshold and fiscal 2026 results are pending.",
     "next_catalyst": "Fiscal fourth-quarter and full-year 2026 results",
     "next_decision_date": "2026-08-07",
