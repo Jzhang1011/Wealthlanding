@@ -71,7 +71,7 @@ class Page:
         self.layout = bool(fm and re.search(r"^layout:", fm, re.M))
         if self.layout:
             raw_title, desc = fm_value(fm, "title"), fm_value(fm, "description")
-            self.noindex = False
+            self.noindex = fm_value(fm, "noindex").lower() == "true"
         else:
             m = re.search(r"<title>(.*?)</title>", text, re.S | re.I)
             raw_title = m.group(1) if m else ""
@@ -565,9 +565,13 @@ def build(check=False, guide_pages=()):
             if trail:
                 body = remove_block(body, "breadcrumb")
                 body = "\n<!-- wl:breadcrumb:start -->\n" + breadcrumb_html(trail) + "\n<!-- wl:breadcrumb:end -->" + body
+            else:
+                body = re.sub(r"\n?<!-- wl:breadcrumb:start -->.*?<!-- wl:breadcrumb:end -->", "", body, count=1, flags=re.S)
             ns = None if is_hub else next_steps_html(page, cfg, pages)
             if ns:
                 body = remove_block(body, "next-steps").rstrip("\n") + "\n<!-- wl:next-steps:start -->\n" + ns + "\n<!-- wl:next-steps:end -->\n"
+            else:
+                body = remove_block(body, "next-steps")
             body = remove_block(body, "life-stage")
             if rel in ls_backlinks:
                 blk = "<!-- wl:life-stage:start -->\n" + ls_backlinks[rel] + "\n<!-- wl:life-stage:end -->\n"

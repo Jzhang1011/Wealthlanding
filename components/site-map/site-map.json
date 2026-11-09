@@ -218,10 +218,6 @@
           "label": "How much life insurance"
         },
         {
-          "href": "/blogs/18_25/paycheck.html",
-          "label": "Decoding your paycheck"
-        },
-        {
           "href": "/blogs/budget_spending.html",
           "label": "Budget and spending articles"
         }
@@ -240,13 +236,6 @@
           "match": [
             "blogs/budget_spending/",
             "blogs/budget_spending.html"
-          ]
-        },
-        {
-          "label": "Starting out",
-          "hub": "/money/",
-          "match": [
-            "blogs/18_25/"
           ]
         },
         {
@@ -278,7 +267,6 @@
             "links": [
               "/tools/health-plan-compare/",
               "/life_stage/25_40/topics/hsa.html",
-              "/blogs/18_25/FSA_HSA.html",
               "/blogs/budget_spending/employer-health-insurance-costs-rising.html"
             ]
           },
@@ -288,15 +276,6 @@
             "links": [
               "/tools/debt_payoff_calculator.html",
               "/life_stage/25_40/topics/debt-vs-investing.html"
-            ]
-          },
-          {
-            "q": "Where is my paycheck going?",
-            "a": "Start from take-home pay, not salary. Withholding, benefits and retirement contributions come out first, and side income usually has no tax withheld at all.",
-            "links": [
-              "/blogs/18_25/paycheck.html",
-              "/blogs/18_25/gig_economy_tax.html",
-              "/blogs/18_25/everyday_cost.html"
             ]
           },
           {

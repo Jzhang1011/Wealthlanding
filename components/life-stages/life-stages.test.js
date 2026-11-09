@@ -51,13 +51,22 @@ for (const h of data.after65.links) ok(fs.existsSync(path.join(root, fileFor(h.h
 // hidden earlier-stage pages stay on disk, noindexed and out of the sitemap
 const hidden = ['life_stage/18_25/playbook_hub.html', 'life_stage/25_40/playbook_hub.html', 'learn/early-career/index.html', 'blogs/18_25.html']
   .concat([1, 2, 3, 4, 5].flatMap((i) => [`life_stage/18_25/step_${i}.html`, `life_stage/25_40/step_${i}.html`]));
+const hiddenArticles = ['FSA_HSA', 'gig_economy_tax', 'paycheck', 'everyday_cost'].map((f) => `blogs/18_25/${f}.html`);
 for (const rel of hidden) {
   ok(/name="robots"[^>]+noindex/.test(read(rel)), `${rel} noindex`);
   ok(!sitemap.includes('wealthlanding.com/' + rel.replace(/index\.html$/, '') + '</loc>'), `${rel} out of sitemap`);
 }
+for (const rel of hiddenArticles) {
+  const t = read(rel);
+  ok(/name="robots"[^>]+noindex/.test(t) || /^noindex: true$/m.test(t), `${rel} noindex`);
+  ok(!sitemap.includes('wealthlanding.com/' + rel + '</loc>'), `${rel} out of sitemap`);
+}
+const siteMap = read('components/site-map/site-map.json');
+ok(!siteMap.includes('blogs/18_25'), 'site-map.json has no blogs/18_25 links');
 const nav = read('components/header-nav.html');
 ok(nav.includes('Plan by age') && !/life_stage\/(18_25|25_40\/(step|playbook))|learn\/early-career/.test(nav), 'nav shows Plan by age only');
 const home = read('index.html');
 ok(home.includes('id="life-stages-explorer"') && home.includes('/plan-by-age/45-49/'), 'homepage journey block');
 ok(!/life_stage\/18_25|learn\/early-career|life_stage\/25_40\/playbook_hub/.test(home), 'homepage has no hidden-stage links');
+ok(/<title>[^<]*45 to 65[^<]*\| WealthLanding<\/title>/.test(home) && !/Every Life Stage/i.test(home), 'homepage title is 45-65 focused');
 console.log(`life-stages: ${checks} checks passed`);
