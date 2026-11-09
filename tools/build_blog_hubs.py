@@ -63,6 +63,11 @@ def page(src, data):
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{e(title)} Blog Archive | WealthLanding</title>
+  <meta property="og:site_name" content="WealthLanding">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{e(title)} Blog Archive">
+  <meta property="og:description" content="{e(m['description'])}">
+  <meta property="og:url" content="https://www.wealthlanding.com/blogs/{hub}">
   <meta name="description" content="{e(m['description'])}">
   <link rel="canonical" href="https://www.wealthlanding.com/blogs/{hub}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -161,3 +166,7 @@ for src in SECTIONS:
     out = os.path.join(ROOT, 'blogs', data['meta']['hub'])
     open(out, 'w', encoding='utf-8').write(page(src, data))
     print('wrote', os.path.relpath(out, ROOT))
+
+# Re-apply the shared breadcrumb, footer-link and next-step blocks to the pages just written.
+import subprocess, sys
+subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'build_site_blocks.py')], check=True)
