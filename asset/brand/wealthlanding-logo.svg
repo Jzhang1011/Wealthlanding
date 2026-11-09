@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 64" role="img" aria-label="WealthLanding">
+  <rect width="64" height="64" rx="14" fill="#0f172a"/>
+  <polyline points="12,22 23,44 32,30 41,44 52,20" fill="none" stroke="#fbbf24" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="12" y="50" width="40" height="4" rx="2" fill="#fbbf24" opacity="0.55"/>
+  <text x="78" y="42" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="30" font-weight="800" letter-spacing="-0.5"><tspan fill="#0f172a">Wealth</tspan><tspan fill="#d97706">Landing</tspan></text>
+</svg>

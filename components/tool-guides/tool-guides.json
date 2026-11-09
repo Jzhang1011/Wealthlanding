@@ -1,0 +1,668 @@
+{
+  "version": 1,
+  "note": "Explanatory guides rendered below each calculator by tools/build_site_blocks.py. Worked examples must use the tool's own default inputs. Edit here, then run: python3 tools/build_site_blocks.py",
+  "pages": {
+    "tools/compound_interest_calculator.html": {
+      "heading": "Understanding compound growth",
+      "intro": "Compound growth is the reason starting early, or simply staying invested, matters so much. This guide explains what the calculator does, how to use it, and how to read what it shows.",
+      "sections": [
+        {
+          "title": "What this calculator does",
+          "html": "<p>It projects how a starting balance plus a fixed monthly contribution could grow if every dollar earns the same annual rate of return, compounded monthly. It splits the final balance into the money you put in (principal) and the growth earned on that money (interest or investment return).</p>"
+        },
+        {
+          "title": "How to use it",
+          "html": "<ol><li>Enter what you have invested today in <strong>Initial Investment</strong>.</li><li>Enter what you plan to add each month in <strong>Monthly Contribution</strong>.</li><li>Set <strong>Years to Grow</strong> to the time until you expect to start spending the money.</li><li>Choose an <strong>Estimated Annual Return</strong>. Try a cautious, a middle, and a hopeful rate rather than a single number.</li><li>Press <strong>Calculate Growth</strong>.</li></ol>"
+        },
+        {
+          "title": "How to read the results",
+          "html": "<p><strong>Future Balance</strong> is the projected total at the end of the period. <strong>Total Principal</strong> is everything you contributed. <strong>Total Interest</strong> is the difference, the part produced by compounding. The bar under the totals shows the same split as percentages. When the growth slice is larger than the principal slice, time has done more of the work than your deposits.</p>"
+        },
+        {
+          "title": "Assumptions and limits",
+          "html": "<ul><li>The return is constant every month. Real markets move up and down, and the order of good and bad years matters, especially near retirement.</li><li>Results are in future dollars. Inflation is not subtracted, so a dollar at the end buys less than a dollar today. To think in today's dollars, enter a return that is already reduced by your inflation assumption.</li><li>Taxes, fund fees and account rules are not modeled.</li><li>The default 7% is an illustrative assumption, not a forecast or a promise.</li></ul>"
+        },
+        {
+          "title": "Worked example with the default numbers",
+          "example": true,
+          "html": "<p>The calculator opens with $1,000 invested, $500 added every month, 30 years, and a 7% annual return. You would contribute $181,000 in total ($1,000 plus $500 × 12 months × 30 years). The projected balance is about <strong>$618,102</strong>, so roughly <strong>$437,102</strong>, about 71% of the total, comes from growth rather than deposits.</p><p>Change only the years from 30 to 20 and the projected balance falls to about $264,500, less than half, even though you would still contribute two thirds as much ($121,000). That gap is the cost of a shorter runway.</p>"
+        }
+      ],
+      "related": [
+        {
+          "href": "/retirement-confidence/longevity-marathon/",
+          "label": "Will your money last 30 years?",
+          "note": "Longevity, inflation and withdrawal rates"
+        },
+        {
+          "href": "/retirement-confidence/savings-target-two-buckets/",
+          "label": "How much should you have saved by 50?",
+          "note": "Benchmarks and the two-bucket view"
+        },
+        {
+          "href": "/tools/debt_payoff_calculator.html",
+          "label": "Debt payoff calculator",
+          "note": "Snowball vs. avalanche"
+        },
+        {
+          "href": "/tools/",
+          "label": "All tools and calculators",
+          "note": ""
+        }
+      ]
+    },
+    "tools/debt_payoff_calculator.html": {
+      "heading": "Understanding the snowball and avalanche methods",
+      "intro": "Both methods pay every minimum on time and send any extra money to one debt at a time. They differ only in which debt gets the extra money first.",
+      "sections": [
+        {
+          "title": "What this calculator does",
+          "html": "<p>It simulates your debts month by month. Each month it adds interest to every balance, pays each minimum payment, then sends your extra payment, plus any minimums freed up by debts already paid off, to a single target debt. It runs the simulation twice: once targeting the <strong>smallest balance first</strong> (snowball) and once targeting the <strong>highest interest rate first</strong> (avalanche).</p>"
+        },
+        {
+          "title": "How to use it",
+          "html": "<ol><li>List each debt with its current balance, annual interest rate (APR) and required minimum payment. Your statement shows all three.</li><li>Use <strong>Add Debt</strong> for more rows and the trash icon to remove one.</li><li>Enter the <strong>Extra Monthly Payment</strong> you can commit on top of the minimums.</li><li>Press <strong>Compare Strategies</strong>.</li></ol>"
+        },
+        {
+          "title": "How to read the results",
+          "html": "<p>Each method shows the <strong>time to debt-free</strong> and the <strong>total interest paid</strong>. The avalanche method never pays more interest than the snowball method, because it always attacks the most expensive debt. The snowball method can still be the better choice for you if clearing a small balance quickly keeps you motivated. If the result says \"Forever\", your payments do not cover the interest; increase the extra payment.</p>"
+        },
+        {
+          "title": "Assumptions and limits",
+          "html": "<ul><li>Interest is charged monthly at one twelfth of the APR, and rates never change.</li><li>No new charges are added to any account.</li><li>Promotional rates, fees, and minimums that shrink as the balance falls are not modeled.</li><li>The simulation stops at 60 years.</li></ul>"
+        },
+        {
+          "title": "Worked example with the default numbers",
+          "example": true,
+          "html": "<p>The calculator opens with two debts: a credit card with a $4,500 balance at 22.9% and a $120 minimum, and a student loan with a $12,000 balance at 6.5% and a $150 minimum, plus $100 a month extra. Both methods finish in about <strong>5 years and 10 months</strong> with about <strong>$4,020</strong> of total interest.</p><p>They tie because the credit card is both the smallest balance and the highest rate, so both methods attack it first. Raise the student loan rate above 22.9%, or make the credit card balance larger than the loan, and the two methods diverge. That is a useful way to see when the order actually matters.</p>"
+        }
+      ],
+      "related": [
+        {
+          "href": "/life_stage/25_40/topics/debt-vs-investing.html",
+          "label": "Should I pay off debt or invest?",
+          "note": "A decision framework"
+        },
+        {
+          "href": "/tools/compound_interest_calculator.html",
+          "label": "Compound interest calculator",
+          "note": "What the freed-up cash could grow into"
+        },
+        {
+          "href": "/life_stage/18_25/step_2.html",
+          "label": "Kill high-interest debt",
+          "note": "Step 2 of the money playbook"
+        },
+        {
+          "href": "/tools/",
+          "label": "All tools and calculators",
+          "note": ""
+        }
+      ]
+    },
+    "tools/credit-card/index.html": {
+      "heading": "How to use the card rewards router",
+      "intro": "Most households carry two to five credit cards but use whichever one is on top. This tool helps you decide which card to reach for in each spending category, and whether a card with an annual fee is paying for itself.",
+      "sections": [
+        {
+          "title": "What this tool does",
+          "html": "<p>It compares the cards you hold, and the cards in its catalog, by what each one earns in common spending categories such as groceries, dining, gas, travel and everything else. It converts points and miles into an estimated cash value so that cash-back and points cards can be compared side by side. Separate panels estimate whether an annual fee is covered by credits you actually use, and which benefits, such as trip delay or rental car coverage, might make a lower-earning card the better choice for a specific purchase.</p>"
+        },
+        {
+          "title": "How to use it",
+          "html": "<ol><li><strong>Build your wallet.</strong> Add the cards you carry from the drop-down list.</li><li><strong>Set your monthly spending</strong> in the Quick Check sliders so the totals reflect your household.</li><li><strong>Open a spending category</strong> to see every card ranked for it, with your own cards highlighted.</li><li><strong>Check the annual fee breakeven</strong> panel and switch on only the statement credits you would use anyway.</li><li><strong>Review point values</strong> under \"Point &amp; Mile Values Used\" and adjust them to how you actually redeem.</li><li><strong>Save your strategy</strong> as a printable wallet card or phone wallpaper.</li></ol>"
+        },
+        {
+          "title": "How to read the results",
+          "html": "<p>The <strong>three scenarios</strong> compare the best card in each category from the whole catalog, the best card in each category from your wallet, and the single best card used for everything. The gap between your wallet and the optimal line is the most you could gain by changing cards; the gap between your wallet and the single-card line is what using the right card at the right time is worth to you. The <strong>next best card</strong> panel lists cards that would add the most value to what you already hold, before considering their annual fees and your credit situation.</p>"
+        },
+        {
+          "title": "Assumptions and limits",
+          "html": "<ul><li>Point and mile values are assumptions. A point can be worth less as cash back and more when transferred to an airline or hotel. The tool uses default values you can change.</li><li>Earning rates, caps, credits and annual fees change often. Confirm current terms on each issuer's site before you apply or rely on a benefit.</li><li>Card benefits such as trip delay or rental car coverage have conditions, limits and exclusions set out in each card's guide to benefits.</li><li>Rewards are only worth having if you pay the balance in full. Interest on a carried balance quickly outweighs any rewards.</li><li>WealthLanding is not affiliated with any card issuer and this is not a recommendation to apply for credit.</li></ul>"
+        },
+        {
+          "title": "Worked example with the default numbers",
+          "example": true,
+          "html": "<p>With no cards added, the Quick Check uses a sample household spending about <strong>$1,930 a month</strong>: $500 on groceries, $300 on dining, $150 on gas, $200 on travel booked through a card portal, $400 on everything else, and smaller amounts on streaming, drugstores, online shopping, transit and entertainment. Using the best card in every category earns an estimated <strong>$149 a month</strong>, while the best single card used for everything earns about <strong>$109 a month</strong>. The roughly $40 monthly difference, close to $480 a year, is the value of matching cards to categories at these point values. Add your own cards to see where your wallet lands between those two lines.</p>"
+        }
+      ],
+      "related": [
+        {
+          "href": "/blogs/spending_smart/airbnb_cc_choice.html",
+          "label": "The $2,400 mountain blizzard",
+          "note": "When card protections beat points"
+        },
+        {
+          "href": "/travel/airlines/",
+          "label": "Airline loyalty programs compared",
+          "note": "United, American and Delta"
+        },
+        {
+          "href": "/travel/hotels/",
+          "label": "Hotel loyalty programs compared",
+          "note": "Marriott, Hilton, Hyatt and IHG"
+        },
+        {
+          "href": "/learn/deals/",
+          "label": "Deal Finder",
+          "note": "Ways to spend less on travel and outings"
+        }
+      ]
+    },
+    "tools/health-plan-compare/index.html": {
+      "heading": "Worked example and next steps",
+      "intro": "The sections above explain the formula, the assumptions and how to read the chart. Here is what the example plans show, and where to go next.",
+      "sections": [
+        {
+          "title": "Worked example with the default numbers",
+          "example": true,
+          "html": "<p>The calculator opens with three made-up plans paid every two weeks: a PPO ($120 per paycheck, $1,000 deductible, $4,000 in-network out-of-pocket maximum), an HMO ($80 per paycheck, $750 deductible, $5,500 maximum) and a high-deductible plan with an HSA ($60 per paycheck, $3,500 deductible, $7,000 maximum, with a $500 employer HSA contribution).</p><p>At the default estimate of <strong>$5,000</strong> of medical care in a year, the estimated total yearly costs are about <strong>$4,920</strong> for the PPO, <strong>$3,680</strong> for the HMO and <strong>$4,860</strong> for the HDHP, so the HMO is lowest by about $1,180. The break-even points show where the ranking flips: the HMO and HDHP cost the same at about <strong>$2,025</strong> of care, the PPO and HDHP at about <strong>$16,300</strong>, and the PPO and HMO at about <strong>$22,200</strong>. In a very light year the HDHP wins on premium; in a typical year at these numbers the HMO wins; only in a very heavy year does the PPO's lower maximum matter.</p>"
+        },
+        {
+          "title": "How to use the result",
+          "html": "<ul><li>Run your own plans with the figures from each plan's Summary of Benefits and Coverage.</li><li>Test a light year, a typical year and a bad year. A plan that is cheapest in a typical year but much more expensive in a bad year may not be worth the risk.</li><li>Check that your doctors and prescriptions are covered in each plan's network and formulary before you decide.</li></ul>"
+        }
+      ],
+      "related": [
+        {
+          "href": "/blogs/budget_spending/employer-health-insurance-costs-rising.html",
+          "label": "Why employer health insurance costs are rising",
+          "note": "Survey data and what it means for 2027"
+        },
+        {
+          "href": "/life_stage/25_40/topics/hsa.html",
+          "label": "HSA: the only triple-tax account",
+          "note": "Limits and how it works"
+        },
+        {
+          "href": "/retirement-confidence/medicare-gap/",
+          "label": "What Medicare doesn't cover",
+          "note": "Planning for health costs after 65"
+        },
+        {
+          "href": "/blogs/budget_spending/aca_early_retirement_subsidies.html",
+          "label": "ACA subsidies in early retirement",
+          "note": "Coverage before Medicare"
+        }
+      ]
+    },
+    "investment/real_estate_vs_stocks_model.html": {
+      "heading": "How to read the real estate vs. stocks model",
+      "intro": "This simplified model shows one reason property can keep pace with a stock portfolio despite slower price growth: leverage. Read the assumptions before drawing conclusions, because they leave out several costs of owning property.",
+      "sections": [
+        {
+          "title": "What this model does",
+          "html": "<p>It compares two ways of investing the same starting amount. In the stock case, the money compounds at the equity return you choose. In the property case, the same money is used as a down payment on a larger property; the property's value grows at the appreciation rate you choose, and the loan balance is reduced in equal steps until it reaches zero at the end of the horizon. The property result is your equity: property value minus remaining debt.</p>"
+        },
+        {
+          "title": "How to use it",
+          "html": "<ol><li>Set the <strong>initial invested capital</strong>.</li><li>Choose an <strong>equities annual return</strong> and a <strong>real estate appreciation</strong> rate. Try lower and higher values for both.</li><li>Set the <strong>leverage factor</strong>. 4.0x means a 25% down payment; 5.0x means 20% down.</li><li>Choose the <strong>investment horizon</strong> in years and compare the two ending values and the chart.</li></ol>"
+        },
+        {
+          "title": "Assumptions and limits",
+          "html": "<ul><li><strong>Loan costs are not subtracted.</strong> The model does not deduct mortgage interest or the monthly payments needed to pay down the loan. It implicitly assumes rent or your own income covers them. In real life those payments are a large cost or a large extra contribution.</li><li>Property taxes, insurance, maintenance, vacancies, closing costs and selling costs are excluded.</li><li>Rental income and stock dividends are not added separately.</li><li>Returns are constant every year and nothing is taxed.</li><li>Leverage magnifies losses as well as gains. A price fall hits a leveraged owner's equity harder than an unleveraged stock investor.</li><li>All rates are illustrative inputs, not forecasts.</li></ul>"
+        },
+        {
+          "title": "Worked example with the default numbers",
+          "example": true,
+          "html": "<p>The model opens with <strong>$50,000</strong>, a <strong>10%</strong> equity return, <strong>4.5%</strong> property appreciation, <strong>4.0x</strong> leverage (a $200,000 property with 25% down) and a <strong>25-year</strong> horizon. The stock portfolio grows to about <strong>$541,735</strong>. The property, worth about $601,087 after 25 years with the $150,000 loan fully paid off, leaves equity of about <strong>$601,087</strong>.</p><p>Property comes out ahead here only because the model ignores the cost of paying off that $150,000 loan with interest over 25 years. Lower the leverage to 1.0x (no loan) and the property ends near $150,000, far behind the stock portfolio. The lesson is about leverage and its costs, not that one asset is better.</p>"
+        }
+      ],
+      "related": [
+        {
+          "href": "/life_stage/25_40/topics/rent-vs-buy.html",
+          "label": "Should I rent or buy?",
+          "note": "The real yearly math"
+        },
+        {
+          "href": "/life_stage/25_40/topics/how-much-house.html",
+          "label": "How much house can I afford?",
+          "note": "The 28/36 rule"
+        },
+        {
+          "href": "/tools/compound_interest_calculator.html",
+          "label": "Compound interest calculator",
+          "note": "Test different return assumptions"
+        },
+        {
+          "href": "/blogs/real_estate.html",
+          "label": "Real estate articles",
+          "note": ""
+        }
+      ]
+    },
+    "Retirement-simulator/OptimizeRoth.html": {
+      "heading": "How to use the retirement financial strategy lab",
+      "intro": "Roth conversions move money from pretax accounts such as a traditional IRA or 401(k) into a Roth account. You pay income tax now in exchange for tax-free withdrawals later and no required minimum distributions on the Roth during your lifetime. This lab compares several conversion strategies so you can see the trade-offs.",
+      "sections": [
+        {
+          "title": "What this tool does",
+          "html": "<p>It projects a household's accounts, income, spending, taxes and estate year by year, then compares four conversion strategies, each built for a different goal: <strong>maximum legacy</strong>, <strong>lowest lifetime tax</strong>, <strong>highest retirement cash flow</strong>, and a <strong>balanced</strong> middle path. For the selected strategy it shows a conversion window, a target federal bracket, a Social Security claiming comparison, spending and wealth charts, a sensitivity table, a market stress test and a year-by-year roadmap.</p>"
+        },
+        {
+          "title": "How to use it",
+          "html": "<ol><li>If you completed the earlier Retirement Blueprint steps, your profile loads automatically. Otherwise the lab uses a sample household.</li><li>Open <strong>All Model Assumptions</strong> to set inflation, returns, healthcare and long-term care costs, state tax rate, mortgage, college costs and any part-time work.</li><li>Decide whether to <strong>preserve ACA subsidies</strong> before 65 and <strong>avoid IRMAA surcharges</strong> after 65, and set a <strong>top federal bracket</strong> you are willing to fill with conversions.</li><li>Compare the four strategy cards, choose one, then work down the page through the charts and the year-by-year roadmap.</li><li>Switch between future dollars and today's dollars to see the effect of inflation.</li></ol>"
+        },
+        {
+          "title": "How to read the results",
+          "html": "<p>Each strategy card shows the conversion ages, the average conversion per year, the projected lifetime tax, and the projected estate at 85. A strategy with the lowest lifetime tax usually converts less and leaves more in pretax accounts subject to required minimum distributions. A legacy-focused strategy usually pays more tax earlier so heirs inherit more Roth money, which is generally income-tax-free to them. No strategy wins on every measure; the right one depends on what you value.</p>"
+        },
+        {
+          "title": "Assumptions and limits",
+          "html": "<ul><li>Tax brackets, IRMAA thresholds and ACA rules are simplified and change over time. Check current figures with the IRS, Medicare.gov and HealthCare.gov.</li><li>Returns and inflation are smooth assumptions; the market simulation shows how uneven returns could change the picture.</li><li>Conversions are permanent for that tax year: since 2018 a Roth conversion can no longer be undone (recharacterized).</li><li>State taxes are modeled as a single flat rate.</li><li>This is an educational model. Large conversions are worth reviewing with a tax professional.</li></ul>"
+        },
+        {
+          "title": "Worked example with the default numbers",
+          "example": true,
+          "html": "<p>With the sample household and no saved priorities, the lab recommends the <strong>Balanced Strategy</strong> by default: converting from about age 60 to 66, roughly $200,000 a year, filling up to the 24% federal bracket, with projected lifetime tax of about $580,531. For comparison, the <strong>lowest-lifetime-tax</strong> strategy projects about $537,696 by spreading smaller conversions over ages 60 to 65, while the <strong>maximum-legacy</strong> strategy converts about $512,000 a year from 60 to 63 and projects about $644,509 of lifetime tax in exchange for a larger Roth balance for heirs. These figures come from the sample inputs and will change as soon as you enter your own.</p>"
+        }
+      ],
+      "related": [
+        {
+          "href": "/retirement-confidence/tax-box-allocation/",
+          "label": "Traditional vs. Roth",
+          "note": "Building a tax-smart retirement portfolio"
+        },
+        {
+          "href": "/retirement-confidence/withdrawal-sequence/",
+          "label": "Which account should you spend first?",
+          "note": "Withdrawal sequencing"
+        },
+        {
+          "href": "/blogs/budget_spending/roth_conversions_pre_medicare.html",
+          "label": "Roth conversions before Medicare",
+          "note": "The gap-year window"
+        },
+        {
+          "href": "/Retirement-simulator/retirement_scenario_lab.html",
+          "label": "Retirement Scenario Lab",
+          "note": "Stress-test one assumption at a time"
+        }
+      ]
+    },
+    "Retirement-simulator/retirement_scenario_lab.html": {
+      "heading": "How to use the Retirement Scenario Lab",
+      "intro": "A retirement plan rests on dozens of assumptions. The Scenario Lab lets you change one at a time and see what moves: assets, taxes, spending and income sources over the full retirement.",
+      "sections": [
+        {
+          "title": "What this tool does",
+          "html": "<p>It starts from a baseline plan, either your own Retirement Blueprint or a sample household, and projects it year by year. Any change you make is treated as an experiment and compared with the baseline, so you can see the difference in ending assets, lifetime tax, lifetime spending, the lowest point your assets reach, and the pretax balance left at the end.</p>"
+        },
+        {
+          "title": "How to use it",
+          "html": "<ol><li>Start with a <strong>quick scenario</strong>, such as delaying Social Security to 70, high inflation, a severe long-term care event, lower returns, or a college cost surge.</li><li>Or change individual inputs: retirement age, Social Security start age, spending and travel, healthcare path and costs, long-term care, inflation, portfolio growth, and Roth conversion policy.</li><li>Read the summary cards and charts. Use <strong>Reset baseline</strong> to start over and <strong>Save scenario</strong> to keep one you want to revisit.</li><li>Switch between future and today's dollars to see the effect of inflation.</li></ol>"
+        },
+        {
+          "title": "How to read the results",
+          "html": "<p>The stacked asset chart shows how pretax, Roth, brokerage, cash, home equity and 529 balances change with age. Watch the <strong>lowest assets</strong> figure and the age it occurs: a plan that dips close to zero is fragile even if it recovers later. The taxes chart shows when tax bills bunch up, often in conversion years or once required minimum distributions begin. The income chart shows which source pays for each year's spending.</p>"
+        },
+        {
+          "title": "Assumptions and limits",
+          "html": "<ul><li>Returns and inflation are constant in each scenario. Real markets are uneven.</li><li>Tax rules are simplified and use the bracket and state rate you set.</li><li>Healthcare and long-term care costs are planning estimates you control, not quotes.</li><li>Changes here do not overwrite your Blueprint unless you adopt a scenario.</li></ul>"
+        },
+        {
+          "title": "Worked example with the default numbers",
+          "example": true,
+          "html": "<p>The sample baseline describes a 51-year-old household with about $4.24 million in pretax accounts, $318,000 in Roth accounts, about $817,000 in a brokerage account, $206,000 in cash and $515,000 of home equity. It retires at 60, starts Social Security at 67, spends $100,000 a year plus $20,000 on travel, and assumes 3% inflation, 5.5% healthcare inflation and 6% portfolio growth, with Roth conversions from age 60 up to the 24% federal bracket. Try the <strong>Severe LTC Event</strong> scenario first: it shows how a multi-year care bill changes the lowest point of the plan, which is often more revealing than the ending balance.</p>"
+        }
+      ],
+      "related": [
+        {
+          "href": "/Retirement-simulator/OptimizeRoth.html",
+          "label": "Retirement financial strategy lab",
+          "note": "Compare Roth conversion strategies"
+        },
+        {
+          "href": "/retirement-confidence/social-security-timing/",
+          "label": "Claim Social Security at 62, 67 or 70?",
+          "note": "Timing trade-offs"
+        },
+        {
+          "href": "/retirement-confidence/longevity-marathon/",
+          "label": "Will your money last 30 years?",
+          "note": "Longevity and inflation"
+        },
+        {
+          "href": "/retirement-confidence/medicare-gap/",
+          "label": "What Medicare doesn't cover",
+          "note": "Including long-term care"
+        }
+      ]
+    },
+    "Retirement-simulator/Retirement_Gateway.html": {
+      "heading": "About the Retirement Blueprint",
+      "intro": "The Retirement Blueprint is a guided, step-by-step planning journey. It runs in your browser and saves your answers on your own device, so you can stop and return later.",
+      "sections": [
+        {
+          "title": "What the Blueprint does",
+          "html": "<p>It walks through the decisions that shape a retirement in a sensible order: your starting point, an orientation forecast, the kind of retirement life you want, where you might live, how you will cover healthcare, and finally a coordinated tax and withdrawal strategy. Each step uses what you entered before, so later steps are tailored to your earlier choices.</p>"
+        },
+        {
+          "title": "How to use it",
+          "html": "<ol><li>Press <strong>Design My Retirement</strong> and answer the starting-point questions. Round numbers are fine.</li><li>Review your orientation forecast to see the general direction of your plan.</li><li>Explore lifestyle options and test which ones fit your priorities and constraints.</li><li>Choose location and healthcare paths.</li><li>Finish in the <a href=\"/Retirement-simulator/OptimizeRoth.html\">financial strategy lab</a> to compare Roth conversion and withdrawal strategies, then stress-test them in the <a href=\"/Retirement-simulator/retirement_scenario_lab.html\">Scenario Lab</a>.</li></ol>"
+        },
+        {
+          "title": "Assumptions and privacy",
+          "html": "<ul><li>Projections use simplified tax rules and steady return and inflation assumptions that you can change in later steps.</li><li>Your answers are stored in your browser's local storage, not sent to WealthLanding. Clearing your browser data removes them.</li><li>The Blueprint is an educational planning aid, not a financial plan or advice.</li></ul>"
+        },
+        {
+          "title": "Example: Bill and Tom",
+          "example": true,
+          "html": "<p>The page introduces Bill and Tom, two illustrative retirees who both stop working at 60 with $2.0 million saved. Bill withdraws as needed, buys healthcare at market cost and makes one permanent location choice. Tom plans his low-income years for taxes, coordinates income with health coverage and adapts where he lives by life phase. In the illustration Bill's late-life estate is about $2.3 million and Tom's about $3.8 million. The point is not the exact figures, which depend on the assumptions, but that the order of decisions matters. For a related case study on how required minimum distributions shape what heirs receive, read <a href=\"/blogs/Happy_retirement/how-to-avoid-RMD-taxes.html\">Bill left $5.1 million. Tom left $3.3 million.</a></p>"
+        }
+      ],
+      "related": [
+        {
+          "href": "/retirement-confidence/",
+          "label": "The 7 principles of retirement confidence",
+          "note": "Start with the big picture"
+        },
+        {
+          "href": "/retirement-confidence/savings-target-two-buckets/",
+          "label": "How much should you have saved by 50?",
+          "note": ""
+        },
+        {
+          "href": "/Retirement-simulator/overseas_retirement_hub.html",
+          "label": "Overseas retirement hub",
+          "note": "Compare cities abroad"
+        },
+        {
+          "href": "/blogs/happy_retirement.html",
+          "label": "Happy Retirement articles",
+          "note": "Case studies and guides"
+        }
+      ]
+    },
+    "Retirement-simulator/odyssey-exploration.html": {
+      "heading": "How to use the Odyssey explorer",
+      "intro": "Before you build numbers, it helps to picture the life you want. The Odyssey explorer describes four broad ways people shape retirement so you can react to them.",
+      "sections": [
+        {
+          "title": "What it does",
+          "html": "<p>It presents four illustrative retirement lifestyles, from staying close to home to living abroad for part or all of retirement, and highlights the trade-offs each one brings for family, cost, healthcare and complexity. The preview filters at the top simply highlight the stories that match two quick questions; they do not lock in any choice.</p>"
+        },
+        {
+          "title": "How to use it",
+          "html": "<ol><li>Set the two preview filters: whether family nearby matters and whether you would consider living overseas.</li><li>Read each lifestyle story and note what appeals to you and what worries you.</li><li>Carry the ones you like into the next step, where your priorities and hard constraints are tested in more detail.</li></ol>"
+        },
+        {
+          "title": "Keep in mind",
+          "html": "<ul><li>The lifestyles and characters are illustrative, not recommendations.</li><li>Living abroad affects healthcare (Medicare generally does not pay for care outside the U.S.), taxes and visas. Read the city guides in the <a href=\"/Retirement-simulator/overseas_retirement_hub.html\">overseas retirement hub</a> before deciding.</li></ul>"
+        }
+      ],
+      "related": [
+        {
+          "href": "/Retirement-simulator/Retirement_Gateway.html",
+          "label": "Start the Retirement Blueprint",
+          "note": ""
+        },
+        {
+          "href": "/Retirement-simulator/overseas_retirement_hub.html",
+          "label": "Overseas retirement hub",
+          "note": ""
+        },
+        {
+          "href": "/blogs/Happy_retirement/medicare.html",
+          "label": "The expat Medicare trap",
+          "note": "Late-enrollment penalties abroad"
+        },
+        {
+          "href": "/retirement-confidence/",
+          "label": "The 7 principles of retirement confidence",
+          "note": ""
+        }
+      ]
+    },
+    "Retirement-simulator/retirement_profiles.html": {
+      "heading": "How to use the retirement profile explorer",
+      "intro": "This explorer compares retirement paths side by side on the qualities that matter most beyond money: tax efficiency, healthcare security, family closeness, flexibility, estate preservation and complexity.",
+      "sections": [
+        {
+          "title": "What it does",
+          "html": "<p>Each profile describes a broad retirement path, such as keeping a U.S. home base or living abroad, and rates it on several dimensions. The comparison ledger lines the paths up so you can see where each one is strong and where it asks more of you.</p>"
+        },
+        {
+          "title": "How to read it",
+          "html": "<p>Higher ratings mean a path tends to make that goal easier, not that it is guaranteed. A path that scores well on flexibility often scores lower on simplicity. Use the ratings to start a conversation with your spouse or partner about which trade-offs you are willing to accept.</p>"
+        },
+        {
+          "title": "Keep in mind",
+          "html": "<ul><li>Ratings are illustrative judgments for typical situations, not measurements of your situation.</li><li>Use the <a href=\"/Retirement-simulator/Retirement_Gateway.html\">Retirement Blueprint</a> to test a path with your own numbers.</li></ul>"
+        }
+      ],
+      "related": [
+        {
+          "href": "/Retirement-simulator/odyssey-exploration.html",
+          "label": "Explore four ways to live in retirement",
+          "note": ""
+        },
+        {
+          "href": "/Retirement-simulator/Retirement_Gateway.html",
+          "label": "Start the Retirement Blueprint",
+          "note": ""
+        },
+        {
+          "href": "/retirement-confidence/",
+          "label": "The 7 principles of retirement confidence",
+          "note": ""
+        },
+        {
+          "href": "/Retirement-simulator/overseas_retirement_hub.html",
+          "label": "Overseas retirement hub",
+          "note": ""
+        }
+      ]
+    },
+    "life_stage/18_25/step_1.html": {
+      "heading": "Key facts and official sources for Step 1",
+      "intro": "A budget and a cash buffer are simple ideas, but a few rules decide where that cash is safe and how fast it can work for you.",
+      "sections": [
+        {
+          "title": "Keep the buffer safe and reachable",
+          "html": "<p>An emergency fund belongs in an account you can reach within a day or two and that will not lose value. Bank deposits are protected by the FDIC up to $250,000 per depositor, per insured bank, for each account ownership category; credit union deposits have matching protection through the NCUA. Check that a bank is insured with the FDIC's <a href=\"https://www.fdic.gov/resources/deposit-insurance\" rel=\"noopener\" target=\"_blank\">deposit insurance resources</a> before you open an account.</p>"
+        },
+        {
+          "title": "Make 50/30/20 fit your real numbers",
+          "html": "<p>50/30/20 is a starting point, not a rule. In a high-rent city, needs can run above 50%; the fix is to shrink wants first, then raise savings as your income grows. Use your take-home pay, not your salary, and count minimum debt payments as needs. The Consumer Financial Protection Bureau publishes free budgeting worksheets and tools at <a href=\"https://www.consumerfinance.gov/consumer-tools/\" rel=\"noopener\" target=\"_blank\">consumerfinance.gov</a>.</p>"
+        },
+        {
+          "title": "Example",
+          "example": true,
+          "html": "<p>Illustrative: with $3,200 a month of take-home pay, 50/30/20 suggests about $1,600 for needs, $960 for wants and $640 for savings and extra debt payments. Sending the full $640 to savings would reach a $1,000 starter fund in about seven weeks and $2,000 in a little over three months.</p>"
+        }
+      ],
+      "related": [
+        {
+          "href": "/life_stage/18_25/step_2.html",
+          "label": "Step 2: Kill high-interest debt",
+          "note": ""
+        },
+        {
+          "href": "/blogs/18_25/paycheck.html",
+          "label": "Decoding your paycheck",
+          "note": "Gross pay vs. take-home pay"
+        },
+        {
+          "href": "/learn/deals/",
+          "label": "Deal Finder",
+          "note": "Ways to cut spending"
+        },
+        {
+          "href": "/life_stage/18_25/playbook_hub.html",
+          "label": "The 20s money playbook",
+          "note": "All five steps"
+        }
+      ],
+      "disclaimer": "Educational content only, not personalized financial, tax, legal, or insurance advice. Examples are illustrative; figures and rules are from the official sources linked above and can change."
+    },
+    "life_stage/18_25/step_2.html": {
+      "heading": "Key facts and official sources for Step 2",
+      "intro": "Credit card interest compounds against you. These facts help you see what a balance really costs and test a payoff plan.",
+      "sections": [
+        {
+          "title": "Read the minimum payment warning",
+          "html": "<p>Under the federal Credit CARD Act of 2009, card statements must show how long it would take to pay off your balance making only minimum payments, and what you would pay in total. Look for this box on your next statement: it is the clearest picture of what carrying a balance costs. The Consumer Financial Protection Bureau explains statements and fees at <a href=\"https://www.consumerfinance.gov/consumer-tools/credit-cards/\" rel=\"noopener\" target=\"_blank\">consumerfinance.gov</a>.</p>"
+        },
+        {
+          "title": "Test your own plan",
+          "html": "<p>Enter your balances, rates and minimums in our <a href=\"/tools/debt_payoff_calculator.html\">debt payoff calculator</a> to compare the snowball and avalanche orders. If your smallest debt also has the highest rate, the two methods are the same; when they differ, the calculator shows how much interest the avalanche order saves.</p>"
+        },
+        {
+          "title": "Example",
+          "example": true,
+          "html": "<p>Illustrative: a $4,500 card balance at 22.9% APR costs about $86 in interest in the first month alone ($4,500 × 22.9% ÷ 12). Paying only a $120 minimum, most of that payment goes to interest at first, which is why adding even $100 a month shortens the payoff so much.</p>"
+        }
+      ],
+      "related": [
+        {
+          "href": "/tools/debt_payoff_calculator.html",
+          "label": "Debt payoff calculator",
+          "note": "Snowball vs. avalanche"
+        },
+        {
+          "href": "/life_stage/25_40/topics/debt-vs-investing.html",
+          "label": "Pay off debt or invest?",
+          "note": "A decision framework"
+        },
+        {
+          "href": "/life_stage/18_25/step_3.html",
+          "label": "Step 3: Automate your savings",
+          "note": ""
+        },
+        {
+          "href": "/life_stage/18_25/playbook_hub.html",
+          "label": "The 20s money playbook",
+          "note": "All five steps"
+        }
+      ],
+      "disclaimer": "Educational content only, not personalized financial, tax, legal, or insurance advice. Examples are illustrative; figures and rules are from the official sources linked above and can change."
+    },
+    "life_stage/18_25/step_3.html": {
+      "heading": "Key facts and official sources for Step 3",
+      "intro": "Automation works because it removes the monthly decision. A few details make the system safer and easier to keep.",
+      "sections": [
+        {
+          "title": "Set up the automatic transfer",
+          "html": "<ul><li>Schedule the transfer for the day after payday so the money moves before it can be spent.</li><li>Many employers let you split direct deposit between two accounts, which saves without any transfer at all.</li><li>Name the savings account for its job, such as \"Emergency fund\", so withdrawals feel deliberate.</li></ul>"
+        },
+        {
+          "title": "Where the money is protected",
+          "html": "<p>Savings at an FDIC-insured bank are protected up to $250,000 per depositor, per insured bank, per ownership category, and credit unions have equivalent NCUA coverage. Online banks often pay higher savings rates than branch banks, but rates change; compare current yields and confirm insurance before you move money.</p>"
+        },
+        {
+          "title": "Example",
+          "example": true,
+          "html": "<p>Illustrative: essential expenses of $3,000 a month mean a 3-to-6-month fund of $9,000 to $18,000. Automating $500 per paycheck, paid every two weeks, adds about $13,000 a year, enough to reach the lower target in roughly eight months.</p>"
+        }
+      ],
+      "related": [
+        {
+          "href": "/life_stage/18_25/step_4.html",
+          "label": "Step 4: Start investing early",
+          "note": ""
+        },
+        {
+          "href": "/blogs/18_25/FSA_HSA.html",
+          "label": "FSA vs. HSA explained",
+          "note": "Health accounts at work"
+        },
+        {
+          "href": "/tools/compound_interest_calculator.html",
+          "label": "Compound interest calculator",
+          "note": ""
+        },
+        {
+          "href": "/life_stage/18_25/playbook_hub.html",
+          "label": "The 20s money playbook",
+          "note": "All five steps"
+        }
+      ],
+      "disclaimer": "Educational content only, not personalized financial, tax, legal, or insurance advice. Examples are illustrative; figures and rules are from the official sources linked above and can change."
+    },
+    "life_stage/18_25/step_4.html": {
+      "heading": "Key facts and official sources for Step 4",
+      "intro": "Contribution limits and fees decide how much of your money actually gets to compound. Here are the official figures and the questions to ask.",
+      "sections": [
+        {
+          "title": "2026 contribution limits (IRS)",
+          "html": "<ul><li>401(k), 403(b), most 457 plans and the Thrift Savings Plan: <strong>$24,500</strong> of employee contributions.</li><li>Traditional and Roth IRAs combined: <strong>$7,500</strong>.</li><li>Roth IRA eligibility phases out at higher incomes.</li></ul><p>Source: <a href=\"https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500\" rel=\"noopener\" target=\"_blank\">IRS announcement IR-2025-111</a>. Limits are adjusted for inflation most years, so check the current year's figures.</p>"
+        },
+        {
+          "title": "Fees compound too",
+          "html": "<p>A fund's expense ratio is charged every year on your whole balance, so small differences add up over decades. The SEC's investor education site explains fund fees and has a free compound interest calculator at <a href=\"https://www.investor.gov/\" rel=\"noopener\" target=\"_blank\">investor.gov</a>. Before choosing a fund in your 401(k), compare expense ratios in the plan's fee disclosure.</p>"
+        },
+        {
+          "title": "Example",
+          "example": true,
+          "html": "<p>Illustrative: if your employer matches 100% of contributions up to 5% of a $60,000 salary, contributing $3,000 a year brings in another $3,000 from your employer. Check your plan's summary for the exact match formula and any vesting schedule, which can require you to stay a number of years before the match is fully yours.</p>"
+        }
+      ],
+      "related": [
+        {
+          "href": "/tools/compound_interest_calculator.html",
+          "label": "Compound interest calculator",
+          "note": "See the effect of starting early"
+        },
+        {
+          "href": "/life_stage/25_40/topics/roth-ira.html",
+          "label": "Roth IRA guide",
+          "note": "Pay tax now, never again"
+        },
+        {
+          "href": "/life_stage/25_40/topics/traditional-401k.html",
+          "label": "Traditional 401(k) guide",
+          "note": ""
+        },
+        {
+          "href": "/life_stage/18_25/step_5.html",
+          "label": "Step 5: Grow and protect income",
+          "note": ""
+        }
+      ],
+      "disclaimer": "Educational content only, not personalized financial, tax, legal, or insurance advice. Examples are illustrative; figures and rules are from the official sources linked above and can change."
+    },
+    "life_stage/18_25/step_5.html": {
+      "heading": "Key facts and official sources for Step 5",
+      "intro": "Your ability to earn is the engine behind every other step. Protecting it is as important as growing it.",
+      "sections": [
+        {
+          "title": "Check what your employer already provides",
+          "html": "<p>Many employers offer group disability, life and health coverage. Read the benefits summary for how much of your pay disability insurance replaces, how long it lasts, and whether benefits are taxable. Coverage through work usually ends when you leave the job, so note what you would need to replace.</p>"
+        },
+        {
+          "title": "Know what Social Security covers",
+          "html": "<p>Social Security disability and survivor benefits depend on your work record and are often less than people expect. You can see your own estimates by creating a free <a href=\"https://www.ssa.gov/myaccount/\" rel=\"noopener\" target=\"_blank\">my Social Security account</a> at SSA.gov, which also lets you check that your earnings record is correct.</p>"
+        },
+        {
+          "title": "Example",
+          "example": true,
+          "html": "<p>Illustrative: a 3% raise on a $60,000 salary is $1,800 a year. Negotiating a starting salary $3,000 higher means every later percentage raise is applied to a larger base, so the difference keeps growing for as long as you stay on that pay path.</p>"
+        }
+      ],
+      "related": [
+        {
+          "href": "/life_stage/25_40/topics/life-insurance.html",
+          "label": "How much life insurance do I need?",
+          "note": ""
+        },
+        {
+          "href": "/blogs/18_25/gig_economy_tax.html",
+          "label": "The gig economy tax trap",
+          "note": "Side income and taxes"
+        },
+        {
+          "href": "/life_stage/25_40/playbook_hub.html",
+          "label": "Next: the 30s money playbook",
+          "note": ""
+        },
+        {
+          "href": "/life_stage/18_25/playbook_hub.html",
+          "label": "The 20s money playbook",
+          "note": "All five steps"
+        }
+      ],
+      "disclaimer": "Educational content only, not personalized financial, tax, legal, or insurance advice. Examples are illustrative; figures and rules are from the official sources linked above and can change."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+/* WealthLanding tool guides: explanatory text rendered under calculators (navy / amber, Inter, rounded cards) */
+.wl-guide{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:#334155;background:#f8fafc;border-top:1px solid #e2e8f0;padding:3rem 1rem 3.5rem;margin-top:2.5rem;text-align:left}
+.wl-guide *{box-sizing:border-box}
+.wl-guide-inner{max-width:60rem;margin:0 auto}
+.wl-guide-kicker{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#b45309;background:#fef3c7;border:1px solid #fde68a;border-radius:999px;padding:.25rem .7rem;margin-bottom:.75rem}
+.wl-guide h2{font-size:1.75rem;line-height:1.25;font-weight:800;color:#0f172a;margin:0 0 .6rem;letter-spacing:-.01em}
+.wl-guide-intro{font-size:1.05rem;line-height:1.7;color:#475569;margin:0 0 1.75rem;max-width:48rem}
+.wl-guide-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+@media(min-width:800px){.wl-guide-grid{grid-template-columns:1fr 1fr}}
+.wl-guide-card{background:#fff;border:1px solid #e2e8f0;border-radius:1rem;padding:1.25rem 1.4rem;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+.wl-guide-card h3{font-size:1.05rem;font-weight:800;color:#0f172a;margin:0 0 .5rem}
+.wl-guide-card p,.wl-guide-card li{font-size:.95rem;line-height:1.65;color:#475569}
+.wl-guide-card p{margin:0 0 .6rem}.wl-guide-card p:last-child{margin-bottom:0}
+.wl-guide-card ol,.wl-guide-card ul{margin:0;padding-left:1.2rem}.wl-guide-card ol{list-style:decimal}.wl-guide-card ul{list-style:disc}.wl-guide-card li{margin:0 0 .35rem}
+.wl-guide-card a{color:#b45309;font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.wl-guide-card strong{color:#0f172a}
+.wl-guide-card.wl-guide-example{grid-column:1/-1;background:#fffbeb;border-color:#fcd34d;border-left:5px solid #f59e0b}
+.wl-guide-card.wl-guide-wide{grid-column:1/-1}
+.wl-guide-related{margin-top:1.75rem}
+.wl-guide-related h3{font-size:1rem;font-weight:800;color:#0f172a;margin:0 0 .75rem}
+.wl-guide-related ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:.6rem}
+@media(min-width:640px){.wl-guide-related ul{grid-template-columns:1fr 1fr}}
+.wl-guide-related a{display:block;background:#0f172a;color:#fff;border-radius:.85rem;padding:.8rem 1rem;text-decoration:none;font-weight:700;font-size:.92rem;line-height:1.35}
+.wl-guide-related a:hover{background:#1e293b}
+.wl-guide-related a span{display:block;font-weight:500;font-size:.8rem;color:#fbbf24;margin-top:.15rem}
+.wl-guide-disclaimer{margin:1.5rem 0 0;font-size:.8rem;line-height:1.55;color:#64748b}
+/* Calculators in ?embed=1 mode show only the tool */
+.hpc-embed .wl-guide,.ais-embed .wl-guide{display:none!important}
+@media print{.wl-guide-related{display:none}}

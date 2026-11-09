@@ -12,6 +12,9 @@
     gtag('config', 'G-9JMJJ5CJR4');
   </script>
   <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Health Plan Comparison Calculator: PPO vs HMO vs HDHP | WealthLanding</title>
   <meta name="description" content="Compare two or three employer health plans side by side. Enter premiums, deductibles, coinsurance and out-of-pocket maximums to see your total yearly cost at every level of medical spending and where the plans break even.">
@@ -136,7 +139,37 @@
     </section>
   </main>
 
-  <wealthlanding-footer></wealthlanding-footer>
+  <!-- wl:tool-guide:start -->
+<link rel="stylesheet" href="/components/tool-guides/tool-guides.css">
+<section class="wl-guide" aria-labelledby="wl-guide-title">
+  <div class="wl-guide-inner">
+    <span class="wl-guide-kicker">Guide</span>
+    <h2 id="wl-guide-title">Worked example and next steps</h2>
+    <p class="wl-guide-intro">The sections above explain the formula, the assumptions and how to read the chart. Here is what the example plans show, and where to go next.</p>
+    <div class="wl-guide-grid">
+      <div class="wl-guide-card wl-guide-example">
+        <h3>Worked example with the default numbers</h3>
+        <p>The calculator opens with three made-up plans paid every two weeks: a PPO ($120 per paycheck, $1,000 deductible, $4,000 in-network out-of-pocket maximum), an HMO ($80 per paycheck, $750 deductible, $5,500 maximum) and a high-deductible plan with an HSA ($60 per paycheck, $3,500 deductible, $7,000 maximum, with a $500 employer HSA contribution).</p><p>At the default estimate of <strong>$5,000</strong> of medical care in a year, the estimated total yearly costs are about <strong>$4,920</strong> for the PPO, <strong>$3,680</strong> for the HMO and <strong>$4,860</strong> for the HDHP, so the HMO is lowest by about $1,180. The break-even points show where the ranking flips: the HMO and HDHP cost the same at about <strong>$2,025</strong> of care, the PPO and HDHP at about <strong>$16,300</strong>, and the PPO and HMO at about <strong>$22,200</strong>. In a very light year the HDHP wins on premium; in a typical year at these numbers the HMO wins; only in a very heavy year does the PPO's lower maximum matter.</p>
+      </div>
+      <div class="wl-guide-card">
+        <h3>How to use the result</h3>
+        <ul><li>Run your own plans with the figures from each plan's Summary of Benefits and Coverage.</li><li>Test a light year, a typical year and a bad year. A plan that is cheapest in a typical year but much more expensive in a bad year may not be worth the risk.</li><li>Check that your doctors and prescriptions are covered in each plan's network and formulary before you decide.</li></ul>
+      </div>
+    </div>
+    <nav class="wl-guide-related" aria-label="Related guides">
+      <h3>Related guides and tools</h3>
+      <ul>
+        <li><a href="/blogs/budget_spending/employer-health-insurance-costs-rising.html">Why employer health insurance costs are rising<span>Survey data and what it means for 2027</span></a></li>
+        <li><a href="/life_stage/25_40/topics/hsa.html">HSA: the only triple-tax account<span>Limits and how it works</span></a></li>
+        <li><a href="/retirement-confidence/medicare-gap/">What Medicare doesn&#x27;t cover<span>Planning for health costs after 65</span></a></li>
+        <li><a href="/blogs/budget_spending/aca_early_retirement_subsidies.html">ACA subsidies in early retirement<span>Coverage before Medicare</span></a></li>
+      </ul>
+    </nav>
+    <p class="wl-guide-disclaimer">Educational content only, not personalized investment, tax, legal, or insurance advice. Results depend on the inputs and simplified assumptions described above.</p>
+  </div>
+</section>
+<!-- wl:tool-guide:end -->
+<wealthlanding-footer></wealthlanding-footer>
   <script src="/components/footer.js"></script>
   <script src="/components/header.js"></script>
   <script src="/components/health-plan-compare/health-plan-compare.js" defer></script>

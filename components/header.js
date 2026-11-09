@@ -82,7 +82,7 @@
       .catch(function() {
         mount(
           '<header class="wl-header-root"><div class="wl-header-container"><div class="wl-header-inner">' +
-          '<a href="/" class="wl-brand-link"><span class="wl-brand-text">Wealth<span class="wl-brand-accent">Landing</span></span></a>' +
+          '<a href="/" class="wl-brand-link"><img class="wl-brand-logo" src="/favicon.svg" alt="" width="40" height="40"><span class="wl-brand-text">Wealth<span class="wl-brand-accent">Landing</span></span></a>' +
           '<nav><ul class="wl-nav-list">' +
           '<li class="wl-nav-item"><a class="wl-nav-link-direct" href="/learn/">Learn</a></li>' +
           '<li class="wl-nav-item"><a class="wl-nav-link-direct" href="/tools/">Tools</a></li>' +

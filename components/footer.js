@@ -104,6 +104,13 @@ class WealthLandingFooter extends HTMLElement {
           margin-left: 1rem;
           color: #64748b;
         }
+        wealthlanding-footer footer.wl-site-footer .wl-disclaimer {
+          margin: 1.25rem 0 0 0;
+          font-size: 0.75rem;
+          line-height: 1.5;
+          color: #94a3b8;
+          max-width: 60rem;
+        }
         wealthlanding-footer footer.wl-site-footer .wl-bottom-links a:hover {
           color: #fff;
         }
@@ -171,7 +178,7 @@ class WealthLandingFooter extends HTMLElement {
           <div class="wl-footer-grid grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div class="col-span-1">
               <div class="wl-brand-row flex items-center mb-4">
-                <i class="fa-solid fa-leaf wl-brand-icon text-brand-500 text-2xl mr-2" aria-hidden="true"></i>
+                <img src="/favicon.svg" alt="" width="32" height="32" style="width:2rem;height:2rem;border-radius:0.5rem;margin-right:0.5rem">
                 <span class="wl-brand-name font-bold text-xl text-white tracking-tight">WealthLanding</span>
               </div>
               <p class="wl-muted text-sm text-slate-400">Your trusted guide to financial independence, designed for the modern earner.</p>
@@ -218,10 +225,14 @@ class WealthLandingFooter extends HTMLElement {
           <div class="wl-bottom border-t border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
             <p>&copy; 2026 WealthLanding. All rights reserved.</p>
             <div class="wl-bottom-links space-x-4 mt-4 md:mt-0">
+              <a href="/about/" class="hover:text-white transition-colors">About</a>
+              <a href="/contact/" class="hover:text-white transition-colors">Contact</a>
+              <a href="/methodology/" class="hover:text-white transition-colors">Editorial Standards</a>
               <a href="/privacy/" class="hover:text-white transition-colors">Privacy Policy</a>
               <a href="/terms/" class="hover:text-white transition-colors">Terms of Service</a>
             </div>
           </div>
+          <p class="wl-disclaimer">Educational content only. WealthLanding does not provide personalized investment, tax, legal, or insurance advice, and nothing on this site creates an advisor–client relationship. Examples and calculator results are illustrative and depend on the assumptions shown. Verify rules with official sources and consider a licensed professional before acting.</p>
         </div>
       </footer>
     `;
