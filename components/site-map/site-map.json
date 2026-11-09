@@ -304,30 +304,44 @@
       "hub": "/real-estate/",
       "icon": "fa-house",
       "tagline": "Homes, renting and property",
-      "desc": "Rent or buy, how much house fits a budget, the housing market, and property compared with index funds.",
+      "desc": "Rent or buy after tax, affordability, buying and renting on purpose, investment property, and downsizing at 45\u201365.",
       "start": [
         {
           "href": "/life_stage/25_40/topics/rent-vs-buy.html",
           "label": "Should I rent or buy?",
-          "note": "The real math beyond the monthly payment"
+          "note": "After-tax wealth, not just the payment"
         },
         {
           "href": "/life_stage/25_40/topics/how-much-house.html",
           "label": "How much house can I afford?",
-          "note": "The 28/36 rule and its limits"
+          "note": "Lender max vs sustainable budget"
         },
         {
-          "href": "/investment/real_estate_vs_stocks_model.html",
-          "label": "Real estate vs index funds",
-          "note": "Model leverage, rates and time"
+          "href": "/real-estate/buying-primary-home.html",
+          "label": "Buying a primary home",
+          "note": "Loan Estimate, inspections, flood and HOA checks"
         },
         {
-          "href": "/blogs/real_estate/buyers-market-with-no-buyers.html",
-          "label": "The buyer's market with no buyers",
-          "note": "Reading today's housing data"
+          "href": "/real-estate/downsizing-relocating.html",
+          "label": "Downsizing or relocating",
+          "note": "Equity, \u00a7121 exclusion and fit at 45\u201365"
+        },
+        {
+          "href": "/real-estate/renting-deliberately.html",
+          "label": "Renting deliberately",
+          "note": "Leases, flexibility and investing the difference"
+        },
+        {
+          "href": "/real-estate/investment-property.html",
+          "label": "Investment property realities",
+          "note": "Cash flow, leverage and tax themes"
         }
       ],
       "popular": [
+        {
+          "href": "/investment/real_estate_vs_stocks_model.html",
+          "label": "Real estate vs index funds"
+        },
         {
           "href": "/blogs/real_estate.html",
           "label": "Real estate articles"
@@ -335,70 +349,82 @@
       ],
       "groups": [
         {
-          "label": "Real estate articles",
-          "hub": "/blogs/real_estate.html",
-          "match": [
-            "blogs/real_estate/",
-            "blogs/real_estate.html"
-          ]
-        },
-        {
-          "label": "Housing guides",
+          "label": "Housing decision guides",
           "hub": "/real-estate/",
           "match": [
             "life_stage/25_40/topics/rent-vs-buy.html",
             "life_stage/25_40/topics/how-much-house.html",
-            "investment/real_estate_vs_stocks_model.html",
+            "real-estate/buying-primary-home.html",
+            "real-estate/downsizing-relocating.html",
+            "real-estate/renting-deliberately.html",
+            "real-estate/investment-property.html",
             "real-estate/"
+          ]
+        },
+        {
+          "label": "Models and market reads",
+          "hub": "/real-estate/",
+          "match": [
+            "investment/real_estate_vs_stocks_model.html",
+            "blogs/real_estate/",
+            "blogs/real_estate.html"
           ]
         }
       ],
       "page": {
         "path": "real-estate/index.html",
-        "title": "Real Estate: Rent vs Buy, Affordability and Housing | WealthLanding",
-        "description": "Rent or buy, how much house fits your budget, how to read housing market data, and how property compares with index funds, with calculators and worked examples.",
+        "title": "Real Estate: Rent vs Buy, Buying, Renting and Downsizing | WealthLanding",
+        "description": "After-tax rent vs buy, how much house you can sustain, buying and renting checklists, investment property realities, and downsizing at 45\u201365 \u2014 with IRS and CFPB primary sources.",
         "kicker": "Real Estate",
-        "h1": "Homes, renting and property, by the numbers",
+        "h1": "Housing decisions, connected end to end",
         "intro": [
-          "A home is often both the largest purchase and the largest single asset a household owns, so the decision deserves more than a monthly payment estimate. These guides cover renting versus buying, affordability, how to read housing market data, and how property compares with a diversified stock portfolio.",
-          "Closer to retirement, the same questions come back in a different form: whether to keep, downsize or sell, and how a home fits into what you leave to heirs."
+          "A home is often both the largest purchase and the largest single asset a household owns. These guides walk the decision tree: rent versus buy on an after-tax basis, how much house a budget can sustain, how to buy or rent on purpose, what changes when the property is an investment, and how to downsize or relocate in the 45\u201365 years.",
+          "There is no universal winner. Every guide labels assumptions, links official IRS and CFPB sources for tax and mortgage rules, and points to the next step that fits your situation."
         ],
         "questions": [
           {
             "q": "Should I rent or buy?",
-            "a": "Compare the full cost of owning (mortgage interest, property tax, insurance, maintenance, and the return you give up on the down payment) with rent plus investing the difference. How long you expect to stay matters as much as the price.",
+            "a": "Compare equal cash flows and after-tax terminal wealth. Factor investment capital gains, the main-home sale exclusion if you qualify ($250,000 / $500,000), amortization, leverage, and labeled home-price scenarios \u2014 not a guaranteed rise.",
             "links": [
               "/life_stage/25_40/topics/rent-vs-buy.html"
             ]
           },
           {
             "q": "How much house can I afford?",
-            "a": "The 28/36 guideline limits housing costs and total debt payments as a share of gross income. Treat it as a ceiling, not a target, and leave room for savings and repairs.",
+            "a": "Separate lender approval from a sustainable all-in payment (PITI, HOA, PMI, maintenance, reserves). Stress-test income drops and retirement contributions, especially at 45\u201365.",
             "links": [
               "/life_stage/25_40/topics/how-much-house.html"
             ]
           },
           {
-            "q": "Is property a better investment than index funds?",
-            "a": "Leverage magnifies both gains and losses, and property carries costs and concentration that a broad fund does not. The model lets you change rates, leverage and time to see where the answer flips.",
+            "q": "What should I check when buying a primary home?",
+            "a": "Compare Loan Estimates and the Closing Disclosure, keep key contingencies, and verify inspections, title, flood risk, insurance, taxes and HOA reserves before you waive protections.",
             "links": [
+              "/real-estate/buying-primary-home.html"
+            ]
+          },
+          {
+            "q": "Should I downsize or relocate?",
+            "a": "Net out selling costs and confirm IRS main-home exclusion eligibility, then price the next home or rental against healthcare access, taxes and retirement cash needs. Renting first in a new area reduces costly mistakes.",
+            "links": [
+              "/real-estate/downsizing-relocating.html",
+              "/plan-by-age/55-59/"
+            ]
+          },
+          {
+            "q": "Is a rental property a good investment?",
+            "a": "Underwrite cash flow after vacancy, repairs, capex and debt service. Cap rate is not a personal return promise. Read IRS Publications 527 and 925 for depreciation and passive-loss themes, and do not assume the main-home exclusion applies.",
+            "links": [
+              "/real-estate/investment-property.html",
               "/investment/real_estate_vs_stocks_model.html"
             ]
           },
           {
             "q": "What is the housing market doing?",
-            "a": "Headline numbers can point in opposite directions. The articles explain what the data measures and what it leaves out.",
+            "a": "Headline numbers can point in opposite directions. Use FHFA price data and articles that explain what each series measures.",
             "links": [
               "/blogs/real_estate/buyers-market-with-no-buyers.html",
               "/blogs/real_estate.html"
-            ]
-          },
-          {
-            "q": "What if I sell my home?",
-            "a": "When you sell your main home, IRS rules let you exclude up to $250,000 of gain ($500,000 for most married couples filing jointly) if you meet the ownership and use tests. See <a href=\"https://www.irs.gov/taxtopics/tc701\" rel=\"noopener\" target=\"_blank\">IRS Topic No. 701</a> for the conditions.",
-            "links": [
-              "/blogs/real_estate/secure_act_inherited_iras.html",
-              "/retirement/"
             ]
           }
         ]
@@ -601,33 +627,33 @@
     }
   ],
   "learn": {
-    "label": "Plan by age: 45–65",
+    "label": "Plan by age: 45\u201365",
     "hub": "/plan-by-age/",
     "links": [
       {
         "href": "/plan-by-age/45-49/",
-        "label": "Ages 45–49: Peak years, full plate"
+        "label": "Ages 45\u201349: Peak years, full plate"
       },
       {
         "href": "/plan-by-age/50-54/",
-        "label": "Ages 50–54: The catch-up years"
+        "label": "Ages 50\u201354: The catch-up years"
       },
       {
         "href": "/plan-by-age/55-59/",
-        "label": "Ages 55–59: Early-exit options"
+        "label": "Ages 55\u201359: Early-exit options"
       },
       {
         "href": "/plan-by-age/60-62/",
-        "label": "Ages 60–62: Decision years"
+        "label": "Ages 60\u201362: Decision years"
       },
       {
         "href": "/plan-by-age/63-65/",
-        "label": "Ages 63–65: Medicare countdown"
+        "label": "Ages 63\u201365: Medicare countdown"
       }
     ],
     "groups": [
       {
-        "label": "Plan by age: 45–65",
+        "label": "Plan by age: 45\u201365",
         "hub": "/plan-by-age/",
         "match": [
           "plan-by-age/"

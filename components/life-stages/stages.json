@@ -5,7 +5,7 @@
     "path": "plan-by-age/index.html",
     "title": "Plan by Age: Money Decisions from 45 to 65 | WealthLanding",
     "description": "A year-by-year guide to the money decisions between 45 and 65: catch-up contributions, the rule of 55, Social Security, the healthcare bridge, Medicare and estate basics, with 2026 figures from official sources.",
-    "kicker": "Plan by age: 45–65",
+    "kicker": "Plan by age: 45\u201365",
     "h1": "The money decisions from 45 to 65, in the order they arrive",
     "intro": [
       "The twenty years before 65 hold most of the decisions that shape retirement: catch-up savings, when you can reach your own money, how to cover healthcare until Medicare, when to claim Social Security, and how to leave things in order.",
@@ -15,7 +15,7 @@
   "stages": [
     {
       "id": "45-49",
-      "ages": "45–49",
+      "ages": "45\u201349",
       "name": "Peak years, full plate",
       "title": "Money at 45 to 49: Peak Earnings, Peak Expenses",
       "description": "What happens to your money from 45 to 49: a first retirement readiness check, college bills, aging parents and protecting your income, with 2026 limits from the IRS and links to WealthLanding tools.",
@@ -71,8 +71,8 @@
             },
             {
               "label": "Roth IRA income phase-out",
-              "value": "$242,000–$252,000",
-              "detail": "2026, married filing jointly ($153,000–$168,000 single).",
+              "value": "$242,000\u2013$252,000",
+              "detail": "2026, married filing jointly ($153,000\u2013$168,000 single).",
               "src": "irs_401k"
             }
           ],
@@ -233,7 +233,7 @@
     },
     {
       "id": "50-54",
-      "ages": "50–54",
+      "ages": "50\u201354",
       "name": "The catch-up years",
       "title": "Money at 50 to 54: Catch-Up Contributions and Midlife Changes",
       "description": "From 50 to 54: catch-up contributions, the 2026 Roth catch-up rule, kids leaving home, rising health costs and money after divorce or a spouse's death, with official IRS and SSA figures.",
@@ -359,6 +359,11 @@
               "href": "/tools/compound_interest_calculator.html",
               "kind": "Tool",
               "note": "What redirecting freed-up cash could grow to"
+            },
+            {
+              "href": "/real-estate/downsizing-relocating.html",
+              "kind": "Guide",
+              "note": "Keep, downsize or relocate"
             }
           ]
         },
@@ -471,12 +476,12 @@
     },
     {
       "id": "55-59",
-      "ages": "55–59",
+      "ages": "55\u201359",
       "name": "Early-exit options",
       "title": "Money at 55 to 59: Early Access, Job Changes and Where to Live",
-      "description": "From 55 to 59½: the rule of 55, penalty-free withdrawals at 59½, the HSA catch-up, layoffs and buyouts, pension lump sums and downsizing or moving abroad, with IRS, DOL and Medicare.gov sources.",
+      "description": "From 55 to 59\u00bd: the rule of 55, penalty-free withdrawals at 59\u00bd, the HSA catch-up, layoffs and buyouts, pension lump sums and downsizing or moving abroad, with IRS, DOL and Medicare.gov sources.",
       "summary": [
-        "In the late 50s the rules on reaching your own money loosen: the rule of 55 for workplace plans, then 59½ for IRAs. That makes an earlier exit possible, sometimes by choice and sometimes because of a layoff or buyout.",
+        "In the late 50s the rules on reaching your own money loosen: the rule of 55 for workplace plans, then 59\u00bd for IRAs. That makes an earlier exit possible, sometimes by choice and sometimes because of a layoff or buyout.",
         "It is also when the question of where you will live gets real: staying, downsizing, moving to another state, or retiring abroad. Each choice changes taxes, healthcare and how far the money goes."
       ],
       "birthdays": [
@@ -491,7 +496,7 @@
           "src": "irs_early"
         },
         {
-          "age": "59½",
+          "age": "59\u00bd",
           "text": "IRA and plan withdrawals no longer face the 10% additional tax.",
           "src": "irs_ages"
         }
@@ -500,12 +505,12 @@
         {
           "id": "early-access",
           "icon": "fa-key",
-          "title": "Early access rules: 55 and 59½",
-          "happening": "Before 59½, most retirement withdrawals carry a 10% additional tax on top of income tax. The rule of 55 is an exception for the workplace plan of the employer you leave in or after the year you turn 55. It does not apply to IRAs.",
+          "title": "Early access rules: 55 and 59\u00bd",
+          "happening": "Before 59\u00bd, most retirement withdrawals carry a 10% additional tax on top of income tax. The rule of 55 is an exception for the workplace plan of the employer you leave in or after the year you turn 55. It does not apply to IRAs.",
           "todo": [
             "Map each account to the age you can first use it without the extra tax.",
             "Before rolling an old 401(k) into an IRA, check whether you would lose rule-of-55 access to it.",
-            "Build a bridge of cash and taxable investments for the years before 59½.",
+            "Build a bridge of cash and taxable investments for the years before 59\u00bd.",
             "Add the $1,000 HSA catch-up if you are on a high-deductible plan.",
             "Check the Roth IRA five-year rule before counting on tax-free Roth earnings."
           ],
@@ -514,7 +519,7 @@
             "Keeping money in the employer plan versus rolling it to an IRA."
           ],
           "mistakes": [
-            "Rolling a 401(k) into an IRA at 55 and then needing the money before 59½.",
+            "Rolling a 401(k) into an IRA at 55 and then needing the money before 59\u00bd.",
             "Assuming the rule of 55 covers every old employer plan; it covers the plan of the job you leave at 55 or later."
           ],
           "numbers": [
@@ -526,8 +531,8 @@
             },
             {
               "label": "Penalty-free withdrawals",
-              "value": "59½",
-              "detail": "The 10% additional tax on early distributions stops applying at 59½.",
+              "value": "59\u00bd",
+              "detail": "The 10% additional tax on early distributions stops applying at 59\u00bd.",
               "src": "irs_ages"
             },
             {
@@ -701,6 +706,11 @@
           ],
           "helps": [
             {
+              "href": "/real-estate/downsizing-relocating.html",
+              "kind": "Guide",
+              "note": "Downsizing, \u00a7121 exclusion and fit at 45\u201365"
+            },
+            {
               "href": "/Retirement-simulator/overseas_retirement_hub.html",
               "kind": "Tool",
               "note": "Compare 18 overseas retirement destinations"
@@ -731,10 +741,10 @@
     },
     {
       "id": "60-62",
-      "ages": "60–62",
+      "ages": "60\u201362",
       "name": "Decision years",
       "title": "Money at 60 to 62: Super Catch-Up, Roth Window, Healthcare Bridge and Social Security",
-      "description": "From 60 to 62: the 60–63 super catch-up, picking a retirement date, the Roth conversion window, health coverage before Medicare and whether to claim Social Security at 62, with IRS, SSA and CMS figures.",
+      "description": "From 60 to 62: the 60\u201363 super catch-up, picking a retirement date, the Roth conversion window, health coverage before Medicare and whether to claim Social Security at 62, with IRS, SSA and CMS figures.",
       "summary": [
         "This is when the big, hard-to-reverse decisions cluster: when to stop working, how to cover health insurance until Medicare, whether to convert pretax savings to Roth, and when to claim Social Security.",
         "The decisions interact. A Roth conversion raises income, which can cut Marketplace subsidies now and raise Medicare premiums later. Claiming Social Security early locks in a smaller check for you and possibly for a surviving spouse. Work through them together, not one at a time."
@@ -760,7 +770,7 @@
         {
           "id": "super-catch-up",
           "icon": "fa-rocket",
-          "title": "The 60–63 super catch-up",
+          "title": "The 60\u201363 super catch-up",
           "happening": "For the four calendar years you turn 60, 61, 62 and 63, the workplace catch-up limit is higher. If you are still working, it is the biggest tax-advantaged saving window you will get.",
           "todo": [
             "Raise your deferral for the years you turn 60 through 63, then lower it again in the year you turn 64.",
@@ -776,7 +786,7 @@
           ],
           "numbers": [
             {
-              "label": "Super catch-up (ages 60–63)",
+              "label": "Super catch-up (ages 60\u201363)",
               "value": "$11,250",
               "detail": "2026, instead of the $8,000 standard catch-up, for a total of $35,750.",
               "src": "irs_401k"
@@ -875,7 +885,7 @@
           "numbers": [
             {
               "label": "Premium tax credit income range",
-              "value": "100%–400% FPL",
+              "value": "100%\u2013400% FPL",
               "detail": "For 2026 coverage the enhanced credits expired; above 400% there is no credit.",
               "src": "irs_ptc"
             },
@@ -1010,7 +1020,7 @@
     },
     {
       "id": "63-65",
-      "ages": "63–65",
+      "ages": "63\u201365",
       "name": "Medicare countdown",
       "title": "Money at 63 to 65: IRMAA, Medicare Enrollment and Estate Basics",
       "description": "From 63 to 65: how income at 63 sets Medicare premiums at 65, the Medicare enrollment window and penalties, estate and beneficiary basics, and a final retirement paycheck plan, with CMS, Medicare.gov and IRS figures.",
@@ -1063,7 +1073,7 @@
             },
             {
               "label": "Part B premium range",
-              "value": "$202.90–$689.90/mo",
+              "value": "$202.90\u2013$689.90/mo",
               "detail": "2026, standard premium to the top IRMAA tier.",
               "src": "cms_2026"
             }
@@ -1224,7 +1234,7 @@
             {
               "label": "Senior deduction",
               "value": "$6,000 per person",
-              "detail": "Age 65+, tax years 2025–2028; phases out above $75,000 / $150,000 of income (single / joint).",
+              "detail": "Age 65+, tax years 2025\u20132028; phases out above $75,000 / $150,000 of income (single / joint).",
               "src": "irs_senior"
             },
             {
