@@ -302,7 +302,86 @@ def start_here_html(cfg, pages):
             f'    <p class="wl-sh-ages">Between 45 and 65? Plan by age: {ages}</p>\n  </div>\n</section>')
 
 
+def _flow_outcome(node, pages):
+    href = node.get("href", "")
+    label = node.get("label") or (link_label(href, pages) if href else "")
+    note = node.get("note", "")
+    if href:
+        return (
+            f'<div class="wl-flow-out">'
+            f'<a class="wl-flow-out-link" href="{esc(href)}"><strong>{esc(label)}</strong>'
+            + (f'<span>{esc(note)}</span>' if note else "")
+            + "</a></div>"
+        )
+    return (
+        f'<div class="wl-flow-out wl-flow-out-static"><strong>{esc(label)}</strong>'
+        + (f'<span>{esc(note)}</span>' if note else "")
+        + "</div>"
+    )
+
+
+def _flow_node(node, pages, depth=0):
+    """Render one binary decision node. Branches are yes/no objects that are either
+    outcomes ({href,label,note}) or nested questions ({q, yes, no})."""
+    if "q" not in node:
+        return _flow_outcome(node, pages)
+    yes = node["yes"]
+    no = node["no"]
+    return (
+        f'<div class="wl-flow-node" data-depth="{depth}">'
+        f'<p class="wl-flow-q"><span class="wl-flow-q-label">Ask</span> {esc(node["q"])}</p>'
+        f'<div class="wl-flow-branches">'
+        f'<div class="wl-flow-branch wl-flow-yes">'
+        f'<p class="wl-flow-edge"><span class="wl-flow-pill wl-flow-pill-yes">Yes</span></p>'
+        f'{_flow_node(yes, pages, depth + 1)}'
+        f"</div>"
+        f'<div class="wl-flow-branch wl-flow-no">'
+        f'<p class="wl-flow-edge"><span class="wl-flow-pill wl-flow-pill-no">No</span></p>'
+        f'{_flow_node(no, pages, depth + 1)}'
+        f"</div>"
+        f"</div></div>"
+    )
+
+
+def flow_html(sec, pages):
+    flow = sec["flow"]
+    title = flow.get("title") or "Find your next housing question"
+    intro = flow.get("intro") or ""
+    secondary = flow.get("secondary") or []
+    sec_bits = []
+    for item in secondary:
+        sec_bits.append(
+            f'<li><a href="{esc(item["href"])}">{esc(item["label"])}</a>'
+            + (f'<span>{esc(item["note"])}</span>' if item.get("note") else "")
+            + "</li>"
+        )
+    secondary_html = ""
+    if sec_bits:
+        secondary_html = (
+            '<div class="wl-flow-secondary">'
+            f'<h3>{esc(flow.get("secondary_title") or "Other entry points")}</h3>'
+            f'<ul>{"".join(sec_bits)}</ul></div>'
+        )
+    more = "".join(f'<a href="{esc(l["href"])}">{esc(l["label"])}</a>' for l in sec.get("popular", []))
+    return (
+        CSS
+        + f'\n<section class="wl-flow" aria-label="{esc(title)}">\n  <div class="wl-ns-inner">\n'
+        f'    <span class="wl-sh-kicker">{esc(flow.get("kicker") or "Decision path")}</span>\n'
+        f'    <h2>{esc(title)}</h2>\n'
+        + (f'    <p class="wl-flow-intro">{esc(intro)}</p>\n' if intro else "")
+        + f'    <div class="wl-flow-tree" role="group" aria-label="Binary housing decision path">\n'
+        + f'      {_flow_node(flow["root"], pages)}\n'
+        + "    </div>\n"
+        + secondary_html
+        + (f'    <p class="wl-rt-more"><span>Also explore:</span>{more}</p>\n' if more else "")
+        + '    <p class="wl-flow-note">This path is a planning aid, not advice. Your facts, local rules and risk tolerance decide the next step.</p>\n'
+        + "  </div>\n</section>"
+    )
+
+
 def routes_html(sec, pages, title=None):
+    if sec.get("flow"):
+        return flow_html(sec, pages)
     items = []
     for i, l in enumerate(sec["start"], 1):
         note = l.get("note") or link_desc(l["href"], pages)
@@ -447,12 +526,26 @@ def hub_page_html(sec, cfg, pages):
             .replace("__CANON__", BASE + url).replace("__OGTITLE__", esc(pg["title"].split(" | ")[0])))
     intro = "".join(f"<p>{esc(p)}</p>" for p in pg["intro"])
     qs = []
+    links_only = pg.get("questions_style") == "links_only"
     for q in pg["questions"]:
-        links = "".join(
-            f'<li><a href="{esc(h)}">{esc(link_label(h, pages))}</a></li>' for h in q["links"]
-            if rel_for(h) in pages or h in hub_urls(cfg)
-        )
-        qs.append(f'<div class="wl-hub-q"><h3>{esc(q["q"])}</h3><p>{q["a"]}</p><ul>{links}</ul></div>')
+        valid_links = [h for h in q["links"] if rel_for(h) in pages or h in hub_urls(cfg)]
+        if not valid_links:
+            continue
+        if links_only:
+            # Question text itself is the clickable link (first destination).
+            href = valid_links[0]
+            qs.append(f'<li><a href="{esc(href)}">{esc(q["q"])}</a></li>')
+        else:
+            links = "".join(
+                f'<li><a href="{esc(h)}">{esc(link_label(h, pages))}</a></li>' for h in valid_links
+            )
+            body = q.get("a") or ""
+            qs.append(f'<div class="wl-hub-q"><h3>{esc(q["q"])}</h3>' + (f'<p>{body}</p>' if body else '') + f'<ul>{links}</ul></div>')
+    if pg.get("questions_style") == "links_only":
+        q_block = '<ul class="wl-hub-qlist">' + "".join(qs) + "</ul>"
+    else:
+        q_block = '<div class="wl-hub-qgrid">' + "".join(qs) + "</div>"
+
     # everything in this section, grouped
     groups = []
     for g in sec["groups"]:
@@ -479,7 +572,7 @@ def hub_page_html(sec, cfg, pages):
     <section class="wl-hub-questions">
       <div class="wl-hub-inner">
         <h2>Common questions</h2>
-        <div class="wl-hub-qgrid">{"".join(qs)}</div>
+        {q_block}
       </div>
     </section>
     <section class="wl-hub-all">

@@ -104,3 +104,59 @@ wealthlanding-footer > .wl-footer-links .wl-fl-disclaimer { grid-column: 1 / -1;
 /* Embedded tools (?embed=1) and print: hide navigation blocks */
 .hpc-embed .wl-breadcrumb, .hpc-embed .wl-next-steps, .ais-embed .wl-breadcrumb, .ais-embed .wl-next-steps { display: none !important; }
 @media print { .wl-breadcrumb, .wl-next-steps, .wl-goals, .wl-routes { display: none !important; } }
+
+/* Real Estate binary decision path */
+.wl-flow { padding: 2.5rem 0; background: #fff; border-bottom: 1px solid #e2e8f0; color: #334155; }
+.wl-flow h2 { font-size: 1.5rem; font-weight: 800; color: #0f172a; margin: 0.25rem 0 0.75rem; letter-spacing: -0.01em; }
+.wl-flow-intro { margin: 0 0 1.5rem; max-width: 46rem; line-height: 1.65; color: #475569; }
+.wl-flow-tree { margin: 0 auto; max-width: 56rem; }
+.wl-flow-node { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.1rem 1.15rem 1.2rem; }
+.wl-flow-q { margin: 0 0 1rem; font-size: 1.05rem; font-weight: 700; color: #0f172a; line-height: 1.45; }
+.wl-flow-q-label { display: inline-block; margin-right: 0.4rem; padding: 0.15rem 0.55rem; border-radius: 999px; background: #0f172a; color: #fbbf24; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; vertical-align: middle; }
+.wl-flow-branches { display: grid; gap: 0.85rem; grid-template-columns: 1fr 1fr; align-items: start; }
+.wl-flow-branch { position: relative; min-width: 0; }
+.wl-flow-edge { margin: 0 0 0.55rem; }
+.wl-flow-pill { display: inline-flex; align-items: center; justify-content: center; min-width: 3.1rem; padding: 0.2rem 0.65rem; border-radius: 999px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.03em; text-transform: uppercase; }
+.wl-flow-pill-yes { background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
+.wl-flow-pill-no { background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; }
+.wl-flow-branch > .wl-flow-node { background: #fff; }
+.wl-flow-out { margin: 0; }
+.wl-flow-out-link, .wl-flow-out-static { display: flex; flex-direction: column; gap: 0.3rem; padding: 0.95rem 1rem; background: #fff; border: 1px solid #e2e8f0; border-radius: 0.85rem; text-decoration: none; color: #0f172a; box-shadow: 0 1px 2px rgba(15,23,42,0.04); }
+.wl-flow-out-link:hover { border-color: #fbbf24; box-shadow: 0 8px 20px -8px rgba(15,23,42,0.2); }
+.wl-flow-out-link strong, .wl-flow-out-static strong { font-size: 0.95rem; font-weight: 700; line-height: 1.3; }
+.wl-flow-out-link span, .wl-flow-out-static span { font-size: 0.85rem; color: #64748b; line-height: 1.45; }
+.wl-flow-secondary { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px dashed #e2e8f0; }
+.wl-flow-secondary h3 { margin: 0 0 0.75rem; font-size: 1rem; font-weight: 800; color: #0f172a; }
+.wl-flow-secondary ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.65rem; }
+.wl-flow-secondary li a { display: flex; flex-direction: column; gap: 0.15rem; text-decoration: none; color: #0f172a; font-weight: 700; }
+.wl-flow-secondary li a span { font-weight: 500; color: #64748b; font-size: 0.88rem; }
+.wl-flow-secondary li a:hover { color: #b45309; }
+.wl-flow-note { margin: 1.25rem 0 0; font-size: 0.85rem; color: #64748b; line-height: 1.5; max-width: 46rem; }
+
+/* Common questions as plain clickable list (no answer cards) */
+.wl-hub-qlist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.55rem; max-width: 46rem; }
+.wl-hub-qlist li a { display: block; padding: 0.85rem 1rem; background: #fff; border: 1px solid #e2e8f0; border-radius: 0.75rem; color: #0f172a; font-weight: 700; text-decoration: none; line-height: 1.4; }
+.wl-hub-qlist li a::before { content: "\2192\00a0"; color: #f59e0b; }
+.wl-hub-qlist li a:hover { border-color: #fbbf24; color: #b45309; }
+
+@media (max-width: 800px) {
+  .wl-flow-branches { grid-template-columns: 1fr; }
+  .wl-flow-branch.wl-flow-yes { margin-left: 0; border-left: 3px solid #34d399; padding-left: 0.75rem; }
+  .wl-flow-branch.wl-flow-no { margin-left: 0; border-left: 3px solid #fb923c; padding-left: 0.75rem; }
+  .wl-flow-node[data-depth="1"],
+  .wl-flow-node[data-depth="2"],
+  .wl-flow-node[data-depth="3"] { margin-left: 0.15rem; }
+}
+@media (min-width: 801px) {
+  .wl-flow-branches { position: relative; }
+  .wl-flow-branch.wl-flow-yes::before,
+  .wl-flow-branch.wl-flow-no::before {
+    content: "";
+    display: block;
+    height: 0.55rem;
+    width: 1px;
+    background: #cbd5e1;
+    margin: 0 auto 0.35rem;
+  }
+}
+@media print { .wl-flow { display: none !important; } }
