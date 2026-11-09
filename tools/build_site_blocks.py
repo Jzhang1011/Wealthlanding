@@ -14,6 +14,12 @@ From components/site-map/site-map.json (see tools/site_structure.py):
   components/header-nav.html, the header.js fallback, and the Money, Real estate
   and Travel hub pages are generated in full.
 
+From components/life-stages/stages.json (see tools/life_stages.py):
+  /plan-by-age/ and its five stage pages (45-49 ... 63-65) are generated in full
+  wl:age-journey    "Plan by age: 45-65" stage cards on the homepage
+  wl:life-stage     "Where this fits in your 45-65 plan" on every page a stage links to
+  Test: node components/life-stages/life-stages.test.js
+
 Usage (from the repo root):
   python3 tools/build_site_blocks.py          # write blocks
   python3 tools/build_site_blocks.py --check  # exit 1 if any page is out of date

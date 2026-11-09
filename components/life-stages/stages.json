@@ -1,0 +1,1473 @@
+{
+  "_note": "Single source for the Plan by age (45-65) pages. Edit here, then run: python3 tools/build_site_blocks.py. It renders /plan-by-age/ and one page per stage, the homepage age strip, and the 'Where this fits' links on every linked article and tool. Figures are 2026 values from the linked official sources; check them each January.",
+  "updated": "November 2026",
+  "hub": {
+    "path": "plan-by-age/index.html",
+    "title": "Plan by Age: Money Decisions from 45 to 65 | WealthLanding",
+    "description": "A year-by-year guide to the money decisions between 45 and 65: catch-up contributions, the rule of 55, Social Security, the healthcare bridge, Medicare and estate basics, with 2026 figures from official sources.",
+    "kicker": "Plan by age: 45–65",
+    "h1": "The money decisions from 45 to 65, in the order they arrive",
+    "intro": [
+      "The twenty years before 65 hold most of the decisions that shape retirement: catch-up savings, when you can reach your own money, how to cover healthcare until Medicare, when to claim Social Security, and how to leave things in order.",
+      "Pick your age to see what usually happens at that stage, what to do now, the decisions and common mistakes, and the key 2026 numbers with links to the official source. Each event links to the WealthLanding tools and articles that help."
+    ]
+  },
+  "stages": [
+    {
+      "id": "45-49",
+      "ages": "45–49",
+      "name": "Peak years, full plate",
+      "title": "Money at 45 to 49: Peak Earnings, Peak Expenses",
+      "description": "What happens to your money from 45 to 49: a first retirement readiness check, college bills, aging parents and protecting your income, with 2026 limits from the IRS and links to WealthLanding tools.",
+      "summary": [
+        "For many households the late 40s bring the highest income so far and the highest bills at the same time: teenagers heading to college, parents who need more help, and a mortgage that is not finished.",
+        "Retirement is roughly 15 to 20 years away. That is long enough for savings to compound and for course corrections to work, and short enough that the next decade sets most of the outcome. This stage is about seeing where you stand and protecting the plan while the demands on your money peak."
+      ],
+      "birthdays": [
+        {
+          "age": "Any year",
+          "text": "Your Social Security statement shows your earnings record and estimated benefits. Check it once a year at my Social Security.",
+          "src": "ssa_account"
+        },
+        {
+          "age": "50 (next)",
+          "text": "Catch-up contributions open in the calendar year you turn 50.",
+          "src": "irs_catchup"
+        }
+      ],
+      "events": [
+        {
+          "id": "readiness-check",
+          "icon": "fa-gauge-high",
+          "title": "Your first real retirement readiness check",
+          "happening": "By the late 40s you have enough savings history to see the trend. A projection now tells you whether the current pace gets you to the life you want, while there is still time to change the pace, the date or the plan.",
+          "todo": [
+            "Add up every retirement account, its tax type (pretax, Roth or taxable) and how much you and your employer add each year.",
+            "Download your Social Security statement and check that every year of earnings is on it.",
+            "Pick a target retirement age and a yearly spending number in today's dollars. Round numbers are fine.",
+            "Run one projection now and repeat it every year on the same date.",
+            "Confirm you contribute at least enough to get the full employer match."
+          ],
+          "decisions": [
+            "How much of each raise or bonus goes to savings rather than spending.",
+            "Roth or traditional contributions, based on your tax bracket now versus the one you expect later."
+          ],
+          "mistakes": [
+            "Treating savings benchmarks for your age as pass or fail. They are rough starting points that assume a specific income and retirement age.",
+            "Leaving Social Security out of the projection, or assuming it will be zero."
+          ],
+          "numbers": [
+            {
+              "label": "401(k), 403(b), 457 and TSP employee limit",
+              "value": "$24,500",
+              "detail": "2026 elective deferral limit, before catch-up contributions.",
+              "src": "irs_401k"
+            },
+            {
+              "label": "IRA contribution limit",
+              "value": "$7,500",
+              "detail": "2026, traditional and Roth IRAs combined.",
+              "src": "irs_401k"
+            },
+            {
+              "label": "Roth IRA income phase-out",
+              "value": "$242,000–$252,000",
+              "detail": "2026, married filing jointly ($153,000–$168,000 single).",
+              "src": "irs_401k"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/Retirement-simulator/Retirement_Gateway.html",
+              "kind": "Tool",
+              "note": "Build a baseline retirement profile in a few minutes"
+            },
+            {
+              "href": "/retirement-confidence/savings-target-two-buckets/",
+              "kind": "Guide",
+              "note": "What the age-50 savings benchmarks really assume"
+            },
+            {
+              "href": "/life_stage/25_40/topics/am-i-behind.html",
+              "kind": "Guide",
+              "note": "Benchmarks without the guilt"
+            },
+            {
+              "href": "/tools/compound_interest_calculator.html",
+              "kind": "Tool",
+              "note": "See what another 15 years of saving can grow to"
+            }
+          ]
+        },
+        {
+          "id": "college",
+          "icon": "fa-graduation-cap",
+          "title": "Kids' college costs",
+          "happening": "College bills often arrive in exactly the years when retirement saving is worth the most. Aid, credits and 529 rules can change what you actually pay, but each has its own forms and deadlines.",
+          "todo": [
+            "List expected costs by year for each child, net of any likely aid or scholarships.",
+            "Check every 529 account: who owns it, who the beneficiary is and how it is invested as college nears.",
+            "File the FAFSA for each year a child will attend; schools use it for federal and most institutional aid.",
+            "Agree as a family on what you will pay, what the student will borrow and what they will earn.",
+            "Keep at least the employer match going while you pay tuition."
+          ],
+          "decisions": [
+            "Pay from cash flow, from a 529, or with loans, and in what order.",
+            "Whether to take Parent PLUS loans, which are in your name, or keep borrowing to the student's own federal loans."
+          ],
+          "mistakes": [
+            "Pausing or raiding retirement savings to pay tuition. Students can borrow for college; nobody lends you money for retirement.",
+            "Forgetting the education tax credit or double-counting the same expenses for both the credit and a tax-free 529 withdrawal."
+          ],
+          "numbers": [
+            {
+              "label": "American Opportunity Tax Credit",
+              "value": "up to $2,500",
+              "detail": "Per eligible student per year, for the first four years of college. Income limits apply.",
+              "src": "irs_aotc"
+            },
+            {
+              "label": "529 to Roth IRA rollover",
+              "value": "$35,000 lifetime",
+              "detail": "Leftover 529 money can move to the beneficiary's Roth IRA if the account has been open 15+ years, within annual IRA limits.",
+              "src": "irs_529"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/life_stage/25_40/topics/529.html",
+              "kind": "Guide",
+              "note": "How a 529 works and why your retirement comes first"
+            },
+            {
+              "href": "/retirement-confidence/savings-priority-pyramid/",
+              "kind": "Guide",
+              "note": "Where the next dollar should go when everything competes"
+            }
+          ],
+          "gap": "WealthLanding does not yet have a guide to paying for college (FAFSA, aid and loans). Start with StudentAid.gov."
+        },
+        {
+          "id": "aging-parents",
+          "icon": "fa-hand-holding-heart",
+          "title": "Caring for aging parents",
+          "happening": "Many people in their late 40s and 50s start helping parents with money, appointments or day-to-day care. The cost shows up as cash, unpaid time off and travel, and it often arrives with little warning.",
+          "todo": [
+            "Talk early: where your parents' documents and accounts are, who their advisers are and what they want.",
+            "Ask whether they have a durable power of attorney, a health care proxy and an up-to-date will.",
+            "Find local services, from meals to transportation, through the Eldercare Locator.",
+            "If you become an agent, trustee or representative payee, keep their money fully separate from yours.",
+            "Check your employer benefits for dependent care accounts, caregiver leave and an employee assistance program."
+          ],
+          "decisions": [
+            "Paying for care versus providing it yourself, including the cost to your own career and savings.",
+            "Whether a parent who lives with you qualifies as a dependent or a qualifying person for tax benefits."
+          ],
+          "mistakes": [
+            "Mixing a parent's money with yours, even with good intentions. It invites family disputes and legal trouble.",
+            "Quietly cutting your own retirement saving to fund care without a plan or a family conversation."
+          ],
+          "numbers": [
+            {
+              "label": "Dependent care assistance (FSA) limit",
+              "value": "$7,500",
+              "detail": "2026, per household ($3,750 married filing separately). A parent can qualify if they cannot care for themselves and live with you more than half the year.",
+              "src": "irs_15b"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/retirement-confidence/medicare-gap/",
+              "kind": "Guide",
+              "note": "What Medicare does not cover, so you can spot gaps in a parent's coverage"
+            }
+          ],
+          "gap": "WealthLanding does not yet have a caregiving guide. The CFPB's 'Managing someone else's money' guides and the Eldercare Locator are good official starting points.",
+          "official": [
+            "cfpb_others",
+            "eldercare"
+          ]
+        },
+        {
+          "id": "protect-income",
+          "icon": "fa-shield-halved",
+          "title": "Protecting your income and family",
+          "happening": "Your earning power is usually at its peak, so a disability or a death would hurt the household most right now. A few documents and policies protect everything else on this page.",
+          "todo": [
+            "Compare your life insurance with what the family would need: debts, years of income and college still ahead.",
+            "Check long-term disability coverage at work and what share of pay it replaces.",
+            "Update the beneficiary on every retirement account and policy. Those forms override a will.",
+            "Put a will, a durable power of attorney and a health care directive in place.",
+            "Keep 3 to 6 months of expenses in insured savings."
+          ],
+          "decisions": [
+            "Term life insurance sized to the years of need, versus permanent coverage.",
+            "How much of the emergency fund to hold in cash versus short-term bonds."
+          ],
+          "mistakes": [
+            "Assuming workplace life insurance is enough; it often equals one or two years of salary and ends when the job ends.",
+            "Leaving an ex-spouse or a deceased relative as a beneficiary."
+          ],
+          "numbers": [
+            {
+              "label": "FDIC deposit insurance",
+              "value": "$250,000",
+              "detail": "Per depositor, per insured bank, per ownership category.",
+              "src": "fdic"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/life_stage/25_40/topics/life-insurance.html",
+              "kind": "Guide",
+              "note": "How much life insurance you actually need"
+            },
+            {
+              "href": "/blogs/Happy_retirement/spousal-survivor-divorced-benefits.html",
+              "kind": "Case study",
+              "note": "What Social Security pays a surviving spouse"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "50-54",
+      "ages": "50–54",
+      "name": "The catch-up years",
+      "title": "Money at 50 to 54: Catch-Up Contributions and Midlife Changes",
+      "description": "From 50 to 54: catch-up contributions, the 2026 Roth catch-up rule, kids leaving home, rising health costs and money after divorce or a spouse's death, with official IRS and SSA figures.",
+      "summary": [
+        "At 50 the tax code lets you save more each year, and for many households the end of child-raising costs frees up cash at the same time. These are often the most powerful saving years of a career.",
+        "This is also when midlife changes tend to arrive: health costs that jump, a divorce, or the death of a spouse. Each one changes the plan, and each has specific rules worth knowing before you need them."
+      ],
+      "birthdays": [
+        {
+          "age": "50",
+          "text": "Catch-up contributions to 401(k)s, 403(b)s, governmental 457s and IRAs begin in the calendar year you turn 50.",
+          "src": "irs_catchup"
+        },
+        {
+          "age": "55 (next)",
+          "text": "Separating from an employer in or after the year you turn 55 can open penalty-free access to that employer's plan.",
+          "src": "irs_early"
+        }
+      ],
+      "events": [
+        {
+          "id": "catch-up",
+          "icon": "fa-arrow-trend-up",
+          "title": "Catch-up contributions start at 50",
+          "happening": "You can add catch-up contributions in any year you are 50 or older by December 31. You do not need to be behind to use them. Starting in 2026, higher earners must make their workplace catch-ups as Roth contributions.",
+          "todo": [
+            "Raise your payroll deferral to include the catch-up amount, and check the change on your next pay stub.",
+            "Add the IRA catch-up if you contribute to an IRA.",
+            "If your 2025 Social Security wages from your employer were over $150,000, confirm your plan offers Roth, because your 2026 catch-ups must go in as Roth.",
+            "Send part of every raise to savings before it reaches your checking account.",
+            "Rebalance once a year so the mix of stocks and bonds matches how soon you will need the money."
+          ],
+          "decisions": [
+            "Roth or traditional for catch-ups when you have the choice.",
+            "Where extra savings go once the workplace plan and IRA are full: an HSA, then a taxable brokerage account."
+          ],
+          "mistakes": [
+            "Waiting until 'later in your 50s'. Each year of catch-ups you skip is gone for good.",
+            "Missing the deadline: workplace catch-ups have to go through payroll by the end of the plan year."
+          ],
+          "numbers": [
+            {
+              "label": "Catch-up contribution (age 50+)",
+              "value": "$8,000",
+              "detail": "2026, for most 401(k), 403(b), governmental 457 plans and the TSP, for a total of $32,500.",
+              "src": "irs_401k"
+            },
+            {
+              "label": "IRA catch-up",
+              "value": "$1,100",
+              "detail": "2026, on top of the $7,500 IRA limit.",
+              "src": "irs_401k"
+            },
+            {
+              "label": "Roth catch-up wage threshold",
+              "value": "$150,000",
+              "detail": "Prior-year Social Security wages from the plan sponsor above this mean catch-ups must be Roth (applies from 2026).",
+              "src": "fr_roth_catchup"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/life_stage/25_40/topics/traditional-401k.html",
+              "kind": "Guide",
+              "note": "Traditional 401(k), limits and when it wins"
+            },
+            {
+              "href": "/life_stage/25_40/topics/roth-ira.html",
+              "kind": "Guide",
+              "note": "Roth IRA rules, limits and the backdoor route"
+            },
+            {
+              "href": "/retirement-confidence/tax-box-allocation/",
+              "kind": "Guide",
+              "note": "Spreading savings across pretax, Roth and taxable"
+            },
+            {
+              "href": "/life_stage/25_40/topics/account-comparison.html",
+              "kind": "Tool",
+              "note": "Same dollar in four account types, compared"
+            }
+          ]
+        },
+        {
+          "id": "empty-nest",
+          "icon": "fa-house-chimney",
+          "title": "Kids leaving home",
+          "happening": "When the last child becomes independent, a large slice of spending can stop. That money becomes savings only if you redirect it on purpose. Adult children may still need help with health coverage, a first apartment or a car.",
+          "todo": [
+            "List the costs that end (tuition, activities, groceries, insurance) and move the same amount to savings the month they stop.",
+            "Decide what support you will give adult children, for how long, and say it out loud.",
+            "Keep children under 26 on your health plan if that is cheaper for the family.",
+            "Ask whether the house still fits your plans for the next 15 years."
+          ],
+          "decisions": [
+            "Helping adult children versus funding your own retirement.",
+            "Downsizing now, later, or never."
+          ],
+          "mistakes": [
+            "Letting the freed-up cash disappear into everyday spending.",
+            "Co-signing a loan you could not afford to repay yourself."
+          ],
+          "numbers": [
+            {
+              "label": "Health coverage for adult children",
+              "value": "up to age 26",
+              "detail": "Children can stay on a parent's health plan until 26, even if married or not living at home.",
+              "src": "hc_26"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/retirement-confidence/savings-priority-pyramid/",
+              "kind": "Guide",
+              "note": "Where freed-up cash should go next"
+            },
+            {
+              "href": "/life_stage/25_40/topics/rent-vs-buy.html",
+              "kind": "Guide",
+              "note": "Owning versus renting, with the real math"
+            },
+            {
+              "href": "/tools/compound_interest_calculator.html",
+              "kind": "Tool",
+              "note": "What redirecting freed-up cash could grow to"
+            }
+          ]
+        },
+        {
+          "id": "health-costs",
+          "icon": "fa-notes-medical",
+          "title": "Health costs jump",
+          "happening": "Premiums and out-of-pocket costs tend to rise with age, and employers are passing more of the increase to workers. The plan you pick each open enrollment, and how you use an HSA, now matters more.",
+          "todo": [
+            "Compare plans on total yearly cost (premiums plus expected out-of-pocket), not the premium alone.",
+            "If you choose a high-deductible plan, contribute to the HSA and invest money you will not need this year.",
+            "Save receipts for medical bills you pay out of pocket; HSA reimbursements can be taken later.",
+            "Note each plan's out-of-pocket maximum. That is your worst case."
+          ],
+          "decisions": [
+            "High-deductible plan plus HSA versus a traditional plan.",
+            "Spending the HSA now versus letting it grow for retirement health costs."
+          ],
+          "mistakes": [
+            "Choosing the lowest premium without checking the deductible and the out-of-pocket maximum.",
+            "Leaving HSA money in cash for decades."
+          ],
+          "numbers": [
+            {
+              "label": "HSA contribution limit",
+              "value": "$4,400 / $8,750",
+              "detail": "2026, self-only / family coverage.",
+              "src": "irs_hsa"
+            },
+            {
+              "label": "High-deductible plan out-of-pocket maximum",
+              "value": "$8,500 / $17,000",
+              "detail": "2026, self-only / family, for HSA-eligible plans.",
+              "src": "irs_hsa"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/tools/health-plan-compare/",
+              "kind": "Tool",
+              "note": "Compare two or three employer plans side by side"
+            },
+            {
+              "href": "/life_stage/25_40/topics/hsa.html",
+              "kind": "Guide",
+              "note": "How the HSA's three tax breaks work"
+            },
+            {
+              "href": "/blogs/budget_spending/employer-health-insurance-costs-rising.html",
+              "kind": "Article",
+              "note": "Why employer health costs are rising"
+            },
+            {
+              "href": "/blogs/18_25/FSA_HSA.html",
+              "kind": "Article",
+              "note": "FSA versus HSA"
+            }
+          ]
+        },
+        {
+          "id": "divorce-widowhood",
+          "icon": "fa-people-arrows",
+          "title": "Divorce or widowhood in midlife",
+          "happening": "A divorce or a spouse's death changes income, taxes, benefits and every beneficiary form at once. Social Security has specific rules for divorced and surviving spouses that many people never hear about.",
+          "todo": [
+            "Inventory every account and pension in both names, including old workplace plans.",
+            "In a divorce, split workplace retirement plans under a court order (a QDRO). A plan payment under that order is not hit with the 10% early-withdrawal tax.",
+            "Update beneficiaries, wills and powers of attorney as soon as the change is final.",
+            "Check whether you qualify for benefits on a former or late spouse's work record.",
+            "Rebuild the budget and the retirement projection for one household."
+          ],
+          "decisions": [
+            "Keeping the house versus a larger share of retirement accounts.",
+            "When a surviving spouse should claim survivor versus own retirement benefits."
+          ],
+          "mistakes": [
+            "Cashing out retirement money to settle a divorce instead of transferring it under the court order.",
+            "Forgetting that a divorced spouse may qualify for benefits on an ex-spouse's record if the marriage lasted 10 years."
+          ],
+          "numbers": [
+            {
+              "label": "Divorced-spouse benefits",
+              "value": "10-year marriage",
+              "detail": "A divorced spouse can collect on an ex's record from 62 if the marriage lasted at least 10 years and they are unmarried.",
+              "src": "ssa_divorced"
+            },
+            {
+              "label": "Survivor benefits",
+              "value": "from age 60",
+              "detail": "A widow or widower can collect reduced survivor benefits from 60 (50 if disabled).",
+              "src": "ssa_survivor"
+            },
+            {
+              "label": "Early-withdrawal tax exception",
+              "value": "QDRO",
+              "detail": "Plan payments to an alternate payee under a qualified domestic relations order avoid the 10% additional tax.",
+              "src": "irs_early"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/blogs/Happy_retirement/spousal-survivor-divorced-benefits.html",
+              "kind": "Case study",
+              "note": "One work record, many checks: 28 spousal and survivor scenarios"
+            },
+            {
+              "href": "/life_stage/25_40/topics/life-insurance.html",
+              "kind": "Guide",
+              "note": "Resizing life insurance after a change"
+            }
+          ],
+          "gap": "WealthLanding does not yet have a guide to money after divorce or a spouse's death."
+        }
+      ]
+    },
+    {
+      "id": "55-59",
+      "ages": "55–59",
+      "name": "Early-exit options",
+      "title": "Money at 55 to 59: Early Access, Job Changes and Where to Live",
+      "description": "From 55 to 59½: the rule of 55, penalty-free withdrawals at 59½, the HSA catch-up, layoffs and buyouts, pension lump sums and downsizing or moving abroad, with IRS, DOL and Medicare.gov sources.",
+      "summary": [
+        "In the late 50s the rules on reaching your own money loosen: the rule of 55 for workplace plans, then 59½ for IRAs. That makes an earlier exit possible, sometimes by choice and sometimes because of a layoff or buyout.",
+        "It is also when the question of where you will live gets real: staying, downsizing, moving to another state, or retiring abroad. Each choice changes taxes, healthcare and how far the money goes."
+      ],
+      "birthdays": [
+        {
+          "age": "55",
+          "text": "HSA catch-up: you can add $1,000 a year once you are 55.",
+          "src": "irs_p969"
+        },
+        {
+          "age": "55",
+          "text": "Rule of 55: leave an employer in or after the year you turn 55 and withdrawals from that employer's plan avoid the 10% additional tax.",
+          "src": "irs_early"
+        },
+        {
+          "age": "59½",
+          "text": "IRA and plan withdrawals no longer face the 10% additional tax.",
+          "src": "irs_ages"
+        }
+      ],
+      "events": [
+        {
+          "id": "early-access",
+          "icon": "fa-key",
+          "title": "Early access rules: 55 and 59½",
+          "happening": "Before 59½, most retirement withdrawals carry a 10% additional tax on top of income tax. The rule of 55 is an exception for the workplace plan of the employer you leave in or after the year you turn 55. It does not apply to IRAs.",
+          "todo": [
+            "Map each account to the age you can first use it without the extra tax.",
+            "Before rolling an old 401(k) into an IRA, check whether you would lose rule-of-55 access to it.",
+            "Build a bridge of cash and taxable investments for the years before 59½.",
+            "Add the $1,000 HSA catch-up if you are on a high-deductible plan.",
+            "Check the Roth IRA five-year rule before counting on tax-free Roth earnings."
+          ],
+          "decisions": [
+            "Which account funds which years, from your last paycheck to Social Security.",
+            "Keeping money in the employer plan versus rolling it to an IRA."
+          ],
+          "mistakes": [
+            "Rolling a 401(k) into an IRA at 55 and then needing the money before 59½.",
+            "Assuming the rule of 55 covers every old employer plan; it covers the plan of the job you leave at 55 or later."
+          ],
+          "numbers": [
+            {
+              "label": "Rule of 55",
+              "value": "age 55",
+              "detail": "Separation from service in or after the year you turn 55 (50 for some public safety workers).",
+              "src": "irs_early"
+            },
+            {
+              "label": "Penalty-free withdrawals",
+              "value": "59½",
+              "detail": "The 10% additional tax on early distributions stops applying at 59½.",
+              "src": "irs_ages"
+            },
+            {
+              "label": "HSA catch-up",
+              "value": "$1,000",
+              "detail": "Extra yearly HSA contribution from age 55.",
+              "src": "irs_p969"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/retirement-confidence/withdrawal-sequence/",
+              "kind": "Guide",
+              "note": "Which account to spend first"
+            },
+            {
+              "href": "/retirement-confidence/tax-box-allocation/",
+              "kind": "Guide",
+              "note": "How pretax, Roth and taxable accounts differ"
+            },
+            {
+              "href": "/life_stage/25_40/topics/roth-ira.html",
+              "kind": "Guide",
+              "note": "Roth IRA rules, including the five-year rule"
+            }
+          ]
+        },
+        {
+          "id": "job-loss",
+          "icon": "fa-briefcase",
+          "title": "Job loss, buyout or forced early retirement",
+          "happening": "Layoffs and buyouts often land in the late 50s, sometimes years before the date in your plan. The first 60 days matter most: health coverage, severance terms and whether to touch retirement money.",
+          "todo": [
+            "Before you sign a severance agreement, check the dates, health coverage, unvested stock or pension and any release you are giving.",
+            "Apply for unemployment benefits in your state right away.",
+            "Compare COBRA with a Marketplace plan; losing job coverage opens a 60-day Special Enrollment Period.",
+            "Do not cash out the 401(k). Leave it or roll it directly; see the rule of 55 above.",
+            "Rerun your retirement projection with the earlier date and decide whether this is retirement or a gap."
+          ],
+          "decisions": [
+            "Look for the next job, consult or retire now.",
+            "Whether a low-income year is a chance for a Roth conversion."
+          ],
+          "mistakes": [
+            "Letting health coverage lapse while deciding.",
+            "Taking a check from the 401(k) instead of a direct rollover, which triggers 20% withholding."
+          ],
+          "numbers": [
+            {
+              "label": "COBRA continuation",
+              "value": "generally 18 months",
+              "detail": "After a job loss or cut in hours; some events allow up to 36 months.",
+              "src": "dol_cobra"
+            },
+            {
+              "label": "Special Enrollment Period",
+              "value": "60 days",
+              "detail": "Losing job-based coverage lets you buy a Marketplace plan within 60 days.",
+              "src": "hc_sep"
+            },
+            {
+              "label": "Withholding on indirect rollovers",
+              "value": "20%",
+              "detail": "Plans must withhold 20% if they pay you instead of rolling over directly.",
+              "src": "irs_rollover"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/Retirement-simulator/retirement_scenario_lab.html",
+              "kind": "Tool",
+              "note": "Change the retirement date and see what moves"
+            },
+            {
+              "href": "/blogs/budget_spending/aca_early_retirement_subsidies.html",
+              "kind": "Article",
+              "note": "Marketplace subsidies in early retirement"
+            },
+            {
+              "href": "/tools/health-plan-compare/",
+              "kind": "Tool",
+              "note": "Compare COBRA with other plan options"
+            },
+            {
+              "href": "/Retirement-simulator/Retirement_Gateway.html",
+              "kind": "Tool",
+              "note": "Rebuild the plan from a new starting point"
+            }
+          ],
+          "gap": "WealthLanding does not yet have a severance and layoff checklist."
+        },
+        {
+          "id": "pension-choice",
+          "icon": "fa-scale-balanced",
+          "title": "Pension or lump sum choices",
+          "happening": "If you have a pension, your employer may offer a monthly payment for life or a one-time lump sum. Some people consider buying an annuity with savings. These choices are usually permanent.",
+          "todo": [
+            "Get both offers in writing: the monthly amount at different start ages and the lump sum.",
+            "Compare the survivor options if you are married; a joint-and-survivor payment keeps paying your spouse.",
+            "Check how a private pension is protected if the plan fails (PBGC).",
+            "If you take a lump sum, move it by direct rollover to an IRA to avoid withholding and tax.",
+            "Read the fees and surrender terms before buying any annuity."
+          ],
+          "decisions": [
+            "Guaranteed income versus control of a lump sum.",
+            "Single-life versus joint-and-survivor payments."
+          ],
+          "mistakes": [
+            "Comparing a lump sum to the monthly payment without counting how long you and a spouse might live.",
+            "Buying an annuity you do not fully understand from a salesperson paid by commission."
+          ],
+          "numbers": [
+            {
+              "label": "Withholding on indirect rollovers",
+              "value": "20%",
+              "detail": "A lump sum paid to you, not rolled over directly, has 20% withheld.",
+              "src": "irs_rollover"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/retirement-confidence/longevity-marathon/",
+              "kind": "Guide",
+              "note": "Planning for a 30-year retirement"
+            },
+            {
+              "href": "/retirement-confidence/social-security-timing/",
+              "kind": "Guide",
+              "note": "Social Security as inflation-adjusted lifetime income"
+            }
+          ],
+          "gap": "WealthLanding does not yet have a pension-versus-lump-sum guide or calculator. Investor.gov's annuity guide and PBGC are official starting points.",
+          "official": [
+            "investor_annuity",
+            "pbgc"
+          ]
+        },
+        {
+          "id": "where-to-live",
+          "icon": "fa-earth-americas",
+          "title": "Downsizing or relocating, including abroad",
+          "happening": "Where you live sets your largest costs: housing, state taxes and healthcare. Some people downsize to free up home equity, some move to a lower-cost state, and some retire abroad.",
+          "todo": [
+            "Price your current home net of selling costs and what you would pay for the next one.",
+            "Check whether the gain qualifies for the home sale exclusion.",
+            "Compare state income, property and sales taxes, not only the income tax.",
+            "If moving abroad, plan healthcare first: Medicare generally does not pay for care outside the U.S.",
+            "Rent in the new place for a season before you buy."
+          ],
+          "decisions": [
+            "Downsize, move to another state, move abroad or stay.",
+            "Buy or rent in the new place."
+          ],
+          "mistakes": [
+            "Assuming a cheaper place is cheaper once healthcare, travel home and taxes are counted.",
+            "Dropping Medicare Part B when moving abroad without knowing the late-enrollment penalty if you come back."
+          ],
+          "numbers": [
+            {
+              "label": "Home sale exclusion",
+              "value": "$250,000 / $500,000",
+              "detail": "Gain excluded if you owned and lived in the home 2 of the last 5 years (single / married filing jointly).",
+              "src": "irs_home"
+            },
+            {
+              "label": "Medicare outside the U.S.",
+              "value": "generally not covered",
+              "detail": "Medicare pays for care abroad only in rare cases.",
+              "src": "mcare_abroad"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/Retirement-simulator/overseas_retirement_hub.html",
+              "kind": "Tool",
+              "note": "Compare 18 overseas retirement destinations"
+            },
+            {
+              "href": "/Retirement-simulator/retirement_profiles.html",
+              "kind": "Tool",
+              "note": "Home base, expat, nomad or snowbird"
+            },
+            {
+              "href": "/blogs/Happy_retirement/medicare.html",
+              "kind": "Article",
+              "note": "The expat Medicare trap"
+            },
+            {
+              "href": "/life_stage/25_40/topics/rent-vs-buy.html",
+              "kind": "Guide",
+              "note": "Rent or buy in the new place"
+            },
+            {
+              "href": "/investment/real_estate_vs_stocks_model.html",
+              "kind": "Tool",
+              "note": "Home equity versus a stock portfolio"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "60-62",
+      "ages": "60–62",
+      "name": "Decision years",
+      "title": "Money at 60 to 62: Super Catch-Up, Roth Window, Healthcare Bridge and Social Security",
+      "description": "From 60 to 62: the 60–63 super catch-up, picking a retirement date, the Roth conversion window, health coverage before Medicare and whether to claim Social Security at 62, with IRS, SSA and CMS figures.",
+      "summary": [
+        "This is when the big, hard-to-reverse decisions cluster: when to stop working, how to cover health insurance until Medicare, whether to convert pretax savings to Roth, and when to claim Social Security.",
+        "The decisions interact. A Roth conversion raises income, which can cut Marketplace subsidies now and raise Medicare premiums later. Claiming Social Security early locks in a smaller check for you and possibly for a surviving spouse. Work through them together, not one at a time."
+      ],
+      "birthdays": [
+        {
+          "age": "60",
+          "text": "The higher 'super catch-up' applies in the calendar years you turn 60, 61, 62 and 63.",
+          "src": "irs_catchup"
+        },
+        {
+          "age": "60",
+          "text": "Widows and widowers can claim reduced survivor benefits.",
+          "src": "ssa_survivor"
+        },
+        {
+          "age": "62",
+          "text": "The earliest age to claim Social Security retirement benefits, permanently reduced.",
+          "src": "ssa_early"
+        }
+      ],
+      "events": [
+        {
+          "id": "super-catch-up",
+          "icon": "fa-rocket",
+          "title": "The 60–63 super catch-up",
+          "happening": "For the four calendar years you turn 60, 61, 62 and 63, the workplace catch-up limit is higher. If you are still working, it is the biggest tax-advantaged saving window you will get.",
+          "todo": [
+            "Raise your deferral for the years you turn 60 through 63, then lower it again in the year you turn 64.",
+            "Check whether your catch-ups must be Roth because of the $150,000 wage rule.",
+            "Coordinate with your spouse's plan so both of you use the window."
+          ],
+          "decisions": [
+            "Saving the maximum versus retiring a year or two earlier."
+          ],
+          "mistakes": [
+            "Assuming payroll will raise the limit automatically. Many plans require a new election.",
+            "Keeping the higher deferral in the year you turn 64, when the limit drops back."
+          ],
+          "numbers": [
+            {
+              "label": "Super catch-up (ages 60–63)",
+              "value": "$11,250",
+              "detail": "2026, instead of the $8,000 standard catch-up, for a total of $35,750.",
+              "src": "irs_401k"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/life_stage/25_40/topics/traditional-401k.html",
+              "kind": "Guide",
+              "note": "Traditional 401(k) limits and catch-ups"
+            },
+            {
+              "href": "/retirement-confidence/savings-target-two-buckets/",
+              "kind": "Guide",
+              "note": "Is the shortfall closable in the time left?"
+            }
+          ]
+        },
+        {
+          "id": "roth-window",
+          "icon": "fa-arrows-rotate",
+          "title": "Your retirement date and the Roth conversion window",
+          "happening": "Between your last paycheck and the start of Social Security and required minimum distributions, taxable income can be unusually low. Converting some pretax savings to Roth in those years can lower lifetime taxes, but every conversion also raises this year's income.",
+          "todo": [
+            "Pick a target retirement date and list expected taxable income for each year until RMDs start.",
+            "Choose a bracket ceiling to convert up to, and stick to it.",
+            "Check how a conversion affects Marketplace subsidies this year and Medicare premiums two years later.",
+            "Pay the tax on conversions from non-retirement money if you can.",
+            "Revisit the plan every year; you do not have to decide all the conversions at once."
+          ],
+          "decisions": [
+            "How much to convert each year, if any.",
+            "Retire earlier and convert more, or work longer."
+          ],
+          "mistakes": [
+            "Converting so much in one year that you lose health subsidies or jump an IRMAA tier.",
+            "Waiting until RMDs start, when the low-income window has closed."
+          ],
+          "numbers": [
+            {
+              "label": "Required minimum distributions",
+              "value": "age 73",
+              "detail": "RMDs generally begin at 73 under current rules.",
+              "src": "irs_rmd"
+            },
+            {
+              "label": "IRMAA look-back",
+              "value": "2 years",
+              "detail": "Medicare premiums are based on your tax return from two years earlier.",
+              "src": "mcare_costs"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/Retirement-simulator/OptimizeRoth.html",
+              "kind": "Tool",
+              "note": "Compare four Roth conversion strategies"
+            },
+            {
+              "href": "/blogs/budget_spending/roth_conversions_pre_medicare.html",
+              "kind": "Article",
+              "note": "Roth conversions in the gap years before Medicare"
+            },
+            {
+              "href": "/blogs/Happy_retirement/how-to-avoid-RMD-taxes.html",
+              "kind": "Case study",
+              "note": "Bill and Tom: same savings, different legacies"
+            },
+            {
+              "href": "/blogs/Happy_retirement/doctor_waited.html",
+              "kind": "Case study",
+              "note": "The doctor who waited too long"
+            }
+          ]
+        },
+        {
+          "id": "healthcare-bridge",
+          "icon": "fa-bridge",
+          "title": "Healthcare bridge before Medicare",
+          "happening": "If you stop working before 65, you need coverage until Medicare starts. Marketplace premium tax credits depend on your income for the year, and for 2026 coverage there is no credit above 400% of the federal poverty level.",
+          "todo": [
+            "Price COBRA, a Marketplace plan and any retiree coverage for each year until 65.",
+            "Estimate your income for the year; it sets your premium tax credit.",
+            "Keep income below 400% of the poverty level if the credit is worth more than the extra income.",
+            "Update your Marketplace application when income changes to avoid a repayment at tax time.",
+            "Keep an HSA as a dedicated fund for bridge-year medical bills."
+          ],
+          "decisions": [
+            "COBRA's continuity versus a Marketplace plan's subsidy.",
+            "How Roth conversions and capital gains fit under the income limit."
+          ],
+          "mistakes": [
+            "Crossing 400% of the poverty level by a small amount and losing the whole credit.",
+            "Forgetting that a Roth conversion counts as income for the subsidy."
+          ],
+          "numbers": [
+            {
+              "label": "Premium tax credit income range",
+              "value": "100%–400% FPL",
+              "detail": "For 2026 coverage the enhanced credits expired; above 400% there is no credit.",
+              "src": "irs_ptc"
+            },
+            {
+              "label": "400% of the poverty level",
+              "value": "$62,600 / $84,600",
+              "detail": "For 2026 Marketplace coverage, household of 1 / 2 (lower 48 states).",
+              "src": "cms_fpl"
+            },
+            {
+              "label": "COBRA continuation",
+              "value": "generally 18 months",
+              "detail": "From the date job-based coverage would end.",
+              "src": "dol_cobra"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/blogs/budget_spending/aca_early_retirement_subsidies.html",
+              "kind": "Article",
+              "note": "Managing income for Marketplace subsidies"
+            },
+            {
+              "href": "/tools/health-plan-compare/",
+              "kind": "Tool",
+              "note": "Compare plans on total cost"
+            },
+            {
+              "href": "/blogs/budget_spending/roth_conversions_pre_medicare.html",
+              "kind": "Article",
+              "note": "Fitting conversions around subsidies"
+            }
+          ]
+        },
+        {
+          "id": "social-security",
+          "icon": "fa-building-columns",
+          "title": "Social Security: 62, full retirement age or 70",
+          "happening": "You can claim from 62, but the check is permanently smaller. Waiting past full retirement age adds delayed retirement credits until 70. For married couples, the higher earner's choice also sets the survivor benefit.",
+          "todo": [
+            "Check your estimate at 62, at full retirement age and at 70 in my Social Security.",
+            "If you will keep working before full retirement age, check the earnings test.",
+            "If married, look at the decision as a couple, including the survivor benefit.",
+            "Decide which savings will cover the years if you delay."
+          ],
+          "decisions": [
+            "Claim early, at full retirement age or at 70.",
+            "Which spouse claims first."
+          ],
+          "mistakes": [
+            "Claiming at 62 by default because it is the first date available.",
+            "Ignoring how long a surviving spouse may rely on the larger check."
+          ],
+          "numbers": [
+            {
+              "label": "Benefit at 62",
+              "value": "70% of full",
+              "detail": "For anyone born in 1960 or later, whose full retirement age is 67.",
+              "src": "ssa_early"
+            },
+            {
+              "label": "Delayed retirement credits",
+              "value": "up to age 70",
+              "detail": "Waiting past full retirement age raises the monthly benefit until 70.",
+              "src": "ssa_delay"
+            },
+            {
+              "label": "Earnings test",
+              "value": "$24,480",
+              "detail": "2026: below full retirement age, $1 is withheld for every $2 earned above this.",
+              "src": "ssa_cola"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/retirement-confidence/social-security-timing/",
+              "kind": "Guide",
+              "note": "Claiming at 62, 67 or 70, with SSA figures"
+            },
+            {
+              "href": "/retirement-confidence/longevity-marathon/",
+              "kind": "Guide",
+              "note": "Why longevity changes the claiming answer"
+            }
+          ]
+        },
+        {
+          "id": "spousal-survivor",
+          "icon": "fa-user-group",
+          "title": "Spousal and survivor benefits",
+          "happening": "A spouse who earned less may collect up to half of the other spouse's full benefit. When one spouse dies, the survivor generally keeps the larger of the two checks. These rules make the claiming decision a household decision.",
+          "todo": [
+            "Compare each spouse's own benefit with half of the other's full-retirement-age benefit.",
+            "Model what the survivor would receive if either spouse died first.",
+            "If divorced after 10+ years of marriage, check benefits on the former spouse's record."
+          ],
+          "decisions": [
+            "Whether the higher earner delays to raise the survivor benefit."
+          ],
+          "mistakes": [
+            "Assuming a spouse with little work history gets nothing.",
+            "Not reporting a death to SSA promptly, which delays survivor payments."
+          ],
+          "numbers": [
+            {
+              "label": "Spousal benefit",
+              "value": "up to 50%",
+              "detail": "Of the worker's full-retirement-age benefit; reduced if claimed early.",
+              "src": "ssa_family"
+            },
+            {
+              "label": "Survivor benefits",
+              "value": "from age 60",
+              "detail": "Reduced if taken before the survivor's full retirement age.",
+              "src": "ssa_survivor"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/blogs/Happy_retirement/spousal-survivor-divorced-benefits.html",
+              "kind": "Case study",
+              "note": "28 illustrative spousal and survivor scenarios"
+            },
+            {
+              "href": "/retirement-confidence/social-security-timing/",
+              "kind": "Guide",
+              "note": "When to claim"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "63-65",
+      "ages": "63–65",
+      "name": "Medicare countdown",
+      "title": "Money at 63 to 65: IRMAA, Medicare Enrollment and Estate Basics",
+      "description": "From 63 to 65: how income at 63 sets Medicare premiums at 65, the Medicare enrollment window and penalties, estate and beneficiary basics, and a final retirement paycheck plan, with CMS, Medicare.gov and IRS figures.",
+      "summary": [
+        "Medicare at 65 is the last big deadline before retirement settles into a routine. Income from two years earlier sets your Medicare premiums, so the planning starts at 63. Missing the enrollment window can mean penalties that last as long as you have Medicare.",
+        "It is also time to finish the paperwork that protects everything else: wills, beneficiaries and powers of attorney. Then you can turn savings into a paycheck you can count on."
+      ],
+      "birthdays": [
+        {
+          "age": "63",
+          "text": "The last year of the super catch-up, and the first tax year Medicare looks back to when it sets your premiums at 65.",
+          "src": "mcare_costs"
+        },
+        {
+          "age": "65",
+          "text": "Medicare's Initial Enrollment Period runs 7 months around your 65th birthday month.",
+          "src": "mcare_when"
+        },
+        {
+          "age": "65",
+          "text": "An extra $6,000 senior deduction per eligible person for tax years 2025 through 2028.",
+          "src": "irs_senior"
+        }
+      ],
+      "events": [
+        {
+          "id": "irmaa",
+          "icon": "fa-chart-column",
+          "title": "IRMAA: income at 63 sets premiums at 65",
+          "happening": "Medicare Part B and Part D premiums rise in tiers when income on your tax return from two years earlier is above set thresholds. The return for the year you turn 63 sets the premiums you pay at 65.",
+          "todo": [
+            "Estimate your modified adjusted gross income for each year from 63 on.",
+            "Time Roth conversions, large capital gains and severance so they do not push you over a tier by a small amount.",
+            "If your income dropped because you retired, ask Social Security to use the lower, more recent year.",
+            "Check your Medicare premium notice each fall."
+          ],
+          "decisions": [
+            "Paying a higher IRMAA tier for a year in exchange for a larger Roth conversion."
+          ],
+          "mistakes": [
+            "Selling a business or a home at 63 without checking the IRMAA effect two years later.",
+            "Not appealing after a work stoppage or other life-changing event."
+          ],
+          "numbers": [
+            {
+              "label": "IRMAA starts above",
+              "value": "$109,000 / $218,000",
+              "detail": "2026 Part B premiums use 2024 income (single / married filing jointly).",
+              "src": "mcare_costs"
+            },
+            {
+              "label": "Part B premium range",
+              "value": "$202.90–$689.90/mo",
+              "detail": "2026, standard premium to the top IRMAA tier.",
+              "src": "cms_2026"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/retirement-confidence/medicare-gap/",
+              "kind": "Guide",
+              "note": "2026 Medicare premiums, IRMAA and coverage gaps"
+            },
+            {
+              "href": "/blogs/budget_spending/roth_conversions_pre_medicare.html",
+              "kind": "Article",
+              "note": "Roth conversions and IRMAA"
+            },
+            {
+              "href": "/Retirement-simulator/OptimizeRoth.html",
+              "kind": "Tool",
+              "note": "Model conversions against IRMAA"
+            },
+            {
+              "href": "/retirement-confidence/tax-box-allocation/",
+              "kind": "Guide",
+              "note": "Tax diversification before Medicare"
+            }
+          ]
+        },
+        {
+          "id": "medicare-enrollment",
+          "icon": "fa-id-card",
+          "title": "Enrolling in Medicare at 65",
+          "happening": "Your Initial Enrollment Period starts 3 months before your 65th birthday month and ends 3 months after. If you are still covered by an active employer's plan you may be able to wait, but the rules are strict.",
+          "todo": [
+            "Mark your 7-month window on the calendar now.",
+            "If you will keep working, confirm with your employer and Medicare whether you can delay Part B without a penalty.",
+            "Stop HSA contributions before Medicare starts; Part A can be backdated up to 6 months if you enroll after 65.",
+            "Choose between Original Medicare with a Medigap policy and Part D, or a Medicare Advantage plan.",
+            "If you are abroad or planning to move, read the penalty rules before skipping Part B."
+          ],
+          "decisions": [
+            "Original Medicare plus Medigap versus Medicare Advantage.",
+            "Enroll at 65 or delay Part B because of employer coverage."
+          ],
+          "mistakes": [
+            "Assuming COBRA or retiree coverage lets you delay Part B. It usually does not.",
+            "Contributing to an HSA in the months Medicare covers retroactively."
+          ],
+          "numbers": [
+            {
+              "label": "Part B standard premium",
+              "value": "$202.90/mo",
+              "detail": "2026, with a $283 yearly deductible.",
+              "src": "cms_2026"
+            },
+            {
+              "label": "Part A hospital deductible",
+              "value": "$1,736",
+              "detail": "2026, per benefit period.",
+              "src": "cms_2026"
+            },
+            {
+              "label": "Part B late penalty",
+              "value": "10% per 12 months",
+              "detail": "Added for each full 12-month period you could have had Part B but did not, for as long as you have Part B.",
+              "src": "mcare_penalty"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/retirement-confidence/medicare-gap/",
+              "kind": "Guide",
+              "note": "What Original Medicare does not cover"
+            },
+            {
+              "href": "/blogs/Happy_retirement/medicare.html",
+              "kind": "Article",
+              "note": "The expat Medicare trap"
+            },
+            {
+              "href": "/life_stage/25_40/topics/hsa.html",
+              "kind": "Guide",
+              "note": "The HSA's age-65 switch"
+            }
+          ]
+        },
+        {
+          "id": "estate-basics",
+          "icon": "fa-file-signature",
+          "title": "Estate basics and beneficiaries",
+          "happening": "Most families never owe federal estate tax, but every family needs the paperwork. Beneficiary forms decide who gets retirement accounts and life insurance, whatever the will says. Most heirs other than a spouse must empty an inherited IRA within 10 years.",
+          "todo": [
+            "Review the will, durable power of attorney and health care directive. Update them if they are more than a few years old.",
+            "Check the beneficiary, and a contingent beneficiary, on every IRA, 401(k), annuity and policy.",
+            "Write down where accounts and documents are and who to call.",
+            "Think about who inherits pretax money versus Roth money, given their tax brackets."
+          ],
+          "decisions": [
+            "Gifting now versus leaving money at death.",
+            "Whether a trust is worth the cost for your situation."
+          ],
+          "mistakes": [
+            "Naming 'my estate' as the beneficiary, which can force faster taxable withdrawals.",
+            "Assuming a will controls retirement accounts."
+          ],
+          "numbers": [
+            {
+              "label": "Estate and gift tax exclusion",
+              "value": "$15,000,000",
+              "detail": "2026, per person.",
+              "src": "irs_estate"
+            },
+            {
+              "label": "Annual gift exclusion",
+              "value": "$19,000",
+              "detail": "2026, per recipient.",
+              "src": "irs_estate"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/blogs/real_estate/secure_act_inherited_iras.html",
+              "kind": "Article",
+              "note": "SECURE 2.0 and the 10-year rule for inherited IRAs"
+            },
+            {
+              "href": "/blogs/Happy_retirement/silent_partner.html",
+              "kind": "Case study",
+              "note": "The IRS as a silent partner in pretax accounts"
+            },
+            {
+              "href": "/blogs/Happy_retirement/how-to-avoid-RMD-taxes.html",
+              "kind": "Case study",
+              "note": "How account type changes what heirs keep"
+            }
+          ]
+        },
+        {
+          "id": "paycheck-plan",
+          "icon": "fa-money-bill-wave",
+          "title": "Final readiness check and a retirement paycheck",
+          "happening": "Turning savings into a reliable paycheck is a different job from saving. You need an order for withdrawals, a cash reserve for bad markets and a plan that holds up if you live into your 90s.",
+          "todo": [
+            "List each income source by year: Social Security, pension, part-time work and withdrawals.",
+            "Decide the withdrawal order across taxable, pretax and Roth accounts.",
+            "Keep one to two years of planned withdrawals in cash or short-term bonds.",
+            "Stress-test the plan with lower returns and higher inflation.",
+            "Plan for the extra senior deduction and RMDs in your tax projections."
+          ],
+          "decisions": [
+            "How much to spend in the early, active years.",
+            "Whether to buy guaranteed income for part of your spending."
+          ],
+          "mistakes": [
+            "Spending from whichever account is easiest instead of the one that is cheapest in tax.",
+            "Planning to an average life expectancy rather than a long one."
+          ],
+          "numbers": [
+            {
+              "label": "Senior deduction",
+              "value": "$6,000 per person",
+              "detail": "Age 65+, tax years 2025–2028; phases out above $75,000 / $150,000 of income (single / joint).",
+              "src": "irs_senior"
+            },
+            {
+              "label": "Required minimum distributions",
+              "value": "age 73",
+              "detail": "Plan withdrawals now so RMDs do not force large taxable income later.",
+              "src": "irs_rmd"
+            }
+          ],
+          "helps": [
+            {
+              "href": "/retirement-confidence/withdrawal-sequence/",
+              "kind": "Guide",
+              "note": "Which account to spend first"
+            },
+            {
+              "href": "/retirement-confidence/longevity-marathon/",
+              "kind": "Guide",
+              "note": "Will the money last 30 years?"
+            },
+            {
+              "href": "/Retirement-simulator/retirement_scenario_lab.html",
+              "kind": "Tool",
+              "note": "Test one assumption at a time"
+            },
+            {
+              "href": "/Retirement-simulator/Retirement_Gateway.html",
+              "kind": "Tool",
+              "note": "The full Retirement Blueprint"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "after65": {
+    "title": "What comes after 65",
+    "text": "Once Medicare is in place, the work shifts to managing withdrawals and taxes year by year. These WealthLanding guides and case studies pick up from here.",
+    "links": [
+      {
+        "href": "/retirement-confidence/withdrawal-sequence/",
+        "kind": "Guide",
+        "note": "Withdrawal order in retirement"
+      },
+      {
+        "href": "/blogs/Happy_retirement/1m_rmd_letter.html",
+        "kind": "Case study",
+        "note": "Required minimum distributions and the tax cascade"
+      },
+      {
+        "href": "/blogs/real_estate/secure_act_inherited_iras.html",
+        "kind": "Article",
+        "note": "Inherited IRAs and the 10-year rule"
+      },
+      {
+        "href": "/retirement-confidence/medicare-gap/",
+        "kind": "Guide",
+        "note": "Medicare coverage gaps"
+      },
+      {
+        "href": "/blogs/happy_retirement.html",
+        "kind": "Archive",
+        "note": "All retirement case studies"
+      }
+    ],
+    "official": [
+      "irs_rmd",
+      "acl_ltc"
+    ]
+  },
+  "sources": {
+    "irs_401k": {
+      "name": "IRS: 2026 401(k) and IRA limits (IR-2025-111)",
+      "url": "https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500"
+    },
+    "irs_catchup": {
+      "name": "IRS: Catch-up contributions",
+      "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-catch-up-contributions"
+    },
+    "fr_roth_catchup": {
+      "name": "Federal Register: Catch-up contributions final rule (Sept. 2025)",
+      "url": "https://www.federalregister.gov/documents/2025/09/16/2025-17865/catch-up-contributions"
+    },
+    "irs_hsa": {
+      "name": "IRS Rev. Proc. 2025-19: 2026 HSA limits",
+      "url": "https://www.irs.gov/pub/irs-drop/rp-25-19.pdf"
+    },
+    "irs_p969": {
+      "name": "IRS Publication 969: HSAs",
+      "url": "https://www.irs.gov/publications/p969"
+    },
+    "irs_early": {
+      "name": "IRS: Exceptions to tax on early distributions",
+      "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-exceptions-to-tax-on-early-distributions"
+    },
+    "irs_ages": {
+      "name": "IRS: Significant ages for retirement plan participants",
+      "url": "https://www.irs.gov/retirement-plans/retirement-topics-significant-ages-for-retirement-plan-participants"
+    },
+    "irs_rmd": {
+      "name": "IRS: Required minimum distribution FAQs",
+      "url": "https://www.irs.gov/retirement-plans/retirement-plan-and-ira-required-minimum-distributions-faqs"
+    },
+    "irs_rollover": {
+      "name": "IRS: Rollovers of retirement plan and IRA distributions",
+      "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/rollovers-of-retirement-plan-and-ira-distributions"
+    },
+    "irs_estate": {
+      "name": "IRS: What's new, estate and gift tax",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax"
+    },
+    "irs_senior": {
+      "name": "IRS: Enhanced deduction for seniors",
+      "url": "https://www.irs.gov/newsroom/check-your-eligibility-for-the-new-enhanced-deduction-for-seniors"
+    },
+    "irs_529": {
+      "name": "IRS Topic 313: Qualified tuition programs (529)",
+      "url": "https://www.irs.gov/taxtopics/tc313"
+    },
+    "irs_aotc": {
+      "name": "IRS: Education credits, AOTC and LLC",
+      "url": "https://www.irs.gov/credits-deductions/individuals/education-credits-aotc-and-llc"
+    },
+    "irs_15b": {
+      "name": "IRS Publication 15-B (2026): dependent care assistance",
+      "url": "https://www.irs.gov/pub/irs-pdf/p15b.pdf"
+    },
+    "irs_home": {
+      "name": "IRS Topic 701: Sale of your home",
+      "url": "https://www.irs.gov/taxtopics/tc701"
+    },
+    "irs_ptc": {
+      "name": "IRS: Premium tax credit questions and answers",
+      "url": "https://www.irs.gov/affordable-care-act/individuals-and-families/questions-and-answers-on-the-premium-tax-credit"
+    },
+    "cms_fpl": {
+      "name": "CMS: 2026 Marketplace tax credit rules and FPL table",
+      "url": "https://www.cms.gov/files/document/program-integrity-rule-overview-part-2.pdf"
+    },
+    "ssa_cola": {
+      "name": "SSA: 2026 COLA fact sheet",
+      "url": "https://www.ssa.gov/news/en/cola/factsheets/2026.html"
+    },
+    "ssa_early": {
+      "name": "SSA: Starting your retirement benefits early",
+      "url": "https://www.ssa.gov/benefits/retirement/planner/agereduction.html"
+    },
+    "ssa_delay": {
+      "name": "SSA: Delayed retirement credits",
+      "url": "https://www.ssa.gov/benefits/retirement/planner/delayret.html"
+    },
+    "ssa_family": {
+      "name": "SSA: Family (spousal) benefits",
+      "url": "https://www.ssa.gov/benefits/retirement/planner/applying7.html"
+    },
+    "ssa_survivor": {
+      "name": "SSA: Social Security if your spouse passes away",
+      "url": "https://www.ssa.gov/blog/en/posts/2025-05-29.html"
+    },
+    "ssa_divorced": {
+      "name": "SSA: Benefits for divorced spouses",
+      "url": "https://www.ssa.gov/blog/en/posts/2026-10-27.html"
+    },
+    "ssa_account": {
+      "name": "SSA: my Social Security account",
+      "url": "https://www.ssa.gov/myaccount/"
+    },
+    "mcare_when": {
+      "name": "Medicare.gov: When can I sign up?",
+      "url": "https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-can-i-sign-up-for-medicare"
+    },
+    "mcare_penalty": {
+      "name": "Medicare.gov: Avoid late enrollment penalties",
+      "url": "https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties"
+    },
+    "mcare_costs": {
+      "name": "Medicare.gov: 2026 Medicare costs (incl. IRMAA table)",
+      "url": "https://www.medicare.gov/publications/11579-medicare-costs.pdf"
+    },
+    "cms_2026": {
+      "name": "CMS: 2026 Medicare Parts A and B premiums and deductibles",
+      "url": "https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-deductibles"
+    },
+    "mcare_abroad": {
+      "name": "Medicare.gov: Travel outside the U.S.",
+      "url": "https://www.medicare.gov/coverage/travel-outside-the-u.s."
+    },
+    "hc_sep": {
+      "name": "HealthCare.gov: Special Enrollment Periods",
+      "url": "https://www.healthcare.gov/coverage-outside-open-enrollment/special-enrollment-period/"
+    },
+    "hc_26": {
+      "name": "HealthCare.gov: Coverage for young adults under 26",
+      "url": "https://www.healthcare.gov/young-adults/children-under-26/"
+    },
+    "dol_cobra": {
+      "name": "U.S. Department of Labor: COBRA FAQs",
+      "url": "https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/faqs/cobra-continuation-health-coverage-workers"
+    },
+    "fdic": {
+      "name": "FDIC: Deposit insurance",
+      "url": "https://www.fdic.gov/resources/deposit-insurance"
+    },
+    "fafsa": {
+      "name": "StudentAid.gov: Fill out the FAFSA",
+      "url": "https://studentaid.gov/h/apply-for-aid/fafsa"
+    },
+    "plus": {
+      "name": "StudentAid.gov: Parent PLUS loans",
+      "url": "https://studentaid.gov/understand-aid/types/loans/plus/parent"
+    },
+    "cfpb_others": {
+      "name": "CFPB: Managing someone else's money",
+      "url": "https://www.consumerfinance.gov/consumer-tools/managing-someone-elses-money/"
+    },
+    "cfpb_claim": {
+      "name": "CFPB: Planning for retirement, before you claim",
+      "url": "https://www.consumerfinance.gov/consumer-tools/retirement/before-you-claim/"
+    },
+    "eldercare": {
+      "name": "Eldercare Locator (U.S. Administration for Community Living)",
+      "url": "https://eldercare.acl.gov/"
+    },
+    "acl_ltc": {
+      "name": "ACL: Long-term care planning",
+      "url": "https://acl.gov/ltc"
+    },
+    "investor_annuity": {
+      "name": "Investor.gov: Annuities",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/insurance-products/annuities"
+    },
+    "pbgc": {
+      "name": "PBGC: Pension Benefit Guaranty Corporation",
+      "url": "https://www.pbgc.gov/"
+    },
+    "investor_calc": {
+      "name": "Investor.gov: Compound interest calculator",
+      "url": "https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator"
+    }
+  }
+}
