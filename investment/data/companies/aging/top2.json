@@ -140,7 +140,7 @@
     "explanation": "The valuation reflects Stryker's quality and growth while recognizing operational, acquisition and multiple-compression risk. Net cash per share is not applicable because the company has net debt."
   },
   "entry_zones": {
-    "strong_buy_below": 270.0,
+    "deep_value_below": 270.0,
     "attractive_below": 315.0,
     "fair_value_low": 315.0,
     "fair_value_high": 370.0,
@@ -181,7 +181,7 @@
   ],
   "decision": {
     "state": "watchlist",
-    "cta": "hold_or_buy_below_attractive_threshold",
+    "cta": "watch_attractive_value_level",
     "summary": "Stryker remains a high-quality aging beneficiary, but the current price offers limited upside to fair value and meaningful bear-case downside.",
     "next_catalyst": "Third-quarter results and cyber-recovery update",
     "next_decision_date": "2026-10-31",

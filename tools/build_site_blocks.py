@@ -6,6 +6,14 @@ Blocks are written between marker comments so the script can be re-run safely:
   <!-- wl:tool-guide:start --> ... <!-- wl:tool-guide:end -->
       Explanatory guide under a calculator, from components/tool-guides/tool-guides.json
 
+From components/site-map/site-map.json (see tools/site_structure.py):
+  wl:footer-links   plain-HTML section links inside every <wealthlanding-footer>
+  wl:breadcrumb     breadcrumb trail plus BreadcrumbList JSON-LD on articles and tools
+  wl:next-steps     "Keep going" links on articles and tools without a guide
+  wl:start-here     goal grid on the homepage and section routes on hub pages
+  components/header-nav.html, the header.js fallback, and the Money, Real estate
+  and Travel hub pages are generated in full.
+
 Usage (from the repo root):
   python3 tools/build_site_blocks.py          # write blocks
   python3 tools/build_site_blocks.py --check  # exit 1 if any page is out of date
@@ -17,6 +25,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.dont_write_bytecode = True
 GUIDES = ROOT / "components" / "tool-guides" / "tool-guides.json"
 
 DISCLAIMER = (
@@ -81,6 +91,8 @@ FOOTER_ANCHORS = [r"<wealthlanding-footer", r"<footer\b", r"</body>"]
 def build(check=False):
     data = json.loads(GUIDES.read_text(encoding="utf-8"))
     stale = []
+    import site_structure
+    stale += site_structure.build(check=check, guide_pages=set(data["pages"]))
     for rel, guide in data["pages"].items():
         path = ROOT / rel
         original = path.read_text(encoding="utf-8")

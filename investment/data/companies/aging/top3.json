@@ -140,7 +140,7 @@
     "explanation": "Welltower is valued using normalized FFO because depreciation makes GAAP earnings less informative for real-estate operations. The current market price requires sustained exceptional growth and a premium multiple."
   },
   "entry_zones": {
-    "strong_buy_below": 160.0,
+    "deep_value_below": 160.0,
     "attractive_below": 190.0,
     "fair_value_low": 190.0,
     "fair_value_high": 220.0,
@@ -182,7 +182,7 @@
   ],
   "decision": {
     "state": "monitor",
-    "cta": "wait_for_lower_entry_price",
+    "cta": "watch_for_lower_valuation",
     "summary": "Welltower's operating performance is exceptional, but the current price exceeds fair value and offers substantial bear-case downside.",
     "next_catalyst": "Third-quarter occupancy, NOI and acquisition-integration update",
     "next_decision_date": "2026-10-31",

@@ -78,17 +78,17 @@
     ]
   },
   "decision": {
-    "state": "active_buy",
-    "previous_state": "active_buy",
+    "state": "criteria_met",
+    "previous_state": "criteria_met",
     "changed": false,
-    "summary": "The double-dip thesis is reinforced: the BOJ's September 18 hike to 1.25% unlocks incremental domestic NIM expansion, while the Fed's 25 bps hike to 3.75%-4.00% protects overseas lending margins and shields exporters from translation shock. Maintain active buy on MUFG and SMFG.",
-    "cta": "buy_below_attractive_threshold",
+    "summary": "The double-dip thesis is reinforced: the BOJ's September 18 hike to 1.25% supports domestic net interest margins, while the Fed's 25 bps hike to 3.75%-4.00% protects overseas lending margins and shields exporters from translation shock. Thesis criteria for MUFG and SMFG remain met.",
+    "cta": "watch_attractive_value_level",
     "reason_codes": [
       "STRUCTURAL_DEMAND_CONFIRMED",
       "VALUATION_DISPERSION"
     ],
     "required_actions": [
-      "Accumulate MUFG below attractive entry limit of ¥1,850/share",
+      "Watch MUFG relative to the modeled ¥1,850 attractive-value level",
       "Monitor corporate loan yield resets following the September 24 effective date for the 1.25% rate",
       "Audit Q2 cross-holding liquidation volume for SMFG and Tokio Marine in November"
     ]
@@ -302,7 +302,7 @@
       "catalyst": "Commercial prime lending rate upward repricing taking effect September 24, 2026",
       "valuation_status": "moderately_undervalued",
       "main_risk": "Domestic SME credit costs if borrowing rates rise too quickly",
-      "next_action": "Accumulate below attractive entry limit of ¥1,850/share",
+      "next_action": "Watch the modeled ¥1,850 attractive-value level",
       "company_review": {
         "status": "selected",
         "company_slug": "mufg",
@@ -330,7 +330,7 @@
       "catalyst": "Q2 FY2026 earnings release and follow-on buyback authorization in November 2026",
       "valuation_status": "moderately_undervalued",
       "main_risk": "Intense corporate lending competition compressing loan margins",
-      "next_action": "Buy below attractive threshold of ¥3,600/share",
+      "next_action": "Watch the modeled ¥3,600 attractive-value level",
       "company_review": {
         "status": "selected",
         "company_slug": "smfg",
@@ -358,7 +358,7 @@
       "catalyst": "FSA governance compliance disclosure and mid-year buyback program update",
       "valuation_status": "fairly_valued",
       "main_risk": "Severe domestic typhoon catastrophe losses or international reinsurance volatility",
-      "next_action": "Accumulate in attractive zone below ¥5,600/share",
+      "next_action": "Watch the modeled ¥5,600 attractive-value level",
       "company_review": {
         "status": "selected",
         "company_slug": "tokio-marine",

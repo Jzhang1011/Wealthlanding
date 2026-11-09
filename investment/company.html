@@ -63,6 +63,11 @@
 <body>
 
     <div id="global-header-target"></div>
+<!-- wl:breadcrumb:start -->
+<link rel="stylesheet" href="/components/site-map/site-blocks.css">
+<nav class="wl-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/investment/">Investing</a></li><li aria-current="page">Company Decision</li></ol></nav>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.wealthlanding.com/"}, {"@type": "ListItem", "position": 2, "name": "Investing", "item": "https://www.wealthlanding.com/investment/"}, {"@type": "ListItem", "position": 3, "name": "Company Decision", "item": "https://www.wealthlanding.com/investment/company.html"}]}</script>
+<!-- wl:breadcrumb:end -->
 
   <main class="wrap py-10 space-y-7">
     <div>
@@ -80,7 +85,7 @@
         <p id="theme-summary" class="text-slate-500 leading-7 mt-4 max-w-3xl"></p>
       </div>
       <aside class="lg:col-span-4 bg-slate-950 text-white rounded-2xl p-6">
-        <div class="text-xs uppercase tracking-wider text-slate-400 font-bold">What should I do now?</div>
+        <div class="text-xs uppercase tracking-wider text-slate-400 font-bold">Current read</div>
         <div id="cta" class="text-2xl font-extrabold mt-2">—</div>
         <p id="cta-summary" class="text-sm text-slate-400 mt-3 leading-6"></p>
       </aside>
@@ -101,13 +106,13 @@
 
     <section class="grid lg:grid-cols-12 gap-6">
       <div class="lg:col-span-7 card p-6">
-        <div class="eyebrow">Entry strategy</div>
-        <h2 class="serif text-2xl font-bold mt-1">Connect price to action</h2>
+        <div class="eyebrow">Valuation levels</div>
+        <h2 class="serif text-2xl font-bold mt-1">How price compares with modeled value</h2>
         <div id="zones" class="grid md:grid-cols-2 gap-4 mt-6"></div>
       </div>
       <div class="lg:col-span-5 card p-6">
         <div class="eyebrow">Return engines</div>
-        <h2 class="serif text-2xl font-bold mt-1">Why this can win</h2>
+        <h2 class="serif text-2xl font-bold mt-1">What the thesis depends on</h2>
         <div id="engines" class="space-y-3 mt-5"></div>
       </div>
     </section>
@@ -119,11 +124,11 @@
         <div id="catalysts" class="space-y-4 mt-5"></div>
       </div>
       <div class="lg:col-span-5 card p-6 bg-slate-950 text-white border-slate-900">
-        <div class="text-xs uppercase tracking-wider text-emerald-400 font-bold">Now what?</div>
+        <div class="text-xs uppercase tracking-wider text-emerald-400 font-bold">What to watch</div>
         <h2 id="now-title" class="serif text-2xl font-bold mt-2">—</h2>
         <p id="now-summary" class="text-sm text-slate-400 mt-3 leading-6"></p>
         <div class="mt-5 pt-5 border-t border-slate-800">
-          <div class="text-xs uppercase tracking-wider text-slate-500 font-bold">Required next steps</div>
+          <div class="text-xs uppercase tracking-wider text-slate-500 font-bold">Signals to track</div>
           <ul id="required-actions" class="space-y-3 mt-3 text-sm text-slate-300"></ul>
         </div>
       </div>
@@ -133,10 +138,11 @@
   <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-900 mt-12">
     <div class="wrap flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
       <div>© 2026 <b>Wealth<span class="text-emerald-400">Landing</span></b></div>
-      <div class="text-slate-500">Educational research and thesis tracking system. Not individualized financial advice.</div>
+      <div class="text-slate-500">Educational research and thesis tracking only. Nothing here is a recommendation to buy, sell, or hold any security, and it is not individualized financial advice. Valuation levels are model outputs based on stated assumptions and can be wrong; do your own research or consult a licensed professional.</div>
     </div>
   </footer>
 
+  <script src="/investment/labels.js"></script>
   <script>
     const esc = value => String(value ?? '').replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
     const pretty = value => String(value ?? '').replaceAll('_', ' ').replaceAll('-', ' ').replace(/\b\w/g, character => character.toUpperCase());
@@ -150,13 +156,13 @@
         company: { name: "ResMed Inc.", ticker: "RMD", trading_currency: "USD" },
         market_data: { current_price: 224.03, price_date: "2026-08-06" },
         valuation: { fair_value: 250.00, upside_to_fair_value_pct: 11.59, confidence: "medium", explanation: "Scenario-specific normalized earnings with cash-flow cross-check." },
-        decision: { cta: "buy_below_attractive_threshold", state: "watchlist", summary: "ResMed offers strong business quality and valuation support among selected aging companies.", required_actions: ["Update fiscal 2026 earnings inputs", "Review MatrixCare transaction implications", "Recalculate entry zones"] },
+        decision: { cta: "watch_attractive_value_level", state: "watchlist", summary: "ResMed offers strong business quality and valuation support among selected aging companies.", required_actions: ["Update fiscal 2026 earnings inputs", "Review MatrixCare transaction implications", "Recalculate entry zones"] },
         operating_scenarios: {
           bull: { probability: 0.25, value_per_share: 300.0, conditions: ["High-single-digit organic revenue growth", "Sustained mask and accessory resupply"] },
           fair: { probability: 0.55, value_per_share: 250.0, conditions: ["Mid- to high-single-digit organic growth", "Stable connected-care adoption"] },
           bear: { probability: 0.20, value_per_share: 180.0, conditions: ["Diagnosis and device growth decelerate", "Alternative therapies reduce treatment starts"] }
         },
-        entry_zones: { strong_buy_below: 185.0, attractive_below: 220.0, fair_value_low: 220.0, fair_value_high: 265.0, expensive_above: 265.0 },
+        entry_zones: { deep_value_below: 185.0, attractive_below: 220.0, fair_value_low: 220.0, fair_value_high: 265.0, expensive_above: 265.0 },
         return_engines: ["Sleep-device adoption", "Recurring masks and accessories", "Connected home-care adoption", "Margin expansion"],
         catalysts: [
           { name: "Fiscal 2026 results", timing: "2026-08-06", effect: "Update revenue, margin, earnings and cash-flow assumptions" },
@@ -168,13 +174,13 @@
         company: { name: "Mitsubishi UFJ Financial Group", ticker: "8306.T", trading_currency: "JPY" },
         market_data: { current_price: 1580, price_date: "2026-08-06" },
         valuation: { fair_value: 1950, upside_to_fair_value_pct: 23.4, confidence: "high", explanation: "Sustained net interest margin expansion and capital return acceleration." },
-        decision: { cta: "buy_below_fair_value", state: "active_buy", summary: "Primary beneficiary of BOJ interest rate normalization and cross-shareholding unwind.", required_actions: ["Monitor BOJ policy rate decision", "Review quarterly loan growth and deposit beta"] },
+        decision: { cta: "watch_below_fair_value", state: "criteria_met", summary: "Primary beneficiary of BOJ interest rate normalization and cross-shareholding unwind.", required_actions: ["Monitor BOJ policy rate decision", "Review quarterly loan growth and deposit beta"] },
         operating_scenarios: {
           bull: { probability: 0.30, value_per_share: 2300, conditions: ["BOJ policy rate reaches 1.0%", "Accelerated share buybacks"] },
           fair: { probability: 0.55, value_per_share: 1950, conditions: ["Gradual rate hikes to 0.5%", "Stable net interest margins"] },
           bear: { probability: 0.15, value_per_share: 1350, conditions: ["Global growth slowdown limits rate hikes", "Increased credit costs"] }
         },
-        entry_zones: { strong_buy_below: 1400, attractive_below: 1650, fair_value_low: 1650, fair_value_high: 2100, expensive_above: 2100 },
+        entry_zones: { deep_value_below: 1400, attractive_below: 1650, fair_value_low: 1650, fair_value_high: 2100, expensive_above: 2100 },
         return_engines: ["Net interest income expansion", "Cross-shareholding sale proceeds", "Dividends and share buybacks"],
         catalysts: [
           { name: "BOJ Monetary Policy Meeting", timing: "2026-09-20", effect: "Interest rate path guidance" }
@@ -274,12 +280,12 @@
       document.getElementById('ticker').textContent = ticker;
       document.getElementById('rank-badge').textContent = `Top ${ranking.rank || rank}`;
       document.getElementById('theme-summary').textContent = data.investment_theme?.summary || data.publication?.summary || data.decision?.summary || '';
-      document.getElementById('cta').textContent = pretty(data.decision?.cta || data.decision?.state || 'under review');
+      document.getElementById('cta').textContent = WLInvestLabels.label(data.decision?.cta || data.decision?.state || 'under review');
       document.getElementById('cta-summary').textContent = data.decision?.summary || '';
       document.getElementById('current-price').textContent = money(currentPrice, currency);
       document.getElementById('price-date').textContent = data.market_data?.price_date ? `As of ${data.market_data.price_date}` : 'Current market price required';
       document.getElementById('fair-value').textContent = money(fairValue, currency);
-      document.getElementById('valuation-status').textContent = pretty(data.valuation_status || data.valuation?.status || data.current_zone || 'pending');
+      document.getElementById('valuation-status').textContent = WLInvestLabels.label(data.valuation_status || data.valuation?.status || data.current_zone || 'pending');
       document.getElementById('mos').textContent = marginOfSafety == null ? 'Pending' : `${Number(marginOfSafety).toFixed(1)}%`;
       document.getElementById('confidence').textContent = pretty(data.valuation?.confidence || data.scenario_model?.confidence || 'pending');
       document.getElementById('valuation-explanation').textContent = data.valuation?.explanation || data.valuation?.summary || '';
@@ -336,17 +342,17 @@
 
       const zones = data.entry_zones || data.valuation?.entry_zones || {};
       document.getElementById('zones').innerHTML = [
-        ['Strong buy below', zones.strong_buy_below],
-        ['Attractive below', zones.attractive_below],
-        ['Fair value range', zones.fair_value_low == null ? null : `${money(zones.fair_value_low, currency)}–${money(zones.fair_value_high, currency)}`],
-        ['Expensive above', zones.expensive_above]
+        ['Deep-value level (below)', zones.deep_value_below ?? zones.strong_buy_below],
+        ['Attractive-value level (below)', zones.attractive_below],
+        ['Modeled fair-value range', zones.fair_value_low == null ? null : `${money(zones.fair_value_low, currency)}–${money(zones.fair_value_high, currency)}`],
+        ['Above modeled value', zones.expensive_above]
       ].map(([label, value]) => `<div class="zone"><div class="text-xs uppercase tracking-wider text-slate-400 font-bold">${label}</div><div class="text-xl font-extrabold mt-2">${typeof value === 'string' ? value : money(value, currency)}</div></div>`).join('');
 
       document.getElementById('engines').innerHTML = engineList(data).map(item => `<div class="flex gap-3 items-start"><span class="check">✓</span><span class="text-sm font-semibold">${esc(item)}</span></div>`).join('');
 
       document.getElementById('catalysts').innerHTML = (data.catalysts || []).map(item => `<div class="rounded-xl bg-slate-50 p-4"><div class="flex justify-between gap-4"><b>${esc(item.name || item.id)}</b><span class="tag bg-white">${pretty(item.status || item.state || item.timing || 'watch')}</span></div><p class="text-sm text-slate-500 mt-2">${esc(item.decision_effect || item.expected_effect || item.effect || item.confirmation_test || '')}</p></div>`).join('');
 
-      document.getElementById('now-title').textContent = pretty(data.decision?.state || data.decision?.cta || 'under review');
+      document.getElementById('now-title').textContent = WLInvestLabels.label(data.decision?.state || data.decision?.cta || 'under review');
       document.getElementById('now-summary').textContent = data.decision?.summary || '';
       document.getElementById('required-actions').innerHTML = (data.decision?.required_actions || data.required_actions || []).map(item => `<li>• ${esc(item.action || item)}</li>`).join('');
     }
@@ -368,7 +374,17 @@
     });
   </script>
   <!-- ... rest of your webpage content ... -->
-    <wealthlanding-footer></wealthlanding-footer>
+    <!-- wl:next-steps:start -->
+<link rel="stylesheet" href="/components/site-map/site-blocks.css">
+<section class="wl-next-steps" aria-label="Keep going">
+  <div class="wl-ns-inner">
+    <h2>Keep going: Investing</h2>
+    <ul><li><a href="/investment/ai-economic-scenarios.html"><strong>AI Economic Scenarios 2030</strong><span class="wl-ns-desc">Interactive model of GDP, growth, labor share, wages and unemployment to 2030 under Modest, Substantial and Extreme…</span></a></li><li><a href="/investment/bitcoin.html"><strong>Bitcoin Liquidity &amp; Infrastructure Dashboard</strong><span class="wl-ns-desc">Educational Bitcoin dashboard: macro liquidity, scarce-asset demand, and miner power pivoting to AI — illustrative…</span></a></li><li><a href="/life_stage/25_40/topics/account-comparison.html"><strong>HSA vs Roth vs traditional vs taxable</strong><span class="wl-ns-desc">Interactive comparison: put the same pre-tax dollars into an HSA, Roth IRA, traditional 401(k), or taxable brokerage…</span></a></li><li><a href="/retirement-confidence/tax-box-allocation/"><strong>Traditional vs Roth in retirement</strong><span class="wl-ns-desc">How tax-deferred, Roth and taxable accounts differ, why tax diversification matters, how gap-year Roth conversions…</span></a></li></ul>
+    <p class="wl-ns-more"><a href="/investment/">See everything in Investing &rarr;</a></p>
+  </div>
+</section>
+<!-- wl:next-steps:end -->
+<wealthlanding-footer><!-- wl:footer-links:start --><link rel="stylesheet" href="/components/site-map/site-blocks.css"><nav class="wl-footer-links" aria-label="Site sections"><div class="wl-fl-col"><h4>Sections</h4><ul><li><a href="/retirement/">Retirement</a></li><li><a href="/investment/">Investing</a></li><li><a href="/money/">Money &amp; Health</a></li><li><a href="/real-estate/">Real Estate</a></li><li><a href="/travel/">Travel &amp; Rewards</a></li><li><a href="/tools/">Tools</a></li></ul></div><div class="wl-fl-col"><h4>Popular tools</h4><ul><li><a href="/tools/health-plan-compare/">Health plan comparison</a></li><li><a href="/tools/debt_payoff_calculator.html">Debt payoff calculator</a></li><li><a href="/tools/compound_interest_calculator.html">Compound interest calculator</a></li><li><a href="/tools/credit-card/">Credit card rewards router</a></li><li><a href="/Retirement-simulator/OptimizeRoth.html">Roth conversion optimizer</a></li><li><a href="/Retirement-simulator/retirement_scenario_lab.html">Retirement scenario lab</a></li></ul></div><div class="wl-fl-col"><h4>Learn by age</h4><ul><li><a href="/learn/early-career/">Early career (18–25)</a></li><li><a href="/life_stage/25_40/playbook_hub.html">Building (25–40)</a></li><li><a href="/learn/peak/">Peak earning (40–55)</a></li><li><a href="/learn/pre-retirement/">Pre-retirement (55+)</a></li></ul></div><div class="wl-fl-col wl-fl-about"><h4>WealthLanding</h4><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="/methodology/">Editorial standards</a></li><li><a href="/privacy/">Privacy policy</a></li><li><a href="/terms/">Terms of use</a></li><li><a href="/blogs/">All articles</a></li></ul></div><p class="wl-fl-disclaimer">Educational content only, not personalized investment, tax, legal, or insurance advice.</p></nav><!-- wl:footer-links:end --></wealthlanding-footer>
     
    <!-- ConvertKit Script -->
     <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>

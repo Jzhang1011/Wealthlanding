@@ -128,7 +128,7 @@
     "downside_to_bear_value_pct": -13.1
   },
   "entry_zones": {
-    "strong_buy_below": 6455,
+    "deep_value_below": 6455,
     "attractive_below": 8800,
     "fair_value_low": 8800,
     "fair_value_high": 10500,

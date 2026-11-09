@@ -114,7 +114,7 @@
     "explanation": "Scenario-weighted normalized earnings cross-checked against cash balance per share and stablecoin net interest margin."
   },
   "entry_zones": {
-    "strong_buy_below": 133.1,
+    "deep_value_below": 133.1,
     "attractive_below": 161.6,
     "fair_value_low": 171.1,
     "fair_value_high": 199.6,
@@ -144,8 +144,8 @@
     "Sustained negative free cash flow exceeding $1.0B over four quarters"
   ],
   "decision": {
-    "state": "active_buy",
-    "cta": "buy_below_attractive_threshold",
+    "state": "criteria_met",
+    "cta": "watch_attractive_value_level",
     "summary": "COIN is trading right on the cusp of its attractive threshold ($161.60-$171.97). The business is fundamentally insulated by stablecoin interest yields under current Fed rates.",
     "next_catalyst": "Q3 2026 Earnings Release",
     "next_decision_date": "2026-10-30",

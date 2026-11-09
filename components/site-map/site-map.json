@@ -1,0 +1,727 @@
+{
+  "_note": "Single source for site sections. Edit here, then run: python3 tools/build_site_blocks.py. It rebuilds the header menu, the plain-HTML footer links on every page, breadcrumbs, 'keep going' blocks, the homepage Start here grid, and the Money, Real estate and Travel hub pages.",
+  "sections": [
+    {
+      "id": "retirement",
+      "label": "Retirement",
+      "hub": "/retirement/",
+      "icon": "fa-umbrella-beach",
+      "tagline": "Plan the years after work",
+      "desc": "Savings targets, Social Security timing, Medicare, taxes on withdrawals, Roth conversions and where to live.",
+      "start": [
+        {
+          "href": "/retirement-confidence/",
+          "label": "7 Principles of Retirement Confidence",
+          "note": "The short course: one principle per page"
+        },
+        {
+          "href": "/retirement-confidence/social-security-timing/",
+          "label": "Claim Social Security at 62, 67 or 70?",
+          "note": "How the claiming age changes the check"
+        },
+        {
+          "href": "/retirement-confidence/medicare-gap/",
+          "label": "What Medicare doesn't cover",
+          "note": "Premiums, gaps and long-term care"
+        },
+        {
+          "href": "/Retirement-simulator/Retirement_Gateway.html",
+          "label": "Design your retirement",
+          "note": "Start the interactive planner"
+        }
+      ],
+      "popular": [
+        {
+          "href": "/retirement-confidence/withdrawal-sequence/",
+          "label": "Which account to spend first"
+        },
+        {
+          "href": "/Retirement-simulator/OptimizeRoth.html",
+          "label": "Roth conversion optimizer"
+        },
+        {
+          "href": "/Retirement-simulator/retirement_scenario_lab.html",
+          "label": "Retirement scenario lab"
+        },
+        {
+          "href": "/Retirement-simulator/overseas_retirement_hub.html",
+          "label": "Retiring overseas"
+        },
+        {
+          "href": "/blogs/happy_retirement.html",
+          "label": "Retirement case studies"
+        }
+      ],
+      "groups": [
+        {
+          "label": "Retiring overseas",
+          "hub": "/Retirement-simulator/overseas_retirement_hub.html",
+          "match": [
+            "Retirement-simulator/cities/",
+            "Retirement-simulator/guides/",
+            "Retirement-simulator/RetiringOverseas.html",
+            "Retirement-simulator/overseas_retirement_hub.html"
+          ]
+        },
+        {
+          "label": "7 Principles",
+          "hub": "/retirement-confidence/",
+          "match": [
+            "retirement-confidence/"
+          ]
+        },
+        {
+          "label": "Retirement case studies",
+          "hub": "/blogs/happy_retirement.html",
+          "match": [
+            "blogs/Happy_retirement/",
+            "blogs/happy_retirement.html",
+            "blogs/budget_spending/roth_conversions_pre_medicare.html",
+            "blogs/budget_spending/aca_early_retirement_subsidies.html",
+            "blogs/real_estate/secure_act_inherited_iras.html"
+          ]
+        },
+        {
+          "label": "Planning tools",
+          "hub": "/retirement/",
+          "match": [
+            "Retirement-simulator/",
+            "retirement/"
+          ]
+        }
+      ],
+      "routes_intro": "New to retirement planning? Work through these in order, then use the tools below."
+    },
+    {
+      "id": "investing",
+      "label": "Investing",
+      "hub": "/investment/",
+      "icon": "fa-chart-line",
+      "tagline": "Grow and position savings",
+      "desc": "Retirement accounts, Roth and traditional choices, compounding, and market themes explained without hype.",
+      "start": [
+        {
+          "href": "/life_stage/25_40/topics/account-comparison.html",
+          "label": "HSA vs Roth vs traditional vs taxable",
+          "note": "Where the next dollar works hardest"
+        },
+        {
+          "href": "/retirement-confidence/tax-box-allocation/",
+          "label": "Traditional vs Roth in retirement",
+          "note": "Build a tax-smart mix"
+        },
+        {
+          "href": "/tools/compound_interest_calculator.html",
+          "label": "Compound interest calculator",
+          "note": "See time and contributions at work"
+        },
+        {
+          "href": "/blogs/market_investment.html",
+          "label": "Market and investment articles",
+          "note": "Themes explained, not stock tips"
+        }
+      ],
+      "popular": [
+        {
+          "href": "/life_stage/25_40/topics/roth-ira.html",
+          "label": "Roth IRA guide"
+        },
+        {
+          "href": "/life_stage/25_40/topics/traditional-401k.html",
+          "label": "Traditional 401(k) guide"
+        },
+        {
+          "href": "/life_stage/25_40/topics/backdoor-roth.html",
+          "label": "Backdoor Roth explained"
+        },
+        {
+          "href": "/investment/dividend-screener.html",
+          "label": "Dividend stock screener"
+        },
+        {
+          "href": "/investment/ai-economic-scenarios.html",
+          "label": "AI economic scenarios 2030"
+        }
+      ],
+      "groups": [
+        {
+          "label": "Market articles",
+          "hub": "/blogs/market_investment.html",
+          "match": [
+            "blogs/investment/",
+            "blogs/market_investment.html"
+          ]
+        },
+        {
+          "label": "Account guides",
+          "hub": "/investment/",
+          "match": [
+            "life_stage/25_40/topics/roth-ira.html",
+            "life_stage/25_40/topics/traditional-401k.html",
+            "life_stage/25_40/topics/backdoor-roth.html",
+            "life_stage/25_40/topics/account-comparison.html",
+            "life_stage/25_40/topics/529.html"
+          ]
+        },
+        {
+          "label": "Investing tools",
+          "hub": "/investment/",
+          "match": [
+            "investment/bitcoin.html",
+            "investment/dividend-screener.html",
+            "investment/ai-economic-scenarios.html",
+            "investment/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "money",
+      "label": "Money & Health",
+      "hub": "/money/",
+      "icon": "fa-wallet",
+      "tagline": "Budget, debt and health costs",
+      "desc": "Paychecks, budgets, debt payoff, emergency funds, health insurance choices and ways to spend less.",
+      "start": [
+        {
+          "href": "/tools/health-plan-compare/",
+          "label": "Compare health plans",
+          "note": "PPO vs HMO vs HDHP at your level of care"
+        },
+        {
+          "href": "/life_stage/25_40/topics/hsa.html",
+          "label": "How an HSA works",
+          "note": "The account with three tax breaks"
+        },
+        {
+          "href": "/tools/debt_payoff_calculator.html",
+          "label": "Debt payoff calculator",
+          "note": "Snowball vs avalanche"
+        },
+        {
+          "href": "/learn/deals/",
+          "label": "Deal Finder",
+          "note": "Legitimate ways to pay less for travel and outings"
+        }
+      ],
+      "popular": [
+        {
+          "href": "/blogs/budget_spending/employer-health-insurance-costs-rising.html",
+          "label": "Why employer health costs are rising"
+        },
+        {
+          "href": "/life_stage/25_40/topics/debt-vs-investing.html",
+          "label": "Pay off debt or invest?"
+        },
+        {
+          "href": "/life_stage/25_40/topics/life-insurance.html",
+          "label": "How much life insurance"
+        },
+        {
+          "href": "/blogs/18_25/paycheck.html",
+          "label": "Decoding your paycheck"
+        },
+        {
+          "href": "/blogs/budget_spending.html",
+          "label": "Budget and spending articles"
+        }
+      ],
+      "groups": [
+        {
+          "label": "Deal Finder",
+          "hub": "/learn/deals/",
+          "match": [
+            "learn/deals/"
+          ]
+        },
+        {
+          "label": "Budget and spending articles",
+          "hub": "/blogs/budget_spending.html",
+          "match": [
+            "blogs/budget_spending/",
+            "blogs/budget_spending.html"
+          ]
+        },
+        {
+          "label": "Starting out",
+          "hub": "/blogs/18_25.html",
+          "match": [
+            "blogs/18_25/",
+            "blogs/18_25.html"
+          ]
+        },
+        {
+          "label": "Money guides",
+          "hub": "/money/",
+          "match": [
+            "life_stage/25_40/topics/hsa.html",
+            "life_stage/25_40/topics/debt-vs-investing.html",
+            "life_stage/25_40/topics/life-insurance.html",
+            "life_stage/25_40/topics/am-i-behind.html",
+            "money/"
+          ]
+        }
+      ],
+      "page": {
+        "path": "money/index.html",
+        "title": "Money & Health: Budgets, Debt and Health Costs | WealthLanding",
+        "description": "Guides and calculators for everyday money decisions: paychecks, budgets, debt payoff, health insurance choices, HSAs and legitimate ways to spend less.",
+        "kicker": "Money & Health",
+        "h1": "Everyday money decisions, explained",
+        "intro": [
+          "Day-to-day money decisions add up: what you keep from each paycheck, how fast debt disappears, and what you pay for health coverage. This section collects WealthLanding's guides and calculators on those decisions, with the rules and the math explained plainly.",
+          "If you are choosing a health plan during open enrollment, start with the plan comparison tool. If debt is the pressure point, start with the payoff calculator. Every tool page explains its assumptions and walks through a worked example."
+        ],
+        "questions": [
+          {
+            "q": "Which health plan should I pick?",
+            "a": "Compare the total yearly cost, not just the premium. Premiums are fixed, while deductibles and coinsurance depend on how much care you use. The comparison tool shows the spending level where each plan becomes the cheaper choice.",
+            "links": [
+              "/tools/health-plan-compare/",
+              "/life_stage/25_40/topics/hsa.html",
+              "/blogs/18_25/FSA_HSA.html",
+              "/blogs/budget_spending/employer-health-insurance-costs-rising.html"
+            ]
+          },
+          {
+            "q": "How do I get out of debt faster?",
+            "a": "List every balance with its rate and minimum payment. Paying the highest rate first (avalanche) costs the least interest; paying the smallest balance first (snowball) brings earlier wins. Either works if the extra payment keeps going.",
+            "links": [
+              "/tools/debt_payoff_calculator.html",
+              "/life_stage/25_40/topics/debt-vs-investing.html",
+              "/life_stage/18_25/step_2.html"
+            ]
+          },
+          {
+            "q": "Where is my paycheck going?",
+            "a": "Start from take-home pay, not salary. Withholding, benefits and retirement contributions come out first, and side income usually has no tax withheld at all.",
+            "links": [
+              "/blogs/18_25/paycheck.html",
+              "/blogs/18_25/gig_economy_tax.html",
+              "/blogs/18_25/everyday_cost.html",
+              "/life_stage/18_25/step_1.html"
+            ]
+          },
+          {
+            "q": "How can I spend less without giving up what matters?",
+            "a": "The Deal Finder collects legitimate discounts on flights, hotels, rental cars, theme parks, museums and events, and the case study shows the savings on one family trip.",
+            "links": [
+              "/learn/deals/",
+              "/blogs/budget_spending/disneyland_family_of_five.html",
+              "/learn/deals/museums/"
+            ]
+          },
+          {
+            "q": "Is my family protected if something happens?",
+            "a": "Insurance replaces income or covers costs you could not absorb. Check what your employer already provides before buying more.",
+            "links": [
+              "/life_stage/25_40/topics/life-insurance.html",
+              "/life_stage/25_40/step_3.html",
+              "/life_stage/25_40/topics/am-i-behind.html"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate",
+      "hub": "/real-estate/",
+      "icon": "fa-house",
+      "tagline": "Homes, renting and property",
+      "desc": "Rent or buy, how much house fits a budget, the housing market, and property compared with index funds.",
+      "start": [
+        {
+          "href": "/life_stage/25_40/topics/rent-vs-buy.html",
+          "label": "Should I rent or buy?",
+          "note": "The real math beyond the monthly payment"
+        },
+        {
+          "href": "/life_stage/25_40/topics/how-much-house.html",
+          "label": "How much house can I afford?",
+          "note": "The 28/36 rule and its limits"
+        },
+        {
+          "href": "/investment/real_estate_vs_stocks_model.html",
+          "label": "Real estate vs index funds",
+          "note": "Model leverage, rates and time"
+        },
+        {
+          "href": "/blogs/real_estate/buyers-market-with-no-buyers.html",
+          "label": "The buyer's market with no buyers",
+          "note": "Reading today's housing data"
+        }
+      ],
+      "popular": [
+        {
+          "href": "/blogs/real_estate.html",
+          "label": "Real estate articles"
+        },
+        {
+          "href": "/life_stage/25_40/step_2.html",
+          "label": "Buy right or rent smart (30s playbook)"
+        }
+      ],
+      "groups": [
+        {
+          "label": "Real estate articles",
+          "hub": "/blogs/real_estate.html",
+          "match": [
+            "blogs/real_estate/",
+            "blogs/real_estate.html"
+          ]
+        },
+        {
+          "label": "Housing guides",
+          "hub": "/real-estate/",
+          "match": [
+            "life_stage/25_40/topics/rent-vs-buy.html",
+            "life_stage/25_40/topics/how-much-house.html",
+            "investment/real_estate_vs_stocks_model.html",
+            "real-estate/"
+          ]
+        }
+      ],
+      "page": {
+        "path": "real-estate/index.html",
+        "title": "Real Estate: Rent vs Buy, Affordability and Housing | WealthLanding",
+        "description": "Rent or buy, how much house fits your budget, how to read housing market data, and how property compares with index funds, with calculators and worked examples.",
+        "kicker": "Real Estate",
+        "h1": "Homes, renting and property, by the numbers",
+        "intro": [
+          "A home is often both the largest purchase and the largest single asset a household owns, so the decision deserves more than a monthly payment estimate. These guides cover renting versus buying, affordability, how to read housing market data, and how property compares with a diversified stock portfolio.",
+          "Closer to retirement, the same questions come back in a different form: whether to keep, downsize or sell, and how a home fits into what you leave to heirs."
+        ],
+        "questions": [
+          {
+            "q": "Should I rent or buy?",
+            "a": "Compare the full cost of owning (mortgage interest, property tax, insurance, maintenance, and the return you give up on the down payment) with rent plus investing the difference. How long you expect to stay matters as much as the price.",
+            "links": [
+              "/life_stage/25_40/topics/rent-vs-buy.html",
+              "/life_stage/25_40/step_2.html"
+            ]
+          },
+          {
+            "q": "How much house can I afford?",
+            "a": "The 28/36 guideline limits housing costs and total debt payments as a share of gross income. Treat it as a ceiling, not a target, and leave room for savings and repairs.",
+            "links": [
+              "/life_stage/25_40/topics/how-much-house.html"
+            ]
+          },
+          {
+            "q": "Is property a better investment than index funds?",
+            "a": "Leverage magnifies both gains and losses, and property carries costs and concentration that a broad fund does not. The model lets you change rates, leverage and time to see where the answer flips.",
+            "links": [
+              "/investment/real_estate_vs_stocks_model.html"
+            ]
+          },
+          {
+            "q": "What is the housing market doing?",
+            "a": "Headline numbers can point in opposite directions. The articles explain what the data measures and what it leaves out.",
+            "links": [
+              "/blogs/real_estate/buyers-market-with-no-buyers.html",
+              "/blogs/real_estate.html"
+            ]
+          },
+          {
+            "q": "What if I sell my home?",
+            "a": "When you sell your main home, IRS rules let you exclude up to $250,000 of gain ($500,000 for most married couples filing jointly) if you meet the ownership and use tests. See <a href=\"https://www.irs.gov/taxtopics/tc701\" rel=\"noopener\" target=\"_blank\">IRS Topic No. 701</a> for the conditions.",
+            "links": [
+              "/blogs/real_estate/secure_act_inherited_iras.html",
+              "/retirement/"
+            ]
+          }
+        ]
+      },
+      "nav_label": "Real Estate"
+    },
+    {
+      "id": "travel",
+      "label": "Travel & Rewards",
+      "hub": "/travel/",
+      "icon": "fa-plane",
+      "tagline": "Points, status and card perks",
+      "desc": "Airline and hotel loyalty programs, whether status is worth it, and which card to use for each purchase.",
+      "start": [
+        {
+          "href": "/travel/airlines/",
+          "label": "Airline loyalty programs compared",
+          "note": "United, American and Delta side by side"
+        },
+        {
+          "href": "/travel/hotels/",
+          "label": "Hotel loyalty programs compared",
+          "note": "Marriott, Hilton, Hyatt and IHG"
+        },
+        {
+          "href": "/travel/airlines/status-calculator.html",
+          "label": "Is airline status worth it?",
+          "note": "Status value vs cost calculator"
+        },
+        {
+          "href": "/tools/credit-card/",
+          "label": "Which card to use",
+          "note": "Route each purchase to the best card"
+        }
+      ],
+      "popular": [
+        {
+          "href": "/blogs/spending_smart/airbnb_cc_choice.html",
+          "label": "Card travel protections, a case study"
+        },
+        {
+          "href": "/blogs/spending_smart/flight_saver.html",
+          "label": "The basic economy gamble"
+        },
+        {
+          "href": "/learn/deals/flights/",
+          "label": "Cheaper flights"
+        },
+        {
+          "href": "/blogs/travel.html",
+          "label": "Travel case studies"
+        }
+      ],
+      "groups": [
+        {
+          "label": "Airline programs",
+          "hub": "/travel/airlines/",
+          "match": [
+            "travel/airlines/"
+          ]
+        },
+        {
+          "label": "Hotel programs",
+          "hub": "/travel/hotels/",
+          "match": [
+            "travel/hotels/"
+          ]
+        },
+        {
+          "label": "Travel case studies",
+          "hub": "/blogs/travel.html",
+          "match": [
+            "blogs/Travel/",
+            "blogs/travel.html",
+            "blogs/spending_smart/"
+          ]
+        },
+        {
+          "label": "Travel & Rewards",
+          "hub": "/travel/",
+          "match": [
+            "travel/"
+          ]
+        }
+      ],
+      "page": {
+        "path": "travel/index.html",
+        "title": "Travel & Rewards: Loyalty Programs, Status and Card Perks | WealthLanding",
+        "description": "How airline and hotel loyalty programs work, whether elite status is worth it, and which credit card to use for each purchase, with calculators and real trip case studies.",
+        "kicker": "Travel & Rewards",
+        "h1": "Points, status and card perks that fit how you travel",
+        "intro": [
+          "Loyalty programs and credit card perks can be worth real money, but only when they match how you actually travel. These guides explain how airline and hotel programs award status, what elite benefits do and don't cover, and how to route everyday spending to the right card.",
+          "If you plan to travel more as work winds down, the case studies show how program rules played out on real trips, including what happened when plans went wrong."
+        ],
+        "questions": [
+          {
+            "q": "Which airline program fits my home airport?",
+            "a": "Status is most useful with the airline that flies the most routes from where you live. The airline guides compare how each program earns and spends miles and which cities each one serves best.",
+            "links": [
+              "/travel/airlines/",
+              "/travel/airlines/united.html",
+              "/travel/airlines/american.html",
+              "/travel/airlines/delta.html"
+            ]
+          },
+          {
+            "q": "Is chasing status worth it?",
+            "a": "Compare what you would spend to earn status with the benefits you would actually use, such as upgrades, free checked bags and same-day changes.",
+            "links": [
+              "/travel/airlines/status-calculator.html",
+              "/blogs/Travel/united-1k-delayed-ski-trip.html"
+            ]
+          },
+          {
+            "q": "Which hotel program should I focus on?",
+            "a": "Pick the chain with hotels where you travel most, then compare how quickly each program's nights and points turn into free stays.",
+            "links": [
+              "/travel/hotels/",
+              "/travel/hotels/marriott.html",
+              "/travel/hotels/hilton.html",
+              "/travel/hotels/hyatt.html",
+              "/travel/hotels/ihg.html"
+            ]
+          },
+          {
+            "q": "Which card should I use for each purchase?",
+            "a": "The best card depends on the category of spending and on the protections you need, not only on the points rate.",
+            "links": [
+              "/tools/credit-card/",
+              "/blogs/spending_smart/airbnb_cc_choice.html",
+              "/blogs/spending_smart/flight_saver.html"
+            ]
+          },
+          {
+            "q": "How do I pay less for the trip itself?",
+            "a": "Flexible dates, the right booking channel and memberships you already hold often matter more than points.",
+            "links": [
+              "/learn/deals/flights/",
+              "/learn/deals/hotels/",
+              "/learn/deals/rental-cars/"
+            ]
+          }
+        ]
+      },
+      "nav_label": "Travel"
+    },
+    {
+      "id": "tools",
+      "label": "Tools",
+      "hub": "/tools/",
+      "icon": "fa-calculator",
+      "tagline": "Run your own numbers",
+      "desc": "Free calculators with the assumptions and a worked example on every page.",
+      "start": [
+        {
+          "href": "/tools/health-plan-compare/",
+          "label": "Health plan comparison"
+        },
+        {
+          "href": "/tools/debt_payoff_calculator.html",
+          "label": "Debt payoff calculator"
+        },
+        {
+          "href": "/tools/compound_interest_calculator.html",
+          "label": "Compound interest calculator"
+        },
+        {
+          "href": "/tools/credit-card/",
+          "label": "Credit card rewards router"
+        }
+      ],
+      "popular": [
+        {
+          "href": "/Retirement-simulator/OptimizeRoth.html",
+          "label": "Roth conversion optimizer"
+        },
+        {
+          "href": "/Retirement-simulator/retirement_scenario_lab.html",
+          "label": "Retirement scenario lab"
+        },
+        {
+          "href": "/investment/real_estate_vs_stocks_model.html",
+          "label": "Real estate vs index funds"
+        },
+        {
+          "href": "/travel/airlines/status-calculator.html",
+          "label": "Airline status calculator"
+        }
+      ],
+      "groups": [
+        {
+          "label": "Tools",
+          "hub": "/tools/",
+          "match": [
+            "tools/"
+          ]
+        }
+      ]
+    }
+  ],
+  "learn": {
+    "label": "Learn by age",
+    "hub": "/learn/",
+    "links": [
+      {
+        "href": "/learn/early-career/",
+        "label": "Early career (18–25)"
+      },
+      {
+        "href": "/life_stage/25_40/playbook_hub.html",
+        "label": "Building (25–40)"
+      },
+      {
+        "href": "/learn/peak/",
+        "label": "Peak earning (40–55)"
+      },
+      {
+        "href": "/learn/pre-retirement/",
+        "label": "Pre-retirement (55+)"
+      }
+    ],
+    "groups": [
+      {
+        "label": "20s Money Playbook",
+        "hub": "/life_stage/18_25/playbook_hub.html",
+        "match": [
+          "life_stage/18_25/"
+        ]
+      },
+      {
+        "label": "30s Money Playbook",
+        "hub": "/life_stage/25_40/playbook_hub.html",
+        "match": [
+          "life_stage/25_40/"
+        ]
+      },
+      {
+        "label": "Learn by age",
+        "hub": "/learn/",
+        "match": [
+          "learn/"
+        ]
+      }
+    ]
+  },
+  "about": [
+    {
+      "href": "/about/",
+      "label": "About"
+    },
+    {
+      "href": "/contact/",
+      "label": "Contact"
+    },
+    {
+      "href": "/methodology/",
+      "label": "Editorial standards"
+    },
+    {
+      "href": "/privacy/",
+      "label": "Privacy policy"
+    },
+    {
+      "href": "/terms/",
+      "label": "Terms of use"
+    },
+    {
+      "href": "/blogs/",
+      "label": "All articles"
+    }
+  ],
+  "exclude": [
+    "Talent/",
+    "SMB/",
+    "family/",
+    "revenue-forecasting/",
+    "components/",
+    "_includes/",
+    "docs/",
+    "workers/",
+    "Retirement-simulator/Archive/",
+    "investment/Archive/",
+    "Retirement-simulator/Topic/",
+    "blogs/12_18/"
+  ],
+  "no_breadcrumb": [
+    "index.html",
+    "about/",
+    "contact/",
+    "methodology/",
+    "privacy/",
+    "terms/",
+    "blogs/index.html"
+  ]
+}

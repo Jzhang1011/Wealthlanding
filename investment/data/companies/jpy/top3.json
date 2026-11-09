@@ -118,7 +118,7 @@
     "explanation": "Scenario-weighted valuation combining normalized earnings power, rising portfolio yields, and net asset liquidation value."
   },
   "entry_zones": {
-    "strong_buy_below": 4394.0,
+    "deep_value_below": 4394.0,
     "attractive_below": 5336.0,
     "fair_value_low": 5650.0,
     "fair_value_high": 6590.0,
@@ -150,8 +150,8 @@
   ],
   "decision": {
     "state": "watchlist",
-    "cta": "buy_below_attractive_threshold",
-    "summary": "Tokio Marine is a premier governance and yield compounder. Currently positioned comfortably in fair value at ¥5,890, patient investors should accumulate aggressively on market pullbacks into the attractive zone below ¥5,336.",
+    "cta": "watch_attractive_value_level",
+    "summary": "Tokio Marine is studied here as a governance and dividend-yield compounder. At ¥5,890 the price sits inside the modeled fair-value range; the model's attractive-value level is ¥5,336.",
     "next_catalyst": "Q2 FY2026 Earnings Release in November 2026",
     "next_decision_date": "2026-11-18",
     "required_actions": [

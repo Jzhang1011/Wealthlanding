@@ -128,7 +128,7 @@
     "explanation": "FY2026 guidance provides a strong earnings anchor. FY2027 EPS and multiples are scenario assumptions. Entry zones interpolate between scenario outcomes to incorporate downside and uncertainty."
   },
   "entry_zones": {
-    "strong_buy_below": 208.95,
+    "deep_value_below": 208.95,
     "attractive_below": 266.85,
     "fair_value_low": 266.85,
     "fair_value_high": 321.85,
@@ -158,7 +158,7 @@
   ],
   "decision": {
     "state": "watchlist",
-    "cta": "wait_for_better_entry_or_higher_earnings_evidence",
+    "cta": "watch_valuation_and_earnings_evidence",
     "summary": "Vertiv remains the highest-quality direct cooling opportunity, but $288.36 sits inside the modeled fair-value range rather than the attractive zone.",
     "next_catalyst": "Q3 2026 results and backlog/margin update",
     "next_decision_date": "2026-10-31",

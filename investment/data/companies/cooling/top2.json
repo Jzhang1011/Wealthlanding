@@ -132,7 +132,7 @@
     "explanation": "EV/EBITDA is used because Modine guides adjusted EBITDA and is undergoing a material portfolio transaction. Current net debt and diluted share count are taken from Q1 fiscal 2027 disclosures."
   },
   "entry_zones": {
-    "strong_buy_below": 151.12,
+    "deep_value_below": 151.12,
     "attractive_below": 180.49,
     "fair_value_low": 180.49,
     "fair_value_high": 208.59,
@@ -162,7 +162,7 @@
   ],
   "decision": {
     "state": "watchlist",
-    "cta": "monitor_margin_recovery_before_buying",
+    "cta": "monitor_margin_recovery",
     "summary": "Modine's structural growth remains attractive, but $199.53 sits within the modeled fair range and the near-term investment case depends on proving Data Centers margin recovery.",
     "next_catalyst": "August 20 annual meeting and operating update",
     "next_decision_date": "2026-08-20",
