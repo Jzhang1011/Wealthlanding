@@ -1,3 +1,7 @@
+/* wl:footer-links:start */
+const WL_FOOTER_LINKS = "<nav class=\"wl-footer-links\" aria-label=\"Site sections\"><div class=\"wl-fl-col\"><h4>Sections</h4><ul><li><a href=\"/retirement/\">Retirement</a></li><li><a href=\"/investment/\">Investing</a></li><li><a href=\"/money/\">Money &amp; Health</a></li><li><a href=\"/real-estate/\">Real Estate</a></li><li><a href=\"/travel/\">Travel &amp; Rewards</a></li><li><a href=\"/tools/\">Tools</a></li></ul></div><div class=\"wl-fl-col\"><h4>Popular tools</h4><ul><li><a href=\"/tools/health-plan-compare/\">Health plan comparison</a></li><li><a href=\"/tools/debt_payoff_calculator.html\">Debt payoff calculator</a></li><li><a href=\"/tools/compound_interest_calculator.html\">Compound interest calculator</a></li><li><a href=\"/tools/credit-card/\">Credit card rewards router</a></li><li><a href=\"/Retirement-simulator/OptimizeRoth.html\">Roth conversion optimizer</a></li><li><a href=\"/Retirement-simulator/retirement_scenario_lab.html\">Retirement scenario lab</a></li></ul></div><div class=\"wl-fl-col\"><h4>Learn by age</h4><ul><li><a href=\"/learn/early-career/\">Early career (18–25)</a></li><li><a href=\"/life_stage/25_40/playbook_hub.html\">Building (25–40)</a></li><li><a href=\"/learn/peak/\">Peak earning (40–55)</a></li><li><a href=\"/learn/pre-retirement/\">Pre-retirement (55+)</a></li></ul></div><div class=\"wl-fl-col wl-fl-about\"><h4>WealthLanding</h4><ul><li><a href=\"/about/\">About</a></li><li><a href=\"/contact/\">Contact</a></li><li><a href=\"/methodology/\">Editorial standards</a></li><li><a href=\"/privacy/\">Privacy policy</a></li><li><a href=\"/terms/\">Terms of use</a></li><li><a href=\"/blogs/\">All articles</a></li></ul></div><p class=\"wl-fl-disclaimer\">Educational content only, not personalized investment, tax, legal, or insurance advice.</p></nav>";
+/* wl:footer-links:end */
+
 class WealthLandingFooter extends HTMLElement {
   connectedCallback() {
     // Ensure dark navy footer even when a page's Tailwind CDN lacks navy.900 / safelist
@@ -10,7 +14,7 @@ class WealthLandingFooter extends HTMLElement {
           background-color: #0f172a !important;
           color: #cbd5e1;
           padding: 3rem 0;
-          border-top: 4px solid #22c55e;
+          border-top: 4px solid #fbbf24;
           display: block;
         }
         wealthlanding-footer footer.wl-site-footer .wl-footer-inner {
@@ -32,8 +36,25 @@ class WealthLandingFooter extends HTMLElement {
         }
         @media (min-width: 768px) {
           wealthlanding-footer footer.wl-site-footer .wl-footer-grid {
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 3fr);
           }
+        }
+        wealthlanding-footer footer.wl-site-footer .wl-footer-links {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+          wealthlanding-footer footer.wl-site-footer .wl-footer-links {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+          }
+        }
+        wealthlanding-footer footer.wl-site-footer .wl-fl-about,
+        wealthlanding-footer footer.wl-site-footer .wl-fl-disclaimer {
+          display: none;
+        }
+        wealthlanding-footer footer.wl-site-footer .wl-news {
+          margin-top: 1.5rem;
         }
         wealthlanding-footer footer.wl-site-footer .wl-brand-row {
           display: flex;
@@ -41,7 +62,7 @@ class WealthLandingFooter extends HTMLElement {
           margin-bottom: 1rem;
         }
         wealthlanding-footer footer.wl-site-footer .wl-brand-icon {
-          color: #22c55e;
+          color: #fbbf24;
           font-size: 1.5rem;
           margin-right: 0.5rem;
         }
@@ -75,10 +96,10 @@ class WealthLandingFooter extends HTMLElement {
           transition: color 0.15s ease;
         }
         wealthlanding-footer footer.wl-site-footer a:hover {
-          color: #4ade80;
+          color: #fbbf24;
         }
         wealthlanding-footer footer.wl-site-footer a.wl-link-accent {
-          color: #4ade80;
+          color: #fcd34d;
           font-weight: 500;
         }
         wealthlanding-footer footer.wl-site-footer .wl-kit-slot {
@@ -128,8 +149,8 @@ class WealthLandingFooter extends HTMLElement {
         }
         wealthlanding-footer footer.wl-site-footer .wl-noscript-form button {
           border-radius: 0.25rem;
-          background: #16a34a;
-          color: #fff;
+          background: #f59e0b;
+          color: #0f172a;
           font-size: 0.875rem;
           font-weight: 600;
           padding: 0.5rem;
@@ -152,8 +173,8 @@ class WealthLandingFooter extends HTMLElement {
         }
         wealthlanding-footer footer.wl-site-footer .wl-kit-submit {
           border-radius: 0.25rem;
-          background: #16a34a;
-          color: #fff;
+          background: #f59e0b;
+          color: #0f172a;
           font-size: 0.875rem;
           font-weight: 600;
           padding: 0.5rem 0.75rem;
@@ -162,7 +183,7 @@ class WealthLandingFooter extends HTMLElement {
           width: 100%;
         }
         wealthlanding-footer footer.wl-site-footer .wl-kit-submit:hover {
-          background: #15803d;
+          background: #fbbf24;
         }
         wealthlanding-footer footer.wl-site-footer .formkit-alert:empty {
           display: none;
@@ -172,39 +193,24 @@ class WealthLandingFooter extends HTMLElement {
       document.head.appendChild(style);
     }
 
+    // Plain-HTML section links are rendered into each page by tools/build_site_blocks.py
+    // so they work without JavaScript; reuse them, or fall back to the same generated list.
+    const staticLinks = this.querySelector('nav.wl-footer-links');
+    const linksHtml = staticLinks ? staticLinks.outerHTML : WL_FOOTER_LINKS;
+
     this.innerHTML = `
-      <footer class="wl-site-footer bg-navy-900 text-slate-300 py-12 border-t-4 border-brand-500">
+      <footer class="wl-site-footer bg-navy-900 text-slate-300 py-12 border-t-4">
         <div class="wl-footer-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="wl-footer-grid grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div class="wl-footer-grid">
             <div class="col-span-1">
               <div class="wl-brand-row flex items-center mb-4">
                 <img src="/favicon.svg" alt="" width="32" height="32" style="width:2rem;height:2rem;border-radius:0.5rem;margin-right:0.5rem">
                 <span class="wl-brand-name font-bold text-xl text-white tracking-tight">WealthLanding</span>
               </div>
-              <p class="wl-muted text-sm text-slate-400">Your trusted guide to financial independence, designed for the modern earner.</p>
-            </div>
-            <div>
-              <h4 class="text-white font-bold mb-4">Learn</h4>
-              <ul class="space-y-2 text-sm">
-                <li><a href="/learn/early-career/" class="wl-link-accent text-brand-400 font-medium">Early Career (18–25)</a></li>
-                <li><a href="/life_stage/25_40/playbook_hub.html" class="hover:text-brand-400 transition-colors">Building (25–40)</a></li>
-                <li><a href="/learn/peak/" class="hover:text-brand-400 transition-colors">Peak (40–55)</a></li>
-                <li><a href="/learn/pre-retirement/" class="hover:text-brand-400 transition-colors">Pre-Retirement (55+)</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="text-white font-bold mb-4">Resources</h4>
-              <ul class="space-y-2 text-sm">
-                <li><a href="/tools/" class="hover:text-brand-400 transition-colors">Tools & Calculators</a></li>
-                <li><a href="/retirement/" class="hover:text-brand-400 transition-colors">Retirement Lab</a></li>
-                <li><a href="/blogs/" class="hover:text-brand-400 transition-colors">Blog & Insights</a></li>
-                <li><a href="/methodology/" class="hover:text-brand-400 transition-colors">Methodology</a></li>
-                <li><a href="/about/" class="hover:text-brand-400 transition-colors">About</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="text-white font-bold mb-4">Join Newsletter</h4>
-              <p class="wl-muted text-sm text-slate-400 mb-3">Get practical wealth education in your inbox.</p>
+              <p class="wl-muted text-sm text-slate-400">Plain-English financial education for every stage of life, with a focus on the decade before and after retirement.</p>
+              <div class="wl-news">
+              <h4 class="text-white font-bold mb-4">Join the newsletter</h4>
+              <p class="wl-muted text-sm text-slate-400 mb-3">Practical money education in your inbox.</p>
               <div class="wl-kit-slot" data-kit-slot>
                 <form action="https://app.kit.com/forms/9874203/subscriptions" method="post" class="seva-form formkit-form wl-kit-form" data-sv-form="9874203" data-uid="2b35717445" data-format="inline" data-version="5">
                   <div data-style="clean">
@@ -220,7 +226,9 @@ class WealthLandingFooter extends HTMLElement {
                   </div>
                 </form>
               </div>
+              </div>
             </div>
+            ${linksHtml}
           </div>
           <div class="wl-bottom border-t border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
             <p>&copy; 2026 WealthLanding. All rights reserved.</p>
@@ -274,7 +282,7 @@ class WealthLandingFooter extends HTMLElement {
           .then(function (res) { return res.json().catch(function () { return {}; }); })
           .then(function (data) {
             if (data && data.ok) {
-              slot.innerHTML = '<p class="text-sm" style="color:#34d399">✓ You\'re on the list!</p>';
+              slot.innerHTML = '<p class="text-sm" style="color:#fcd34d">✓ You\'re on the list!</p>';
             } else {
               throw new Error((data && data.error) || 'subscribe_failed');
             }

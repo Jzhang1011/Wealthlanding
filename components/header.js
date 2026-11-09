@@ -26,6 +26,11 @@
         drawer.classList.add('js-open');
       });
     }
+    if (drawer) {
+      drawer.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() { drawer.classList.remove('js-open'); });
+      });
+    }
     if (closeBtn && drawer) {
       closeBtn.addEventListener('click', function() {
         drawer.classList.remove('js-open');
@@ -80,17 +85,13 @@
       })
       .then(mount)
       .catch(function() {
+        /* wl:nav-fallback:start */
+        var WL_NAV_FALLBACK = "<li class=\"wl-nav-item\"><a class=\"wl-nav-link-direct\" href=\"/retirement/\">Retirement</a></li><li class=\"wl-nav-item\"><a class=\"wl-nav-link-direct\" href=\"/investment/\">Investing</a></li><li class=\"wl-nav-item\"><a class=\"wl-nav-link-direct\" href=\"/money/\">Money &amp; Health</a></li><li class=\"wl-nav-item\"><a class=\"wl-nav-link-direct\" href=\"/real-estate/\">Real Estate</a></li><li class=\"wl-nav-item\"><a class=\"wl-nav-link-direct\" href=\"/travel/\">Travel &amp; Rewards</a></li><li class=\"wl-nav-item\"><a class=\"wl-nav-link-direct\" href=\"/tools/\">Tools</a></li><li class=\"wl-nav-item\"><a class=\"wl-nav-link-direct\" href=\"/learn/\">Learn</a></li>";
+        /* wl:nav-fallback:end */
         mount(
           '<header class="wl-header-root"><div class="wl-header-container"><div class="wl-header-inner">' +
           '<a href="/" class="wl-brand-link"><img class="wl-brand-logo" src="/favicon.svg" alt="" width="40" height="40"><span class="wl-brand-text">Wealth<span class="wl-brand-accent">Landing</span></span></a>' +
-          '<nav><ul class="wl-nav-list">' +
-          '<li class="wl-nav-item"><a class="wl-nav-link-direct" href="/learn/">Learn</a></li>' +
-          '<li class="wl-nav-item"><a class="wl-nav-link-direct" href="/tools/">Tools</a></li>' +
-          '<li class="wl-nav-item"><a class="wl-nav-link-direct" href="/travel/airlines/">Travel</a></li>' +
-          '<li class="wl-nav-item"><a class="wl-nav-link-direct" href="/travel/hotels/">Hotels</a></li>' +
-          '<li class="wl-nav-item"><a class="wl-nav-link-direct" href="/retirement/">Retirement</a></li>' +
-          '<li class="wl-nav-item"><a class="wl-nav-link-direct" href="/blogs/">Blog</a></li>' +
-          '</ul></nav></div></div></header>'
+          '<nav aria-label="Main"><ul class="wl-nav-list">' + WL_NAV_FALLBACK + '</ul></nav></div></div></header>'
         );
       });
   }
