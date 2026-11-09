@@ -6,14 +6,14 @@
       "id": "rent-vs-buy",
       "path": "life_stage/25_40/topics/rent-vs-buy.html",
       "url": "/life_stage/25_40/topics/rent-vs-buy.html",
-      "title": "Should I Rent or Buy? After-Tax Wealth, Not Just the Payment",
-      "description": "Compare renting and buying with equal cash flows and after-tax terminal wealth. Covers the primary-home sale exclusion, investment capital gains, amortization, leverage, and labeled appreciation scenarios \u2014 with no universal winner.",
+      "title": "Rent or Buy When You Relocate? After-Tax Wealth for a Move",
+      "description": "For households relocating or downsizing around retirement \u2014 and for others comparing paths \u2014 an after-tax equal-cash-flow frame covering \u00a7121, investment taxes, leverage and labeled price scenarios.",
       "updated": "November 2026",
       "hero": {
         "crumb": "Housing",
-        "badge": "GUIDE \u00b7 Housing \u00b7 Ages 45\u201365",
-        "h1": "Should I Rent or Buy?",
-        "dek": "The honest question is which path leaves you with more after-tax wealth \u2014 and the flexibility you need \u2014 over the years you actually expect to stay.",
+        "badge": "GUIDE \u00b7 Relocating & housing choice \u00b7 Ages 45\u201365",
+        "h1": "Rent or Buy When You Move?",
+        "dek": "If you already own a home, the live question is often the next place after a retirement move \u2014 not a first-time buyer slogan. Same after-tax math; different cash and liquidity stakes.",
         "pills": [
           {
             "label": "Compare",
@@ -32,13 +32,15 @@
           }
         ]
       },
-      "short_answer": "Treat rent versus buy as an after-tax wealth comparison with equal monthly cash flows. Principal is savings, not a cost. Unrecoverable owning costs (interest, taxes, insurance, maintenance, HOA) compete with rent. The rent-and-invest path usually owes capital gains tax when you sell the portfolio; a qualifying sale of your main home can exclude up to $250,000 of gain ($500,000 if married filing jointly). Home prices can rise or fall \u2014 model scenarios, do not assume a national winner.",
+      "short_answer": "When you relocate or downsize, compare renting versus buying in the new place with equal monthly cash flows and after-tax terminal wealth. Selling a qualifying main home may exclude up to $250,000 of gain ($500,000 if married filing jointly). The rent-and-invest path can owe capital gains tax (and sometimes NIIT) when you sell the portfolio. Home prices can rise or fall \u2014 model scenarios. There is no universal winner. First-time buyers can use the same frame; the hub\u2019s main path starts from a possible retirement move.",
       "sections": [
         {
           "kind": "prose",
           "title": "Who this is for",
           "paras": [
-            "This guide sits under an older /life_stage/25_40/ URL, but WealthLanding\u2019s core readers are ages 45\u201365. The same math applies to a first purchase, a move, or a keep-versus-downsize decision before retirement. Near retirement, liquidity and the home-sale exclusion often matter more than a thin \u201c5% rule\u201d headline."
+            "WealthLanding\u2019s core readers are ages 45\u201365, and many already own a home. This guide prioritizes relocating or downsizing around retirement: selling (or keeping) the current place, then choosing rent or buy in the next one.",
+            "The URL still lives under /life_stage/25_40/ for continuity. First-time buyers and later moves can use the same after-tax comparison; they are not the hub\u2019s default starting point.",
+            "If daily personal-care needs are rising beyond what any house can safely provide, that is a care-needs decision \u2014 not automatically a rent-vs-buy spreadsheet. See the daily-support housing guide."
           ]
         },
         {
@@ -194,29 +196,29 @@
       ],
       "next": [
         {
+          "href": "/real-estate/downsizing-relocating.html",
+          "kicker": "Already own",
+          "label": "Downsizing or relocating"
+        },
+        {
           "href": "/life_stage/25_40/topics/how-much-house.html",
-          "kicker": "If you might buy",
+          "kicker": "If buying",
           "label": "How much house can I afford?"
         },
         {
-          "href": "/real-estate/buying-primary-home.html",
-          "kicker": "If you are buying a primary home",
-          "label": "Buying process, disclosures and risk checks"
-        },
-        {
-          "href": "/real-estate/downsizing-relocating.html",
-          "kicker": "If you already own",
-          "label": "Downsizing or relocating at 45\u201365"
-        },
-        {
           "href": "/real-estate/renting-deliberately.html",
-          "kicker": "If renting is the plan",
+          "kicker": "If renting the next place",
           "label": "Renting deliberately"
         },
         {
-          "href": "/investment/real_estate_vs_stocks_model.html",
-          "kicker": "Model",
-          "label": "Real estate vs index funds model"
+          "href": "/real-estate/buying-primary-home.html",
+          "kicker": "Buying checklist",
+          "label": "Buying a primary home"
+        },
+        {
+          "href": "/real-estate/",
+          "kicker": "Hub",
+          "label": "Real Estate decision path"
         }
       ],
       "life_stage_marker": true
@@ -1014,6 +1016,13 @@
               "body": "Freed equity only helps if it is invested or spent on purpose inside your withdrawal plan \u2014 not absorbed by a larger lifestyle."
             }
           ]
+        },
+        {
+          "kind": "prose",
+          "title": "When the question is daily support, not square footage",
+          "paras": [
+            "Downsizing assumes you still want an independent home. If bathing, dressing, medications or safety needs are outpacing what family and the house can provide, shift to a care-needs frame: home with services, assisted living, or skilled nursing. Age alone is not the signal \u2014 daily support needs are. See the daily-support housing guide and official NIA and Medicare pages linked there."
+          ]
         }
       ],
       "checklist": [
@@ -1067,7 +1076,17 @@
         {
           "href": "/life_stage/25_40/topics/rent-vs-buy.html",
           "kicker": "Buy or rent next",
-          "label": "Rent vs buy after-tax frame"
+          "label": "Rent vs buy for this move"
+        },
+        {
+          "href": "/real-estate/housing-and-daily-support.html",
+          "kicker": "Care needs rising",
+          "label": "Housing when daily support rises"
+        },
+        {
+          "href": "/real-estate/property-potential.html",
+          "kicker": "Selling or buying",
+          "label": "See past surface property value"
         },
         {
           "href": "/plan-by-age/55-59/#where-to-live",
@@ -1078,14 +1097,372 @@
           "href": "/Retirement-simulator/overseas_retirement_hub.html",
           "kicker": "Abroad",
           "label": "Overseas retirement hub"
-        },
-        {
-          "href": "/real-estate/buying-primary-home.html",
-          "kicker": "If buying again",
-          "label": "Buying a primary home"
         }
       ],
       "life_stage_marker": true
+    },
+    {
+      "id": "property-potential",
+      "path": "real-estate/property-potential.html",
+      "url": "/real-estate/property-potential.html",
+      "title": "See Past Surface Value: Lots, Basements and Attics",
+      "description": "How to diligence \u201cpotential\u201d from multiple lots or unfinished basement and attic space \u2014 zoning vs tax parcels, buildability, egress, permits and risk-adjusted net value. Not automatic ROI.",
+      "updated": "November 2026",
+      "life_stage_marker": false,
+      "hero": {
+        "crumb": "Diligence",
+        "badge": "GUIDE \u00b7 Property potential",
+        "h1": "See Past the Surface Listing",
+        "dek": "Multiple lots or unfinished space can matter \u2014 or be an expensive illusion. Verify legal buildability and conversion rules before you pay for \u201cpotential.\u201d",
+        "pills": [
+          {
+            "label": "Lots",
+            "value": "Legal lots?",
+            "note": "not just tax lines"
+          },
+          {
+            "label": "Space",
+            "value": "Permittable?",
+            "note": "egress & codes"
+          },
+          {
+            "label": "Value",
+            "value": "Risk-adjusted",
+            "note": "not guaranteed ROI"
+          }
+        ]
+      },
+      "short_answer": "Do not treat multiple parcels on a brochure, an unfinished basement, or an attic as automatic added value. Confirm whether you have separately buildable legal lots versus tax-map lines, and whether finishing space is allowed under local building, zoning, HOA and rental rules. Price the full conversion or subdivision path \u2014 approvals, utilities, setbacks, environmental constraints, holding costs and taxes \u2014 then compare risk-adjusted net value to a simpler property. Nothing here promises a return.",
+      "sections": [
+        {
+          "kind": "callout",
+          "title": "Potential is a hypothesis until diligence closes",
+          "kicker": "Not automatic value",
+          "body": "Marketing language (\u201cextra lot,\u201d \u201cexpandable attic,\u201d \u201ctall basement\u201d) is a starting clue. Value shows up only after legal lot status, buildability, permits, costs and exit liquidity are verified for that jurisdiction. Two identical-looking floor plans can have opposite economics one town apart."
+        },
+        {
+          "kind": "list_blocks",
+          "title": "Multiple lots vs one large lot",
+          "intro": "A property that appears to sit on more than one lot can be more flexible if each lot is separately buildable and marketable. That is a local legal question \u2014 not a national rule.",
+          "blocks": [
+            {
+              "title": "Tax parcels are not the same as legal lots",
+              "body": "Assessor maps often show tax parcel lines used for billing. Subdivision plats, deeds and local planning records determine whether you have separately conveyable, buildable lots. Ask the local planning or zoning office and a real-estate attorney how this parcel is classified."
+            },
+            {
+              "title": "Merger, combination and \u201cmerged lot\u201d rules",
+              "body": "Some jurisdictions treat contiguous lots under common ownership as merged for zoning purposes, which can block a simple split-and-sell story. Others require formal subdivision even when old lot lines appear on a map. Label every example as that town\u2019s rule \u2014 never assume nationwide."
+            },
+            {
+              "title": "Buildability checklist themes",
+              "body": "Minimum lot size, width/frontage, setbacks, height, lot coverage, access/driveway standards, utility hookups, sewer versus septic feasibility, stormwater rules, easements, shared driveways, and HOA covenants can each kill a second house."
+            },
+            {
+              "title": "Environmental and hazard constraints",
+              "body": "Flood hazard areas (check FEMA maps), wetlands and waters regulated under Clean Water Act Section 404 permitting, steep slopes, and conservation easements or deed restrictions can limit fill, structures or clearing. Easements can run with the land and bind future owners."
+            },
+            {
+              "title": "Costs that eat \u201cextra lot\u201d upside",
+              "body": "Survey, entitlement/subdivision fees, engineering, utility extensions, impact fees, carrying taxes and insurance, and the time value of a multi-year approval path belong in the model. A paper second lot with no path to a certificate of occupancy is not inventory."
+            }
+          ]
+        },
+        {
+          "kind": "list_blocks",
+          "title": "Unfinished basement and attic \u201cpotential\u201d",
+          "intro": "Unfinished volume can become living area only if structure, ceiling height, egress, moisture control, fire separation, insulation, HVAC, and permits allow it under local code \u2014 and only if the economics beat buying finished space elsewhere.",
+          "blocks": [
+            {
+              "title": "Habitable area and egress",
+              "body": "Local building departments set rules for ceiling height, emergency escape and rescue openings, stairs, smoke/CO alarms and when a space counts as finished living area. Do not rely on a listing adjective; ask the building department what is required to permit the conversion."
+            },
+            {
+              "title": "Structure, moisture and fire",
+              "body": "Foundation cracks, water intrusion, inadequate headroom, obstructed joists, knob-and-tube or undersized electrical, and fire separation between units or garage spaces can dominate the budget. Price a qualified inspection before you capitalize \u201cpotential\u201d into an offer."
+            },
+            {
+              "title": "ADU or rental use is local",
+              "body": "Accessory dwelling units, basement apartments and attic units are regulated differently by city and HOA. Zoning, parking, owner-occupancy, short-term rental bans and fair housing obligations can apply. A conversion that cannot be legally rented is not a rental asset."
+            },
+            {
+              "title": "All-in conversion budget",
+              "body": "Include design, permits, structural work, waterproofing, insulation, mechanicals, finishes, contingency (often material on older houses), temporary housing if you live there, and carrying costs during construction. Compare that total to the price difference for an already-finished home."
+            }
+          ]
+        },
+        {
+          "kind": "callout",
+          "title": "Risk-adjusted net value \u2014 not guaranteed ROI",
+          "kicker": "Underwriting stance",
+          "body": "A fair comparison is: expected net proceeds or living utility after costs, time, taxes and failure modes, versus alternatives (different house, renting, or doing nothing). Reject spreadsheets that only show best-case sale prices for new houses or finished square footage. Appreciation is a scenario, not a promise \u2014 see FHFA House Price Index history for how local prices move both ways."
+        },
+        {
+          "kind": "cards",
+          "title": "Surface-to-diligence path",
+          "cards": [
+            {
+              "icon": "search",
+              "title": "1. Surface clue",
+              "body": "Listing mentions extra lot, sideline parcel, tall basement or expand attic."
+            },
+            {
+              "icon": "file",
+              "title": "2. Paper reality",
+              "body": "Deed, plat, survey, assessor record, zoning map, HOA docs, flood map, easements."
+            },
+            {
+              "icon": "building",
+              "title": "3. Permission path",
+              "body": "Planning/building staff confirm what can be built, split or finished \u2014 in writing when possible."
+            },
+            {
+              "icon": "wrench",
+              "title": "4. Physical reality",
+              "body": "Inspection for structure, water, egress dimensions, utilities and septic/sewer capacity."
+            },
+            {
+              "icon": "coins",
+              "title": "5. All-in cost",
+              "body": "Entitlements, construction, carrying costs, taxes, selling costs on any future split."
+            },
+            {
+              "icon": "scale",
+              "title": "6. Decision",
+              "body": "Pay only for verified optionality \u2014 or walk. Potential without a path is a hobby, not an asset."
+            }
+          ]
+        }
+      ],
+      "checklist_title": "Practical diligence checklist",
+      "checklist": [
+        "Obtain deed, recorded plat/survey and current assessor parcel record; note any mismatches.",
+        "Ask planning/zoning whether lots are separately buildable and whether merger or subdivision rules apply.",
+        "Map setbacks, frontage, access, utilities, sewer/septic and easements on the survey.",
+        "Check FEMA flood maps and ask about wetlands/permits if drainage or low ground is present.",
+        "Read HOA/covenant limits on subdivision, ADUs and rentals.",
+        "For basement/attic: measure height and egress; budget waterproofing, structure and permits before finishing.",
+        "Build an all-in cost sheet with contingency; compare to buying finished elsewhere.",
+        "Decide using risk-adjusted net value \u2014 not a best-case flip story."
+      ],
+      "watchouts": [
+        "<strong>Paying list-price premiums for \u201cextra lot\u201d language</strong> before legal lot and merger status are confirmed.",
+        "<strong>Confusing tax parcel lines with subdivided, buildable lots.</strong>",
+        "<strong>Ignoring easements, septic limits, flood zones or conservation restrictions.</strong>",
+        "<strong>Assuming unfinished space is cheap square footage</strong> without egress, moisture and permit costs.",
+        "<strong>Nationalizing one city\u2019s ADU or lot-split success story.</strong>",
+        "<strong>Guaranteed ROI narratives.</strong> Local prices and approval timelines vary; FHFA data show declines as well as gains."
+      ],
+      "sources": [
+        {
+          "label": "FEMA Flood Map Service Center",
+          "url": "https://msc.fema.gov/portal/home",
+          "note": "Flood hazard mapping before you assume buildable area"
+        },
+        {
+          "label": "U.S. EPA: Clean Water Act Section 404 overview",
+          "url": "https://www.epa.gov/cwa-404/permit-program-under-cwa-section-404",
+          "note": "Dredge/fill permits can affect wetlands and waters"
+        },
+        {
+          "label": "U.S. EPA: Deed restrictions / conservation easements materials",
+          "url": "https://www.epa.gov/cwa-404/deed-restrictionsconservation-easements-and-appropriate-considerations-when-perpetual",
+          "note": "Easements and deed restrictions can limit development"
+        },
+        {
+          "label": "FHFA House Price Index",
+          "url": "https://www.fhfa.gov/data/hpi",
+          "note": "Local home prices rise and fall \u2014 not a return promise"
+        },
+        {
+          "label": "FTC: Buying a house",
+          "url": "https://consumer.ftc.gov/articles/buying-house",
+          "note": "Consumer diligence themes when shopping for a home"
+        },
+        {
+          "label": "CFPB: Owning a home",
+          "url": "https://www.consumerfinance.gov/owning-a-home/",
+          "note": "Mortgage shopping and disclosure tools if financing"
+        },
+        {
+          "label": "HUD: Fair Housing Act overview",
+          "url": "https://www.hud.gov/program_offices/fair_housing_equal_opp/fair_housing_act_overview",
+          "note": "If space will be rented, federal fair housing rules may apply; local rental rules still vary"
+        },
+        {
+          "label": "IRS Publication 530, Tax Information for Homeowners",
+          "url": "https://www.irs.gov/publications/p530",
+          "note": "Tax themes for homeowners \u2014 not zoning approval"
+        }
+      ],
+      "next": [
+        {
+          "href": "/real-estate/buying-primary-home.html",
+          "kicker": "If buying",
+          "label": "Primary-home buying checklist"
+        },
+        {
+          "href": "/real-estate/investment-property.html",
+          "kicker": "If renting it out",
+          "label": "Investment property realities"
+        },
+        {
+          "href": "/real-estate/downsizing-relocating.html",
+          "kicker": "If selling",
+          "label": "Downsizing or relocating"
+        },
+        {
+          "href": "/real-estate/",
+          "kicker": "Hub",
+          "label": "Real Estate decision path"
+        }
+      ]
+    },
+    {
+      "id": "housing-and-daily-support",
+      "path": "real-estate/housing-and-daily-support.html",
+      "url": "/real-estate/housing-and-daily-support.html",
+      "title": "When Daily Support Rises: Home, Assisted Living and Skilled Nursing",
+      "description": "A concise bridge for housing when daily support needs rise: distinguish independent living, assisted living and skilled nursing; Medicare generally does not cover long-term custodial care. Framed by needs, not age.",
+      "updated": "November 2026",
+      "life_stage_marker": false,
+      "hero": {
+        "crumb": "Later-life housing bridge",
+        "badge": "GUIDE \u00b7 Care needs \u2260 age",
+        "h1": "When Daily Support Outgrows the House",
+        "dek": "Start from what help is needed each day \u2014 not from a birthday. Independent living, assisted living and skilled nursing solve different problems, and Medicare usually does not pay for long-term custodial care.",
+        "pills": [
+          {
+            "label": "Frame",
+            "value": "Needs",
+            "note": "not age alone"
+          },
+          {
+            "label": "Settings",
+            "value": "Home \u2192 AL \u2192 SNF",
+            "note": "different jobs"
+          },
+          {
+            "label": "Medicare",
+            "value": "Limited",
+            "note": "custodial care generally not covered"
+          }
+        ]
+      },
+      "short_answer": "If bathing, dressing, medications, mobility or safety needs exceed what the household and home can sustain, compare settings by the support they provide: staying home with services, assisted living, or a nursing home/skilled nursing facility. National Institute on Aging materials describe these facility types. Medicare generally does not cover long-term custodial care; it may cover limited skilled care under strict conditions. Age 70+ is not, by itself, a reason to move to a nursing home.",
+      "sections": [
+        {
+          "kind": "callout",
+          "title": "Needs first, birthday second",
+          "kicker": "How to use this bridge",
+          "body": "This is not a full 70+ hub. It sits beside the Real Estate path so a rising-care situation does not get forced into a first-time-buyer or pure downsizing script. If the issue is still mainly cost, stairs or location \u2014 use downsizing/relocating and rent-vs-buy. If the issue is daily personal care and safety, use this page and the official NIA and Medicare links."
+        },
+        {
+          "kind": "list_blocks",
+          "title": "Settings at a glance (definitions from official aging/Medicare education)",
+          "blocks": [
+            {
+              "title": "Home with services",
+              "body": "Remain at home with family help, paid aides, adult day services or home-delivered supports. Feasibility depends on safety, caregiver capacity and money \u2014 not on optimism alone."
+            },
+            {
+              "title": "Independent living / retirement communities",
+              "body": "Housing aimed at older adults with limited or no hands-on personal care. Useful when the house is the problem but daily ADLs are still manageable."
+            },
+            {
+              "title": "Assisted living",
+              "body": "Per NIA, assisted living is generally for people who need help with daily care but not as much help as a nursing home typically provides. Services and regulation vary by state; Medicare does not pay for assisted living as a long-term custodial setting."
+            },
+            {
+              "title": "Nursing home / skilled nursing facility",
+              "body": "Per NIA, nursing homes provide a wider range of health and personal care with more medical focus than most assisted living. Medicare may cover short-term skilled nursing under conditions after a qualifying hospital stay; it generally does not cover long-term custodial nursing home care."
+            }
+          ]
+        },
+        {
+          "kind": "prose",
+          "title": "Medicare and long-term custodial care",
+          "paras": [
+            "Medicare.gov states that Medicare does not pay for long-term care (custodial care / long-term services and supports) when that is the care you need. Most long-term help with activities of daily living is non-medical. People may pay out of pocket, use Medicaid if eligible under state rules, or use private long-term care insurance if they have it.",
+            "Do not plan a nursing-home stay on the assumption that Medicare will fund years of custodial care. Confirm current rules on Medicare.gov and with the facility\u2019s billing staff."
+          ]
+        },
+        {
+          "kind": "prose",
+          "title": "Money links back to housing",
+          "paras": [
+            "Selling a main home can free equity (subject to selling costs and possible capital gain after any \u00a7121 exclusion). That cash may fund care \u2014 or be spent too fast if the setting is a mismatch. Coordinate housing timing with a care assessment rather than rushing a sale under crisis conditions when you can avoid it."
+          ]
+        }
+      ],
+      "checklist": [
+        "List the daily tasks that need help now vs within 12 months (bathing, dressing, meals, meds, mobility, cognition/safety).",
+        "Ask a clinician or geriatric care manager whether home-with-services is still safe.",
+        "Compare assisted living vs nursing facility services using NIA overviews and local licensing rules.",
+        "Price the setting without assuming Medicare pays for long-term custodial care; read Medicare.gov long-term care pages.",
+        "If selling a home, run net proceeds and \u00a7121 eligibility before committing the money to care.",
+        "Prefer planned transitions over emergency placements when health allows."
+      ],
+      "watchouts": [
+        "<strong>Using age alone</strong> (\u201cturned 70\u201d) as the reason for a nursing home.",
+        "<strong>Assuming Medicare covers long-term custodial care.</strong>",
+        "<strong>Collapsing assisted living and skilled nursing into one \u201cfacility\u201d idea.</strong>",
+        "<strong>Selling the house in a crisis</strong> without a care and cash-flow plan.",
+        "<strong>Ignoring state licensing and contract fine print</strong> for residential care settings."
+      ],
+      "sources": [
+        {
+          "label": "NIA: Assisted living and nursing homes",
+          "url": "https://www.nia.nih.gov/health/assisted-living-and-nursing-homes",
+          "note": "Official distinctions among facility types"
+        },
+        {
+          "label": "NIA: Long-term care facilities (assisted living, nursing homes, other residential care)",
+          "url": "https://www.nia.nih.gov/health/assisted-living-and-nursing-homes/long-term-care-facilities-assisted-living-nursing-homes",
+          "note": "Detailed facility-type definitions (confirm page if your network blocks HEAD checks)"
+        },
+        {
+          "label": "NIA: Assisted living and nursing homes hub",
+          "url": "https://www.nia.nih.gov/health/assisted-living-and-nursing-homes",
+          "note": "Choosing and paying themes"
+        },
+        {
+          "label": "Medicare.gov: Long-term care coverage",
+          "url": "https://www.medicare.gov/coverage/long-term-care",
+          "note": "Medicare does not pay for long-term custodial care"
+        },
+        {
+          "label": "Medicare.gov: Nursing home care",
+          "url": "https://www.medicare.gov/coverage/nursing-home-care",
+          "note": "Skilled vs long-term nursing themes"
+        },
+        {
+          "label": "IRS Topic No. 701, Sale of your home",
+          "url": "https://www.irs.gov/taxtopics/tc701",
+          "note": "If home equity will fund care, confirm exclusion eligibility"
+        }
+      ],
+      "next": [
+        {
+          "href": "/real-estate/downsizing-relocating.html",
+          "kicker": "Still independent",
+          "label": "Downsizing or relocating"
+        },
+        {
+          "href": "/life_stage/25_40/topics/rent-vs-buy.html",
+          "kicker": "Next home still independent",
+          "label": "Rent vs buy for a move"
+        },
+        {
+          "href": "/plan-by-age/63-65/",
+          "kicker": "Medicare timing",
+          "label": "Ages 63\u201365 Plan by age"
+        },
+        {
+          "href": "/real-estate/",
+          "kicker": "Hub",
+          "label": "Real Estate decision path"
+        }
+      ]
     }
   ]
 }
