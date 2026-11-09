@@ -478,8 +478,8 @@
           </ul>
         </div>
         <div>
-          <div class="font-bold text-slate-800 mb-1">Point values (effective cashback already applied above)</div>
-          <p>Hilton 0.5¢ · Marriott 0.8¢ · Hyatt 1.8¢ · IHG 0.5¢ · Chase UR 2.0¢ · Amex MR 2.0¢ · Capital One 1.5¢ · Delta 1.2¢ · United 1.3¢ · American 1.4¢ · Aeroplan 1.3¢. Adjust these in "Point &amp; Mile Values Used" below — the optimizer reads your edits.</p>
+          <div class="font-bold text-slate-800 mb-1">Point values (assumptions, already applied to the rates above)</div>
+          <p><span id="pv-summary">Chase UR 2.0¢ · Amex MR 2.0¢ · Citi ThankYou 1.9¢ · Capital One 1.5¢ · Marriott 0.8¢ · Hilton 0.5¢ · Hyatt 1.8¢ · IHG 0.5¢ · United 1.3¢ · Delta 1.2¢ · American 1.4¢ · Aeroplan 1.3¢</span>. These are WealthLanding assumptions, not program-published rates. Adjust them in "Point &amp; Mile Values Used" below; every part of this tool uses the same values.</p>
         </div>
         <div>
           <div class="font-bold text-slate-800 mb-1">X Money debit (3% cashback)</div>
@@ -494,6 +494,7 @@
     </details>
   </div>
 </section>
+<script src="/tools/credit-card/point-values.js"></script>
 <script>
 /* ================= ANNUAL SPEND OPTIMIZER ================= */
 const UNLOCK_CARDS = {
@@ -581,6 +582,22 @@ const UNLOCK_CARDS = {
     lineLabels:{base:"Eligible debit purchases"}, lineNotes:{base:"wholesale clubs, utilities & insurance earn 0%"},
     thresholds:[] }
 };
+/* Point values come from /tools/credit-card/point-values.js (single source of truth).
+   Planner rates above are written in cents per $1 at each card's authored ptVal; this
+   rescales them to the current point value so every part of the tool agrees. */
+function uApplyPointValues(values){
+  const map=(window.WL_POINT_VALUES||{}).plannerCurrency||{};
+  Object.keys(UNLOCK_CARDS).forEach(id=>{
+    const c=UNLOCK_CARDS[id], key=map[c.ptCur];
+    if(!key || !values || !values[key]) return;
+    if(c._authorPt==null){ c._authorPt=c.ptVal; c._authorRates=Object.assign({},c.rates); }
+    c.ptKey=key;
+    c.ptVal=values[key].transfer;
+    const f=c.ptVal/c._authorPt;
+    Object.keys(c._authorRates).forEach(k=>{ c.rates[k]=Math.round(c._authorRates[k]*f*1e6)/1e6; });
+  });
+  Object.keys(uLineCache).forEach(k=>delete uLineCache[k]);
+}
 
 /* Household mix (the old category defaults). Used only to estimate how spend on a
    multi-category line (e.g. Venture X "Everything") splits across categories when
@@ -1222,6 +1239,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
         </button>
       </h2>
       <p class="text-slate-600 text-sm">Cards that earn transferable points/miles are ranked by fair transfer value.</p>
+      <p class="text-slate-500 text-xs mt-1" id="pv-basis">Default values are WealthLanding assumptions: rounded, conservative estimates of a typical travel or transfer redemption, not rates published by the programs. Your own value depends on how and when you redeem, so adjust them to match how you use points.</p>
     </div>
     
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3" id="value-guide"></div>
@@ -1309,17 +1327,13 @@ const CARDS = {
   delta_gold: { name:"Delta SkyMiles Gold", issuer:"American Express", fee:"$150/yr", color:"#9C7C38", ptCurrency:"delta", feeNum: 150, credits: [{name:"Delta Stays Credit", amount: 100}] }
 };
 
-const DEFAULT_POINT_VALUES = {
-  ur:       { name:"Chase Ultimate Rewards",   cashOut:1.00, transfer:2.05 },
-  mr:       { name:"Amex Membership Rewards",  cashOut:0.60, transfer:2.00 },
-  ty:       { name:"Citi ThankYou Points",     cashOut:1.00, transfer:1.90 },
-  c1:       { name:"Capital One Miles",        cashOut:1.00, transfer:1.85 },
-  marriott: { name:"Marriott Bonvoy Points",   cashOut:0.30, transfer:0.75 },
-  hilton:   { name:"Hilton Honors Points",     cashOut:0.30, transfer:0.50 },
-  hyatt:    { name:"World of Hyatt Points",    cashOut:0.50, transfer:1.70 },
-  united:   { name:"United MileagePlus Miles", cashOut:1.00, transfer:1.20 },
-  delta:    { name:"Delta SkyMiles",           cashOut:1.00, transfer:1.10 }
-};
+/* Defaults come from /tools/credit-card/point-values.js, the single source of truth. */
+const DEFAULT_POINT_VALUES = {};
+Object.entries(WL_POINT_VALUES.currencies).forEach(([key, c]) => {
+  DEFAULT_POINT_VALUES[key] = { name: c.name, cashOut: c.cashOut, transfer: c.value };
+});
+const pvFloor = pv => pv.cashOut == null ? 0 : pv.cashOut;
+const pvCashLabel = pv => pv.cashOut == null ? 'none assumed' : pv.cashOut.toFixed(2) + '¢';
 
 const VAL_KEY = 'wl_card_router_values';
 let POINT_VALUES = {};
@@ -1335,6 +1349,7 @@ try {
 } catch(e) { 
   POINT_VALUES = JSON.parse(JSON.stringify(DEFAULT_POINT_VALUES)); 
 }
+uApplyPointValues(POINT_VALUES);
 
 function savePointValues() {
   const toSave = {};
@@ -1555,14 +1570,16 @@ function bridgePlannerCardsToWallet(){
     const u = UNLOCK_CARDS[id];
     CARDS[id] = { name: u.name, issuer: u.issuer, fee: '$'+u.fee+'/yr',
       feeNum: u.fee, color: u.color, bridged: true };
+    if(u.ptKey) CARDS[id].ptCurrency = u.ptKey; /* value each point via POINT_VALUES, like native cards */
     const r = u.rates || {};
     const best = (...ks)=>Math.max(0, ...ks.map(k=>r[k]||0));
     const addEntry = (catKey, val, capNote)=>{
       if(!(val>0)) return;
       const cat = CATEGORIES.find(c=>c.key===catKey);
       if(!cat || cat.entries.some(e=>e.card===id)) return;
-      const num = Math.round(val*10)/10;
-      cat.entries.push({ card:id, rate:(Number.isInteger(num)?num:num.toFixed(1))+'\u00a2',
+      const pts = u.ptKey ? val/u.ptVal : val; /* points per $1 when the card earns points */
+      const num = Math.round(pts*10)/10;
+      cat.entries.push({ card:id, rate:(Number.isInteger(num)?num:num.toFixed(1))+(u.ptKey?'x':'\u00a2'),
         num:num, cap:capNote||'derived from planner rates' });
     };
     addEntry('dining', r.dining);
@@ -2026,7 +2043,12 @@ document.getElementById('close-scenario')?.addEventListener('click', () => {
 });
 
 /* ============================= POINT VALUE UI LOGIC ============================= */
+const PV_SHORT={ur:'Chase UR',mr:'Amex MR',ty:'Citi ThankYou',c1:'Capital One',marriott:'Marriott',hilton:'Hilton',hyatt:'Hyatt',ihg:'IHG',united:'United',delta:'Delta',aa:'American',aeroplan:'Aeroplan'};
 function renderValueGuide() {
+  const sum = document.getElementById('pv-summary');
+  if (sum) sum.textContent = Object.entries(POINT_VALUES).map(([k, pv]) => (PV_SHORT[k] || pv.name) + ' ' + pv.transfer.toFixed(1) + '\u00a2').join(' \u00b7 ');
+  const basis = document.getElementById('pv-basis');
+  if (basis) basis.textContent = WL_POINT_VALUES.basis;
   const valueGuide = document.getElementById('value-guide');
   if (!valueGuide) return;
   
@@ -2038,7 +2060,7 @@ function renderValueGuide() {
         ${isCustom ? '<span class="absolute top-3 right-3 w-2 h-2 rounded-full bg-brand-500" title="Customized Value"></span>' : ''}
         <div class="font-bold text-sm text-slate-800 mb-2">${pv.name}</div>
         <div class="flex items-center justify-between text-xs font-mono">
-          <span class="text-slate-500">Cash: ${pv.cashOut.toFixed(2)}¢</span>
+          <span class="text-slate-500">Cash: ${pvCashLabel(pv)}</span>
           <span class="text-brand-700 font-bold">Transfer: ${pv.transfer.toFixed(2)}¢</span>
         </div>
       </div>
@@ -2052,17 +2074,17 @@ const valInputs = document.getElementById('valuation-inputs');
 
 function openValuationModal() {
   if (!valInputs) return;
-  valInputs.innerHTML = '<p class="text-xs text-slate-500 mb-2">Set your expected transfer value (in cents per point). Cash-out baselines cannot be edited.</p>';
+  valInputs.innerHTML = '<p class="text-xs text-slate-500 mb-2">Set your expected transfer value (in cents per point). Cash-out baselines cannot be edited.</p><p class="text-[11px] text-slate-400 mb-3">' + WL_POINT_VALUES.basis + '</p>';
   
   Object.entries(POINT_VALUES).forEach(([key, pv]) => {
     valInputs.innerHTML += `
       <div class="flex items-center justify-between">
         <div class="flex-1">
           <div class="text-sm font-bold text-slate-800">${pv.name}</div>
-          <div class="text-[11px] text-slate-400">Cash-out floor: ${pv.cashOut.toFixed(2)}¢</div>
+          <div class="text-[11px] text-slate-400">Cash-out floor: ${pvCashLabel(pv)}</div>
         </div>
         <div class="flex items-center gap-1.5 w-24">
-          <input type="number" id="val-input-${key}" step="0.05" min="${pv.cashOut}" value="${pv.transfer.toFixed(2)}" 
+          <input type="number" id="val-input-${key}" step="0.05" min="${pvFloor(pv)}" value="${pv.transfer.toFixed(2)}" 
             class="w-full rounded-lg border border-slate-300 bg-white px-2 py-1.5 text-sm font-mono font-bold text-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500/40 text-right">
           <span class="text-slate-500 text-sm font-bold pl-0.5">¢</span>
         </div>
@@ -2079,9 +2101,11 @@ function applyValuations() {
     const input = document.getElementById(`val-input-${key}`);
     if (input) {
       const parsed = parseFloat(input.value);
-      POINT_VALUES[key].transfer = Math.max(parsed || POINT_VALUES[key].cashOut, POINT_VALUES[key].cashOut);
+      POINT_VALUES[key].transfer = Math.max(parsed || pvFloor(POINT_VALUES[key]), pvFloor(POINT_VALUES[key]));
     }
   });
+  uApplyPointValues(POINT_VALUES);
+  if (typeof uRender === 'function') uRender();
   savePointValues();
   closeValuationModal();
   renderTileDots();
@@ -2092,6 +2116,8 @@ function applyValuations() {
 
 function resetValuations() {
   POINT_VALUES = JSON.parse(JSON.stringify(DEFAULT_POINT_VALUES));
+  uApplyPointValues(POINT_VALUES);
+  if (typeof uRender === 'function') uRender();
   savePointValues();
   closeValuationModal();
   renderTileDots();
@@ -2547,11 +2573,11 @@ window.addEventListener('afterprint', () => {
       </div>
       <div class="wl-guide-card">
         <h3>Assumptions and limits</h3>
-        <ul><li>Point and mile values are assumptions. A point can be worth less as cash back and more when transferred to an airline or hotel. The tool uses default values you can change.</li><li>Earning rates, caps, credits and annual fees change often. Confirm current terms on each issuer's site before you apply or rely on a benefit.</li><li>Card benefits such as trip delay or rental car coverage have conditions, limits and exclusions set out in each card's guide to benefits.</li><li>Rewards are only worth having if you pay the balance in full. Interest on a carried balance quickly outweighs any rewards.</li><li>WealthLanding is not affiliated with any card issuer and this is not a recommendation to apply for credit.</li></ul>
+        <ul><li>Point and mile values are assumptions, in cents per point: Chase Ultimate Rewards 2.0, Amex Membership Rewards 2.0, Citi ThankYou 1.9, Capital One 1.5, Hyatt 1.8, American 1.4, United 1.3, Aeroplan 1.3, Delta 1.2, Marriott 0.8, Hilton 0.5 and IHG 0.5. They are WealthLanding's rounded, conservative estimates of a typical travel or transfer redemption, not rates published by the programs. A point can be worth less as cash back and more on a good transfer. Every part of the tool uses the same values, and you can change them.</li><li>Earning rates, caps, credits and annual fees change often. Confirm current terms on each issuer's site before you apply or rely on a benefit.</li><li>Card benefits such as trip delay or rental car coverage have conditions, limits and exclusions set out in each card's guide to benefits.</li><li>Rewards are only worth having if you pay the balance in full. Interest on a carried balance quickly outweighs any rewards.</li><li>WealthLanding is not affiliated with any card issuer and this is not a recommendation to apply for credit.</li></ul>
       </div>
       <div class="wl-guide-card wl-guide-example">
         <h3>Worked example with the default numbers</h3>
-        <p>With no cards added, the Quick Check uses a sample household spending about <strong>$1,930 a month</strong>: $500 on groceries, $300 on dining, $150 on gas, $200 on travel booked through a card portal, $400 on everything else, and smaller amounts on streaming, drugstores, online shopping, transit and entertainment. Using the best card in every category earns an estimated <strong>$149 a month</strong>, while the best single card used for everything earns about <strong>$109 a month</strong>. The roughly $40 monthly difference, close to $480 a year, is the value of matching cards to categories at these point values. Add your own cards to see where your wallet lands between those two lines.</p>
+        <p>With no cards added, the Quick Check uses a sample household spending about <strong>$1,930 a month</strong>: $500 on groceries, $300 on dining, $150 on gas, $200 on travel booked through a card portal, $400 on everything else, and smaller amounts on streaming, drugstores, online shopping, transit and entertainment. Using the best card in every category earns an estimated <strong>$144 a month</strong>, while the best single card used for everything earns about <strong>$109 a month</strong>. The roughly $35 monthly difference, about $420 a year, is the value of matching cards to categories at these point values. Add your own cards to see where your wallet lands between those two lines.</p>
       </div>
     </div>
     <nav class="wl-guide-related" aria-label="Related guides">

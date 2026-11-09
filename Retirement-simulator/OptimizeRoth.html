@@ -1583,7 +1583,8 @@
       const disp=discountRows(rows,i);
       const conv=disp.filter(r=>r.conv>0);
       const term=disp[disp.length-1];
-      return {rows,disp,i,term,lifetimeTax:disp.reduce((s,r)=>s+r.totalTax,0),first:conv[0],last:conv[conv.length-1],avg:conv.length?conv.reduce((s,r)=>s+r.conv,0)/conv.length:0,totalConversion:conv.reduce((s,r)=>s+r.conv,0)};
+      const short=disp.filter(r=>r.shortfall>0.5);
+      return {rows,disp,i,term,runsOutAge:short.length?short[0].age:null,unfunded:short.reduce((s,r)=>s+r.shortfall,0),lifetimeTax:disp.reduce((s,r)=>s+r.totalTax,0),first:conv[0],last:conv[conv.length-1],avg:conv.length?conv.reduce((s,r)=>s+r.conv,0)/conv.length:0,totalConversion:conv.reduce((s,r)=>s+r.conv,0)};
     }
     function renderPriorityContext(){
       const d=getDiscoveryPriorities();
@@ -1607,7 +1608,7 @@
         const win=r.first&&r.last?`Age ${r.first.age}–${r.last.age}`:'No planned conversions';
         return `<article class="frontier-card ${def.id===selectedFrontierStrategy?'selected':''} ${def.id===recommendedFrontierStrategy?'recommended':''}" onclick="selectFrontierStrategy('${def.id}')">
           <div class="frontier-kicker">${def.kicker}</div><h3>${def.title}</h3><p class="desc">${def.description}</p>
-          <div class="metric-pair"><div class="mini-metric"><small>Estate at 85</small><strong>${fmt.format(r.term.afterTax)}</strong></div><div class="mini-metric"><small>Lifetime tax</small><strong>${fmt.format(r.lifetimeTax)}</strong></div><div class="mini-metric"><small>Conversion</small><strong>${win}</strong></div><div class="mini-metric"><small>Avg / year</small><strong>${r.avg?fmt.format(r.avg):'$0'}</strong></div></div>
+          <div class="metric-pair"><div class="mini-metric"><small>Estate at 85</small><strong>${fmt.format(r.term.afterTax)}</strong>${r.runsOutAge?`<small class="runs-out-note" style="display:block;color:#b45309;text-transform:none;letter-spacing:0;">Savings run out at ${r.runsOutAge}; ${fmt.format(r.unfunded)} of spending unfunded</small>`:''}</div><div class="mini-metric"><small>Lifetime tax</small><strong>${fmt.format(r.lifetimeTax)}</strong></div><div class="mini-metric"><small>Conversion</small><strong>${win}</strong></div><div class="mini-metric"><small>Avg / year</small><strong>${r.avg?fmt.format(r.avg):'$0'}</strong></div></div>
           <ul class="frontier-list"><li><span class="yes">✓</span>${def.why[0]}</li><li><span class="warn">△</span>${def.whyNot[0]}</li></ul>
           <button class="select-strategy-btn">${def.id===selectedFrontierStrategy?'✓ Selected':'Choose this strategy'}</button>
         </article>`;
@@ -1632,7 +1633,7 @@
       setTextSafe('decisionWindow',r.first&&r.last?`Age ${r.first.age}–${r.last.age}`:'No conversion window');
       setTextSafe('decisionAnnualConversion',r.avg?fmt.format(r.avg):'$0');
       setTextSafe('decisionBracket',def.input.bracket+'% federal');
-      setTextSafe('decisionEstate',fmt.format(r.term.afterTax));
+      setTextSafe('decisionEstate',fmt.format(r.term.afterTax)+(r.runsOutAge?` (savings run out at ${r.runsOutAge})`:''));
       setTextSafe('decisionLifetimeTax',fmt.format(r.lifetimeTax));
       listInto('decisionWhy',def.why);listInto('decisionWhyNot',def.whyNot);listInto('decisionSwitches',def.switches);
       window.__latestFinancialDecision={...r,i:r.i,strategyId:def.id,strategyDefinition:def};
@@ -1805,13 +1806,17 @@
         if (i.childCount > 0 && age >= 52 && age < 56) collegeSpend += (i.college / 4);
         if (i.childCount > 1 && age >= 55 && age < 59) collegeSpend += (i.college / 4);
 
+        // Long-term care and mortgage are household costs, not part of a conversion
+        // strategy, so every strategy pays them. (They used to apply only under the
+        // 'custom' preset, which made two frontier strategies carry ~$1.5M of extra
+        // costs the other two skipped, and drained them to "Estate at 85 $0".)
         let ltcSpend = 0;
-        if ((i.strategyPreset === 'custom' || opt.enableLtc) && age >= i.ltcS && age <= i.ltcE) {
+        if (age >= i.ltcS && age <= i.ltcE) {
           ltcSpend = i.ltcCost * Math.pow(1 + i.medicalInflationPct, y);
         }
 
         let mortgageSpend = 0;
-        if (i.strategyPreset === 'custom' && age <= i.mortgageEnd) {
+        if (age <= i.mortgageEnd) {
           mortgageSpend = i.mortgageAnnual;
         }
 
@@ -1847,6 +1852,7 @@
         let inflows=taxW2+i1099+cashInt+ss+rmd;
         let uses=spend+tx.total;
         let net=inflows-uses;
+        let shortfall=0;
 
         if(net>=0) {
           cashG+=net;
@@ -1878,6 +1884,8 @@
             rothG -= rUsed;
             rem -= rUsed;
           }
+          // Spending no account could cover this year.
+          shortfall = Math.max(0, rem);
 
           tx=rowTax(base,conv,rmd,gain,iRow,stOn);
         }
@@ -1887,7 +1895,7 @@
           age,taxW2,i1099,ss,conv,rothContrib,rothAdd:conv+rothContrib,rmd,
           livingSpend,collegeSpend,ltcSpend,totalMedical,mortgageSpend,
           fed:tx.federal,ordinaryTax:tx.ordinaryTax,ltcgTax:tx.ltcgTax,niit:tx.niit,
-          state:tx.state,totalTax:tx.total,spend,pretax,roth,broker,cash,liquid:broker+cash,
+          state:tx.state,totalTax:tx.total,spend,shortfall,pretax,roth,broker,cash,liquid:broker+cash,
           afterTax:broker+cash+roth+pretax*0.76,totalWealth:pretax+roth+broker+cash
         });
       }
@@ -1909,6 +1917,7 @@
           rothContrib: d(r.rothContrib),
           rothAdd: d(r.rothAdd),
           rmd: d(r.rmd),
+          shortfall: d(r.shortfall || 0),
           livingSpend: d(r.livingSpend),
           collegeSpend: d(r.collegeSpend),
           ltcSpend: d(r.ltcSpend),
@@ -2434,9 +2443,7 @@
         { label: 'State Income Tax', data: dispRows.map(r => r.state), backgroundColor: '#02b17d' }
       ];
 
-      if (i.strategyPreset === 'custom') {
-        expenseDatasets.splice(2, 0, { label: 'Mortgage', data: dispRows.map(r => r.mortgageSpend), backgroundColor: '#64748b' });
-      }
+      expenseDatasets.splice(2, 0, { label: 'Mortgage', data: dispRows.map(r => r.mortgageSpend), backgroundColor: '#64748b' });
 
       expenseChart = new Chart(document.getElementById('expenseChart'), {
         type: 'bar',
@@ -2544,15 +2551,15 @@ window.addEventListener('DOMContentLoaded',function(){
       </div>
       <div class="wl-guide-card">
         <h3>How to read the results</h3>
-        <p>Each strategy card shows the conversion ages, the average conversion per year, the projected lifetime tax, and the projected estate at 85. A strategy with the lowest lifetime tax usually converts less and leaves more in pretax accounts subject to required minimum distributions. A legacy-focused strategy usually pays more tax earlier so heirs inherit more Roth money, which is generally income-tax-free to them. No strategy wins on every measure; the right one depends on what you value.</p>
+        <p>Each strategy card shows the conversion ages, the average conversion per year, the projected lifetime tax, and the projected estate at 85. A strategy with the lowest lifetime tax usually converts less and leaves more in pretax accounts subject to required minimum distributions. A legacy-focused strategy usually pays more tax earlier so heirs inherit more Roth money, which is generally income-tax-free to them. If the household would run out of savings before 85, the card says so and shows how much spending went unfunded, instead of only showing a $0 estate. No strategy wins on every measure; the right one depends on what you value.</p>
       </div>
       <div class="wl-guide-card">
         <h3>Assumptions and limits</h3>
-        <ul><li>Tax brackets, IRMAA thresholds and ACA rules are simplified and change over time. Check current figures with the IRS, Medicare.gov and HealthCare.gov.</li><li>Returns and inflation are smooth assumptions; the market simulation shows how uneven returns could change the picture.</li><li>Conversions are permanent for that tax year: since 2018 a Roth conversion can no longer be undone (recharacterized).</li><li>State taxes are modeled as a single flat rate.</li><li>This is an educational model. Large conversions are worth reviewing with a tax professional.</li></ul>
+        <ul><li>Tax brackets, IRMAA thresholds and ACA rules are simplified and change over time. Check current figures with the IRS, Medicare.gov and HealthCare.gov.</li><li>Returns and inflation are smooth assumptions; the market simulation shows how uneven returns could change the picture.</li><li>Conversions are permanent for that tax year: since 2018 a Roth conversion can no longer be undone (recharacterized).</li><li>State taxes are modeled as a single flat rate.</li><li>Household costs such as long-term care, a mortgage and college are applied the same way to every strategy, so the cards differ only in how and where conversions happen.</li><li>This is an educational model. Large conversions are worth reviewing with a tax professional.</li></ul>
       </div>
       <div class="wl-guide-card wl-guide-example">
         <h3>Worked example with the default numbers</h3>
-        <p>With the sample household and no saved priorities, the lab recommends the <strong>Balanced Strategy</strong> by default: converting from about age 60 to 66, roughly $200,000 a year, filling up to the 24% federal bracket, with projected lifetime tax of about $580,531. For comparison, the <strong>lowest-lifetime-tax</strong> strategy projects about $537,696 by spreading smaller conversions over ages 60 to 65, while the <strong>maximum-legacy</strong> strategy converts about $512,000 a year from 60 to 63 and projects about $644,509 of lifetime tax in exchange for a larger Roth balance for heirs. These figures come from the sample inputs and will change as soon as you enter your own.</p>
+        <p>With the sample household and no saved priorities, the lab recommends the <strong>Balanced Strategy</strong> by default: converting from about age 60 to 66, roughly $200,000 a year, filling up to the 24% federal bracket, with projected lifetime tax of about $580,531. For comparison, the <strong>lowest-lifetime-tax</strong> strategy projects about $537,696 by spreading smaller conversions over ages 60 to 65, while the <strong>maximum-legacy</strong> strategy, which assumes retiring abroad, converts about $450,000 a year from 60 to 63 and projects about $572,275 of lifetime tax. The sample includes $60,000 a year of long-term care from age 80 to 85 (in today's dollars, growing with medical inflation) and a $24,000 yearly mortgage to age 65. With those costs, the sample household's savings run out at 85 under the three U.S.-based strategies, and the cards flag it. These figures come from the sample inputs and will change as soon as you enter your own.</p>
       </div>
     </div>
     <nav class="wl-guide-related" aria-label="Related guides">
