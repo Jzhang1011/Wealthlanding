@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The 20s Money Playbook | WealthLanding</title>
   <meta property="og:site_name" content="WealthLanding">
@@ -174,12 +177,10 @@
 
         <!-- CREDIBILITY BLOCK -->
         <div class="max-w-3xl mx-auto px-4 py-16 text-center">
-            <div class="w-16 h-16 mx-auto bg-gray-200 rounded-full mb-4 overflow-hidden">
-                <img src="https://placehold.co/100x100/1e293b/ffffff?text=WL" alt="WealthLanding Experts" class="w-full h-full object-cover">
-            </div>
-            <h4 class="font-bold text-navy-900">Developed by WealthLanding Certified Financial Planners®</h4>
-            <p class="text-gray-500 mt-2 text-sm">Our methodology is based on analyzing thousands of early-career financial plans. We prioritize mathematical optimization combined with behavioral psychology.</p>
-            <p class="text-xs text-gray-400 mt-4 font-mono">Last Updated: <span id="last-updated-date"></span> • Fact Checked ✓</p>
+            <img src="/favicon.svg" alt="WealthLanding" width="64" height="64" class="w-16 h-16 mx-auto mb-4 rounded-2xl">
+            <h4 class="font-bold text-navy-900">How this playbook was put together</h4>
+            <p class="text-gray-500 mt-2 text-sm">WealthLanding is an independent education site, not a financial planning firm. The five steps follow widely taught personal-finance sequencing: build a cash buffer, clear high-interest debt, automate saving, invest for the long term, then protect your income. Contribution limits and tax rules are checked against IRS and other official sources. Read <a href="/methodology/" class="underline font-semibold text-navy-900">our methodology</a> for how we research and update pages.</p>
+            <p class="text-xs text-gray-400 mt-4">Educational content only, not personalized financial, tax or legal advice.</p>
         </div>
     </main>
 <!-- MODULAR FOOTER -->
@@ -188,7 +189,7 @@
 
     
     <script>
-        document.getElementById('last-updated-date').innerText = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+        // (auto-updating 'last updated' date removed: it showed today's date regardless of real edits)
         
         function handleQuiz(answer) {
             const options = document.querySelectorAll('#quiz-step-1 .quiz-option');

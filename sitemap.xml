@@ -24,6 +24,7 @@
   <url><loc>https://www.wealthlanding.com/blogs/</loc></url>
   <url><loc>https://www.wealthlanding.com/about/</loc></url>
   <url><loc>https://www.wealthlanding.com/methodology/</loc></url>
+  <url><loc>https://www.wealthlanding.com/contact/</loc></url>
   <url><loc>https://www.wealthlanding.com/privacy/</loc></url>
   <url><loc>https://www.wealthlanding.com/terms/</loc></url>
   <url><loc>https://www.wealthlanding.com/revenue-forecasting/</loc></url>
@@ -51,16 +52,11 @@
 
   <!-- Retirement lab (public hub tools) -->
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/Retirement_Gateway.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/building-your-retirement.html</loc></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/OptimizeRoth.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/UScitymatcher.html</loc></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/RetiringOverseas.html</loc></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/overseas_retirement_hub.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/healthcare_us_strategy.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/healthcare_international_comparison.html</loc></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/odyssey-exploration.html</loc></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/retirement_profiles.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/retirement_feasibility_engine.html</loc></url>
 
   <!-- Overseas city guides (canonical deep dives in cities/; London/LA/Vancouver still in guides/) -->
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/auckland.html</loc><lastmod>2026-09-25</lastmod></url>
@@ -70,8 +66,6 @@
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/hong_kong.html</loc><lastmod>2026-09-25</lastmod></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/kuala_lumpur.html</loc><lastmod>2026-09-25</lastmod></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/lisbon.html</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/london.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/los_angeles.html</loc></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/merida.html</loc><lastmod>2026-09-25</lastmod></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/rome.html</loc><lastmod>2026-09-25</lastmod></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/seoul.html</loc><lastmod>2026-09-25</lastmod></url>
@@ -79,7 +73,6 @@
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/singapore.html</loc><lastmod>2026-09-25</lastmod></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/sydney.html</loc><lastmod>2026-09-25</lastmod></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/tokyo.html</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/guides/vancouver.html</loc></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/cities/zurich.html</loc><lastmod>2026-09-25</lastmod></url>
 
   <!-- Insights / blogs -->
@@ -119,12 +112,6 @@
   <url><loc>https://www.wealthlanding.com/retirement-confidence/tax-box-allocation/</loc><lastmod>2026-10-15</lastmod></url>
   <url><loc>https://www.wealthlanding.com/retirement-confidence/withdrawal-sequence/</loc><lastmod>2026-10-15</lastmod></url>
   <!-- Additional canonical pages -->
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/Retirement_Forecast.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/Retirement_Onboarding.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/Topic/Assets_lifestyle/Happy_retirement.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/estate-planner.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/healthcare_transition_strategy.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/Retirement-simulator/retirement_preference_discovery.html</loc></url>
   <url><loc>https://www.wealthlanding.com/Retirement-simulator/retirement_scenario_lab.html</loc></url>
   <url><loc>https://www.wealthlanding.com/blogs/12_18/Judgement_Marco.html</loc></url>
   <url><loc>https://www.wealthlanding.com/blogs/Happy_retirement/medicare.html</loc></url>
@@ -134,12 +121,6 @@
   <url><loc>https://www.wealthlanding.com/blogs/spending_smart/airbnb_cc_choice.html</loc></url>
   <url><loc>https://www.wealthlanding.com/blogs/spending_smart/flight_saver.html</loc></url>
   <url><loc>https://www.wealthlanding.com/investment/dividend-screener.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/life_stage/18_25/action_sheet_1_50_30_20.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/life_stage/18_25/action_sheet_2_debt_destroyer.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/life_stage/18_25/action_sheet_3_autopilot_savings.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/life_stage/18_25/action_sheet_4_first_investment.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/life_stage/18_25/action_sheet_5_income_armor.html</loc></url>
-  <url><loc>https://www.wealthlanding.com/life_stage/18_25/master_playbook_kit.html</loc></url>
   <url><loc>https://www.wealthlanding.com/life_stage/25_40/step_1.html</loc></url>
   <url><loc>https://www.wealthlanding.com/life_stage/25_40/step_2.html</loc></url>
   <url><loc>https://www.wealthlanding.com/life_stage/25_40/step_3.html</loc></url>

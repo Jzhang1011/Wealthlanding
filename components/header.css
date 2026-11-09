@@ -299,3 +299,14 @@
   justify-content: space-between !important;
   overflow-y: auto !important;
 }
+
+/* Brand mark (navy/amber SVG logo) */
+.wl-brand-logo {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  border-radius: 0.75rem !important;
+  flex-shrink: 0;
+  display: block;
+}
+
+.wl-brand-logo { box-shadow: 0 0 0 1px rgba(251, 191, 36, 0.35) !important; }

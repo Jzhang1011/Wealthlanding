@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compound Interest Calculator | WealthLanding</title>
   <meta name="description" content="Free compound interest calculator: see how an initial investment and monthly contributions could grow over the years at your estimated annual return.">
@@ -93,7 +96,7 @@
                         <div>
                             <label class="block text-sm font-semibold text-navy-900">Estimated Annual Return (%)</label>
                             <input type="number" id="ci-rate" class="calc-input font-mono text-lg" value="7" min="0" max="20" step="0.1">
-                            <p class="text-xs text-gray-500 mt-2">Historically, the S&P 500 averages a 7-10% return per year after inflation.</p>
+                            <p class="text-xs text-gray-500 mt-2">The 7% default is an illustrative assumption, not a forecast. Real returns vary widely from year to year and can be negative.</p>
                         </div>
                         <button onclick="calculateCompoundInterest()" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-bold py-4 rounded-xl shadow-md transition-all text-lg transform hover:-translate-y-0.5 mt-4">
                             Calculate Growth
@@ -136,7 +139,49 @@
         </div>
     </main>
 
-    <wealthlanding-footer></wealthlanding-footer>
+    <!-- wl:tool-guide:start -->
+<link rel="stylesheet" href="/components/tool-guides/tool-guides.css">
+<section class="wl-guide" aria-labelledby="wl-guide-title">
+  <div class="wl-guide-inner">
+    <span class="wl-guide-kicker">Guide</span>
+    <h2 id="wl-guide-title">Understanding compound growth</h2>
+    <p class="wl-guide-intro">Compound growth is the reason starting early, or simply staying invested, matters so much. This guide explains what the calculator does, how to use it, and how to read what it shows.</p>
+    <div class="wl-guide-grid">
+      <div class="wl-guide-card">
+        <h3>What this calculator does</h3>
+        <p>It projects how a starting balance plus a fixed monthly contribution could grow if every dollar earns the same annual rate of return, compounded monthly. It splits the final balance into the money you put in (principal) and the growth earned on that money (interest or investment return).</p>
+      </div>
+      <div class="wl-guide-card">
+        <h3>How to use it</h3>
+        <ol><li>Enter what you have invested today in <strong>Initial Investment</strong>.</li><li>Enter what you plan to add each month in <strong>Monthly Contribution</strong>.</li><li>Set <strong>Years to Grow</strong> to the time until you expect to start spending the money.</li><li>Choose an <strong>Estimated Annual Return</strong>. Try a cautious, a middle, and a hopeful rate rather than a single number.</li><li>Press <strong>Calculate Growth</strong>.</li></ol>
+      </div>
+      <div class="wl-guide-card">
+        <h3>How to read the results</h3>
+        <p><strong>Future Balance</strong> is the projected total at the end of the period. <strong>Total Principal</strong> is everything you contributed. <strong>Total Interest</strong> is the difference, the part produced by compounding. The bar under the totals shows the same split as percentages. When the growth slice is larger than the principal slice, time has done more of the work than your deposits.</p>
+      </div>
+      <div class="wl-guide-card">
+        <h3>Assumptions and limits</h3>
+        <ul><li>The return is constant every month. Real markets move up and down, and the order of good and bad years matters, especially near retirement.</li><li>Results are in future dollars. Inflation is not subtracted, so a dollar at the end buys less than a dollar today. To think in today's dollars, enter a return that is already reduced by your inflation assumption.</li><li>Taxes, fund fees and account rules are not modeled.</li><li>The default 7% is an illustrative assumption, not a forecast or a promise.</li></ul>
+      </div>
+      <div class="wl-guide-card wl-guide-example">
+        <h3>Worked example with the default numbers</h3>
+        <p>The calculator opens with $1,000 invested, $500 added every month, 30 years, and a 7% annual return. You would contribute $181,000 in total ($1,000 plus $500 × 12 months × 30 years). The projected balance is about <strong>$618,102</strong>, so roughly <strong>$437,102</strong>, about 71% of the total, comes from growth rather than deposits.</p><p>Change only the years from 30 to 20 and the projected balance falls to about $264,500, less than half, even though you would still contribute two thirds as much ($121,000). That gap is the cost of a shorter runway.</p>
+      </div>
+    </div>
+    <nav class="wl-guide-related" aria-label="Related guides">
+      <h3>Related guides and tools</h3>
+      <ul>
+        <li><a href="/retirement-confidence/longevity-marathon/">Will your money last 30 years?<span>Longevity, inflation and withdrawal rates</span></a></li>
+        <li><a href="/retirement-confidence/savings-target-two-buckets/">How much should you have saved by 50?<span>Benchmarks and the two-bucket view</span></a></li>
+        <li><a href="/tools/debt_payoff_calculator.html">Debt payoff calculator<span>Snowball vs. avalanche</span></a></li>
+        <li><a href="/tools/">All tools and calculators</a></li>
+      </ul>
+    </nav>
+    <p class="wl-guide-disclaimer">Educational content only, not personalized investment, tax, legal, or insurance advice. Results depend on the inputs and simplified assumptions described above.</p>
+  </div>
+</section>
+<!-- wl:tool-guide:end -->
+<wealthlanding-footer></wealthlanding-footer>
     
    <!-- ConvertKit Script -->
     <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
