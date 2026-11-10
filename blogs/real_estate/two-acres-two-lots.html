@@ -45,7 +45,8 @@
     .tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px 0 0;max-width:100%;width:100%}
     .wlfig,.story,.layout{min-width:0;max-width:100%}
     @media(max-width:960px){.layout{grid-template-columns:minmax(0,1fr)}}
-    table.ex{width:100%;border-collapse:collapse;font-size:14.5px;min-width:620px}
+    table.ex{width:100%;border-collapse:collapse;font-size:14.5px}
+    @media(min-width:621px){table.ex{min-width:620px}}
     table.ex th, table.ex td{text-align:left;vertical-align:top;padding:12px 14px;border-top:1px solid #dfe7ef;color:#3d5067;line-height:1.5}
     table.ex thead th{border-top:0;background:#f3f7fa;font:800 12px "Manrope";letter-spacing:.06em;text-transform:uppercase;color:#4b5d72}
     table.ex td.num, table.ex th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -58,10 +59,19 @@
     .story ul{padding-left:22px;margin:0 0 26px;color:#3d5067;line-height:1.75}
     .story a{color:#0b6b52;font-weight:700;text-decoration:underline}
     .heroimage.hero-svg{position:relative;min-height:0;background:#f8fafc;padding:18px 18px 8px}
-    .heroimage.hero-svg svg{position:static;width:100%;height:auto;display:block}
+    .heroimage.hero-svg svg{position:static;width:100%;height:auto}
+    .heroimage.hero-svg svg.parcel-wide{display:block}
+    .heroimage.hero-svg svg.parcel-stacked{display:none}
     .heroimage.hero-svg:after{display:none}
+    /* Float cards belong on photos, not on a diagram that has to stay fully visible. */
+    .herofigure:has(.hero-svg) .floatcard{position:static;width:auto;max-width:100%;margin:14px 0 0;left:auto;top:auto}
     @media(max-width:620px){
-      .heroimage.hero-svg{padding-top:148px}
+      .heroimage.hero-svg svg.parcel-wide{display:none}
+      .heroimage.hero-svg svg.parcel-stacked{display:block}
+      .wlfig{padding:18px 16px 16px}
+      table.ex{font-size:13px;min-width:0}
+      table.ex th, table.ex td{padding:10px 8px}
+      table.ex td.num, table.ex th.num{white-space:normal}
     }
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
@@ -99,7 +109,7 @@
     </div>
     <div class="herofigure">
       <div class="heroimage hero-svg">
-        <svg viewBox="0 0 720 280" role="img" aria-labelledby="parcel-title parcel-desc">
+        <svg class="parcel-wide" viewBox="0 0 720 280" role="img" aria-labelledby="parcel-title parcel-desc">
       <title id="parcel-title">Conceptual comparison of two similar-acreage listings</title>
       <desc id="parcel-desc">Left: two legal lots with a solid property line. Right: one legal lot with a dashed tax-parcel line. Conceptual illustration, not a survey or zoning plan.</desc>
       <rect x="0" y="0" width="720" height="280" fill="#f8fafc"/>
@@ -124,6 +134,30 @@
       <text x="610" y="108" text-anchor="middle" font-family="Manrope,DM Sans,sans-serif" font-size="11" fill="#475569">Not a legal lot</text>
       <text x="540" y="240" text-anchor="middle" font-family="Manrope,DM Sans,sans-serif" font-size="11" fill="#475569">Dashed line: tax-billing line only</text>
     </svg>
+    <svg class="parcel-stacked" viewBox="0 0 360 580" role="img" aria-labelledby="parcel-title-m parcel-desc-m">
+      <title id="parcel-title-m">Conceptual comparison of two similar-acreage listings</title>
+      <desc id="parcel-desc-m">Top: two legal lots with a solid property line. Bottom: one legal lot with a dashed tax-parcel line. Conceptual illustration, not a survey or zoning plan.</desc>
+      <rect x="0" y="0" width="360" height="580" fill="#f8fafc"/>
+      <text x="180" y="28" text-anchor="middle" font-family="Manrope,DM Sans,sans-serif" font-size="14" font-weight="800" fill="#166534">WILLOW LANE — two legal lots</text>
+      <rect x="20" y="48" width="150" height="190" rx="10" fill="#fff" stroke="#16a34a" stroke-width="2.5"/>
+      <text x="95" y="96" text-anchor="middle" font-family="Manrope,DM Sans,sans-serif" font-size="13" font-weight="700" fill="#0f172a">Lot A</text>
+      <text x="95" y="116" text-anchor="middle" font-family="Manrope,DM Sans,sans-serif" font-size="12" fill="#475569">House</text>
+      <rect x="55" y="136" width="80" height="52" rx="4" fill="#dcfce7" stroke="#166534"/>
+      <rect x="190" y="48" width="150" height="190" rx="10" fill="#fff" stroke="#16a34a" stroke-width="2.5"/>
+      <text x="265" y="96" text-anchor="middle" font-family="Manrope,DM Sans,sans-serif" font-size="13" font-weight="700" fill="#0f172a">Lot B</text>
+      <text x="265" y="116" text-anchor="middle" font-family="Manrope,DM Sans,sans-serif" font-size="12" fill="#475569">Vacant, conveyable</text>
+      <text x="180" y="262" text-anchor="middle" font-family="Manrope,DM Sans,sans-serif" font-size="12" fill="#166534">Solid line: recorded lot line</text>
+      <text x="180" y="318" text-anchor="middle" font-family="Manrope,DM Sans,sans-serif" font-size="14" font-weight="800" fill="#334155">RIDGE ROAD — two tax parcels</text>
+      <rect x="40" y="338" width="280" height="190" rx="10" fill="#fff" stroke="#0f172a" stroke-width="2.5"/>
+      <line x1="180" y1="350" x2="180" y2="516" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 6"/>
+      <text x="110" y="386" text-anchor="middle" font-family="Manrope,DM Sans,sans-serif" font-size="13" font-weight="700" fill="#0f172a">Tax ID 1</text>
+      <text x="110" y="406" text-anchor="middle" font-family="Manrope,DM Sans,sans-serif" font-size="12" fill="#475569">House</text>
+      <rect x="70" y="426" width="80" height="52" rx="4" fill="#e2e8f0" stroke="#0f172a"/>
+      <text x="250" y="386" text-anchor="middle" font-family="Manrope,DM Sans,sans-serif" font-size="13" font-weight="700" fill="#0f172a">Tax ID 2</text>
+      <text x="250" y="406" text-anchor="middle" font-family="Manrope,DM Sans,sans-serif" font-size="12" fill="#475569">Not a legal lot</text>
+      <text x="180" y="556" text-anchor="middle" font-family="Manrope,DM Sans,sans-serif" font-size="12" fill="#475569">Dashed line: tax-billing line only</text>
+    </svg>
+
       </div>
       <div style="font-size:10px;color:#718196;margin-top:8px;text-align:right">Conceptual illustration — not a survey or zoning plan</div>
       <div class="floatcard"><small>Fictional example</small><strong>Two listings</strong><span>Similar acreage. Only one was two legal lots.</span></div>
