@@ -1,0 +1,105 @@
+/* Search results page. Nav-dropdown styles live in components/header.css. */
+.wl-sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.wl-search-page .wl-hub-hero .wl-hub-inner { max-width: 40rem; }
+.wl-search-page-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  align-items: stretch;
+}
+.wl-search-page-input {
+  flex: 1;
+  min-width: 0;
+  height: 3rem;
+  padding: 0 1rem;
+  border: 1px solid #334155;
+  border-radius: 0.75rem;
+  background: #0b1220;
+  color: #f8fafc;
+  font: 500 1rem/1.2 Inter, system-ui, sans-serif;
+}
+.wl-search-page-input::placeholder { color: #94a3b8; }
+.wl-search-page-input:focus {
+  outline: 2px solid #4ade80;
+  outline-offset: 1px;
+  border-color: #16a34a;
+}
+.wl-search-page-submit {
+  flex: 0 0 auto;
+  padding: 0 1.15rem;
+  border: 0;
+  border-radius: 0.75rem;
+  background: #16a34a;
+  color: #fff;
+  font: 700 0.9rem/1 Inter, system-ui, sans-serif;
+  cursor: pointer;
+}
+.wl-search-page-submit:hover { background: #15803d; }
+.wl-search-page-body { padding: 1.5rem 0 3rem; }
+.wl-search-page-status {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: #475569;
+}
+.wl-search-page-results {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.wl-search-page-hit {
+  display: block;
+  padding: 0.95rem 1.05rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.9rem;
+  background: #fff;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+.wl-search-page-hit:hover { border-color: #86efac; }
+.wl-search-page-hit .wl-search-section {
+  display: inline-block;
+  margin-bottom: 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #15803d;
+}
+.wl-search-page-hit strong {
+  display: block;
+  color: #0f172a;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+.wl-search-page-hit span:last-child {
+  display: block;
+  margin-top: 0.25rem;
+  color: #475569;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+.wl-search-page-hit mark,
+.wl-search-hit mark {
+  background: #dcfce7;
+  color: inherit;
+  padding: 0 0.1em;
+  border-radius: 0.15rem;
+}
+.wl-search-page-empty {
+  margin: 0;
+  color: #475569;
+  font-size: 0.95rem;
+}
+.wl-search-page-empty a { color: #15803d; font-weight: 700; }
