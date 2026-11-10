@@ -13,6 +13,7 @@ From components/site-map/site-map.json (see tools/site_structure.py):
   wl:start-here     goal grid on the homepage and section routes on hub pages
   components/header-nav.html, the header.js fallback, and the Money, Real estate
   and Travel hub pages are generated in full.
+  search/search-index.json and search/index.html  site search index and results page
 
 From components/life-stages/stages.json (see tools/life_stages.py):
   /plan-by-age/ and its five stage pages (45-49 ... 63-65) are generated in full

@@ -1,0 +1,2231 @@
+{
+  "pages": [
+    {
+      "title": "Retirement Planning from 45 to 65",
+      "url": "/",
+      "desc": "Money decisions from 45 to 65: retirement savings, investing, health costs, Social Security and Medicare, explained stage by stage with free tools.",
+      "section": "Home",
+      "keywords": [
+        "Master Your Money from 45 to 65",
+        "The money decisions from 45 to 65, in the order they arrive",
+        "What do you want to work on?",
+        "Home"
+      ]
+    },
+    {
+      "title": "Retirement Financial Strategy",
+      "url": "/Retirement-simulator/OptimizeRoth.html",
+      "desc": "Turn your retirement profile, location, and healthcare decisions into one coordinated tax and withdrawal strategy, with adjustable return and tax assumptions.",
+      "section": "Retirement",
+      "keywords": [
+        "⚙️ All Model Assumptions & Macro Controls",
+        "Choose the strategy that fits what you value",
+        "Social Security Claiming Advisor (Cumulative SS Income Starting at Age 62)",
+        "Annual Outflow & Expense Breakdown (Spending, Tuition, Healthcare & Taxes)",
+        "Wealth Composition by Age",
+        "Annual Roth Additions by Age (Contributions vs. Conversions)",
+        "Sensitivity Table",
+        "Plan Resilience (Market Simulation)",
+        "Retirement",
+        "Planning tools",
+        "simulator",
+        "optimizeroth"
+      ]
+    },
+    {
+      "title": "Design Your Retirement",
+      "url": "/Retirement-simulator/Retirement_Gateway.html",
+      "desc": "Discover a more intentional way to design retirement with WealthLanding.",
+      "section": "Retirement",
+      "keywords": [
+        "Retirement is not one finish line.",
+        "A 30-year life needs more than one plan.",
+        "Every decision changes the next one.",
+        "Meet Bill and Tom.",
+        "Bill",
+        "Tell us enough to understand your starting point.",
+        "About the Retirement Blueprint",
+        "What the Blueprint does",
+        "Retirement",
+        "Planning tools",
+        "simulator",
+        "gateway"
+      ]
+    },
+    {
+      "title": "International Location Planning",
+      "url": "/Retirement-simulator/RetiringOverseas.html",
+      "desc": "Select your overseas retirement anchor base as part of your integrated WealthLanding Retirement Blueprint.",
+      "section": "Retirement",
+      "keywords": [
+        "Using Your Retirement Blueprint",
+        "International Location Strategy",
+        "Compare the Trade-Offs",
+        "Ready to Complete International Section",
+        "Keep going: Retirement",
+        "Retirement",
+        "Retiring overseas",
+        "simulator",
+        "retiringoverseas"
+      ]
+    },
+    {
+      "title": "Auckland Retirement Guide",
+      "url": "/Retirement-simulator/cities/auckland.html",
+      "desc": "A practical Auckland, New Zealand retirement guide for Americans and global retirees: cost of living, healthcare, visas, taxes, neighborhoods, safety, and…",
+      "section": "Retirement",
+      "keywords": [
+        "Retire in Auckland",
+        "Auckland Retirement Snapshot",
+        "Auckland retirement dashboard",
+        "Comfortable monthly budget mix",
+        "Retirement fit score",
+        "Navigation for your city network",
+        "Is Auckland a good retirement base?",
+        "What does it cost to retire comfortably in Auckland?",
+        "Retirement",
+        "Retiring overseas",
+        "simulator",
+        "cities"
+      ]
+    },
+    {
+      "title": "Bangkok Retirement Guide",
+      "url": "/Retirement-simulator/cities/bangkok.html",
+      "desc": "A practical Bangkok, Thailand retirement guide for Americans and global retirees: cost of living, healthcare, visas, taxes, neighborhoods, safety, and…",
+      "section": "Retirement",
+      "keywords": [
+        "Retire in Bangkok",
+        "Bangkok Retirement Snapshot",
+        "Bangkok retirement dashboard",
+        "Comfortable monthly budget mix",
+        "Retirement fit score",
+        "Best Bangkok retiree profile",
+        "Is Bangkok a good retirement base?",
+        "What does it cost to retire comfortably in Bangkok?",
+        "Retirement",
+        "Retiring overseas",
+        "simulator",
+        "cities"
+      ]
+    },
+    {
+      "title": "Barcelona Retirement Guide",
+      "url": "/Retirement-simulator/cities/barcelona.html",
+      "desc": "A practical Barcelona, Spain retirement guide for Americans and global retirees: cost of living, healthcare, visas, taxes, neighborhoods, safety, and…",
+      "section": "Retirement",
+      "keywords": [
+        "Retire in Barcelona",
+        "Barcelona Retirement Snapshot",
+        "Barcelona retirement dashboard",
+        "Comfortable monthly budget mix",
+        "Retirement fit score",
+        "Navigation for your city network",
+        "Is Barcelona a good retirement base?",
+        "What does it cost to retire comfortably in Barcelona?",
+        "Retirement",
+        "Retiring overseas",
+        "simulator",
+        "cities"
+      ]
+    },
+    {
+      "title": "Da Nang Retirement Guide",
+      "url": "/Retirement-simulator/cities/da_nang.html",
+      "desc": "A practical Da Nang, Vietnam retirement guide for Americans and global retirees: cost of living, healthcare, visas, taxes, neighborhoods, safety, and…",
+      "section": "Retirement",
+      "keywords": [
+        "Retire in Da Nang",
+        "Da Nang Retirement Snapshot",
+        "Da Nang retirement dashboard",
+        "Comfortable monthly budget mix",
+        "Retirement fit score",
+        "Navigation for your city network",
+        "Is Da Nang a good retirement base?",
+        "What does it cost to retire comfortably in Da Nang?",
+        "Retirement",
+        "Retiring overseas",
+        "simulator",
+        "cities"
+      ]
+    },
+    {
+      "title": "Hong Kong Retirement Guide",
+      "url": "/Retirement-simulator/cities/hong_kong.html",
+      "desc": "A practical Hong Kong retirement guide for Americans and global retirees: cost of living, healthcare, visas, taxes, neighborhoods, safety, and quality of life.",
+      "section": "Retirement",
+      "keywords": [
+        "Retire in Hong Kong",
+        "Hong Kong Retirement Snapshot",
+        "Hong Kong retirement dashboard",
+        "Comfortable monthly budget mix",
+        "Retirement fit score",
+        "Navigation for your city network",
+        "Is Hong Kong a good retirement base?",
+        "What does it cost to retire comfortably in Hong Kong?",
+        "Retirement",
+        "Retiring overseas",
+        "simulator",
+        "cities"
+      ]
+    },
+    {
+      "title": "Kuala Lumpur Retirement Guide",
+      "url": "/Retirement-simulator/cities/kuala_lumpur.html",
+      "desc": "A practical Kuala Lumpur, Malaysia retirement guide for Americans and global retirees: cost of living, healthcare, visas, taxes, neighborhoods, safety, and…",
+      "section": "Retirement",
+      "keywords": [
+        "Retire in Kuala Lumpur",
+        "Kuala Lumpur Retirement Snapshot",
+        "Kuala Lumpur retirement dashboard",
+        "Comfortable monthly budget mix",
+        "Retirement fit score",
+        "Navigation for your city network",
+        "Is Kuala Lumpur a good retirement base?",
+        "What does it cost to retire comfortably in Kuala Lumpur?",
+        "Retirement",
+        "Retiring overseas",
+        "simulator",
+        "cities"
+      ]
+    },
+    {
+      "title": "Lisbon Retirement Guide",
+      "url": "/Retirement-simulator/cities/lisbon.html",
+      "desc": "A practical Lisbon, Portugal retirement guide for Americans and global retirees: cost of living, healthcare, visas, taxes, neighborhoods, safety, and…",
+      "section": "Retirement",
+      "keywords": [
+        "Portugal Retirement Guide",
+        "Retirement fit snapshot",
+        "Portugal vs. U.S. retirement cost pressure",
+        "Comfortable Portugal monthly budget",
+        "Retirement fit scorecard",
+        "What Portugal is good at",
+        "Portugal works best as a lifestyle-and-stability retirement base",
+        "Budget ranges for Portugal retirement",
+        "Retirement",
+        "Retiring overseas",
+        "simulator",
+        "cities"
+      ]
+    },
+    {
+      "title": "Mérida Retirement Guide",
+      "url": "/Retirement-simulator/cities/merida.html",
+      "desc": "A practical Mérida, Mexico retirement guide for Americans and global retirees: cost of living, healthcare, visas, taxes, neighborhoods, safety, and quality…",
+      "section": "Retirement",
+      "keywords": [
+        "Retire in Mérida, Mexico",
+        "Mérida Retirement Snapshot",
+        "Mérida retirement dashboard",
+        "Comfortable monthly budget mix",
+        "Retirement fit score",
+        "Navigation for your city network",
+        "Is Mérida a good retirement base?",
+        "What does it cost to retire comfortably in Mérida?",
+        "Retirement",
+        "Retiring overseas",
+        "simulator",
+        "cities"
+      ]
+    },
+    {
+      "title": "Rome Retirement Guide",
+      "url": "/Retirement-simulator/cities/rome.html",
+      "desc": "A practical Rome, Italy retirement guide for Americans and global retirees: cost of living, healthcare, visas, taxes, neighborhoods, safety, and quality of…",
+      "section": "Retirement",
+      "keywords": [
+        "Retire in Rome",
+        "Rome Retirement Snapshot",
+        "Rome retirement dashboard",
+        "Comfortable monthly budget mix",
+        "Retirement fit score",
+        "Navigation for your city network",
+        "Is Rome a good retirement base?",
+        "What does it cost to retire comfortably in Rome?",
+        "Retirement",
+        "Retiring overseas",
+        "simulator",
+        "cities"
+      ]
+    },
+    {
+      "title": "Seoul Retirement Guide",
+      "url": "/Retirement-simulator/cities/seoul.html",
+      "desc": "A practical Seoul, South Korea retirement guide for Americans and global retirees: cost of living, healthcare, visas, taxes, neighborhoods, safety, and…",
+      "section": "Retirement",
+      "keywords": [
+        "Retire in Seoul",
+        "Seoul Retirement Snapshot",
+        "Seoul retirement dashboard",
+        "Comfortable monthly budget mix",
+        "Retirement fit score",
+        "City network",
+        "Is Seoul a good retirement base?",
+        "What does it cost to retire comfortably in Seoul?",
+        "Retirement",
+        "Retiring overseas",
+        "simulator",
+        "cities"
+      ]
+    },
+    {
+      "title": "Shanghai Retirement Guide",
+      "url": "/Retirement-simulator/cities/shanghai.html",
+      "desc": "A practical Shanghai, China retirement guide for Americans and global retirees: cost of living, healthcare, visas, taxes, neighborhoods, safety, and quality…",
+      "section": "Retirement",
+      "keywords": [
+        "Retire in Shanghai",
+        "Shanghai Retirement Snapshot",
+        "Shanghai retirement dashboard",
+        "Comfortable monthly budget mix",
+        "Retirement fit score",
+        "Navigation for your city network",
+        "Is Shanghai a good retirement base?",
+        "What does it cost to retire comfortably in Shanghai?",
+        "Retirement",
+        "Retiring overseas",
+        "simulator",
+        "cities"
+      ]
+    },
+    {
+      "title": "Singapore Retirement Guide",
+      "url": "/Retirement-simulator/cities/singapore.html",
+      "desc": "A practical Singapore retirement guide for Americans and global retirees: cost of living, healthcare, visas, taxes, neighborhoods, safety, and quality of life.",
+      "section": "Retirement",
+      "keywords": [
+        "Retire in Singapore",
+        "Singapore Retirement Snapshot",
+        "Singapore retirement dashboard",
+        "Comfortable monthly budget mix",
+        "Retirement fit score",
+        "Navigation for your city network",
+        "Is Singapore a good retirement base?",
+        "What does it cost to retire comfortably in Singapore?",
+        "Retirement",
+        "Retiring overseas",
+        "simulator",
+        "cities"
+      ]
+    },
+    {
+      "title": "Sydney Retirement Guide",
+      "url": "/Retirement-simulator/cities/sydney.html",
+      "desc": "A practical Sydney, Australia retirement guide for Americans and global retirees: cost of living, healthcare, visas, taxes, neighborhoods, safety, and…",
+      "section": "Retirement",
+      "keywords": [
+        "Retire in Sydney",
+        "Sydney Retirement Snapshot",
+        "Sydney retirement dashboard",
+        "Comfortable monthly budget mix",
+        "Retirement fit score",
+        "Navigation for your city network",
+        "Is Sydney a good retirement base?",
+        "What does it cost to retire comfortably in Sydney?",
+        "Retirement",
+        "Retiring overseas",
+        "simulator",
+        "cities"
+      ]
+    },
+    {
+      "title": "Tokyo Retirement Guide",
+      "url": "/Retirement-simulator/cities/tokyo.html",
+      "desc": "A practical Tokyo, Japan retirement guide for Americans and global retirees: cost of living, healthcare, visas, taxes, neighborhoods, safety, and quality of…",
+      "section": "Retirement",
+      "keywords": [
+        "Retire in Tokyo",
+        "Tokyo Retirement Snapshot",
+        "Tokyo retirement dashboard",
+        "Comfortable monthly budget mix",
+        "Retirement fit score",
+        "Best Tokyo retiree profile",
+        "Is Tokyo a good retirement base?",
+        "What does it cost to retire comfortably in Tokyo?",
+        "Retirement",
+        "Retiring overseas",
+        "simulator",
+        "cities"
+      ]
+    },
+    {
+      "title": "Zurich Retirement Guide",
+      "url": "/Retirement-simulator/cities/zurich.html",
+      "desc": "A practical Zurich, Switzerland retirement guide for Americans and global retirees: cost of living, healthcare, visas, taxes, neighborhoods, safety, and…",
+      "section": "Retirement",
+      "keywords": [
+        "Quick retirement fit",
+        "Zurich retirement dashboard",
+        "Comfortable monthly budget mix",
+        "Retirement fit score",
+        "Navigation for your city network",
+        "Should Zurich be on a retirement shortlist?",
+        "City comparison navigator",
+        "Zurich vs. New York: cost pressure snapshot",
+        "Retirement",
+        "Retiring overseas",
+        "simulator",
+        "cities"
+      ]
+    },
+    {
+      "title": "The Odyssey Experience",
+      "url": "/Retirement-simulator/odyssey-exploration.html",
+      "desc": "Explore four ways to live your retirement, preview how family proximity and staying in the U.S. change the story, then continue to Preference Discovery.",
+      "section": "Retirement",
+      "keywords": [
+        "Story Preview Filters",
+        "Explore Four Ways to Live Your Retirement",
+        "Lifestyle Comparison Ledger",
+        "You’ve seen four possible retirement lives.",
+        "How to use the Odyssey explorer",
+        "What it does",
+        "How to use it",
+        "Keep in mind",
+        "Retirement",
+        "Planning tools",
+        "simulator",
+        "odyssey"
+      ]
+    },
+    {
+      "title": "Overseas Retirement Hub",
+      "url": "/Retirement-simulator/overseas_retirement_hub.html",
+      "desc": "Explore and compare 18 top overseas retirement destinations based on the $2 Million USD portfolio 4% rule benchmark. Itemized breakdown for housing, food,…",
+      "section": "Retirement",
+      "keywords": [
+        "Global Overseas Retirement Lifestyle & Cost Directory",
+        "18 World Cities Breakdown",
+        "Bangkok",
+        "Lisbon",
+        "Kuala Lumpur",
+        "Da Nang",
+        "Merida",
+        "Tokyo",
+        "Retirement",
+        "Retiring overseas",
+        "simulator",
+        "overseas"
+      ]
+    },
+    {
+      "title": "Retirement Profile Explorer",
+      "url": "/Retirement-simulator/retirement_profiles.html",
+      "desc": "Compare retirement paths such as Home Base, Sovereign Expat, Roaming Nomad, and Dual-Base Snowbird on tax efficiency, healthcare, family, and complexity.",
+      "section": "Retirement",
+      "keywords": [
+        "Journey Comparison Ledger",
+        "The Home Base Retirement",
+        "Most Aligned With Your Priorities",
+        "Your Retirement Phases",
+        "What This Life Looks Like",
+        "Outcome Highlights",
+        "Profile Structural Checks",
+        "Advantages",
+        "Retirement",
+        "Planning tools",
+        "simulator",
+        "profiles"
+      ]
+    },
+    {
+      "title": "Retirement Scenario Lab",
+      "url": "/Retirement-simulator/retirement_scenario_lab.html",
+      "desc": "Change one life assumption at a time and see how taxes, assets, spending, and income sources evolve across your full retirement horizon.",
+      "section": "Retirement",
+      "keywords": [
+        "Change the assumptions",
+        "Your baseline is loaded",
+        "Total Assets Over Time",
+        "Taxes Paid Over Time",
+        "Spending Over Time",
+        "Income and Funding Sources",
+        "Notification",
+        "How to use the Retirement Scenario Lab",
+        "Retirement",
+        "Planning tools",
+        "simulator",
+        "scenario"
+      ]
+    },
+    {
+      "title": "About WealthLanding",
+      "url": "/about/",
+      "desc": "WealthLanding is an independent financial education site — life-stage playbooks, tools, and retirement labs. Education only, not personalized advice.",
+      "section": "WealthLanding",
+      "keywords": [
+        "Education for every stage of your money life",
+        "Our mission",
+        "What WealthLanding is",
+        "What WealthLanding is not",
+        "Who it’s for",
+        "Where to start",
+        "Plan by age: 45–65",
+        "Tools & calculators",
+        "WealthLanding",
+        "about"
+      ]
+    },
+    {
+      "title": "WealthLanding Blog",
+      "url": "/blogs/",
+      "desc": "WealthLanding blog: insights on retirement strategies, market movements, budgeting, travel rewards, and generational wealth planning, organized by topic.",
+      "section": "Blogs",
+      "keywords": [
+        "Or browse by goal",
+        "Happy Retirement",
+        "The Doctor Who Waited Too Long",
+        "The One-Million_Dollar Tax Cascade.",
+        "I’ve never seen my retirement account shown like that",
+        "Travel",
+        "The Delay Text on the Way to BWI",
+        "United MileagePlus: status, awards and city fit",
+        "Blogs"
+      ]
+    },
+    {
+      "title": "The Letter That Quietly Cost Over One Million Dollars",
+      "url": "/blogs/Happy_retirement/1m_rmd_letter.html",
+      "desc": "A WealthLanding case study detailing the cumulative waterfall cascade of Required Minimum Distributions (RMDs) over a 20-year retirement window.",
+      "section": "Retirement",
+      "keywords": [
+        "What David didn't see",
+        "The RMD Waterfall Effect",
+        "Twenty years later",
+        "One decision. Six consequences.",
+        "Conclusion",
+        "Ready to optimize your retirement strategy?",
+        "Case study 4 of 4",
+        "Why this story matters",
+        "Retirement",
+        "Retirement case studies",
+        "1m",
+        "rmd"
+      ]
+    },
+    {
+      "title": "The Doctor Who Waited Too Long",
+      "url": "/blogs/Happy_retirement/doctor_waited.html",
+      "desc": "A WealthLanding case study about Roth conversion timing, required minimum distributions, and the cost of waiting too long.",
+      "section": "Retirement",
+      "keywords": [
+        "The retirement that looked efficient",
+        "The window that quietly closed",
+        "Thirteen years later",
+        "The dominoes",
+        "Forced income spike",
+        "Medicare surcharges",
+        "Less tax flexibility",
+        "Compounding RMDs",
+        "Retirement",
+        "Retirement case studies",
+        "doctor",
+        "waited"
+      ]
+    },
+    {
+      "title": "Bill Left $6.6 Million. Tom Left $5.8 Million. What Happened?",
+      "url": "/blogs/Happy_retirement/how-to-avoid-RMD-taxes.html",
+      "desc": "Two engineers retired at 60 with the same $3.8 million. One left heirs $6.6 million after tax, the other $5.8 million. An illustrative case study on Roth…",
+      "section": "Retirement",
+      "keywords": [
+        "The Three Decisions That Changed Everything",
+        "The Collision with Required Minimum Distributions (RMDs)",
+        "Your Retirement Snapshot",
+        "Related Stories",
+        "Keep going: Retirement",
+        "Retirement",
+        "Retirement case studies",
+        "how",
+        "to",
+        "avoid",
+        "rmd",
+        "taxes"
+      ]
+    },
+    {
+      "title": "The Expat Medicare Trap",
+      "url": "/blogs/Happy_retirement/medicare.html",
+      "desc": "Retiring abroad does not exempt you from Medicare late-enrollment penalties. How the expat Medicare trap works and how to weigh premiums against surcharges.",
+      "section": "Retirement",
+      "keywords": [
+        "The Five Layers: How the Expat Medicare Trap Actually Works",
+        "1. What is it?",
+        "2. How does the mechanism work?",
+        "3. Why does this system exist?",
+        "4. Who benefits?",
+        "5. Why should you care?",
+        "The Mathematical Dilemma: Phantom Premium vs. Lifetime Surcharge",
+        "How to Think About the Decision Framework",
+        "Retirement",
+        "Retirement case studies",
+        "medicare"
+      ]
+    },
+    {
+      "title": "The IRS Was His Silent Business Partner",
+      "url": "/blogs/Happy_retirement/silent_partner.html",
+      "desc": "A WealthLanding case study on tax ownership, traditional IRA balances, and how the IRS acts as a silent business partner in retirement.",
+      "section": "Retirement",
+      "keywords": [
+        "The question",
+        "The advisor's drawing",
+        "The IRA Split Visualizer",
+        "The invisible co-owner",
+        "The real number",
+        "Retirement accounts have two balances.",
+        "Closing",
+        "See how much of your retirement still belongs to you",
+        "Retirement",
+        "Retirement case studies",
+        "silent",
+        "partner"
+      ]
+    },
+    {
+      "title": "One Work Record, Many Checks",
+      "url": "/blogs/Happy_retirement/spousal-survivor-divorced-benefits.html",
+      "desc": "If one spouse did most of the paid work, the other may still collect Social Security. 28 illustrative scenarios explain spousal, survivor and…",
+      "section": "Retirement",
+      "keywords": [
+        "The base case used in every calculation",
+        "Watch the video",
+        "Find your scenario",
+        "A The basics",
+        "B Timing while both are alive",
+        "C When a husband dies",
+        "D Divorce and more than one marriage",
+        "E Edge cases",
+        "Retirement",
+        "Retirement case studies",
+        "spousal",
+        "survivor"
+      ]
+    },
+    {
+      "title": "The Delay Text on the Way to BWI",
+      "url": "/blogs/Travel/united-1k-delayed-ski-trip.html",
+      "desc": "A Christmas ski trip, a delay text on the drive to BWI and a 50-name standby list at Dulles. How United MileagePlus Premier 1K benefits played out, what the…",
+      "section": "Travel & Rewards",
+      "keywords": [
+        "What happened, step by step",
+        "The 1K benefits behind each moment",
+        "1. Standby priority: why the family jumped a 50-name list",
+        "2. Economy Plus for the whole family",
+        "3. The upgrade home: complimentary upgrades and PlusPoints",
+        "4. Boarding first: Premier Access",
+        "How people actually earn 1K",
+        "Status is insurance you pay for in advance",
+        "Travel & Rewards",
+        "Travel case studies",
+        "travel",
+        "united"
+      ]
+    },
+    {
+      "title": "Budget and Spending Blog Archive",
+      "url": "/blogs/budget_spending.html",
+      "desc": "Budgeting, tax and spending case studies: Roth conversions, ACA subsidies and real family savings.",
+      "section": "Money & Lifestyle",
+      "keywords": [
+        "Budget and Spending",
+        "All Budget and Spending articles",
+        "Why Employer Health Insurance Costs Are Rising in 2027",
+        "Roth Conversions: Compressing Tax Liabilities Pre-Medicare",
+        "Navigating Early Retirement ACA Premium Tax Subsidies",
+        "How a Family of 5 Saved $1,210 on Their Disneyland Trip",
+        "Money & Lifestyle",
+        "Budget and spending articles"
+      ]
+    },
+    {
+      "title": "Navigating Early Retirement ACA Premium Tax Subsidies",
+      "url": "/blogs/budget_spending/aca_early_retirement_subsidies.html",
+      "desc": "Mechanical frameworks for monitoring MAGI to pursue ACA premium tax credit savings in early retirement. Educational only—not advice.",
+      "section": "Retirement",
+      "keywords": [
+        "What MAGI means for Marketplace subsidies",
+        "Illustrative early-retirement healthcare map",
+        "A mechanical monitoring framework",
+        "Where plans commonly break",
+        "Large Roth conversions",
+        "Capital gains harvests",
+        "Social Security starts",
+        "Year-end surprises",
+        "Retirement",
+        "Retirement case studies",
+        "aca",
+        "early"
+      ]
+    },
+    {
+      "title": "Credit-Card Delinquency Just Hit Great Recession Levels.…",
+      "url": "/blogs/budget_spending/credit-card-delinquency-look-closer.html",
+      "desc": "Card delinquency hit Great Recession levels — but the number is mostly old debt, not new distress. New delinquencies have been flat since early 2024.",
+      "section": "Money & Lifestyle",
+      "keywords": [
+        "Credit-Card Delinquency Just Hit Great Recession Levels. Look Closer.",
+        "1. The chart that launched a thousand doom posts",
+        "The pile and the tap",
+        "2. The pile and the tap",
+        "What the pile is made of",
+        "One debt's long afterlife",
+        "3. Flat is not the same as fine",
+        "The next wave, or a blip?",
+        "Money & Lifestyle",
+        "Budget and spending articles",
+        "credit",
+        "card"
+      ]
+    },
+    {
+      "title": "How a Family of 5 Saved $1,210 on Their Disneyland Trip",
+      "url": "/blogs/budget_spending/disneyland_family_of_five.html",
+      "desc": "A worked example: how a family of five cut 20% off a 4-day Disneyland California trip — discounted tickets, tracked fares, opaque hotel rates, and stacked…",
+      "section": "Money & Lifestyle",
+      "keywords": [
+        "1. Park tickets: never pay gate price",
+        "2. Flights: track, don't chase",
+        "3. Hotel: go opaque near the park",
+        "4. Rental car: book early, rebook cheaper",
+        "5. Food: the gift-card + grocery combo",
+        "6. The stacking layer",
+        "The full accounting",
+        "$1,210 saved — 20% off the trip.",
+        "Money & Lifestyle",
+        "Budget and spending articles",
+        "disneyland",
+        "family"
+      ]
+    },
+    {
+      "title": "Why Employer Health Insurance Costs Are Rising in 2027",
+      "url": "/blogs/budget_spending/employer-health-insurance-costs-rising.html",
+      "desc": "Employers expect health benefit costs to rise 8.2% in 2027, the most since 2003. What is driving it, from GLP-1s to No Surprises Act disputes, and what it…",
+      "section": "Money & Lifestyle",
+      "keywords": [
+        "Why Employer Health Insurance Costs Are Rising",
+        "A five-year run of faster growth",
+        "The major drivers at a glance",
+        "Driver 1: GLP-1 medications are raising prescription spending",
+        "Driver 2: AI-enabled billing can increase the number and size of claims",
+        "Driver 3: The No Surprises Act's arbitration process is adding costs",
+        "Two things can be true",
+        "Driver 4: Consolidation strengthens providers' negotiating power",
+        "Money & Lifestyle",
+        "Budget and spending articles",
+        "employer",
+        "health"
+      ]
+    },
+    {
+      "title": "America Got Richer. The Bottom Got Poorer.",
+      "url": "/blogs/budget_spending/richer-on-paper-behind-on-the-bill.html",
+      "desc": "The average American family has never been worth more on paper — but the gains went to the top of the pyramid. The bottom quarter's median net worth fell…",
+      "section": "Money & Lifestyle",
+      "keywords": [
+        "1. The pyramid: who gained, who lost",
+        "Who gained, who lost",
+        "2. The curve tilted",
+        "The curve tilted",
+        "3. Paper wealth has a price",
+        "4. And the bill still comes due",
+        "Late, and later",
+        "5. What an ordinary household should actually do differently",
+        "Money & Lifestyle",
+        "Budget and spending articles",
+        "richer",
+        "on"
+      ]
+    },
+    {
+      "title": "Roth Conversions",
+      "url": "/blogs/budget_spending/roth_conversions_pre_medicare.html",
+      "desc": "How Roth conversions during lower-income gap years before Medicare can compress lifetime tax liabilities and reduce IRMAA exposure. Educational only.",
+      "section": "Retirement",
+      "keywords": [
+        "Roth Conversions: Compressing Tax Liabilities Pre-Medicare",
+        "Why pre-Medicare timing matters",
+        "An illustrative conversion runway",
+        "How a conversion compresses liability",
+        "Four connected effects",
+        "Ordinary tax paid now",
+        "Future RMD base shrinks",
+        "Medicare thresholds",
+        "Retirement",
+        "Retirement case studies",
+        "roth",
+        "conversions"
+      ]
+    },
+    {
+      "title": "Happy Retirement Blog Archive",
+      "url": "/blogs/happy_retirement.html",
+      "desc": "Browse every Happy Retirement article on tax minimization, healthcare, Social Security, savings, and income planning, filterable by topic and year.",
+      "section": "Retirement",
+      "keywords": [
+        "Happy Retirement",
+        "All Happy Retirement articles",
+        "Will Your Retirement Money Last 30 Years?",
+        "How Much Should You Have Saved by 50?",
+        "Where Should Your Next Dollar of Savings Go?",
+        "Should You Claim Social Security at 62, 67, or 70?",
+        "What Medicare Doesn't Cover in Retirement",
+        "Traditional vs. Roth: How to Build a Tax-Smart Retirement Portfolio",
+        "Retirement",
+        "Retirement case studies"
+      ]
+    },
+    {
+      "title": "The Yen Is Finally Becoming an Earnings Story",
+      "url": "/blogs/investment/JPY_090126.html",
+      "desc": "Japan spent about $96.5 billion supporting the yen, yet it slipped back toward 160 per dollar. Why the yen may be turning into an earnings story.",
+      "section": "Investing",
+      "keywords": [
+        "The Old Playbook is Broken",
+        "The Shift in Capital",
+        "Keep going: Investing",
+        "Investing",
+        "Market articles",
+        "jpy",
+        "090126"
+      ]
+    },
+    {
+      "title": "AI Is Coming for Different Jobs in Different Countries.…",
+      "url": "/blogs/investment/ai-jobs-different-countries.html",
+      "desc": "China's gig drivers, America's entry-level office workers, Japan's labor shortage, Europe's protections and India's IT services: why the same AI shock can…",
+      "section": "Investing",
+      "keywords": [
+        "AI Is Coming for Different Jobs in Different Countries. Here's Why That Matters.",
+        "1. Start with the numbers—but understand what they measure",
+        "2. The four forces that determine whether AI destroys jobs",
+        "Force 1: Can the work be automated reliably?",
+        "Force 2: Does automation make economic sense?",
+        "Force 3: Is there enough demand to absorb the productivity gain?",
+        "Force 4: Can displaced workers move into other jobs?",
+        "3. China: What happens when machines compete with a large gig workforce?",
+        "Investing",
+        "Market articles",
+        "ai",
+        "jobs"
+      ]
+    },
+    {
+      "title": "The New mRNA Trade",
+      "url": "/blogs/investment/mRNA_090326.html",
+      "desc": "Investors once treated mRNA as one big technology bet. Why owning a platform is no longer enough, and what now separates mRNA winners from the rest.",
+      "section": "Investing",
+      "keywords": [
+        "The New mRNA Trade: Why 'Magic Bullet' Tech Isn't Enough Anymore",
+        "The End of the \"Buy Everything\" Era",
+        "Programmability vs. Predictability",
+        "The Bottleneck Has Moved",
+        "The Four Pillars of the mRNA Trade",
+        "Pipeline Velocity Estimator",
+        "Keep going: Investing",
+        "Investing",
+        "Market articles",
+        "mrna",
+        "090326"
+      ]
+    },
+    {
+      "title": "Market and Investment Blog Archive",
+      "url": "/blogs/market_investment.html",
+      "desc": "Market and investment analysis: currencies, sectors and the forces that move long-term portfolios.",
+      "section": "Investing",
+      "keywords": [
+        "Market and Investment",
+        "All Market and Investment articles",
+        "AI Is Coming for Different Jobs in Different Countries. Here's Why That Matters.",
+        "The Yen Is Finally Becoming an Earnings Story",
+        "The New mRNA Trade: Why 'Magic Bullet' Tech Isn't Enough Anymore",
+        "Investing",
+        "Market articles"
+      ]
+    },
+    {
+      "title": "Real Estate Blog Archive",
+      "url": "/blogs/real_estate.html",
+      "desc": "Housing market analysis and estate planning: what the data says and how wealth passes between generations.",
+      "section": "Real Estate",
+      "keywords": [
+        "Real Estate",
+        "All Real Estate articles",
+        "Two Acres Looked the Same. Only One Was Two Lots.",
+        "The Buyer's Market With No Buyers",
+        "The SECURE Act 2.0 & Inherited IRAs: 10-Year Rule Mechanics",
+        "Keep going: Real Estate",
+        "Models and market reads",
+        "real",
+        "estate"
+      ]
+    },
+    {
+      "title": "The Buyer's Market With No Buyers",
+      "url": "/blogs/real_estate/buyers-market-with-no-buyers.html",
+      "desc": "Redfin counts a record 62.6% more sellers than buyers in September 2026 — yet buying has rarely been harder. What the gap really measures: mortgage rates,…",
+      "section": "Real Estate",
+      "keywords": [
+        "1. The current imbalance",
+        "The gap keeps setting records",
+        "One country, two housing markets",
+        "What these numbers actually measure",
+        "2. The primary explanation: rates and the math",
+        "The rate shock, week by week",
+        "The same house, two rate worlds",
+        "What is weakening the market",
+        "Real Estate",
+        "Models and market reads",
+        "real",
+        "estate"
+      ]
+    },
+    {
+      "title": "The SECURE Act 2.0 & Inherited IRAs",
+      "url": "/blogs/real_estate/secure_act_inherited_iras.html",
+      "desc": "How SECURE Act 2.0 and the 10-year rule reshape inherited IRA distributions and generational wealth transfers. Educational only.",
+      "section": "Retirement",
+      "keywords": [
+        "The SECURE Act 2.0 & Inherited IRAs: 10-Year Rule Mechanics",
+        "What changed for heirs",
+        "Illustrative 10-year distribution arc",
+        "Multi-year distribution mechanics",
+        "Four coordination points with real assets",
+        "Primary residence equity",
+        "Trust titling",
+        "State estate taxes",
+        "Retirement",
+        "Retirement case studies",
+        "real",
+        "estate"
+      ]
+    },
+    {
+      "title": "Two Acres Looked the Same. Only One Was Two Lots.",
+      "url": "/blogs/real_estate/two-acres-two-lots.html",
+      "desc": "A fictional case study of two buyers near retirement who each consider a two-acre “two lot” listing. Legal lots, merger rules, wetlands, costs and the…",
+      "section": "Real Estate",
+      "keywords": [
+        "Tax parcels are not the same as legal lots",
+        "Mara’s path: confirm first, then decide what the second lot is for",
+        "Helen’s path: the second lot that was not a lot",
+        "The fictional arithmetic, side by side",
+        "Decision gates before the offer, and after",
+        "Where to go next",
+        "Keep going: Real Estate",
+        "Real Estate",
+        "Models and market reads",
+        "real",
+        "estate",
+        "two"
+      ]
+    },
+    {
+      "title": "The $2,400 Mountain Blizzard",
+      "url": "/blogs/spending_smart/airbnb_cc_choice.html",
+      "desc": "A non-refundable Vermont ski cabin, a blizzard, and $2,400 at stake: why the best card for a purchase is not always the one with the most points.",
+      "section": "Travel & Rewards",
+      "keywords": [
+        "The Five Layers of Credit Card Value",
+        "When Winter Arrived, So Did the Nor'easter",
+        "The Hidden Incentive: The Points Blindspot",
+        "The Settlement Breakdown",
+        "Find the Right Card for Your Next Big Booking",
+        "Coverage vs. Points Evaluator",
+        "Keep going: Travel & Rewards",
+        "Travel & Rewards",
+        "Travel case studies",
+        "smart",
+        "airbnb",
+        "cc"
+      ]
+    },
+    {
+      "title": "The $3,200 Basic Economy Gamble",
+      "url": "/blogs/spending_smart/flight_saver.html",
+      "desc": "Saving $300 on non-changeable basic economy tickets felt like disciplined budgeting. Then a fever 36 hours before boarding showed who actually carried the risk.",
+      "section": "Travel & Rewards",
+      "keywords": [
+        "The Anatomy of an Asymmetric Discount",
+        "The cancellation cascade",
+        "Thirty-Six Hours to Boarding",
+        "A discount is only cheap if the trip is certain",
+        "Strategic Takeaway",
+        "Audit your next itinerary before checkout",
+        "Flight Strategy",
+        "Why this story matters",
+        "Travel & Rewards",
+        "Travel case studies",
+        "smart",
+        "flight"
+      ]
+    },
+    {
+      "title": "Travel Blog — Airline Status & Travel Case Studies",
+      "url": "/blogs/travel.html",
+      "desc": "Story-driven travel case studies from WealthLanding: airline status, loyalty programs and practical ways to protect the trips you pay for.",
+      "section": "Travel & Rewards",
+      "keywords": [
+        "Travel",
+        "All Travel articles",
+        "The Delay Text on the Way to BWI",
+        "Travel & Rewards",
+        "Travel case studies"
+      ]
+    },
+    {
+      "title": "Contact WealthLanding",
+      "url": "/contact/",
+      "desc": "How to reach WealthLanding with corrections, feedback on a tool, or topic ideas, and what we can and cannot help with. Education only, not personalized advice.",
+      "section": "WealthLanding",
+      "keywords": [
+        "How to reach us",
+        "What we can help with",
+        "What we cannot do",
+        "How we handle corrections",
+        "Need help with a decision now?",
+        "WealthLanding",
+        "contact"
+      ]
+    },
+    {
+      "title": "Investment Decision Center",
+      "url": "/investment/",
+      "desc": "WealthLanding Investment Decision Center — living theses, company valuation, catalysts, and signals to watch.",
+      "section": "Investing",
+      "keywords": [
+        "Understand the thesis. Know what to watch.",
+        "Bitcoin liquidity & infrastructure",
+        "Is Bitcoin a liquidity trade, a monetary infrastructure bet, or both?",
+        "AI Economic Scenarios 2030",
+        "Which dividend payers can actually keep paying?",
+        "What deserves attention now",
+        "What should happen next",
+        "Why the opportunity exists",
+        "Investing",
+        "Investing tools"
+      ]
+    },
+    {
+      "title": "AI Economic Scenarios 2030",
+      "url": "/investment/ai-economic-scenarios.html",
+      "desc": "Interactive model of GDP, growth, labor share, wages and unemployment to 2030 under Modest, Substantial and Extreme AI scenarios, built on the Korinek–Jones…",
+      "section": "Investing",
+      "keywords": [
+        "Explore the scenarios",
+        "How the model works",
+        "Paths over time (paper)",
+        "Closed-form solution (paper, Proposition 1, uniform parameters)",
+        "WealthLanding's illustrative additions",
+        "Assumptions and limits",
+        "Preset values (paper Table 1) and published 2030 results (Table 3)",
+        "What it means for you",
+        "Investing",
+        "Investing tools",
+        "ai",
+        "economic"
+      ]
+    },
+    {
+      "title": "Bitcoin Liquidity & Infrastructure Dashboard",
+      "url": "/investment/bitcoin.html",
+      "desc": "Educational Bitcoin dashboard: macro liquidity, scarce-asset demand, and miner power pivoting to AI — illustrative metrics, not live trading signals.",
+      "section": "Investing",
+      "keywords": [
+        "Is Bitcoin a liquidity trade, a monetary infrastructure bet, or both?",
+        "Liquidity · Scarce asset · Infrastructure",
+        "Three buckets, three falsifiers",
+        "Macro liquidity",
+        "Scarce-asset / debasement",
+        "Bitcoin infrastructure",
+        "Reading Bitcoin without the hype machine",
+        "1. BTC itself",
+        "Investing",
+        "Investing tools",
+        "bitcoin"
+      ]
+    },
+    {
+      "title": "Dividend Stock Screener",
+      "url": "/investment/dividend-screener.html",
+      "desc": "Screen US dividend-paying stocks by yield, payout ratio, free cash flow, dividend history, and dividend growth. Free educational tool from WealthLanding.",
+      "section": "Investing",
+      "keywords": [
+        "What the six filters mean",
+        "Dividend yield ≥ x%",
+        "Payout ratio < y%",
+        "Free cash flow > $aB",
+        "Dividend raises > b years",
+        "Dividend growth ≥ c%",
+        "Enterprise value growth ≥ x%",
+        "Start strict, loosen slowly",
+        "Investing",
+        "Investing tools",
+        "dividend",
+        "screener"
+      ]
+    },
+    {
+      "title": "Real Estate vs. Stocks",
+      "url": "/investment/real_estate_vs_stocks_model.html",
+      "desc": "Does unleveraged stock growth beat leveraged real estate? Compare property and stock index returns as inflation hedges and long-term wealth compounders.",
+      "section": "Real Estate",
+      "keywords": [
+        "Real Estate vs. Growth Equities: The Structural Wealth Shift",
+        "Leveraged Property vs. Stock Growth",
+        "The Four Pillars That Keep Property Competitive",
+        "Structural Advantage Analysis",
+        "Portfolio Allocation",
+        "Related Deep Dives",
+        "How to read the real estate vs. stocks model",
+        "What this model does",
+        "Real Estate",
+        "Models and market reads",
+        "real",
+        "estate"
+      ]
+    },
+    {
+      "title": "Deal Finder — true gems for spending less",
+      "url": "/learn/deals/",
+      "desc": "Curated directory of the best deal sites for flights, hotels, rental cars, events, theme parks, and museums.",
+      "section": "Learn",
+      "keywords": [
+        "Deal Finder",
+        "Cheaper flights",
+        "Cheaper hotels & rentals",
+        "Cheaper rental cars",
+        "Events & show tickets",
+        "Theme park deals",
+        "Reciprocal museum programs",
+        "How to use this directory",
+        "Learn",
+        "deals"
+      ]
+    },
+    {
+      "title": "Events & show tickets",
+      "url": "/learn/deals/events/",
+      "desc": "Discounted theater, sports, and concert tickets — plus the no-fee resale market.",
+      "section": "Learn",
+      "keywords": [
+        "Goldstar",
+        "TodayTix",
+        "TickPick",
+        "How to stack it",
+        "More deal categories",
+        "Learn",
+        "deals",
+        "events"
+      ]
+    },
+    {
+      "title": "Cheaper flights",
+      "url": "/learn/deals/flights/",
+      "desc": "Fare trackers, mistake-fare alerts, and booking tricks the airlines don't advertise.",
+      "section": "Learn",
+      "keywords": [
+        "Google Flights",
+        "Going",
+        "Jack's Flight Club",
+        "Skiplagged",
+        "Momondo",
+        "How a Family of 5 Saved $1,210 on Their Disneyland Trip",
+        "How to stack it",
+        "More deal categories",
+        "Learn",
+        "deals",
+        "flights"
+      ]
+    },
+    {
+      "title": "Cheaper hotels & rentals",
+      "url": "/learn/deals/hotels/",
+      "desc": "Last-minute rentals, opaque deals, and the trackers that catch price drops.",
+      "section": "Learn",
+      "keywords": [
+        "Whimstay",
+        "HotelTonight",
+        "Hotwire Hot Rates",
+        "Priceline Express Deals",
+        "Google Hotels",
+        "How a Family of 5 Saved $1,210 on Their Disneyland Trip",
+        "How to stack it",
+        "More deal categories",
+        "Learn",
+        "deals",
+        "hotels"
+      ]
+    },
+    {
+      "title": "Reciprocal museum programs",
+      "url": "/learn/deals/museums/",
+      "desc": "One membership, hundreds of free admissions — the reciprocal networks explained.",
+      "section": "Learn",
+      "keywords": [
+        "ASTC Travel Passport",
+        "NARM",
+        "ROAM",
+        "ACM Reciprocal Network",
+        "Time Travelers",
+        "Best-value memberships",
+        "Kern County Museum",
+        "Evansville Museum of Arts, History & Science",
+        "Learn",
+        "deals",
+        "museums"
+      ]
+    },
+    {
+      "title": "Theme park deals",
+      "url": "/learn/deals/parks/",
+      "desc": "Authorized discount Disney & Universal tickets and the multi-day math.",
+      "section": "Learn",
+      "keywords": [
+        "Undercover Tourist",
+        "Official park sites — multi-day tickets",
+        "How a Family of 5 Saved $1,210 on Their Disneyland Trip",
+        "How to stack it",
+        "More deal categories",
+        "Learn",
+        "deals",
+        "parks"
+      ]
+    },
+    {
+      "title": "Cheaper rental cars",
+      "url": "/learn/deals/rental-cars/",
+      "desc": "Book refundable, then let a tracker rebook you every time the price drops.",
+      "section": "Learn",
+      "keywords": [
+        "AutoSlash",
+        "Costco Travel",
+        "How a Family of 5 Saved $1,210 on Their Disneyland Trip",
+        "How to stack it",
+        "More deal categories",
+        "Learn",
+        "deals",
+        "rental",
+        "cars"
+      ]
+    },
+    {
+      "title": "529 Plans: The Education Account in the Tax Pyramid",
+      "url": "/life_stage/25_40/topics/529.html",
+      "desc": "Where the 529 sits in the tax pyramid (taxed once, like Roth — aimed at education), why your retirement comes first, state tax deductions, and the…",
+      "section": "Investing",
+      "keywords": [
+        "529: the same \"taxed once\" idea, aimed at education.",
+        "Where it sits in the tier",
+        "Whose retirement comes first? Yours.",
+        "The state tax deduction",
+        "The beneficiary rules (your escape hatches)",
+        "Watch out for",
+        "What next?",
+        "Keep going: Investing",
+        "Investing",
+        "Account guides",
+        "529"
+      ]
+    },
+    {
+      "title": "Same Dollar, Four Destinations",
+      "url": "/life_stage/25_40/topics/account-comparison.html",
+      "desc": "Interactive comparison: put the same pre-tax dollars into an HSA, Roth IRA, traditional 401(k), or taxable brokerage and see the after-tax future value side…",
+      "section": "Investing",
+      "keywords": [
+        "Same dollar, four destinations.",
+        "Keep going: Investing",
+        "Investing",
+        "Account guides",
+        "account",
+        "comparison"
+      ]
+    },
+    {
+      "title": "Am I Behind Financially? Benchmarks Without the Guilt",
+      "url": "/life_stage/25_40/topics/am-i-behind.html",
+      "desc": "A clear-eyed look at savings benchmarks for your 30s: what the 1x-by-30 rule means, why it is not a grade, and how your savings rate beats the multiple.",
+      "section": "Money & Lifestyle",
+      "keywords": [
+        "Am I Behind Financially?",
+        "Worked example",
+        "What changes the answer?",
+        "Watch out for",
+        "Run the numbers",
+        "What should you look at next?",
+        "Related questions",
+        "Keep going: Money & Lifestyle",
+        "Money & Lifestyle",
+        "Money guides",
+        "am",
+        "behind"
+      ]
+    },
+    {
+      "title": "Backdoor Roth & Mega Backdoor Roth",
+      "url": "/life_stage/25_40/topics/backdoor-roth.html",
+      "desc": "The regular backdoor Roth (nondeductible IRA + convert, watch the pro-rata rule) and the mega backdoor Roth (after-tax 401(k) + in-service rollover)…",
+      "section": "Investing",
+      "keywords": [
+        "Backdoor Roth & mega backdoor Roth: two tricks, not one.",
+        "Trick 1: the regular backdoor Roth",
+        "Trick 2: the mega backdoor Roth",
+        "Who should skip both",
+        "What next?",
+        "Keep going: Investing",
+        "Investing",
+        "Account guides",
+        "backdoor",
+        "roth"
+      ]
+    },
+    {
+      "title": "Should I Pay Off Debt or Invest? A Decision Framework",
+      "url": "/life_stage/25_40/topics/debt-vs-investing.html",
+      "desc": "Take the 401(k) match first, then let the interest rate decide. A practical framework for the debt-vs-investing tradeoff, with a worked example.",
+      "section": "Money & Lifestyle",
+      "keywords": [
+        "Should I Pay Off Debt or Invest?",
+        "Worked example",
+        "What changes the answer?",
+        "The employer match",
+        "Tax-deductible interest",
+        "Your emergency fund",
+        "Variable vs. fixed rates",
+        "How debt feels to you",
+        "Money & Lifestyle",
+        "Money guides",
+        "debt",
+        "vs"
+      ]
+    },
+    {
+      "title": "How Much House Can I Afford? Lender Max vs Sustainable Budget",
+      "url": "/life_stage/25_40/topics/how-much-house.html",
+      "desc": "Separate lender approval from a sustainable housing budget. Build an all-in payment with PITI, HOA, PMI, maintenance, closing cash and reserves — and…",
+      "section": "Real Estate",
+      "keywords": [
+        "How Much House Can I Afford?",
+        "Lender approval is not affordability",
+        "Build the all-in housing number",
+        "PITI",
+        "HOA / condo fees",
+        "PMI or other mortgage insurance",
+        "Maintenance and capex reserve",
+        "Closing funds and post-closing reserves",
+        "Real Estate",
+        "Housing decision guides",
+        "how",
+        "much"
+      ]
+    },
+    {
+      "title": "HSA: The Only Triple-Tax Account (2026 Guide)",
+      "url": "/life_stage/25_40/topics/hsa.html",
+      "desc": "Why the HSA is the crown of the tax pyramid: deductible in, tax-free growth, tax-free medical withdrawals. The receipt strategy, the age-65 rule, 2026…",
+      "section": "Money & Lifestyle",
+      "keywords": [
+        "HSA: taxed never, if you follow the rules.",
+        "The triple tax benefit, piece by piece",
+        "The receipt strategy",
+        "The age-65 switch",
+        "When a traditional plan beats the HDHP",
+        "Watch out for",
+        "What next?",
+        "Keep going: Money & Lifestyle",
+        "Money & Lifestyle",
+        "Money guides",
+        "hsa"
+      ]
+    },
+    {
+      "title": "How Much Life Insurance Do I Need?",
+      "url": "/life_stage/25_40/topics/life-insurance.html",
+      "desc": "Term vs. permanent, a needs-based worksheet for income replacement, debts, and kids — plus disability insurance and the estate documents that matter.",
+      "section": "Money & Lifestyle",
+      "keywords": [
+        "Worked example",
+        "What changes the answer?",
+        "Number and age of kids",
+        "Spouse's income",
+        "Outstanding debts",
+        "Existing assets",
+        "Health and age",
+        "Watch out for",
+        "Money & Lifestyle",
+        "Money guides",
+        "insurance"
+      ]
+    },
+    {
+      "title": "Rent or Buy When You Relocate? After-Tax Wealth for a Move",
+      "url": "/life_stage/25_40/topics/rent-vs-buy.html",
+      "desc": "For households relocating or downsizing around retirement — and for others comparing paths — an after-tax equal-cash-flow frame covering §121, investment…",
+      "section": "Real Estate",
+      "keywords": [
+        "Rent or Buy When You Move?",
+        "Who this is for",
+        "A fair comparison framework",
+        "What the old “rent and invest wins on paper” story misses",
+        "Investment account taxes",
+        "Primary-home sale exclusion (§121)",
+        "Home prices are a scenario, not a promise",
+        "Amortization and leverage",
+        "Real Estate",
+        "Housing decision guides",
+        "rent",
+        "vs"
+      ]
+    },
+    {
+      "title": "Roth IRA: Pay Tax Now, Never Again (2026 Guide)",
+      "url": "/life_stage/25_40/topics/roth-ira.html",
+      "desc": "What a Roth IRA is, 2026 income limits and contribution caps, how the backdoor and mega backdoor Roth work, and an interactive tool comparing Roth vs…",
+      "section": "Investing",
+      "keywords": [
+        "Roth IRA: pay tax now, never again.",
+        "When does the IRS take its cut?",
+        "Do you qualify? (2026)",
+        "Over the income limit?",
+        "Same dollar, four destinations",
+        "Who should skip it",
+        "Watch out for",
+        "What next?",
+        "Investing",
+        "Account guides",
+        "roth",
+        "ira"
+      ]
+    },
+    {
+      "title": "Traditional 401(k)",
+      "url": "/life_stage/25_40/topics/traditional-401k.html",
+      "desc": "The base tier of the tax pyramid: pre-tax contributions, tax-deferred growth, taxed withdrawals. 2026 limits, when the deduction beats Roth, and the rate…",
+      "section": "Investing",
+      "keywords": [
+        "Traditional 401(k): taxed later.",
+        "The rate comparison lives here",
+        "When traditional wins outright",
+        "Watch out for",
+        "What next?",
+        "Keep going: Investing",
+        "Investing",
+        "Account guides",
+        "traditional",
+        "401k"
+      ]
+    },
+    {
+      "title": "Methodology",
+      "url": "/methodology/",
+      "desc": "How WealthLanding structures life-stage education, case studies, and calculators — assumptions, update cadence, and limitations. Education only, not advice.",
+      "section": "WealthLanding",
+      "keywords": [
+        "How we build guides and tools",
+        "Editorial standards",
+        "Life-stage curriculum",
+        "Illustrative case studies",
+        "Calculators as models",
+        "Sources and assumptions (high level)",
+        "Update cadence",
+        "Limitations",
+        "WealthLanding"
+      ]
+    },
+    {
+      "title": "Money & Lifestyle",
+      "url": "/money/",
+      "desc": "Guides and calculators for health-plan costs, household budgets and debt, plus airline and hotel loyalty programs and which card to use.",
+      "section": "Money & Lifestyle",
+      "keywords": [
+        "Health costs, everyday money and travel",
+        "Which health plan should I pick?",
+        "How do I get out of debt faster?",
+        "Where do I start on a household budget?",
+        "Is my family protected if something happens?",
+        "Which airline or hotel program fits how I travel?",
+        "Budget and spending articles",
+        "Travel & rewards",
+        "Money guides",
+        "money"
+      ]
+    },
+    {
+      "title": "Plan by Age: Money Decisions from 45 to 65",
+      "url": "/plan-by-age/",
+      "desc": "A year-by-year guide to the money decisions between 45 and 65: catch-up contributions, the rule of 55, Social Security, the healthcare bridge, Medicare and…",
+      "section": "Plan by age: 45–65",
+      "keywords": [
+        "The money decisions from 45 to 65, in the order they arrive",
+        "The journey from 45 to 65",
+        "What comes after 65",
+        "Plan by age: 45–65",
+        "plan",
+        "by",
+        "age"
+      ]
+    },
+    {
+      "title": "Money at 45 to 49",
+      "url": "/plan-by-age/45-49/",
+      "desc": "What happens to your money from 45 to 49: a first retirement readiness check, college bills, aging parents and protecting your income, with 2026 limits from…",
+      "section": "Plan by age: 45–65",
+      "keywords": [
+        "Ages 45–49: Peak years, full plate",
+        "Birthdays that matter",
+        "Life events in this stage",
+        "Your first real retirement readiness check",
+        "What's happening",
+        "What to do now",
+        "Key decisions",
+        "Common mistakes",
+        "Plan by age: 45–65",
+        "plan",
+        "by",
+        "age"
+      ]
+    },
+    {
+      "title": "Money at 50 to 54",
+      "url": "/plan-by-age/50-54/",
+      "desc": "From 50 to 54: catch-up contributions, the 2026 Roth catch-up rule, kids leaving home, rising health costs and money after divorce or a spouse's death, with…",
+      "section": "Plan by age: 45–65",
+      "keywords": [
+        "Ages 50–54: The catch-up years",
+        "Birthdays that matter",
+        "Life events in this stage",
+        "Catch-up contributions start at 50",
+        "What's happening",
+        "What to do now",
+        "Key decisions",
+        "Common mistakes",
+        "Plan by age: 45–65",
+        "plan",
+        "by",
+        "age"
+      ]
+    },
+    {
+      "title": "Money at 55 to 59",
+      "url": "/plan-by-age/55-59/",
+      "desc": "From 55 to 59½: the rule of 55, penalty-free withdrawals at 59½, the HSA catch-up, layoffs and buyouts, pension lump sums and downsizing or moving abroad,…",
+      "section": "Plan by age: 45–65",
+      "keywords": [
+        "Ages 55–59: Early-exit options",
+        "Birthdays that matter",
+        "Life events in this stage",
+        "Early access rules: 55 and 59½",
+        "What's happening",
+        "What to do now",
+        "Key decisions",
+        "Common mistakes",
+        "Plan by age: 45–65",
+        "plan",
+        "by",
+        "age"
+      ]
+    },
+    {
+      "title": "Money at 60 to 62",
+      "url": "/plan-by-age/60-62/",
+      "desc": "From 60 to 62: the 60–63 super catch-up, picking a retirement date, the Roth conversion window, health coverage before Medicare and whether to claim Social…",
+      "section": "Plan by age: 45–65",
+      "keywords": [
+        "Ages 60–62: Decision years",
+        "Birthdays that matter",
+        "Life events in this stage",
+        "The 60–63 super catch-up",
+        "What's happening",
+        "What to do now",
+        "Key decisions",
+        "Common mistakes",
+        "Plan by age: 45–65",
+        "plan",
+        "by",
+        "age"
+      ]
+    },
+    {
+      "title": "Money at 63 to 65",
+      "url": "/plan-by-age/63-65/",
+      "desc": "From 63 to 65: how income at 63 sets Medicare premiums at 65, the Medicare enrollment window and penalties, estate and beneficiary basics, and a final…",
+      "section": "Plan by age: 45–65",
+      "keywords": [
+        "Ages 63–65: Medicare countdown",
+        "Birthdays that matter",
+        "Life events in this stage",
+        "IRMAA: income at 63 sets premiums at 65",
+        "What's happening",
+        "What to do now",
+        "Key decisions",
+        "Common mistakes",
+        "Plan by age: 45–65",
+        "plan",
+        "by",
+        "age"
+      ]
+    },
+    {
+      "title": "Privacy Policy",
+      "url": "/privacy/",
+      "desc": "Privacy policy for WealthLanding — analytics, advertising, newsletter, cookies, and browser localStorage for educational tools. Last updated November 2026.",
+      "section": "WealthLanding",
+      "keywords": [
+        "Overview",
+        "Information we may collect",
+        "Cookies and similar technologies",
+        "Third parties",
+        "How we use information",
+        "Data retention and your choices",
+        "Children",
+        "Changes",
+        "WealthLanding",
+        "privacy"
+      ]
+    },
+    {
+      "title": "Real Estate: Retirement Moves, Rent vs Buy and Property…",
+      "url": "/real-estate/",
+      "desc": "Binary decision path for retirement housing moves, after-tax rent vs buy, buying and renting guides, property potential diligence, and daily-support housing…",
+      "section": "Real Estate",
+      "keywords": [
+        "Housing decisions for the years you already own a life",
+        "A visual path for your next housing move",
+        "Other entry points (not the main path)",
+        "Housing decision guides",
+        "Models and market reads",
+        "Real Estate",
+        "real",
+        "estate"
+      ]
+    },
+    {
+      "title": "Buying a Primary Home",
+      "url": "/real-estate/buying-primary-home.html",
+      "desc": "A practical primary-home buying guide for U.S. households: Loan Estimate and Closing Disclosure comparison, inspections, title, flood risk, taxes,…",
+      "section": "Real Estate",
+      "keywords": [
+        "Decision framework",
+        "Mortgage shopping with official forms",
+        "Loan Estimate",
+        "Closing Disclosure",
+        "What “lowest rate” can hide",
+        "Property diligence checklist themes",
+        "Inspections",
+        "Title and disclosures",
+        "Real Estate",
+        "Housing decision guides",
+        "real",
+        "estate"
+      ]
+    },
+    {
+      "title": "Downsizing or Relocating at 45–65",
+      "url": "/real-estate/downsizing-relocating.html",
+      "desc": "A 45–65 guide to keeping, downsizing, or relocating: net equity after selling costs, IRS main-home exclusion eligibility, retirement cash needs, healthcare…",
+      "section": "Real Estate",
+      "keywords": [
+        "Downsizing or Relocating",
+        "Decision framework for 45–65",
+        "Net equity, not list price",
+        "Selling costs and prep",
+        "Main-home exclusion",
+        "Buying the next place",
+        "Rent bridge",
+        "Fit checks beyond the spreadsheet",
+        "Real Estate",
+        "Housing decision guides",
+        "real",
+        "estate"
+      ]
+    },
+    {
+      "title": "When Daily Support Rises",
+      "url": "/real-estate/housing-and-daily-support.html",
+      "desc": "A concise bridge for housing when daily support needs rise: distinguish independent living, assisted living and skilled nursing; Medicare generally does not…",
+      "section": "Real Estate",
+      "keywords": [
+        "When Daily Support Outgrows the House",
+        "Needs first, birthday second",
+        "Settings at a glance (definitions from official aging/Medicare education)",
+        "Home with services",
+        "Independent living / retirement communities",
+        "Assisted living",
+        "Nursing home / skilled nursing facility",
+        "Medicare and long-term custodial care",
+        "Real Estate",
+        "Housing decision guides",
+        "real",
+        "estate"
+      ]
+    },
+    {
+      "title": "Investment Property",
+      "url": "/real-estate/investment-property.html",
+      "desc": "Evaluate a rental property with realistic net rent, NOI and cash flow after financing, leverage risk, fair housing basics, and IRS depreciation and…",
+      "section": "Real Estate",
+      "keywords": [
+        "Investment Property Realities",
+        "NOI vs cash flow after financing",
+        "Build a conservative rent budget",
+        "Vacancy and turnover",
+        "Repairs vs capital expenses",
+        "Management and your time",
+        "Taxes, insurance, HOA, utilities",
+        "Leverage, concentration and exit",
+        "Real Estate",
+        "Housing decision guides",
+        "real",
+        "estate"
+      ]
+    },
+    {
+      "title": "See Past Surface Value",
+      "url": "/real-estate/property-potential.html",
+      "desc": "How to diligence “potential” from multiple lots or unfinished basement and attic space — zoning vs tax parcels, buildability, egress, permits and…",
+      "section": "Real Estate",
+      "keywords": [
+        "See Past the Surface Listing",
+        "Potential is a hypothesis until diligence closes",
+        "Multiple lots vs one large lot",
+        "Tax parcels are not the same as legal lots",
+        "Merger, combination and “merged lot” rules",
+        "Buildability checklist themes",
+        "Environmental and hazard constraints",
+        "Costs that eat “extra lot” upside",
+        "Real Estate",
+        "Housing decision guides",
+        "real",
+        "estate"
+      ]
+    },
+    {
+      "title": "Renting Deliberately",
+      "url": "/real-estate/renting-deliberately.html",
+      "desc": "How to rent on purpose: lease terms, renewals, deposits, renter’s insurance, local rights as a starting point, and investing the difference without…",
+      "section": "Real Estate",
+      "keywords": [
+        "When renting is the strategy",
+        "Lease and risk checklist themes",
+        "Lease terms",
+        "Renewals and increases",
+        "Deposits",
+        "Renter’s insurance",
+        "Flexibility cost",
+        "Investing the difference",
+        "Real Estate",
+        "Housing decision guides",
+        "real",
+        "estate"
+      ]
+    },
+    {
+      "title": "The 7 Principles of Retirement Confidence",
+      "url": "/retirement-confidence/",
+      "desc": "Learn seven practical retirement planning principles for savings, Social Security, healthcare, taxes, and withdrawals. Focus on what you can control.",
+      "section": "Retirement",
+      "keywords": [
+        "The 7 Principles of Retirement Confidence: Take Control of What You Can",
+        "The Three Layers of Control and the Seven Principles",
+        "The Three Layers of Control",
+        "Outside Your Control",
+        "Within Your Influence",
+        "Within Your Direct Control",
+        "The Seven Principles of Retirement Confidence",
+        "Will Your Retirement Money Last 30 Years?",
+        "Retirement",
+        "7 Principles",
+        "confidence"
+      ]
+    },
+    {
+      "title": "Will Your Retirement Money Last 30 Years? Longevity and…",
+      "url": "/retirement-confidence/longevity-marathon/",
+      "desc": "Why retirement can last 30 years or more, how inflation erodes purchasing power, and how growth investments fit a long retirement plan. Illustrated with…",
+      "section": "Retirement",
+      "keywords": [
+        "Will Your Retirement Money Last 30 Years?",
+        "The principle: plan for a long retirement, not an average one",
+        "Why inflation is the quiet risk",
+        "A worked example: the same savings, three growth assumptions",
+        "What you can do",
+        "A short longevity checklist",
+        "Put this principle to work",
+        "Common misconceptions",
+        "Retirement",
+        "7 Principles",
+        "confidence",
+        "longevity"
+      ]
+    },
+    {
+      "title": "What Medicare Doesn't Cover in Retirement",
+      "url": "/retirement-confidence/medicare-gap/",
+      "desc": "2026 Medicare premiums and deductibles, IRMAA, what Original Medicare doesn't cover, Medigap vs. Medicare Advantage, enrollment pitfalls and long-term care…",
+      "section": "Retirement",
+      "keywords": [
+        "The principle: Medicare is the foundation, not the whole house",
+        "What Medicare costs in 2026",
+        "Prescription drugs (Part D)",
+        "Higher-income premiums (IRMAA)",
+        "A worked example: Ruth and Sam's first year",
+        "What Original Medicare does not cover",
+        "Medigap, Medicare Advantage and Part D compared",
+        "Enrollment timing pitfalls",
+        "Retirement",
+        "7 Principles",
+        "confidence",
+        "medicare"
+      ]
+    },
+    {
+      "title": "Where Should Your Next Dollar of Savings Go? The Savings…",
+      "url": "/retirement-confidence/savings-priority-pyramid/",
+      "desc": "A practical order for emergency savings, employer matches, high-cost debt, HSAs, 401(k)s, IRAs and taxable investing, with 2026 IRS limits and the…",
+      "section": "Retirement",
+      "keywords": [
+        "Where Should Your Next Dollar of Savings Go?",
+        "The principle: give every dollar a priority",
+        "The seven levels, from the base up",
+        "A worked example: Paul's $10,000",
+        "Trade-offs that can change the order",
+        "What you can do",
+        "Put this principle to work",
+        "Common mistakes",
+        "Retirement",
+        "7 Principles",
+        "confidence",
+        "savings"
+      ]
+    },
+    {
+      "title": "How Much Should You Have Saved by 50? Benchmarks and the…",
+      "url": "/retirement-confidence/savings-target-two-buckets/",
+      "desc": "What J.P. Morgan and Fidelity savings benchmarks for age 50 really assume, how to assess a shortfall calmly, and how a two-bucket approach separates…",
+      "section": "Retirement",
+      "keywords": [
+        "How Much Should You Have Saved by 50?",
+        "The principle: a benchmark is a starting point, not a verdict",
+        "What two widely used benchmarks say",
+        "J.P. Morgan's retirement savings checkpoints",
+        "Fidelity's salary multiples",
+        "If you are behind: assess without panic",
+        "A worked example: what the levers can do",
+        "The two-bucket approach: separate near-term needs from long-term growth",
+        "Retirement",
+        "7 Principles",
+        "confidence",
+        "savings"
+      ]
+    },
+    {
+      "title": "Should You Claim Social Security at 62, 67, or 70?",
+      "url": "/retirement-confidence/social-security-timing/",
+      "desc": "How claiming Social Security at 62, full retirement age or 70 changes your monthly benefit, with SSA figures, illustrative breakeven ages, spousal and…",
+      "section": "Retirement",
+      "keywords": [
+        "The principle: claiming age is a decision you can influence",
+        "How the benefit changes with claiming age",
+        "A worked example: the breakeven ages",
+        "Spousal and survivor benefits change the math for couples",
+        "Bridging the gap if you delay",
+        "What you can do",
+        "Put this principle to work",
+        "Common misconceptions",
+        "Retirement",
+        "7 Principles",
+        "confidence",
+        "social"
+      ]
+    },
+    {
+      "title": "Traditional vs. Roth",
+      "url": "/retirement-confidence/tax-box-allocation/",
+      "desc": "How tax-deferred, Roth and taxable accounts differ, why tax diversification matters, how gap-year Roth conversions work under 2026 rules, and how IRMAA and…",
+      "section": "Retirement",
+      "keywords": [
+        "Traditional vs. Roth: How to Build a Tax-Smart Retirement Portfolio",
+        "The principle: where you hold money matters, not just how much",
+        "The three tax boxes",
+        "The gap years: a window many retirees overlook",
+        "A worked example: filling the 12% bracket",
+        "Caveats: income interacts with other programs",
+        "What you can do",
+        "Put this principle to work",
+        "Retirement",
+        "7 Principles",
+        "confidence",
+        "tax"
+      ]
+    },
+    {
+      "title": "Which Retirement Account Should You Spend First? Withdrawal…",
+      "url": "/retirement-confidence/withdrawal-sequence/",
+      "desc": "Taxable first, traditional next, Roth last? How a tax-aware withdrawal strategy uses 2026 brackets, the standard deduction, the 0% capital gains rate and…",
+      "section": "Retirement",
+      "keywords": [
+        "Which Retirement Account Should You Spend First?",
+        "The principle: plan withdrawals for lifetime taxes, not just this year",
+        "The conventional order, and why it is popular",
+        "The tax features that make a blended approach possible",
+        "A worked example: three ways to fund $90,000",
+        "How the plan changes over time",
+        "What you can do",
+        "Put this principle to work",
+        "Retirement",
+        "7 Principles",
+        "confidence",
+        "withdrawal"
+      ]
+    },
+    {
+      "title": "Retirement Lab",
+      "url": "/retirement/",
+      "desc": "WealthLanding retirement lab — gateway, blueprint, location, healthcare, and Roth tools.",
+      "section": "Retirement",
+      "keywords": [
+        "The 7 Principles of Retirement Confidence",
+        "Retirement Gateway",
+        "Building Your Retirement",
+        "Optimize Roth",
+        "Overseas retirement hub",
+        "Retiring Overseas",
+        "U.S. City Matcher",
+        "U.S. healthcare strategy",
+        "Retirement",
+        "Planning tools"
+      ]
+    },
+    {
+      "title": "Terms of Use",
+      "url": "/terms/",
+      "desc": "Terms of use for WealthLanding educational content and tools. Not financial advice. Last updated November 2026.",
+      "section": "WealthLanding",
+      "keywords": [
+        "Agreement",
+        "Educational purpose — not advice",
+        "User responsibility",
+        "Tools and models",
+        "No warranties",
+        "Limitation of liability",
+        "Intellectual property",
+        "Acceptable use",
+        "WealthLanding",
+        "terms"
+      ]
+    },
+    {
+      "title": "Financial Calculators & Tools",
+      "url": "/tools/",
+      "desc": "Free financial calculators for debt, compounding, rewards, and retirement.",
+      "section": "Tools",
+      "keywords": [
+        "Find the Right Calculator",
+        "Plan a Faster Debt Payoff",
+        "See How Savings Could Grow",
+        "Maximize Spending with the Right Card",
+        "Find Your Lowest-Cost Health Plan",
+        "Real Estate vs Index Funds",
+        "Dividend Stock Screener",
+        "Roth Strategy Optimizer",
+        "Tools"
+      ]
+    },
+    {
+      "title": "Compound Interest Calculator",
+      "url": "/tools/compound_interest_calculator.html",
+      "desc": "Free compound interest calculator: see how an initial investment and monthly contributions could grow over the years at your estimated annual return.",
+      "section": "Tools",
+      "keywords": [
+        "Future Balance",
+        "Understanding compound growth",
+        "What this calculator does",
+        "How to use it",
+        "How to read the results",
+        "Assumptions and limits",
+        "Worked example with the default numbers",
+        "Tools",
+        "compound",
+        "interest",
+        "calculator"
+      ]
+    },
+    {
+      "title": "Card Rewards Router",
+      "url": "/tools/credit-card/",
+      "desc": "Build your card wallet and see which credit card to use for each spending category, check annual fee breakeven, and export a printable cheat sheet.",
+      "section": "Tools",
+      "keywords": [
+        "Which Card Should You Use For That?",
+        "Your Wallet",
+        "Annual Fee Breakeven Calculator",
+        "Cash Back & Points Only — No Benefits",
+        "Monthly Spend",
+        "Your Spending Mix",
+        "Cash Back: Three Scenarios",
+        "Next Best Card Recommender",
+        "Tools",
+        "credit",
+        "card"
+      ]
+    },
+    {
+      "title": "Debt Payoff Calculator",
+      "url": "/tools/debt_payoff_calculator.html",
+      "desc": "Free debt payoff calculator: compare the snowball and avalanche strategies to see your time to debt-free and total interest paid.",
+      "section": "Tools",
+      "keywords": [
+        "Your Debts",
+        "Payoff Strategy Comparison",
+        "Understanding the snowball and avalanche methods",
+        "What this calculator does",
+        "How to use it",
+        "How to read the results",
+        "Assumptions and limits",
+        "Worked example with the default numbers",
+        "Tools",
+        "debt",
+        "payoff",
+        "calculator"
+      ]
+    },
+    {
+      "title": "Health Plan Comparison Calculator",
+      "url": "/tools/health-plan-compare/",
+      "desc": "Compare two or three employer health plans side by side. Enter premiums, deductibles, coinsurance and out-of-pocket maximums to see your total yearly cost…",
+      "section": "Tools",
+      "keywords": [
+        "How this is calculated",
+        "Assumptions and what real plans do differently",
+        "Reading the chart",
+        "Embed this calculator",
+        "Worked example and next steps",
+        "Worked example with the default numbers",
+        "How to use the result",
+        "Tools",
+        "health",
+        "plan",
+        "compare"
+      ]
+    },
+    {
+      "title": "Travel & Rewards",
+      "url": "/travel/",
+      "desc": "How airline and hotel loyalty programs work, whether elite status is worth it, and which credit card to use for each purchase, with calculators and real…",
+      "section": "Travel & Rewards",
+      "keywords": [
+        "Points, status and card perks that fit how you travel",
+        "Which airline program fits my home airport?",
+        "Is chasing status worth it?",
+        "Which hotel program should I focus on?",
+        "Which card should I use for each purchase?",
+        "How do I pay less for the trip itself?",
+        "Airline programs",
+        "Hotel programs",
+        "travel"
+      ]
+    },
+    {
+      "title": "Airline Loyalty Programs Compared",
+      "url": "/travel/airlines/",
+      "desc": "Compare United MileagePlus, American AAdvantage and Delta SkyMiles: how status works, the credit-card route to top tier, award flexibility, hidden gems and…",
+      "section": "Travel & Rewards",
+      "keywords": [
+        "Which airline loyalty program fits you: United, American or Delta",
+        "Three programs, three different bets",
+        "Side-by-side comparison",
+        "Which program for your city?",
+        "How easy is top tier with card spend?",
+        "Route your real spending, then compare",
+        "What the comparison tells you",
+        "Related on WealthLanding",
+        "Travel & Rewards",
+        "Airline programs",
+        "travel",
+        "airlines"
+      ]
+    },
+    {
+      "title": "American AAdvantage Guide",
+      "url": "/travel/airlines/american.html",
+      "desc": "How American AAdvantage status works in the 2026-27 status year (Loyalty Points), the card route to Gold through Executive Platinum, award flexibility,…",
+      "section": "Travel & Rewards",
+      "keywords": [
+        "American AAdvantage: Loyalty Points, awards and who it actually fits",
+        "Snapshot: what AAdvantage is and how you earn status in the 2026–27 year",
+        "How Loyalty Points are earned",
+        "Loyalty Point Rewards: status is only the first ladder",
+        "Tiers, benefits and every way to get there",
+        "Mixing flying and card spend is where it gets practical",
+        "The cards that earn Loyalty Points",
+        "See what your own spending would earn",
+        "Travel & Rewards",
+        "Airline programs",
+        "travel",
+        "airlines"
+      ]
+    },
+    {
+      "title": "Delta SkyMiles Guide",
+      "url": "/travel/airlines/delta.html",
+      "desc": "How Delta Medallion status works for 2027 (MQDs only), the Amex card route to Silver through Diamond, award flexibility, hidden gems, and who should favor…",
+      "section": "Travel & Rewards",
+      "keywords": [
+        "Delta SkyMiles: Medallion status, awards and who it actually fits",
+        "Snapshot: what SkyMiles is and how you earn status for 2027",
+        "How MQDs are earned",
+        "Tiers, benefits and every way to get there",
+        "Choice Benefits: the second ladder at the top",
+        "Mixing flying and card spend is where it gets practical",
+        "The cards that earn MQDs",
+        "See what your own spending would earn",
+        "Travel & Rewards",
+        "Airline programs",
+        "travel",
+        "airlines"
+      ]
+    },
+    {
+      "title": "Is Airline Status Worth It? Status Value vs Cost Calculator",
+      "url": "/travel/airlines/status-calculator.html",
+      "desc": "Put a dollar value on airline status: your card already covers free bags and lounge visits, so status only counts what it adds — extra-legroom seats,…",
+      "section": "Travel & Rewards",
+      "keywords": [
+        "Is airline status worth what it costs you?",
+        "How the math works",
+        "Keep reading",
+        "Keep going: Travel & Rewards",
+        "Travel & Rewards",
+        "Airline programs",
+        "travel",
+        "airlines",
+        "status",
+        "calculator"
+      ]
+    },
+    {
+      "title": "United MileagePlus Guide 2027",
+      "url": "/travel/airlines/united.html",
+      "desc": "How United MileagePlus status works for 2027 (PQP-only, no more PQF), what each Premier tier gets you including companion benefits, the credit-card route…",
+      "section": "Travel & Rewards",
+      "keywords": [
+        "United MileagePlus: status, awards and who it actually fits",
+        "Snapshot: what MileagePlus is and how you earn status in 2027",
+        "The one way to qualify",
+        "How PQP is actually earned",
+        "Tiers, benefits and every way to get there",
+        "Mixing paths: a realistic year",
+        "The cards behind the card columns",
+        "See what your own spending would earn",
+        "Travel & Rewards",
+        "Airline programs",
+        "travel",
+        "airlines"
+      ]
+    },
+    {
+      "title": "Hotel Loyalty Programs Compared",
+      "url": "/travel/hotels/",
+      "desc": "Compare Marriott Bonvoy, Hilton Honors, World of Hyatt and IHG One Rewards: elite tiers and benefits, award pricing, long-stay perks, the co-brand card…",
+      "section": "Travel & Rewards",
+      "keywords": [
+        "Which hotel loyalty program fits you: Marriott, Hilton, Hyatt or IHG",
+        "Four programs, four different bets",
+        "Side-by-side comparison",
+        "How award pricing differs",
+        "Which program for how you travel?",
+        "Status from a credit card",
+        "Transferable points",
+        "Route your real spending, then compare",
+        "Travel & Rewards",
+        "Hotel programs",
+        "travel",
+        "hotels"
+      ]
+    },
+    {
+      "title": "Hilton Honors Guide",
+      "url": "/travel/hotels/hilton.html",
+      "desc": "How Hilton Honors status works, including the new Diamond Reserve tier, what Silver through Diamond Reserve get you, the 5th Night Free and Points & Money,…",
+      "section": "Travel & Rewards",
+      "keywords": [
+        "Hilton Honors: elite tiers, awards and who it actually fits",
+        "Snapshot: what Hilton Honors is and how status works",
+        "Elite tiers and key benefits",
+        "Award redemption",
+        "How to earn status, and the cards that matter",
+        "Co-brand cards",
+        "Transferable points",
+        "Status match",
+        "Travel & Rewards",
+        "Hotel programs",
+        "travel",
+        "hotels"
+      ]
+    },
+    {
+      "title": "World of Hyatt Guide",
+      "url": "/travel/hotels/hyatt.html",
+      "desc": "How World of Hyatt status works, what Discoverist, Explorist and Globalist offer, the 2026 award chart update with five redemption levels, Milestone Rewards…",
+      "section": "Travel & Rewards",
+      "keywords": [
+        "World of Hyatt: elite tiers, the award chart and who it actually fits",
+        "Snapshot: what World of Hyatt is and how status works",
+        "Elite tiers and key benefits",
+        "Milestone Rewards and Guest of Honor",
+        "Award redemption",
+        "How to earn status, and the cards that matter",
+        "Co-brand cards",
+        "Transferable points",
+        "Travel & Rewards",
+        "Hotel programs",
+        "travel",
+        "hotels"
+      ]
+    },
+    {
+      "title": "IHG One Rewards Guide",
+      "url": "/travel/hotels/ihg.html",
+      "desc": "How IHG One Rewards status works, what Silver through Diamond get you, Milestone Rewards, dynamic Reward Nights and Points & Cash, the four Chase co-brand…",
+      "section": "Travel & Rewards",
+      "keywords": [
+        "IHG One Rewards: elite tiers, Reward Nights and who it actually fits",
+        "Snapshot: what IHG One Rewards is and how status works",
+        "Elite tiers and key benefits",
+        "Milestone Rewards",
+        "Award redemption",
+        "How to earn status, and the cards that matter",
+        "Co-brand cards",
+        "Transferable points",
+        "Travel & Rewards",
+        "Hotel programs",
+        "travel",
+        "hotels"
+      ]
+    },
+    {
+      "title": "Marriott Bonvoy Guide",
+      "url": "/travel/hotels/marriott.html",
+      "desc": "How Marriott Bonvoy status works, what Silver through Ambassador get you, Stay for 5 Pay for 4 and Cash + Points, the Amex and Chase co-brand cards with…",
+      "section": "Travel & Rewards",
+      "keywords": [
+        "Marriott Bonvoy: elite tiers, awards and who it actually fits",
+        "Snapshot: what Marriott Bonvoy is and how status works",
+        "Elite tiers and key benefits",
+        "Award redemption",
+        "Points to airline miles",
+        "How to earn status, and the cards that matter",
+        "Co-brand cards",
+        "Transferable points",
+        "Travel & Rewards",
+        "Hotel programs",
+        "travel",
+        "hotels"
+      ]
+    }
+  ]
+}

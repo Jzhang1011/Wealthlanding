@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SITEMAP_JSON = ROOT / "components" / "site-map" / "site-map.json"
 BASE = "https://www.wealthlanding.com"
 CSS = '<link rel="stylesheet" href="/components/site-map/site-blocks.css">'
+import search_index
 
 
 def esc(text):
@@ -759,17 +760,14 @@ def nav_html(cfg):
 {chr(10).join(items)}
  </ul>
  </nav>
- <div>
- <button id="wlMobileMenuBtn" class="wl-mobile-toggle" aria-label="Open menu">
- <i class="fa-solid fa-bars"></i>
- </button>
- </div>
+ {search_index.header_tools_html()}
  </div>
  </div>
  </header>
  <div id="wlMobileDrawer" class="wl-mobile-drawer">
  <div class="wl-mobile-panel">
  <div class="wl-md-top"><span>WealthLanding Menu</span><button id="wlCloseMobileDrawerBtn" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button></div>
+ {search_index.drawer_search_html()}
  <a href="/#start-here" class="wl-md-start">Start here: pick your goal &rarr;</a>
  <div class="wl-md-sections">
 {chr(10).join(mobile)}
@@ -963,6 +961,8 @@ def build(check=False, guide_pages=()):
         generated = getattr(page, "_generated", None)
         old = generated[1] if generated else page.text
         text = generated[0] if generated else page.text
+        if rel.startswith("search/"):
+            continue
         if page.redirect:
             write(rel, text, old, stale, check)
             continue
@@ -1045,4 +1045,14 @@ def build(check=False, guide_pages=()):
     new = re.sub(r"(/\* wl:footer-links:start \*/\n).*?(\n\s*/\* wl:footer-links:end \*/)",
                  lambda m: m.group(1) + "const WL_FOOTER_LINKS = " + json.dumps(footer_block, ensure_ascii=False) + ";" + m.group(2), old, flags=re.S)
     write(js_rel, new, old, stale, check)
+    # Search markup in the header.js fallback, plus the index and /search/ page
+    old = (ROOT / "components/header.js").read_text(encoding="utf-8")
+    new = re.sub(
+        r"(/\* wl:search-markup:start \*/\n).*?(\n\s*/\* wl:search-markup:end \*/)",
+        lambda m: m.group(1) + "        var WL_SEARCH_TOOLS = " + json.dumps(search_index.header_tools_html(), ensure_ascii=False) + ";" + m.group(2),
+        old,
+        flags=re.S,
+    )
+    write("components/header.js", new, old, stale, check)
+    search_index.build(cfg, pages, classify, footer_block, stale, check)
     return stale
