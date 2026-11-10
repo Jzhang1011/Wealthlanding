@@ -75,12 +75,16 @@ assert "not a survey or zoning plan" in article.lower()
 assert "Mara Ellison" in article and "Helen Cho" in article
 assert "Bill Left" not in article  # do not alter or reuse the Bill story
 
-# Archive, hub, sitemap, blog index
+# Archive, hub, sitemap. /blogs/ shows only the three newest posts
+# per section, so a later Real Estate Tips post may age this story off
+# the index cards; the hub and archive remain the lasting listings.
 arch = json.loads(ARCHIVE.read_text(encoding="utf-8"))
 assert any(p["id"] == "two-acres-two-lots" for p in arch["posts"])
 assert "two-acres-two-lots.html" in HUB.read_text(encoding="utf-8")
 assert "two-acres-two-lots.html" in SITEMAP.read_text(encoding="utf-8")
-assert "two-acres-two-lots.html" in (ROOT / "blogs/index.html").read_text(encoding="utf-8")
+index = (ROOT / "blogs/index.html").read_text(encoding="utf-8")
+assert 'data-blog-section="real_estate"' in index
+assert "/blogs/real_estate.html" in index
 
 # Existing relative links in the article resolve on disk
 for href in re.findall(r'href="(/[^"]+)"', article):
