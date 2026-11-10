@@ -73,7 +73,7 @@ def story_card(post: dict) -> str:
     else:
         tile = post.get("tileLabel") or "Article"
         media = (
-            f'<div class="story-image-wrapper bg-slate-900 text-emerald-300 flex items-center justify-center">'
+            f'<div class="story-image-wrapper bg-emerald-50 text-emerald-800 flex items-center justify-center border border-emerald-100">'
             f'<span class="text-xs font-bold uppercase tracking-widest">{e(tile)}</span>'
             f'</div>'
         )
@@ -105,7 +105,7 @@ def featured_block(post: dict) -> str:
     else:
         tile = post.get("tileLabel") or "Article"
         media = (
-            f'<div class="aspect-video overflow-hidden bg-slate-900 text-emerald-300 flex items-center justify-center">'
+            f'<div class="aspect-video overflow-hidden bg-emerald-50 text-emerald-800 flex items-center justify-center border border-emerald-100">'
             f'<span class="text-sm font-bold uppercase tracking-widest">{e(tile)}</span>'
             f'</div>'
         )
