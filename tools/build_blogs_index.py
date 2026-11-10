@@ -11,6 +11,7 @@ import html
 from pathlib import Path
 
 from blog_archives import LATEST_COUNT, ROOT, latest_across, load_public_sections
+import blog_tags
 
 e = lambda s: html.escape(str(s if s is not None else ""), quote=True)
 
@@ -55,7 +56,7 @@ def _date_label(post: dict) -> str:
     return post.get("date") or ""
 
 
-def story_card(post: dict) -> str:
+def story_card(post: dict, meta: dict | None = None) -> str:
     href = _href(post.get("url"))
     title = post.get("title") or "Untitled"
     desc = post.get("desc") or ""
@@ -79,17 +80,21 @@ def story_card(post: dict) -> str:
             f'<span class="text-xs font-bold uppercase tracking-widest">{e(tile)}</span>'
             f'</div>'
         )
+    raw_pills = blog_tags.pills_html(post.get("tags") or [], meta, linked=False)
+    # story-card is a single <a>, so pills stay visual (no nested links). Tighten spacing.
+    pills = raw_pills.replace("mt-4 ", "mt-0 mb-3 ") if raw_pills else ""
     return (
         f'<a href="{e(href)}" class="story-card">'
         f'{media}'
         f'<h3 class="text-xl font-bold text-slate-900 leading-snug mb-2">{e(title)}</h3>'
         f'<p class="text-slate-600 text-sm line-clamp-3 mb-4">{e(desc)}</p>'
+        f'{pills}'
         f'{date_html}'
         f'</a>'
     )
 
 
-def featured_block(post: dict) -> str:
+def featured_block(post: dict, meta: dict | None = None) -> str:
     href = _href(post.get("url"))
     title = post.get("title") or "Untitled"
     desc = post.get("desc") or ""
@@ -113,6 +118,7 @@ def featured_block(post: dict) -> str:
             f'<span class="text-sm font-bold uppercase tracking-widest">{e(tile)}</span>'
             f'</div>'
         )
+    pills = blog_tags.pills_html(post.get("tags") or [], meta, linked=True)
     return f'''      <div class="mb-16">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {media}
@@ -124,6 +130,7 @@ def featured_block(post: dict) -> str:
               <a href="{e(href)}">{e(title)}</a>
             </h2>
             <p class="text-slate-600 text-base leading-relaxed">{e(desc)}</p>
+            {pills}
             {date_html}
           </div>
         </div>
@@ -133,7 +140,7 @@ def featured_block(post: dict) -> str:
 
 def section_block(sec: dict) -> str:
     posts = sec["posts"][:LATEST_COUNT]
-    cards = "\n          ".join(story_card(p) for p in posts)
+    cards = "\n          ".join(story_card(p, sec.get("meta")) for p in posts)
     read_more = (
         f'<a href="{e(sec["hub_href"])}" class="text-sm font-bold text-emerald-700 hover:underline">'
         f'Read more {e(sec["title"])} posts →</a>'
@@ -155,7 +162,8 @@ def render_index(sections=None) -> str:
     featured = latest_across(sections)
     parts = []
     if featured:
-        parts.append(featured_block(featured))
+        feat_meta = next((sec.get("meta") for sec in sections if any((p.get("url") == featured.get("url")) for p in sec["posts"])), None)
+        parts.append(featured_block(featured, feat_meta))
     for sec in sections:
         parts.append(section_block(sec))
         if sec.get("chart_after"):
