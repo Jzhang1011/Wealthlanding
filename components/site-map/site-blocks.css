@@ -105,13 +105,13 @@ wealthlanding-footer > .wl-footer-links .wl-fl-disclaimer { grid-column: 1 / -1;
 .hpc-embed .wl-breadcrumb, .hpc-embed .wl-next-steps, .ais-embed .wl-breadcrumb, .ais-embed .wl-next-steps { display: none !important; }
 @media print { .wl-breadcrumb, .wl-next-steps, .wl-goals, .wl-routes { display: none !important; } }
 
-/* Real Estate decision tree (SVG) */
+/* Real Estate decision tree (desktop SVG + mobile stacked tree) */
 .wl-flow { padding: 2.5rem 0; background: #fff; border-bottom: 1px solid #e2e8f0; color: #334155; }
 .wl-flow h2 { font-size: 1.5rem; font-weight: 800; color: #0f172a; margin: 0.25rem 0 0.75rem; letter-spacing: -0.01em; }
 .wl-flow-intro { margin: 0 0 1rem; max-width: 46rem; line-height: 1.65; color: #475569; }
-.wl-flow-scroll-hint { display: none; margin: 0 0 0.75rem; font-size: 0.85rem; color: #64748b; }
-.wl-flow-viewport { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 0.5rem; }
-.wl-flow-canvas { min-width: 56rem; margin: 0 auto; }
+.wl-flow-desktop { width: 100%; }
+.wl-flow-viewport { width: 100%; overflow: visible; padding-bottom: 0.5rem; }
+.wl-flow-canvas { width: 100%; max-width: 72rem; margin: 0 auto; min-width: 0; }
 .wl-flow-svg { width: 100%; height: auto; display: block; font-family: Inter, system-ui, sans-serif; }
 .wl-flow-qtext { font-size: 14px; font-weight: 700; fill: #0f172a; }
 .wl-flow-outtext { font-size: 13px; font-weight: 700; fill: #14532d; }
@@ -121,6 +121,19 @@ wealthlanding-footer > .wl-footer-links .wl-fl-disclaimer { grid-column: 1 / -1;
 .wl-flow-outnode:hover rect { fill: #f0fdf4; stroke: #15803d; }
 .wl-flow-outnode:focus { outline: none; }
 .wl-flow-outnode:focus rect { stroke: #15803d; stroke-width: 3.25; }
+.wl-flow-mobile { display: none; }
+.wl-mtree { max-width: 28rem; margin: 0 auto; }
+.wl-mtree-q { border: 2.5px solid #16a34a; border-radius: 14px; padding: 0.85rem 1rem; font-weight: 700; color: #0f172a; background: #fff; text-align: center; line-height: 1.4; }
+.wl-mtree-branches { display: flex; flex-direction: column; gap: 0.35rem; }
+.wl-mtree-branch { display: flex; flex-direction: column; align-items: stretch; }
+.wl-mtree-edge { display: flex; flex-direction: column; align-items: center; color: #166534; font-weight: 800; font-size: 0.75rem; letter-spacing: 0.02em; }
+.wl-mtree-edge::before { content: ""; width: 2px; height: 0.85rem; background: #166534; }
+.wl-mtree-edge span { background: #f0fdf4; border: 1.5px solid #16a34a; border-radius: 999px; padding: 0.1rem 0.6rem; margin: 0.15rem 0; }
+.wl-mtree-edge::after { content: ""; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid #166534; margin-bottom: 0.35rem; }
+.wl-mtree-out { display: flex; flex-direction: column; gap: 0.2rem; text-align: center; border: 2.25px solid #16a34a; border-radius: 999px; padding: 0.8rem 1.15rem; color: #14532d; font-weight: 700; text-decoration: none; background: #fff; line-height: 1.35; }
+.wl-mtree-out span { font-weight: 500; color: #64748b; font-size: 0.85rem; }
+.wl-mtree-out:hover { background: #f0fdf4; border-color: #15803d; }
+.wl-mtree-out:focus { outline: 3px solid #86efac; outline-offset: 2px; }
 .wl-flow-a11y { margin-top: 1rem; max-width: 46rem; }
 .wl-flow-a11y summary { cursor: pointer; font-weight: 700; color: #0f172a; }
 .wl-flow-fallback { margin: 0.75rem 0 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.55rem; }
@@ -135,9 +148,11 @@ wealthlanding-footer > .wl-footer-links .wl-fl-disclaimer { grid-column: 1 / -1;
 .wl-flow-secondary li a:hover { color: #15803d; }
 .wl-flow-note { margin: 1.25rem 0 0; font-size: 0.85rem; color: #64748b; line-height: 1.5; max-width: 46rem; }
 
+/* Narrow viewports: stacked HTML tree, not a shrunk or sideways-scrolled SVG */
 @media (max-width: 800px) {
-  .wl-flow-scroll-hint { display: block; }
-  .wl-flow-canvas { min-width: 48rem; }
+  .wl-flow-desktop { display: none; }
+  .wl-flow-mobile { display: block; }
+  .wl-flow-viewport, .wl-flow-canvas { min-width: 0; overflow: visible; width: 100%; }
 }
 @media print { .wl-flow { display: none !important; } }
 
@@ -147,24 +162,3 @@ wealthlanding-footer > .wl-footer-links .wl-fl-disclaimer { grid-column: 1 / -1;
 .wl-hub-qlist li a::before { content: "\2192\00a0"; color: #16a34a; }
 .wl-hub-qlist li a:hover { border-color: #4ade80; color: #15803d; }
 
-@media (max-width: 800px) {
-  .wl-flow-branches { grid-template-columns: 1fr; }
-  .wl-flow-branch.wl-flow-yes { margin-left: 0; border-left: 3px solid #34d399; padding-left: 0.75rem; }
-  .wl-flow-branch.wl-flow-no { margin-left: 0; border-left: 3px solid #fb923c; padding-left: 0.75rem; }
-  .wl-flow-node[data-depth="1"],
-  .wl-flow-node[data-depth="2"],
-  .wl-flow-node[data-depth="3"] { margin-left: 0.15rem; }
-}
-@media (min-width: 801px) {
-  .wl-flow-branches { position: relative; }
-  .wl-flow-branch.wl-flow-yes::before,
-  .wl-flow-branch.wl-flow-no::before {
-    content: "";
-    display: block;
-    height: 0.55rem;
-    width: 1px;
-    background: #cbd5e1;
-    margin: 0 auto 0.35rem;
-  }
-}
-@media print { .wl-flow { display: none !important; } }
