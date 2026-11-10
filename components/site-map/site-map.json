@@ -804,6 +804,7 @@
   "learn": {
     "label": "Plan by age: 45–65",
     "hub": "/plan-by-age/",
+    "root_nav": false,
     "links": [
       {
         "href": "/plan-by-age/45-49/",

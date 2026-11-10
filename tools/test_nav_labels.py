@@ -118,7 +118,8 @@ assert "Money &amp; Lifestyle" in tops or "Money & Lifestyle" in tops, tops
 assert "Travel" not in tops, tops
 assert "Travel &amp; Rewards" not in tops and "Travel & Rewards" not in tops, tops
 assert "Money &amp; Health" not in tops and "Money & Health" not in tops, tops
-assert "Blogs" in tops and "Tools" in tops and "Plan by age" in tops, tops
+assert "Blogs" in tops and "Tools" in tops, tops
+assert "Plan by age" not in tops, tops
 
 # Group headings in the combined mega
 for label in REQUIRED_GROUPS:
@@ -130,6 +131,8 @@ assert "Money & Lifestyle" in fallback or "Money &amp; Lifestyle" in fallback
 assert 'href="/travel/">Travel' not in fallback
 assert "Money & Health" not in fallback
 assert "/blogs/" in fallback and "Blogs" in fallback
+assert "Plan by age" not in fallback
+assert cfg["learn"].get("root_nav") is False
 assert "Maximize spending with the right card" in nav
 assert "router" not in nav.lower()
 
@@ -146,6 +149,12 @@ assert "Open Travel" not in sh
 assert 'href="/travel/"' in sh or "/travel/airlines/" in sh  # travel still linked from the combined card
 footer = ss.footer_links_html(cfg)
 assert "Money &amp; Lifestyle" in footer or "Money & Lifestyle" in footer
+assert "Plan by age" in footer or "Plan by age: 45" in footer
+assert "/plan-by-age/" in footer
+assert "/plan-by-age/45-49/" in footer
+# Homepage start-here strip still points to the stages
+assert "Plan by age" in sh or "plan-by-age" in sh
+assert "/plan-by-age/45-49/" in sh
 # Footer Sections column should not list Travel as a peer of Retirement/Investing
 sec_col = re.search(r"<h4>Sections</h4><ul>(.*?)</ul>", footer, re.S).group(1)
 assert "/money/" in sec_col
@@ -166,11 +175,12 @@ for s in ss.root_nav_sections(cfg):
 css = (ROOT / "components/site-map/site-blocks.css").read_text(encoding="utf-8")
 assert ".wl-start-here .wl-sh-ages a { color: #4ade80; }" in css
 
-# 5 root sections (no Travel) + Blogs + Plan by age
-assert nav.count('class="wl-nav-btn"') == 7, nav.count('class="wl-nav-btn"')
+# 5 root sections (no Travel) + Blogs; Plan by age is no longer a top-level dropdown
+assert nav.count('class="wl-nav-btn"') == 6, nav.count('class="wl-nav-btn"')
+assert "Plan by age" not in nav
 
 print(
     "OK: Money & Lifestyle groups "
     + ", ".join(REQUIRED_GROUPS)
-    + "; Travel root entry removed; travel links reachable; Blogs + Tools labels intact"
+    + "; Travel root entry removed; Plan by age removed from top nav; Blogs + Tools labels intact"
 )
