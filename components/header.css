@@ -337,3 +337,9 @@
 .wl-md-links a.wl-md-hub { color: #0f172a !important; font-weight: 800 !important; }
 .wl-md-links a:hover { color: #15803d !important; }
 .wl-mobile-panel { justify-content: flex-start !important; overflow-y: auto !important; }
+
+
+/* Combined Money & Lifestyle mega: three topic groups */
+.wl-nav-mega.wl-nav-mega-wide { width: 980px !important; }
+.wl-mega-right.wl-mega-cols-3 { grid-template-columns: 1fr 1fr 1fr !important; }
+.wl-md-sub { display: block !important; margin: 0.55rem 0 0.15rem !important; font-size: 0.7rem !important; font-weight: 800 !important; letter-spacing: 0.04em !important; text-transform: uppercase !important; color: #15803d !important; }
