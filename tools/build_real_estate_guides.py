@@ -246,6 +246,16 @@ def render_sections(guide):
                     f'<div class="t-card mb-4"><h3 class="font-bold text-navy-900 mb-2">{esc(block["title"])}</h3>'
                     f'<p class="text-sm text-gray-600 leading-relaxed">{esc_keep(block["body"])}</p></div>'
                 )
+            sl = sec.get("story_link")
+            if sl:
+                after = esc(sl.get("after") or "")
+                parts.append(
+                    '<p class="mt-2 mb-2 p-4 rounded-xl border border-emerald-200 bg-emerald-50 text-sm leading-relaxed text-gray-800">'
+                    f'<strong class="text-navy-900">{esc(sl.get("kicker") or "A worked story")}. </strong>'
+                    f'{esc(sl.get("text") or "")} '
+                    f'<a class="font-bold text-emerald-800 underline" href="{esc(sl["href"])}">{esc(sl["label"])}</a>'
+                    f'{after}</p>'
+                )
         elif kind == "raw_html":
             parts.append(sec.get("html", ""))
         else:

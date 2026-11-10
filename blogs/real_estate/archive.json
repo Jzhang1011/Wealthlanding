@@ -22,6 +22,22 @@
   },
   "posts": [
     {
+      "id": "two-acres-two-lots",
+      "url": "/blogs/real_estate/two-acres-two-lots.html",
+      "title": "Two Acres Looked the Same. Only One Was Two Lots.",
+      "desc": "Two fictional buyers near retirement each consider a two-acre listing advertised as more than one lot. Legal lots, merger rules, wetlands, costs and a walk-away — a diligence story, not a return promise.",
+      "topics": [
+        "housing-market"
+      ],
+      "tags": [
+        "Housing Market",
+        "Case Study"
+      ],
+      "date": "November 9, 2026",
+      "year": 2026,
+      "tileLabel": "Case study"
+    },
+    {
       "id": "buyers-market-with-no-buyers",
       "url": "/blogs/real_estate/buyers-market-with-no-buyers.html",
       "title": "The Buyer's Market With No Buyers",
