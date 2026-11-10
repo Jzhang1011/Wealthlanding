@@ -30,11 +30,13 @@
   function topicsOf(p) { return p.topics || (p.topic ? [p.topic] : []); }
   function tagsOf(p) { return p.tags || (p.tag ? [p.tag] : []); }
   function item(p) {
+    var w = p.imageWidth || 720;
+    var h = p.imageHeight || 378;
     var media = p.image
-      ? '<img src="' + esc(p.image) + '" alt="' + esc(p.imageAlt || '') + '" loading="lazy" class="w-full h-full object-cover aspect-video sm:aspect-[4/3]">'
-      : '<div class="w-full h-full aspect-video sm:aspect-[4/3] bg-slate-900 text-emerald-300 flex items-center justify-center text-xs font-bold uppercase tracking-widest">' + esc(p.tileLabel || 'Case study') + '</div>';
+      ? '<img src="' + esc(p.image) + '" alt="' + esc(p.imageAlt || p.title || '') + '" width="' + w + '" height="' + h + '" loading="lazy" class="w-full h-full object-cover aspect-video sm:aspect-[4/3]">'
+      : '<div class="w-full h-full aspect-video sm:aspect-[4/3] bg-emerald-50 text-emerald-800 flex items-center justify-center text-xs font-bold uppercase tracking-widest">' + esc(p.tileLabel || 'Article') + '</div>';
     return '<article class="archive-item group flex flex-col sm:flex-row gap-6 py-8 border-b border-slate-200 first:pt-0" data-topic="' + esc(topicsOf(p).join(' ')) + '" data-year="' + esc(p.year || '') + '">' +
-      '<a href="' + esc(p.url) + '" class="block w-full sm:w-1/3 lg:w-1/4 shrink-0 overflow-hidden bg-slate-100 rounded-sm" tabindex="-1" aria-hidden="true">' + media + '</a>' +
+      '<a href="' + esc(p.url) + '" class="block w-full sm:w-1/3 lg:w-1/4 shrink-0 overflow-hidden bg-slate-100 rounded-xl" tabindex="-1" aria-hidden="true">' + media + '</a>' +
       '<div class="flex flex-col justify-center">' +
       (p.series ? '<div class="text-[11px] font-bold text-emerald-700 uppercase tracking-wide mb-1">' + esc(p.series) + '</div>' : '') +
       (p.date ? '<div class="text-[11px] font-bold text-slate-500 uppercase tracking-wide mb-2">' + esc(p.date) + '</div>' : '') +

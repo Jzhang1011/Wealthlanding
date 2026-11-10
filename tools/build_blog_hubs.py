@@ -34,13 +34,16 @@ e = lambda s: html.escape(str(s if s is not None else ''), quote=True)
 
 
 def item(p):
-    media = (f'<img src="{e(p["image"])}" alt="{e(p.get("imageAlt",""))}" loading="lazy" class="w-full h-full object-cover aspect-video sm:aspect-[4/3]">'
-             if p.get('image') else
-             f'<div class="w-full h-full aspect-video sm:aspect-[4/3] bg-slate-900 text-emerald-300 flex items-center justify-center text-xs font-bold uppercase tracking-widest">{e(p.get("tileLabel","Case study"))}</div>')
+    if p.get('image'):
+        w = int(p['imageWidth']) if p.get('imageWidth') else 720
+        h = int(p['imageHeight']) if p.get('imageHeight') else 378
+        media = f'<img src="{e(p["image"])}" alt="{e(p.get("imageAlt") or p.get("title") or "")}" width="{w}" height="{h}" loading="lazy" class="w-full h-full object-cover aspect-video sm:aspect-[4/3]">'
+    else:
+        media = f'<div class="w-full h-full aspect-video sm:aspect-[4/3] bg-emerald-50 text-emerald-800 flex items-center justify-center text-xs font-bold uppercase tracking-widest">{e(p.get("tileLabel","Article"))}</div>'
     tags = ''.join(f'<span class="text-xs font-semibold px-2.5 py-1 rounded-full border {TAG.get(t, TAG["Case Study"])}">{e(t)}</span>' for t in p.get('tags', []))
     return ('<article class="archive-item group flex flex-col sm:flex-row gap-6 py-8 border-b border-slate-200 first:pt-0" '
             f'data-topic="{e(" ".join(p.get("topics", [])))}" data-year="{e(p.get("year",""))}">'
-            f'<a href="{e(p["url"])}" class="block w-full sm:w-1/3 lg:w-1/4 shrink-0 overflow-hidden bg-slate-100 rounded-sm" tabindex="-1" aria-hidden="true">{media}</a>'
+            f'<a href="{e(p["url"])}" class="block w-full sm:w-1/3 lg:w-1/4 shrink-0 overflow-hidden bg-slate-100 rounded-xl" tabindex="-1" aria-hidden="true">{media}</a>'
             '<div class="flex flex-col justify-center">'
             + (f'<div class="text-[11px] font-bold text-emerald-700 uppercase tracking-wide mb-1">{e(p["series"])}</div>' if p.get('series') else '')
             + (f'<div class="text-[11px] font-bold text-slate-500 uppercase tracking-wide mb-2">{e(p["date"])}</div>' if p.get('date') else '')

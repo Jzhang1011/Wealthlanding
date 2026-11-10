@@ -48,7 +48,9 @@
       "image": "/asset/retirement-confidence/photos/hikers-forest-card.webp",
       "imageAlt": "Two hikers with backpacks walking a trail through a tall forest",
       "date": "Reviewed October 15, 2026",
-      "year": 2026
+      "year": 2026,
+      "imageWidth": 720,
+      "imageHeight": 480
     },
     {
       "id": "rc-savings-target-two-buckets",
@@ -65,7 +67,9 @@
       "image": "/asset/retirement-confidence/photos/coin-jar-card.webp",
       "imageAlt": "A tipped-over glass jar with coins spilling onto a table",
       "date": "Reviewed October 15, 2026",
-      "year": 2026
+      "year": 2026,
+      "imageWidth": 720,
+      "imageHeight": 480
     },
     {
       "id": "rc-savings-priority-pyramid",
@@ -82,7 +86,9 @@
       "image": "/asset/retirement-confidence/photos/wooden-blocks-card.webp",
       "imageAlt": "Colorful wooden blocks stacked into a small tower, each layer resting on the one below",
       "date": "Reviewed October 15, 2026",
-      "year": 2026
+      "year": 2026,
+      "imageWidth": 720,
+      "imageHeight": 480
     },
     {
       "id": "rc-social-security-timing",
@@ -99,7 +105,9 @@
       "image": "/asset/retirement-confidence/photos/social-security-typewriter-card.webp",
       "imageAlt": "A typewriter with a sheet of paper reading Social Security",
       "date": "Reviewed October 15, 2026",
-      "year": 2026
+      "year": 2026,
+      "imageWidth": 720,
+      "imageHeight": 480
     },
     {
       "id": "rc-medicare-gap",
@@ -116,7 +124,9 @@
       "image": "/asset/retirement-confidence/photos/stethoscope-card.webp",
       "imageAlt": "Close-up of a stethoscope on a table",
       "date": "Reviewed October 15, 2026",
-      "year": 2026
+      "year": 2026,
+      "imageWidth": 720,
+      "imageHeight": 480
     },
     {
       "id": "rc-tax-box-allocation",
@@ -133,7 +143,9 @@
       "image": "/asset/retirement-confidence/photos/two-roads-card.webp",
       "imageAlt": "A forest path that splits into two roads",
       "date": "Reviewed October 15, 2026",
-      "year": 2026
+      "year": 2026,
+      "imageWidth": 720,
+      "imageHeight": 480
     },
     {
       "id": "rc-withdrawal-sequence",
@@ -152,7 +164,9 @@
       "image": "/asset/retirement-confidence/photos/compass-map-card.webp",
       "imageAlt": "A compass resting on a paper map",
       "date": "Reviewed October 15, 2026",
-      "year": 2026
+      "year": 2026,
+      "imageWidth": 720,
+      "imageHeight": 480
     },
     {
       "id": "spousal-survivor-divorced-benefits",
@@ -170,15 +184,17 @@
       "tags": [
         "Social Security",
         "Income Planning"
-      ]
+      ],
+      "imageWidth": 600,
+      "imageHeight": 338
     },
     {
       "id": "1m_rmd_letter",
       "url": "/blogs/Happy_retirement/1m_rmd_letter.html",
       "title": "The Letter That Quietly Cost Over One Million Dollars",
       "desc": "It looked like ordinary annual paperwork. It quietly triggered a six-part tax, Medicare, and investment cascade.",
-      "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80",
-      "imageAlt": "Stack of papers representing annual RMD paperwork",
+      "image": "/asset/blog-covers/1m_rmd_letter-card.webp",
+      "imageAlt": "A blank cream letter and envelope on a wooden desk beside a brass letter opener",
       "date": "Updated August 2026",
       "year": 2026,
       "topics": [
@@ -186,15 +202,17 @@
       ],
       "tags": [
         "Tax Strategy"
-      ]
+      ],
+      "imageWidth": 720,
+      "imageHeight": 378
     },
     {
       "id": "doctor_waited",
       "url": "/blogs/Happy_retirement/doctor_waited.html",
       "title": "The Doctor Who Waited Too Long",
       "desc": "He spent his career deferring taxes. The expensive mistake was assuming that later would always be better.",
-      "image": "https://images.unsplash.com/photo-1758691461530-b215ed4ede6a?auto=format&fit=crop&w=600&q=80",
-      "imageAlt": "Senior doctor seated in a medical office",
+      "image": "/asset/blog-covers/doctor_waited-card.webp",
+      "imageAlt": "An empty medical office with a stethoscope on a wooden desk and a sage leather chair",
       "date": "Updated August 2026",
       "year": 2026,
       "topics": [
@@ -202,15 +220,17 @@
       ],
       "tags": [
         "Case Study"
-      ]
+      ],
+      "imageWidth": 720,
+      "imageHeight": 378
     },
     {
       "id": "silent_partner",
       "url": "/blogs/Happy_retirement/silent_partner.html",
       "title": "The IRS Was His Silent Business Partner",
       "desc": "He spent forty years accumulating $4 million in retirement savings. He thought the whole balance belonged to his family.",
-      "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80",
-      "imageAlt": "Businessman in a dark suit",
+      "image": "/asset/blog-covers/silent_partner-card.webp",
+      "imageAlt": "An empty leather chair at a wooden desk with a stack of blank papers, a fountain pen, and a green glass paperweight",
       "date": "Updated August 2026",
       "year": 2026,
       "topics": [
@@ -218,15 +238,17 @@
       ],
       "tags": [
         "Case Study"
-      ]
+      ],
+      "imageWidth": 720,
+      "imageHeight": 378
     },
     {
       "id": "how-to-avoid-RMD-taxes",
       "url": "/blogs/Happy_retirement/how-to-avoid-RMD-taxes.html",
       "title": "Bill Left $6.6 Million. Tom Left $5.8 Million. What Happened?",
       "desc": "Bill and Tom retired on the same day at 60, each with about $3.8 million saved. An illustrative case study in how Roth conversions, required minimum distributions and tax timing led to different results.",
-      "image": null,
-      "imageAlt": null,
+      "image": "/asset/blog-covers/how-to-avoid-RMD-taxes-card.webp",
+      "imageAlt": "Two similar leather notebooks side by side on a sunlit oak desk, with a brass pen and a cup of tea",
       "date": "June 2026",
       "year": 2026,
       "topics": [
@@ -234,15 +256,17 @@
       ],
       "tags": [
         "Case Study"
-      ]
+      ],
+      "imageWidth": 720,
+      "imageHeight": 378
     },
     {
       "id": "roth_conversions_pre_medicare",
       "url": "/blogs/budget_spending/roth_conversions_pre_medicare.html",
       "title": "Roth Conversions: Compressing Tax Liabilities Pre-Medicare",
       "desc": "Timing your tax conversions during lower-income gap years keeps your lifetime tax liabilities minimized and guards against structural Medicare surcharges.",
-      "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80",
-      "imageAlt": "Hand holding a phone calculator next to tax paperwork",
+      "image": "/asset/blog-covers/roth_conversions_pre_medicare-card.webp",
+      "imageAlt": "A calculator, a cup of coffee, and a stack of blank papers on a wooden desk",
       "date": null,
       "year": null,
       "topics": [
@@ -250,15 +274,17 @@
       ],
       "tags": [
         "Tax Strategy"
-      ]
+      ],
+      "imageWidth": 720,
+      "imageHeight": 378
     },
     {
       "id": "aca_early_retirement_subsidies",
       "url": "/blogs/budget_spending/aca_early_retirement_subsidies.html",
       "title": "Navigating Early Retirement ACA Premium Tax Subsidies",
       "desc": "Learn the mechanical frameworks required to monitor your Modified Adjusted Gross Income (MAGI) to secure maximum health insurance savings.",
-      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
-      "imageAlt": "Healthcare professional holding a smartphone",
+      "image": "/asset/blog-covers/aca_early_retirement_subsidies-card.webp",
+      "imageAlt": "A cream notebook, reading glasses, a plant, and a sage mug on a linen table",
       "date": null,
       "year": null,
       "topics": [
@@ -266,15 +292,17 @@
       ],
       "tags": [
         "Healthcare"
-      ]
+      ],
+      "imageWidth": 720,
+      "imageHeight": 378
     },
     {
       "id": "medicare",
       "url": "/blogs/Happy_retirement/medicare.html",
       "title": "The Expat Medicare Trap: Why Retiring Abroad Won't Save You From Uncle Sam's Late Penalty",
       "desc": "Moving overseas at 65 doesn't switch off Medicare's enrollment clock. Skipping Part B abroad can mean a lifetime premium penalty if you ever come home.",
-      "image": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80",
-      "imageAlt": "A gloved clinician giving a patient an injection",
+      "image": "/asset/blog-covers/medicare-card.webp",
+      "imageAlt": "A sage-green notebook and sunglasses on a sunlit table beside a window overlooking a coastal town and the sea",
       "date": null,
       "year": null,
       "topics": [
@@ -282,7 +310,9 @@
       ],
       "tags": [
         "Healthcare"
-      ]
+      ],
+      "imageWidth": 720,
+      "imageHeight": 378
     }
   ]
 }

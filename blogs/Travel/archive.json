@@ -40,7 +40,9 @@
       "image": "/blogs/Travel/assets/breckenridge-peak-card.webp",
       "imageAlt": "A skier crossing a snowy slope below a mountain peak near Breckenridge, Colorado",
       "date": "Updated October 2026",
-      "year": 2026
+      "year": 2026,
+      "imageWidth": 720,
+      "imageHeight": 480
     }
   ]
 }

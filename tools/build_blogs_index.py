@@ -65,9 +65,11 @@ def story_card(post: dict) -> str:
         if label else ""
     )
     if post.get("image"):
+        w = int(post["imageWidth"]) if post.get("imageWidth") else 720
+        h = int(post["imageHeight"]) if post.get("imageHeight") else 378
         media = (
             f'<div class="story-image-wrapper">'
-            f'<img src="{e(post["image"])}" alt="{e(post.get("imageAlt") or title)}" loading="lazy" class="w-full h-full object-cover">'
+            f'<img src="{e(post["image"])}" alt="{e(post.get("imageAlt") or title)}" width="{w}" height="{h}" loading="lazy" class="w-full h-full object-cover">'
             f'</div>'
         )
     else:
@@ -97,9 +99,11 @@ def featured_block(post: dict) -> str:
         if label else ""
     )
     if post.get("image"):
+        w = int(post["imageWidth"]) if post.get("imageWidth") else 720
+        h = int(post["imageHeight"]) if post.get("imageHeight") else 378
         media = (
-            f'<div class="aspect-video overflow-hidden bg-slate-100">'
-            f'<img src="{e(post["image"])}" alt="{e(post.get("imageAlt") or title)}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">'
+            f'<div class="aspect-video overflow-hidden bg-slate-100 rounded-xl">'
+            f'<img src="{e(post["image"])}" alt="{e(post.get("imageAlt") or title)}" width="{w}" height="{h}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">'
             f'</div>'
         )
     else:
@@ -225,6 +229,7 @@ def render_index(sections=None) -> str:
       background-color: #e2e8f0;
       margin-bottom: 0.85rem;
       position: relative;
+      border-radius: 12px;
     }}
 
     .story-image-wrapper img {{

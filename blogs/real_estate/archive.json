@@ -35,7 +35,11 @@
       ],
       "date": "November 9, 2026",
       "year": 2026,
-      "tileLabel": "Case study"
+      "tileLabel": "Case study",
+      "image": "/asset/blog-covers/two-acres-two-lots-card.webp",
+      "imageAlt": "A wooden fence dividing a green meadow, with a small white house on a distant hill",
+      "imageWidth": 720,
+      "imageHeight": 378
     },
     {
       "id": "buyers-market-with-no-buyers",
@@ -48,10 +52,12 @@
       "tags": [
         "Housing Market"
       ],
-      "image": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80",
-      "imageAlt": "Suburban home for sale",
+      "image": "/asset/blog-covers/buyers-market-with-no-buyers-card.webp",
+      "imageAlt": "A quiet sage-green suburban house with a freshly mowed lawn and mature trees",
       "year": 2026,
-      "date": "October 20, 2026"
+      "date": "October 20, 2026",
+      "imageWidth": 720,
+      "imageHeight": 378
     },
     {
       "id": "secure_act_inherited_iras",
@@ -69,7 +75,9 @@
       "image": "/asset/real-estate/photos/last-will-testament-card.webp",
       "imageAlt": "A Last Will and Testament document on a desk",
       "year": 2025,
-      "date": "December 18, 2025"
+      "date": "December 18, 2025",
+      "imageWidth": 800,
+      "imageHeight": 600
     }
   ]
 }
