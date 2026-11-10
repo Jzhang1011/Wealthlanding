@@ -16,7 +16,7 @@
     return m;
   }
 
-  /* ---- Video: YouTube or Vimeo URL from series.json; empty URL shows a "coming soon" panel ---- */
+  /* ---- Video: YouTube or Vimeo URL from series.json; hide the mount when no usable URL is set. ---- */
   function videoEmbedSrc(url) {
     if (!url) return null;
     var m;
@@ -53,11 +53,9 @@
         ' (video)" loading="lazy" allow="' + allow + '" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>';
       return;
     }
-    if (meta.videoUrl && window.console) console.warn('Retirement Confidence: videoUrl is not a recognised YouTube or Vimeo link; showing the coming-soon panel.');
-    el.innerHTML = '<div class="rc-video-soon" role="note" aria-label="Video coming soon">' +
-      '<span class="rc-soon-badge">Video coming soon</span>' +
-      '<strong>' + esc(meta.videoTitle) + '</strong>' +
-      '<p>' + esc(meta.videoComingSoon) + ' In the meantime, the three layers and seven principles below cover the same ideas in writing.</p></div>';
+    if (meta.videoUrl && window.console) console.warn('Retirement Confidence: videoUrl is not a recognised YouTube or Vimeo link; hiding the video mount.');
+    el.innerHTML = '';
+    el.hidden = true;
   }
 
   /* ---- Hub: seven principle cards ---- */

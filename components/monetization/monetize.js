@@ -95,9 +95,31 @@
     }
   }
 
-  // Subscriptions go through our own worker (POST https://api.wealthlanding.com/api/subscribe),
-  // which relays to the Kit API server-side. Direct browser -> app.kit.com posts are eaten
-  // by ad/tracker blockers, so we never POST to Kit from the client.
+  // Subscriptions go through our worker (POST https://api.wealthlanding.com/api/subscribe),
+  // which relays to the Kit API server-side. If the worker fails, fall back to a
+  // form POST to the public Kit form action (offers.json kitFormAction / form 9874203).
+  var KIT_FORM_ACTION = 'https://app.kit.com/forms/9874203/subscriptions';
+
+  function fallbackToKitForm(config, fields) {
+    var action = (config && config.kitFormAction) || KIT_FORM_ACTION;
+    var body = new URLSearchParams();
+    body.set('email_address', fields.email);
+    if (fields.first_name) body.set('first_name', fields.first_name);
+    return fetch(action, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+      body: body.toString(),
+      mode: 'cors',
+      credentials: 'omit',
+      redirect: 'follow'
+    }).then(function (res) {
+      if (res.ok || (res.status >= 300 && res.status < 400)) return { ok: true };
+      return { ok: false, error: 'Could not subscribe. Please try again.' };
+    }).catch(function () {
+      return { ok: false, error: 'Could not subscribe. Please check your connection and try again.' };
+    });
+  }
+
   function submitToKit(config, fields) {
     return fetch(API_BASE + '/api/subscribe', {
       method: 'POST',
@@ -121,13 +143,13 @@
         })
         .then(function (data) {
           if (res.ok && data && data.ok) return { ok: true };
-          var err =
-            (data && data.error === 'invalid_email'
-              ? 'Please enter a valid email.'
-              : null) ||
-            'Something went wrong. Please try again.';
-          return { ok: false, error: String(err) };
+          if (data && data.error === 'invalid_email') {
+            return { ok: false, error: 'Please enter a valid email.' };
+          }
+          return fallbackToKitForm(config, fields);
         });
+    }).catch(function () {
+      return fallbackToKitForm(config, fields);
     });
   }
 
@@ -191,110 +213,38 @@
   }
 
   function renderOutbound(offer, city, config) {
+    var hasDest = !!(offer.destination && String(offer.destination).trim());
+    if (!hasDest) {
+      // No live partner URL: omit the box rather than show a stub.
+      return null;
+    }
     var box = el('div', { className: 'ad', 'data-offer': offer.id });
     if (offer.label) box.appendChild(el('div', { className: 'label', text: offer.label }));
     box.appendChild(el('h3', { text: offer.heading }));
     box.appendChild(el('p', { text: offer.text }));
 
-    var hasDest = !!(offer.destination && String(offer.destination).trim());
     var actions = el('div', { className: 'wl-actions' });
-
-    if (hasDest) {
-      var href =
-        '/go/' +
-        encodeURIComponent(offer.id) +
-        '?city=' +
-        encodeURIComponent(slugify(city));
-      var link = el('a', {
-        className: 'btn primary',
-        href: href,
-        rel: 'noopener sponsored',
-        text: offer.buttonLabel || 'Learn more'
+    var href =
+      '/go/' +
+      encodeURIComponent(offer.id) +
+      '?city=' +
+      encodeURIComponent(slugify(city));
+    var link = el('a', {
+      className: 'btn primary',
+      href: href,
+      rel: 'noopener sponsored',
+      text: offer.buttonLabel || 'Learn more'
+    });
+    link.addEventListener('click', function () {
+      beaconInterest({
+        offer: offer.id,
+        city: city,
+        interest: offer.interest,
+        action: 'click'
       });
-      link.addEventListener('click', function () {
-        beaconInterest({
-          offer: offer.id,
-          city: city,
-          interest: offer.interest,
-          action: 'click'
-        });
-      });
-      actions.appendChild(link);
-      box.appendChild(actions);
-    } else {
-      var notifyBtn = el('button', {
-        type: 'button',
-        className: 'btn primary',
-        text: 'Notify me when available'
-      });
-      actions.appendChild(notifyBtn);
-      box.appendChild(actions);
-      box.appendChild(
-        el('p', {
-          className: 'wl-coming-soon',
-          text: 'Partner link coming soon — leave your email to get notified.'
-        })
-      );
-
-      var notifyForm = el('div', { className: 'wl-notify-form', style: 'display:none' });
-      var email = el('input', {
-        type: 'email',
-        placeholder: 'Email address',
-        'aria-label': 'Email address',
-        autocomplete: 'email'
-      });
-      var go = el('button', { type: 'button', text: 'Notify me' });
-      notifyForm.appendChild(email);
-      notifyForm.appendChild(el('div', { className: 'wl-actions' }, [go]));
-      box.appendChild(notifyForm);
-
-      notifyBtn.addEventListener('click', function () {
-        notifyForm.style.display = 'block';
-        notifyBtn.style.display = 'none';
-        beaconInterest({
-          offer: offer.id,
-          city: city,
-          interest: offer.interest,
-          action: 'intent'
-        });
-      });
-
-      go.addEventListener('click', function () {
-        var value = (email.value || '').trim();
-        if (!value || value.indexOf('@') < 1) {
-          setMsg(notifyForm, 'Please enter a valid email.', false);
-          return;
-        }
-        go.disabled = true;
-        beaconInterest({
-          offer: offer.id,
-          city: city,
-          interest: offer.interest,
-          action: 'notify'
-        });
-        submitToKit(config, {
-          email: value,
-          city: city,
-          interest: offer.interest,
-          source: 'city-notify:' + slugify(city)
-        })
-          .then(function (result) {
-            if (result.ok) {
-              setMsg(notifyForm, 'You are on the notify list. Thank you.', true);
-              email.value = '';
-            } else {
-              setMsg(notifyForm, result.error || 'Could not subscribe.', false);
-            }
-          })
-          .catch(function () {
-            setMsg(notifyForm, 'Could not subscribe. Please check your connection and try again.', false);
-          })
-          .finally(function () {
-            go.disabled = false;
-          });
-      });
-    }
-
+    });
+    actions.appendChild(link);
+    box.appendChild(actions);
     return box;
   }
 
