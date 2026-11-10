@@ -156,6 +156,40 @@ def main() -> int:
     if featured and featured["url"] not in html:
         errors.append(f"featured latest post {featured['url']} not on the index")
 
+    # Every public post must have a local cover file and descriptive alt text.
+    seen_urls = set()
+    for sec in sections:
+        for post in sec["posts"]:
+            url = post.get("url")
+            key = (url, post.get("id"))
+            if url in seen_urls:
+                # Listed in more than one archive (e.g. Roth / ACA). Same cover required.
+                pass
+            seen_urls.add(url)
+            pid = post.get("id")
+            src = post.get("image") or ""
+            alt = (post.get("imageAlt") or "").strip()
+            if not src:
+                errors.append(f"{pid} has no cover image")
+                continue
+            if src.startswith("http://") or src.startswith("https://"):
+                errors.append(f"{pid} cover is a remote hotlink: {src}")
+                continue
+            path = url_to_path(src)
+            if not path or not path.is_file():
+                errors.append(f"{pid} cover file does not exist: {src}")
+            elif path.stat().st_size < 1024:
+                errors.append(f"{pid} cover file is suspiciously small: {src}")
+            if not alt:
+                errors.append(f"{pid} is missing imageAlt text")
+            elif len(alt) < 12:
+                errors.append(f"{pid} imageAlt is too short: {alt!r}")
+            # Card on the generated index uses this src when the post is among the latest three
+            if src and src not in html and url in [c for s in sections for c in [x["url"] for x in s["posts"][:3]]]:
+                # The featured block and latest-three cards should reference the cover.
+                if url in html:
+                    errors.append(f"{pid} is on /blogs/ but its cover {src} is not")
+
     if errors:
         print("FAIL:")
         for err in errors:

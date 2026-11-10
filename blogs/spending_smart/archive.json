@@ -30,8 +30,10 @@
       "tags": [
         "Family Travel"
       ],
-      "image": "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=1600&q=85",
-      "imageAlt": "Airplane wing over clouds"
+      "image": "/asset/blog-covers/flight_saver-card.webp",
+      "imageAlt": "An airplane wing over layered clouds at golden hour, seen from a window",
+      "imageWidth": 720,
+      "imageHeight": 378
     },
     {
       "id": "airbnb_cc_choice",
@@ -45,7 +47,11 @@
       ],
       "tags": [
         "Savings"
-      ]
+      ],
+      "image": "/asset/blog-covers/airbnb_cc_choice-card.webp",
+      "imageAlt": "A snow-covered cabin with warm window light in a forest during a blizzard",
+      "imageWidth": 720,
+      "imageHeight": 378
     }
   ]
 }
