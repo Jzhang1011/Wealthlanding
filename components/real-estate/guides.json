@@ -7,13 +7,13 @@
       "path": "life_stage/25_40/topics/rent-vs-buy.html",
       "url": "/life_stage/25_40/topics/rent-vs-buy.html",
       "title": "Rent or Buy When You Relocate? After-Tax Wealth for a Move",
-      "description": "For households relocating or downsizing around retirement \u2014 and for others comparing paths \u2014 an after-tax equal-cash-flow frame covering \u00a7121, investment taxes, leverage and labeled price scenarios.",
+      "description": "For households relocating or downsizing around retirement — and for others comparing paths — an after-tax equal-cash-flow frame covering §121, investment taxes, leverage and labeled price scenarios.",
       "updated": "November 2026",
       "hero": {
         "crumb": "Housing",
-        "badge": "GUIDE \u00b7 Relocating & housing choice \u00b7 Ages 45\u201365",
+        "badge": "GUIDE · Relocating & housing choice · Ages 45–65",
         "h1": "Rent or Buy When You Move?",
-        "dek": "If you already own a home, the live question is often the next place after a retirement move \u2014 not a first-time buyer slogan. Same after-tax math; different cash and liquidity stakes.",
+        "dek": "If you already own a home, the live question is often the next place after a retirement move — not a first-time buyer slogan. Same after-tax math; different cash and liquidity stakes.",
         "pills": [
           {
             "label": "Compare",
@@ -32,76 +32,76 @@
           }
         ]
       },
-      "short_answer": "When you relocate or downsize, compare renting versus buying in the new place with equal monthly cash flows and after-tax terminal wealth. Selling a qualifying main home may exclude up to $250,000 of gain ($500,000 if married filing jointly). The rent-and-invest path can owe capital gains tax (and sometimes NIIT) when you sell the portfolio. Home prices can rise or fall \u2014 model scenarios. There is no universal winner. First-time buyers can use the same frame; the hub\u2019s main path starts from a possible retirement move.",
+      "short_answer": "When you relocate or downsize, compare renting versus buying in the new place with equal monthly cash flows and after-tax terminal wealth. Selling a qualifying main home may exclude up to $250,000 of gain ($500,000 if married filing jointly). The rent-and-invest path can owe capital gains tax (and sometimes NIIT) when you sell the portfolio. Home prices can rise or fall — model scenarios. There is no universal winner. First-time buyers can use the same frame; the hub’s main path starts from a possible retirement move.",
       "sections": [
         {
           "kind": "prose",
           "title": "Who this is for",
           "paras": [
-            "WealthLanding\u2019s core readers are ages 45\u201365, and many already own a home. This guide prioritizes relocating or downsizing around retirement: selling (or keeping) the current place, then choosing rent or buy in the next one.",
-            "The URL still lives under /life_stage/25_40/ for continuity. First-time buyers and later moves can use the same after-tax comparison; they are not the hub\u2019s default starting point.",
-            "If daily personal-care needs are rising beyond what any house can safely provide, that is a care-needs decision \u2014 not automatically a rent-vs-buy spreadsheet. See the daily-support housing guide."
+            "WealthLanding’s core readers are ages 45–65, and many already own a home. This guide prioritizes relocating or downsizing around retirement: selling (or keeping) the current place, then choosing rent or buy in the next one.",
+            "The URL still lives under /life_stage/25_40/ for continuity. First-time buyers and later moves can use the same after-tax comparison; they are not the hub’s default starting point.",
+            "If daily personal-care needs are rising beyond what any house can safely provide, that is a care-needs decision — not automatically a rent-vs-buy spreadsheet. See the daily-support housing guide."
           ]
         },
         {
           "kind": "callout",
           "title": "A fair comparison framework",
-          "kicker": "Equal cash flows \u00b7 after-tax terminal wealth",
-          "body": "Hold monthly out-of-pocket roughly equal. On the buy side, track PITI, HOA, insurance, maintenance, and the down payment you could otherwise invest. On the rent side, track rent, renter\u2019s insurance, and invest the difference (including the down payment and closing cash you did not spend). At your horizon, compare: home equity after selling costs and any taxable gain you cannot exclude, versus the after-tax value of the investment account. Label every return, rent-growth, and home-price path as an assumption."
+          "kicker": "Equal cash flows · after-tax terminal wealth",
+          "body": "Hold monthly out-of-pocket roughly equal. On the buy side, track PITI, HOA, insurance, maintenance, and the down payment you could otherwise invest. On the rent side, track rent, renter’s insurance, and invest the difference (including the down payment and closing cash you did not spend). At your horizon, compare: home equity after selling costs and any taxable gain you cannot exclude, versus the after-tax value of the investment account. Label every return, rent-growth, and home-price path as an assumption."
         },
         {
           "kind": "list_blocks",
-          "title": "What the old \u201crent and invest wins on paper\u201d story misses",
-          "intro": "A pretax 7% compound on the rent-side surplus can look decisive until you tax it \u2014 and until you give the buy side a price path and the \u00a7121 exclusion.",
+          "title": "What the old “rent and invest wins on paper” story misses",
+          "intro": "A pretax 7% compound on the rent-side surplus can look decisive until you tax it — and until you give the buy side a price path and the §121 exclusion.",
           "blocks": [
             {
               "title": "Investment account taxes",
               "body": "Taxable brokerage gains are generally capital gains when you sell. Assets held more than one year can qualify for long-term rates (often 0%, 15%, or 20% by taxable income). Dividends and interest can create tax drag along the way. Higher-income households may also owe the 3.8% net investment income tax. See IRS Topics 409 and 559."
             },
             {
-              "title": "Primary-home sale exclusion (\u00a7121)",
+              "title": "Primary-home sale exclusion (§121)",
               "body": "If you sell your main home and meet the ownership and use tests (generally owned and lived in as your main home for at least 2 years of the 5 years ending on the sale date), you may exclude up to $250,000 of gain, or $500,000 if married filing jointly and both spouses meet the use test (with ownership met by either spouse). You generally cannot claim the full exclusion if you already excluded gain on another home in the prior two years. Details and exceptions: IRS Topic 701 and Publication 523. The excluded portion of principal-residence gain is generally not subject to NIIT."
             },
             {
               "title": "Home prices are a scenario, not a promise",
-              "body": "Ignoring appreciation on the house while giving the rent-side portfolio a market return is asymmetric. Model flat prices, a modest real gain, and a decline. The FHFA House Price Index shows that local prices rise and fall; some downturns are deep and long. Do not write a plan that only works if prices \u201calways go up.\u201d"
+              "body": "Ignoring appreciation on the house while giving the rent-side portfolio a market return is asymmetric. Model flat prices, a modest real gain, and a decline. The FHFA House Price Index shows that local prices rise and fall; some downturns are deep and long. Do not write a plan that only works if prices “always go up.”"
             },
             {
               "title": "Amortization and leverage",
-              "body": "Part of each mortgage payment reduces principal \u2014 that is forced saving. Leverage magnifies gains if the home\u2019s value rises, and magnifies losses if it falls or if you must sell with thin equity. Closing and selling costs (often modeled as a mid-to-high single-digit percentage round-trip \u2014 label your own assumption) need a long enough stay to amortize."
+              "body": "Part of each mortgage payment reduces principal — that is forced saving. Leverage magnifies gains if the home’s value rises, and magnifies losses if it falls or if you must sell with thin equity. Closing and selling costs (often modeled as a mid-to-high single-digit percentage round-trip — label your own assumption) need a long enough stay to amortize."
             }
           ]
         },
         {
           "kind": "prose",
-          "title": "The 5% rule \u2014 still useful, no longer the verdict",
+          "title": "The 5% rule — still useful, no longer the verdict",
           "paras": [
-            "As a quick screen, unrecoverable owning costs are often sketched as roughly 1% property tax + 1% maintenance + a cost-of-capital slice for interest and forgone returns on equity \u2014 sometimes summarized near 5% of price per year. That is a rule of thumb, not a law. Local taxes, insurance, HOA, rates, and down-payment size move the number. Use it to decide whether a full after-tax model is worth your time \u2014 not to declare a winner."
+            "As a quick screen, unrecoverable owning costs are often sketched as roughly 1% property tax + 1% maintenance + a cost-of-capital slice for interest and forgone returns on equity — sometimes summarized near 5% of price per year. That is a rule of thumb, not a law. Local taxes, insurance, HOA, rates, and down-payment size move the number. Use it to decide whether a full after-tax model is worth your time — not to declare a winner."
           ]
         },
         {
           "kind": "example",
           "title": "Illustrative screen (not a forecast)",
-          "intro": "A $400,000 home. These figures are labeled assumptions for teaching the frame \u2014 not predictions and not advice.",
+          "intro": "A $400,000 home. These figures are labeled assumptions for teaching the frame — not predictions and not advice.",
           "boxes": [
             {
-              "label": "Own \u00b7 unrecoverable screen",
+              "label": "Own · unrecoverable screen",
               "value": "~$20,000",
               "unit": "/yr",
-              "note": "$400,000 \u00d7 an assumed 5% unrecoverable slice (taxes, maintenance, cost of capital). Principal is not in this slice.",
+              "note": "$400,000 × an assumed 5% unrecoverable slice (taxes, maintenance, cost of capital). Principal is not in this slice.",
               "color": "amber"
             },
             {
-              "label": "Rent \u00b7 comparable",
+              "label": "Rent · comparable",
               "value": "$19,200",
               "unit": "/yr",
-              "note": "Assumed $1,600/month rent before rent growth. Roughly a wash on this screen \u2014 horizon and taxes decide.",
+              "note": "Assumed $1,600/month rent before rent growth. Roughly a wash on this screen — horizon and taxes decide.",
               "color": "blue"
             }
           ],
           "footer_box": {
-            "label": "Why the old \u201c$44,300\u201d punchline was incomplete",
-            "body": "If rent were $1,400/month, a $3,200/year surplus invested at an assumed 7% for 10 years is about $44,300 pretax. After long-term capital gains tax (and any dividend drag or NIIT), the spendable gap shrinks. On the buy side, even flat home prices still leave amortized equity, and a qualifying \u00a7121 sale can shelter a large gain if prices rose. Flip either assumption and the ranking can reverse."
+            "label": "Why the old “$44,300” punchline was incomplete",
+            "body": "If rent were $1,400/month, a $3,200/year surplus invested at an assumed 7% for 10 years is about $44,300 pretax. After long-term capital gains tax (and any dividend drag or NIIT), the spendable gap shrinks. On the buy side, even flat home prices still leave amortized equity, and a qualifying §121 sale can shelter a large gain if prices rose. Flip either assumption and the ranking can reverse."
           },
           "disclaimer": "Illustrative math only. Your rent, taxes, returns, selling costs, filing status, and stay length will differ. There is no universal winner."
         },
@@ -122,22 +122,22 @@
             {
               "icon": "map",
               "title": "Local price-to-rent",
-              "body": "Your metro\u2019s rents, taxes, and insurance matter more than a national debate. Compare a real rental alternative to the specific house."
+              "body": "Your metro’s rents, taxes, and insurance matter more than a national debate. Compare a real rental alternative to the specific house."
             },
             {
               "icon": "scale",
               "title": "Tax filing status",
-              "body": "Single vs joint changes the \u00a7121 cap. Itemizing may or may not make mortgage interest and property tax deductions valuable after SALT and standard-deduction thresholds \u2014 confirm current IRS limits."
+              "body": "Single vs joint changes the §121 cap. Itemizing may or may not make mortgage interest and property tax deductions valuable after SALT and standard-deduction thresholds — confirm current IRS limits."
             },
             {
               "icon": "heart",
-              "title": "Retirement liquidity (45\u201365)",
-              "body": "Home equity is slow to tap. If you need flexible spending in early retirement, a smaller house plus invested assets can beat a large illiquid balance \u2014 or not, if housing costs would otherwise spike."
+              "title": "Retirement liquidity (45–65)",
+              "body": "Home equity is slow to tap. If you need flexible spending in early retirement, a smaller house plus invested assets can beat a large illiquid balance — or not, if housing costs would otherwise spike."
             },
             {
               "icon": "compass",
               "title": "Stability vs mobility",
-              "body": "Schools, community, healthcare access, and one-level living are real. Price them honestly instead of hiding them inside \u201cequity builds wealth.\u201d"
+              "body": "Schools, community, healthcare access, and one-level living are real. Price them honestly instead of hiding them inside “equity builds wealth.”"
             }
           ]
         }
@@ -146,15 +146,15 @@
         "Write down expected years in the home and a forced-sale plan if income drops.",
         "Build equal-cash-flow columns: buy (PITI, HOA, insurance, maintenance, reserves) vs rent + invest the difference.",
         "Tax the rent-side portfolio on paper (long-term gain, dividends, possible NIIT).",
-        "Check \u00a7121 eligibility before assuming a tax-free home sale.",
-        "Run at least three home-price paths: down, flat, up \u2014 using local history as context, not a promise.",
+        "Check §121 eligibility before assuming a tax-free home sale.",
+        "Run at least three home-price paths: down, flat, up — using local history as context, not a promise.",
         "Include buy and sell costs and the months of cash you need after closing."
       ],
       "watchouts": [
-        "<strong>\u201cRent is throwing money away.\u201d</strong> Interest, taxes, insurance, maintenance, and HOA are unrecoverable on the buy side too.",
-        "<strong>Pretax rent-and-invest charts.</strong> Taxes on the portfolio can erase a paper \u201cwin.\u201d",
+        "<strong>“Rent is throwing money away.”</strong> Interest, taxes, insurance, maintenance, and HOA are unrecoverable on the buy side too.",
+        "<strong>Pretax rent-and-invest charts.</strong> Taxes on the portfolio can erase a paper “win.”",
         "<strong>Guaranteed appreciation stories.</strong> FHFA data show local declines as well as gains.",
-        "<strong>Stretching to the pre-approval maximum.</strong> Lender approval is not a sustainable budget \u2014 see the affordability guide.",
+        "<strong>Stretching to the pre-approval maximum.</strong> Lender approval is not a sustainable budget — see the affordability guide.",
         "<strong>Ignoring selling friction near retirement.</strong> Listing, repairs, and timing risk matter when you need the cash."
       ],
       "sources": [
@@ -228,13 +228,13 @@
       "path": "life_stage/25_40/topics/how-much-house.html",
       "url": "/life_stage/25_40/topics/how-much-house.html",
       "title": "How Much House Can I Afford? Lender Max vs Sustainable Budget",
-      "description": "Separate lender approval from a sustainable housing budget. Build an all-in payment with PITI, HOA, PMI, maintenance, closing cash and reserves \u2014 and stress-test income drops and retirement savings.",
+      "description": "Separate lender approval from a sustainable housing budget. Build an all-in payment with PITI, HOA, PMI, maintenance, closing cash and reserves — and stress-test income drops and retirement savings.",
       "updated": "November 2026",
       "hero": {
         "crumb": "Housing",
-        "badge": "GUIDE \u00b7 Housing \u00b7 Ages 45\u201365",
+        "badge": "GUIDE · Housing · Ages 45–65",
         "h1": "How Much House Can I Afford?",
-        "dek": "The bank\u2019s maximum is a credit decision. Your budget is the payment that still funds retirement savings, reserves, and a life you can sustain if income dips.",
+        "dek": "The bank’s maximum is a credit decision. Your budget is the payment that still funds retirement savings, reserves, and a life you can sustain if income dips.",
         "pills": [
           {
             "label": "Housing screen",
@@ -253,7 +253,7 @@
           }
         ]
       },
-      "short_answer": "Start from the monthly housing cost that leaves your savings plan intact, not from the pre-approval letter. A common planning screen is about 28% of gross income for the full housing payment and about 36% for all debt payments \u2014 use the lower binding ceiling, then subtract maintenance and keep cash reserves after closing. Near 45\u201365, also ask whether the payment still works if you retire earlier, lose a bonus, or need to keep maxing catch-up contributions.",
+      "short_answer": "Start from the monthly housing cost that leaves your savings plan intact, not from the pre-approval letter. A common planning screen is about 28% of gross income for the full housing payment and about 36% for all debt payments — use the lower binding ceiling, then subtract maintenance and keep cash reserves after closing. Near 45–65, also ask whether the payment still works if you retire earlier, lose a bonus, or need to keep maxing catch-up contributions.",
       "sections": [
         {
           "kind": "callout",
@@ -267,7 +267,7 @@
           "blocks": [
             {
               "title": "PITI",
-              "body": "Principal, interest, property taxes, and homeowners insurance. Taxes and insurance often change after purchase \u2014 ask how the escrow was estimated."
+              "body": "Principal, interest, property taxes, and homeowners insurance. Taxes and insurance often change after purchase — ask how the escrow was estimated."
             },
             {
               "title": "HOA / condo fees",
@@ -275,15 +275,15 @@
             },
             {
               "title": "PMI or other mortgage insurance",
-              "body": "If your down payment is under 20% on many conventional loans, budget mortgage insurance until you can remove it under the loan\u2019s rules."
+              "body": "If your down payment is under 20% on many conventional loans, budget mortgage insurance until you can remove it under the loan’s rules."
             },
             {
               "title": "Maintenance and capex reserve",
-              "body": "A common planning placeholder is about 1% of home value per year for repairs and replacements \u2014 label it as an assumption and raise it for older homes."
+              "body": "A common planning placeholder is about 1% of home value per year for repairs and replacements — label it as an assumption and raise it for older homes."
             },
             {
               "title": "Closing funds and post-closing reserves",
-              "body": "Down payment, closing costs, initial escrow, moving, immediate repairs, and 3\u20136 months of essential expenses still in cash after you close (more if income is variable)."
+              "body": "Down payment, closing costs, initial escrow, moving, immediate repairs, and 3–6 months of essential expenses still in cash after you close (more if income is variable)."
             }
           ]
         },
@@ -296,7 +296,7 @@
               "label": "28% housing ceiling",
               "value": "$2,800",
               "unit": "/mo",
-              "note": "Binds in this example \u2014 PITI + HOA should not exceed this screen before maintenance.",
+              "note": "Binds in this example — PITI + HOA should not exceed this screen before maintenance.",
               "color": "emerald"
             },
             {
@@ -308,7 +308,7 @@
             }
           ],
           "footer_box": {
-            "label": "Stress for ages 45\u201365",
+            "label": "Stress for ages 45–65",
             "body": "Re-run the payment with one income removed, with bonus income set to zero, and with retirement catch-up contributions still funded. If the house only works on peak earnings, it is too large for a retirement transition."
           },
           "disclaimer": "Illustrative planning math, not a lender decision and not personalized advice. Guidelines vary by loan program."
@@ -316,7 +316,7 @@
         {
           "kind": "raw_html",
           "title": "30-second planning check",
-          "html": "<p class=\"text-gray-600 mb-4\">Run the 28/36 screen with your own numbers. This is a planning ceiling check, not a lender approval.</p>\n    <div class=\"t-card text-left max-w-xl\">\n    <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-4\">\n        <div>\n            <label for=\"hh-income\" class=\"block text-sm font-semibold text-navy-900 mb-1\">Gross monthly income ($)</label>\n            <input id=\"hh-income\" type=\"number\" min=\"0\" step=\"100\" value=\"10000\" class=\"w-full border border-slate-300 rounded-lg px-3 py-2 text-navy-900 focus:outline-none focus:ring-2 focus:ring-brand-500\">\n        </div>\n        <div>\n            <label for=\"hh-debts\" class=\"block text-sm font-semibold text-navy-900 mb-1\">Monthly non-housing debt payments ($)</label>\n            <input id=\"hh-debts\" type=\"number\" min=\"0\" step=\"50\" value=\"600\" class=\"w-full border border-slate-300 rounded-lg px-3 py-2 text-navy-900 focus:outline-none focus:ring-2 focus:ring-brand-500\">\n        </div>\n    </div>\n    <div id=\"hh-result\" class=\"mt-5 bg-brand-50 border border-brand-100 rounded-lg p-4 text-sm text-gray-700 space-y-1\" aria-live=\"polite\"></div>\n    <p class=\"text-xs text-gray-500 mt-3\">A planning check, not a lender&apos;s maximum \u2014 and not advice. The 28/36 rule is a common ceiling, not a universal affordability rule.</p>\n    </div>\n    <script>\n    (function () {\n        function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }\n        function val(id) { return Math.max(0, parseFloat(document.getElementById(id).value) || 0); }\n        function calcHouse() {\n            var income = val('hh-income'), debts = val('hh-debts');\n            var housing28 = income * 0.28;\n            var total36 = income * 0.36;\n            var room = total36 - debts;\n            var budget = Math.min(housing28, Math.max(0, room));\n            var binder = room < housing28 ? 'debt side' : '28% housing side';\n            document.getElementById('hh-result').innerHTML =\n                '<p>Housing ceiling (28%): ' + fmt(income) + ' &times; 0.28 = <strong>' + fmt(housing28) + '</strong></p>' +\n                '<p>Total debt ceiling (36%): ' + fmt(income) + ' &times; 0.36 = <strong>' + fmt(total36) + '</strong></p>' +\n                '<p>Room for housing after debts: ' + fmt(total36) + ' &minus; ' + fmt(debts) + ' = <strong>' + fmt(Math.max(0,room)) + '</strong></p>' +\n                '<p class=\"pt-2 text-base font-bold text-navy-900\">Your budget screen: ' + fmt(budget) + '/month <span class=\"text-sm font-medium text-gray-500\">(the ' + binder + ' binds)</span></p>';\n        }\n        ['hh-income', 'hh-debts'].forEach(function (id) {\n            document.getElementById(id).addEventListener('input', calcHouse);\n        });\n        calcHouse();\n    })();\n    </script>"
+          "html": "<p class=\"text-gray-600 mb-4\">Run the 28/36 screen with your own numbers. This is a planning ceiling check, not a lender approval.</p>\n    <div class=\"t-card text-left max-w-xl\">\n    <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-4\">\n        <div>\n            <label for=\"hh-income\" class=\"block text-sm font-semibold text-navy-900 mb-1\">Gross monthly income ($)</label>\n            <input id=\"hh-income\" type=\"number\" min=\"0\" step=\"100\" value=\"10000\" class=\"w-full border border-slate-300 rounded-lg px-3 py-2 text-navy-900 focus:outline-none focus:ring-2 focus:ring-brand-500\">\n        </div>\n        <div>\n            <label for=\"hh-debts\" class=\"block text-sm font-semibold text-navy-900 mb-1\">Monthly non-housing debt payments ($)</label>\n            <input id=\"hh-debts\" type=\"number\" min=\"0\" step=\"50\" value=\"600\" class=\"w-full border border-slate-300 rounded-lg px-3 py-2 text-navy-900 focus:outline-none focus:ring-2 focus:ring-brand-500\">\n        </div>\n    </div>\n    <div id=\"hh-result\" class=\"mt-5 bg-brand-50 border border-brand-100 rounded-lg p-4 text-sm text-gray-700 space-y-1\" aria-live=\"polite\"></div>\n    <p class=\"text-xs text-gray-500 mt-3\">A planning check, not a lender&apos;s maximum — and not advice. The 28/36 rule is a common ceiling, not a universal affordability rule.</p>\n    </div>\n    <script>\n    (function () {\n        function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }\n        function val(id) { return Math.max(0, parseFloat(document.getElementById(id).value) || 0); }\n        function calcHouse() {\n            var income = val('hh-income'), debts = val('hh-debts');\n            var housing28 = income * 0.28;\n            var total36 = income * 0.36;\n            var room = total36 - debts;\n            var budget = Math.min(housing28, Math.max(0, room));\n            var binder = room < housing28 ? 'debt side' : '28% housing side';\n            document.getElementById('hh-result').innerHTML =\n                '<p>Housing ceiling (28%): ' + fmt(income) + ' &times; 0.28 = <strong>' + fmt(housing28) + '</strong></p>' +\n                '<p>Total debt ceiling (36%): ' + fmt(income) + ' &times; 0.36 = <strong>' + fmt(total36) + '</strong></p>' +\n                '<p>Room for housing after debts: ' + fmt(total36) + ' &minus; ' + fmt(debts) + ' = <strong>' + fmt(Math.max(0,room)) + '</strong></p>' +\n                '<p class=\"pt-2 text-base font-bold text-navy-900\">Your budget screen: ' + fmt(budget) + '/month <span class=\"text-sm font-medium text-gray-500\">(the ' + binder + ' binds)</span></p>';\n        }\n        ['hh-income', 'hh-debts'].forEach(function (id) {\n            document.getElementById(id).addEventListener('input', calcHouse);\n        });\n        calcHouse();\n    })();\n    </script>"
         },
         {
           "kind": "cards",
@@ -330,7 +330,7 @@
             {
               "icon": "building",
               "title": "Taxes, insurance, HOA",
-              "body": "Same price, different payment across states and carriers. Reassessments after a sale can jump the tax bill \u2014 check local rules."
+              "body": "Same price, different payment across states and carriers. Reassessments after a sale can jump the tax bill — check local rules."
             },
             {
               "icon": "chart",
@@ -359,15 +359,15 @@
         "Write the all-in monthly number: PITI + HOA + PMI + maintenance reserve.",
         "Compare that number to both the 28% and 36% screens; use the lower binding limit as a ceiling, not a target.",
         "Keep retirement contributions (including catch-ups if eligible) in the budget before you stretch the house.",
-        "Confirm cash to close and 3\u20136+ months of reserves remaining after closing.",
+        "Confirm cash to close and 3–6+ months of reserves remaining after closing.",
         "Stress-test: job loss, bonus at zero, one spouse retired, higher insurance/tax escrow.",
         "Get insurance quotes and tax estimates before you fall in love with a listing."
       ],
       "watchouts": [
-        "<strong>Buying at the pre-approval max.</strong> That is the lender\u2019s risk limit.",
+        "<strong>Buying at the pre-approval max.</strong> That is the lender’s risk limit.",
         "<strong>Forgetting maintenance and special assessments.</strong> Escrow does not cover the roof.",
         "<strong>Draining cash for the down payment.</strong> House-rich and reserve-poor is fragile.",
-        "<strong>Counting on future raises or a hot market refinance.</strong> Buy what today\u2019s sustainable income supports.",
+        "<strong>Counting on future raises or a hot market refinance.</strong> Buy what today’s sustainable income supports.",
         "<strong>Ignoring retirement date math.</strong> Large payments plus early retirement is a common squeeze."
       ],
       "sources": [
@@ -415,7 +415,7 @@
         },
         {
           "href": "/plan-by-age/50-54/",
-          "kicker": "Ages 50\u201354",
+          "kicker": "Ages 50–54",
           "label": "Catch-up years in Plan by age"
         }
       ],
@@ -430,9 +430,9 @@
       "updated": "November 2026",
       "hero": {
         "crumb": "Buying",
-        "badge": "GUIDE \u00b7 Primary home",
+        "badge": "GUIDE · Primary home",
         "h1": "Buying a Primary Home",
-        "dek": "A clear process beats a rushed offer. Compare loan offers on official disclosures, verify the property\u2019s risks, and leave room for the years after you move in.",
+        "dek": "A clear process beats a rushed offer. Compare loan offers on official disclosures, verify the property’s risks, and leave room for the years after you move in.",
         "pills": [
           {
             "label": "Compare",
@@ -451,19 +451,19 @@
           }
         ]
       },
-      "short_answer": "Shop lenders with written Loan Estimates, then confirm the Closing Disclosure matches what you accepted. Keep inspection, appraisal, and financing contingencies unless you knowingly price the risk. Check flood maps, insurance quotes, tax reassessment rules, HOA reserves, and how long you expect to stay \u2014 especially if retirement is within a decade.",
+      "short_answer": "Shop lenders with written Loan Estimates, then confirm the Closing Disclosure matches what you accepted. Keep inspection, appraisal, and financing contingencies unless you knowingly price the risk. Check flood maps, insurance quotes, tax reassessment rules, HOA reserves, and how long you expect to stay — especially if retirement is within a decade.",
       "sections": [
         {
           "kind": "prose",
           "title": "Decision framework",
           "paras": [
-            "You are choosing a place to live and a financing contract. Separate those workstreams: property diligence (condition, title, hazards, HOA, taxes, insurance) and loan diligence (rate, fees, cash to close, payment shock). For ages 45\u201365, add a third: will this house still fit healthcare access, stairs, and cash-flow needs when paychecks stop?"
+            "You are choosing a place to live and a financing contract. Separate those workstreams: property diligence (condition, title, hazards, HOA, taxes, insurance) and loan diligence (rate, fees, cash to close, payment shock). For ages 45–65, add a third: will this house still fit healthcare access, stairs, and cash-flow needs when paychecks stop?"
           ]
         },
         {
           "kind": "list_blocks",
           "title": "Mortgage shopping with official forms",
-          "intro": "The Consumer Financial Protection Bureau\u2019s owning-a-home tools explain the two forms that make apples-to-apples comparison possible.",
+          "intro": "The Consumer Financial Protection Bureau’s owning-a-home tools explain the two forms that make apples-to-apples comparison possible.",
           "blocks": [
             {
               "title": "Loan Estimate",
@@ -474,7 +474,7 @@
               "body": "You generally must receive it at least three business days before consummation. Compare it line by line to the Loan Estimate. Question changes in fees, cash to close, or loan terms. Use the CFPB Closing Disclosure explainer."
             },
             {
-              "title": "What \u201clowest rate\u201d can hide",
+              "title": "What “lowest rate” can hide",
               "body": "Points, lender credits, adjustable-rate features, prepayment penalties, and balloon payments change the deal. If a feature is unfamiliar, pause and read the CFPB definitions before you sign."
             }
           ]
@@ -501,7 +501,7 @@
             {
               "icon": "building",
               "title": "Taxes and reassessment",
-              "body": "A purchase can reset assessed value under local rules. Confirm with the local assessor how taxes may change after sale \u2014 do not assume the seller\u2019s bill continues."
+              "body": "A purchase can reset assessed value under local rules. Confirm with the local assessor how taxes may change after sale — do not assume the seller’s bill continues."
             },
             {
               "icon": "shield",
@@ -519,7 +519,7 @@
           "kind": "prose",
           "title": "Stay length, repairs, and retirement cash",
           "paras": [
-            "Short stays struggle to recover transaction costs. If you expect to retire or relocate within a few years, model selling costs and a weaker market \u2014 not only today\u2019s list price.",
+            "Short stays struggle to recover transaction costs. If you expect to retire or relocate within a few years, model selling costs and a weaker market — not only today’s list price.",
             "Budget immediate repairs separately from the down payment. Near retirement, prioritize cash reserves and healthcare access (proximity to doctors, fewer stairs, reliable transit) alongside school-district habits from earlier life stages."
           ]
         }
@@ -530,13 +530,13 @@
         "Complete inspections; negotiate repairs or credits with eyes open.",
         "Pull FEMA flood information and insurance quotes early.",
         "Verify tax and HOA documents; ask about recent or planned special assessments.",
-        "Rehearse cash to close and 3\u20136+ months of reserves after move-in.",
+        "Rehearse cash to close and 3–6+ months of reserves after move-in.",
         "Write your expected stay length and exit plan before you waive contingencies."
       ],
       "watchouts": [
-        "<strong>Waiving inspection or financing contingencies to \u201cwin\u201d</strong> without pricing the risk in cash reserves.",
+        "<strong>Waiving inspection or financing contingencies to “win”</strong> without pricing the risk in cash reserves.",
         "<strong>Shopping lenders on rate alone</strong> without comparing total fees and cash to close on the Loan Estimate.",
-        "<strong>Assuming the seller\u2019s property tax bill continues</strong> after reassessment.",
+        "<strong>Assuming the seller’s property tax bill continues</strong> after reassessment.",
         "<strong>Skipping flood and insurance checks</strong> until after you are emotionally committed.",
         "<strong>Buying a house that only works while both incomes continue</strong> if retirement is near."
       ],
@@ -601,13 +601,13 @@
       "path": "real-estate/investment-property.html",
       "url": "/real-estate/investment-property.html",
       "title": "Investment Property: Cash Flow, Leverage and Tax Reality",
-      "description": "Evaluate a rental property with realistic net rent, NOI and cash flow after financing, leverage risk, fair housing basics, and IRS depreciation and passive-loss rules \u2014 without return promises or automatic \u00a7121 treatment.",
+      "description": "Evaluate a rental property with realistic net rent, NOI and cash flow after financing, leverage risk, fair housing basics, and IRS depreciation and passive-loss rules — without return promises or automatic §121 treatment.",
       "updated": "November 2026",
       "hero": {
         "crumb": "Investing in property",
-        "badge": "GUIDE \u00b7 Rentals",
+        "badge": "GUIDE · Rentals",
         "h1": "Investment Property Realities",
-        "dek": "A rental is an operating business with leverage. Underwrite cash flow after vacancies and capex \u2014 not a headline cap rate or a stock-like return promise.",
+        "dek": "A rental is an operating business with leverage. Underwrite cash flow after vacancies and capex — not a headline cap rate or a stock-like return promise.",
         "pills": [
           {
             "label": "Underwrite",
@@ -620,19 +620,19 @@
             "note": "with recapture risk"
           },
           {
-            "label": "\u00a7121",
+            "label": "§121",
             "value": "Not automatic",
             "note": "main-home rules differ"
           }
         ]
       },
-      "short_answer": "Start from realistic rent net of vacancy, repairs, capex, property management, taxes, insurance, HOA, and utilities you pay. Cap rate and NOI describe the property before financing; your cash flow after debt service can be much thinner. Leverage amplifies gains and losses. Federal fair housing rules apply to housing providers. Tax rules for depreciation and passive losses are detailed in IRS Publications 527 and 925 \u2014 and the primary-home sale exclusion does not automatically apply to investment property.",
+      "short_answer": "Start from realistic rent net of vacancy, repairs, capex, property management, taxes, insurance, HOA, and utilities you pay. Cap rate and NOI describe the property before financing; your cash flow after debt service can be much thinner. Leverage amplifies gains and losses. Federal fair housing rules apply to housing providers. Tax rules for depreciation and passive losses are detailed in IRS Publications 527 and 925 — and the primary-home sale exclusion does not automatically apply to investment property.",
       "sections": [
         {
           "kind": "callout",
           "title": "NOI vs cash flow after financing",
           "kicker": "Two different meters",
-          "body": "Net operating income (NOI) is generally income minus operating expenses before mortgage payments. Capitalization rate is often NOI divided by price \u2014 useful for comparing properties, not a personal return promise. Cash flow after financing subtracts principal and interest (and sometimes ignores principal as \u201csavings\u201d). A property can show a neat cap rate and still produce thin or negative monthly cash after debt service, capex, and vacancies."
+          "body": "Net operating income (NOI) is generally income minus operating expenses before mortgage payments. Capitalization rate is often NOI divided by price — useful for comparing properties, not a personal return promise. Cash flow after financing subtracts principal and interest (and sometimes ignores principal as “savings”). A property can show a neat cap rate and still produce thin or negative monthly cash after debt service, capex, and vacancies."
         },
         {
           "kind": "list_blocks",
@@ -667,7 +667,7 @@
         {
           "kind": "list_blocks",
           "title": "Tax themes to verify with primary sources (not DIY conclusions)",
-          "intro": "These are orientation points \u2014 confirm against current IRS publications and your own facts.",
+          "intro": "These are orientation points — confirm against current IRS publications and your own facts.",
           "blocks": [
             {
               "title": "Depreciation",
@@ -679,11 +679,11 @@
             },
             {
               "title": "Sale and recapture themes",
-              "body": "Gain on investment property is not shielded by the automatic main-home exclusion. Special rate caps can apply to unrecaptured depreciation on real property \u2014 see Topic 409. Get transaction-specific advice."
+              "body": "Gain on investment property is not shielded by the automatic main-home exclusion. Special rate caps can apply to unrecaptured depreciation on real property — see Topic 409. Get transaction-specific advice."
             },
             {
-              "title": "\u00a7121 is for a main home",
-              "body": "The $250,000 / $500,000 exclusion is about your principal residence with ownership and use tests \u2014 not a promise for rentals. Converting use over time has detailed rules in Publication 523."
+              "title": "§121 is for a main home",
+              "body": "The $250,000 / $500,000 exclusion is about your principal residence with ownership and use tests — not a promise for rentals. Converting use over time has detailed rules in Publication 523."
             }
           ]
         },
@@ -691,7 +691,7 @@
           "kind": "prose",
           "title": "Landlord rules without nationwide legal claims",
           "paras": [
-            "Federal fair housing law prohibits discrimination based on protected characteristics in most housing transactions \u2014 see HUD\u2019s Fair Housing Act overview. Security deposits, eviction procedure, rent control, and habitability standards are often state or local. Do not assume a single U.S. rulebook; read your jurisdiction and consult local counsel for leases."
+            "Federal fair housing law prohibits discrimination based on protected characteristics in most housing transactions — see HUD’s Fair Housing Act overview. Security deposits, eviction procedure, rent control, and habitability standards are often state or local. Do not assume a single U.S. rulebook; read your jurisdiction and consult local counsel for leases."
           ]
         }
       ],
@@ -700,15 +700,15 @@
         "Separate operating repairs from multi-year capex reserves.",
         "Compute NOI and cash flow after debt service as two different numbers.",
         "Confirm insurance, HOA rental rules, and local landlord-tenant requirements.",
-        "Read IRS Publications 527 and 925 before relying on \u201cpaper losses.\u201d",
-        "Plan the exit: selling costs, taxes, and time on market \u2014 no return promise."
+        "Read IRS Publications 527 and 925 before relying on “paper losses.”",
+        "Plan the exit: selling costs, taxes, and time on market — no return promise."
       ],
       "watchouts": [
         "<strong>Cap rate as a personal yield promise.</strong> It ignores your financing and capex.",
-        "<strong>Assuming \u00a7121 excludes rental gain.</strong> Main-home rules are different.",
+        "<strong>Assuming §121 excludes rental gain.</strong> Main-home rules are different.",
         "<strong>Ignoring passive loss limits</strong> when marketing tax benefits.",
         "<strong>Underestimating vacancies, special assessments, or insurance spikes.</strong>",
-        "<strong>Concentration risk</strong> \u2014 one leveraged property vs diversified invested assets."
+        "<strong>Concentration risk</strong> — one leveraged property vs diversified invested assets."
       ],
       "sources": [
         {
@@ -776,13 +776,13 @@
       "path": "real-estate/renting-deliberately.html",
       "url": "/real-estate/renting-deliberately.html",
       "title": "Renting Deliberately: Leases, Flexibility and Investing the Difference",
-      "description": "How to rent on purpose: lease terms, renewals, deposits, renter\u2019s insurance, local rights as a starting point, and investing the difference without pretending the path is risk-free.",
+      "description": "How to rent on purpose: lease terms, renewals, deposits, renter’s insurance, local rights as a starting point, and investing the difference without pretending the path is risk-free.",
       "updated": "November 2026",
       "hero": {
         "crumb": "Renting",
-        "badge": "GUIDE \u00b7 Renting on purpose",
+        "badge": "GUIDE · Renting on purpose",
         "h1": "Renting Deliberately",
-        "dek": "Renting is a strategy when it preserves flexibility, avoids a bad buy, or funds invested assets \u2014 if you read the lease and invest with a real plan.",
+        "dek": "Renting is a strategy when it preserves flexibility, avoids a bad buy, or funds invested assets — if you read the lease and invest with a real plan.",
         "pills": [
           {
             "label": "Lease",
@@ -801,13 +801,13 @@
           }
         ]
       },
-      "short_answer": "Renting on purpose means choosing flexibility and balance-sheet simplicity, then investing money you would otherwise tie up in a down payment \u2014 while watching rent growth, move costs, and lease terms. Buy renter\u2019s insurance, document the unit, and learn where to find local tenant resources. Investing the difference can build wealth, but it carries market risk and eventual capital gains tax; it is not automatically better than owning.",
+      "short_answer": "Renting on purpose means choosing flexibility and balance-sheet simplicity, then investing money you would otherwise tie up in a down payment — while watching rent growth, move costs, and lease terms. Buy renter’s insurance, document the unit, and learn where to find local tenant resources. Investing the difference can build wealth, but it carries market risk and eventual capital gains tax; it is not automatically better than owning.",
       "sections": [
         {
           "kind": "prose",
           "title": "When renting is the strategy",
           "paras": [
-            "Common reasons at 45\u201365: uncertain job or retirement location, trial residence before buying, avoiding HOA or repair risk, keeping equity in diversified accounts, or bridging to a downsize. Renting fails as a strategy when the \u201cdifference\u201d is spent rather than invested, or when lease risk is ignored."
+            "Common reasons at 45–65: uncertain job or retirement location, trial residence before buying, avoiding HOA or repair risk, keeping equity in diversified accounts, or bridging to a downsize. Renting fails as a strategy when the “difference” is spent rather than invested, or when lease risk is ignored."
           ]
         },
         {
@@ -822,7 +822,7 @@
             {
               "icon": "percent",
               "title": "Renewals and increases",
-              "body": "Know how much notice is required and whether increases are capped by local rules. Nationwide claims are unsafe \u2014 check your city and state."
+              "body": "Know how much notice is required and whether increases are capped by local rules. Nationwide claims are unsafe — check your city and state."
             },
             {
               "icon": "key",
@@ -831,8 +831,8 @@
             },
             {
               "icon": "shield",
-              "title": "Renter\u2019s insurance",
-              "body": "Landlord policies generally do not cover your belongings or liability. A renter\u2019s policy is usually inexpensive relative to the risk."
+              "title": "Renter’s insurance",
+              "body": "Landlord policies generally do not cover your belongings or liability. A renter’s policy is usually inexpensive relative to the risk."
             },
             {
               "icon": "move",
@@ -842,7 +842,7 @@
             {
               "icon": "chart",
               "title": "Investing the difference",
-              "body": "Automate transfers of the down-payment equivalent and any monthly surplus. Use the rent-vs-buy after-tax frame \u2014 pretax charts overstate the edge."
+              "body": "Automate transfers of the down-payment equivalent and any monthly surplus. Use the rent-vs-buy after-tax frame — pretax charts overstate the edge."
             }
           ]
         },
@@ -857,14 +857,14 @@
       "checklist": [
         "Read the full lease; highlight renewal, entry, repair, and early-exit clauses.",
         "Photograph and inventory condition on day one.",
-        "Buy renter\u2019s insurance before move-in.",
-        "Set an automatic investment transfer for the \u201cdifference\u201d you intend to invest.",
+        "Buy renter’s insurance before move-in.",
+        "Set an automatic investment transfer for the “difference” you intend to invest.",
         "Track rent-to-income and keep a moving / deposit reserve.",
         "Revisit rent vs buy if your stay horizon becomes long and local price-to-rent improves."
       ],
       "watchouts": [
         "<strong>Calling it a strategy while spending the difference.</strong>",
-        "<strong>Skipping renter\u2019s insurance.</strong>",
+        "<strong>Skipping renter’s insurance.</strong>",
         "<strong>Assuming deposits always come back in full</strong> without documentation.",
         "<strong>Ignoring rent growth</strong> in a multi-year comparison to owning.",
         "<strong>Nationwide legal assumptions</strong> about caps, notice, or eviction timelines."
@@ -924,14 +924,14 @@
       "id": "downsizing-relocating",
       "path": "real-estate/downsizing-relocating.html",
       "url": "/real-estate/downsizing-relocating.html",
-      "title": "Downsizing or Relocating at 45\u201365: Equity, Taxes and Fit",
-      "description": "A 45\u201365 guide to keeping, downsizing, or relocating: net equity after selling costs, IRS main-home exclusion eligibility, retirement cash needs, healthcare access, and renting first in a new place.",
+      "title": "Downsizing or Relocating at 45–65: Equity, Taxes and Fit",
+      "description": "A 45–65 guide to keeping, downsizing, or relocating: net equity after selling costs, IRS main-home exclusion eligibility, retirement cash needs, healthcare access, and renting first in a new place.",
       "updated": "November 2026",
       "hero": {
-        "crumb": "Ages 45\u201365",
-        "badge": "GUIDE \u00b7 Downsizing & relocating",
+        "crumb": "Ages 45–65",
+        "badge": "GUIDE · Downsizing & relocating",
         "h1": "Downsizing or Relocating",
-        "dek": "The question is not only \u201csmaller house?\u201d It is whether the next place improves cash flow, taxes, healthcare access, and the retirement plan \u2014 after selling costs.",
+        "dek": "The question is not only “smaller house?” It is whether the next place improves cash flow, taxes, healthcare access, and the retirement plan — after selling costs.",
         "pills": [
           {
             "label": "Exclusion",
@@ -954,9 +954,9 @@
       "sections": [
         {
           "kind": "prose",
-          "title": "Decision framework for 45\u201365",
+          "title": "Decision framework for 45–65",
           "paras": [
-            "Four paths: stay and adapt, downsize nearby, move to another U.S. market, or move abroad for part or all of the year. Each changes housing cost, taxes, insurance, travel, and healthcare. WealthLanding\u2019s Plan by age stages and overseas retirement hub cover adjacent pieces; this guide focuses on the housing balance sheet and fit."
+            "Four paths: stay and adapt, downsize nearby, move to another U.S. market, or move abroad for part or all of the year. Each changes housing cost, taxes, insurance, travel, and healthcare. WealthLanding’s Plan by age stages and overseas retirement hub cover adjacent pieces; this guide focuses on the housing balance sheet and fit."
           ]
         },
         {
@@ -998,7 +998,7 @@
             {
               "icon": "map",
               "title": "State and local taxes",
-              "body": "Compare income, property, and sales taxes together \u2014 not income tax alone. Rules are jurisdiction-specific."
+              "body": "Compare income, property, and sales taxes together — not income tax alone. Rules are jurisdiction-specific."
             },
             {
               "icon": "users",
@@ -1013,7 +1013,7 @@
             {
               "icon": "coins",
               "title": "Retirement paycheck",
-              "body": "Freed equity only helps if it is invested or spent on purpose inside your withdrawal plan \u2014 not absorbed by a larger lifestyle."
+              "body": "Freed equity only helps if it is invested or spent on purpose inside your withdrawal plan — not absorbed by a larger lifestyle."
             }
           ]
         },
@@ -1021,13 +1021,13 @@
           "kind": "prose",
           "title": "When the question is daily support, not square footage",
           "paras": [
-            "Downsizing assumes you still want an independent home. If bathing, dressing, medications or safety needs are outpacing what family and the house can provide, shift to a care-needs frame: home with services, assisted living, or skilled nursing. Age alone is not the signal \u2014 daily support needs are. See the daily-support housing guide and official NIA and Medicare pages linked there."
+            "Downsizing assumes you still want an independent home. If bathing, dressing, medications or safety needs are outpacing what family and the house can provide, shift to a care-needs frame: home with services, assisted living, or skilled nursing. Age alone is not the signal — daily support needs are. See the daily-support housing guide and official NIA and Medicare pages linked there."
           ]
         }
       ],
       "checklist": [
         "Estimate net sale proceeds after costs and possible taxes on non-excluded gain.",
-        "Verify \u00a7121 ownership/use eligibility with IRS Topic 701 / Publication 523.",
+        "Verify §121 ownership/use eligibility with IRS Topic 701 / Publication 523.",
         "Price the next home or rental with taxes, insurance, and healthcare travel included.",
         "Stress-test cash flow with one spouse retired and with long-term care premiums.",
         "Rent in a new area before buying when relocating.",
@@ -1036,9 +1036,9 @@
       "watchouts": [
         "<strong>Spending paper equity before closing and tax reality.</strong>",
         "<strong>Assuming the full $500,000 exclusion without meeting the tests.</strong>",
-        "<strong>Replacing one oversized house with another expensive \u201cdownsize.\u201d</strong>",
+        "<strong>Replacing one oversized house with another expensive “downsize.”</strong>",
         "<strong>Moving for tax reasons without pricing healthcare and travel home.</strong>",
-        "<strong>Dropping Medicare Part B for an abroad move</strong> without understanding re-enrollment rules \u2014 see CMS and Plan by age resources."
+        "<strong>Dropping Medicare Part B for an abroad move</strong> without understanding re-enrollment rules — see CMS and Plan by age resources."
       ],
       "sources": [
         {
@@ -1090,7 +1090,7 @@
         },
         {
           "href": "/plan-by-age/55-59/#where-to-live",
-          "kicker": "Ages 55\u201359",
+          "kicker": "Ages 55–59",
           "label": "Where to live in Plan by age"
         },
         {
@@ -1106,14 +1106,14 @@
       "path": "real-estate/property-potential.html",
       "url": "/real-estate/property-potential.html",
       "title": "See Past Surface Value: Lots, Basements and Attics",
-      "description": "How to diligence \u201cpotential\u201d from multiple lots or unfinished basement and attic space \u2014 zoning vs tax parcels, buildability, egress, permits and risk-adjusted net value. Not automatic ROI.",
+      "description": "How to diligence “potential” from multiple lots or unfinished basement and attic space — zoning vs tax parcels, buildability, egress, permits and risk-adjusted net value. Not automatic ROI.",
       "updated": "November 2026",
       "life_stage_marker": false,
       "hero": {
         "crumb": "Diligence",
-        "badge": "GUIDE \u00b7 Property potential",
+        "badge": "GUIDE · Property potential",
         "h1": "See Past the Surface Listing",
-        "dek": "Multiple lots or unfinished space can matter \u2014 or be an expensive illusion. Verify legal buildability and conversion rules before you pay for \u201cpotential.\u201d",
+        "dek": "Multiple lots or unfinished space can matter — or be an expensive illusion. Verify legal buildability and conversion rules before you pay for “potential.”",
         "pills": [
           {
             "label": "Lots",
@@ -1132,26 +1132,26 @@
           }
         ]
       },
-      "short_answer": "Do not treat multiple parcels on a brochure, an unfinished basement, or an attic as automatic added value. Confirm whether you have separately buildable legal lots versus tax-map lines, and whether finishing space is allowed under local building, zoning, HOA and rental rules. Price the full conversion or subdivision path \u2014 approvals, utilities, setbacks, environmental constraints, holding costs and taxes \u2014 then compare risk-adjusted net value to a simpler property. Nothing here promises a return.",
+      "short_answer": "Do not treat multiple parcels on a brochure, an unfinished basement, or an attic as automatic added value. Confirm whether you have separately buildable legal lots versus tax-map lines, and whether finishing space is allowed under local building, zoning, HOA and rental rules. Price the full conversion or subdivision path — approvals, utilities, setbacks, environmental constraints, holding costs and taxes — then compare risk-adjusted net value to a simpler property. Nothing here promises a return.",
       "sections": [
         {
           "kind": "callout",
           "title": "Potential is a hypothesis until diligence closes",
           "kicker": "Not automatic value",
-          "body": "Marketing language (\u201cextra lot,\u201d \u201cexpandable attic,\u201d \u201ctall basement\u201d) is a starting clue. Value shows up only after legal lot status, buildability, permits, costs and exit liquidity are verified for that jurisdiction. Two identical-looking floor plans can have opposite economics one town apart."
+          "body": "Marketing language (“extra lot,” “expandable attic,” “tall basement”) is a starting clue. Value shows up only after legal lot status, buildability, permits, costs and exit liquidity are verified for that jurisdiction. Two identical-looking floor plans can have opposite economics one town apart."
         },
         {
           "kind": "list_blocks",
           "title": "Multiple lots vs one large lot",
-          "intro": "A property that appears to sit on more than one lot can be more flexible if each lot is separately buildable and marketable. That is a local legal question \u2014 not a national rule.",
+          "intro": "A property that appears to sit on more than one lot can be more flexible if each lot is separately buildable and marketable. That is a local legal question — not a national rule.",
           "blocks": [
             {
               "title": "Tax parcels are not the same as legal lots",
               "body": "Assessor maps often show tax parcel lines used for billing. Subdivision plats, deeds and local planning records determine whether you have separately conveyable, buildable lots. Ask the local planning or zoning office and a real-estate attorney how this parcel is classified."
             },
             {
-              "title": "Merger, combination and \u201cmerged lot\u201d rules",
-              "body": "Some jurisdictions treat contiguous lots under common ownership as merged for zoning purposes, which can block a simple split-and-sell story. Others require formal subdivision even when old lot lines appear on a map. Label every example as that town\u2019s rule \u2014 never assume nationwide."
+              "title": "Merger, combination and “merged lot” rules",
+              "body": "Some jurisdictions treat contiguous lots under common ownership as merged for zoning purposes, which can block a simple split-and-sell story. Others require formal subdivision even when old lot lines appear on a map. Label every example as that town’s rule — never assume nationwide."
             },
             {
               "title": "Buildability checklist themes",
@@ -1162,15 +1162,22 @@
               "body": "Flood hazard areas (check FEMA maps), wetlands and waters regulated under Clean Water Act Section 404 permitting, steep slopes, and conservation easements or deed restrictions can limit fill, structures or clearing. Easements can run with the land and bind future owners."
             },
             {
-              "title": "Costs that eat \u201cextra lot\u201d upside",
+              "title": "Costs that eat “extra lot” upside",
               "body": "Survey, entitlement/subdivision fees, engineering, utility extensions, impact fees, carrying taxes and insurance, and the time value of a multi-year approval path belong in the model. A paper second lot with no path to a certificate of occupancy is not inventory."
             }
-          ]
+          ],
+          "story_link": {
+            "kicker": "A worked story",
+            "text": "Two fictional buyers near retirement look at similar two-acre listings that both claim “two lots.” Only one listing is two legal lots. The other is two tax parcels. Follow the diligence, the costs, and the walk-away in",
+            "href": "/blogs/real_estate/two-acres-two-lots.html",
+            "label": "Two Acres Looked the Same. Only One Was Two Lots.",
+            "after": ""
+          }
         },
         {
           "kind": "list_blocks",
-          "title": "Unfinished basement and attic \u201cpotential\u201d",
-          "intro": "Unfinished volume can become living area only if structure, ceiling height, egress, moisture control, fire separation, insulation, HVAC, and permits allow it under local code \u2014 and only if the economics beat buying finished space elsewhere.",
+          "title": "Unfinished basement and attic “potential”",
+          "intro": "Unfinished volume can become living area only if structure, ceiling height, egress, moisture control, fire separation, insulation, HVAC, and permits allow it under local code — and only if the economics beat buying finished space elsewhere.",
           "blocks": [
             {
               "title": "Habitable area and egress",
@@ -1178,7 +1185,7 @@
             },
             {
               "title": "Structure, moisture and fire",
-              "body": "Foundation cracks, water intrusion, inadequate headroom, obstructed joists, knob-and-tube or undersized electrical, and fire separation between units or garage spaces can dominate the budget. Price a qualified inspection before you capitalize \u201cpotential\u201d into an offer."
+              "body": "Foundation cracks, water intrusion, inadequate headroom, obstructed joists, knob-and-tube or undersized electrical, and fire separation between units or garage spaces can dominate the budget. Price a qualified inspection before you capitalize “potential” into an offer."
             },
             {
               "title": "ADU or rental use is local",
@@ -1192,9 +1199,9 @@
         },
         {
           "kind": "callout",
-          "title": "Risk-adjusted net value \u2014 not guaranteed ROI",
+          "title": "Risk-adjusted net value — not guaranteed ROI",
           "kicker": "Underwriting stance",
-          "body": "A fair comparison is: expected net proceeds or living utility after costs, time, taxes and failure modes, versus alternatives (different house, renting, or doing nothing). Reject spreadsheets that only show best-case sale prices for new houses or finished square footage. Appreciation is a scenario, not a promise \u2014 see FHFA House Price Index history for how local prices move both ways."
+          "body": "A fair comparison is: expected net proceeds or living utility after costs, time, taxes and failure modes, versus alternatives (different house, renting, or doing nothing). Reject spreadsheets that only show best-case sale prices for new houses or finished square footage. Appreciation is a scenario, not a promise — see FHFA House Price Index history for how local prices move both ways."
         },
         {
           "kind": "cards",
@@ -1213,7 +1220,7 @@
             {
               "icon": "building",
               "title": "3. Permission path",
-              "body": "Planning/building staff confirm what can be built, split or finished \u2014 in writing when possible."
+              "body": "Planning/building staff confirm what can be built, split or finished — in writing when possible."
             },
             {
               "icon": "wrench",
@@ -1228,7 +1235,7 @@
             {
               "icon": "scale",
               "title": "6. Decision",
-              "body": "Pay only for verified optionality \u2014 or walk. Potential without a path is a hobby, not an asset."
+              "body": "Pay only for verified optionality — or walk. Potential without a path is a hobby, not an asset."
             }
           ]
         }
@@ -1242,14 +1249,14 @@
         "Read HOA/covenant limits on subdivision, ADUs and rentals.",
         "For basement/attic: measure height and egress; budget waterproofing, structure and permits before finishing.",
         "Build an all-in cost sheet with contingency; compare to buying finished elsewhere.",
-        "Decide using risk-adjusted net value \u2014 not a best-case flip story."
+        "Decide using risk-adjusted net value — not a best-case flip story."
       ],
       "watchouts": [
-        "<strong>Paying list-price premiums for \u201cextra lot\u201d language</strong> before legal lot and merger status are confirmed.",
+        "<strong>Paying list-price premiums for “extra lot” language</strong> before legal lot and merger status are confirmed.",
         "<strong>Confusing tax parcel lines with subdivided, buildable lots.</strong>",
         "<strong>Ignoring easements, septic limits, flood zones or conservation restrictions.</strong>",
         "<strong>Assuming unfinished space is cheap square footage</strong> without egress, moisture and permit costs.",
-        "<strong>Nationalizing one city\u2019s ADU or lot-split success story.</strong>",
+        "<strong>Nationalizing one city’s ADU or lot-split success story.</strong>",
         "<strong>Guaranteed ROI narratives.</strong> Local prices and approval timelines vary; FHFA data show declines as well as gains."
       ],
       "sources": [
@@ -1271,7 +1278,7 @@
         {
           "label": "FHFA House Price Index",
           "url": "https://www.fhfa.gov/data/hpi",
-          "note": "Local home prices rise and fall \u2014 not a return promise"
+          "note": "Local home prices rise and fall — not a return promise"
         },
         {
           "label": "FTC: Buying a house",
@@ -1291,10 +1298,20 @@
         {
           "label": "IRS Publication 530, Tax Information for Homeowners",
           "url": "https://www.irs.gov/publications/p530",
-          "note": "Tax themes for homeowners \u2014 not zoning approval"
+          "note": "Tax themes for homeowners — not zoning approval"
+        },
+        {
+          "label": "IRS Publication 523, Selling Your Home",
+          "url": "https://www.irs.gov/publications/p523",
+          "note": "Vacant land next to a main home has special §121 conditions; do not assume the exclusion applies to a standalone lot sale"
         }
       ],
       "next": [
+        {
+          "href": "/blogs/real_estate/two-acres-two-lots.html",
+          "kicker": "Case study",
+          "label": "Two Acres Looked the Same. Only One Was Two Lots."
+        },
         {
           "href": "/real-estate/buying-primary-home.html",
           "kicker": "If buying",
@@ -1327,9 +1344,9 @@
       "life_stage_marker": false,
       "hero": {
         "crumb": "Later-life housing bridge",
-        "badge": "GUIDE \u00b7 Care needs \u2260 age",
+        "badge": "GUIDE · Care needs ≠ age",
         "h1": "When Daily Support Outgrows the House",
-        "dek": "Start from what help is needed each day \u2014 not from a birthday. Independent living, assisted living and skilled nursing solve different problems, and Medicare usually does not pay for long-term custodial care.",
+        "dek": "Start from what help is needed each day — not from a birthday. Independent living, assisted living and skilled nursing solve different problems, and Medicare usually does not pay for long-term custodial care.",
         "pills": [
           {
             "label": "Frame",
@@ -1338,7 +1355,7 @@
           },
           {
             "label": "Settings",
-            "value": "Home \u2192 AL \u2192 SNF",
+            "value": "Home → AL → SNF",
             "note": "different jobs"
           },
           {
@@ -1354,7 +1371,7 @@
           "kind": "callout",
           "title": "Needs first, birthday second",
           "kicker": "How to use this bridge",
-          "body": "This is not a full 70+ hub. It sits beside the Real Estate path so a rising-care situation does not get forced into a first-time-buyer or pure downsizing script. If the issue is still mainly cost, stairs or location \u2014 use downsizing/relocating and rent-vs-buy. If the issue is daily personal care and safety, use this page and the official NIA and Medicare links."
+          "body": "This is not a full 70+ hub. It sits beside the Real Estate path so a rising-care situation does not get forced into a first-time-buyer or pure downsizing script. If the issue is still mainly cost, stairs or location — use downsizing/relocating and rent-vs-buy. If the issue is daily personal care and safety, use this page and the official NIA and Medicare links."
         },
         {
           "kind": "list_blocks",
@@ -1362,7 +1379,7 @@
           "blocks": [
             {
               "title": "Home with services",
-              "body": "Remain at home with family help, paid aides, adult day services or home-delivered supports. Feasibility depends on safety, caregiver capacity and money \u2014 not on optimism alone."
+              "body": "Remain at home with family help, paid aides, adult day services or home-delivered supports. Feasibility depends on safety, caregiver capacity and money — not on optimism alone."
             },
             {
               "title": "Independent living / retirement communities",
@@ -1383,14 +1400,14 @@
           "title": "Medicare and long-term custodial care",
           "paras": [
             "Medicare.gov states that Medicare does not pay for long-term care (custodial care / long-term services and supports) when that is the care you need. Most long-term help with activities of daily living is non-medical. People may pay out of pocket, use Medicaid if eligible under state rules, or use private long-term care insurance if they have it.",
-            "Do not plan a nursing-home stay on the assumption that Medicare will fund years of custodial care. Confirm current rules on Medicare.gov and with the facility\u2019s billing staff."
+            "Do not plan a nursing-home stay on the assumption that Medicare will fund years of custodial care. Confirm current rules on Medicare.gov and with the facility’s billing staff."
           ]
         },
         {
           "kind": "prose",
           "title": "Money links back to housing",
           "paras": [
-            "Selling a main home can free equity (subject to selling costs and possible capital gain after any \u00a7121 exclusion). That cash may fund care \u2014 or be spent too fast if the setting is a mismatch. Coordinate housing timing with a care assessment rather than rushing a sale under crisis conditions when you can avoid it."
+            "Selling a main home can free equity (subject to selling costs and possible capital gain after any §121 exclusion). That cash may fund care — or be spent too fast if the setting is a mismatch. Coordinate housing timing with a care assessment rather than rushing a sale under crisis conditions when you can avoid it."
           ]
         }
       ],
@@ -1399,13 +1416,13 @@
         "Ask a clinician or geriatric care manager whether home-with-services is still safe.",
         "Compare assisted living vs nursing facility services using NIA overviews and local licensing rules.",
         "Price the setting without assuming Medicare pays for long-term custodial care; read Medicare.gov long-term care pages.",
-        "If selling a home, run net proceeds and \u00a7121 eligibility before committing the money to care.",
+        "If selling a home, run net proceeds and §121 eligibility before committing the money to care.",
         "Prefer planned transitions over emergency placements when health allows."
       ],
       "watchouts": [
-        "<strong>Using age alone</strong> (\u201cturned 70\u201d) as the reason for a nursing home.",
+        "<strong>Using age alone</strong> (“turned 70”) as the reason for a nursing home.",
         "<strong>Assuming Medicare covers long-term custodial care.</strong>",
-        "<strong>Collapsing assisted living and skilled nursing into one \u201cfacility\u201d idea.</strong>",
+        "<strong>Collapsing assisted living and skilled nursing into one “facility” idea.</strong>",
         "<strong>Selling the house in a crisis</strong> without a care and cash-flow plan.",
         "<strong>Ignoring state licensing and contract fine print</strong> for residential care settings."
       ],
@@ -1455,7 +1472,7 @@
         {
           "href": "/plan-by-age/63-65/",
           "kicker": "Medicare timing",
-          "label": "Ages 63\u201365 Plan by age"
+          "label": "Ages 63–65 Plan by age"
         },
         {
           "href": "/real-estate/",

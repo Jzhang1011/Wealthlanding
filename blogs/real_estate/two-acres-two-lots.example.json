@@ -1,0 +1,48 @@
+{
+  "_comment": "Fictional, internally consistent worked example for the Two Acres story. Not local quotes, appraisals, or market statistics.",
+  "label": "Fictional worked example",
+  "currency": "USD",
+  "tax_treatment": "pretax",
+  "tax_treatment_note": "Federal income tax is not modeled. Section 121 is not applied to the vacant-lot sale.",
+  "comparable_one_lot_house": 560000,
+  "mara": {
+    "name": "Mara Ellison",
+    "age": 61,
+    "listing": "Willow Lane (fictional)",
+    "acres": 2.0,
+    "legal_status": "Two lots of record on a recorded subdivision plat, separately conveyable",
+    "purchase_price": 620000,
+    "premium_vs_comparable": 60000,
+    "diligence": {
+      "survey": 4800,
+      "attorney": 2200,
+      "planning_confirmation": 1000,
+      "perc_and_utility_letter": 2000
+    },
+    "carry_taxes_insurance_9_months": 3600,
+    "lot_sale_gross": 145000,
+    "selling_expense_rate": 0.07,
+    "partial_release_fee": 1200,
+    "partial_release_principal_paydown": 40000,
+    "remaining_home_value": 530000,
+    "path": "Sell the surplus lot; do not subdivide; do not build a second house"
+  },
+  "helen": {
+    "name": "Helen Cho",
+    "age": 59,
+    "listing": "Ridge Road (fictional)",
+    "acres": 2.05,
+    "legal_status": "Two tax parcel IDs; not separately conveyable legal lots after planning review",
+    "intended_purchase_price": 615000,
+    "premium_vs_comparable": 55000,
+    "diligence": {
+      "survey": 4500,
+      "attorney": 2500,
+      "wetland_delineation": 3500,
+      "planning_consult": 800
+    },
+    "walked_away": true,
+    "escrow_returned": true,
+    "path": "Walked away under contingency after merger, frontage, and wetland findings"
+  }
+}
