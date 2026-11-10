@@ -14,7 +14,7 @@ class WealthLandingFooter extends HTMLElement {
           background-color: #0f172a !important;
           color: #cbd5e1;
           padding: 3rem 0;
-          border-top: 4px solid #fbbf24;
+          border-top: 4px solid #4ade80;
           display: block;
         }
         wealthlanding-footer footer.wl-site-footer .wl-footer-inner {
@@ -62,7 +62,7 @@ class WealthLandingFooter extends HTMLElement {
           margin-bottom: 1rem;
         }
         wealthlanding-footer footer.wl-site-footer .wl-brand-icon {
-          color: #fbbf24;
+          color: #4ade80;
           font-size: 1.5rem;
           margin-right: 0.5rem;
         }
@@ -96,7 +96,7 @@ class WealthLandingFooter extends HTMLElement {
           transition: color 0.15s ease;
         }
         wealthlanding-footer footer.wl-site-footer a:hover {
-          color: #fbbf24;
+          color: #4ade80;
         }
         wealthlanding-footer footer.wl-site-footer a.wl-link-accent {
           color: #fcd34d;
@@ -149,7 +149,7 @@ class WealthLandingFooter extends HTMLElement {
         }
         wealthlanding-footer footer.wl-site-footer .wl-noscript-form button {
           border-radius: 0.25rem;
-          background: #f59e0b;
+          background: #16a34a;
           color: #0f172a;
           font-size: 0.875rem;
           font-weight: 600;
@@ -173,7 +173,7 @@ class WealthLandingFooter extends HTMLElement {
         }
         wealthlanding-footer footer.wl-site-footer .wl-kit-submit {
           border-radius: 0.25rem;
-          background: #f59e0b;
+          background: #16a34a;
           color: #0f172a;
           font-size: 0.875rem;
           font-weight: 600;
@@ -183,7 +183,7 @@ class WealthLandingFooter extends HTMLElement {
           width: 100%;
         }
         wealthlanding-footer footer.wl-site-footer .wl-kit-submit:hover {
-          background: #fbbf24;
+          background: #4ade80;
         }
         wealthlanding-footer footer.wl-site-footer .formkit-alert:empty {
           display: none;

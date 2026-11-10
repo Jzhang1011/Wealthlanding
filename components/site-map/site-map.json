@@ -441,41 +441,41 @@
       "nav_label": "Real Estate",
       "flow": {
         "kicker": "Decision path \u00b7 Ages 45\u201365",
-        "title": "Start with your situation, not a numbered checklist",
-        "intro": "Many readers already own a home. Follow the yes/no path for a possible move around retirement. Secondary links cover first-time buying and rising daily-support needs \u2014 age alone does not decide those.",
+        "title": "A visual path for your next housing move",
+        "intro": "Many readers already own a home. Start at the top and follow Yes or No. Leaves link to the matching guide. First-time buying and rising daily-support needs are secondary entry points \u2014 age alone does not decide those.",
         "root": {
-          "q": "Are you considering a move around retirement \u2014 to another home, town or living setup?",
+          "q": "Considering a move around retirement?",
           "no": {
-            "q": "Can your current home still meet budget, accessibility and maintenance needs for the next chapter?",
+            "q": "Can your current home still work for budget, access and upkeep?",
             "yes": {
               "href": "/real-estate/downsizing-relocating.html",
-              "label": "Adapt and stay \u2014 with eyes open",
-              "note": "Aging-in-place fit, equity and later exit options"
+              "label": "Adapt and stay",
+              "note": "Fit, equity and a later exit plan"
             },
             "no": {
               "href": "/real-estate/downsizing-relocating.html",
-              "label": "Reassess a move",
-              "note": "If the house no longer fits, treat it as a planned transition"
+              "label": "Plan a transition",
+              "note": "Treat the misfit as a move to design"
             }
           },
           "yes": {
-            "q": "Do you know the destination well enough to commit to buying there?",
+            "q": "Do you know the destination well enough to buy?",
             "no": {
               "href": "/real-estate/renting-deliberately.html",
-              "label": "Rent first in the new place",
-              "note": "Test climate, healthcare access and daily costs before you buy"
+              "label": "Rent first",
+              "note": "Test the place before you commit"
             },
             "yes": {
-              "q": "Will you stay long enough, and can you buy without jeopardizing retirement cash flow?",
+              "q": "Long enough stay \u2014 and a buy that won\u2019t strain retirement?",
               "yes": {
                 "href": "/life_stage/25_40/topics/how-much-house.html",
-                "label": "Check a sustainable buy budget",
-                "note": "Then compare after-tax rent vs buy and the buying checklist"
+                "label": "Check a buy budget",
+                "note": "Then rent-vs-buy and the buying checklist"
               },
               "no": {
                 "href": "/life_stage/25_40/topics/rent-vs-buy.html",
-                "label": "Compare renting vs buying for this move",
-                "note": "Equal cash flows, taxes and flexibility \u2014 no universal winner"
+                "label": "Compare rent vs buy",
+                "note": "After-tax wealth for this move"
               }
             }
           }
