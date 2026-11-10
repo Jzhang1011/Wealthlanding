@@ -16,22 +16,36 @@
       {
         "id": "tax-strategy",
         "label": "Tax Strategy"
+      },
+      {
+        "id": "real-estate-tips",
+        "label": "Real Estate Tips"
       }
     ],
-    "note": "Add a post here once; blogs/real_estate.html renders the archive, topic and year filters, and search from this list via /blogs/archive.js. Rebuild the static no-JS copy with: python3 tools/build_blog_hubs.py"
+    "note": "Add a post here once; blogs/real_estate.html renders the archive, topic and year filters, and search from this list via /blogs/archive.js. Optional meta.tagPages entries build a tag listing (for example /blogs/real_estate/tips.html) and turn matching tag pills into links. Rebuild hubs, the tag page, and article pills with: python3 tools/build_blog_hubs.py",
+    "tagPages": [
+      {
+        "label": "Real Estate Tips",
+        "slug": "tips",
+        "path": "/blogs/real_estate/tips.html",
+        "description": "Practical notes for buyers who want to see past staging and finishes: hidden square footage, the bones of a house, and what different construction years tend to hide \u2014 or leave behind."
+      }
+    ]
   },
   "posts": [
     {
       "id": "two-acres-two-lots",
       "url": "/blogs/real_estate/two-acres-two-lots.html",
       "title": "Two Acres Looked the Same. Only One Was Two Lots.",
-      "desc": "Two fictional buyers near retirement each consider a two-acre listing advertised as more than one lot. Legal lots, merger rules, wetlands, costs and a walk-away — a diligence story, not a return promise.",
+      "desc": "Two fictional buyers near retirement each consider a two-acre listing advertised as more than one lot. Legal lots, merger rules, wetlands, costs and a walk-away \u2014 a diligence story, not a return promise.",
       "topics": [
-        "housing-market"
+        "housing-market",
+        "real-estate-tips"
       ],
       "tags": [
         "Housing Market",
-        "Case Study"
+        "Case Study",
+        "Real Estate Tips"
       ],
       "date": "November 9, 2026",
       "year": 2026,

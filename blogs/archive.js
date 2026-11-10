@@ -20,15 +20,27 @@
     'Housing Market': 'bg-orange-50 text-orange-800 border-orange-200',
     'Estate Planning': 'bg-indigo-50 text-indigo-800 border-indigo-200',
     'Economy and Labor': 'bg-sky-50 text-sky-800 border-sky-200',
-    'Case Study': 'bg-blue-50 text-blue-800 border-blue-200'
+    'Case Study': 'bg-blue-50 text-blue-800 border-blue-200',
+    'Real Estate Tips': 'bg-green-50 text-green-800 border-green-200'
   };
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   }
+  var tagPages = {};
   function topicsOf(p) { return p.topics || (p.topic ? [p.topic] : []); }
   function tagsOf(p) { return p.tags || (p.tag ? [p.tag] : []); }
+  function tagHref(label) {
+    return tagPages[label] || '';
+  }
+  function tagPill(t) {
+    var cls = 'text-xs font-semibold px-2.5 py-1 rounded-full border ' + (TAG[t] || TAG['Case Study']);
+    var href = tagHref(t);
+    return href
+      ? '<a href="' + esc(href) + '" class="' + cls + '">' + esc(t) + '</a>'
+      : '<span class="' + cls + '">' + esc(t) + '</span>';
+  }
   function item(p) {
     var w = p.imageWidth || 720;
     var h = p.imageHeight || 378;
@@ -42,7 +54,7 @@
       (p.date ? '<div class="text-[11px] font-bold text-slate-500 uppercase tracking-wide mb-2">' + esc(p.date) + '</div>' : '') +
       '<a href="' + esc(p.url) + '"><h2 class="text-xl sm:text-2xl font-bold text-slate-900 leading-tight mb-3 group-hover:text-emerald-700">' + esc(p.title) + '</h2></a>' +
       '<p class="text-slate-600 text-sm sm:text-base leading-relaxed line-clamp-3">' + esc(p.desc) + '</p>' +
-      '<div class="mt-4 flex flex-wrap items-center gap-2">' + tagsOf(p).map(function (t) { return '<span class="text-xs font-semibold px-2.5 py-1 rounded-full border ' + (TAG[t] || TAG['Case Study']) + '">' + esc(t) + '</span>'; }).join('') + '</div>' +
+      '<div class="mt-4 flex flex-wrap items-center gap-2">' + tagsOf(p).map(tagPill).join('') + '</div>' +
       '</div></article>';
   }
   function init(data, P) {
@@ -55,6 +67,10 @@
     var reset = document.getElementById(P + '-archive-reset');
     if (!list || !topicSel || !yearSel || !search) return;
     var posts = data.posts || [];
+    tagPages = {};
+    ((data.meta && data.meta.tagPages) || []).forEach(function (page) {
+      if (page && page.label && page.path) tagPages[page.label] = page.path;
+    });
 
     // Build the year options from the data so they only list years that have posts.
     var years = posts.map(function (p) { return p.year; }).filter(function (y, i, a) { return y && a.indexOf(y) === i; }).sort().reverse();
