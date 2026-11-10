@@ -302,45 +302,210 @@ def start_here_html(cfg, pages):
             f'    <p class="wl-sh-ages">Between 45 and 65? Plan by age: {ages}</p>\n  </div>\n</section>')
 
 
-def _flow_outcome(node, pages):
-    href = node.get("href", "")
-    label = node.get("label") or (link_label(href, pages) if href else "")
-    note = node.get("note", "")
-    if href:
-        return (
-            f'<div class="wl-flow-out">'
-            f'<a class="wl-flow-out-link" href="{esc(href)}"><strong>{esc(label)}</strong>'
-            + (f'<span>{esc(note)}</span>' if note else "")
-            + "</a></div>"
+
+def _flow_collect(node, path="R"):
+    """Flatten binary tree into layout rows: questions and outcomes with parent links."""
+    nodes = {}
+    edges = []
+
+    def walk(n, pid, depth, side):
+        nid = pid
+        if "q" in n:
+            nodes[nid] = {"kind": "q", "text": n["q"], "depth": depth, "side": side}
+            for label, child in (("Yes", n["yes"]), ("No", n["no"])):
+                cid = f"{nid}{'Y' if label == 'Yes' else 'N'}"
+                edges.append({"frm": nid, "to": cid, "label": label})
+                walk(child, cid, depth + 1, "L" if label == "No" else "R")
+        else:
+            nodes[nid] = {
+                "kind": "out",
+                "text": n.get("label") or "",
+                "note": n.get("note") or "",
+                "href": n.get("href") or "",
+                "depth": depth,
+                "side": side,
+            }
+
+    walk(node, path, 0, "C")
+    return nodes, edges
+
+
+def _flow_layout(nodes):
+    """Assign x,y centers for a tidy binary tree (pixel space)."""
+    # Group by depth
+    by_depth = {}
+    for nid, n in nodes.items():
+        by_depth.setdefault(n["depth"], []).append(nid)
+
+    # Stable left-to-right order: sort by path string with N before Y at each fork via custom key
+    def sort_key(nid):
+        # R, RN, RY, RNY... treat N as 0, Y as 1 after R
+        key = []
+        for ch in nid[1:]:
+            key.append(0 if ch == "N" else 1)
+        return tuple(key)
+
+    W = 1080
+    top = 36
+    q_h = 72
+    out_h = 64
+    gap_y = 88
+    positions = {}
+    # compute cumulative y
+    y = top
+    max_depth = max(by_depth) if by_depth else 0
+    row_y = {}
+    for d in range(0, max_depth + 1):
+        ids = sorted(by_depth.get(d, []), key=sort_key)
+        # height of this row
+        kinds = [nodes[i]["kind"] for i in ids]
+        row_h = q_h if any(k == "q" for k in kinds) else out_h
+        row_y[d] = y + row_h / 2
+        n = max(len(ids), 1)
+        # spread across width with margins
+        margin = 70
+        if n == 1:
+            xs = [W / 2]
+        else:
+            span = W - 2 * margin
+            xs = [margin + span * i / (n - 1) for i in range(n)]
+        for nid, x in zip(ids, xs):
+            positions[nid] = (x, row_y[d], row_h)
+        y += row_h + gap_y
+    height = y - gap_y + 24
+    return positions, W, height, q_h, out_h
+
+
+def _svg_escape(s):
+    return esc(s).replace("&#x27;", "'")
+
+
+def _wrap_lines(text, width=28):
+    words = text.split()
+    lines, cur = [], ""
+    for w in words:
+        trial = (cur + " " + w).strip()
+        if len(trial) <= width:
+            cur = trial
+        else:
+            if cur:
+                lines.append(cur)
+            cur = w
+    if cur:
+        lines.append(cur)
+    return lines or [text]
+
+
+def flow_svg_html(root, pages):
+    nodes, edges = _flow_collect(root)
+    positions, W, H, q_h, out_h = _flow_layout(nodes)
+
+    parts = [
+        f'<svg class="wl-flow-svg" viewBox="0 0 {W:.0f} {H:.0f}" role="img" aria-labelledby="wl-flow-svg-title wl-flow-svg-desc" xmlns="http://www.w3.org/2000/svg">',
+        '<title id="wl-flow-svg-title">Housing decision path</title>',
+        '<desc id="wl-flow-svg-desc">A branching yes-or-no diagram for retirement housing moves. Follow Yes and No arrows from the top question to a linked next guide.</desc>',
+        '<defs>',
+        '<marker id="wl-flow-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">',
+        '<path d="M 0 0 L 10 5 L 0 10 z" fill="#166534"></path>',
+        "</marker>",
+        "</defs>",
+    ]
+
+    # edges first
+    for e in edges:
+        x1, y1, h1 = positions[e["frm"]]
+        x2, y2, h2 = positions[e["to"]]
+        # start below parent, end above child
+        y1b = y1 + h1 / 2 - 4
+        y2t = y2 - h2 / 2 + 4
+        # quadratic curve
+        mx, my = (x1 + x2) / 2, (y1b + y2t) / 2
+        path = f"M {x1:.1f} {y1b:.1f} Q {x1:.1f} {my:.1f} {mx:.1f} {my:.1f} T {x2:.1f} {y2t:.1f}"
+        parts.append(
+            f'<path class="wl-flow-edge-line" d="{path}" fill="none" stroke="#166534" stroke-width="2" marker-end="url(#wl-flow-arrow)"></path>'
         )
-    return (
-        f'<div class="wl-flow-out wl-flow-out-static"><strong>{esc(label)}</strong>'
-        + (f'<span>{esc(note)}</span>' if note else "")
-        + "</div>"
-    )
+        # label near mid
+        lx, ly = mx, my - 10
+        pill_w = 36
+        parts.append(
+            f'<rect x="{lx - pill_w/2:.1f}" y="{ly - 11:.1f}" width="{pill_w}" height="20" rx="10" class="wl-flow-edge-pill" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"></rect>'
+        )
+        parts.append(
+            f'<text x="{lx:.1f}" y="{ly + 3:.1f}" text-anchor="middle" class="wl-flow-edge-label">{_svg_escape(e["label"])}</text>'
+        )
+
+    # nodes
+    for nid, n in nodes.items():
+        x, y, h = positions[nid]
+        if n["kind"] == "q":
+            w = 300 if n["depth"] == 0 else 260
+            lines = _wrap_lines(n["text"], 32 if n["depth"] == 0 else 28)
+            box_h = max(q_h, 28 + 18 * len(lines))
+            parts.append(
+                f'<g class="wl-flow-qnode">'
+                f'<rect x="{x - w/2:.1f}" y="{y - box_h/2:.1f}" width="{w}" height="{box_h}" rx="14" ry="14" fill="#ffffff" stroke="#16a34a" stroke-width="2.5"></rect>'
+            )
+            ty = y - (len(lines) - 1) * 9
+            for i, line in enumerate(lines):
+                parts.append(
+                    f'<text x="{x:.1f}" y="{ty + i * 18:.1f}" text-anchor="middle" class="wl-flow-qtext">{_svg_escape(line)}</text>'
+                )
+            parts.append("</g>")
+        else:
+            w = 250
+            box_h = out_h
+            href = n.get("href") or ""
+            label = n["text"]
+            note = n.get("note") or ""
+            lines = _wrap_lines(label, 28)
+            if note:
+                note_lines = _wrap_lines(note, 34)[:2]
+            else:
+                note_lines = []
+            box_h = max(out_h, 34 + 16 * len(lines) + 14 * len(note_lines))
+            open_tag = f'<a href="{esc(href)}" class="wl-flow-outnode">' if href else '<g class="wl-flow-outnode">'
+            close_tag = "</a>" if href else "</g>"
+            parts.append(open_tag)
+            # oval / pill outcome
+            parts.append(
+                f'<rect x="{x - w/2:.1f}" y="{y - box_h/2:.1f}" width="{w}" height="{box_h}" rx="{box_h/2:.1f}" ry="{box_h/2:.1f}" fill="#ffffff" stroke="#16a34a" stroke-width="2.25"></rect>'
+            )
+            ty = y - ((len(lines) + len(note_lines) - 1) * 8)
+            for i, line in enumerate(lines):
+                parts.append(
+                    f'<text x="{x:.1f}" y="{ty + i * 16:.1f}" text-anchor="middle" class="wl-flow-outtext">{_svg_escape(line)}</text>'
+                )
+            base = ty + len(lines) * 16
+            for j, line in enumerate(note_lines):
+                parts.append(
+                    f'<text x="{x:.1f}" y="{base + j * 14:.1f}" text-anchor="middle" class="wl-flow-outnote">{_svg_escape(line)}</text>'
+                )
+            parts.append(close_tag)
+
+    parts.append("</svg>")
+    return "\n".join(parts)
 
 
-def _flow_node(node, pages, depth=0):
-    """Render one binary decision node. Branches are yes/no objects that are either
-    outcomes ({href,label,note}) or nested questions ({q, yes, no})."""
-    if "q" not in node:
-        return _flow_outcome(node, pages)
-    yes = node["yes"]
-    no = node["no"]
-    return (
-        f'<div class="wl-flow-node" data-depth="{depth}">'
-        f'<p class="wl-flow-q"><span class="wl-flow-q-label">Ask</span> {esc(node["q"])}</p>'
-        f'<div class="wl-flow-branches">'
-        f'<div class="wl-flow-branch wl-flow-yes">'
-        f'<p class="wl-flow-edge"><span class="wl-flow-pill wl-flow-pill-yes">Yes</span></p>'
-        f'{_flow_node(yes, pages, depth + 1)}'
-        f"</div>"
-        f'<div class="wl-flow-branch wl-flow-no">'
-        f'<p class="wl-flow-edge"><span class="wl-flow-pill wl-flow-pill-no">No</span></p>'
-        f'{_flow_node(no, pages, depth + 1)}'
-        f"</div>"
-        f"</div></div>"
-    )
+def _flow_fallback_list(node, pages, path_labels=None):
+    """Accessible text alternative listing every path to an outcome."""
+    path_labels = path_labels or []
+    items = []
+
+    def walk(n, labels):
+        if "q" in n:
+            walk(n["yes"], labels + [f"Yes ← {n['q']}"])
+            walk(n["no"], labels + [f"No ← {n['q']}"])
+        else:
+            href = n.get("href") or "#"
+            label = n.get("label") or link_label(href, pages)
+            trail = " → ".join(labels) if labels else "Start"
+            items.append(
+                f'<li><a href="{esc(href)}">{esc(label)}</a>'
+                f'<span class="wl-flow-trail">{esc(trail)}</span></li>'
+            )
+
+    walk(node, [])
+    return '<ol class="wl-flow-fallback">' + "".join(items) + "</ol>"
 
 
 def flow_html(sec, pages):
@@ -363,15 +528,21 @@ def flow_html(sec, pages):
             f'<ul>{"".join(sec_bits)}</ul></div>'
         )
     more = "".join(f'<a href="{esc(l["href"])}">{esc(l["label"])}</a>' for l in sec.get("popular", []))
+    svg = flow_svg_html(flow["root"], pages)
+    fallback = _flow_fallback_list(flow["root"], pages)
     return (
         CSS
         + f'\n<section class="wl-flow" aria-label="{esc(title)}">\n  <div class="wl-ns-inner">\n'
         f'    <span class="wl-sh-kicker">{esc(flow.get("kicker") or "Decision path")}</span>\n'
         f'    <h2>{esc(title)}</h2>\n'
         + (f'    <p class="wl-flow-intro">{esc(intro)}</p>\n' if intro else "")
-        + f'    <div class="wl-flow-tree" role="group" aria-label="Binary housing decision path">\n'
-        + f'      {_flow_node(flow["root"], pages)}\n'
+        + '    <p class="wl-flow-scroll-hint">Tip: on smaller screens, scroll sideways to follow the branches.</p>\n'
+        + '    <div class="wl-flow-viewport">\n'
+        + f'      <div class="wl-flow-canvas" role="group" aria-label="Binary housing decision path">\n{svg}\n      </div>\n'
         + "    </div>\n"
+        + '    <details class="wl-flow-a11y"><summary>Text version of every path</summary>\n'
+        + f"      {fallback}\n"
+        + "    </details>\n"
         + secondary_html
         + (f'    <p class="wl-rt-more"><span>Also explore:</span>{more}</p>\n' if more else "")
         + '    <p class="wl-flow-note">This path is a planning aid, not advice. Your facts, local rules and risk tolerance decide the next step.</p>\n'
