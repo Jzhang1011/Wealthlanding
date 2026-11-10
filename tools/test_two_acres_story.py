@@ -93,4 +93,52 @@ for href in re.findall(r'href="(/[^"]+)"', article):
         ok = (ROOT / rel).exists() or (ROOT / rel / "index.html").exists()
     assert ok, f"broken internal link {href}"
 
+
+# Shared article chrome must match the buyers-market case-study template
+REF = ROOT / "blogs/real_estate/buyers-market-with-no-buyers.html"
+ref = REF.read_text(encoding="utf-8")
+
+
+def has_class(html, name):
+    return bool(re.search(r'class="[^"]*\b' + re.escape(name) + r'\b', html))
+
+
+SHARED_CLASSES = (
+    "hero",
+    "heroin",
+    "eyebrow",
+    "dek",
+    "meta",
+    "herofigure",
+    "heroimage",
+    "floatcard",
+    "summary",
+    "summarygrid",
+    "summaryitem",
+    "layout",
+    "story",
+    "sidebar",
+    "sidecard",
+    "toc",
+    "why",
+    "disclaimer",
+    "related",
+    "relatedin",
+)
+for cls in SHARED_CLASSES:
+    assert has_class(article, cls), f"two-acres missing wrapper class {cls}"
+    assert has_class(ref, cls), f"reference post missing wrapper class {cls}"
+assert "/blogs/case_study.css" in article and "/blogs/case_study.css" in ref
+assert "family=DM+Sans" in article and "family=Manrope" in article
+assert 'id="global-header-target"' in article
+assert "wl:breadcrumb" in article and "wl:next-steps" in article
+assert "wealthlanding-footer" in article or "wl-footer" in article
+# No author byline
+assert not re.search(r'class="[^"]*byline', article, re.I)
+assert "Knowledge Guardian" not in article
+assert "rel=\"author\"" not in article and "rel='author'" not in article
+# Example-data table uses the shared figure/table styles
+assert "wlfig" in article and "tablewrap" in article
+assert re.search(r"<table\b[^>]*class=\"ex\"", article)
+
 print(f"OK: Mara pretax net ${mara_net:,} vs comparable; Helen diligence ${dil_h:,}; sources and reciprocal links present")
