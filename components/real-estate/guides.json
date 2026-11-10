@@ -38,8 +38,7 @@
           "kind": "prose",
           "title": "Who this is for",
           "paras": [
-            "WealthLanding’s core readers are ages 45–65, and many already own a home. This guide prioritizes relocating or downsizing around retirement: selling (or keeping) the current place, then choosing rent or buy in the next one.",
-            "The URL still lives under /life_stage/25_40/ for continuity. First-time buyers and later moves can use the same after-tax comparison; they are not the hub’s default starting point.",
+            "Use this guide if you are deciding whether to rent or buy your next home when you move, downsize, or relocate around retirement — including whether to sell or keep your current place. The same after-tax comparison also works for a first purchase or a later move.",
             "If daily personal-care needs are rising beyond what any house can safely provide, that is a care-needs decision — not automatically a rent-vs-buy spreadsheet. See the daily-support housing guide."
           ]
         },
@@ -279,7 +278,7 @@
             },
             {
               "title": "Maintenance and capex reserve",
-              "body": "A common planning placeholder is about 1% of home value per year for repairs and replacements — label it as an assumption and raise it for older homes."
+              "body": "A common planning assumption is about 1% of home value per year for repairs and replacements — label it as an assumption and raise it for older homes."
             },
             {
               "title": "Closing funds and post-closing reserves",

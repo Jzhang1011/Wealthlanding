@@ -85,7 +85,6 @@ window.addEventListener('afterprint', () => {
     <wealthlanding-footer></wealthlanding-footer>
     
    <!-- ConvertKit Script -->
-    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 
     <!-- MODULAR FOOTER -->
     

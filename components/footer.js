@@ -212,17 +212,15 @@ class WealthLandingFooter extends HTMLElement {
               <h4 class="text-white font-bold mb-4">Join the newsletter</h4>
               <p class="wl-muted text-sm text-slate-400 mb-3">Practical money education in your inbox.</p>
               <div class="wl-kit-slot" data-kit-slot>
-                <form action="https://app.kit.com/forms/9874203/subscriptions" method="post" class="seva-form formkit-form wl-kit-form" data-sv-form="9874203" data-uid="2b35717445" data-format="inline" data-version="5">
-                  <div data-style="clean">
-                    <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-                    <div data-element="fields" class="seva-fields formkit-fields wl-kit-fields">
-                      <div class="formkit-field">
-                        <input class="formkit-input wl-kit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required type="email" />
-                      </div>
-                      <button data-element="submit" class="formkit-submit wl-kit-submit" type="submit">
-                        <span>Subscribe</span>
-                      </button>
+                <form action="https://app.kit.com/forms/9874203/subscriptions" method="post" class="wl-kit-form" data-wl-kit-form="9874203">
+                  <div class="wl-kit-fields">
+                    <div class="wl-kit-hp" aria-hidden="true" style="position:absolute;left:-9999px;height:0;overflow:hidden">
+                      <label>Company <input type="text" name="company" tabindex="-1" autocomplete="off"></label>
                     </div>
+                    <input class="wl-kit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required type="email" autocomplete="email" />
+                    <button class="wl-kit-submit" type="submit">
+                      <span>Subscribe</span>
+                    </button>
                   </div>
                 </form>
               </div>
@@ -246,25 +244,34 @@ class WealthLandingFooter extends HTMLElement {
     `;
 
     // Route the footer newsletter form through our own worker relay
-    // (POST https://api.wealthlanding.com/api/subscribe) instead of letting it
-    // POST directly to app.kit.com, which ad/tracker blockers silently kill.
-    // We deliberately do NOT load Kit's ck.5.js embed script anymore.
+    // (POST https://api.wealthlanding.com/api/subscribe). Ad/tracker blockers
+    // can silently kill a direct browser POST to app.kit.com, so the worker
+    // is first. If the worker fails, fall back to a native POST to the Kit
+    // HTML form action. Do not load Kit's ck.5.js embed script — it 404'd
+    // historically for the hosted embed and can intercept this form.
     (function () {
       var slot = this.querySelector('[data-kit-slot]');
       var form = slot && slot.querySelector('.wl-kit-form');
       if (!form || form.dataset.wlRelay) return;
       form.dataset.wlRelay = '1';
+      var useNativeFallback = false;
       form.addEventListener('submit', function (ev) {
+        if (useNativeFallback) return;
         ev.preventDefault();
         ev.stopPropagation();
         var input = form.querySelector('input[name="email_address"]');
+        var hp = form.querySelector('input[name="company"]');
         var email = input && input.value ? input.value.trim() : '';
-        var btn = form.querySelector('[data-element="submit"]');
+        var btn = form.querySelector('button[type="submit"], .wl-kit-submit');
         var note = slot.querySelector('.wl-kit-note');
         if (!note) {
           note = document.createElement('p');
           note.className = 'wl-kit-note text-xs mt-2';
           slot.appendChild(note);
+        }
+        if (hp && hp.value) {
+          slot.innerHTML = '<p class="text-sm" style="color:#fcd34d">✓ You\'re on the list!</p>';
+          return;
         }
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
           note.style.color = '#f87171';
@@ -288,9 +295,10 @@ class WealthLandingFooter extends HTMLElement {
             }
           })
           .catch(function () {
-            note.style.color = '#f87171';
-            note.textContent = 'Something went wrong — please try again.';
-            if (btn) btn.disabled = false;
+            useNativeFallback = true;
+            note.style.color = '#94a3b8';
+            note.textContent = 'Trying another way to subscribe…';
+            form.submit();
           });
       }, true);
     }).call(this);

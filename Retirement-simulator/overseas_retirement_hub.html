@@ -1238,7 +1238,18 @@
           }).then(function (r) { return r.json().catch(function () { return {}; }); }).then(function (d) {
             if (d && d.ok) { wrap.innerHTML = '<p class="text-xs" style="color:#34d399">✓ You\'re on the list!</p>'; }
             else { throw new Error('subscribe_failed'); }
-          }).catch(function () { note('Something went wrong — please try again.', false); btn.disabled = false; });
+          }).catch(function () {
+            var f = document.createElement('form');
+            f.action = 'https://app.kit.com/forms/9874203/subscriptions';
+            f.method = 'post';
+            f.style.display = 'none';
+            var inp = document.createElement('input');
+            inp.name = 'email_address';
+            inp.value = email;
+            f.appendChild(inp);
+            document.body.appendChild(f);
+            f.submit();
+          });
         });
       }
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

@@ -4,12 +4,10 @@
     "seriesName": "Retirement Confidence",
     "hubTitle": "The 7 Principles of Retirement Confidence",
     "hubUrl": "/retirement-confidence/",
-    "voice": "WealthLanding Knowledge Guardian",
     "lastReviewed": "2026-10-15",
     "lastReviewedLabel": "October 15, 2026",
     "videoUrl": "https://youtu.be/UIIdzy0gUBw",
     "videoTitle": "Mastering Retirement: The Three Layers of Control",
-    "videoComingSoon": "The companion video is in production. When it is published it will appear here, with captions.",
     "disclaimer": "This article is for general education. It is not individualized financial, tax, legal, or insurance advice, and it does not recommend any product. Rules, limits and premiums change, often every year; confirm current figures with the official sources listed and consider a qualified professional for decisions about your own situation. Examples use hypothetical people and simplified assumptions; your results will differ.",
     "retirementUrl": "/retirement/",
     "photos": {
@@ -227,7 +225,8 @@
     "hubPhotos": {
       "hero": "couple-planning",
       "closing": "ocean-sunset"
-    }
+    },
+    "publisher": "WealthLanding"
   },
   "articles": [
     {
