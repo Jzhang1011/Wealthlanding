@@ -289,7 +289,7 @@ def start_here_html(cfg, pages):
         cards.append(
             f'<div class="wl-sh-card"><a class="wl-sh-head" href="{esc(s["hub"])}"><i class="fa-solid {esc(s["icon"])}" aria-hidden="true"></i>'
             f'<span><strong>{esc(s["label"])}</strong><em>{esc(s["tagline"])}</em></span></a>'
-            f'<p>{esc(s["desc"])}</p><ul>{quick}</ul>'
+            f'<ul>{quick}</ul>'
             f'<a class="wl-sh-more" href="{esc(s["hub"])}">Open {esc(s["label"])} &rarr;</a></div>'
         )
     learn = cfg["learn"]
@@ -297,7 +297,7 @@ def start_here_html(cfg, pages):
     return (CSS + '\n<section class="wl-start-here" id="start-here" aria-labelledby="wl-sh-title">\n  <div class="wl-sh-inner">\n'
             '    <span class="wl-sh-kicker">Start here</span>\n'
             '    <h2 id="wl-sh-title">What do you want to work on?</h2>\n'
-            '    <p class="wl-sh-intro">Pick the goal closest to your question. Each section starts with a short reading path, then the tools to run your own numbers.</p>\n'
+            '    <p class="wl-sh-intro">Choose a goal, then a short path or tool.</p>\n'
             '    <div class="wl-sh-grid">' + "".join(cards) + "</div>\n"
             f'    <p class="wl-sh-ages">Between 45 and 65? Plan by age: {ages}</p>\n  </div>\n</section>')
 
@@ -677,6 +677,22 @@ def nav_html(cfg):
         links = f'<a href="{esc(s["hub"])}" class="wl-md-hub">{esc(s["label"])} hub</a>' + "".join(
             f'<a href="{esc(l["href"])}">{esc(l["label"])}</a>' for l in s["start"][:3])
         mobile.append(f'<div><div class="wl-md-title">{esc(s["label"])}</div><div class="wl-md-links">{links}</div></div>')
+    blogs = cfg.get("blogs")
+    if blogs:
+        bcol1 = "".join(f'<li><a href="{esc(l["href"])}">{esc(l["label"])}</a></li>' for l in blogs["start"])
+        bcol2 = "".join(f'<li><a href="{esc(l["href"])}">{esc(l["label"])}</a></li>' for l in blogs["popular"])
+        items.append(f'''<li class="wl-nav-item">
+ <button class="wl-nav-btn" type="button" aria-haspopup="true"><span>{esc(blogs["label"])}</span><i class="fa-solid fa-caret-down" style="font-size:10px;"></i></button>
+ <div class="wl-nav-mega">
+ <div class="wl-mega-left"><div><div class="wl-mega-tag">{esc(blogs["tagline"].upper())}</div><h3 class="wl-mega-title">{esc(blogs["label"])}</h3><p class="wl-mega-desc">{esc(blogs["desc"])}</p></div>
+ <div class="wl-mega-foot"><a href="{esc(blogs["hub"])}">Open the blog hub &rarr;</a></div></div>
+ <div class="wl-mega-right"><div><div class="wl-mega-col-title">TOPICS</div><ul class="wl-mega-list">{bcol1}</ul></div>
+ <div><div class="wl-mega-col-title">BROWSE</div><ul class="wl-mega-list">{bcol2}</ul></div></div>
+ </div>
+</li>''')
+        blinks = f'<a href="{esc(blogs["hub"])}" class="wl-md-hub">{esc(blogs["label"])} hub</a>' + "".join(
+            f'<a href="{esc(l["href"])}">{esc(l["label"])}</a>' for l in blogs["start"] + blogs["popular"])
+        mobile.append(f'<div><div class="wl-md-title">{esc(blogs["label"])}</div><div class="wl-md-links">{blinks}</div></div>')
     learn = cfg["learn"]
     lcol = "".join(f'<li><a href="{esc(l["href"])}">{esc(l["label"])}</a></li>' for l in learn["links"])
     acol = "".join(f'<li><a href="{esc(l["href"])}">{esc(l["label"])}</a></li>' for l in cfg["about"][:3] + [cfg["about"][-1]])
@@ -731,6 +747,9 @@ def nav_html(cfg):
 
 def nav_fallback_js(cfg):
     lis = "".join(f'<li class="wl-nav-item"><a class="wl-nav-link-direct" href="{s["hub"]}">{html.escape(s["label"], quote=False)}</a></li>' for s in cfg["sections"])
+    if cfg.get("blogs"):
+        b = cfg["blogs"]
+        lis += f'<li class="wl-nav-item"><a class="wl-nav-link-direct" href="{b["hub"]}">{html.escape(b["label"], quote=False)}</a></li>'
     lis += f'<li class="wl-nav-item"><a class="wl-nav-link-direct" href="{cfg["learn"]["hub"]}">Plan by age</a></li>'
     return "        var WL_NAV_FALLBACK = " + json.dumps(lis, ensure_ascii=False) + ";"
 
