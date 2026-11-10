@@ -28,7 +28,9 @@
         "label": "Lifestyle"
       }
     ],
-    "note": "Add a post here once; blogs/happy_retirement.html renders the archive, topic and year filters, and search from this list. 'topics' lists topic ids (first is primary); 'tags' are the pills shown on the card. Leave date null unless the post itself states one."
+    "note": "Add a post here once; blogs/happy_retirement.html renders the archive, topic and year filters, and search from this list. 'topics' lists topic ids (first is primary); 'tags' are the pills shown on the card. Leave date null unless the post itself states one.",
+    "hub": "happy_retirement.html",
+    "prefix": "hr"
   },
   "posts": [
     {

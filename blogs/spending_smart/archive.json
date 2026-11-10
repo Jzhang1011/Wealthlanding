@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "title": "Spending Smart",
+    "hub": "spending_smart.html",
+    "prefix": "ss",
+    "description": "Case studies on paying for travel and everyday purchases: credit cards, fares, and the trade-offs that do not show up in point valuations.",
+    "topics": [
+      {
+        "id": "family-travel",
+        "label": "Family Travel"
+      },
+      {
+        "id": "savings",
+        "label": "Savings"
+      }
+    ],
+    "note": "Add a post here once; blogs/spending_smart.html renders the archive. Do not list noindex canonical duplicates. Rebuild with: python3 tools/build_blog_hubs.py"
+  },
+  "posts": [
+    {
+      "id": "flight_saver",
+      "url": "/blogs/spending_smart/flight_saver.html",
+      "title": "The $3,200 Basic Economy Gamble",
+      "desc": "A worked travel case study on basic-economy fares, change rules, and what the cheap ticket actually costs when plans shift.",
+      "date": "Updated September 2026",
+      "year": 2026,
+      "topics": [
+        "family-travel"
+      ],
+      "tags": [
+        "Family Travel"
+      ],
+      "image": "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=1600&q=85",
+      "imageAlt": "Airplane wing over clouds"
+    },
+    {
+      "id": "airbnb_cc_choice",
+      "url": "/blogs/spending_smart/airbnb_cc_choice.html",
+      "title": "The $2,400 Mountain Blizzard: Why the Best Card Isn't Always the One with the Most Points",
+      "desc": "A non-refundable Vermont ski cabin, a blizzard, and $2,400 at stake: why the best card for a purchase is not always the one with the most points.",
+      "date": null,
+      "year": null,
+      "topics": [
+        "savings"
+      ],
+      "tags": [
+        "Savings"
+      ]
+    }
+  ]
+}

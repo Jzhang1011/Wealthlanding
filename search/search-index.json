@@ -474,13 +474,13 @@
       "section": "Blogs",
       "keywords": [
         "Or browse by goal",
+        "Bill Left $6.6 Million. Tom Left $5.8 Million. What Happened?",
         "Happy Retirement",
-        "The Doctor Who Waited Too Long",
-        "The One-Million_Dollar Tax Cascade.",
-        "I’ve never seen my retirement account shown like that",
+        "Will Your Retirement Money Last 30 Years?",
+        "Which Retirement Account Should You Spend First?",
         "Travel",
         "The Delay Text on the Way to BWI",
-        "United MileagePlus: status, awards and city fit",
+        "Chart of the Month",
         "Blogs"
       ]
     },
@@ -631,6 +631,8 @@
       "keywords": [
         "Budget and Spending",
         "All Budget and Spending articles",
+        "Credit-Card Delinquency Just Hit Great Recession Levels. Look Closer.",
+        "America Got Richer. The Bottom Got Poorer.",
         "Why Employer Health Insurance Costs Are Rising in 2027",
         "Roth Conversions: Compressing Tax Liabilities Pre-Medicare",
         "Navigating Early Retirement ACA Premium Tax Subsidies",
@@ -762,7 +764,7 @@
     {
       "title": "Happy Retirement Blog Archive",
       "url": "/blogs/happy_retirement.html",
-      "desc": "Browse every Happy Retirement article on tax minimization, healthcare, Social Security, savings, and income planning, filterable by topic and year.",
+      "desc": "Tax minimization, lifestyle design, and healthcare strategies for a successful retirement.",
       "section": "Retirement",
       "keywords": [
         "Happy Retirement",
@@ -924,6 +926,19 @@
       ]
     },
     {
+      "title": "Spending Smart Blog Archive",
+      "url": "/blogs/spending_smart.html",
+      "desc": "Case studies on paying for travel and everyday purchases: credit cards, fares, and the trade-offs that do not show up in point valuations.",
+      "section": "Blogs",
+      "keywords": [
+        "Spending Smart",
+        "All Spending Smart articles",
+        "The $3,200 Basic Economy Gamble",
+        "Blogs",
+        "smart"
+      ]
+    },
+    {
       "title": "The $2,400 Mountain Blizzard",
       "url": "/blogs/spending_smart/airbnb_cc_choice.html",
       "desc": "A non-refundable Vermont ski cabin, a blizzard, and $2,400 at stake: why the best card for a purchase is not always the one with the most points.",
@@ -964,9 +979,9 @@
       ]
     },
     {
-      "title": "Travel Blog — Airline Status & Travel Case Studies",
+      "title": "Travel Blog Archive",
       "url": "/blogs/travel.html",
-      "desc": "Story-driven travel case studies from WealthLanding: airline status, loyalty programs and practical ways to protect the trips you pay for.",
+      "desc": "Story-driven travel case studies on airline status, loyalty programs and protecting the trips you pay for.",
       "section": "Travel & Rewards",
       "keywords": [
         "Travel",

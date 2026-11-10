@@ -9,7 +9,14 @@ Run from the repo root:  python3 tools/build_blog_hubs.py
 import html, json, os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SECTIONS = ["blogs/investment/archive.json", "blogs/budget_spending/archive.json", "blogs/real_estate/archive.json"]
+SECTIONS = [
+    "blogs/investment/archive.json",
+    "blogs/budget_spending/archive.json",
+    "blogs/real_estate/archive.json",
+    "blogs/Happy_retirement/archive.json",
+    "blogs/Travel/archive.json",
+    "blogs/spending_smart/archive.json",
+]
 TAG = {
     'Tax Strategy': 'bg-emerald-50 text-emerald-800 border-emerald-200',
     'Healthcare': 'bg-amber-50 text-amber-800 border-amber-200',
@@ -161,12 +168,29 @@ def page(src, data):
 '''
 
 
-for src in SECTIONS:
-    data = json.load(open(os.path.join(ROOT, src), encoding='utf-8'))
-    out = os.path.join(ROOT, 'blogs', data['meta']['hub'])
-    open(out, 'w', encoding='utf-8').write(page(src, data))
-    print('wrote', os.path.relpath(out, ROOT))
+def build_hubs():
+    import sys
+    written = []
+    for src in SECTIONS:
+        data = json.load(open(os.path.join(ROOT, src), encoding='utf-8'))
+        if 'hub' not in data.get('meta', {}):
+            raise SystemExit(f'{src} is missing meta.hub')
+        out = os.path.join(ROOT, 'blogs', data['meta']['hub'])
+        open(out, 'w', encoding='utf-8').write(page(src, data))
+        written.append(os.path.relpath(out, ROOT))
+        print('wrote', written[-1])
+    # /blogs/ index: 3 most recent posts per section + Read more links
+    sys.path.insert(0, os.path.join(ROOT, 'tools'))
+    from build_blogs_index import write_index
+    write_index()
+    print('wrote blogs/index.html')
+    return written
 
-# Re-apply the shared breadcrumb, footer-link and next-step blocks to the pages just written.
-import subprocess, sys
-subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'build_site_blocks.py')], check=True)
+if __name__ == '__main__':
+    import sys, subprocess
+    if '--help' in sys.argv:
+        print(__doc__)
+        raise SystemExit(0)
+    build_hubs()
+    # Re-apply the shared breadcrumb, footer-link and next-step blocks.
+    subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'build_site_blocks.py')], check=True)

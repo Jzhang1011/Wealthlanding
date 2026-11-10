@@ -26,6 +26,38 @@
   },
   "posts": [
     {
+      "id": "credit-card-delinquency-look-closer",
+      "url": "/blogs/budget_spending/credit-card-delinquency-look-closer.html",
+      "title": "Credit-Card Delinquency Just Hit Great Recession Levels. Look Closer.",
+      "desc": "Card delinquency hit Great Recession levels — but the number is mostly old debt, not new distress. New delinquencies have been flat since early 2024.",
+      "date": "November 9, 2026",
+      "year": 2026,
+      "topics": [
+        "savings"
+      ],
+      "tags": [
+        "Savings"
+      ],
+      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
+      "imageAlt": "Paying by card"
+    },
+    {
+      "id": "richer-on-paper-behind-on-the-bill",
+      "url": "/blogs/budget_spending/richer-on-paper-behind-on-the-bill.html",
+      "title": "America Got Richer. The Bottom Got Poorer.",
+      "desc": "The average American family has never been worth more on paper — but the gains went to the top of the pyramid. The bottom quarter's median net worth fell 55% while the top tenth's rose 19%.",
+      "date": "November 9, 2026",
+      "year": 2026,
+      "topics": [
+        "savings"
+      ],
+      "tags": [
+        "Savings"
+      ],
+      "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
+      "imageAlt": "Glass towers seen from street level, looking up"
+    },
+    {
       "id": "employer-health-insurance-costs-rising",
       "url": "/blogs/budget_spending/employer-health-insurance-costs-rising.html",
       "title": "Why Employer Health Insurance Costs Are Rising in 2027",
@@ -52,7 +84,8 @@
       ],
       "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
       "imageAlt": "Calculator and tax documents",
-      "year": 2026
+      "year": 2026,
+      "date": "January 29, 2026"
     },
     {
       "id": "aca_early_retirement_subsidies",
@@ -69,7 +102,8 @@
       ],
       "image": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80",
       "imageAlt": "Healthcare spending",
-      "year": 2026
+      "year": 2026,
+      "date": "January 4, 2026"
     },
     {
       "id": "disneyland_family_of_five",
