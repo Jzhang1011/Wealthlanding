@@ -177,11 +177,11 @@
     },
     {
       "id": "money",
-      "label": "Money & Health",
+      "label": "Money & Lifestyle",
       "hub": "/money/",
       "icon": "fa-wallet",
-      "tagline": "Budget, debt and health costs",
-      "desc": "Health-plan costs, HSAs, debt payoff, insurance and household budgets.",
+      "tagline": "Health, household money and travel",
+      "desc": "Health-plan costs, everyday budgets and debt, plus travel rewards and loyalty programs.",
       "start": [
         {
           "href": "/tools/health-plan-compare/",
@@ -189,33 +189,33 @@
           "note": "PPO vs HMO vs HDHP at your level of care"
         },
         {
-          "href": "/life_stage/25_40/topics/hsa.html",
-          "label": "How an HSA works",
-          "note": "The account with three tax breaks"
-        },
-        {
           "href": "/tools/debt_payoff_calculator.html",
           "label": "Plan a faster debt payoff",
           "note": "Snowball vs avalanche"
         },
         {
-          "href": "/life_stage/25_40/topics/life-insurance.html",
-          "label": "How much life insurance",
-          "note": "Income replacement and what work already covers"
+          "href": "/travel/airlines/",
+          "label": "Airline loyalty programs compared",
+          "note": "United, American and Delta side by side"
+        },
+        {
+          "href": "/travel/",
+          "label": "Travel & Rewards hub",
+          "note": "Status, hotels and which card to use"
         }
       ],
       "popular": [
         {
-          "href": "/blogs/budget_spending/employer-health-insurance-costs-rising.html",
-          "label": "Why employer health costs are rising"
+          "href": "/life_stage/25_40/topics/hsa.html",
+          "label": "How an HSA works"
         },
         {
-          "href": "/life_stage/25_40/topics/debt-vs-investing.html",
-          "label": "Pay off debt or invest?"
+          "href": "/life_stage/25_40/topics/life-insurance.html",
+          "label": "How much life insurance"
         },
         {
-          "href": "/life_stage/25_40/topics/am-i-behind.html",
-          "label": "Am I behind financially?"
+          "href": "/travel/hotels/",
+          "label": "Hotel loyalty programs compared"
         },
         {
           "href": "/blogs/budget_spending.html",
@@ -241,17 +241,49 @@
             "life_stage/25_40/topics/am-i-behind.html",
             "money/"
           ]
+        },
+        {
+          "label": "Travel & rewards",
+          "hub": "/travel/",
+          "match": [],
+          "items": [
+            {
+              "href": "/travel/",
+              "label": "Travel & Rewards hub",
+              "note": "Airline and hotel programs, status and card perks"
+            },
+            {
+              "href": "/travel/airlines/",
+              "label": "Airline loyalty programs compared"
+            },
+            {
+              "href": "/travel/hotels/",
+              "label": "Hotel loyalty programs compared"
+            },
+            {
+              "href": "/travel/airlines/status-calculator.html",
+              "label": "Is airline status worth it?"
+            },
+            {
+              "href": "/tools/credit-card/",
+              "label": "Which card to use"
+            },
+            {
+              "href": "/blogs/travel.html",
+              "label": "Travel case studies"
+            }
+          ]
         }
       ],
       "page": {
         "path": "money/index.html",
-        "title": "Money & Health: Budgets, Debt and Health Costs | WealthLanding",
-        "description": "Guides and calculators for everyday money decisions: paychecks, budgets, debt payoff, health insurance choices, HSAs and legitimate ways to spend less.",
-        "kicker": "Money & Health",
-        "h1": "Everyday money decisions, explained",
+        "title": "Money & Lifestyle: Health Costs, Everyday Money and Travel | WealthLanding",
+        "description": "Guides and calculators for health-plan costs, household budgets and debt, plus airline and hotel loyalty programs and which card to use.",
+        "kicker": "Money & Lifestyle",
+        "h1": "Health costs, everyday money and travel",
         "intro": [
-          "Day-to-day money decisions add up: what you keep from each paycheck, how fast debt disappears, and what you pay for health coverage. This section collects WealthLanding's guides and calculators on those decisions, with the rules and the math explained plainly.",
-          "If you are choosing a health plan during open enrollment, start with the plan comparison tool. If debt is the pressure point, start with the payoff calculator. Every tool page explains its assumptions and walks through a worked example."
+          "Health coverage, household bills and travel rewards all come out of the same budget. This hub collects the guides and calculators for those decisions, with the rules and the math explained plainly.",
+          "Start with a health-plan or debt-payoff tool, or open the Travel & Rewards hub for airline and hotel programs, elite status and which card to use."
         ],
         "questions": [
           {
@@ -287,9 +319,84 @@
               "/life_stage/25_40/topics/life-insurance.html",
               "/life_stage/25_40/topics/am-i-behind.html"
             ]
+          },
+          {
+            "q": "Which airline or hotel program fits how I travel?",
+            "a": "Status and points are most useful with the airline or hotel brand you actually use. The Travel & Rewards hub compares programs and whether elite status is worth the cost.",
+            "links": [
+              "/travel/",
+              "/travel/airlines/",
+              "/travel/hotels/",
+              "/travel/airlines/status-calculator.html"
+            ]
           }
         ]
-      }
+      },
+      "nav_groups": [
+        {
+          "label": "Health costs",
+          "items": [
+            {
+              "href": "/tools/health-plan-compare/",
+              "label": "Find your lowest-cost health plan"
+            },
+            {
+              "href": "/life_stage/25_40/topics/hsa.html",
+              "label": "How an HSA works"
+            },
+            {
+              "href": "/blogs/budget_spending/employer-health-insurance-costs-rising.html",
+              "label": "Why employer health costs are rising"
+            }
+          ]
+        },
+        {
+          "label": "Everyday money",
+          "items": [
+            {
+              "href": "/tools/debt_payoff_calculator.html",
+              "label": "Plan a faster debt payoff"
+            },
+            {
+              "href": "/life_stage/25_40/topics/life-insurance.html",
+              "label": "How much life insurance"
+            },
+            {
+              "href": "/life_stage/25_40/topics/debt-vs-investing.html",
+              "label": "Pay off debt or invest?"
+            },
+            {
+              "href": "/blogs/budget_spending.html",
+              "label": "Budget and spending articles"
+            }
+          ]
+        },
+        {
+          "label": "Travel & rewards",
+          "items": [
+            {
+              "href": "/travel/airlines/",
+              "label": "Airline loyalty programs compared"
+            },
+            {
+              "href": "/travel/hotels/",
+              "label": "Hotel loyalty programs compared"
+            },
+            {
+              "href": "/travel/airlines/status-calculator.html",
+              "label": "Is airline status worth it?"
+            },
+            {
+              "href": "/tools/credit-card/",
+              "label": "Which card to use"
+            },
+            {
+              "href": "/travel/",
+              "label": "Travel & Rewards hub"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "real-estate",
@@ -637,7 +744,8 @@
           }
         ]
       },
-      "nav_label": "Travel"
+      "nav_label": "Travel",
+      "root_nav": false
     },
     {
       "id": "tools",
