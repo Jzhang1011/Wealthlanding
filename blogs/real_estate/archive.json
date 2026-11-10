@@ -34,6 +34,72 @@
   },
   "posts": [
     {
+      "id": "unfinished-basement-attic",
+      "url": "/blogs/real_estate/unfinished-basement-attic.html",
+      "title": "The Listing Said 1,840 Square Feet. The Basement Wasn't in It.",
+      "desc": "A fictional buyer near retirement walks a house with an unfinished basement and attic. What hidden square footage actually requires \u2014 ceiling height, egress, moisture, permits \u2014 and how to read a published cost-versus-value figure.",
+      "topics": [
+        "housing-market",
+        "real-estate-tips"
+      ],
+      "tags": [
+        "Real Estate Tips",
+        "Housing Market"
+      ],
+      "date": "November 10, 2026",
+      "dateISO": "2026-11-10",
+      "year": 2026,
+      "tileLabel": "Real estate tips",
+      "image": "/asset/blog-covers/unfinished-basement-attic-card.webp",
+      "imageAlt": "An unfinished basement with sage-painted joists, a wood staircase, a concrete floor, and a wide window looking onto a green lawn",
+      "imageWidth": 720,
+      "imageHeight": 378
+    },
+    {
+      "id": "diamond-in-the-rough",
+      "url": "/blogs/real_estate/diamond-in-the-rough.html",
+      "title": "The House Looked Tired. The Ceilings Did Not.",
+      "desc": "A fictional buyer near retirement walks a tired house and looks first at high ceilings, layout, light and the lot \u2014 the bones that paint cannot invent, and the repairs that are usually cheap or expensive to fix.",
+      "topics": [
+        "housing-market",
+        "real-estate-tips"
+      ],
+      "tags": [
+        "Real Estate Tips",
+        "Housing Market"
+      ],
+      "date": "November 10, 2026",
+      "dateISO": "2026-11-10",
+      "year": 2026,
+      "tileLabel": "Real estate tips",
+      "image": "/asset/blog-covers/diamond-in-the-rough-card.webp",
+      "imageAlt": "A slightly weathered sage-green two-story house with a wide porch, tall windows, and an overgrown but leafy front garden",
+      "imageWidth": 720,
+      "imageHeight": 378
+    },
+    {
+      "id": "hidden-features-by-construction-era",
+      "url": "/blogs/real_estate/hidden-features-by-construction-era.html",
+      "title": "The Carpet Came Up. The Oak Was Still There.",
+      "desc": "A fictional buyer near retirement tours a 1968 ranch and finds hardwood under wall-to-wall carpet and a forgotten central-vacuum inlet \u2014 plus the era red flags EPA and CPSC actually documented, from lead paint to aluminum wiring.",
+      "topics": [
+        "housing-market",
+        "real-estate-tips"
+      ],
+      "tags": [
+        "Real Estate Tips",
+        "Housing Market"
+      ],
+      "date": "November 10, 2026",
+      "dateISO": "2026-11-10",
+      "year": 2026,
+      "tileLabel": "Real estate tips",
+      "image": "/asset/blog-covers/hidden-features-by-construction-era-card.webp",
+      "imageAlt": "A corner of beige carpet folded back from oak hardwood floors in a sage-green room, with a small circular inlet on the baseboard",
+      "imageWidth": 720,
+      "imageHeight": 378
+    },
+    {
       "id": "two-acres-two-lots",
       "url": "/blogs/real_estate/two-acres-two-lots.html",
       "title": "Two Acres Looked the Same. Only One Was Two Lots.",

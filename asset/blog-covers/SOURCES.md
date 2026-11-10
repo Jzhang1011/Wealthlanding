@@ -27,6 +27,10 @@ They are not third-party stock photos. Each post has a 1200×630 hero/Open Graph
 | `buyers-market-with-no-buyers` | `/asset/blog-covers/buyers-market-with-no-buyers.webp` | Original generated cover. Alt: A quiet sage-green suburban house with a freshly mowed lawn and mature trees |
 | `flight_saver` | `/asset/blog-covers/flight_saver.webp` | Original generated cover. Alt: An airplane wing over layered clouds at golden hour, seen from a window |
 
+| `unfinished-basement-attic` | `/asset/blog-covers/unfinished-basement-attic.webp` | Original generated cover. Alt: An unfinished basement with sage-painted joists, a wood staircase, a concrete floor, and a wide window looking onto a green lawn |
+| `diamond-in-the-rough` | `/asset/blog-covers/diamond-in-the-rough.webp` | Original generated cover. Alt: A slightly weathered sage-green two-story house with a wide porch, tall windows, and an overgrown but leafy front garden |
+| `hidden-features-by-construction-era` | `/asset/blog-covers/hidden-features-by-construction-era.webp` | Original generated cover. Alt: A corner of beige carpet folded back from oak hardwood floors in a sage-green room, with a small circular inlet on the baseboard |
+
 ## Reused existing local photographs
 
 These posts already had in-repo images. Card and Open Graph tags point at those files (or a locally cropped Open Graph derivative).
