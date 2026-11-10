@@ -62,7 +62,7 @@
 .wl-sh-more { margin-top: auto; align-self: flex-start; font-size: 0.85rem; font-weight: 800; color: #0f172a; background: #4ade80; padding: 0.5rem 0.9rem; border-radius: 0.65rem; text-decoration: none; }
 .wl-sh-more:hover { background: #16a34a; }
 .wl-sh-ages { margin: 1.75rem 0 0; color: #cbd5e1; font-size: 0.9rem; }
-.wl-start-here .wl-sh-ages a { color: #fcd34d; }
+.wl-start-here .wl-sh-ages a { color: #4ade80; }
 
 /* Generated hub pages */
 body.wl-hub-page { margin: 0; font-family: 'Inter', system-ui, sans-serif; background: #f8fafc; color: #334155; }

@@ -37,11 +37,11 @@
         },
         {
           "href": "/Retirement-simulator/OptimizeRoth.html",
-          "label": "Roth conversion optimizer"
+          "label": "Compare Roth conversion strategies"
         },
         {
           "href": "/Retirement-simulator/retirement_scenario_lab.html",
-          "label": "Retirement scenario lab"
+          "label": "Test your retirement plan"
         },
         {
           "href": "/Retirement-simulator/overseas_retirement_hub.html",
@@ -112,7 +112,7 @@
         },
         {
           "href": "/tools/compound_interest_calculator.html",
-          "label": "Compound interest calculator",
+          "label": "See how savings could grow",
           "note": "See time and contributions at work"
         },
         {
@@ -181,11 +181,11 @@
       "hub": "/money/",
       "icon": "fa-wallet",
       "tagline": "Budget, debt and health costs",
-      "desc": "Paychecks, budgets, debt payoff, emergency funds, health insurance choices and ways to spend less.",
+      "desc": "Health-plan costs, HSAs, debt payoff, insurance and household budgets.",
       "start": [
         {
           "href": "/tools/health-plan-compare/",
-          "label": "Compare health plans",
+          "label": "Find your lowest-cost health plan",
           "note": "PPO vs HMO vs HDHP at your level of care"
         },
         {
@@ -195,13 +195,13 @@
         },
         {
           "href": "/tools/debt_payoff_calculator.html",
-          "label": "Debt payoff calculator",
+          "label": "Plan a faster debt payoff",
           "note": "Snowball vs avalanche"
         },
         {
-          "href": "/learn/deals/",
-          "label": "Deal Finder",
-          "note": "Legitimate ways to pay less for travel and outings"
+          "href": "/life_stage/25_40/topics/life-insurance.html",
+          "label": "How much life insurance",
+          "note": "Income replacement and what work already covers"
         }
       ],
       "popular": [
@@ -214,8 +214,8 @@
           "label": "Pay off debt or invest?"
         },
         {
-          "href": "/life_stage/25_40/topics/life-insurance.html",
-          "label": "How much life insurance"
+          "href": "/life_stage/25_40/topics/am-i-behind.html",
+          "label": "Am I behind financially?"
         },
         {
           "href": "/blogs/budget_spending.html",
@@ -223,13 +223,6 @@
         }
       ],
       "groups": [
-        {
-          "label": "Deal Finder",
-          "hub": "/learn/deals/",
-          "match": [
-            "learn/deals/"
-          ]
-        },
         {
           "label": "Budget and spending articles",
           "hub": "/blogs/budget_spending.html",
@@ -279,12 +272,12 @@
             ]
           },
           {
-            "q": "How can I spend less without giving up what matters?",
-            "a": "The Deal Finder collects legitimate discounts on flights, hotels, rental cars, theme parks, museums and events, and the case study shows the savings on one family trip.",
+            "q": "Where do I start on a household budget?",
+            "a": "Begin with the budget and spending articles: they cover rising health costs, credit-card bills, and worked examples of cutting a large expense without a travel-deal detour.",
             "links": [
-              "/learn/deals/",
-              "/blogs/budget_spending/disneyland_family_of_five.html",
-              "/learn/deals/museums/"
+              "/blogs/budget_spending.html",
+              "/blogs/budget_spending/employer-health-insurance-costs-rising.html",
+              "/blogs/budget_spending/richer-on-paper-behind-on-the-bill.html"
             ]
           },
           {
@@ -309,7 +302,7 @@
         {
           "href": "/real-estate/downsizing-relocating.html",
           "label": "Downsizing or relocating",
-          "note": "Net equity, \u00a7121 and fit"
+          "note": "Net equity, §121 and fit"
         },
         {
           "href": "/life_stage/25_40/topics/rent-vs-buy.html",
@@ -343,7 +336,7 @@
         },
         {
           "href": "/investment/real_estate_vs_stocks_model.html",
-          "label": "Real estate vs index funds"
+          "label": "Compare property and stock returns"
         },
         {
           "href": "/blogs/real_estate.html",
@@ -383,7 +376,7 @@
         "kicker": "Real Estate",
         "h1": "Housing decisions for the years you already own a life",
         "intro": [
-          "For many households at 45\u201365, the live question is not \u201cfirst home or forever rent?\u201d It is whether to stay, adapt, downsize or relocate \u2014 and whether the next chapter should be a purchase or a deliberate rental.",
+          "For many households at 45–65, the live question is not “first home or forever rent?” It is whether to stay, adapt, downsize or relocate — and whether the next chapter should be a purchase or a deliberate rental.",
           "Use the yes/no path below. Common questions are plain links. Guides label assumptions and point to IRS, CFPB, CMS, NIA and other primary sources. Local zoning, building and landlord rules are never assumed to be national."
         ],
         "questions": [
@@ -440,9 +433,9 @@
       },
       "nav_label": "Real Estate",
       "flow": {
-        "kicker": "Decision path \u00b7 Ages 45\u201365",
+        "kicker": "Decision path · Ages 45–65",
         "title": "A visual path for your next housing move",
-        "intro": "Many readers already own a home. Start at the top and follow Yes or No. Leaves link to the matching guide. First-time buying and rising daily-support needs are secondary entry points \u2014 age alone does not decide those.",
+        "intro": "Many readers already own a home. Start at the top and follow Yes or No. Leaves link to the matching guide. First-time buying and rising daily-support needs are secondary entry points — age alone does not decide those.",
         "root": {
           "q": "Considering a move around retirement?",
           "no": {
@@ -466,7 +459,7 @@
               "note": "Test the place before you commit"
             },
             "yes": {
-              "q": "Long enough stay \u2014 and a buy that won\u2019t strain retirement?",
+              "q": "Long enough stay — and a buy that won’t strain retirement?",
               "yes": {
                 "href": "/life_stage/25_40/topics/how-much-house.html",
                 "label": "Check a buy budget",
@@ -485,12 +478,12 @@
           {
             "href": "/real-estate/buying-primary-home.html",
             "label": "Buying a first or next primary home",
-            "note": "Process, Loan Estimate and risk checks \u2014 useful if you are new to buying"
+            "note": "Process, Loan Estimate and risk checks — useful if you are new to buying"
           },
           {
             "href": "/real-estate/property-potential.html",
             "label": "See past the surface listing price",
-            "note": "Multiple lots, unfinished basement or attic \u2014 verify before you price \u201cpotential\u201d"
+            "note": "Multiple lots, unfinished basement or attic — verify before you price “potential”"
           },
           {
             "href": "/real-estate/housing-and-daily-support.html",
@@ -500,7 +493,7 @@
           {
             "href": "/real-estate/investment-property.html",
             "label": "Considering a rental property",
-            "note": "Cash flow after vacancy and financing \u2014 not a return promise"
+            "note": "Cash flow after vacancy and financing — not a return promise"
           }
         ]
       }
@@ -656,37 +649,37 @@
       "start": [
         {
           "href": "/tools/health-plan-compare/",
-          "label": "Health plan comparison"
+          "label": "Find your lowest-cost health plan"
         },
         {
           "href": "/tools/debt_payoff_calculator.html",
-          "label": "Debt payoff calculator"
+          "label": "Plan a faster debt payoff"
         },
         {
           "href": "/tools/compound_interest_calculator.html",
-          "label": "Compound interest calculator"
+          "label": "See how savings could grow"
         },
         {
           "href": "/tools/credit-card/",
-          "label": "Credit card rewards router"
+          "label": "Maximize spending with the right card"
         }
       ],
       "popular": [
         {
           "href": "/Retirement-simulator/OptimizeRoth.html",
-          "label": "Roth conversion optimizer"
+          "label": "Compare Roth conversion strategies"
         },
         {
           "href": "/Retirement-simulator/retirement_scenario_lab.html",
-          "label": "Retirement scenario lab"
+          "label": "Test your retirement plan"
         },
         {
           "href": "/investment/real_estate_vs_stocks_model.html",
-          "label": "Real estate vs index funds"
+          "label": "Compare property and stock returns"
         },
         {
           "href": "/travel/airlines/status-calculator.html",
-          "label": "Airline status calculator"
+          "label": "Is airline status worth the cost?"
         }
       ],
       "groups": [
@@ -701,33 +694,33 @@
     }
   ],
   "learn": {
-    "label": "Plan by age: 45\u201365",
+    "label": "Plan by age: 45–65",
     "hub": "/plan-by-age/",
     "links": [
       {
         "href": "/plan-by-age/45-49/",
-        "label": "Ages 45\u201349: Peak years, full plate"
+        "label": "Ages 45–49: Peak years, full plate"
       },
       {
         "href": "/plan-by-age/50-54/",
-        "label": "Ages 50\u201354: The catch-up years"
+        "label": "Ages 50–54: The catch-up years"
       },
       {
         "href": "/plan-by-age/55-59/",
-        "label": "Ages 55\u201359: Early-exit options"
+        "label": "Ages 55–59: Early-exit options"
       },
       {
         "href": "/plan-by-age/60-62/",
-        "label": "Ages 60\u201362: Decision years"
+        "label": "Ages 60–62: Decision years"
       },
       {
         "href": "/plan-by-age/63-65/",
-        "label": "Ages 63\u201365: Medicare countdown"
+        "label": "Ages 63–65: Medicare countdown"
       }
     ],
     "groups": [
       {
-        "label": "Plan by age: 45\u201365",
+        "label": "Plan by age: 45–65",
         "hub": "/plan-by-age/",
         "match": [
           "plan-by-age/"
@@ -783,5 +776,39 @@
     "privacy/",
     "terms/",
     "blogs/index.html"
-  ]
+  ],
+  "blogs": {
+    "label": "Blogs",
+    "hub": "/blogs/",
+    "tagline": "Articles and case studies",
+    "desc": "Retirement, investing, household money, real estate and travel pieces, organized by topic.",
+    "start": [
+      {
+        "href": "/blogs/happy_retirement.html",
+        "label": "Retirement articles"
+      },
+      {
+        "href": "/blogs/market_investment.html",
+        "label": "Market and investing articles"
+      },
+      {
+        "href": "/blogs/budget_spending.html",
+        "label": "Budget and spending articles"
+      },
+      {
+        "href": "/blogs/real_estate.html",
+        "label": "Real estate articles"
+      }
+    ],
+    "popular": [
+      {
+        "href": "/blogs/travel.html",
+        "label": "Travel articles"
+      },
+      {
+        "href": "/blogs/",
+        "label": "All articles"
+      }
+    ]
+  }
 }
