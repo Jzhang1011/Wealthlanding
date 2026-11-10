@@ -64,9 +64,15 @@ for (const rel of hiddenArticles) {
 const siteMap = read('components/site-map/site-map.json');
 ok(!siteMap.includes('blogs/18_25'), 'site-map.json has no blogs/18_25 links');
 const nav = read('components/header-nav.html');
-ok(nav.includes('Plan by age') && !/life_stage\/(18_25|25_40\/(step|playbook))|learn\/early-career/.test(nav), 'nav shows Plan by age only');
+ok(!nav.includes('Plan by age') && !/life_stage\/(18_25|25_40\/(step|playbook))|learn\/early-career/.test(nav), 'top nav has no Plan by age dropdown and no hidden stages');
 const home = read('index.html');
 ok(home.includes('id="life-stages-explorer"') && home.includes('/plan-by-age/45-49/'), 'homepage journey block');
+ok(home.includes('Find my stage') && home.includes('Browse the stages'), 'homepage hero still links to the stages');
+const lsCss = read('components/life-stages/life-stages.css');
+const homeCard = (lsCss.match(/\.wl-ls-home-grid a \{[^}]+\}/) || [])[0] || '';
+ok(/background:\s*#fff/.test(homeCard) && /color:\s*#0f172a/.test(homeCard), 'homepage stage cards are light');
+ok(!/background:\s*#0f172a/.test(homeCard), 'homepage stage cards are not dark navy');
+ok(/\.wl-ls-home \{[^}]*background:\s*#f6faf7/.test(lsCss), 'homepage age section uses a light green-gray background');
 ok(!/life_stage\/18_25|learn\/early-career|life_stage\/25_40\/playbook_hub/.test(home), 'homepage has no hidden-stage links');
 ok(/<title>[^<]*45 to 65[^<]*\| WealthLanding<\/title>/.test(home) && !/Every Life Stage/i.test(home), 'homepage title is 45-65 focused');
 console.log(`life-stages: ${checks} checks passed`);
