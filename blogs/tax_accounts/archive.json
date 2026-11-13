@@ -1,0 +1,250 @@
+{
+  "meta": {
+    "title": "Tax-Advantaged Accounts",
+    "hub": "tax-advantaged-accounts.html",
+    "prefix": "tax",
+    "customHub": true,
+    "description": "A visual guide to tax-advantaged accounts \u2014 401(k), 403(b), Roth IRA, Roth 401(k), HSA, FSAs, 529, Coverdell ESA, SEP IRA, solo 401(k), executive bonus plans, and IUL \u2014 organized by who they fit, with 2026 IRS limits and worked examples.",
+    "topics": [
+      {
+        "id": "workplace-plans",
+        "label": "Workplace plans"
+      },
+      {
+        "id": "earned-income",
+        "label": "Earned income"
+      },
+      {
+        "id": "hdhp",
+        "label": "High-deductible plans"
+      },
+      {
+        "id": "education",
+        "label": "Education"
+      },
+      {
+        "id": "self-employed",
+        "label": "Self-employed"
+      },
+      {
+        "id": "executives",
+        "label": "Executives"
+      },
+      {
+        "id": "insurance-strategies",
+        "label": "Insurance strategies"
+      },
+      {
+        "id": "catch-up",
+        "label": "Catch-up years"
+      }
+    ],
+    "note": "The collection hub at /blogs/tax-advantaged-accounts.html is hand-built (meta.customHub). Do not point tools/build_blog_hubs.py at that file. Optional meta.tagPages entries turn matching tag pills into links; customPage skips overwriting the hub.",
+    "tagPages": [
+      {
+        "label": "Tax-Advantaged Accounts",
+        "slug": "tax-advantaged-accounts",
+        "path": "/blogs/tax-advantaged-accounts.html",
+        "description": "Tax-advantaged accounts organized by who they fit, with 2026 IRS limits, catch-up rules, and worked examples.",
+        "customPage": true
+      }
+    ]
+  },
+  "posts": [
+    {
+      "id": "401k-403b",
+      "url": "/blogs/tax_accounts/401k-403b.html",
+      "title": "Diane Still Thought of It as the Company Plan",
+      "desc": "A fictional 52-year-old employee walks through 2026 401(k) and 403(b) deferral limits, catch-up contributions, and why traditional workplace plans are tax-deferred \u2014 not tax-free.",
+      "topics": [
+        "workplace-plans",
+        "catch-up"
+      ],
+      "tags": [
+        "Tax-Advantaged Accounts"
+      ],
+      "date": "November 13, 2026",
+      "year": 2026,
+      "tileLabel": "Workplace plans",
+      "image": "/asset/blog-covers/401k-403b-card.webp",
+      "imageAlt": "An empty workplace desk with a sage blotter, a plant, and a window looking onto trees",
+      "imageWidth": 720,
+      "imageHeight": 378
+    },
+    {
+      "id": "roth-ira",
+      "url": "/blogs/tax_accounts/roth-ira.html",
+      "title": "Nina Kept Waiting for the Perfect Year to Open a Roth IRA",
+      "desc": "A fictional 47-year-old checks 2026 Roth IRA limits, income phase-outs, and the difference between tax-free qualified withdrawals and a deductible IRA.",
+      "topics": [
+        "earned-income",
+        "catch-up"
+      ],
+      "tags": [
+        "Tax-Advantaged Accounts"
+      ],
+      "date": "November 13, 2026",
+      "year": 2026,
+      "tileLabel": "Roth IRA",
+      "image": "/asset/blog-covers/roth-ira-card.webp",
+      "imageAlt": "An open notebook and a cup of tea on a table against a sage wall",
+      "imageWidth": 720,
+      "imageHeight": 378
+    },
+    {
+      "id": "hsa",
+      "url": "/blogs/tax_accounts/hsa.html",
+      "title": "Mark's HSA Clock Started Ticking at 55",
+      "desc": "A fictional 55-year-old on a high-deductible plan uses 2026 HSA limits, the age-55 catch-up, and the rule that Medicare enrollment stops contributions.",
+      "topics": [
+        "hdhp",
+        "catch-up"
+      ],
+      "tags": [
+        "Tax-Advantaged Accounts"
+      ],
+      "date": "November 13, 2026",
+      "year": 2026,
+      "tileLabel": "HSA",
+      "image": "/asset/blog-covers/hsa-card.webp",
+      "imageAlt": "An olive first-aid tin, glasses, a cream envelope, and eucalyptus on sage linen",
+      "imageWidth": 720,
+      "imageHeight": 378
+    },
+    {
+      "id": "roth-401k",
+      "url": "/blogs/tax_accounts/roth-401k.html",
+      "title": "Priya's Catch-Up Had to Be Roth",
+      "desc": "A fictional 61-year-old uses the 2026 super catch-up, the Roth catch-up wage rule, and the fact that designated Roth 401(k) accounts have had no lifetime RMDs since 2024.",
+      "topics": [
+        "workplace-plans",
+        "catch-up"
+      ],
+      "tags": [
+        "Tax-Advantaged Accounts"
+      ],
+      "date": "November 13, 2026",
+      "year": 2026,
+      "tileLabel": "Roth 401(k)",
+      "image": "/asset/blog-covers/roth-401k-card.webp",
+      "imageAlt": "Two cream envelopes on a sage table runner",
+      "imageWidth": 720,
+      "imageHeight": 378
+    },
+    {
+      "id": "fsa",
+      "url": "/blogs/tax_accounts/fsa.html",
+      "title": "Elena's Three Envelopes",
+      "desc": "A fictional 46-year-old compares a 2026 health FSA, a limited-purpose FSA paired with an HSA, and a dependent care FSA \u2014 pre-tax accounts that are not tax-free in the Roth sense.",
+      "topics": [
+        "workplace-plans"
+      ],
+      "tags": [
+        "Tax-Advantaged Accounts"
+      ],
+      "date": "November 13, 2026",
+      "year": 2026,
+      "tileLabel": "FSAs",
+      "image": "/asset/blog-covers/fsa-card.webp",
+      "imageAlt": "A blank wall calendar, a sage mug, a stack of cream papers, and a bowl of green apples on a sunlit table",
+      "imageWidth": 720,
+      "imageHeight": 378
+    },
+    {
+      "id": "529-plan",
+      "url": "/blogs/tax_accounts/529-plan.html",
+      "title": "Carol Opened a 529 for a Grandchild She Hadn't Met Yet",
+      "desc": "A fictional 58-year-old grandparent walks through 529 qualified withdrawals, the $20,000 K-12 cap after 2025, expanded uses, and the 529-to-Roth rollover rules.",
+      "topics": [
+        "education"
+      ],
+      "tags": [
+        "Tax-Advantaged Accounts"
+      ],
+      "date": "November 13, 2026",
+      "year": 2026,
+      "tileLabel": "529 plan",
+      "image": "/asset/blog-covers/529-plan-card.webp",
+      "imageAlt": "A wooden bench on a quiet autumn campus path beneath green and gold trees, with a brick building in the background",
+      "imageWidth": 720,
+      "imageHeight": 378
+    },
+    {
+      "id": "coverdell-esa",
+      "url": "/blogs/tax_accounts/coverdell-esa.html",
+      "title": "James Thought a Coverdell Was Just a Smaller 529",
+      "desc": "A fictional 49-year-old parent compares a Coverdell ESA's $2,000 cap and income limits with a 529, using official IRS rules.",
+      "topics": [
+        "education"
+      ],
+      "tags": [
+        "Tax-Advantaged Accounts"
+      ],
+      "date": "November 13, 2026",
+      "year": 2026,
+      "tileLabel": "Coverdell ESA",
+      "image": "/asset/blog-covers/coverdell-esa-card.webp",
+      "imageAlt": "A child's wooden desk with a stack of plain hardcover books, a green pencil cup, and a glass jar of coins",
+      "imageWidth": 720,
+      "imageHeight": 378
+    },
+    {
+      "id": "sep-solo-401k",
+      "url": "/blogs/tax_accounts/sep-solo-401k.html",
+      "title": "Rob's Business Had No Employees. His Retirement Plan Did the Work.",
+      "desc": "A fictional 51-year-old self-employed owner compares 2026 SEP IRA and solo 401(k) limits, including catch-up contributions and the annual-additions cap.",
+      "topics": [
+        "self-employed",
+        "catch-up"
+      ],
+      "tags": [
+        "Tax-Advantaged Accounts"
+      ],
+      "date": "November 13, 2026",
+      "year": 2026,
+      "tileLabel": "SEP & solo 401(k)",
+      "image": "/asset/blog-covers/sep-solo-401k-card.webp",
+      "imageAlt": "A wooden desk against a sage wall, with a closed cream notebook, a lamp, and a potted fig tree by a window",
+      "imageWidth": 720,
+      "imageHeight": 378
+    },
+    {
+      "id": "executive-bonus",
+      "url": "/blogs/tax_accounts/executive-bonus.html",
+      "title": "Andrea's Bonus Came With a Life Insurance Policy",
+      "desc": "A fictional 54-year-old executive examines how a Section 162 executive bonus plan is taxed, what a double bonus covers, and why qualified accounts should be maxed first.",
+      "topics": [
+        "executives"
+      ],
+      "tags": [
+        "Tax-Advantaged Accounts"
+      ],
+      "date": "November 13, 2026",
+      "year": 2026,
+      "tileLabel": "Executive bonus",
+      "image": "/asset/blog-covers/executive-bonus-card.webp",
+      "imageAlt": "An empty sage-leather chair at a walnut desk, with a green glass paperweight and a blank cream folder",
+      "imageWidth": 720,
+      "imageHeight": 378
+    },
+    {
+      "id": "iul",
+      "url": "/blogs/tax_accounts/iul.html",
+      "title": "Walter Was Pitched an IUL as a Tax-Free Retirement Plan",
+      "desc": "A fictional 59-year-old reviews how indexed universal life actually works \u2014 caps, loans, MEC rules, and lapse risk \u2014 and what to max out before considering one.",
+      "topics": [
+        "insurance-strategies"
+      ],
+      "tags": [
+        "Tax-Advantaged Accounts"
+      ],
+      "date": "November 13, 2026",
+      "year": 2026,
+      "tileLabel": "IUL",
+      "image": "/asset/blog-covers/iul-card.webp",
+      "imageAlt": "A closed cream folder, a calculator with a dark screen, and reading glasses on a sage linen runner",
+      "imageWidth": 720,
+      "imageHeight": 378
+    }
+  ]
+}

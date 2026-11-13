@@ -160,7 +160,9 @@
             "life_stage/25_40/topics/traditional-401k.html",
             "life_stage/25_40/topics/backdoor-roth.html",
             "life_stage/25_40/topics/account-comparison.html",
-            "life_stage/25_40/topics/529.html"
+            "life_stage/25_40/topics/529.html",
+            "blogs/tax-advantaged-accounts.html",
+            "blogs/tax_accounts/"
           ]
         },
         {
@@ -409,7 +411,7 @@
         {
           "href": "/real-estate/downsizing-relocating.html",
           "label": "Downsizing or relocating",
-          "note": "Net equity, §121 and fit"
+          "note": "Net equity, \u00a7121 and fit"
         },
         {
           "href": "/life_stage/25_40/topics/rent-vs-buy.html",
@@ -483,7 +485,7 @@
         "kicker": "Real Estate",
         "h1": "Housing decisions for the years you already own a life",
         "intro": [
-          "For many households at 45–65, the live question is not “first home or forever rent?” It is whether to stay, adapt, downsize or relocate — and whether the next chapter should be a purchase or a deliberate rental.",
+          "For many households at 45\u201365, the live question is not \u201cfirst home or forever rent?\u201d It is whether to stay, adapt, downsize or relocate \u2014 and whether the next chapter should be a purchase or a deliberate rental.",
           "Use the yes/no path below. Common questions are plain links. Guides label assumptions and point to IRS, CFPB, CMS, NIA and other primary sources. Local zoning, building and landlord rules are never assumed to be national."
         ],
         "questions": [
@@ -540,9 +542,9 @@
       },
       "nav_label": "Real Estate",
       "flow": {
-        "kicker": "Decision path · Ages 45–65",
+        "kicker": "Decision path \u00b7 Ages 45\u201365",
         "title": "A visual path for your next housing move",
-        "intro": "Many readers already own a home. Start at the top and follow Yes or No. Leaves link to the matching guide. First-time buying and rising daily-support needs are secondary entry points — age alone does not decide those.",
+        "intro": "Many readers already own a home. Start at the top and follow Yes or No. Leaves link to the matching guide. First-time buying and rising daily-support needs are secondary entry points \u2014 age alone does not decide those.",
         "root": {
           "q": "Considering a move around retirement?",
           "no": {
@@ -566,7 +568,7 @@
               "note": "Test the place before you commit"
             },
             "yes": {
-              "q": "Long enough stay — and a buy that won’t strain retirement?",
+              "q": "Long enough stay \u2014 and a buy that won\u2019t strain retirement?",
               "yes": {
                 "href": "/life_stage/25_40/topics/how-much-house.html",
                 "label": "Check a buy budget",
@@ -585,12 +587,12 @@
           {
             "href": "/real-estate/buying-primary-home.html",
             "label": "Buying a first or next primary home",
-            "note": "Process, Loan Estimate and risk checks — useful if you are new to buying"
+            "note": "Process, Loan Estimate and risk checks \u2014 useful if you are new to buying"
           },
           {
             "href": "/real-estate/property-potential.html",
             "label": "See past the surface listing price",
-            "note": "Multiple lots, unfinished basement or attic — verify before you price “potential”"
+            "note": "Multiple lots, unfinished basement or attic \u2014 verify before you price \u201cpotential\u201d"
           },
           {
             "href": "/real-estate/housing-and-daily-support.html",
@@ -600,7 +602,7 @@
           {
             "href": "/real-estate/investment-property.html",
             "label": "Considering a rental property",
-            "note": "Cash flow after vacancy and financing — not a return promise"
+            "note": "Cash flow after vacancy and financing \u2014 not a return promise"
           }
         ]
       }
@@ -802,34 +804,34 @@
     }
   ],
   "learn": {
-    "label": "Plan by age: 45–65",
+    "label": "Plan by age: 45\u201365",
     "hub": "/plan-by-age/",
     "root_nav": false,
     "links": [
       {
         "href": "/plan-by-age/45-49/",
-        "label": "Ages 45–49: Peak years, full plate"
+        "label": "Ages 45\u201349: Peak years, full plate"
       },
       {
         "href": "/plan-by-age/50-54/",
-        "label": "Ages 50–54: The catch-up years"
+        "label": "Ages 50\u201354: The catch-up years"
       },
       {
         "href": "/plan-by-age/55-59/",
-        "label": "Ages 55–59: Early-exit options"
+        "label": "Ages 55\u201359: Early-exit options"
       },
       {
         "href": "/plan-by-age/60-62/",
-        "label": "Ages 60–62: Decision years"
+        "label": "Ages 60\u201362: Decision years"
       },
       {
         "href": "/plan-by-age/63-65/",
-        "label": "Ages 63–65: Medicare countdown"
+        "label": "Ages 63\u201365: Medicare countdown"
       }
     ],
     "groups": [
       {
-        "label": "Plan by age: 45–65",
+        "label": "Plan by age: 45\u201365",
         "hub": "/plan-by-age/",
         "match": [
           "plan-by-age/"

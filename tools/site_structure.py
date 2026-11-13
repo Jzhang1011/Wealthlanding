@@ -269,10 +269,16 @@ def next_steps_html(page, cfg, pages):
         i = urls.index(page.url)
         if i + 1 < len(urls):
             add(urls[i + 1], path[i + 1]["label"], "Next step")
-    # same group siblings
+    # same group siblings. Tag listing pages belong on the section hub,
+    # not as a substitute for a sibling article.
     if grp:
         hubs = hub_urls(cfg)
-        sib = [p for r, p in pages.items() if classify(r, cfg)[1] is grp and not p.noindex and not p.redirect and p.url not in hubs]
+        try:
+            import blog_tags
+            tag_rels = {path.lstrip("/") for path in blog_tags.all_tag_page_map().values()}
+        except Exception:
+            tag_rels = set()
+        sib = [p for r, p in pages.items() if classify(r, cfg)[1] is grp and not p.noindex and not p.redirect and p.url not in hubs and r not in tag_rels]
         for p in sib[:6]:
             if len([x for x in picks if x[2] != "Next step"]) >= 2:
                 break

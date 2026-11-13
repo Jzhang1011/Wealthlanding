@@ -1,0 +1,89 @@
+/* Shared chrome for the tax-advantaged accounts hub and story posts. */
+.floatcard strong{color:#15803d}
+.hero .dot{background:#16a34a}
+.fictional{display:inline-block;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:999px;vertical-align:middle;margin-right:6px}
+.taxchip{display:inline-flex;align-items:center;gap:6px;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700;text-decoration:none}
+.taxchip:hover{background:#dcfce7}
+.treatbox{margin:28px 0 36px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.treat{background:#fff;border:1px solid #dfe7ef;border-radius:18px;padding:18px 18px 16px}
+.treat small{display:block;color:#7a899a;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.treat strong{display:block;margin:6px 0 4px;font:800 16px/1.3 "Manrope";color:#122033}
+.treat span{display:block;font-size:13px;line-height:1.5;color:#5f7187}
+.exgrid{display:grid;gap:16px;margin:8px 0 28px}
+.excard{background:#fff;border:1px solid #dfe7ef;border-radius:22px;padding:22px 24px 18px;box-shadow:0 6px 20px rgba(13,41,70,.045)}
+.exn{display:inline-block;background:#14532d;color:#ecfdf5;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:999px;margin-bottom:10px}
+.excard h3{font:800 20px/1.3 "Manrope";margin:0 0 10px;color:#122033}
+.excard p{font-size:15px!important;line-height:1.65!important;color:#3d5067!important;margin:0 0 14px!important}
+.exmath{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.exmath div{background:#f8faf8;border:1px solid #e5ede7;border-radius:14px;padding:12px 14px}
+.exmath small{display:block;color:#7a899a;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.exmath strong{display:block;margin-top:4px;font:800 20px/1.2 "Manrope";color:#14532d}
+.exnote{font-size:12.5px!important;line-height:1.55!important;color:#7a899a!important;margin:8px 0 0!important}
+.fitskip{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0 32px}
+.fits,.skips{border-radius:22px;padding:22px 22px 16px;border:1px solid #dfe7ef}
+.fits{background:#f0fdf4;border-color:#bbf7d0}
+.skips{background:#fff8f8;border-color:#fecaca}
+.fits h3,.skips h3{font:800 16px/1.3 "Manrope";margin:0 0 10px}
+.fits h3{color:#14532d}
+.skips h3{color:#9f1239}
+.fits ul,.skips ul,.mistakes ul{margin:0;padding:0 0 0 18px;color:#3d5067;font-size:14.5px;line-height:1.7}
+.mistakes{margin:22px 0 32px;background:#fff;border:1px solid #dfe7ef;border-radius:22px;padding:22px 24px}
+.mistakes h3{font:800 18px "Manrope";margin:0 0 10px}
+.pairrow{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 28px}
+.pairrow a{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;border:1px solid #d7e1ea;background:#fff;color:#14532d;text-decoration:none;font-size:13px;font-weight:700}
+.pairrow a:hover{border-color:#86efac;background:#f0fdf4}
+.sourcelist{font-size:14.5px;line-height:1.7;color:#3d5067}
+.sourcelist a{color:#15803d;font-weight:700}
+/* Hub */
+.hubhero .heroin{align-items:start}
+.catgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:8px 0 36px}
+.catcard{display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid #dfe7ef;border-radius:22px;padding:20px 20px 16px;text-decoration:none;box-shadow:0 6px 18px rgba(13,41,70,.04);min-height:100%}
+.catcard:hover{border-color:#86efac;box-shadow:0 10px 28px rgba(21,128,61,.08);transform:translateY(-2px)}
+.catcard .aud{display:inline-block;align-self:flex-start;background:#14532d;color:#ecfdf5;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:999px}
+.catcard h3{font:800 18px/1.3 "Manrope";margin:0;color:#122033}
+.catcard p{font-size:13.5px;line-height:1.55;color:#5f7187;margin:0}
+.catcard .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.catcard .chips span,.catcard .chips a{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:999px;padding:4px 10px;font-size:11.5px;font-weight:700;text-decoration:none}
+.catchgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:8px 0 36px}
+.catch{background:#fff;border:1px solid #dfe7ef;border-radius:18px;padding:18px}
+.catch small{display:block;color:#7a899a;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.catch strong{display:block;margin:6px 0 6px;font:800 22px/1.15 "Manrope";color:#14532d}
+.catch span{display:block;font-size:13px;line-height:1.55;color:#5f7187}
+.tablewrap{overflow-x:auto;margin:8px 0 36px;border:1px solid #dfe7ef;border-radius:22px;background:#fff;box-shadow:0 6px 20px rgba(13,41,70,.045)}
+table.compare{width:100%;border-collapse:collapse;min-width:920px;font-size:13.5px}
+table.compare th,table.compare td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid #edf1f4}
+table.compare th{background:#14532d;color:#ecfdf5;font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:800}
+table.compare tr:last-child td{border-bottom:0}
+table.compare td.acct{font-weight:800;color:#122033;font-family:Manrope,sans-serif}
+table.compare a{color:#15803d;font-weight:700;text-decoration:none}
+table.compare a:hover{text-decoration:underline}
+.order{counter-reset:step;display:grid;gap:10px;margin:8px 0 32px}
+.order li{list-style:none;display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;background:#fff;border:1px solid #dfe7ef;border-radius:16px;padding:14px 16px}
+.order li:before{counter-increment:step;content:counter(step);width:36px;height:36px;border-radius:50%;background:#14532d;color:#fff;font:800 14px/36px "Manrope";text-align:center}
+.order strong{display:block;font:800 15px "Manrope";color:#122033}
+.order span{display:block;font-size:13px;line-height:1.5;color:#5f7187}
+.postgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:8px 0 28px}
+.postcard{display:flex;flex-direction:row;align-items:stretch;background:#fff;border:1px solid #dfe7ef;border-radius:20px;overflow:hidden;text-decoration:none;color:inherit;min-height:124px}
+.postcard:hover{border-color:#86efac;box-shadow:0 10px 28px rgba(21,128,61,.08)}
+.postcard img{width:168px;min-width:168px;height:auto;object-fit:cover;display:block;aspect-ratio:16/9;align-self:stretch}
+.postcard .pad{padding:16px 16px 14px;flex:1}
+.postcard small{color:#7a899a;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.postcard h3{font:800 16px/1.3 "Manrope";margin:4px 0 6px;color:#122033}
+.postcard p{font-size:13px;line-height:1.5;color:#5f7187;margin:0}
+@media(max-width:960px){
+  .treatbox,.fitskip,.catchgrid,.postgrid{grid-template-columns:1fr}.catgrid{grid-template-columns:repeat(2,1fr)}
+  .exmath{grid-template-columns:1fr 1fr}
+  .postcard{flex-direction:column}
+  .postcard img{width:100%;min-width:0;height:150px;aspect-ratio:auto}
+}
+@media(max-width:620px){
+  .exmath,.catgrid,.catchgrid{grid-template-columns:1fr}
+}
+
+.hubmain{max-width:1180px;margin:0 auto;padding:72px 24px 80px;min-width:0}
+.hubmain .story{max-width:none}
+.hubjump{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 36px}
+.hubjump a{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;border:1px solid #d7e1ea;background:#fff;color:#14532d;text-decoration:none;font-size:13px;font-weight:700}
+.hubjump a:hover{border-color:#86efac;background:#f0fdf4}
+.layout,.story,.relatedin,.hubmain{min-width:0}
+.tablewrap{width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}

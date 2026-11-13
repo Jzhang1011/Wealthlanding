@@ -906,6 +906,22 @@
       ]
     },
     {
+      "title": "Real Estate Tips",
+      "url": "/blogs/real_estate/tips.html",
+      "desc": "Practical notes for buyers who want to see past staging and finishes: hidden square footage, the bones of a house, and what different construction years…",
+      "section": "Real Estate",
+      "keywords": [
+        "Real Estate Tips articles",
+        "Two Acres Looked the Same. Only One Was Two Lots.",
+        "Keep going: Real Estate",
+        "Real Estate",
+        "Models and market reads",
+        "real",
+        "estate",
+        "tips"
+      ]
+    },
+    {
       "title": "Two Acres Looked the Same. Only One Was Two Lots.",
       "url": "/blogs/real_estate/two-acres-two-lots.html",
       "desc": "A fictional case study of two buyers near retirement who each consider a two-acre “two lot” listing. Legal lots, merger rules, wetlands, costs and the…",
@@ -976,6 +992,226 @@
         "Travel case studies",
         "smart",
         "flight"
+      ]
+    },
+    {
+      "title": "Tax-Advantaged Accounts",
+      "url": "/blogs/tax-advantaged-accounts.html",
+      "desc": "A visual guide to tax-advantaged accounts — 401(k), 403(b), Roth IRA, Roth 401(k), HSA, FSAs, 529, Coverdell ESA, SEP IRA, solo 401(k), executive bonus…",
+      "section": "Investing",
+      "keywords": [
+        "Tax-advantaged accounts, organized by who they fit",
+        "Who each plan is for",
+        "Everyone with earned income",
+        "Employees with workplace plans",
+        "People on high-deductible health plans",
+        "Parents and grandparents saving for education",
+        "Self-employed and small-business owners",
+        "Executives and high earners with employer arrangements",
+        "Investing",
+        "Account guides",
+        "tax",
+        "advantaged"
+      ]
+    },
+    {
+      "title": "Diane Still Thought of It as the Company Plan",
+      "url": "/blogs/tax_accounts/401k-403b.html",
+      "desc": "A fictional 52-year-old employee walks through 2026 401(k) and 403(b) deferral limits, catch-up contributions, and why traditional workplace plans are…",
+      "section": "Investing",
+      "keywords": [
+        "Worked examples and scenarios",
+        "Diane, 52, fills the 2026 deferral and catch-up",
+        "A colleague at 62 uses the super catch-up",
+        "The workplace plan and a Roth IRA in the same year",
+        "Who it fits",
+        "Who should skip — or wait",
+        "Common mistakes",
+        "How it pairs with other accounts",
+        "Investing",
+        "Account guides",
+        "tax",
+        "accounts"
+      ]
+    },
+    {
+      "title": "Carol Opened a 529 for a Grandchild She Hadn't Met Yet",
+      "url": "/blogs/tax_accounts/529-plan.html",
+      "desc": "A fictional 58-year-old grandparent walks through 529 qualified withdrawals, the $20,000 K-12 cap after 2025, expanded uses, and the 529-to-Roth rollover rules.",
+      "section": "Investing",
+      "keywords": [
+        "Worked examples and scenarios",
+        "A qualified college withdrawal, in dollars",
+        "K-12 after December 31, 2025: $20,000, not $10,000",
+        "A 529-to-Roth rollover is narrow on purpose",
+        "Who it fits",
+        "Who should skip — or wait",
+        "Common mistakes",
+        "How it pairs with other accounts",
+        "Investing",
+        "Account guides",
+        "tax",
+        "accounts"
+      ]
+    },
+    {
+      "title": "James Thought a Coverdell Was Just a Smaller 529",
+      "url": "/blogs/tax_accounts/coverdell-esa.html",
+      "desc": "A fictional 49-year-old parent compares a Coverdell ESA's $2,000 cap and income limits with a 529, using official IRS rules.",
+      "section": "Investing",
+      "keywords": [
+        "Worked examples and scenarios",
+        "The $2,000 cap is a beneficiary cap",
+        "A married couple inside the phase-out",
+        "When a Coverdell can still have a role beside a 529",
+        "Who it fits",
+        "Who should skip — or wait",
+        "Common mistakes",
+        "How it pairs with other accounts",
+        "Investing",
+        "Account guides",
+        "tax",
+        "accounts"
+      ]
+    },
+    {
+      "title": "Andrea's Bonus Came With a Life Insurance Policy",
+      "url": "/blogs/tax_accounts/executive-bonus.html",
+      "desc": "A fictional 54-year-old executive examines how a Section 162 executive bonus plan is taxed, what a double bonus covers, and why qualified accounts should be…",
+      "section": "Investing",
+      "keywords": [
+        "Worked examples and scenarios",
+        "A single bonus that covers only the premium",
+        "A double bonus, so the premium is covered after tax",
+        "Opportunity cost against a 2026 401(k) catch-up year",
+        "Who it fits",
+        "Who should skip — or wait",
+        "Common mistakes",
+        "How it pairs with other accounts",
+        "Investing",
+        "Account guides",
+        "tax",
+        "accounts"
+      ]
+    },
+    {
+      "title": "Elena's Three Envelopes",
+      "url": "/blogs/tax_accounts/fsa.html",
+      "desc": "A fictional 46-year-old compares a 2026 health FSA, a limited-purpose FSA paired with an HSA, and a dependent care FSA — pre-tax accounts that are not…",
+      "section": "Investing",
+      "keywords": [
+        "Worked examples and scenarios",
+        "A $3,400 health FSA in a 24% bracket",
+        "Dependent care FSA at the 2026 $7,500 cap",
+        "Limited-purpose FSA beside an HSA",
+        "Who it fits",
+        "Who should skip — or wait",
+        "Common mistakes",
+        "How it pairs with other accounts",
+        "Investing",
+        "Account guides",
+        "tax",
+        "accounts"
+      ]
+    },
+    {
+      "title": "Mark's HSA Clock Started Ticking at 55",
+      "url": "/blogs/tax_accounts/hsa.html",
+      "desc": "A fictional 55-year-old on a high-deductible plan uses 2026 HSA limits, the age-55 catch-up, and the rule that Medicare enrollment stops contributions.",
+      "section": "Investing",
+      "keywords": [
+        "Worked examples and scenarios",
+        "Mark, 55, with family HDHP coverage",
+        "The Medicare stop date",
+        "A non-qualified withdrawal after 65, versus a qualified one",
+        "Who it fits",
+        "Who should skip — or wait",
+        "Common mistakes",
+        "How it pairs with other accounts",
+        "Investing",
+        "Account guides",
+        "tax",
+        "accounts"
+      ]
+    },
+    {
+      "title": "Walter Was Pitched an IUL as a Tax-Free Retirement Plan",
+      "url": "/blogs/tax_accounts/iul.html",
+      "desc": "A fictional 59-year-old reviews how indexed universal life actually works — caps, loans, MEC rules, and lapse risk — and what to max out before considering one.",
+      "section": "Investing",
+      "keywords": [
+        "Worked examples and scenarios",
+        "Opportunity cost against official 2026 qualified-plan limits",
+        "A lapse with a loan can turn “tax-free” into taxable gain",
+        "MEC versus non-MEC treatment of a withdrawal",
+        "Who it fits",
+        "Who should skip — or wait",
+        "Common mistakes",
+        "How it pairs with other accounts",
+        "Investing",
+        "Account guides",
+        "tax",
+        "accounts"
+      ]
+    },
+    {
+      "title": "Priya's Catch-Up Had to Be Roth",
+      "url": "/blogs/tax_accounts/roth-401k.html",
+      "desc": "A fictional 61-year-old uses the 2026 super catch-up, the Roth catch-up wage rule, and the fact that designated Roth 401(k) accounts have had no lifetime…",
+      "section": "Investing",
+      "keywords": [
+        "Worked examples and scenarios",
+        "All Roth, including the super catch-up",
+        "The wage rule: catch-up must be Roth, base can still be pre-tax",
+        "RMDs: traditional versus designated Roth, since 2024",
+        "Who it fits",
+        "Who should skip — or wait",
+        "Common mistakes",
+        "How it pairs with other accounts",
+        "Investing",
+        "Account guides",
+        "tax",
+        "accounts"
+      ]
+    },
+    {
+      "title": "Nina Kept Waiting for the Perfect Year to Open a Roth IRA",
+      "url": "/blogs/tax_accounts/roth-ira.html",
+      "desc": "A fictional 47-year-old checks 2026 Roth IRA limits, income phase-outs, and the difference between tax-free qualified withdrawals and a deductible IRA.",
+      "section": "Investing",
+      "keywords": [
+        "Worked examples and scenarios",
+        "Nina, 47, is under the phase-out and can contribute the full $7,500",
+        "A partial contribution inside the single phase-out",
+        "The catch-up year, and a workplace plan in the same year",
+        "Who it fits",
+        "Who should skip — or wait",
+        "Common mistakes",
+        "How it pairs with other accounts",
+        "Investing",
+        "Account guides",
+        "tax",
+        "accounts"
+      ]
+    },
+    {
+      "title": "Rob's Business Had No Employees. His Retirement Plan Did the…",
+      "url": "/blogs/tax_accounts/sep-solo-401k.html",
+      "desc": "A fictional 51-year-old self-employed owner compares 2026 SEP IRA and solo 401(k) limits, including catch-up contributions and the annual-additions cap.",
+      "section": "Investing",
+      "keywords": [
+        "Rob's Business Had No Employees. His Retirement Plan Did the Work.",
+        "Worked examples and scenarios",
+        "A SEP only, on $200,000 of plan compensation",
+        "The same $200,000 salary in a solo 401(k), with catch-up",
+        "A smaller sole-proprietor profit, where the deferral is the whole story",
+        "Who it fits",
+        "Who should skip — or wait",
+        "Common mistakes",
+        "Investing",
+        "Account guides",
+        "tax",
+        "accounts"
       ]
     },
     {
