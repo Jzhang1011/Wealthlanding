@@ -79,6 +79,12 @@ INDEX_SECTIONS = [
         "archive": "blogs/real_estate/archive.json",
         "chart_after": False,
     },
+    {
+        "id": "tax_accounts",
+        "title": "Tax-Advantaged Accounts",
+        "archive": "blogs/tax_accounts/archive.json",
+        "chart_after": False,
+    },
 ]
 
 LATEST_COUNT = 3

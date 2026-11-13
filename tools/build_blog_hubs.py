@@ -16,6 +16,7 @@ SECTIONS = [
     "blogs/Happy_retirement/archive.json",
     "blogs/Travel/archive.json",
     "blogs/spending_smart/archive.json",
+    "blogs/tax_accounts/archive.json",
 ]
 import blog_tags
 
@@ -167,6 +168,9 @@ def build_hubs():
         data = json.load(open(os.path.join(ROOT, src), encoding='utf-8'))
         if 'hub' not in data.get('meta', {}):
             raise SystemExit(f'{src} is missing meta.hub')
+        if data.get('meta', {}).get('customHub'):
+            print('skip custom hub', data['meta']['hub'])
+            continue
         out = os.path.join(ROOT, 'blogs', data['meta']['hub'])
         open(out, 'w', encoding='utf-8').write(page(src, data))
         written.append(os.path.relpath(out, ROOT))

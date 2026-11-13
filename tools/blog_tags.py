@@ -52,6 +52,7 @@ TAG_STYLES = {
     "Economy and Labor": "bg-sky-50 text-sky-800 border-sky-200",
     "Case Study": "bg-blue-50 text-blue-800 border-blue-200",
     "Real Estate Tips": "bg-green-50 text-green-800 border-green-200",
+    "Tax-Advantaged Accounts": "bg-emerald-50 text-emerald-800 border-emerald-200",
 }
 DEFAULT_STYLE = TAG_STYLES["Case Study"]
 
@@ -81,6 +82,7 @@ SECTIONS = [
     "blogs/Happy_retirement/archive.json",
     "blogs/Travel/archive.json",
     "blogs/spending_smart/archive.json",
+    "blogs/tax_accounts/archive.json",
 ]
 
 e = lambda s: html.escape(str(s if s is not None else ""), quote=True)
@@ -102,6 +104,7 @@ def tag_pages(meta: dict | None) -> list[dict]:
             "slug": item.get("slug") or Path(path).stem,
             "path": path,
             "description": item.get("description") or "",
+            "customPage": bool(item.get("customPage")),
         })
     return pages
 
@@ -315,6 +318,9 @@ def build_tag_pages() -> list[str]:
         meta = data.get("meta") or {}
         posts = data.get("posts") or []
         for page in tag_pages(meta):
+            if page.get("customPage"):
+                print("skip custom tag page", page["path"])
+                continue
             matched = [p for p in posts if page["label"] in (p.get("tags") or [])]
             out_url = page["path"]
             if not out_url.startswith("/"):

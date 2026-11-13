@@ -27,6 +27,18 @@ They are not third-party stock photos. Each post has a 1200×630 hero/Open Graph
 | `buyers-market-with-no-buyers` | `/asset/blog-covers/buyers-market-with-no-buyers.webp` | Original generated cover. Alt: A quiet sage-green suburban house with a freshly mowed lawn and mature trees |
 | `flight_saver` | `/asset/blog-covers/flight_saver.webp` | Original generated cover. Alt: An airplane wing over layered clouds at golden hour, seen from a window |
 
+| `tax-advantaged-accounts` | `/asset/blog-covers/tax-advantaged-accounts.webp` | Original generated cover. Alt: Closed cream envelopes and a sprig of eucalyptus on a sage linen cloth |
+| `401k-403b` | `/asset/blog-covers/401k-403b.webp` | Original generated cover. Alt: An empty workplace desk with a sage blotter, a plant, and a window looking onto trees |
+| `roth-ira` | `/asset/blog-covers/roth-ira.webp` | Original generated cover. Alt: An open notebook and a cup of tea on a table against a sage wall |
+| `hsa` | `/asset/blog-covers/hsa.webp` | Original generated cover. Alt: An olive first-aid tin, glasses, a cream envelope, and eucalyptus on sage linen |
+| `roth-401k` | `/asset/blog-covers/roth-401k.webp` | Original generated cover. Alt: Two cream envelopes on a sage table runner |
+| `fsa` | `/asset/blog-covers/fsa.webp` | Original generated cover. Alt: A blank wall calendar, a sage mug, a stack of cream papers, and a bowl of green apples on a sunlit table |
+| `529-plan` | `/asset/blog-covers/529-plan.webp` | Original generated cover. Alt: A wooden bench on a quiet autumn campus path beneath green and gold trees, with a brick building in the background |
+| `coverdell-esa` | `/asset/blog-covers/coverdell-esa.webp` | Original generated cover. Alt: A child's wooden desk with a stack of plain hardcover books, a green pencil cup, and a glass jar of coins |
+| `sep-solo-401k` | `/asset/blog-covers/sep-solo-401k.webp` | Original generated cover. Alt: A wooden desk against a sage wall, with a closed cream notebook, a lamp, and a potted fig tree by a window |
+| `executive-bonus` | `/asset/blog-covers/executive-bonus.webp` | Original generated cover. Alt: An empty sage-leather chair at a walnut desk, with a green glass paperweight and a blank cream folder |
+| `iul` | `/asset/blog-covers/iul.webp` | Original generated cover. Alt: A closed cream folder, a calculator with a dark screen, and reading glasses on a sage linen runner |
+
 ## Reused existing local photographs
 
 These posts already had in-repo images. Card and Open Graph tags point at those files (or a locally cropped Open Graph derivative).
