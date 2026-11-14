@@ -81,13 +81,13 @@
   },
   "hyperscalers": {
     "source": "illustrative mapping; inputs from company releases",
-    "asOf": "Quarter ended June 30, 2026 (latest releases as of October 21, 2026)",
+    "asOf": "Quarter ended September 30, 2026 (latest releases as of November 10, 2026)",
     "inputs": [
-      { "key": "aws", "label": "AWS revenue growth (y/y %)", "value": 37, "date": "July 30, 2026", "source": "Amazon Q2 2026 results", "url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx" },
-      { "key": "azure", "label": "Azure and other cloud services growth (y/y %)", "value": 43, "date": "July 29, 2026", "source": "Microsoft FY26 Q4 earnings release", "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast" },
-      { "key": "gcp", "label": "Google Cloud revenue growth (y/y %)", "value": 82, "date": "July 22, 2026", "source": "Alphabet Q2 2026 results", "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm" },
-      { "key": "capex", "label": "Combined quarterly CapEx, $B (cash purchases/additions of property & equipment)", "value": 134.9, "date": "Q2 2026 / FY26 Q4", "source": "Amazon $54.2B + Microsoft $35.8B + Alphabet $44.9B, from each company's cash-flow statement in the releases above", "url": "" },
-      { "key": "capexPrior", "label": "Same quarter a year earlier, $B", "value": 71.7, "date": "Q2 2025 / FY25 Q4", "source": "Amazon $32.2B + Microsoft $17.1B + Alphabet $22.4B, prior-year columns of the same statements", "url": "" },
+      { "key": "aws", "label": "AWS revenue growth (y/y %)", "value": 39, "date": "October 29, 2026", "source": "Amazon Q3 2026 results (AWS segment sales +39%, $46.0B)", "url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/default.aspx" },
+      { "key": "azure", "label": "Azure and other cloud services growth (y/y %)", "value": 48, "date": "October 28, 2026", "source": "Microsoft FY27 Q1 earnings release (Azure revenue +48%; Microsoft now reports 'Azure' rather than 'Azure and other cloud services')", "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast" },
+      { "key": "gcp", "label": "Google Cloud revenue growth (y/y %)", "value": 103, "date": "October 28, 2026", "source": "Alphabet Q3 2026 results (Google Cloud +103%, $30.7B; includes TPU systems sales)", "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm" },
+      { "key": "capex", "label": "Combined quarterly CapEx, $B (cash purchases/additions of property & equipment)", "value": 168.0, "date": "Q3 2026 / FY27 Q1", "source": "Amazon $77.3B + Microsoft $39.4B + Alphabet $51.4B, from each company's cash-flow statement in the releases above", "url": "" },
+      { "key": "capexPrior", "label": "Same quarter a year earlier, $B", "value": 78.4, "date": "Q3 2025 / FY26 Q1", "source": "Amazon $35.1B + Microsoft $19.4B + Alphabet $24.0B, prior-year columns of the same statements", "url": "" },
       { "key": "aiShare", "label": "AI share of cloud revenue (%)", "value": null, "placeholder": "enter latest figure", "date": "", "source": "Not reported on a comparable basis by all three companies", "url": "" }
     ],
     "mapping": { "cloudRef": 20, "cloudSpan": 40, "capexRef": 20, "capexSpan": 80, "aiShareRef": 20, "aiShareSpan": 40, "dNudge": 0.20, "aNudge": 0.10 }
