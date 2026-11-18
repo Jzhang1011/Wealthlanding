@@ -7,6 +7,7 @@
   var TAG = {
     'Tax Strategy': 'bg-emerald-50 text-emerald-800 border-emerald-200',
     'Healthcare': 'bg-amber-50 text-amber-800 border-amber-200',
+    'Insurance': 'bg-cyan-50 text-cyan-800 border-cyan-200',
     'Lifestyle': 'bg-sky-50 text-sky-800 border-sky-200',
     'Social Security': 'bg-indigo-50 text-indigo-800 border-indigo-200',
     'Savings': 'bg-teal-50 text-teal-800 border-teal-200',

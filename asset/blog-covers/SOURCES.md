@@ -51,3 +51,4 @@ These posts already had in-repo images. Card and Open Graph tags point at those 
 | `disneyland_family_of_five` | `/blogs/budget_spending/images/disneyland-family-trip-card.webp` | Existing local hero JPEG; card WebP derived from it |
 | `ai-jobs-different-countries` | `/asset/ai-jobs/delivery-scooter-kyoto-card.webp` | Existing Unsplash photo already stored locally (Ryuta, Unsplash License); credit remains on the article |
 | `secure_act_inherited_iras` | `/asset/real-estate/photos/last-will-testament-card.webp` | Existing local photograph; OG crop added as `last-will-testament-og.webp`. Hero no longer hotlinks Unsplash |
+| `car-insurance-after-covid` | `/asset/blog-covers/car-insurance-after-covid.webp` | Original generated cover. Alt: A plain car key on a cream envelope beside a ceramic mug, on a wooden table with a sage linen runner |

@@ -1,0 +1,80 @@
+/* Visuals for /blogs/investment/car-insurance-after-covid.html */
+.ci-fig{margin:28px 0;padding:22px 22px 16px;border:1px solid #dfe7ef;border-radius:20px;background:#fff;box-shadow:0 10px 30px rgba(18,32,51,.06)}
+.ci-fig h3,.ci-fig .ci-title{font:700 18px/1.3 Inter,system-ui,sans-serif;color:#071a2f;margin:0 0 6px}
+.ci-fig .ci-sub{font-size:14px;color:#526173;margin:0 0 14px}
+.ci-fig figcaption,.ci-note{font-size:13px;line-height:1.5;color:#526173;margin-top:12px}
+.ci-matrix{display:grid;grid-template-columns:minmax(96px,.8fr) 1fr 1fr;gap:8px}
+.ci-matrix .ci-h{font:700 13px/1.35 Inter,system-ui,sans-serif;color:#071a2f;padding:10px;text-align:center;background:#f1f5f9;border-radius:12px;display:flex;align-items:center;justify-content:center}
+.ci-matrix .ci-r{font:700 13px/1.35 Inter,system-ui,sans-serif;color:#071a2f;padding:10px;background:#f1f5f9;border-radius:12px;display:flex;align-items:center}
+.ci-matrix .ci-c{padding:14px;border-radius:12px;font-size:15px;line-height:1.4;font-weight:600;min-height:88px;display:flex;align-items:center}
+.ci-c.good{background:#e6f7f1;color:#065f46;border:1px solid #a7e3cd}
+.ci-c.bad{background:#fdecec;color:#8a1c1c;border:1px solid #f5b5b5}
+.ci-c.mid{background:#fff6e0;color:#7a4b00;border:1px solid #f3d48a}
+.ci-blank{background:transparent}
+@media (max-width:560px){.ci-matrix{grid-template-columns:1fr 1fr}.ci-matrix .ci-blank{display:none}.ci-matrix .ci-r{grid-column:1/-1}.ci-matrix .ci-c{font-size:14px;min-height:0}.ci-matrix .ci-h{font-size:12px}}
+.ci-bars{list-style:none;margin:0;padding:0}
+.ci-bars li{display:grid;grid-template-columns:minmax(110px,190px) 1fr;gap:10px;align-items:center;margin:10px 0;font-size:14px}
+.ci-bar{height:26px;border-radius:6px;background:#02B17D;color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;min-width:44px}
+.ci-bar.alt{background:#64748b}
+.ci-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ci-table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.45}
+.ci-table th,.ci-table td{border-bottom:1px solid #e2e8f0;padding:10px 8px;text-align:left;vertical-align:top}
+.ci-table thead th{background:#f1f5f9;color:#071a2f;font-weight:700}
+.ci-table tbody th{font-weight:700;color:#071a2f}
+@media (max-width:640px){.ci-table.stack thead{display:none}.ci-table.stack tr{display:block;border:1px solid #e2e8f0;border-radius:12px;margin:0 0 10px;padding:6px 10px}.ci-table.stack th,.ci-table.stack td{display:block;border:0;padding:4px 0}.ci-table.stack td::before{content:attr(data-label);display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#64748b}}
+.ci-dash{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.ci-card{border:1px solid #dfe7ef;border-radius:16px;padding:14px 16px;background:#fbfcfe}
+.ci-card h3{font-size:16px;margin:0 0 8px;color:#071a2f}
+.ci-card p{font-size:14px;margin:4px 0;line-height:1.45}
+.ci-card b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:#02875f}
+.ci-notes{margin:36px 0 0;border:1px solid #dfe7ef;border-radius:16px;background:#f8fafc;padding:4px 18px}
+.ci-notes summary{cursor:pointer;font-weight:700;padding:12px 0;color:#071a2f}
+.ci-notes ul{font-size:14px;padding-left:18px}
+.ci-notes li{margin:6px 0;overflow-wrap:anywhere}
+/* v2 charts */
+.ci-chart{width:100%;margin:4px 0 0}
+.ci-chart svg{display:block;width:100%;height:auto;font:13px Inter,system-ui,sans-serif;fill:#526173;font-size:15px}
+.ci-chart svg .g{stroke:#e2e8f0;stroke-width:1}
+.ci-chart svg .v{font-weight:700;font-size:16px}
+.ci-legend{list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px;margin:8px 0 0;padding:0;font-size:13px;color:#334155}
+.ci-legend li{display:flex;align-items:center;gap:6px}
+.ci-legend .sw{width:14px;height:4px;border-radius:2px;display:inline-block}
+.ci-track{display:block;min-width:0}
+.ci-track .ci-bar{white-space:nowrap}
+.ci-bars.diverge .ci-div{position:relative;display:block;height:26px;background:linear-gradient(#94a3b8,#94a3b8) 50% 0/1px 100% no-repeat}
+.ci-bars.diverge .ci-bar{position:absolute;top:0;white-space:nowrap;min-width:0}
+.ci-bars.diverge .ci-bar.pos{left:50%;justify-content:flex-start;padding:0 0 0 8px;background:#02875f}
+.ci-bars.diverge .ci-bar.neg{right:50%;justify-content:flex-end;padding:0 8px 0 0;background:#dc2626}
+.ci-bars.diverge .ci-bar.neg,.ci-bars.diverge .ci-bar.pos{color:#fff}
+.ci-src{display:block;margin-top:6px}
+.ci-data{margin-top:10px;font-size:13px}
+.ci-data summary{cursor:pointer;color:#02875f;font-weight:600}
+.ci-data .ci-table{font-size:13px}
+@media (max-width:560px){.ci-bars li{grid-template-columns:1fr;gap:4px}.ci-fig{padding:16px 14px 12px}.ci-chart svg{font-size:17px}}
+.ci-bsrc{display:block;font-size:12px;line-height:1.35;color:#64748b;margin-top:2px}.ci-bsrc a{color:inherit}
+
+/* car-insurance extras */
+.ci-quote{margin:22px 0;padding:16px 18px 14px 20px;border-left:4px solid #02B17D;background:#f7fbf9;border-radius:0 14px 14px 0}
+.ci-quote blockquote{margin:0 0 8px;font-size:17px;line-height:1.45;color:#071a2f;font-style:italic}
+.ci-quote p{margin:0;font-size:13px;color:#526173}
+.ci-quote a{color:inherit}
+.ci-actions{margin:16px 0 8px;padding:0;list-style:none}
+.ci-actions li{margin:0 0 16px;padding:14px 16px;border:1px solid #dfe7ef;border-radius:14px;background:#fbfcfe}
+.ci-actions li strong{display:block;margin-bottom:4px;color:#071a2f}
+.ci-example{margin:22px 0;padding:16px 18px;border:1px solid #dfe7ef;border-radius:16px;background:#f8fafc}
+.ci-example h3{font:700 16px/1.3 Inter,system-ui,sans-serif;margin:0 0 8px;color:#071a2f}
+.ci-uncert{margin:22px 0;padding:16px 18px;border:1px solid #f3d48a;border-radius:16px;background:#fffdf6}
+.ci-chart-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ci-chart-scroll .ci-table{min-width:520px}
+.ci-bars.group{display:grid;gap:18px}
+.ci-bars.group > li{display:block}
+.ci-cluster{display:flex;align-items:flex-end;gap:6px;height:160px;border-bottom:1px solid #e2e8f0;padding:0 4px 0;position:relative}
+.ci-cluster .ci-col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;position:relative}
+.ci-cluster .ci-col .ci-bar{width:100%;min-height:2px;border-radius:6px 6px 0 0;color:#fff;font-weight:700;font-size:12px;display:flex;align-items:flex-start;justify-content:center;padding-top:4px;height:var(--h)}
+.ci-cluster .ci-col .ci-bar.down{border-radius:0 0 6px 6px;align-items:flex-end;padding-top:0;padding-bottom:4px;background:#2563eb}
+.ci-negwrap{position:relative}
+.ci-zero{position:absolute;left:0;right:0;height:1px;background:#94a3b8;z-index:1}
+@media (max-width:560px){
+  .ci-quote blockquote{font-size:16px}
+  .ci-cluster{height:140px}
+}
